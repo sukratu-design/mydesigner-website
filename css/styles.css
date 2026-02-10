@@ -912,6 +912,7 @@ button {
   flex-direction: column;
   gap: var(--space-sm);
   margin-bottom: var(--space-xl);
+  text-align: left;
 }
 
 .pricing-card__features li {
