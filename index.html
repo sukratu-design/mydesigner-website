@@ -23,9 +23,11 @@
   <meta name="twitter:title" content="MyDesigner — Unlimited Design + Development Subscription">
   <meta name="twitter:description" content="Unlimited UI/UX design, Webflow/Framer development, and graphic design from $1,400/mo. No contracts.">
 
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/daisyui@5" as="style">
+  <link rel="preload" href="css/styles.css" as="style">
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" defer></script>
 
   <!-- Organization Schema -->
   <script type="application/ld+json">
@@ -192,7 +194,7 @@
     <div class="navbar-end gap-2">
       <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
       <div class="dropdown dropdown-end lg:hidden">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-square">
+        <div tabindex="0" role="button" aria-label="Open menu" class="btn btn-ghost btn-square">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </div>
         <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
@@ -207,6 +209,7 @@
     </div>
   </nav>
 
+  <main>
   <!-- ===== HERO ===== -->
   <section class="py-20 lg:py-32 text-center" data-hero>
     <div class="max-w-4xl mx-auto px-4">
@@ -217,13 +220,13 @@
         <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Book a call</a>
         <a href="/pricing.html" class="btn btn-outline btn-lg">See pricing</a>
       </div>
-      <p class="text-sm text-base-content/50">No contracts. Cancel anytime. Starting at <strong>$1,400/mo</strong></p>
+      <p class="text-sm text-base-content/60">No contracts. Cancel anytime. Starting at <strong>$1,400/mo</strong></p>
     </div>
   </section>
 
   <!-- ===== CLIENT LOGO MARQUEE ===== -->
   <section class="py-8 overflow-hidden border-t border-b border-base-200" aria-label="Trusted by">
-    <p class="text-center text-sm text-base-content/50 mb-6">Trusted by growing companies worldwide</p>
+    <p class="text-center text-sm text-base-content/60 mb-6">Trusted by growing companies worldwide</p>
     <div class="marquee__track">
       <div class="marquee__item"><img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99cd63a4fcf5bd6a01ce5_dentsu.svg" alt="Dentsu" height="28"></div>
       <div class="marquee__item"><img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99cd63a4fcf5bd6a01ce3_calfus.png" alt="Calfus" height="28"></div>
@@ -238,7 +241,7 @@
   <!-- ===== DIFFERENTIATORS ===== -->
   <section class="py-16 lg:py-24" id="why-us">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Why MyDesigner</span>
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Why MyDesigner</span>
       <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Everything you need. Nothing you don't.</h2>
       <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Unlike competitors who only deliver design files, MyDesigner combines design AND development in one subscription.</p>
 
@@ -271,7 +274,7 @@
   <!-- ===== HOW IT WORKS ===== -->
   <section class="py-16 lg:py-24 bg-base-200" id="how-it-works">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">How It Works</span>
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">How It Works</span>
       <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Three steps to great design</h2>
       <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Getting started is simple. No onboarding calls required.</p>
 
@@ -308,7 +311,7 @@
   <!-- ===== SERVICES ===== -->
   <section class="py-16 lg:py-24" id="services">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Services</span>
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Services</span>
       <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">One subscription, every design skill</h2>
       <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">From product design to brand identity to live websites — all under one roof.</p>
 
@@ -363,7 +366,7 @@
   <!-- ===== PORTFOLIO ===== -->
   <section class="py-16 lg:py-24 bg-base-200" id="portfolio">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Our Work</span>
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Our Work</span>
       <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Designs that deliver results</h2>
       <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">From startups to global enterprises, see what we've built.</p>
 
@@ -425,7 +428,7 @@
         <div class="card-body items-center text-center py-12">
           <blockquote class="text-xl lg:text-2xl font-medium leading-relaxed mb-6">"MyDesigner has been part of our company from day one. They helped us with everything design — from branding to product design to marketing materials. The quality is consistently excellent."</blockquote>
           <p class="font-semibold">Rajat Kabade</p>
-          <p class="text-sm text-base-content/50">ScanO</p>
+          <p class="text-sm text-base-content/60">ScanO</p>
         </div>
       </div>
     </div>
@@ -434,7 +437,7 @@
   <!-- ===== COMPARISON TABLE ===== -->
   <section class="py-16 lg:py-24 bg-base-200" id="compare">
     <div class="max-w-5xl mx-auto px-4 text-center">
-      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Compare</span>
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Compare</span>
       <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">MyDesigner vs the alternatives</h2>
       <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">See how a design subscription stacks up against traditional hiring.</p>
 
@@ -501,7 +504,7 @@
   <!-- ===== PRICING ===== -->
   <section class="py-16 lg:py-24" id="pricing">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Pricing</span>
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Pricing</span>
       <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Simple, transparent pricing</h2>
       <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Unlimited design requests. Unlimited revisions. No long-term contracts.</p>
 
@@ -513,7 +516,7 @@
             <p class="text-sm text-base-content/70">Perfect for short projects or testing our service.</p>
             <div class="text-center my-4">
               <span class="text-4xl font-extrabold">$80</span>
-              <span class="text-base-content/50">/day</span>
+              <span class="text-base-content/60">/day</span>
             </div>
             <ul class="text-sm space-y-2">
               <li>All design services</li>
@@ -523,7 +526,7 @@
               <li>Source files included</li>
               <li>Minimum 3 days</li>
             </ul>
-            <p class="text-xs text-base-content/50 text-center mt-4">No contracts. Cancel anytime.</p>
+            <p class="text-xs text-base-content/60 text-center mt-4">No contracts. Cancel anytime.</p>
           </div>
         </div>
 
@@ -534,7 +537,7 @@
             <p class="text-sm text-base-content/70">Everything you need to launch and grow.</p>
             <div class="text-center my-4">
               <span class="text-4xl font-extrabold">$1,400</span>
-              <span class="text-base-content/50">/mo</span>
+              <span class="text-base-content/60">/mo</span>
             </div>
             <ul class="text-sm space-y-2">
               <li>UI/UX design</li>
@@ -546,7 +549,7 @@
               <li>Source files included</li>
             </ul>
             <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary mt-4">Book a call</a>
-            <p class="text-xs text-base-content/50 text-center mt-2">No contracts. Cancel anytime.</p>
+            <p class="text-xs text-base-content/60 text-center mt-2">No contracts. Cancel anytime.</p>
           </div>
         </div>
 
@@ -579,7 +582,7 @@
             <p class="text-sm text-base-content/70">Maximum output with a dedicated team focused on your brand.</p>
             <div class="text-center my-4">
               <span class="text-4xl font-extrabold">$3,800</span>
-              <span class="text-base-content/50">/mo</span>
+              <span class="text-base-content/60">/mo</span>
             </div>
             <ul class="text-sm space-y-2">
               <li>Everything in Growth</li>
@@ -589,13 +592,13 @@
               <li>Strategic design partnership</li>
             </ul>
             <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary mt-4">Book a call</a>
-            <p class="text-xs text-base-content/50 text-center mt-2">No contracts. Cancel anytime.</p>
+            <p class="text-xs text-base-content/60 text-center mt-2">No contracts. Cancel anytime.</p>
           </div>
         </div>
       </div>
 
       <div class="mt-10">
-        <a href="/pricing.html" class="link link-hover text-base-content/60">See detailed pricing comparison →</a>
+        <a href="/pricing.html" class="link link-hover text-base-content/70">See detailed pricing comparison →</a>
       </div>
     </div>
   </section>
@@ -603,44 +606,44 @@
   <!-- ===== FAQ ===== -->
   <section class="py-16 lg:py-24 bg-base-200" id="faq">
     <div class="max-w-3xl mx-auto px-4 text-center">
-      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">FAQ</span>
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">FAQ</span>
       <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-8 reveal">Frequently asked questions</h2>
 
       <div class="join join-vertical w-full text-left reveal">
         <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
-          <input type="radio" name="faq-accordion" checked>
+          <input type="radio" name="faq-accordion" aria-label="What is MyDesigner?" checked>
           <div class="collapse-title font-semibold">What is MyDesigner?</div>
           <div class="collapse-content text-base-content/70">MyDesigner is an unlimited design subscription service by Sukratu, based in Pune, India. For a fixed monthly fee starting at $1,400, you get unlimited design requests including UI/UX design, Webflow/Framer development, graphic design, and branding. There are no long-term contracts — cancel anytime.</div>
         </div>
         <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
-          <input type="radio" name="faq-accordion">
+          <input type="radio" name="faq-accordion" aria-label="How much does MyDesigner cost?">
           <div class="collapse-title font-semibold">How much does MyDesigner cost?</div>
           <div class="collapse-content text-base-content/70">MyDesigner offers several tiers: Starter at $1,400/month, Growth at $2,600/month, Scale at $3,800/month, and Yearly at $15,000/year. A Daily plan at $80/day (minimum 3 days) is also available. All plans include unlimited requests and revisions.</div>
         </div>
         <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
-          <input type="radio" name="faq-accordion">
+          <input type="radio" name="faq-accordion" aria-label="Does MyDesigner include Webflow development?">
           <div class="collapse-title font-semibold">Does MyDesigner include Webflow development?</div>
           <div class="collapse-content text-base-content/70">Yes. MyDesigner includes full Webflow and Framer development in all plans. You receive a live, editable site — not just design mockups. Submit a request for a landing page and receive a working Webflow or Framer site.</div>
         </div>
         <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
-          <input type="radio" name="faq-accordion">
+          <input type="radio" name="faq-accordion" aria-label="Can I cancel anytime?">
           <div class="collapse-title font-semibold">Can I cancel anytime?</div>
           <div class="collapse-content text-base-content/70">Yes. All monthly plans are cancel-anytime with no long-term contracts or cancellation fees. You're billed monthly on your subscription date.</div>
         </div>
         <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
-          <input type="radio" name="faq-accordion">
+          <input type="radio" name="faq-accordion" aria-label="How fast is the turnaround?">
           <div class="collapse-title font-semibold">How fast is the turnaround?</div>
           <div class="collapse-content text-base-content/70">Turnaround times vary by plan: Starter offers 48-72 hours, Growth and Scale plans offer 24-48 hours. All plans include unlimited revisions until you're 100% satisfied.</div>
         </div>
         <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
-          <input type="radio" name="faq-accordion">
+          <input type="radio" name="faq-accordion" aria-label="What design files do I receive?">
           <div class="collapse-title font-semibold">What design files do I receive?</div>
           <div class="collapse-content text-base-content/70">You receive source files appropriate to the project: Figma files for UI/UX, AI/PSD/PNG/JPG/PDF/SVG for graphics, and live editable site access for Webflow/Framer projects. You own everything completely.</div>
         </div>
       </div>
 
       <div class="mt-8">
-        <a href="/faq.html" class="link link-hover text-base-content/60">See all FAQs →</a>
+        <a href="/faq.html" class="link link-hover text-base-content/70">See all FAQs →</a>
       </div>
     </div>
   </section>
@@ -659,6 +662,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ===== FOOTER ===== -->
   <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10" role="contentinfo">
     <aside>
@@ -668,7 +673,7 @@
       <p class="max-w-xs">MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
     </aside>
     <nav>
-      <h6 class="footer-title">Pages</h6>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Pages</p>
       <a href="/services.html" class="link link-hover">Services</a>
       <a href="/how-it-works.html" class="link link-hover">How It Works</a>
       <a href="/pricing.html" class="link link-hover">Pricing</a>
@@ -676,14 +681,14 @@
       <a href="/faq.html" class="link link-hover">FAQ</a>
     </nav>
     <nav>
-      <h6 class="footer-title">Compare</h6>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Compare</p>
       <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
       <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
       <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
       <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
     </nav>
     <nav>
-      <h6 class="footer-title">Get Started</h6>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Get Started</p>
       <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
     </nav>
   </footer>

@@ -23,9 +23,11 @@
   <meta name="twitter:title" content="Pricing — MyDesigner | Unlimited Design + Development Subscription">
   <meta name="twitter:description" content="Simple, transparent pricing. Unlimited design requests and revisions from $1,400/mo. No contracts. Cancel anytime.">
 
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/daisyui@5" as="style">
+    <link rel="preload" href="css/styles.css" as="style">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" defer></script>
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
@@ -200,7 +202,7 @@
     <div class="navbar-end gap-2">
       <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
       <div class="dropdown dropdown-end lg:hidden">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-square">
+        <div tabindex="0" role="button" aria-label="Open menu" class="btn btn-ghost btn-square">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </div>
         <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
@@ -214,12 +216,13 @@
       </div>
     </div>
   </nav>
+  <main>
 
   <!-- ===== PAGE HEADER ===== -->
   <section class="py-16 lg:py-20 text-center" data-hero>
     <div class="max-w-4xl mx-auto px-4">
       <div class="breadcrumbs text-sm mb-4 justify-center"><ul><li><a href="/">Home</a></li><li>Pricing</li></ul></div>
-      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Pricing</span>
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Pricing</span>
       <h1 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">Simple, Transparent Pricing</h1>
       <p class="text-lg text-base-content/70 max-w-2xl mx-auto">Unlimited design requests. Unlimited revisions. No long-term contracts. Choose the plan that fits your needs.</p>
     </div>
@@ -239,7 +242,7 @@
               <span class="text-4xl font-bold">$80</span>
               <span class="text-base-content/60">/day</span>
             </div>
-            <p class="text-xs text-base-content/50 mb-4">Minimum 3 days ($240)</p>
+            <p class="text-xs text-base-content/60 mb-4">Minimum 3 days ($240)</p>
             <ul class="space-y-2 text-sm mb-6">
               <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> All design services included</li>
               <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Webflow/Framer development</li>
@@ -248,7 +251,7 @@
               <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Source files included</li>
               <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Direct communication</li>
             </ul>
-            <p class="text-xs text-base-content/50 text-center">No contracts. Cancel anytime.</p>
+            <p class="text-xs text-base-content/60 text-center">No contracts. Cancel anytime.</p>
           </div>
         </div>
 
@@ -272,7 +275,7 @@
               <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Direct communication</li>
             </ul>
             <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary w-full">Book a call</a>
-            <p class="text-xs text-base-content/50 text-center mt-2">No contracts. Cancel anytime.</p>
+            <p class="text-xs text-base-content/60 text-center mt-2">No contracts. Cancel anytime.</p>
           </div>
         </div>
 
@@ -321,7 +324,7 @@
               <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Priority response &amp; support</li>
             </ul>
             <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary w-full">Book a call</a>
-            <p class="text-xs text-base-content/50 text-center mt-2">No contracts. Cancel anytime.</p>
+            <p class="text-xs text-base-content/60 text-center mt-2">No contracts. Cancel anytime.</p>
           </div>
         </div>
 
@@ -338,7 +341,7 @@
           <h2 class="text-3xl lg:text-4xl font-bold mt-4">Yearly Plan &mdash; $15,000<span class="text-lg font-medium text-base-content/60">/year</span></h2>
           <p class="text-base-content/70 max-w-xl mt-2 mb-6">Get all Starter plan features billed annually and save 2 months. That is the equivalent of $1,250/month instead of $1,400.</p>
           <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Book a call to get started</a>
-          <p class="text-xs text-base-content/50 mt-3">Billed once upfront. No hidden fees.</p>
+          <p class="text-xs text-base-content/60 mt-3">Billed once upfront. No hidden fees.</p>
         </div>
       </div>
     </div>
@@ -347,7 +350,7 @@
   <!-- ===== WHAT'S INCLUDED ===== -->
   <section class="py-12 lg:py-16 bg-base-200" id="included">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Included</span>
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Included</span>
       <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">What's Included in Every Plan</h2>
       <p class="text-base-content/70 mb-10 reveal">No matter which plan you choose, you get the full MyDesigner experience.</p>
 
@@ -368,7 +371,7 @@
   <!-- ===== COMPETITOR COMPARISON ===== -->
   <section class="py-12 lg:py-16" id="compare">
     <div class="max-w-5xl mx-auto px-4 text-center">
-      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Compare</span>
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Compare</span>
       <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">MyDesigner vs competitors</h2>
       <p class="text-base-content/70 mb-10 max-w-2xl mx-auto reveal">See how MyDesigner stacks up against other design subscriptions and traditional hiring.</p>
 
@@ -460,7 +463,7 @@
   <!-- ===== PRICING FAQ ===== -->
   <section class="py-12 lg:py-16 bg-base-200" id="pricing-faq">
     <div class="max-w-3xl mx-auto px-4 text-center">
-      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">FAQ</span>
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">FAQ</span>
       <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-8 reveal">Pricing questions, answered</h2>
 
       <div class="join join-vertical w-full text-left reveal">
@@ -517,6 +520,7 @@
     </div>
   </section>
 
+  </main>
   <!-- ===== FOOTER ===== -->
   <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10" role="contentinfo">
     <aside>
@@ -525,20 +529,20 @@
       </a>
       <p class="max-w-xs">MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
     </aside>
-    <nav><h6 class="footer-title">Pages</h6>
+    <nav><p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Pages</p>
       <a href="/services.html" class="link link-hover">Services</a>
       <a href="/how-it-works.html" class="link link-hover">How It Works</a>
       <a href="/pricing.html" class="link link-hover">Pricing</a>
       <a href="/portfolio.html" class="link link-hover">Portfolio</a>
       <a href="/faq.html" class="link link-hover">FAQ</a>
     </nav>
-    <nav><h6 class="footer-title">Compare</h6>
+    <nav><p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Compare</p>
       <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
       <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
       <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
       <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
     </nav>
-    <nav><h6 class="footer-title">Get Started</h6>
+    <nav><p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Get Started</p>
       <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
     </nav>
   </footer>

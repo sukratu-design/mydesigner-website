@@ -23,9 +23,11 @@
   <meta name="twitter:title" content="Every Design Service You Need, One Subscription — MyDesigner">
   <meta name="twitter:description" content="UI/UX design, no-code development, graphic design & more. One subscription, every design skill. Starting at $1,400/mo.">
 
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/daisyui@5" as="style">
+    <link rel="preload" href="css/styles.css" as="style">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" defer></script>
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
@@ -133,7 +135,7 @@
     <div class="navbar-end gap-2">
       <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
       <div class="dropdown dropdown-end lg:hidden">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-square">
+        <div tabindex="0" role="button" aria-label="Open menu" class="btn btn-ghost btn-square">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </div>
         <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
@@ -147,6 +149,7 @@
       </div>
     </div>
   </nav>
+  <main>
 
   <!-- ===== PAGE HEADER ===== -->
   <section class="py-16 lg:py-24" data-hero>
@@ -161,7 +164,7 @@
   <section class="py-16 lg:py-24 bg-base-200" id="product-design">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center">
-        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Product Design</span>
+        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Product Design</span>
         <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">UI/UX Design</h2>
         <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Beautiful, functional interfaces for web and mobile. We design for usability, conversion, and brand consistency.</p>
       </div>
@@ -240,7 +243,7 @@
   <section class="py-16 lg:py-24" id="no-code">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center">
-        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Key Differentiator</span>
+        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Key Differentiator</span>
         <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">No-Code Development</h2>
         <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Unlike competitors who only deliver mockups, MyDesigner designs AND builds your site. Get a live, editable Webflow or Framer website.</p>
       </div>
@@ -326,7 +329,7 @@
   <section class="py-16 lg:py-24 bg-base-200" id="graphic-design">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center">
-        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Graphic Design</span>
+        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Graphic Design</span>
         <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Everything Visual Your Brand Needs</h2>
         <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Everything visual your brand needs — from logo design to pitch decks to social media templates.</p>
       </div>
@@ -418,7 +421,7 @@
   <section class="py-16 lg:py-24" id="additional">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center">
-        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Additional Services</span>
+        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Additional Services</span>
         <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Specialized Design Projects</h2>
         <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Beyond core design and development, we handle specialized projects too.</p>
       </div>
@@ -496,7 +499,7 @@
   <!-- ===== WHAT'S INCLUDED ===== -->
   <section class="py-16 lg:py-24 bg-base-200" id="included">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">What's Included</span>
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">What's Included</span>
       <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">What's Included in Every Plan</h2>
       <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Every MyDesigner subscription comes loaded with everything you need to move fast and stay consistent.</p>
 
@@ -563,6 +566,7 @@
     </div>
   </section>
 
+  </main>
   <!-- ===== FOOTER ===== -->
   <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10" role="contentinfo">
     <aside>
@@ -572,7 +576,7 @@
       <p class="max-w-xs">MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
     </aside>
     <nav>
-      <h6 class="footer-title">Pages</h6>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Pages</p>
       <a href="/services.html" class="link link-hover">Services</a>
       <a href="/how-it-works.html" class="link link-hover">How It Works</a>
       <a href="/pricing.html" class="link link-hover">Pricing</a>
@@ -580,14 +584,14 @@
       <a href="/faq.html" class="link link-hover">FAQ</a>
     </nav>
     <nav>
-      <h6 class="footer-title">Compare</h6>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Compare</p>
       <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
       <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
       <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
       <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
     </nav>
     <nav>
-      <h6 class="footer-title">Get Started</h6>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Get Started</p>
       <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
     </nav>
   </footer>
