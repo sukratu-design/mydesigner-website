@@ -65,6 +65,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+.portfolio-item .card-title,
+.project-card .card-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600 !important;
+}
+
 /* ========== Comparison Table Zebra ========== */
 .compare-table tbody tr:nth-child(even) {
   background-color: oklch(0.92 0 0);
