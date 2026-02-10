@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +20,9 @@
   <meta name="twitter:title" content="MyDesigner vs Kimp: Design Subscriptions Compared 2026 | MyDesigner">
   <meta name="twitter:description" content="Kimp offers separate Graphics and Video subscriptions starting at $599/month each. MyDesigner bundles design + web development from $1,400/month.">
 
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
@@ -101,77 +102,68 @@
   }
   </script>
 </head>
-<body>
+<body class="bg-base-100 text-base-content">
 
   <!-- ===== NAVIGATION ===== -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="/" class="nav__logo" aria-label="MyDesigner home">
-        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
+  <nav class="navbar bg-base-100 sticky top-0 z-50 px-4 lg:px-8" role="navigation" aria-label="Main navigation">
+    <div class="navbar-start">
+      <a href="/" class="flex items-center gap-2 font-bold text-lg" aria-label="MyDesigner home">
+        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">
         MyDesigner
       </a>
-
-      <div class="nav__links">
-        <a href="/services.html" class="nav__link">Services</a>
-        <a href="/how-it-works.html" class="nav__link">How It Works</a>
-        <a href="/pricing.html" class="nav__link">Pricing</a>
-        <a href="/portfolio.html" class="nav__link">Portfolio</a>
-        <a href="/faq.html" class="nav__link">FAQ</a>
-      </div>
-
-      <div class="nav__cta">
-        <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--sm">Book a call</a>
-      </div>
-
-      <button class="nav__hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-
-    <div class="nav__mobile-menu">
-      <a href="/services.html">Services</a>
-      <a href="/how-it-works.html">How It Works</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary">Book a call</a>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-1">
+        <li><a href="/services.html" class="font-medium">Services</a></li>
+        <li><a href="/how-it-works.html" class="font-medium">How It Works</a></li>
+        <li><a href="/pricing.html" class="font-medium">Pricing</a></li>
+        <li><a href="/portfolio.html" class="font-medium">Portfolio</a></li>
+        <li><a href="/faq.html" class="font-medium">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
+      <div class="dropdown dropdown-end lg:hidden">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-square">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </div>
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/how-it-works.html">How It Works</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <!-- ===== BREADCRUMBS ===== -->
-  <section class="section section--sm" style="padding-top:var(--space-lg);padding-bottom:0">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span class="breadcrumb__sep">/</span>
-        <a href="/#compare">Compare</a>
-        <span class="breadcrumb__sep">/</span>
-        <span aria-current="page">vs Kimp</span>
-      </nav>
-    </div>
-  </section>
-
   <!-- ===== HERO ===== -->
-  <section class="section">
-    <div class="container" style="max-width:800px">
-      <span class="vs-badge reveal">Comparison</span>
-      <h1 class="section-title reveal" style="font-size:clamp(1.75rem,4vw,2.75rem)">MyDesigner vs Kimp: Which Unlimited Design Subscription Fits Your Needs? (2026)</h1>
-      <p class="section-subtitle reveal">Last updated: February 2026</p>
+  <section class="py-16 lg:py-24" data-hero>
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="breadcrumbs text-sm mb-8"><ul><li><a href="/">Home</a></li><li><a href="/pricing.html">Compare</a></li><li>MyDesigner vs Kimp</li></ul></div>
+
+      <span class="badge badge-outline badge-primary mb-4 reveal">Comparison</span>
+      <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-4 reveal">MyDesigner vs Kimp: Which Unlimited Design Subscription Fits Your Needs? (2026)</h1>
+      <p class="text-lg opacity-70 mb-8 reveal">Last updated: February 2026</p>
 
       <!-- Summary Box -->
-      <div class="summary-box reveal">
-        <p><strong>Summary:</strong> Kimp offers separate Graphics and Video subscriptions starting at $599/month each. MyDesigner bundles design + web development from $1,400/month. This guide helps you choose based on your specific requirements.</p>
+      <div class="card bg-base-200 reveal">
+        <div class="card-body">
+          <p><strong>Summary:</strong> Kimp offers separate Graphics and Video subscriptions starting at $599/month each. MyDesigner bundles design + web development from $1,400/month. This guide helps you choose based on your specific requirements.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== QUICK COMPARISON TABLE ===== -->
-  <section class="section section--sm" style="background:var(--bg-card)">
-    <div class="container">
-      <h2 class="section-title reveal">Quick Comparison</h2>
+  <section class="py-16 bg-base-200">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-10 reveal">Quick Comparison</h2>
 
-      <div class="vs-table-wrapper reveal">
-        <table class="comparison-table">
+      <div class="overflow-x-auto reveal">
+        <table class="table table-zebra bg-base-100 rounded-box">
           <thead>
             <tr>
               <th>Feature</th>
@@ -180,7 +172,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="highlight">
+            <tr class="font-semibold">
               <td>Graphics Starting Price</td>
               <td>$599/month</td>
               <td>$1,400/month</td>
@@ -197,23 +189,23 @@
             </tr>
             <tr>
               <td>Graphic Design</td>
-              <td class="check">Yes</td>
-              <td class="check">Yes</td>
+              <td class="text-success">Yes</td>
+              <td class="text-success">Yes</td>
             </tr>
             <tr>
               <td>UI/UX Design</td>
-              <td class="check">Yes</td>
-              <td class="check">Yes</td>
+              <td class="text-success">Yes</td>
+              <td class="text-success">Yes</td>
             </tr>
             <tr>
               <td>Video Editing</td>
-              <td class="check">Yes (separate sub)</td>
-              <td class="cross">No</td>
+              <td class="text-success">Yes (separate sub)</td>
+              <td class="text-error">No</td>
             </tr>
             <tr>
               <td>Web Development</td>
-              <td class="cross">No</td>
-              <td class="check">Webflow + Framer</td>
+              <td class="text-error">No</td>
+              <td class="text-success">Webflow + Framer</td>
             </tr>
             <tr>
               <td>Requests at Once</td>
@@ -227,8 +219,8 @@
             </tr>
             <tr>
               <td>Revisions</td>
-              <td class="check">Unlimited</td>
-              <td class="check">Unlimited</td>
+              <td class="text-success">Unlimited</td>
+              <td class="text-success">Unlimited</td>
             </tr>
           </tbody>
         </table>
@@ -237,25 +229,30 @@
   </section>
 
   <!-- ===== KIMP'S SUBSCRIPTION MODEL ===== -->
-  <section class="section">
-    <div class="container" style="max-width:800px">
-      <h2 class="section-title reveal">Kimp's Subscription Model</h2>
-      <p class="reveal">Kimp splits services into separate subscriptions:</p>
-      <ul class="reveal" style="margin-top:var(--space-md)">
-        <li><strong>Kimp Graphics:</strong> $599/month &mdash; graphic design, UI/UX, illustrations</li>
-        <li><strong>Kimp Video:</strong> $599/month &mdash; video editing, motion graphics, animations</li>
-        <li><strong>Kimp Graphics + Video:</strong> $1,198/month &mdash; both services</li>
-      </ul>
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-10 reveal">Kimp's Subscription Model</h2>
+
+      <div class="card bg-base-200 reveal">
+        <div class="card-body">
+          <p class="mb-4">Kimp splits services into separate subscriptions:</p>
+          <ul class="list-disc list-inside space-y-2">
+            <li><strong>Kimp Graphics:</strong> $599/month &mdash; graphic design, UI/UX, illustrations</li>
+            <li><strong>Kimp Video:</strong> $599/month &mdash; video editing, motion graphics, animations</li>
+            <li><strong>Kimp Graphics + Video:</strong> $1,198/month &mdash; both services</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ===== PRICING COMPARISON ===== -->
-  <section class="section section--sm" style="background:var(--bg-card)">
-    <div class="container">
-      <h2 class="section-title reveal">Pricing Comparison</h2>
+  <section class="py-16 bg-base-200">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-10 reveal">Pricing Comparison</h2>
 
-      <div class="vs-table-wrapper reveal">
-        <table class="comparison-table">
+      <div class="overflow-x-auto reveal">
+        <table class="table table-zebra bg-base-100 rounded-box">
           <thead>
             <tr>
               <th>What You Need</th>
@@ -274,7 +271,7 @@
               <td>$1,198/month</td>
               <td>N/A</td>
             </tr>
-            <tr class="highlight">
+            <tr class="font-semibold">
               <td>Graphics + Web Dev</td>
               <td>$599 + developer</td>
               <td>$1,400/month</td>
@@ -291,199 +288,217 @@
   </section>
 
   <!-- ===== KEY DIFFERENCES ===== -->
-  <section class="section">
-    <div class="container" style="max-width:800px">
-      <h2 class="section-title reveal">Key Differences</h2>
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-10 reveal">Key Differences</h2>
 
-      <div class="reveal" style="margin-bottom:var(--space-2xl)">
-        <h3>Video Editing (Kimp Advantage)</h3>
-        <p>Kimp offers dedicated video editing subscriptions &mdash; something MyDesigner doesn't provide. For brands creating video content, Kimp has a clear advantage.</p>
+      <div class="card bg-base-200 reveal mb-6">
+        <div class="card-body">
+          <h3 class="card-title">Video Editing (Kimp Advantage)</h3>
+          <p>Kimp offers dedicated video editing subscriptions &mdash; something MyDesigner doesn't provide. For brands creating video content, Kimp has a clear advantage.</p>
+        </div>
       </div>
 
-      <div class="reveal" style="margin-bottom:var(--space-2xl)">
-        <h3>Web Development (MyDesigner Advantage)</h3>
-        <p>MyDesigner includes Webflow and Framer development. Design a site, get it built. Kimp delivers design files only &mdash; you need a developer to build.</p>
+      <div class="card bg-base-200 reveal mb-6">
+        <div class="card-body">
+          <h3 class="card-title">Web Development (MyDesigner Advantage)</h3>
+          <p>MyDesigner includes Webflow and Framer development. Design a site, get it built. Kimp delivers design files only &mdash; you need a developer to build.</p>
+        </div>
       </div>
 
-      <div class="reveal" style="margin-bottom:var(--space-2xl)">
-        <h3>Pricing Structure</h3>
-        <ul>
-          <li><strong>Kimp:</strong> A la carte subscriptions; pay only for what you need</li>
-          <li><strong>MyDesigner:</strong> Bundled design + development; higher base but more comprehensive</li>
-        </ul>
+      <div class="card bg-base-200 reveal mb-6">
+        <div class="card-body">
+          <h3 class="card-title">Pricing Structure</h3>
+          <ul class="list-disc list-inside space-y-2">
+            <li><strong>Kimp:</strong> A la carte subscriptions; pay only for what you need</li>
+            <li><strong>MyDesigner:</strong> Bundled design + development; higher base but more comprehensive</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="reveal">
-        <h3>Turnaround Speed</h3>
-        <p>Kimp advertises 24-hour turnaround for most requests. MyDesigner ranges 24-72 hours depending on plan level.</p>
+      <div class="card bg-base-200 reveal">
+        <div class="card-body">
+          <h3 class="card-title">Turnaround Speed</h3>
+          <p>Kimp advertises 24-hour turnaround for most requests. MyDesigner ranges 24-72 hours depending on plan level.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== SERVICE BREAKDOWN ===== -->
-  <section class="section section--sm" style="background:var(--bg-card)">
-    <div class="container">
-      <h2 class="section-title reveal">Service Breakdown</h2>
+  <section class="py-16 bg-base-200">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-10 reveal">Service Breakdown</h2>
 
-      <div class="differentiators" style="margin-top:var(--space-xl)">
-        <div class="diff-card reveal">
-          <h3 class="diff-card__title">Kimp Graphics Includes</h3>
-          <ul class="diff-card__text" style="text-align:left">
-            <li>Social media graphics</li>
-            <li>Ads and banners</li>
-            <li>Presentations</li>
-            <li>Print materials</li>
-            <li>UI/UX design</li>
-            <li>Logos and branding</li>
-            <li>Packaging</li>
-            <li>Infographics</li>
-          </ul>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <h3 class="card-title">Kimp Graphics Includes</h3>
+            <ul class="list-disc list-inside space-y-1 mt-2">
+              <li>Social media graphics</li>
+              <li>Ads and banners</li>
+              <li>Presentations</li>
+              <li>Print materials</li>
+              <li>UI/UX design</li>
+              <li>Logos and branding</li>
+              <li>Packaging</li>
+              <li>Infographics</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="diff-card reveal">
-          <h3 class="diff-card__title">Kimp Video Includes</h3>
-          <ul class="diff-card__text" style="text-align:left">
-            <li>Social media videos</li>
-            <li>Video ads</li>
-            <li>YouTube thumbnails</li>
-            <li>GIFs and animations</li>
-            <li>Video editing</li>
-            <li>Motion graphics</li>
-          </ul>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <h3 class="card-title">Kimp Video Includes</h3>
+            <ul class="list-disc list-inside space-y-1 mt-2">
+              <li>Social media videos</li>
+              <li>Video ads</li>
+              <li>YouTube thumbnails</li>
+              <li>GIFs and animations</li>
+              <li>Video editing</li>
+              <li>Motion graphics</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="diff-card reveal">
-          <h3 class="diff-card__title">MyDesigner Includes</h3>
-          <ul class="diff-card__text" style="text-align:left">
-            <li>All graphic design categories</li>
-            <li>UI/UX design</li>
-            <li>Webflow development</li>
-            <li>Framer development</li>
-            <li>Wireframing and prototyping</li>
-            <li>Brand identity</li>
-            <li>Case studies</li>
-            <li>Booth and merchandise design</li>
-          </ul>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <h3 class="card-title">MyDesigner Includes</h3>
+            <ul class="list-disc list-inside space-y-1 mt-2">
+              <li>All graphic design categories</li>
+              <li>UI/UX design</li>
+              <li>Webflow development</li>
+              <li>Framer development</li>
+              <li>Wireframing and prototyping</li>
+              <li>Brand identity</li>
+              <li>Case studies</li>
+              <li>Booth and merchandise design</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== WHO SHOULD CHOOSE ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="differentiators" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr))">
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-10 reveal">Who Should Choose</h2>
 
-        <div class="diff-card reveal">
-          <h3 class="diff-card__title">Who Should Choose MyDesigner</h3>
-          <ul class="diff-card__text" style="text-align:left">
-            <li><strong>Tech startups:</strong> Product design + Webflow/Framer landing pages</li>
-            <li><strong>Companies avoiding contractor juggling:</strong> One team for design + dev</li>
-            <li><strong>Teams needing Webflow sites:</strong> Full build, not just mockups</li>
-            <li><strong>Businesses wanting dedicated relationships:</strong> Familiar team that knows your brand</li>
-          </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <h3 class="card-title">Who Should Choose MyDesigner</h3>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+              <li><strong>Tech startups:</strong> Product design + Webflow/Framer landing pages</li>
+              <li><strong>Companies avoiding contractor juggling:</strong> One team for design + dev</li>
+              <li><strong>Teams needing Webflow sites:</strong> Full build, not just mockups</li>
+              <li><strong>Businesses wanting dedicated relationships:</strong> Familiar team that knows your brand</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="diff-card reveal">
-          <h3 class="diff-card__title">Who Should Choose Kimp</h3>
-          <ul class="diff-card__text" style="text-align:left">
-            <li><strong>Video-first brands:</strong> Dedicated video subscription</li>
-            <li><strong>Budget-conscious teams:</strong> $599 entry for graphics only</li>
-            <li><strong>High-volume content needs:</strong> Fast 24-hour turnaround</li>
-            <li><strong>Social media agencies:</strong> Graphics + Video combo for clients</li>
-            <li><strong>Teams with existing developers:</strong> Just need design files</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <h3 class="card-title">Who Should Choose Kimp</h3>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+              <li><strong>Video-first brands:</strong> Dedicated video subscription</li>
+              <li><strong>Budget-conscious teams:</strong> $599 entry for graphics only</li>
+              <li><strong>High-volume content needs:</strong> Fast 24-hour turnaround</li>
+              <li><strong>Social media agencies:</strong> Graphics + Video combo for clients</li>
+              <li><strong>Teams with existing developers:</strong> Just need design files</li>
+            </ul>
+          </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ===== SCENARIO COMPARISONS ===== -->
-  <section class="section section--sm" style="background:var(--bg-card)">
-    <div class="container" style="max-width:800px">
-      <h2 class="section-title reveal">Scenario Comparisons</h2>
+  <section class="py-16 bg-base-200">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-10 reveal">Scenario Comparisons</h2>
 
-      <div class="reveal" style="margin-bottom:var(--space-xl)">
-        <h3>Scenario: E-commerce Brand</h3>
-        <p><strong>Needs:</strong> Product photos, social graphics, video ads</p>
-        <p><strong>Better choice:</strong> Kimp &mdash; Graphics + Video bundle covers everything</p>
-      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <h3 class="card-title">Scenario: E-commerce Brand</h3>
+            <p><strong>Needs:</strong> Product photos, social graphics, video ads</p>
+            <p><strong>Better choice:</strong> Kimp &mdash; Graphics + Video bundle covers everything</p>
+          </div>
+        </div>
 
-      <div class="reveal" style="margin-bottom:var(--space-xl)">
-        <h3>Scenario: B2B SaaS Company</h3>
-        <p><strong>Needs:</strong> App UI, marketing website, sales decks</p>
-        <p><strong>Better choice:</strong> MyDesigner &mdash; UI design + Webflow site + presentations</p>
-      </div>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <h3 class="card-title">Scenario: B2B SaaS Company</h3>
+            <p><strong>Needs:</strong> App UI, marketing website, sales decks</p>
+            <p><strong>Better choice:</strong> MyDesigner &mdash; UI design + Webflow site + presentations</p>
+          </div>
+        </div>
 
-      <div class="reveal" style="margin-bottom:var(--space-xl)">
-        <h3>Scenario: Content Creator</h3>
-        <p><strong>Needs:</strong> Thumbnails, social graphics, video editing</p>
-        <p><strong>Better choice:</strong> Kimp &mdash; Video subscription is core to the need</p>
-      </div>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <h3 class="card-title">Scenario: Content Creator</h3>
+            <p><strong>Needs:</strong> Thumbnails, social graphics, video editing</p>
+            <p><strong>Better choice:</strong> Kimp &mdash; Video subscription is core to the need</p>
+          </div>
+        </div>
 
-      <div class="reveal">
-        <h3>Scenario: Startup Pre-Launch</h3>
-        <p><strong>Needs:</strong> Branding, landing page built, investor deck</p>
-        <p><strong>Better choice:</strong> MyDesigner &mdash; branding + Framer site + presentation design</p>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <h3 class="card-title">Scenario: Startup Pre-Launch</h3>
+            <p><strong>Needs:</strong> Branding, landing page built, investor deck</p>
+            <p><strong>Better choice:</strong> MyDesigner &mdash; branding + Framer site + presentation design</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== FAQ ===== -->
-  <section class="section">
-    <div class="container" style="max-width:800px">
-      <span class="section-label">FAQ</span>
-      <h2 class="section-title reveal">Frequently Asked Questions</h2>
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4">
+      <span class="badge badge-outline badge-primary mb-4 reveal">FAQ</span>
+      <h2 class="text-3xl font-bold text-center mb-10 reveal">Frequently Asked Questions</h2>
 
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Is Kimp cheaper than MyDesigner?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">For graphics only, yes ($599 vs $1,400). But if you need web development, Kimp + developer often exceeds MyDesigner's all-in price.</div>
+      <div class="join join-vertical w-full reveal">
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion" checked="checked">
+          <div class="collapse-title font-semibold">Is Kimp cheaper than MyDesigner?</div>
+          <div class="collapse-content">
+            <p>For graphics only, yes ($599 vs $1,400). But if you need web development, Kimp + developer often exceeds MyDesigner's all-in price.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Does Kimp build websites?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">No. Kimp designs website mockups but doesn't develop them. You'd need to hire a separate Webflow/Framer developer.</div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">Does Kimp build websites?</div>
+          <div class="collapse-content">
+            <p>No. Kimp designs website mockups but doesn't develop them. You'd need to hire a separate Webflow/Framer developer.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Which has faster turnaround?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Kimp advertises 24-hour turnaround. MyDesigner ranges from 24-72 hours, with Growth/Scale plans offering faster response.</div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">Which has faster turnaround?</div>
+          <div class="collapse-content">
+            <p>Kimp advertises 24-hour turnaround. MyDesigner ranges from 24-72 hours, with Growth/Scale plans offering faster response.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Can I get video editing from MyDesigner?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">No. MyDesigner focuses on static design and web development. For video, Kimp or another service is needed.</div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">Can I get video editing from MyDesigner?</div>
+          <div class="collapse-content">
+            <p>No. MyDesigner focuses on static design and web development. For video, Kimp or another service is needed.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Which is better for startups?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Bootstrapped, content-focused startups should consider Kimp ($599-$1,198/month). Funded startups building product should consider MyDesigner ($1,400-$3,800/month).</div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">Which is better for startups?</div>
+          <div class="collapse-content">
+            <p>Bootstrapped, content-focused startups should consider Kimp ($599-$1,198/month). Funded startups building product should consider MyDesigner ($1,400-$3,800/month).</p>
           </div>
         </div>
       </div>
@@ -491,13 +506,13 @@
   </section>
 
   <!-- ===== DECISION TABLE ===== -->
-  <section class="section section--sm" style="background:var(--bg-card)">
-    <div class="container" style="max-width:800px">
-      <h2 class="section-title reveal">Summary</h2>
-      <p class="section-subtitle reveal">Kimp shines for video-heavy brands and budget-conscious teams needing standalone graphic design. MyDesigner is the choice when web development is essential and you want design + dev under one subscription.</p>
+  <section class="py-16 bg-base-200">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-4 reveal">Summary</h2>
+      <p class="text-center opacity-70 mb-10 reveal">Kimp shines for video-heavy brands and budget-conscious teams needing standalone graphic design. MyDesigner is the choice when web development is essential and you want design + dev under one subscription.</p>
 
-      <div class="vs-table-wrapper reveal">
-        <table class="comparison-table">
+      <div class="overflow-x-auto reveal">
+        <table class="table table-zebra bg-base-100 rounded-box">
           <thead>
             <tr>
               <th>Priority</th>
@@ -513,11 +528,11 @@
               <td>Lowest graphics price</td>
               <td>Kimp ($599)</td>
             </tr>
-            <tr class="highlight">
+            <tr class="font-semibold">
               <td>Web development included</td>
               <td>MyDesigner</td>
             </tr>
-            <tr class="highlight">
+            <tr class="font-semibold">
               <td>One-stop design + dev</td>
               <td>MyDesigner</td>
             </tr>
@@ -525,7 +540,7 @@
               <td>Fastest turnaround</td>
               <td>Kimp (24hr)</td>
             </tr>
-            <tr class="highlight">
+            <tr class="font-semibold">
               <td>Dedicated team relationship</td>
               <td>MyDesigner</td>
             </tr>
@@ -536,76 +551,67 @@
   </section>
 
   <!-- ===== FINAL CTA ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-block reveal">
-        <h2 class="cta-block__title">Ready to get design + development in one subscription?</h2>
-        <p class="cta-block__text">MyDesigner combines unlimited design and Webflow/Framer development for a flat monthly fee. No contracts. Cancel anytime.</p>
-        <div class="btn-group" style="justify-content:center">
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call</a>
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="card bg-primary text-primary-content reveal">
+        <div class="card-body text-center">
+          <h2 class="card-title text-2xl lg:text-3xl font-bold justify-center">Ready to get design + development in one subscription?</h2>
+          <p class="mt-2">MyDesigner combines unlimited design and Webflow/Framer development for a flat monthly fee. No contracts. Cancel anytime.</p>
+          <div class="card-actions justify-center mt-6">
+            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-secondary btn-lg">Book a call</a>
+          </div>
+          <p class="text-sm opacity-80 mt-4">No contracts. Cancel anytime. Starting at $1,400/mo</p>
         </div>
-        <p class="microcopy" style="text-align:center">No contracts. Cancel anytime. Starting at $1,400/mo</p>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <a href="/" class="nav__logo" style="margin-bottom:var(--space-sm)">
-            <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
-            MyDesigner
-          </a>
-          <p>MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Pages</h4>
-          <nav class="footer__links">
-            <a href="/services.html">Services</a>
-            <a href="/how-it-works.html">How It Works</a>
-            <a href="/pricing.html">Pricing</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/faq.html">FAQ</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Compare</h4>
-          <nav class="footer__links">
-            <a href="/vs/designjoy.html">vs DesignJoy</a>
-            <a href="/vs/penji.html">vs Penji</a>
-            <a href="/vs/manypixels.html">vs ManyPixels</a>
-            <a href="/vs/kimp.html">vs Kimp</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Get Started</h4>
-          <nav class="footer__links">
-            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5">Book a Call</a>
-          </nav>
-        </div>
+  <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10" role="contentinfo">
+    <aside>
+      <a href="/" class="flex items-center gap-2 font-bold text-lg mb-2">
+        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">
+        MyDesigner
+      </a>
+      <p class="max-w-xs">MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
+    </aside>
+    <nav>
+      <h6 class="footer-title">Pages</h6>
+      <a href="/services.html" class="link link-hover">Services</a>
+      <a href="/how-it-works.html" class="link link-hover">How It Works</a>
+      <a href="/pricing.html" class="link link-hover">Pricing</a>
+      <a href="/portfolio.html" class="link link-hover">Portfolio</a>
+      <a href="/faq.html" class="link link-hover">FAQ</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Compare</h6>
+      <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
+      <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
+      <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
+      <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Get Started</h6>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
+    </nav>
+  </footer>
+  <footer class="footer sm:footer-horizontal bg-base-300 text-base-content border-t border-base-300 px-10 py-4">
+    <aside class="grid-flow-col items-center">
+      <p>&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
+    </aside>
+    <nav class="md:place-self-center md:justify-self-end">
+      <div class="grid grid-flow-col gap-4">
+        <a href="https://x.com/mydesigner_gg" aria-label="X (Twitter)" class="link link-hover">&#x1D54F;</a>
+        <a href="https://www.linkedin.com/showcase/mydesigner-sukratu/?viewAsMember=true" aria-label="LinkedIn" class="link link-hover">in</a>
+        <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram" class="link link-hover">&#x1F4F7;</a>
       </div>
-
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
-        <div class="footer__social">
-          <a href="https://twitter.com/mydesignergg" aria-label="Twitter">&#x1D54F;</a>
-          <a href="https://linkedin.com/company/mydesigner" aria-label="LinkedIn">in</a>
-          <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram">&#x1F4F7;</a>
-        </div>
-      </div>
-    </div>
+    </nav>
   </footer>
 
   <!-- Mobile floating CTA -->
   <div class="floating-cta">
-    <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call — it's free</a>
+    <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg w-full">Book a call — it's free</a>
   </div>
-
   <script src="../js/main.js"></script>
 </body>
 </html>

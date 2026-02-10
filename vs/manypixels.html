@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +20,9 @@
   <meta name="twitter:title" content="MyDesigner vs ManyPixels: Unlimited Design Compared 2026 | MyDesigner">
   <meta name="twitter:description" content="ManyPixels vs MyDesigner compared for 2026. ManyPixels offers motion graphics from $549/mo; MyDesigner includes Webflow/Framer development from $1,400/mo.">
 
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
@@ -93,80 +94,74 @@
   }
   </script>
 </head>
-<body>
+<body class="bg-base-100 text-base-content">
 
   <!-- ===== NAVIGATION ===== -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="/" class="nav__logo" aria-label="MyDesigner home">
-        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
+  <nav class="navbar bg-base-100 sticky top-0 z-50 px-4 lg:px-8" role="navigation" aria-label="Main navigation">
+    <div class="navbar-start">
+      <a href="/" class="flex items-center gap-2 font-bold text-lg" aria-label="MyDesigner home">
+        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">
         MyDesigner
       </a>
-
-      <div class="nav__links">
-        <a href="/services.html" class="nav__link">Services</a>
-        <a href="/how-it-works.html" class="nav__link">How It Works</a>
-        <a href="/pricing.html" class="nav__link">Pricing</a>
-        <a href="/portfolio.html" class="nav__link">Portfolio</a>
-        <a href="/faq.html" class="nav__link">FAQ</a>
-      </div>
-
-      <div class="nav__cta">
-        <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--sm">Book a call</a>
-      </div>
-
-      <button class="nav__hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-
-    <div class="nav__mobile-menu">
-      <a href="/services.html">Services</a>
-      <a href="/how-it-works.html">How It Works</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary">Book a call</a>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-1">
+        <li><a href="/services.html" class="font-medium">Services</a></li>
+        <li><a href="/how-it-works.html" class="font-medium">How It Works</a></li>
+        <li><a href="/pricing.html" class="font-medium">Pricing</a></li>
+        <li><a href="/portfolio.html" class="font-medium">Portfolio</a></li>
+        <li><a href="/faq.html" class="font-medium">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
+      <div class="dropdown dropdown-end lg:hidden">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-square">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </div>
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/how-it-works.html">How It Works</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <!-- ===== BREADCRUMBS ===== -->
-  <section class="section section--sm" style="padding-top:var(--space-lg);padding-bottom:0">
-    <div class="container">
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span class="breadcrumbs__sep">/</span>
-        <span>Compare</span>
-        <span class="breadcrumbs__sep">/</span>
-        <span aria-current="page">vs ManyPixels</span>
-      </nav>
-    </div>
-  </section>
-
   <!-- ===== HERO ===== -->
-  <section class="section">
-    <div class="container text-center">
-      <span class="vs-badge reveal">Comparison</span>
-      <h1 class="section-title reveal" style="max-width:800px;margin:0 auto">MyDesigner vs ManyPixels: Unlimited Design Services Compared (2026)</h1>
-      <p class="section-subtitle reveal" style="margin:0 auto;max-width:680px">ManyPixels and MyDesigner are both unlimited design subscription services. ManyPixels offers a broader creative scope including motion graphics, while MyDesigner includes Webflow/Framer development. Here's how to choose between them.</p>
-      <p class="microcopy reveal" style="text-align:center"><em>Last updated: February 2026</em></p>
+  <section class="py-16 lg:py-24" data-hero>
+    <div class="max-w-5xl mx-auto px-4 lg:px-8">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs text-sm mb-8"><ul><li><a href="/">Home</a></li><li><a href="/pricing.html">Compare</a></li><li>MyDesigner vs ManyPixels</li></ul></div>
 
-      <!-- Summary Box -->
-      <div class="summary-box reveal" style="max-width:720px;margin:var(--space-xl) auto 0">
-        <h2 class="summary-box__title">Quick Summary</h2>
-        <p>ManyPixels excels at accessible, high-volume design with motion graphics starting at $549/month. MyDesigner is ideal when you need design + development integration and dedicated team relationships starting at $1,400/month. Choose ManyPixels for motion design and lower cost; choose MyDesigner for Webflow/Framer development and product design depth.</p>
+      <div class="text-center">
+        <span class="badge badge-outline badge-primary mb-4 reveal">Comparison</span>
+        <h1 class="text-4xl lg:text-5xl font-bold mb-6 reveal">MyDesigner vs ManyPixels: Unlimited Design Services Compared (2026)</h1>
+        <p class="text-lg opacity-70 max-w-2xl mx-auto mb-2 reveal">ManyPixels and MyDesigner are both unlimited design subscription services. ManyPixels offers a broader creative scope including motion graphics, while MyDesigner includes Webflow/Framer development. Here's how to choose between them.</p>
+        <p class="text-sm opacity-60 reveal"><em>Last updated: February 2026</em></p>
+
+        <!-- Summary Box -->
+        <div class="card bg-base-200 max-w-3xl mx-auto mt-10 reveal">
+          <div class="card-body">
+            <h2 class="card-title justify-center text-xl">Quick Summary</h2>
+            <p>ManyPixels excels at accessible, high-volume design with motion graphics starting at $549/month. MyDesigner is ideal when you need design + development integration and dedicated team relationships starting at $1,400/month. Choose ManyPixels for motion design and lower cost; choose MyDesigner for Webflow/Framer development and product design depth.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== QUICK COMPARISON TABLE ===== -->
-  <section class="section section--sm reveal" style="background:var(--bg-card)">
-    <div class="container text-center">
-      <span class="section-label">Feature Comparison</span>
-      <h2 class="section-title reveal">Quick Comparison</h2>
+  <section class="py-16 bg-base-200">
+    <div class="max-w-5xl mx-auto px-4 lg:px-8 text-center">
+      <span class="badge badge-outline badge-primary mb-4 reveal">Feature Comparison</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mb-4 reveal">Quick Comparison</h2>
 
-      <div class="vs-table-wrapper reveal">
-        <table class="comparison-table">
+      <div class="overflow-x-auto mt-10 reveal">
+        <table class="table table-zebra bg-base-100 rounded-box">
           <thead>
             <tr>
               <th>Feature</th>
@@ -175,40 +170,40 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="highlight">
+            <tr class="font-semibold">
               <td>Starting Price</td>
               <td>$549/month</td>
               <td>$1,400/month</td>
             </tr>
             <tr>
               <td>Graphic Design</td>
-              <td class="check">Yes</td>
-              <td class="check">Yes</td>
+              <td class="text-success">Yes</td>
+              <td class="text-success">Yes</td>
             </tr>
             <tr>
               <td>UI/UX Design</td>
-              <td class="check">Yes</td>
-              <td class="check">Yes</td>
+              <td class="text-success">Yes</td>
+              <td class="text-success">Yes</td>
             </tr>
             <tr>
               <td>Motion Graphics</td>
-              <td class="check">Yes</td>
-              <td class="cross">No</td>
+              <td class="text-success">Yes</td>
+              <td class="text-error">No</td>
             </tr>
             <tr>
               <td>Web Development</td>
-              <td class="cross">No</td>
-              <td class="check">Webflow + Framer</td>
+              <td class="text-error">No</td>
+              <td class="text-success">Webflow + Framer</td>
             </tr>
             <tr>
               <td>Branding</td>
-              <td class="check">Yes</td>
-              <td class="check">Yes</td>
+              <td class="text-success">Yes</td>
+              <td class="text-success">Yes</td>
             </tr>
             <tr>
               <td>Presentations</td>
-              <td class="check">Yes</td>
-              <td class="check">Yes</td>
+              <td class="text-success">Yes</td>
+              <td class="text-success">Yes</td>
             </tr>
             <tr>
               <td>Turnaround</td>
@@ -217,13 +212,13 @@
             </tr>
             <tr>
               <td>Revisions</td>
-              <td class="check">Unlimited</td>
-              <td class="check">Unlimited</td>
+              <td class="text-success">Unlimited</td>
+              <td class="text-success">Unlimited</td>
             </tr>
             <tr>
               <td>Contract</td>
-              <td class="check">Monthly</td>
-              <td class="check">Monthly</td>
+              <td class="text-success">Monthly</td>
+              <td class="text-success">Monthly</td>
             </tr>
           </tbody>
         </table>
@@ -232,14 +227,14 @@
   </section>
 
   <!-- ===== PRICING BREAKDOWN ===== -->
-  <section class="section reveal">
-    <div class="container text-center">
-      <span class="section-label">Pricing</span>
-      <h2 class="section-title reveal">Pricing Breakdown</h2>
-      <p class="section-subtitle reveal" style="margin:0 auto">How the plans stack up side by side.</p>
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4 lg:px-8 text-center">
+      <span class="badge badge-outline badge-primary mb-4 reveal">Pricing</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mb-4 reveal">Pricing Breakdown</h2>
+      <p class="text-lg opacity-70 mb-10 reveal">How the plans stack up side by side.</p>
 
-      <div class="vs-table-wrapper reveal">
-        <table class="comparison-table">
+      <div class="overflow-x-auto reveal">
+        <table class="table table-zebra bg-base-100 rounded-box">
           <thead>
             <tr>
               <th>Plan</th>
@@ -270,213 +265,229 @@
   </section>
 
   <!-- ===== KEY DIFFERENCES ===== -->
-  <section class="section section--sm reveal" style="background:var(--bg-card)">
-    <div class="container">
+  <section class="py-16 bg-base-200">
+    <div class="max-w-5xl mx-auto px-4 lg:px-8">
       <div class="text-center">
-        <span class="section-label">Key Differences</span>
-        <h2 class="section-title reveal">What sets each service apart</h2>
+        <span class="badge badge-outline badge-primary mb-4 reveal">Key Differences</span>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-10 reveal">What sets each service apart</h2>
       </div>
 
-      <div class="differentiators" style="margin-top:var(--space-2xl)">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Motion Graphics -->
-        <div class="diff-card reveal">
-          <div class="diff-card__icon">🎬</div>
-          <h3 class="diff-card__title">Motion Graphics</h3>
-          <p class="diff-card__tag" style="color:var(--text-muted);font-size:0.85rem;margin-bottom:var(--space-xs)"><strong>ManyPixels Advantage</strong></p>
-          <p class="diff-card__text">ManyPixels includes motion graphics and simple animations in their service. If you need animated social content, explainer graphics, or motion design, ManyPixels has this built in.</p>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">🎬</div>
+            <h3 class="card-title">Motion Graphics</h3>
+            <p class="text-sm opacity-60 font-semibold">ManyPixels Advantage</p>
+            <p>ManyPixels includes motion graphics and simple animations in their service. If you need animated social content, explainer graphics, or motion design, ManyPixels has this built in.</p>
+          </div>
         </div>
 
         <!-- Web Development -->
-        <div class="diff-card reveal">
-          <div class="diff-card__icon">🛠</div>
-          <h3 class="diff-card__title">Web Development</h3>
-          <p class="diff-card__tag" style="color:var(--text-muted);font-size:0.85rem;margin-bottom:var(--space-xs)"><strong>MyDesigner Advantage</strong></p>
-          <p class="diff-card__text">MyDesigner builds Webflow and Framer websites as part of the subscription. Design your site and have the same team develop it — no handoff friction.</p>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">🛠</div>
+            <h3 class="card-title">Web Development</h3>
+            <p class="text-sm opacity-60 font-semibold">MyDesigner Advantage</p>
+            <p>MyDesigner builds Webflow and Framer websites as part of the subscription. Design your site and have the same team develop it — no handoff friction.</p>
+          </div>
         </div>
 
         <!-- Geographic Focus -->
-        <div class="diff-card reveal">
-          <div class="diff-card__icon">🌍</div>
-          <h3 class="diff-card__title">Geographic Focus</h3>
-          <p class="diff-card__text"><strong>ManyPixels:</strong> Global team, European roots.<br><strong>MyDesigner:</strong> India-based team (Pune), serving global clients.</p>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">🌍</div>
+            <h3 class="card-title">Geographic Focus</h3>
+            <p><strong>ManyPixels:</strong> Global team, European roots.<br><strong>MyDesigner:</strong> India-based team (Pune), serving global clients.</p>
+          </div>
         </div>
 
         <!-- Project Management -->
-        <div class="diff-card reveal">
-          <div class="diff-card__icon">📋</div>
-          <h3 class="diff-card__title">Project Management</h3>
-          <p class="diff-card__text"><strong>ManyPixels:</strong> Uses their own platform for requests.<br><strong>MyDesigner:</strong> Dedicated design manager on Growth/Scale plans.</p>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">📋</div>
+            <h3 class="card-title">Project Management</h3>
+            <p><strong>ManyPixels:</strong> Uses their own platform for requests.<br><strong>MyDesigner:</strong> Dedicated design manager on Growth/Scale plans.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== SERVICE COMPARISON ===== -->
-  <section class="section reveal">
-    <div class="container">
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4 lg:px-8">
       <div class="text-center">
-        <span class="section-label">Services</span>
-        <h2 class="section-title reveal">Service Comparison</h2>
-        <p class="section-subtitle reveal" style="margin:0 auto">What's included in each platform.</p>
+        <span class="badge badge-outline badge-primary mb-4 reveal">Services</span>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4 reveal">Service Comparison</h2>
+        <p class="text-lg opacity-70 mb-10 reveal">What's included in each platform.</p>
       </div>
 
-      <div class="differentiators" style="margin-top:var(--space-2xl)">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Both Include -->
-        <div class="diff-card reveal">
-          <h3 class="diff-card__title">Both Services Include</h3>
-          <ul class="service-card__list" style="text-align:left">
-            <li>Logo and brand identity</li>
-            <li>Social media graphics</li>
-            <li>Marketing collateral</li>
-            <li>Website and app mockups</li>
-            <li>Pitch decks and presentations</li>
-            <li>Icons and illustrations</li>
-            <li>Print design</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <h3 class="card-title">Both Services Include</h3>
+            <ul class="list-disc list-inside space-y-1 text-left">
+              <li>Logo and brand identity</li>
+              <li>Social media graphics</li>
+              <li>Marketing collateral</li>
+              <li>Website and app mockups</li>
+              <li>Pitch decks and presentations</li>
+              <li>Icons and illustrations</li>
+              <li>Print design</li>
+            </ul>
+          </div>
         </div>
 
         <!-- ManyPixels Exclusive -->
-        <div class="diff-card reveal">
-          <h3 class="diff-card__title">ManyPixels Exclusive</h3>
-          <ul class="service-card__list" style="text-align:left">
-            <li>Motion graphics</li>
-            <li>Simple animations</li>
-            <li>Animated social content</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <h3 class="card-title">ManyPixels Exclusive</h3>
+            <ul class="list-disc list-inside space-y-1 text-left">
+              <li>Motion graphics</li>
+              <li>Simple animations</li>
+              <li>Animated social content</li>
+            </ul>
+          </div>
         </div>
 
         <!-- MyDesigner Exclusive -->
-        <div class="diff-card reveal">
-          <h3 class="diff-card__title">MyDesigner Exclusive</h3>
-          <ul class="service-card__list" style="text-align:left">
-            <li>Webflow development</li>
-            <li>Framer development</li>
-            <li>Wireframing</li>
-            <li>Prototyping</li>
-            <li>Case study design</li>
-            <li>Booth and exhibition design</li>
-            <li>Merchandise design</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <h3 class="card-title">MyDesigner Exclusive</h3>
+            <ul class="list-disc list-inside space-y-1 text-left">
+              <li>Webflow development</li>
+              <li>Framer development</li>
+              <li>Wireframing</li>
+              <li>Prototyping</li>
+              <li>Case study design</li>
+              <li>Booth and exhibition design</li>
+              <li>Merchandise design</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== WHO SHOULD CHOOSE ===== -->
-  <section class="section section--sm reveal" style="background:var(--bg-card)">
-    <div class="container">
+  <section class="py-16 bg-base-200">
+    <div class="max-w-5xl mx-auto px-4 lg:px-8">
       <div class="text-center">
-        <span class="section-label">Recommendations</span>
-        <h2 class="section-title reveal">Who should choose which?</h2>
+        <span class="badge badge-outline badge-primary mb-4 reveal">Recommendations</span>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-10 reveal">Who should choose which?</h2>
       </div>
 
-      <div class="differentiators" style="margin-top:var(--space-2xl)">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Choose MyDesigner -->
-        <div class="diff-card reveal" style="flex:1">
-          <h3 class="diff-card__title">Who Should Choose MyDesigner</h3>
-          <ul class="service-card__list" style="text-align:left">
-            <li><strong>SaaS companies:</strong> UI/UX design + Webflow/Framer landing pages</li>
-            <li><strong>Startups launching products:</strong> Design to development pipeline</li>
-            <li><strong>Teams needing dedicated support:</strong> Growth plan includes dedicated manager</li>
-            <li><strong>Companies preferring timezone overlap with India:</strong> Efficient for US evening handoffs</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <h3 class="card-title">Who Should Choose MyDesigner</h3>
+            <ul class="list-disc list-inside space-y-2 text-left">
+              <li><strong>SaaS companies:</strong> UI/UX design + Webflow/Framer landing pages</li>
+              <li><strong>Startups launching products:</strong> Design to development pipeline</li>
+              <li><strong>Teams needing dedicated support:</strong> Growth plan includes dedicated manager</li>
+              <li><strong>Companies preferring timezone overlap with India:</strong> Efficient for US evening handoffs</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Choose ManyPixels -->
-        <div class="diff-card reveal" style="flex:1">
-          <h3 class="diff-card__title">Who Should Choose ManyPixels</h3>
-          <ul class="service-card__list" style="text-align:left">
-            <li><strong>Content marketing teams:</strong> Motion graphics for social</li>
-            <li><strong>Budget-focused startups:</strong> Lower entry at $549/month</li>
-            <li><strong>European companies:</strong> Timezone alignment</li>
-            <li><strong>Teams needing animation:</strong> Built-in motion design</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <h3 class="card-title">Who Should Choose ManyPixels</h3>
+            <ul class="list-disc list-inside space-y-2 text-left">
+              <li><strong>Content marketing teams:</strong> Motion graphics for social</li>
+              <li><strong>Budget-focused startups:</strong> Lower entry at $549/month</li>
+              <li><strong>European companies:</strong> Timezone alignment</li>
+              <li><strong>Teams needing animation:</strong> Built-in motion design</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== USE CASE EXAMPLES ===== -->
-  <section class="section reveal">
-    <div class="container">
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4 lg:px-8">
       <div class="text-center">
-        <span class="section-label">Use Cases</span>
-        <h2 class="section-title reveal">Use Case Examples</h2>
-        <p class="section-subtitle reveal" style="margin:0 auto">Real-world scenarios to help you decide.</p>
+        <span class="badge badge-outline badge-primary mb-4 reveal">Use Cases</span>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4 reveal">Use Case Examples</h2>
+        <p class="text-lg opacity-70 mb-10 reveal">Real-world scenarios to help you decide.</p>
       </div>
 
-      <div class="steps" style="margin-top:var(--space-2xl)">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Scenario 1 -->
-        <div class="step reveal">
-          <div class="step__number">1</div>
-          <h3 class="step__title">SaaS Startup Launching MVP</h3>
-          <p class="step__text"><strong>Need:</strong> App UI design, marketing site, ongoing graphics</p>
-          <p class="step__text"><strong>Better choice: MyDesigner</strong> — design the UI, build the Webflow marketing site, handle ongoing needs.</p>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-xl font-bold mb-2">1</div>
+            <h3 class="card-title">SaaS Startup Launching MVP</h3>
+            <p><strong>Need:</strong> App UI design, marketing site, ongoing graphics</p>
+            <p><strong>Better choice: MyDesigner</strong> — design the UI, build the Webflow marketing site, handle ongoing needs.</p>
+          </div>
         </div>
 
         <!-- Scenario 2 -->
-        <div class="step reveal">
-          <div class="step__number">2</div>
-          <h3 class="step__title">E-commerce Brand</h3>
-          <p class="step__text"><strong>Need:</strong> Product graphics, animated ads, social content</p>
-          <p class="step__text"><strong>Better choice: ManyPixels</strong> — motion graphics for ads, high-volume product imagery.</p>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-xl font-bold mb-2">2</div>
+            <h3 class="card-title">E-commerce Brand</h3>
+            <p><strong>Need:</strong> Product graphics, animated ads, social content</p>
+            <p><strong>Better choice: ManyPixels</strong> — motion graphics for ads, high-volume product imagery.</p>
+          </div>
         </div>
 
         <!-- Scenario 3 -->
-        <div class="step reveal">
-          <div class="step__number">3</div>
-          <h3 class="step__title">Funded Startup Scaling</h3>
-          <p class="step__text"><strong>Need:</strong> Product design, Framer website, pitch decks, brand refresh</p>
-          <p class="step__text"><strong>Better choice: MyDesigner</strong> — comprehensive design + development, dedicated team relationship.</p>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-xl font-bold mb-2">3</div>
+            <h3 class="card-title">Funded Startup Scaling</h3>
+            <p><strong>Need:</strong> Product design, Framer website, pitch decks, brand refresh</p>
+            <p><strong>Better choice: MyDesigner</strong> — comprehensive design + development, dedicated team relationship.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== FAQ ===== -->
-  <section class="section section--sm reveal" id="faq" style="background:var(--bg-card)">
-    <div class="container text-center">
-      <span class="section-label">FAQ</span>
-      <h2 class="section-title reveal">Frequently Asked Questions</h2>
+  <section class="py-16 bg-base-200" id="faq">
+    <div class="max-w-3xl mx-auto px-4 lg:px-8 text-center">
+      <span class="badge badge-outline badge-primary mb-4 reveal">FAQ</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mb-10 reveal">Frequently Asked Questions</h2>
 
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Is ManyPixels cheaper than MyDesigner?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Yes, ManyPixels starts at $549/month vs MyDesigner's $1,400/month. However, if you need web development, hiring a separate developer often costs more than the price difference.</div>
+      <div class="join join-vertical w-full text-left reveal">
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion" checked="checked">
+          <div class="collapse-title font-semibold">Is ManyPixels cheaper than MyDesigner?</div>
+          <div class="collapse-content">
+            <p>Yes, ManyPixels starts at $549/month vs MyDesigner's $1,400/month. However, if you need web development, hiring a separate developer often costs more than the price difference.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Which service has better quality?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Both deliver professional-quality work. ManyPixels has a larger global team; MyDesigner offers more personalized, dedicated team relationships especially on higher plans.</div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">Which service has better quality?</div>
+          <div class="collapse-content">
+            <p>Both deliver professional-quality work. ManyPixels has a larger global team; MyDesigner offers more personalized, dedicated team relationships especially on higher plans.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Can I get Webflow sites from ManyPixels?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">ManyPixels designs Webflow-ready mockups but doesn't develop them. You'd need a separate Webflow developer. MyDesigner designs AND builds the site.</div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">Can I get Webflow sites from ManyPixels?</div>
+          <div class="collapse-content">
+            <p>ManyPixels designs Webflow-ready mockups but doesn't develop them. You'd need a separate Webflow developer. MyDesigner designs AND builds the site.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Which is better for ongoing product design?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">MyDesigner's dedicated team model works better for product design where understanding context matters. ManyPixels is optimized for higher-volume, standalone requests.</div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">Which is better for ongoing product design?</div>
+          <div class="collapse-content">
+            <p>MyDesigner's dedicated team model works better for product design where understanding context matters. ManyPixels is optimized for higher-volume, standalone requests.</p>
           </div>
         </div>
       </div>
@@ -484,14 +495,14 @@
   </section>
 
   <!-- ===== DECISION TABLE ===== -->
-  <section class="section reveal">
-    <div class="container text-center">
-      <span class="section-label">Decision Guide</span>
-      <h2 class="section-title reveal">Which should you choose?</h2>
-      <p class="section-subtitle reveal" style="margin:0 auto">Match your priority to the right service.</p>
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4 lg:px-8 text-center">
+      <span class="badge badge-outline badge-primary mb-4 reveal">Decision Guide</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mb-4 reveal">Which should you choose?</h2>
+      <p class="text-lg opacity-70 mb-10 reveal">Match your priority to the right service.</p>
 
-      <div class="vs-table-wrapper reveal">
-        <table class="comparison-table">
+      <div class="overflow-x-auto reveal">
+        <table class="table table-zebra bg-base-100 rounded-box">
           <thead>
             <tr>
               <th>Your Priority</th>
@@ -530,76 +541,67 @@
   </section>
 
   <!-- ===== FINAL CTA ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-block reveal">
-        <h2 class="cta-block__title">Ready to try MyDesigner?</h2>
-        <p class="cta-block__text">Get unlimited design + Webflow/Framer development in one subscription. No contracts. Cancel anytime.</p>
-        <div class="btn-group" style="justify-content:center">
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call</a>
+  <section class="py-16 bg-base-200">
+    <div class="max-w-3xl mx-auto px-4 lg:px-8">
+      <div class="card bg-primary text-primary-content reveal">
+        <div class="card-body text-center">
+          <h2 class="card-title justify-center text-2xl lg:text-3xl">Ready to try MyDesigner?</h2>
+          <p class="opacity-90">Get unlimited design + Webflow/Framer development in one subscription. No contracts. Cancel anytime.</p>
+          <div class="card-actions justify-center mt-4">
+            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-secondary btn-lg">Book a call</a>
+          </div>
+          <p class="text-sm opacity-75 mt-2">No contracts. Cancel anytime. Starting at $1,400/mo</p>
         </div>
-        <p class="microcopy" style="text-align:center">No contracts. Cancel anytime. Starting at $1,400/mo</p>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <a href="/" class="nav__logo" style="margin-bottom:var(--space-sm)">
-            <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
-            MyDesigner
-          </a>
-          <p>MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Pages</h4>
-          <nav class="footer__links">
-            <a href="/services.html">Services</a>
-            <a href="/how-it-works.html">How It Works</a>
-            <a href="/pricing.html">Pricing</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/faq.html">FAQ</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Compare</h4>
-          <nav class="footer__links">
-            <a href="/vs/designjoy.html">vs DesignJoy</a>
-            <a href="/vs/penji.html">vs Penji</a>
-            <a href="/vs/manypixels.html">vs ManyPixels</a>
-            <a href="/vs/kimp.html">vs Kimp</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Get Started</h4>
-          <nav class="footer__links">
-            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5">Book a Call</a>
-          </nav>
-        </div>
+  <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10" role="contentinfo">
+    <aside>
+      <a href="/" class="flex items-center gap-2 font-bold text-lg mb-2">
+        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">
+        MyDesigner
+      </a>
+      <p class="max-w-xs">MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
+    </aside>
+    <nav>
+      <h6 class="footer-title">Pages</h6>
+      <a href="/services.html" class="link link-hover">Services</a>
+      <a href="/how-it-works.html" class="link link-hover">How It Works</a>
+      <a href="/pricing.html" class="link link-hover">Pricing</a>
+      <a href="/portfolio.html" class="link link-hover">Portfolio</a>
+      <a href="/faq.html" class="link link-hover">FAQ</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Compare</h6>
+      <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
+      <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
+      <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
+      <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Get Started</h6>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
+    </nav>
+  </footer>
+  <footer class="footer sm:footer-horizontal bg-base-300 text-base-content border-t border-base-300 px-10 py-4">
+    <aside class="grid-flow-col items-center">
+      <p>&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
+    </aside>
+    <nav class="md:place-self-center md:justify-self-end">
+      <div class="grid grid-flow-col gap-4">
+        <a href="https://x.com/mydesigner_gg" aria-label="X (Twitter)" class="link link-hover">𝕏</a>
+        <a href="https://www.linkedin.com/showcase/mydesigner-sukratu/?viewAsMember=true" aria-label="LinkedIn" class="link link-hover">in</a>
+        <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram" class="link link-hover">📷</a>
       </div>
-
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
-        <div class="footer__social">
-          <a href="https://twitter.com/mydesignergg" aria-label="Twitter">&#x1D54F;</a>
-          <a href="https://linkedin.com/company/mydesigner" aria-label="LinkedIn">in</a>
-          <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram">&#x1F4F7;</a>
-        </div>
-      </div>
-    </div>
+    </nav>
   </footer>
 
   <!-- Mobile floating CTA -->
   <div class="floating-cta">
-    <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call — it's free</a>
+    <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg w-full">Book a call — it's free</a>
   </div>
-
   <script src="../js/main.js"></script>
 </body>
 </html>

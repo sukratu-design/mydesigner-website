@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +20,9 @@
   <meta name="twitter:title" content="Every Design Service You Need, One Subscription — MyDesigner">
   <meta name="twitter:description" content="UI/UX design, no-code development, graphic design & more. One subscription, every design skill. Starting at $1,400/mo.">
 
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
@@ -108,465 +109,503 @@
   }
   </script>
 </head>
-<body>
+<body class="bg-base-100 text-base-content">
 
   <!-- ===== NAVIGATION ===== -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="/" class="nav__logo" aria-label="MyDesigner home">
-        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
+  <nav class="navbar bg-base-100 sticky top-0 z-50 px-4 lg:px-8" role="navigation" aria-label="Main navigation">
+    <div class="navbar-start">
+      <a href="/" class="flex items-center gap-2 font-bold text-lg" aria-label="MyDesigner home">
+        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">
         MyDesigner
       </a>
-
-      <div class="nav__links">
-        <a href="/services.html" class="nav__link nav__link--active">Services</a>
-        <a href="/how-it-works.html" class="nav__link">How It Works</a>
-        <a href="/pricing.html" class="nav__link">Pricing</a>
-        <a href="/portfolio.html" class="nav__link">Portfolio</a>
-        <a href="/faq.html" class="nav__link">FAQ</a>
-      </div>
-
-      <div class="nav__cta">
-        <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--sm">Book a call</a>
-      </div>
-
-      <button class="nav__hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-
-    <div class="nav__mobile-menu">
-      <a href="/services.html">Services</a>
-      <a href="/how-it-works.html">How It Works</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary">Book a call</a>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-1">
+        <li><a href="/services.html" class="font-medium">Services</a></li>
+        <li><a href="/how-it-works.html" class="font-medium">How It Works</a></li>
+        <li><a href="/pricing.html" class="font-medium">Pricing</a></li>
+        <li><a href="/portfolio.html" class="font-medium">Portfolio</a></li>
+        <li><a href="/faq.html" class="font-medium">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
+      <div class="dropdown dropdown-end lg:hidden">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-square">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </div>
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/how-it-works.html">How It Works</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
   <!-- ===== PAGE HEADER ===== -->
-  <header class="page-header">
-    <div class="container text-center">
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span class="breadcrumbs__sep">/</span>
-        <span aria-current="page">Services</span>
-      </nav>
-      <h1 class="page-header__title">Every Design Service You Need,<br><span class="text-gradient">One Subscription</span></h1>
-      <p class="page-header__subtitle">From product design to brand identity to live websites — all under one roof.</p>
+  <section class="py-16 lg:py-24" data-hero>
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <div class="breadcrumbs text-sm mb-8"><ul><li><a href="/">Home</a></li><li>Services</li></ul></div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4 reveal">Every Design Service You Need,<br><span class="text-primary">One Subscription</span></h1>
+      <p class="text-base-content/70 max-w-2xl mx-auto text-lg reveal">From product design to brand identity to live websites — all under one roof.</p>
     </div>
-  </header>
+  </section>
 
   <!-- ===== SERVICE 1: PRODUCT DESIGN (UI/UX) ===== -->
-  <section class="section" id="product-design">
-    <div class="container">
+  <section class="py-16 lg:py-24 bg-base-200" id="product-design">
+    <div class="max-w-6xl mx-auto px-4">
       <div class="text-center">
-        <span class="section-label">Product Design</span>
-        <h2 class="section-title reveal">UI/UX Design</h2>
-        <p class="section-subtitle reveal" style="margin:0 auto">Beautiful, functional interfaces for web and mobile. We design for usability, conversion, and brand consistency.</p>
+        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Product Design</span>
+        <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">UI/UX Design</h2>
+        <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Beautiful, functional interfaces for web and mobile. We design for usability, conversion, and brand consistency.</p>
       </div>
 
-      <div class="services-grid" style="margin-top:var(--space-3xl)">
-        <div class="service-card reveal">
-          <div class="service-card__icon">🖥</div>
-          <h3 class="service-card__title">Web App UI</h3>
-          <p class="service-card__text">Dashboard designs, SaaS interfaces, admin panels, and complex web applications built for clarity and usability.</p>
-          <ul class="service-card__list">
-            <li>Dashboard &amp; analytics UI</li>
-            <li>SaaS product interfaces</li>
-            <li>Admin panels &amp; tools</li>
-            <li>Component-based design</li>
-          </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">🖥</div>
+            <h3 class="card-title">Web App UI</h3>
+            <p class="text-base-content/70">Dashboard designs, SaaS interfaces, admin panels, and complex web applications built for clarity and usability.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Dashboard &amp; analytics UI</li>
+              <li>SaaS product interfaces</li>
+              <li>Admin panels &amp; tools</li>
+              <li>Component-based design</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">📱</div>
-          <h3 class="service-card__title">Mobile App UI</h3>
-          <p class="service-card__text">Native-feeling interfaces for iOS and Android that delight users and drive engagement.</p>
-          <ul class="service-card__list">
-            <li>iOS &amp; Android design</li>
-            <li>Cross-platform UI</li>
-            <li>App store assets</li>
-            <li>Gesture-first interactions</li>
-          </ul>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">📱</div>
+            <h3 class="card-title">Mobile App UI</h3>
+            <p class="text-base-content/70">Native-feeling interfaces for iOS and Android that delight users and drive engagement.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>iOS &amp; Android design</li>
+              <li>Cross-platform UI</li>
+              <li>App store assets</li>
+              <li>Gesture-first interactions</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">🌐</div>
-          <h3 class="service-card__title">Website Design</h3>
-          <p class="service-card__text">Marketing websites, landing pages, and multi-page sites designed to convert visitors into customers.</p>
-          <ul class="service-card__list">
-            <li>Marketing websites</li>
-            <li>Landing page design</li>
-            <li>Multi-page site layouts</li>
-            <li>Conversion-focused design</li>
-          </ul>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">🌐</div>
+            <h3 class="card-title">Website Design</h3>
+            <p class="text-base-content/70">Marketing websites, landing pages, and multi-page sites designed to convert visitors into customers.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Marketing websites</li>
+              <li>Landing page design</li>
+              <li>Multi-page site layouts</li>
+              <li>Conversion-focused design</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">📐</div>
-          <h3 class="service-card__title">Wireframing &amp; Prototyping</h3>
-          <p class="service-card__text">Low-fidelity wireframes and interactive prototypes to validate ideas before committing to full design.</p>
-          <ul class="service-card__list">
-            <li>Low-fi wireframes</li>
-            <li>Interactive prototypes</li>
-            <li>User flow mapping</li>
-            <li>Clickable demos</li>
-          </ul>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">📐</div>
+            <h3 class="card-title">Wireframing &amp; Prototyping</h3>
+            <p class="text-base-content/70">Low-fidelity wireframes and interactive prototypes to validate ideas before committing to full design.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Low-fi wireframes</li>
+              <li>Interactive prototypes</li>
+              <li>User flow mapping</li>
+              <li>Clickable demos</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">🧩</div>
-          <h3 class="service-card__title">Design Systems</h3>
-          <p class="service-card__text">Scalable component libraries and style guides that keep your product consistent as it grows.</p>
-          <ul class="service-card__list">
-            <li>Component libraries</li>
-            <li>Style guides &amp; tokens</li>
-            <li>Figma design systems</li>
-            <li>Documentation</li>
-          </ul>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">🧩</div>
+            <h3 class="card-title">Design Systems</h3>
+            <p class="text-base-content/70">Scalable component libraries and style guides that keep your product consistent as it grows.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Component libraries</li>
+              <li>Style guides &amp; tokens</li>
+              <li>Figma design systems</li>
+              <li>Documentation</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== SERVICE 2: NO-CODE DEVELOPMENT ===== -->
-  <section class="section section--sm" id="no-code" style="background:var(--bg-card)">
-    <div class="container">
+  <section class="py-16 lg:py-24" id="no-code">
+    <div class="max-w-6xl mx-auto px-4">
       <div class="text-center">
-        <span class="section-label">Key Differentiator</span>
-        <h2 class="section-title reveal">No-Code Development</h2>
-        <p class="section-subtitle reveal" style="margin:0 auto">Unlike competitors who only deliver mockups, MyDesigner designs AND builds your site. Get a live, editable Webflow or Framer website.</p>
+        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Key Differentiator</span>
+        <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">No-Code Development</h2>
+        <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Unlike competitors who only deliver mockups, MyDesigner designs AND builds your site. Get a live, editable Webflow or Framer website.</p>
       </div>
 
-      <div class="vs-summary reveal" style="margin-top:var(--space-2xl);text-align:center">
-        <p style="color:var(--accent-light);font-weight:600;font-size:var(--font-size-base);margin-bottom:var(--space-sm)">What sets us apart from DesignJoy, Penji, and other design subscriptions?</p>
-        <p>Most design subscription services deliver static Figma files or mockups. You still need to hire a developer to build them. With MyDesigner, you get design + development in one subscription. Submit a request for a landing page, and receive a working, live website — not just a pretty picture.</p>
+      <div class="card bg-base-200 mb-12 reveal">
+        <div class="card-body text-center">
+          <p class="text-primary font-semibold mb-2">What sets us apart from DesignJoy, Penji, and other design subscriptions?</p>
+          <p class="text-base-content/70 max-w-3xl mx-auto">Most design subscription services deliver static Figma files or mockups. You still need to hire a developer to build them. With MyDesigner, you get design + development in one subscription. Submit a request for a landing page, and receive a working, live website — not just a pretty picture.</p>
+        </div>
       </div>
 
-      <div class="services-grid" style="margin-top:var(--space-3xl)">
-        <div class="service-card reveal">
-          <div class="service-card__icon">⚡</div>
-          <h3 class="service-card__title">Webflow Development</h3>
-          <p class="service-card__text">Pixel-perfect Webflow sites with clean structure, CMS integration, and responsive design out of the box.</p>
-          <ul class="service-card__list">
-            <li>Pixel-perfect builds</li>
-            <li>Responsive on all devices</li>
-            <li>Clean, maintainable structure</li>
-            <li>SEO-optimized setup</li>
-          </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">⚡</div>
+            <h3 class="card-title">Webflow Development</h3>
+            <p class="text-base-content/70">Pixel-perfect Webflow sites with clean structure, CMS integration, and responsive design out of the box.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Pixel-perfect builds</li>
+              <li>Responsive on all devices</li>
+              <li>Clean, maintainable structure</li>
+              <li>SEO-optimized setup</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">🚀</div>
-          <h3 class="service-card__title">Framer Development</h3>
-          <p class="service-card__text">High-performance Framer sites with smooth animations and interactions that impress visitors.</p>
-          <ul class="service-card__list">
-            <li>Advanced animations</li>
-            <li>Component-based builds</li>
-            <li>Lightning-fast performance</li>
-            <li>Interactive elements</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">🚀</div>
+            <h3 class="card-title">Framer Development</h3>
+            <p class="text-base-content/70">High-performance Framer sites with smooth animations and interactions that impress visitors.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Advanced animations</li>
+              <li>Component-based builds</li>
+              <li>Lightning-fast performance</li>
+              <li>Interactive elements</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">🎯</div>
-          <h3 class="service-card__title">Landing Pages</h3>
-          <p class="service-card__text">Conversion-optimized landing pages designed and built to turn traffic into leads and customers.</p>
-          <ul class="service-card__list">
-            <li>Conversion-focused design</li>
-            <li>A/B test ready</li>
-            <li>Lead capture forms</li>
-            <li>Analytics integration</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">🎯</div>
+            <h3 class="card-title">Landing Pages</h3>
+            <p class="text-base-content/70">Conversion-optimized landing pages designed and built to turn traffic into leads and customers.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Conversion-focused design</li>
+              <li>A/B test ready</li>
+              <li>Lead capture forms</li>
+              <li>Analytics integration</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">🏗</div>
-          <h3 class="service-card__title">Full Website Builds</h3>
-          <p class="service-card__text">Multi-page websites with complex navigation, blog sections, and dynamic content — designed and built end to end.</p>
-          <ul class="service-card__list">
-            <li>Multi-page architecture</li>
-            <li>Blog &amp; content sections</li>
-            <li>Navigation &amp; site maps</li>
-            <li>Third-party integrations</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">🏗</div>
+            <h3 class="card-title">Full Website Builds</h3>
+            <p class="text-base-content/70">Multi-page websites with complex navigation, blog sections, and dynamic content — designed and built end to end.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Multi-page architecture</li>
+              <li>Blog &amp; content sections</li>
+              <li>Navigation &amp; site maps</li>
+              <li>Third-party integrations</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">📋</div>
-          <h3 class="service-card__title">CMS Setup</h3>
-          <p class="service-card__text">Content management systems configured so your team can update content without touching code.</p>
-          <ul class="service-card__list">
-            <li>Webflow CMS setup</li>
-            <li>Dynamic collections</li>
-            <li>Content templates</li>
-            <li>Editor training &amp; handoff</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">📋</div>
+            <h3 class="card-title">CMS Setup</h3>
+            <p class="text-base-content/70">Content management systems configured so your team can update content without touching code.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Webflow CMS setup</li>
+              <li>Dynamic collections</li>
+              <li>Content templates</li>
+              <li>Editor training &amp; handoff</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== SERVICE 3: GRAPHIC DESIGN ===== -->
-  <section class="section" id="graphic-design">
-    <div class="container">
+  <section class="py-16 lg:py-24 bg-base-200" id="graphic-design">
+    <div class="max-w-6xl mx-auto px-4">
       <div class="text-center">
-        <span class="section-label">Graphic Design</span>
-        <h2 class="section-title reveal">Everything Visual Your Brand Needs</h2>
-        <p class="section-subtitle reveal" style="margin:0 auto">Everything visual your brand needs — from logo design to pitch decks to social media templates.</p>
+        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Graphic Design</span>
+        <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Everything Visual Your Brand Needs</h2>
+        <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Everything visual your brand needs — from logo design to pitch decks to social media templates.</p>
       </div>
 
-      <div class="services-grid" style="margin-top:var(--space-3xl)">
-        <div class="service-card reveal">
-          <div class="service-card__icon">✏️</div>
-          <h3 class="service-card__title">Brand Identity &amp; Logos</h3>
-          <p class="service-card__text">Complete brand identity systems including logos, color palettes, typography, and brand guidelines.</p>
-          <ul class="service-card__list">
-            <li>Logo design &amp; variations</li>
-            <li>Brand color palettes</li>
-            <li>Typography selection</li>
-            <li>Brand guidelines document</li>
-          </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">✏️</div>
+            <h3 class="card-title">Brand Identity &amp; Logos</h3>
+            <p class="text-base-content/70">Complete brand identity systems including logos, color palettes, typography, and brand guidelines.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Logo design &amp; variations</li>
+              <li>Brand color palettes</li>
+              <li>Typography selection</li>
+              <li>Brand guidelines document</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">📣</div>
-          <h3 class="service-card__title">Social Media Design</h3>
-          <p class="service-card__text">Scroll-stopping social media graphics, templates, and campaign visuals for every platform.</p>
-          <ul class="service-card__list">
-            <li>Post &amp; story templates</li>
-            <li>Campaign graphics</li>
-            <li>Profile &amp; cover designs</li>
-            <li>Ad creatives</li>
-          </ul>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">📣</div>
+            <h3 class="card-title">Social Media Design</h3>
+            <p class="text-base-content/70">Scroll-stopping social media graphics, templates, and campaign visuals for every platform.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Post &amp; story templates</li>
+              <li>Campaign graphics</li>
+              <li>Profile &amp; cover designs</li>
+              <li>Ad creatives</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">📊</div>
-          <h3 class="service-card__title">Presentation Design</h3>
-          <p class="service-card__text">Investor pitch decks, sales presentations, and internal decks that look polished and persuasive.</p>
-          <ul class="service-card__list">
-            <li>Pitch deck design</li>
-            <li>Sales presentations</li>
-            <li>Keynote &amp; PowerPoint</li>
-            <li>Google Slides templates</li>
-          </ul>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">📊</div>
+            <h3 class="card-title">Presentation Design</h3>
+            <p class="text-base-content/70">Investor pitch decks, sales presentations, and internal decks that look polished and persuasive.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Pitch deck design</li>
+              <li>Sales presentations</li>
+              <li>Keynote &amp; PowerPoint</li>
+              <li>Google Slides templates</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">🖨</div>
-          <h3 class="service-card__title">Print Design</h3>
-          <p class="service-card__text">Business cards, brochures, flyers, posters, and everything your brand needs in the physical world.</p>
-          <ul class="service-card__list">
-            <li>Business cards</li>
-            <li>Brochures &amp; flyers</li>
-            <li>Posters &amp; banners</li>
-            <li>Print-ready files</li>
-          </ul>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">🖨</div>
+            <h3 class="card-title">Print Design</h3>
+            <p class="text-base-content/70">Business cards, brochures, flyers, posters, and everything your brand needs in the physical world.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Business cards</li>
+              <li>Brochures &amp; flyers</li>
+              <li>Posters &amp; banners</li>
+              <li>Print-ready files</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">📦</div>
-          <h3 class="service-card__title">Packaging</h3>
-          <p class="service-card__text">Product packaging design that stands out on shelves and communicates your brand story.</p>
-          <ul class="service-card__list">
-            <li>Product packaging</li>
-            <li>Label design</li>
-            <li>Box &amp; bag design</li>
-            <li>Mockups &amp; dielines</li>
-          </ul>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">📦</div>
+            <h3 class="card-title">Packaging</h3>
+            <p class="text-base-content/70">Product packaging design that stands out on shelves and communicates your brand story.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Product packaging</li>
+              <li>Label design</li>
+              <li>Box &amp; bag design</li>
+              <li>Mockups &amp; dielines</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">📈</div>
-          <h3 class="service-card__title">Infographics</h3>
-          <p class="service-card__text">Data visualization and infographics that turn complex information into clear, shareable visuals.</p>
-          <ul class="service-card__list">
-            <li>Data visualization</li>
-            <li>Process diagrams</li>
-            <li>Comparison graphics</li>
-            <li>Report visuals</li>
-          </ul>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">📈</div>
+            <h3 class="card-title">Infographics</h3>
+            <p class="text-base-content/70">Data visualization and infographics that turn complex information into clear, shareable visuals.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Data visualization</li>
+              <li>Process diagrams</li>
+              <li>Comparison graphics</li>
+              <li>Report visuals</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== SERVICE 4: ADDITIONAL SERVICES ===== -->
-  <section class="section section--sm" id="additional" style="background:var(--bg-card)">
-    <div class="container">
+  <section class="py-16 lg:py-24" id="additional">
+    <div class="max-w-6xl mx-auto px-4">
       <div class="text-center">
-        <span class="section-label">Additional Services</span>
-        <h2 class="section-title reveal">Specialized Design Projects</h2>
-        <p class="section-subtitle reveal" style="margin:0 auto">Beyond core design and development, we handle specialized projects too.</p>
+        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Additional Services</span>
+        <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Specialized Design Projects</h2>
+        <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Beyond core design and development, we handle specialized projects too.</p>
       </div>
 
-      <div class="services-grid" style="margin-top:var(--space-3xl)">
-        <div class="service-card reveal">
-          <div class="service-card__icon">📄</div>
-          <h3 class="service-card__title">Case Study Design</h3>
-          <p class="service-card__text">Visually compelling case studies that showcase your results and win new clients.</p>
-          <ul class="service-card__list">
-            <li>Case study layouts</li>
-            <li>Data-driven visuals</li>
-            <li>Before/after showcases</li>
-            <li>PDF &amp; web formats</li>
-          </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">📄</div>
+            <h3 class="card-title">Case Study Design</h3>
+            <p class="text-base-content/70">Visually compelling case studies that showcase your results and win new clients.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Case study layouts</li>
+              <li>Data-driven visuals</li>
+              <li>Before/after showcases</li>
+              <li>PDF &amp; web formats</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">📧</div>
-          <h3 class="service-card__title">Emailer Design</h3>
-          <p class="service-card__text">Email templates and newsletter designs that drive opens, clicks, and conversions.</p>
-          <ul class="service-card__list">
-            <li>Newsletter templates</li>
-            <li>Promotional emails</li>
-            <li>Drip campaign designs</li>
-            <li>Responsive HTML emails</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">📧</div>
+            <h3 class="card-title">Emailer Design</h3>
+            <p class="text-base-content/70">Email templates and newsletter designs that drive opens, clicks, and conversions.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Newsletter templates</li>
+              <li>Promotional emails</li>
+              <li>Drip campaign designs</li>
+              <li>Responsive HTML emails</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">🏢</div>
-          <h3 class="service-card__title">Booth &amp; Exhibition Design</h3>
-          <p class="service-card__text">Trade show booths, exhibition graphics, and event materials that make your brand impossible to miss.</p>
-          <ul class="service-card__list">
-            <li>Booth layout design</li>
-            <li>Exhibition graphics</li>
-            <li>Backdrop &amp; signage</li>
-            <li>Event collateral</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">🏢</div>
+            <h3 class="card-title">Booth &amp; Exhibition Design</h3>
+            <p class="text-base-content/70">Trade show booths, exhibition graphics, and event materials that make your brand impossible to miss.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Booth layout design</li>
+              <li>Exhibition graphics</li>
+              <li>Backdrop &amp; signage</li>
+              <li>Event collateral</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">👕</div>
-          <h3 class="service-card__title">Merchandise Design</h3>
-          <p class="service-card__text">Branded merchandise designs for t-shirts, hoodies, mugs, tote bags, and more.</p>
-          <ul class="service-card__list">
-            <li>T-shirt &amp; apparel design</li>
-            <li>Mug &amp; accessory design</li>
-            <li>Tote bags &amp; swag</li>
-            <li>Print-ready artwork</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">👕</div>
+            <h3 class="card-title">Merchandise Design</h3>
+            <p class="text-base-content/70">Branded merchandise designs for t-shirts, hoodies, mugs, tote bags, and more.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>T-shirt &amp; apparel design</li>
+              <li>Mug &amp; accessory design</li>
+              <li>Tote bags &amp; swag</li>
+              <li>Print-ready artwork</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">✉️</div>
-          <h3 class="service-card__title">Stationery</h3>
-          <p class="service-card__text">Letterheads, envelopes, business cards, and complete stationery suites that reinforce your brand.</p>
-          <ul class="service-card__list">
-            <li>Letterhead design</li>
-            <li>Envelope design</li>
-            <li>Compliment slips</li>
-            <li>Full stationery suites</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">✉️</div>
+            <h3 class="card-title">Stationery</h3>
+            <p class="text-base-content/70">Letterheads, envelopes, business cards, and complete stationery suites that reinforce your brand.</p>
+            <ul class="mt-3 space-y-1 text-sm text-base-content/70">
+              <li>Letterhead design</li>
+              <li>Envelope design</li>
+              <li>Compliment slips</li>
+              <li>Full stationery suites</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== WHAT'S INCLUDED ===== -->
-  <section class="section" id="included">
-    <div class="container text-center">
-      <span class="section-label">What's Included</span>
-      <h2 class="section-title reveal">What's Included in Every Plan</h2>
-      <p class="section-subtitle reveal" style="margin:0 auto">Every MyDesigner subscription comes loaded with everything you need to move fast and stay consistent.</p>
+  <section class="py-16 lg:py-24 bg-base-200" id="included">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">What's Included</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">What's Included in Every Plan</h2>
+      <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Every MyDesigner subscription comes loaded with everything you need to move fast and stay consistent.</p>
 
-      <ul class="features-included reveal">
-        <li>Unlimited design requests</li>
-        <li>Unlimited revisions</li>
-        <li>Source files included</li>
-        <li>No contracts — cancel anytime</li>
-        <li>24-72 hour turnaround</li>
-        <li>Dedicated project board</li>
-        <li>Figma source files</li>
-        <li>Webflow/Framer development</li>
-        <li>Brand consistency across projects</li>
-        <li>Direct designer communication</li>
-        <li>Native file formats (AI, PSD, SVG, PDF)</li>
-        <li>100% ownership of all work</li>
-      </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto reveal">
+        <div class="card bg-base-100"><div class="card-body items-center text-center py-4"><p class="font-medium">Unlimited design requests</p></div></div>
+        <div class="card bg-base-100"><div class="card-body items-center text-center py-4"><p class="font-medium">Unlimited revisions</p></div></div>
+        <div class="card bg-base-100"><div class="card-body items-center text-center py-4"><p class="font-medium">Source files included</p></div></div>
+        <div class="card bg-base-100"><div class="card-body items-center text-center py-4"><p class="font-medium">No contracts — cancel anytime</p></div></div>
+        <div class="card bg-base-100"><div class="card-body items-center text-center py-4"><p class="font-medium">24-72 hour turnaround</p></div></div>
+        <div class="card bg-base-100"><div class="card-body items-center text-center py-4"><p class="font-medium">Dedicated project board</p></div></div>
+        <div class="card bg-base-100"><div class="card-body items-center text-center py-4"><p class="font-medium">Figma source files</p></div></div>
+        <div class="card bg-base-100"><div class="card-body items-center text-center py-4"><p class="font-medium">Webflow/Framer development</p></div></div>
+        <div class="card bg-base-100"><div class="card-body items-center text-center py-4"><p class="font-medium">Brand consistency across projects</p></div></div>
+        <div class="card bg-base-100"><div class="card-body items-center text-center py-4"><p class="font-medium">Direct designer communication</p></div></div>
+        <div class="card bg-base-100"><div class="card-body items-center text-center py-4"><p class="font-medium">Native file formats (AI, PSD, SVG, PDF)</p></div></div>
+        <div class="card bg-base-100"><div class="card-body items-center text-center py-4"><p class="font-medium">100% ownership of all work</p></div></div>
+      </div>
     </div>
   </section>
 
   <!-- ===== STATS ROW ===== -->
-  <section class="section section--sm" style="background:var(--bg-card)">
-    <div class="container text-center">
-      <div class="stats-row reveal">
-        <div class="stat">
-          <div class="stat__number">$1,400</div>
-          <div class="stat__label">Starting price per month</div>
+  <section class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+        <div class="card bg-base-200">
+          <div class="card-body items-center text-center">
+            <p class="text-3xl lg:text-4xl font-bold text-primary">$1,400</p>
+            <p class="text-base-content/70 text-sm">Starting price per month</p>
+          </div>
         </div>
-        <div class="stat">
-          <div class="stat__number">24-72h</div>
-          <div class="stat__label">Average turnaround time</div>
+        <div class="card bg-base-200">
+          <div class="card-body items-center text-center">
+            <p class="text-3xl lg:text-4xl font-bold text-primary">24-72h</p>
+            <p class="text-base-content/70 text-sm">Average turnaround time</p>
+          </div>
         </div>
-        <div class="stat">
-          <div class="stat__number">0</div>
-          <div class="stat__label">Long-term contracts</div>
+        <div class="card bg-base-200">
+          <div class="card-body items-center text-center">
+            <p class="text-3xl lg:text-4xl font-bold text-primary">0</p>
+            <p class="text-base-content/70 text-sm">Long-term contracts</p>
+          </div>
         </div>
-        <div class="stat">
-          <div class="stat__number">100+</div>
-          <div class="stat__label">Companies served</div>
+        <div class="card bg-base-200">
+          <div class="card-body items-center text-center">
+            <p class="text-3xl lg:text-4xl font-bold text-primary">100+</p>
+            <p class="text-base-content/70 text-sm">Companies served</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== FINAL CTA ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-block reveal">
-        <h2 class="cta-block__title">Ready to get started?</h2>
-        <p class="cta-block__text">Join 100+ companies who trust MyDesigner for unlimited design and development. Book a call to see how we can help.</p>
-        <div class="btn-group" style="justify-content:center">
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call</a>
+  <section class="py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="card bg-primary text-primary-content reveal">
+        <div class="card-body items-center text-center py-12">
+          <h2 class="text-3xl lg:text-4xl font-bold">Ready to get started?</h2>
+          <p class="max-w-xl mt-4 mb-6 text-primary-content/80">Join 100+ companies who trust MyDesigner for unlimited design and development. Book a call to see how we can help.</p>
+          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-secondary btn-lg">Book a call</a>
+          <p class="text-sm text-primary-content/60 mt-4">No contracts. Cancel anytime. Starting at $1,400/mo</p>
         </div>
-        <p class="microcopy" style="text-align:center">No contracts. Cancel anytime. Starting at $1,400/mo</p>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <a href="/" class="nav__logo" style="margin-bottom:var(--space-sm)">
-            <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
-            MyDesigner
-          </a>
-          <p>MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Pages</h4>
-          <nav class="footer__links">
-            <a href="/services.html">Services</a>
-            <a href="/how-it-works.html">How It Works</a>
-            <a href="/pricing.html">Pricing</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/faq.html">FAQ</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Compare</h4>
-          <nav class="footer__links">
-            <a href="/vs/designjoy.html">vs DesignJoy</a>
-            <a href="/vs/penji.html">vs Penji</a>
-            <a href="/vs/manypixels.html">vs ManyPixels</a>
-            <a href="/vs/kimp.html">vs Kimp</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Get Started</h4>
-          <nav class="footer__links">
-            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5">Book a Call</a>
-          </nav>
-        </div>
+  <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10" role="contentinfo">
+    <aside>
+      <a href="/" class="flex items-center gap-2 font-bold text-lg mb-2">
+        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">
+        MyDesigner
+      </a>
+      <p class="max-w-xs">MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
+    </aside>
+    <nav>
+      <h6 class="footer-title">Pages</h6>
+      <a href="/services.html" class="link link-hover">Services</a>
+      <a href="/how-it-works.html" class="link link-hover">How It Works</a>
+      <a href="/pricing.html" class="link link-hover">Pricing</a>
+      <a href="/portfolio.html" class="link link-hover">Portfolio</a>
+      <a href="/faq.html" class="link link-hover">FAQ</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Compare</h6>
+      <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
+      <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
+      <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
+      <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Get Started</h6>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
+    </nav>
+  </footer>
+  <footer class="footer sm:footer-horizontal bg-base-300 text-base-content border-t border-base-300 px-10 py-4">
+    <aside class="grid-flow-col items-center">
+      <p>&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
+    </aside>
+    <nav class="md:place-self-center md:justify-self-end">
+      <div class="grid grid-flow-col gap-4">
+        <a href="https://x.com/mydesigner_gg" aria-label="X (Twitter)" class="link link-hover">𝕏</a>
+        <a href="https://www.linkedin.com/showcase/mydesigner-sukratu/?viewAsMember=true" aria-label="LinkedIn" class="link link-hover">in</a>
+        <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram" class="link link-hover">📷</a>
       </div>
-
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
-        <div class="footer__social">
-          <a href="https://twitter.com/mydesignergg" aria-label="Twitter">&#x1d54f;</a>
-          <a href="https://linkedin.com/company/mydesigner" aria-label="LinkedIn">in</a>
-          <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram">&#x1f4f7;</a>
-        </div>
-      </div>
-    </div>
+    </nav>
   </footer>
 
   <!-- Mobile floating CTA -->
   <div class="floating-cta">
-    <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call — it's free</a>
+    <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg w-full">Book a call — it's free</a>
   </div>
 
   <script src="js/main.js"></script>
