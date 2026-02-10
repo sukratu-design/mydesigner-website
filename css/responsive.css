@@ -22,6 +22,10 @@
     grid-auto-rows: 240px;
   }
 
+  .portfolio-showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .portfolio-full-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -96,6 +100,14 @@
 
   .portfolio-grid__item--tall {
     grid-row: span 1;
+  }
+
+  .portfolio-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-showcase__item--wide {
+    grid-column: span 1;
   }
 
   .pricing-cards {
