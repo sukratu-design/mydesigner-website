@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +20,9 @@
   <meta name="twitter:title" content="Portfolio — MyDesigner | Our Design & Development Work">
   <meta name="twitter:description" content="From startups to global enterprises like Dentsu and Talabat — see the quality we deliver. UI/UX, web development, graphic design, and branding.">
 
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
@@ -45,177 +46,197 @@
   }
   </script>
 </head>
-<body>
+<body class="bg-base-100 text-base-content">
 
   <!-- ===== NAVIGATION ===== -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="/" class="nav__logo" aria-label="MyDesigner home">
-        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
+  <nav class="navbar bg-base-100 sticky top-0 z-50 px-4 lg:px-8" role="navigation" aria-label="Main navigation">
+    <div class="navbar-start">
+      <a href="/" class="flex items-center gap-2 font-bold text-lg" aria-label="MyDesigner home">
+        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">
         MyDesigner
       </a>
-
-      <div class="nav__links">
-        <a href="/services.html" class="nav__link">Services</a>
-        <a href="/how-it-works.html" class="nav__link">How It Works</a>
-        <a href="/pricing.html" class="nav__link">Pricing</a>
-        <a href="/portfolio.html" class="nav__link nav__link--active">Portfolio</a>
-        <a href="/faq.html" class="nav__link">FAQ</a>
-      </div>
-
-      <div class="nav__cta">
-        <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--sm">Book a call</a>
-      </div>
-
-      <button class="nav__hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-
-    <div class="nav__mobile-menu">
-      <a href="/services.html">Services</a>
-      <a href="/how-it-works.html">How It Works</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary">Book a call</a>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-1">
+        <li><a href="/services.html" class="font-medium">Services</a></li>
+        <li><a href="/how-it-works.html" class="font-medium">How It Works</a></li>
+        <li><a href="/pricing.html" class="font-medium">Pricing</a></li>
+        <li><a href="/portfolio.html" class="font-medium">Portfolio</a></li>
+        <li><a href="/faq.html" class="font-medium">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
+      <div class="dropdown dropdown-end lg:hidden">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-square">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </div>
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/how-it-works.html">How It Works</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
   <!-- ===== PAGE HEADER ===== -->
-  <header class="page-header">
-    <div class="container text-center">
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span class="breadcrumbs__sep">/</span>
-        <span aria-current="page">Portfolio</span>
-      </nav>
-      <h1 class="page-header__title reveal">Our Work</h1>
-      <p class="page-header__subtitle reveal">From startups to global enterprises like Dentsu and Talabat — see the quality we deliver.</p>
+  <header class="py-16 lg:py-24 text-center" data-hero>
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="breadcrumbs text-sm mb-8"><ul><li><a href="/">Home</a></li><li>Portfolio</li></ul></div>
+      <h1 class="text-4xl lg:text-5xl font-bold reveal">Our Work</h1>
+      <p class="text-lg lg:text-xl opacity-70 mt-4 max-w-2xl mx-auto reveal">From startups to global enterprises like Dentsu and Talabat — see the quality we deliver.</p>
     </div>
   </header>
 
   <!-- ===== PORTFOLIO SECTION ===== -->
-  <section class="section section--sm">
-    <div class="container">
+  <section class="py-12 lg:py-16">
+    <div class="max-w-7xl mx-auto px-4">
 
       <!-- Filter Buttons -->
-      <div class="portfolio-filters reveal">
-        <button class="portfolio-filter active" data-filter="all">All</button>
-        <button class="portfolio-filter" data-filter="uiux">UI/UX Design</button>
-        <button class="portfolio-filter" data-filter="webdev">Web Development</button>
-        <button class="portfolio-filter" data-filter="graphic">Graphic Design</button>
-        <button class="portfolio-filter" data-filter="branding">Branding</button>
+      <div class="flex flex-wrap gap-2 justify-center mb-10 reveal">
+        <button class="btn btn-sm portfolio-filter btn-active" data-filter="all">All</button>
+        <button class="btn btn-sm portfolio-filter" data-filter="uiux">UI/UX Design</button>
+        <button class="btn btn-sm portfolio-filter" data-filter="webdev">Web Development</button>
+        <button class="btn btn-sm portfolio-filter" data-filter="graphic">Graphic Design</button>
+        <button class="btn btn-sm portfolio-filter" data-filter="branding">Branding</button>
       </div>
 
       <!-- Portfolio Grid -->
-      <div class="portfolio-full-grid reveal">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
 
         <!-- 1. SaaS Dashboard Design -->
         <div class="portfolio-item" data-category="uiux">
-          <div class="portfolio-item__image" style="background:linear-gradient(135deg, #1a1a2e, #16213e)"></div>
-          <div class="portfolio-item__info">
-            <p class="portfolio-item__category">UI/UX Design</p>
-            <h3 class="portfolio-item__title">SaaS Dashboard Design</h3>
+          <div class="card bg-base-100 shadow-md overflow-hidden">
+            <div class="portfolio-item__image h-48 w-full" style="background:linear-gradient(135deg, #1a1a2e, #16213e)"></div>
+            <div class="card-body p-4">
+              <div class="badge badge-outline mb-2">UI/UX Design</div>
+              <h3 class="card-title text-base">SaaS Dashboard Design</h3>
+            </div>
           </div>
         </div>
 
         <!-- 2. Fintech Mobile App -->
         <div class="portfolio-item" data-category="uiux">
-          <div class="portfolio-item__image" style="background:linear-gradient(135deg, #0f0c29, #302b63)"></div>
-          <div class="portfolio-item__info">
-            <p class="portfolio-item__category">UI/UX Design</p>
-            <h3 class="portfolio-item__title">Fintech Mobile App</h3>
+          <div class="card bg-base-100 shadow-md overflow-hidden">
+            <div class="portfolio-item__image h-48 w-full" style="background:linear-gradient(135deg, #0f0c29, #302b63)"></div>
+            <div class="card-body p-4">
+              <div class="badge badge-outline mb-2">UI/UX Design</div>
+              <h3 class="card-title text-base">Fintech Mobile App</h3>
+            </div>
           </div>
         </div>
 
         <!-- 3. E-commerce Webflow Site -->
         <div class="portfolio-item" data-category="webdev">
-          <div class="portfolio-item__image" style="background:linear-gradient(135deg, #0f3443, #34e89e)"></div>
-          <div class="portfolio-item__info">
-            <p class="portfolio-item__category">Web Development</p>
-            <h3 class="portfolio-item__title">E-commerce Webflow Site</h3>
+          <div class="card bg-base-100 shadow-md overflow-hidden">
+            <div class="portfolio-item__image h-48 w-full" style="background:linear-gradient(135deg, #0f3443, #34e89e)"></div>
+            <div class="card-body p-4">
+              <div class="badge badge-outline mb-2">Web Development</div>
+              <h3 class="card-title text-base">E-commerce Webflow Site</h3>
+            </div>
           </div>
         </div>
 
         <!-- 4. Startup Landing Page -->
         <div class="portfolio-item" data-category="webdev">
-          <div class="portfolio-item__image" style="background:linear-gradient(135deg, #232526, #414345)"></div>
-          <div class="portfolio-item__info">
-            <p class="portfolio-item__category">Web Development</p>
-            <h3 class="portfolio-item__title">Startup Landing Page</h3>
+          <div class="card bg-base-100 shadow-md overflow-hidden">
+            <div class="portfolio-item__image h-48 w-full" style="background:linear-gradient(135deg, #232526, #414345)"></div>
+            <div class="card-body p-4">
+              <div class="badge badge-outline mb-2">Web Development</div>
+              <h3 class="card-title text-base">Startup Landing Page</h3>
+            </div>
           </div>
         </div>
 
         <!-- 5. Brand Identity System -->
         <div class="portfolio-item" data-category="branding">
-          <div class="portfolio-item__image" style="background:linear-gradient(135deg, #2d1b69, #11998e)"></div>
-          <div class="portfolio-item__info">
-            <p class="portfolio-item__category">Branding</p>
-            <h3 class="portfolio-item__title">Brand Identity System</h3>
+          <div class="card bg-base-100 shadow-md overflow-hidden">
+            <div class="portfolio-item__image h-48 w-full" style="background:linear-gradient(135deg, #2d1b69, #11998e)"></div>
+            <div class="card-body p-4">
+              <div class="badge badge-outline mb-2">Branding</div>
+              <h3 class="card-title text-base">Brand Identity System</h3>
+            </div>
           </div>
         </div>
 
         <!-- 6. Tech Company Rebrand -->
         <div class="portfolio-item" data-category="branding">
-          <div class="portfolio-item__image" style="background:linear-gradient(135deg, #200122, #6f0000)"></div>
-          <div class="portfolio-item__info">
-            <p class="portfolio-item__category">Branding</p>
-            <h3 class="portfolio-item__title">Tech Company Rebrand</h3>
+          <div class="card bg-base-100 shadow-md overflow-hidden">
+            <div class="portfolio-item__image h-48 w-full" style="background:linear-gradient(135deg, #200122, #6f0000)"></div>
+            <div class="card-body p-4">
+              <div class="badge badge-outline mb-2">Branding</div>
+              <h3 class="card-title text-base">Tech Company Rebrand</h3>
+            </div>
           </div>
         </div>
 
         <!-- 7. Social Media Campaign -->
         <div class="portfolio-item" data-category="graphic">
-          <div class="portfolio-item__image" style="background:linear-gradient(135deg, #2c3e50, #3498db)"></div>
-          <div class="portfolio-item__info">
-            <p class="portfolio-item__category">Graphic Design</p>
-            <h3 class="portfolio-item__title">Social Media Campaign</h3>
+          <div class="card bg-base-100 shadow-md overflow-hidden">
+            <div class="portfolio-item__image h-48 w-full" style="background:linear-gradient(135deg, #2c3e50, #3498db)"></div>
+            <div class="card-body p-4">
+              <div class="badge badge-outline mb-2">Graphic Design</div>
+              <h3 class="card-title text-base">Social Media Campaign</h3>
+            </div>
           </div>
         </div>
 
         <!-- 8. Pitch Deck Design -->
         <div class="portfolio-item" data-category="graphic">
-          <div class="portfolio-item__image" style="background:linear-gradient(135deg, #1e3c72, #2a5298)"></div>
-          <div class="portfolio-item__info">
-            <p class="portfolio-item__category">Graphic Design</p>
-            <h3 class="portfolio-item__title">Pitch Deck Design</h3>
+          <div class="card bg-base-100 shadow-md overflow-hidden">
+            <div class="portfolio-item__image h-48 w-full" style="background:linear-gradient(135deg, #1e3c72, #2a5298)"></div>
+            <div class="card-body p-4">
+              <div class="badge badge-outline mb-2">Graphic Design</div>
+              <h3 class="card-title text-base">Pitch Deck Design</h3>
+            </div>
           </div>
         </div>
 
         <!-- 9. Healthcare App UI -->
         <div class="portfolio-item" data-category="uiux">
-          <div class="portfolio-item__image" style="background:linear-gradient(135deg, #134e5e, #71b280)"></div>
-          <div class="portfolio-item__info">
-            <p class="portfolio-item__category">UI/UX Design</p>
-            <h3 class="portfolio-item__title">Healthcare App UI</h3>
+          <div class="card bg-base-100 shadow-md overflow-hidden">
+            <div class="portfolio-item__image h-48 w-full" style="background:linear-gradient(135deg, #134e5e, #71b280)"></div>
+            <div class="card-body p-4">
+              <div class="badge badge-outline mb-2">UI/UX Design</div>
+              <h3 class="card-title text-base">Healthcare App UI</h3>
+            </div>
           </div>
         </div>
 
         <!-- 10. Framer Portfolio Site -->
         <div class="portfolio-item" data-category="webdev">
-          <div class="portfolio-item__image" style="background:linear-gradient(135deg, #373b44, #4286f4)"></div>
-          <div class="portfolio-item__info">
-            <p class="portfolio-item__category">Web Development</p>
-            <h3 class="portfolio-item__title">Framer Portfolio Site</h3>
+          <div class="card bg-base-100 shadow-md overflow-hidden">
+            <div class="portfolio-item__image h-48 w-full" style="background:linear-gradient(135deg, #373b44, #4286f4)"></div>
+            <div class="card-body p-4">
+              <div class="badge badge-outline mb-2">Web Development</div>
+              <h3 class="card-title text-base">Framer Portfolio Site</h3>
+            </div>
           </div>
         </div>
 
         <!-- 11. Restaurant Branding -->
         <div class="portfolio-item" data-category="branding">
-          <div class="portfolio-item__image" style="background:linear-gradient(135deg, #c94b4b, #4b134f)"></div>
-          <div class="portfolio-item__info">
-            <p class="portfolio-item__category">Branding</p>
-            <h3 class="portfolio-item__title">Restaurant Branding</h3>
+          <div class="card bg-base-100 shadow-md overflow-hidden">
+            <div class="portfolio-item__image h-48 w-full" style="background:linear-gradient(135deg, #c94b4b, #4b134f)"></div>
+            <div class="card-body p-4">
+              <div class="badge badge-outline mb-2">Branding</div>
+              <h3 class="card-title text-base">Restaurant Branding</h3>
+            </div>
           </div>
         </div>
 
         <!-- 12. Marketing Collateral -->
         <div class="portfolio-item" data-category="graphic">
-          <div class="portfolio-item__image" style="background:linear-gradient(135deg, #544a7d, #ffd452)"></div>
-          <div class="portfolio-item__info">
-            <p class="portfolio-item__category">Graphic Design</p>
-            <h3 class="portfolio-item__title">Marketing Collateral</h3>
+          <div class="card bg-base-100 shadow-md overflow-hidden">
+            <div class="portfolio-item__image h-48 w-full" style="background:linear-gradient(135deg, #544a7d, #ffd452)"></div>
+            <div class="card-body p-4">
+              <div class="badge badge-outline mb-2">Graphic Design</div>
+              <h3 class="card-title text-base">Marketing Collateral</h3>
+            </div>
           </div>
         </div>
 
@@ -224,76 +245,67 @@
   </section>
 
   <!-- ===== CTA SECTION ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-block reveal">
-        <h2 class="cta-block__title">Like what you see?</h2>
-        <p class="cta-block__text">Let's create something amazing together.</p>
-        <div class="btn-group" style="justify-content:center">
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call</a>
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="card bg-primary text-primary-content reveal">
+        <div class="card-body items-center text-center py-16">
+          <h2 class="card-title text-3xl lg:text-4xl font-bold">Like what you see?</h2>
+          <p class="text-lg opacity-90 mt-2">Let's create something amazing together.</p>
+          <div class="card-actions mt-6">
+            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-lg bg-white text-primary hover:bg-gray-100">Book a call</a>
+          </div>
+          <p class="text-sm opacity-75 mt-4">No contracts. Cancel anytime. Starting at $1,400/mo</p>
         </div>
-        <p class="microcopy" style="text-align:center">No contracts. Cancel anytime. Starting at $1,400/mo</p>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <a href="/" class="nav__logo" style="margin-bottom:var(--space-sm)">
-            <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
-            MyDesigner
-          </a>
-          <p>MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Pages</h4>
-          <nav class="footer__links">
-            <a href="/services.html">Services</a>
-            <a href="/how-it-works.html">How It Works</a>
-            <a href="/pricing.html">Pricing</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/faq.html">FAQ</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Compare</h4>
-          <nav class="footer__links">
-            <a href="/vs/designjoy.html">vs DesignJoy</a>
-            <a href="/vs/penji.html">vs Penji</a>
-            <a href="/vs/manypixels.html">vs ManyPixels</a>
-            <a href="/vs/kimp.html">vs Kimp</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Get Started</h4>
-          <nav class="footer__links">
-            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5">Book a Call</a>
-          </nav>
-        </div>
+  <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10" role="contentinfo">
+    <aside>
+      <a href="/" class="flex items-center gap-2 font-bold text-lg mb-2">
+        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">
+        MyDesigner
+      </a>
+      <p class="max-w-xs">MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
+    </aside>
+    <nav>
+      <h6 class="footer-title">Pages</h6>
+      <a href="/services.html" class="link link-hover">Services</a>
+      <a href="/how-it-works.html" class="link link-hover">How It Works</a>
+      <a href="/pricing.html" class="link link-hover">Pricing</a>
+      <a href="/portfolio.html" class="link link-hover">Portfolio</a>
+      <a href="/faq.html" class="link link-hover">FAQ</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Compare</h6>
+      <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
+      <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
+      <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
+      <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Get Started</h6>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
+    </nav>
+  </footer>
+  <footer class="footer sm:footer-horizontal bg-base-300 text-base-content border-t border-base-300 px-10 py-4">
+    <aside class="grid-flow-col items-center">
+      <p>&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
+    </aside>
+    <nav class="md:place-self-center md:justify-self-end">
+      <div class="grid grid-flow-col gap-4">
+        <a href="https://x.com/mydesigner_gg" aria-label="X (Twitter)" class="link link-hover">&#x1d54f;</a>
+        <a href="https://www.linkedin.com/showcase/mydesigner-sukratu/?viewAsMember=true" aria-label="LinkedIn" class="link link-hover">in</a>
+        <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram" class="link link-hover">&#x1f4f7;</a>
       </div>
-
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
-        <div class="footer__social">
-          <a href="https://twitter.com/mydesignergg" aria-label="Twitter">&#x1d54f;</a>
-          <a href="https://linkedin.com/company/mydesigner" aria-label="LinkedIn">in</a>
-          <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram">&#x1f4f7;</a>
-        </div>
-      </div>
-    </div>
+    </nav>
   </footer>
 
   <!-- Mobile floating CTA -->
   <div class="floating-cta">
-    <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call — it's free</a>
+    <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg w-full">Book a call — it's free</a>
   </div>
-
   <script src="js/main.js"></script>
 </body>
 </html>

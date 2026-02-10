@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +20,9 @@
   <meta name="twitter:title" content="FAQ — MyDesigner | Unlimited Design Subscription Questions & Answers">
   <meta name="twitter:description" content="Answers to common questions about MyDesigner's unlimited design subscription. Pricing, services, turnaround, and how to get started.">
 
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
@@ -247,116 +248,67 @@
   }
   </script>
 </head>
-<body>
+<body class="bg-base-100 text-base-content">
 
   <!-- ===== NAVIGATION ===== -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="/" class="nav__logo" aria-label="MyDesigner home">
-        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
-        MyDesigner
-      </a>
-
-      <div class="nav__links">
-        <a href="/services.html" class="nav__link">Services</a>
-        <a href="/how-it-works.html" class="nav__link">How It Works</a>
-        <a href="/pricing.html" class="nav__link">Pricing</a>
-        <a href="/portfolio.html" class="nav__link">Portfolio</a>
-        <a href="/faq.html" class="nav__link active">FAQ</a>
-      </div>
-
-      <div class="nav__cta">
-        <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--sm">Book a call</a>
-      </div>
-
-      <button class="nav__hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <div class="nav__mobile-menu">
-      <a href="/services.html">Services</a>
-      <a href="/how-it-works.html">How It Works</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary">Book a call</a>
-    </div>
+  <nav class="navbar bg-base-100 sticky top-0 z-50 px-4 lg:px-8" role="navigation" aria-label="Main navigation">
+    <div class="navbar-start"><a href="/" class="flex items-center gap-2 font-bold text-lg" aria-label="MyDesigner home"><img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">MyDesigner</a></div>
+    <div class="navbar-center hidden lg:flex"><ul class="menu menu-horizontal px-1 gap-1"><li><a href="/services.html" class="font-medium">Services</a></li><li><a href="/how-it-works.html" class="font-medium">How It Works</a></li><li><a href="/pricing.html" class="font-medium">Pricing</a></li><li><a href="/portfolio.html" class="font-medium">Portfolio</a></li><li><a href="/faq.html" class="font-medium">FAQ</a></li></ul></div>
+    <div class="navbar-end gap-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a><div class="dropdown dropdown-end lg:hidden"><div tabindex="0" role="button" class="btn btn-ghost btn-square"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></div><ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2"><li><a href="/services.html">Services</a></li><li><a href="/how-it-works.html">How It Works</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/portfolio.html">Portfolio</a></li><li><a href="/faq.html">FAQ</a></li><li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li></ul></div></div>
   </nav>
 
   <!-- ===== PAGE HEADER ===== -->
-  <section class="hero hero--subpage">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ol class="breadcrumb__list">
-          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
-          <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">FAQ</li>
-        </ol>
-      </nav>
-      <h1 class="hero__title">Frequently Asked Questions</h1>
-      <p class="hero__subtitle">Answers to common questions about MyDesigner's unlimited design subscription service.</p>
+  <section class="py-16 lg:py-20 text-center" data-hero>
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="breadcrumbs text-sm mb-4 justify-center"><ul><li><a href="/">Home</a></li><li>FAQ</li></ul></div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+      <p class="text-lg text-base-content/70 max-w-2xl mx-auto">Answers to common questions about MyDesigner's unlimited design subscription service.</p>
     </div>
   </section>
 
   <!-- ===== GENERAL QUESTIONS ===== -->
-  <section class="section" id="general">
-    <div class="container">
-      <span class="section-label reveal">General Questions</span>
-      <h2 class="section-title reveal">About MyDesigner</h2>
+  <section class="py-16 lg:py-24" id="general">
+    <div class="max-w-3xl mx-auto px-4">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">General Questions</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-8">About MyDesigner</h2>
 
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-item__question">
-            What is MyDesigner?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">MyDesigner is an unlimited design subscription service by Sukratu, based in Pune, India. For a fixed monthly fee starting at $1,400, you get unlimited design requests including UI/UX design, Webflow/Framer development, graphic design, and branding. There are no long-term contracts — cancel anytime.</div>
+      <div class="join join-vertical w-full text-left">
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="general-faq" checked>
+          <div class="collapse-title font-semibold">What is MyDesigner?</div>
+          <div class="collapse-content text-base-content/70">MyDesigner is an unlimited design subscription service by Sukratu, based in Pune, India. For a fixed monthly fee starting at $1,400, you get unlimited design requests including UI/UX design, Webflow/Framer development, graphic design, and branding. There are no long-term contracts — cancel anytime.</div>
+        </div>
+
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="general-faq">
+          <div class="collapse-title font-semibold">How does MyDesigner work?</div>
+          <div class="collapse-content text-base-content/70">
+            <ol class="list-decimal list-inside space-y-1">
+              <li><strong>Subscribe</strong> to a plan that fits your needs</li>
+              <li><strong>Submit requests</strong> through our project management system</li>
+              <li><strong>Receive designs</strong> within 24-72 hours depending on your plan</li>
+              <li><strong>Request revisions</strong> until you're satisfied (unlimited revisions included)</li>
+              <li><strong>Repeat</strong> — submit as many requests as you need</li>
+            </ol>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            How does MyDesigner work?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              <ol>
-                <li><strong>Subscribe</strong> to a plan that fits your needs</li>
-                <li><strong>Submit requests</strong> through our project management system</li>
-                <li><strong>Receive designs</strong> within 24-72 hours depending on your plan</li>
-                <li><strong>Request revisions</strong> until you're satisfied (unlimited revisions included)</li>
-                <li><strong>Repeat</strong> — submit as many requests as you need</li>
-              </ol>
-            </div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="general-faq">
+          <div class="collapse-title font-semibold">Who uses MyDesigner?</div>
+          <div class="collapse-content text-base-content/70">MyDesigner serves growing businesses and established companies including Dentsu, Calfus, Talabat, and USA Table Tennis. Our clients span startups, SaaS companies, e-commerce brands, and agencies across India, the United States, and global markets.</div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Who uses MyDesigner?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">MyDesigner serves growing businesses and established companies including Dentsu, Calfus, Talabat, and USA Table Tennis. Our clients span startups, SaaS companies, e-commerce brands, and agencies across India, the United States, and global markets.</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-item__question">
-            What services does MyDesigner offer?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              <ul>
-                <li><strong>Product Design:</strong> Web app UI, mobile app UI, website design</li>
-                <li><strong>No-Code Development:</strong> Webflow and Framer website development</li>
-                <li><strong>Graphic Design:</strong> Brand identity, social media design, presentation design, print design</li>
-                <li><strong>Additional Services:</strong> Wireframing, infographics, prototyping, case studies, emailer design, stationery, merchandising, booth design</li>
-              </ul>
-            </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="general-faq">
+          <div class="collapse-title font-semibold">What services does MyDesigner offer?</div>
+          <div class="collapse-content text-base-content/70">
+            <ul class="list-disc list-inside space-y-1">
+              <li><strong>Product Design:</strong> Web app UI, mobile app UI, website design</li>
+              <li><strong>No-Code Development:</strong> Webflow and Framer website development</li>
+              <li><strong>Graphic Design:</strong> Brand identity, social media design, presentation design, print design</li>
+              <li><strong>Additional Services:</strong> Wireframing, infographics, prototyping, case studies, emailer design, stationery, merchandising, booth design</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -364,21 +316,19 @@
   </section>
 
   <!-- ===== PRICING QUESTIONS ===== -->
-  <section class="section section--sm" id="pricing-faq" style="background:var(--bg-card)">
-    <div class="container">
-      <span class="section-label reveal">Pricing Questions</span>
-      <h2 class="section-title reveal">Plans &amp; Pricing</h2>
+  <section class="py-16 lg:py-24 bg-base-200" id="pricing-faq">
+    <div class="max-w-3xl mx-auto px-4">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Pricing Questions</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-8">Plans &amp; Pricing</h2>
 
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-item__question">
-            How much does MyDesigner cost?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              MyDesigner offers several pricing tiers:
-              <table class="faq-table">
+      <div class="join join-vertical w-full text-left">
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="pricing-faq" checked>
+          <div class="collapse-title font-semibold">How much does MyDesigner cost?</div>
+          <div class="collapse-content text-base-content/70">
+            MyDesigner offers several pricing tiers:
+            <div class="overflow-x-auto mt-3">
+              <table class="table table-zebra">
                 <thead>
                   <tr><th>Plan</th><th>Price</th><th>Best For</th></tr>
                 </thead>
@@ -394,110 +344,82 @@
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Is there a free trial?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">We offer a Daily plan at $80/day with a 3-day minimum. This lets you test our service with real projects before committing to a monthly subscription.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="pricing-faq">
+          <div class="collapse-title font-semibold">Is there a free trial?</div>
+          <div class="collapse-content text-base-content/70">We offer a Daily plan at $80/day with a 3-day minimum. This lets you test our service with real projects before committing to a monthly subscription.</div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Are there any hidden fees?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">No. The subscription price covers unlimited requests and unlimited revisions. There are no per-project fees, revision fees, or hidden costs.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="pricing-faq">
+          <div class="collapse-title font-semibold">Are there any hidden fees?</div>
+          <div class="collapse-content text-base-content/70">No. The subscription price covers unlimited requests and unlimited revisions. There are no per-project fees, revision fees, or hidden costs.</div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Can I cancel anytime?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Yes. All monthly plans are cancel-anytime with no long-term contracts or cancellation fees.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="pricing-faq">
+          <div class="collapse-title font-semibold">Can I cancel anytime?</div>
+          <div class="collapse-content text-base-content/70">Yes. All monthly plans are cancel-anytime with no long-term contracts or cancellation fees.</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== COMPARISON QUESTIONS ===== -->
-  <section class="section" id="comparison-faq">
-    <div class="container">
-      <span class="section-label reveal">Comparison Questions</span>
-      <h2 class="section-title reveal">MyDesigner vs Alternatives</h2>
+  <section class="py-16 lg:py-24" id="comparison-faq">
+    <div class="max-w-3xl mx-auto px-4">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Comparison Questions</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-8">MyDesigner vs Alternatives</h2>
 
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-item__question">
-            How is MyDesigner different from DesignJoy?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              MyDesigner differs from DesignJoy in several ways:
-              <ul>
-                <li><strong>Price:</strong> MyDesigner starts at $1,400/month vs DesignJoy's $4,995/month</li>
-                <li><strong>Development:</strong> MyDesigner includes Webflow/Framer development; DesignJoy does not</li>
-                <li><strong>Team model:</strong> MyDesigner provides multi-disciplinary teams; DesignJoy assigns single designers</li>
-              </ul>
-            </div>
+      <div class="join join-vertical w-full text-left">
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="comparison-faq" checked>
+          <div class="collapse-title font-semibold">How is MyDesigner different from DesignJoy?</div>
+          <div class="collapse-content text-base-content/70">
+            MyDesigner differs from DesignJoy in several ways:
+            <ul class="list-disc list-inside space-y-1 mt-2">
+              <li><strong>Price:</strong> MyDesigner starts at $1,400/month vs DesignJoy's $4,995/month</li>
+              <li><strong>Development:</strong> MyDesigner includes Webflow/Framer development; DesignJoy does not</li>
+              <li><strong>Team model:</strong> MyDesigner provides multi-disciplinary teams; DesignJoy assigns single designers</li>
+            </ul>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            How does MyDesigner compare to Penji?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              <ul>
-                <li><strong>Price:</strong> Penji starts at $499/month; MyDesigner at $1,400/month</li>
-                <li><strong>Development:</strong> MyDesigner includes web development; Penji does not</li>
-                <li><strong>Video:</strong> Penji offers video editing; MyDesigner focuses on static design and development</li>
-              </ul>
-            </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="comparison-faq">
+          <div class="collapse-title font-semibold">How does MyDesigner compare to Penji?</div>
+          <div class="collapse-content text-base-content/70">
+            <ul class="list-disc list-inside space-y-1">
+              <li><strong>Price:</strong> Penji starts at $499/month; MyDesigner at $1,400/month</li>
+              <li><strong>Development:</strong> MyDesigner includes web development; Penji does not</li>
+              <li><strong>Video:</strong> Penji offers video editing; MyDesigner focuses on static design and development</li>
+            </ul>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Is MyDesigner better than hiring a full-time designer?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              MyDesigner is often more cost-effective than a full-time hire:
-              <ul>
-                <li><strong>Full-time designer salary:</strong> $60,000-$100,000+/year plus benefits</li>
-                <li><strong>MyDesigner annual:</strong> $15,000-$45,600/year depending on plan</li>
-                <li><strong>Added benefit:</strong> Access to multiple specialists (UI/UX, graphic design, development) vs one person's skills</li>
-              </ul>
-            </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="comparison-faq">
+          <div class="collapse-title font-semibold">Is MyDesigner better than hiring a full-time designer?</div>
+          <div class="collapse-content text-base-content/70">
+            MyDesigner is often more cost-effective than a full-time hire:
+            <ul class="list-disc list-inside space-y-1 mt-2">
+              <li><strong>Full-time designer salary:</strong> $60,000-$100,000+/year plus benefits</li>
+              <li><strong>MyDesigner annual:</strong> $15,000-$45,600/year depending on plan</li>
+              <li><strong>Added benefit:</strong> Access to multiple specialists (UI/UX, graphic design, development) vs one person's skills</li>
+            </ul>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            How does MyDesigner compare to traditional agencies?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              <ul>
-                <li><strong>Pricing:</strong> Fixed monthly vs per-project billing</li>
-                <li><strong>Speed:</strong> 24-72 hour turnaround vs weeks for agency projects</li>
-                <li><strong>Flexibility:</strong> Cancel anytime vs long-term contracts</li>
-                <li><strong>Scope:</strong> Unlimited requests vs scoped project deliverables</li>
-              </ul>
-            </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="comparison-faq">
+          <div class="collapse-title font-semibold">How does MyDesigner compare to traditional agencies?</div>
+          <div class="collapse-content text-base-content/70">
+            <ul class="list-disc list-inside space-y-1">
+              <li><strong>Pricing:</strong> Fixed monthly vs per-project billing</li>
+              <li><strong>Speed:</strong> 24-72 hour turnaround vs weeks for agency projects</li>
+              <li><strong>Flexibility:</strong> Cancel anytime vs long-term contracts</li>
+              <li><strong>Scope:</strong> Unlimited requests vs scoped project deliverables</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -505,271 +427,183 @@
   </section>
 
   <!-- ===== SERVICE QUESTIONS ===== -->
-  <section class="section section--sm" id="service-faq" style="background:var(--bg-card)">
-    <div class="container">
-      <span class="section-label reveal">Service Questions</span>
-      <h2 class="section-title reveal">What You Get</h2>
+  <section class="py-16 lg:py-24 bg-base-200" id="service-faq">
+    <div class="max-w-3xl mx-auto px-4">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Service Questions</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-8">What You Get</h2>
 
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-item__question">
-            What's included in each plan?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              All plans include:
-              <ul>
-                <li>Unlimited design requests</li>
-                <li>Unlimited revisions</li>
-                <li>UI/UX design</li>
-                <li>Graphic design</li>
-                <li>Webflow development</li>
-                <li>Framer development</li>
-                <li>24-72 hour turnaround</li>
-              </ul>
-              Higher-tier plans add:
-              <ul>
-                <li><strong>Growth ($2,600):</strong> Dedicated design manager, 2 requests at a time, 24-48h turnaround</li>
-                <li><strong>Scale ($3,800):</strong> Dedicated manager + team, 3 requests at a time</li>
-              </ul>
-            </div>
+      <div class="join join-vertical w-full text-left">
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="service-faq" checked>
+          <div class="collapse-title font-semibold">What's included in each plan?</div>
+          <div class="collapse-content text-base-content/70">
+            All plans include:
+            <ul class="list-disc list-inside space-y-1 mt-2">
+              <li>Unlimited design requests</li>
+              <li>Unlimited revisions</li>
+              <li>UI/UX design</li>
+              <li>Graphic design</li>
+              <li>Webflow development</li>
+              <li>Framer development</li>
+              <li>24-72 hour turnaround</li>
+            </ul>
+            <p class="mt-3">Higher-tier plans add:</p>
+            <ul class="list-disc list-inside space-y-1 mt-1">
+              <li><strong>Growth ($2,600):</strong> Dedicated design manager, 2 requests at a time, 24-48h turnaround</li>
+              <li><strong>Scale ($3,800):</strong> Dedicated manager + team, 3 requests at a time</li>
+            </ul>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            What design files do I receive?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              You receive source files appropriate to the project:
-              <ul>
-                <li><strong>UI/UX:</strong> Figma files</li>
-                <li><strong>Graphics:</strong> AI, PSD, PNG, JPG, PDF, SVG as needed</li>
-                <li><strong>Webflow/Framer:</strong> Live, editable site access</li>
-              </ul>
-            </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="service-faq">
+          <div class="collapse-title font-semibold">What design files do I receive?</div>
+          <div class="collapse-content text-base-content/70">
+            You receive source files appropriate to the project:
+            <ul class="list-disc list-inside space-y-1 mt-2">
+              <li><strong>UI/UX:</strong> Figma files</li>
+              <li><strong>Graphics:</strong> AI, PSD, PNG, JPG, PDF, SVG as needed</li>
+              <li><strong>Webflow/Framer:</strong> Live, editable site access</li>
+            </ul>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            How many requests can I have active at once?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              <ul>
-                <li><strong>Starter:</strong> 1 request at a time</li>
-                <li><strong>Growth:</strong> 2 requests at a time</li>
-                <li><strong>Scale:</strong> 3 requests at a time</li>
-              </ul>
-              You can queue unlimited requests — we work through them in order.
-            </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="service-faq">
+          <div class="collapse-title font-semibold">How many requests can I have active at once?</div>
+          <div class="collapse-content text-base-content/70">
+            <ul class="list-disc list-inside space-y-1">
+              <li><strong>Starter:</strong> 1 request at a time</li>
+              <li><strong>Growth:</strong> 2 requests at a time</li>
+              <li><strong>Scale:</strong> 3 requests at a time</li>
+            </ul>
+            <p class="mt-2">You can queue unlimited requests — we work through them in order.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Do you work on weekends?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Standard turnaround is based on working days (Monday-Friday). Rush requests can be accommodated on Growth and Scale plans.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="service-faq">
+          <div class="collapse-title font-semibold">Do you work on weekends?</div>
+          <div class="collapse-content text-base-content/70">Standard turnaround is based on working days (Monday-Friday). Rush requests can be accommodated on Growth and Scale plans.</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== TECHNICAL QUESTIONS ===== -->
-  <section class="section" id="technical-faq">
-    <div class="container">
-      <span class="section-label reveal">Technical Questions</span>
-      <h2 class="section-title reveal">Tools &amp; Technology</h2>
+  <section class="py-16 lg:py-24" id="technical-faq">
+    <div class="max-w-3xl mx-auto px-4">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Technical Questions</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-8">Tools &amp; Technology</h2>
 
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Do you build Webflow websites?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Yes. MyDesigner includes full Webflow development — we design AND build your site. You receive a live, editable Webflow site.</div>
-          </div>
+      <div class="join join-vertical w-full text-left">
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="technical-faq" checked>
+          <div class="collapse-title font-semibold">Do you build Webflow websites?</div>
+          <div class="collapse-content text-base-content/70">Yes. MyDesigner includes full Webflow development — we design AND build your site. You receive a live, editable Webflow site.</div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Do you build Framer websites?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Yes. Framer development is included in all plans. We design and build complete Framer sites.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="technical-faq">
+          <div class="collapse-title font-semibold">Do you build Framer websites?</div>
+          <div class="collapse-content text-base-content/70">Yes. Framer development is included in all plans. We design and build complete Framer sites.</div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Can you work with my existing Figma files?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Yes. We can continue work from existing Figma designs, style guides, and design systems.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="technical-faq">
+          <div class="collapse-title font-semibold">Can you work with my existing Figma files?</div>
+          <div class="collapse-content text-base-content/70">Yes. We can continue work from existing Figma designs, style guides, and design systems.</div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Do you provide source files?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Yes. All design work includes source files (Figma, AI, PSD, etc.) that you own completely.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="technical-faq">
+          <div class="collapse-title font-semibold">Do you provide source files?</div>
+          <div class="collapse-content text-base-content/70">Yes. All design work includes source files (Figma, AI, PSD, etc.) that you own completely.</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== GETTING STARTED ===== -->
-  <section class="section section--sm" id="getting-started" style="background:var(--bg-card)">
-    <div class="container">
-      <span class="section-label reveal">Getting Started</span>
-      <h2 class="section-title reveal">Start Your Subscription</h2>
+  <section class="py-16 lg:py-24 bg-base-200" id="getting-started">
+    <div class="max-w-3xl mx-auto px-4">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Getting Started</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-8">Start Your Subscription</h2>
 
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-item__question">
-            How do I get started with MyDesigner?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              <ol>
-                <li>Visit <a href="https://mydesigner.gg">mydesigner.gg</a></li>
-                <li>Choose your plan</li>
-                <li>Complete signup</li>
-                <li>Submit your first request</li>
-                <li>Receive designs within 24-72 hours</li>
-              </ol>
-            </div>
+      <div class="join join-vertical w-full text-left">
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="started-faq" checked>
+          <div class="collapse-title font-semibold">How do I get started with MyDesigner?</div>
+          <div class="collapse-content text-base-content/70">
+            <ol class="list-decimal list-inside space-y-1">
+              <li>Visit <a href="https://mydesigner.gg" class="link link-primary">mydesigner.gg</a></li>
+              <li>Choose your plan</li>
+              <li>Complete signup</li>
+              <li>Submit your first request</li>
+              <li>Receive designs within 24-72 hours</li>
+            </ol>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            What information do you need to start?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              For most projects, we need:
-              <ul>
-                <li>Project brief describing what you need</li>
-                <li>Brand assets (logo, colors, fonts) if available</li>
-                <li>Examples or references you like</li>
-                <li>Any specific requirements or constraints</li>
-              </ul>
-            </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="started-faq">
+          <div class="collapse-title font-semibold">What information do you need to start?</div>
+          <div class="collapse-content text-base-content/70">
+            For most projects, we need:
+            <ul class="list-disc list-inside space-y-1 mt-2">
+              <li>Project brief describing what you need</li>
+              <li>Brand assets (logo, colors, fonts) if available</li>
+              <li>Examples or references you like</li>
+              <li>Any specific requirements or constraints</li>
+            </ul>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            How do I submit design requests?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Requests are submitted through our project management system. You can provide detailed briefs, attach references, and communicate with your design team directly.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="started-faq">
+          <div class="collapse-title font-semibold">How do I submit design requests?</div>
+          <div class="collapse-content text-base-content/70">Requests are submitted through our project management system. You can provide detailed briefs, attach references, and communicate with your design team directly.</div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Can I talk to someone before signing up?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Yes. <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5">Book a call</a> through our website to discuss your needs and get recommendations on the right plan.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="started-faq">
+          <div class="collapse-title font-semibold">Can I talk to someone before signing up?</div>
+          <div class="collapse-content text-base-content/70">Yes. <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-primary">Book a call</a> through our website to discuss your needs and get recommendations on the right plan.</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== FINAL CTA ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-block reveal">
-        <h2 class="cta-block__title">Still have questions?</h2>
-        <p class="cta-block__text">Book a free call with our team. We'll walk you through the service, answer your questions, and help you pick the right plan.</p>
-        <div class="btn-group" style="justify-content:center">
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call</a>
+  <section class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="card bg-primary text-primary-content">
+        <div class="card-body items-center text-center py-12">
+          <h2 class="card-title text-2xl lg:text-3xl font-bold">Still have questions?</h2>
+          <p class="max-w-lg mt-2">Book a free call with our team. We'll walk you through the service, answer your questions, and help you pick the right plan.</p>
+          <div class="card-actions mt-6">
+            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-lg bg-white text-primary hover:bg-white/90 border-0">Book a call</a>
+          </div>
+          <p class="text-sm opacity-80 mt-4">No contracts. Cancel anytime. Starting at $1,400/mo</p>
         </div>
-        <p class="microcopy" style="text-align:center">No contracts. Cancel anytime. Starting at $1,400/mo</p>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <a href="/" class="nav__logo" style="margin-bottom:var(--space-sm)">
-            <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
-            MyDesigner
-          </a>
-          <p>MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Pages</h4>
-          <nav class="footer__links">
-            <a href="/services.html">Services</a>
-            <a href="/how-it-works.html">How It Works</a>
-            <a href="/pricing.html">Pricing</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/faq.html">FAQ</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Compare</h4>
-          <nav class="footer__links">
-            <a href="/vs/designjoy.html">vs DesignJoy</a>
-            <a href="/vs/penji.html">vs Penji</a>
-            <a href="/vs/manypixels.html">vs ManyPixels</a>
-            <a href="/vs/kimp.html">vs Kimp</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Get Started</h4>
-          <nav class="footer__links">
-            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5">Book a Call</a>
-          </nav>
-        </div>
-      </div>
-
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
-        <div class="footer__social">
-          <a href="https://twitter.com/mydesignergg" aria-label="Twitter">&#x1D54F;</a>
-          <a href="https://linkedin.com/company/mydesigner" aria-label="LinkedIn">in</a>
-          <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram">&#x1F4F7;</a>
-        </div>
-      </div>
-    </div>
+  <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10" role="contentinfo">
+    <aside><a href="/" class="flex items-center gap-2 font-bold text-lg mb-2"><img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">MyDesigner</a><p class="max-w-xs">MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p></aside>
+    <nav><h6 class="footer-title">Pages</h6><a href="/services.html" class="link link-hover">Services</a><a href="/how-it-works.html" class="link link-hover">How It Works</a><a href="/pricing.html" class="link link-hover">Pricing</a><a href="/portfolio.html" class="link link-hover">Portfolio</a><a href="/faq.html" class="link link-hover">FAQ</a></nav>
+    <nav><h6 class="footer-title">Compare</h6><a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a><a href="/vs/penji.html" class="link link-hover">vs Penji</a><a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a><a href="/vs/kimp.html" class="link link-hover">vs Kimp</a></nav>
+    <nav><h6 class="footer-title">Get Started</h6><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a></nav>
+  </footer>
+  <footer class="footer sm:footer-horizontal bg-base-300 text-base-content border-t border-base-300 px-10 py-4">
+    <aside class="grid-flow-col items-center"><p>&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p></aside>
+    <nav class="md:place-self-center md:justify-self-end"><div class="grid grid-flow-col gap-4"><a href="https://x.com/mydesigner_gg" aria-label="X (Twitter)" class="link link-hover">&#x1D54F;</a><a href="https://www.linkedin.com/showcase/mydesigner-sukratu/?viewAsMember=true" aria-label="LinkedIn" class="link link-hover">in</a><a href="https://instagram.com/mydesigner.gg" aria-label="Instagram" class="link link-hover">&#x1F4F7;</a></div></nav>
   </footer>
 
   <!-- Mobile floating CTA -->
-  <div class="floating-cta">
-    <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call — it's free</a>
-  </div>
+  <div class="floating-cta"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg w-full">Book a call — it's free</a></div>
 
   <script src="js/main.js"></script>
 </body>

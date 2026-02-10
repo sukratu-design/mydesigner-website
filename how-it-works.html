@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +20,9 @@
   <meta name="twitter:title" content="How MyDesigner Works — 3 Simple Steps to Great Design">
   <meta name="twitter:description" content="Subscribe, submit requests, receive designs within 24-72 hours. Unlimited revisions. No contracts. Starting at $1,400/mo.">
 
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
@@ -87,390 +88,400 @@
   }
   </script>
 </head>
-<body>
+<body class="bg-base-100 text-base-content">
 
   <!-- ===== NAVIGATION ===== -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="/" class="nav__logo" aria-label="MyDesigner home">
-        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
+  <nav class="navbar bg-base-100 sticky top-0 z-50 px-4 lg:px-8" role="navigation" aria-label="Main navigation">
+    <div class="navbar-start">
+      <a href="/" class="flex items-center gap-2 font-bold text-lg" aria-label="MyDesigner home">
+        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">
         MyDesigner
       </a>
-
-      <div class="nav__links">
-        <a href="/services.html" class="nav__link">Services</a>
-        <a href="/how-it-works.html" class="nav__link nav__link--active">How It Works</a>
-        <a href="/pricing.html" class="nav__link">Pricing</a>
-        <a href="/portfolio.html" class="nav__link">Portfolio</a>
-        <a href="/faq.html" class="nav__link">FAQ</a>
-      </div>
-
-      <div class="nav__cta">
-        <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--sm">Book a call</a>
-      </div>
-
-      <button class="nav__hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-
-    <div class="nav__mobile-menu">
-      <a href="/services.html">Services</a>
-      <a href="/how-it-works.html">How It Works</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary">Book a call</a>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-1">
+        <li><a href="/services.html" class="font-medium">Services</a></li>
+        <li><a href="/how-it-works.html" class="font-medium">How It Works</a></li>
+        <li><a href="/pricing.html" class="font-medium">Pricing</a></li>
+        <li><a href="/portfolio.html" class="font-medium">Portfolio</a></li>
+        <li><a href="/faq.html" class="font-medium">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
+      <div class="dropdown dropdown-end lg:hidden">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-square">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </div>
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/how-it-works.html">How It Works</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
   <!-- ===== PAGE HEADER WITH BREADCRUMBS ===== -->
-  <header class="page-header">
-    <div class="container text-center">
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span class="breadcrumbs__sep">&rsaquo;</span>
-        <span aria-current="page">How It Works</span>
-      </nav>
-      <h1 class="page-header__title">How <span class="text-gradient">MyDesigner</span> Works</h1>
-      <p class="page-header__subtitle">Getting professional design and development is simpler than you think. Here's the process.</p>
+  <header class="py-16 lg:py-24" data-hero>
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="breadcrumbs text-sm mb-8"><ul><li><a href="/">Home</a></li><li>How It Works</li></ul></div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">How <span class="text-primary">MyDesigner</span> Works</h1>
+      <p class="text-lg text-base-content/70 max-w-2xl mx-auto">Getting professional design and development is simpler than you think. Here's the process.</p>
     </div>
   </header>
 
   <!-- ===== 3-STEP PROCESS (EXPANDED) ===== -->
-  <section class="section section--sm" style="background:var(--bg-card)">
-    <div class="container text-center">
-      <span class="section-label">The Process</span>
-      <h2 class="section-title reveal">Three steps. That's it.</h2>
-      <p class="section-subtitle reveal" style="margin:0 auto">No onboarding calls. No lengthy proposals. No scope creep. Just great design, on repeat.</p>
+  <section class="py-16 lg:py-24 bg-base-200">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">The Process</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Three steps. That's it.</h2>
+      <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">No onboarding calls. No lengthy proposals. No scope creep. Just great design, on repeat.</p>
 
-      <div class="steps">
-        <div class="step reveal">
-          <div class="step__number">1</div>
-          <h3 class="step__title">Subscribe</h3>
-          <p class="step__text">Choose a plan that fits your needs. No setup fees. No long-term contracts. Start immediately.</p>
-          <ul class="service-card__list" style="margin-top:var(--space-lg);text-align:left">
-            <li>Daily &mdash; $80/day</li>
-            <li>Starter &mdash; $1,400/mo</li>
-            <li>Growth &mdash; $2,600/mo</li>
-            <li>Scale &mdash; $3,800/mo</li>
-          </ul>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Step 1 -->
+        <div class="card bg-base-100 reveal">
+          <div class="card-body items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-lg font-bold mb-2">1</div>
+            <h3 class="card-title">Subscribe</h3>
+            <p class="text-base-content/70">Choose a plan that fits your needs. No setup fees. No long-term contracts. Start immediately.</p>
+            <ul class="text-left mt-4 space-y-2 w-full">
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Daily &mdash; $80/day</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Starter &mdash; $1,400/mo</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Growth &mdash; $2,600/mo</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Scale &mdash; $3,800/mo</li>
+            </ul>
+          </div>
         </div>
-        <div class="step reveal">
-          <div class="step__number">2</div>
-          <h3 class="step__title">Submit Requests</h3>
-          <p class="step__text">Use our project management system to submit design or development requests. Include briefs, references, and brand assets. Queue unlimited requests.</p>
-          <ul class="service-card__list" style="margin-top:var(--space-lg);text-align:left">
-            <li>Detailed project briefs</li>
-            <li>Reference examples &amp; inspiration</li>
-            <li>Brand assets (logos, colors, fonts)</li>
-            <li>Unlimited request queue</li>
-          </ul>
+
+        <!-- Step 2 -->
+        <div class="card bg-base-100 reveal">
+          <div class="card-body items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-lg font-bold mb-2">2</div>
+            <h3 class="card-title">Submit Requests</h3>
+            <p class="text-base-content/70">Use our project management system to submit design or development requests. Include briefs, references, and brand assets. Queue unlimited requests.</p>
+            <ul class="text-left mt-4 space-y-2 w-full">
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Detailed project briefs</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Reference examples &amp; inspiration</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Brand assets (logos, colors, fonts)</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Unlimited request queue</li>
+            </ul>
+          </div>
         </div>
-        <div class="step reveal">
-          <div class="step__number">3</div>
-          <h3 class="step__title">Receive Designs</h3>
-          <p class="step__text">Get deliverables within 24-72 hours depending on your plan. Request unlimited revisions until you're 100% satisfied.</p>
-          <ul class="service-card__list" style="margin-top:var(--space-lg);text-align:left">
-            <li>Source files (Figma, AI, PSD)</li>
-            <li>Live sites (Webflow/Framer)</li>
-            <li>Unlimited revisions</li>
-            <li>Full ownership of all files</li>
-          </ul>
+
+        <!-- Step 3 -->
+        <div class="card bg-base-100 reveal">
+          <div class="card-body items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-lg font-bold mb-2">3</div>
+            <h3 class="card-title">Receive Designs</h3>
+            <p class="text-base-content/70">Get deliverables within 24-72 hours depending on your plan. Request unlimited revisions until you're 100% satisfied.</p>
+            <ul class="text-left mt-4 space-y-2 w-full">
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Source files (Figma, AI, PSD)</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Live sites (Webflow/Framer)</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Unlimited revisions</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Full ownership of all files</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== WHAT YOU CAN REQUEST ===== -->
-  <section class="section" id="services">
-    <div class="container text-center">
-      <span class="section-label">Services</span>
-      <h2 class="section-title reveal">What you can request</h2>
-      <p class="section-subtitle reveal" style="margin:0 auto">From product design to brand identity to live websites &mdash; submit any of these as a request.</p>
+  <section class="py-16 lg:py-24" id="services">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Services</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">What you can request</h2>
+      <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">From product design to brand identity to live websites &mdash; submit any of these as a request.</p>
 
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="service-card__icon">🎨</div>
-          <h3 class="service-card__title">Product Design</h3>
-          <p class="service-card__text">Beautiful, functional interfaces for web and mobile applications.</p>
-          <ul class="service-card__list">
-            <li>Web app UI design</li>
-            <li>Mobile app UI design</li>
-            <li>Website design</li>
-            <li>Dashboard &amp; SaaS interfaces</li>
-          </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Product Design -->
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">&#127912;</div>
+            <h3 class="card-title">Product Design</h3>
+            <p class="text-base-content/70">Beautiful, functional interfaces for web and mobile applications.</p>
+            <ul class="text-left mt-4 space-y-2">
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Web app UI design</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Mobile app UI design</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Website design</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Dashboard &amp; SaaS interfaces</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">&#9889;</div>
-          <h3 class="service-card__title">No-Code Development</h3>
-          <p class="service-card__text">Live, editable websites designed and built by the same team.</p>
-          <ul class="service-card__list">
-            <li>Webflow sites</li>
-            <li>Framer sites</li>
-            <li>Landing pages</li>
-            <li>Full website builds</li>
-          </ul>
+
+        <!-- No-Code Development -->
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">&#9889;</div>
+            <h3 class="card-title">No-Code Development</h3>
+            <p class="text-base-content/70">Live, editable websites designed and built by the same team.</p>
+            <ul class="text-left mt-4 space-y-2">
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Webflow sites</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Framer sites</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Landing pages</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Full website builds</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">&#9998;&#65039;</div>
-          <h3 class="service-card__title">Graphic Design</h3>
-          <p class="service-card__text">Everything visual &mdash; from brand identity to marketing collateral.</p>
-          <ul class="service-card__list">
-            <li>Branding &amp; logos</li>
-            <li>Social media design</li>
-            <li>Presentation design</li>
-            <li>Print &amp; packaging</li>
-          </ul>
+
+        <!-- Graphic Design -->
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">&#9998;&#65039;</div>
+            <h3 class="card-title">Graphic Design</h3>
+            <p class="text-base-content/70">Everything visual &mdash; from brand identity to marketing collateral.</p>
+            <ul class="text-left mt-4 space-y-2">
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Branding &amp; logos</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Social media design</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Presentation design</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Print &amp; packaging</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">&#128736;</div>
-          <h3 class="service-card__title">Additional Services</h3>
-          <p class="service-card__text">Beyond core design &mdash; everything else your brand needs.</p>
-          <ul class="service-card__list">
-            <li>Wireframes &amp; prototypes</li>
-            <li>Case studies</li>
-            <li>Emailers &amp; newsletters</li>
-            <li>Merchandise design</li>
-          </ul>
+
+        <!-- Additional Services -->
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <div class="text-3xl mb-2">&#128736;</div>
+            <h3 class="card-title">Additional Services</h3>
+            <p class="text-base-content/70">Beyond core design &mdash; everything else your brand needs.</p>
+            <ul class="text-left mt-4 space-y-2">
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Wireframes &amp; prototypes</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Case studies</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Emailers &amp; newsletters</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Merchandise design</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== TURNAROUND TIMES ===== -->
-  <section class="section section--sm" id="turnaround" style="background:var(--bg-card)">
-    <div class="container text-center">
-      <span class="section-label">Turnaround</span>
-      <h2 class="section-title reveal">How fast you'll receive designs</h2>
-      <p class="section-subtitle reveal" style="margin:0 auto">Turnaround varies by plan. Higher-tier plans get priority delivery.</p>
+  <section class="py-16 lg:py-24 bg-base-200" id="turnaround">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Turnaround</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">How fast you'll receive designs</h2>
+      <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Turnaround varies by plan. Higher-tier plans get priority delivery.</p>
 
-      <div class="pricing-cards reveal" style="margin-top:var(--space-3xl)">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
         <!-- Daily -->
-        <div class="pricing-card">
-          <h3 class="pricing-card__name">Daily</h3>
-          <div class="pricing-card__price">
-            <span class="pricing-card__amount">24-72h</span>
+        <div class="card bg-base-100">
+          <div class="card-body items-center text-center">
+            <h3 class="card-title">Daily</h3>
+            <p class="text-3xl font-bold text-primary my-2">24-72h</p>
+            <ul class="text-left space-y-2 w-full mt-4">
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> $80/day</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> 1 request at a time</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> All design services</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Unlimited revisions</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Source files included</li>
+            </ul>
           </div>
-          <ul class="pricing-card__features">
-            <li>$80/day</li>
-            <li>1 request at a time</li>
-            <li>All design services</li>
-            <li>Unlimited revisions</li>
-            <li>Source files included</li>
-          </ul>
         </div>
 
         <!-- Starter -->
-        <div class="pricing-card">
-          <h3 class="pricing-card__name">Starter</h3>
-          <div class="pricing-card__price">
-            <span class="pricing-card__amount">48-72h</span>
+        <div class="card bg-base-100">
+          <div class="card-body items-center text-center">
+            <h3 class="card-title">Starter</h3>
+            <p class="text-3xl font-bold text-primary my-2">48-72h</p>
+            <ul class="text-left space-y-2 w-full mt-4">
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> $1,400/mo</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> 1 request at a time</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> UI/UX + graphic design</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Webflow/Framer development</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Unlimited revisions</li>
+            </ul>
+            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm mt-4 w-full">Book a call</a>
           </div>
-          <ul class="pricing-card__features">
-            <li>$1,400/mo</li>
-            <li>1 request at a time</li>
-            <li>UI/UX + graphic design</li>
-            <li>Webflow/Framer development</li>
-            <li>Unlimited revisions</li>
-          </ul>
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary">Book a call</a>
         </div>
 
         <!-- Growth -->
-        <div class="pricing-card pricing-card--popular">
-          <span class="pricing-badge">Most Popular</span>
-          <h3 class="pricing-card__name">Growth</h3>
-          <div class="pricing-card__price">
-            <span class="pricing-card__amount">24-48h</span>
+        <div class="card bg-base-100 border-2 border-primary">
+          <div class="card-body items-center text-center">
+            <span class="badge badge-primary badge-sm">Most Popular</span>
+            <h3 class="card-title">Growth</h3>
+            <p class="text-3xl font-bold text-primary my-2">24-48h</p>
+            <ul class="text-left space-y-2 w-full mt-4">
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> $2,600/mo</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> 2 requests at a time</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Dedicated design manager</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Priority communication</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Unlimited revisions</li>
+            </ul>
+            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm mt-4 w-full">Book a call</a>
           </div>
-          <ul class="pricing-card__features">
-            <li>$2,600/mo</li>
-            <li>2 requests at a time</li>
-            <li>Dedicated design manager</li>
-            <li>Priority communication</li>
-            <li>Unlimited revisions</li>
-          </ul>
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary">Book a call</a>
         </div>
 
         <!-- Scale -->
-        <div class="pricing-card">
-          <h3 class="pricing-card__name">Scale</h3>
-          <div class="pricing-card__price">
-            <span class="pricing-card__amount" style="font-size:var(--font-size-3xl)">24-48h</span>
-            <span class="pricing-badge" style="position:static;transform:none;display:inline-block;margin-left:var(--space-sm);vertical-align:middle">Priority</span>
+        <div class="card bg-base-100">
+          <div class="card-body items-center text-center">
+            <h3 class="card-title">Scale</h3>
+            <div class="flex items-center gap-2 my-2">
+              <p class="text-3xl font-bold text-primary">24-48h</p>
+              <span class="badge badge-primary badge-sm">Priority</span>
+            </div>
+            <ul class="text-left space-y-2 w-full mt-4">
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> $3,800/mo</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> 3 requests at a time</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Dedicated design team</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Fastest turnaround &mdash; priority queue</li>
+              <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Unlimited revisions</li>
+            </ul>
+            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm mt-4 w-full">Book a call</a>
           </div>
-          <ul class="pricing-card__features">
-            <li>$3,800/mo</li>
-            <li>3 requests at a time</li>
-            <li>Dedicated design team</li>
-            <li>Fastest turnaround &mdash; priority queue</li>
-            <li>Unlimited revisions</li>
-          </ul>
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary">Book a call</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== WHAT TO EXPECT ===== -->
-  <section class="section" id="what-to-expect">
-    <div class="container text-center">
-      <span class="section-label">What to Expect</span>
-      <h2 class="section-title reveal">Your first week with MyDesigner</h2>
-      <p class="section-subtitle reveal" style="margin:0 auto">Here's exactly what happens after you subscribe.</p>
+  <section class="py-16 lg:py-24" id="what-to-expect">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">What to Expect</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Your first week with MyDesigner</h2>
+      <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Here's exactly what happens after you subscribe.</p>
 
-      <div class="differentiators" style="grid-template-columns:repeat(4,1fr);margin-top:var(--space-3xl)">
-        <div class="diff-card reveal">
-          <div class="diff-card__icon" style="background:rgba(0,200,83,0.15)">1</div>
-          <h3 class="diff-card__title">Submit Your Brief</h3>
-          <p class="diff-card__text">Write a brief describing your project. Include details, goals, target audience, and any references or inspiration. Attach brand assets like logos, colors, and fonts.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card bg-base-200 reveal">
+          <div class="card-body items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-lg font-bold mb-2">1</div>
+            <h3 class="card-title">Submit Your Brief</h3>
+            <p class="text-base-content/70">Write a brief describing your project. Include details, goals, target audience, and any references or inspiration. Attach brand assets like logos, colors, and fonts.</p>
+          </div>
         </div>
-        <div class="diff-card reveal">
-          <div class="diff-card__icon" style="background:rgba(0,200,83,0.15)">2</div>
-          <h3 class="diff-card__title">We Get to Work</h3>
-          <p class="diff-card__text">Your dedicated designer picks up the request and begins working. No back-and-forth meetings needed &mdash; we start immediately from your brief.</p>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-lg font-bold mb-2">2</div>
+            <h3 class="card-title">We Get to Work</h3>
+            <p class="text-base-content/70">Your dedicated designer picks up the request and begins working. No back-and-forth meetings needed &mdash; we start immediately from your brief.</p>
+          </div>
         </div>
-        <div class="diff-card reveal">
-          <div class="diff-card__icon" style="background:rgba(0,200,83,0.15)">3</div>
-          <h3 class="diff-card__title">Review &amp; Revise</h3>
-          <p class="diff-card__text">Receive your deliverables within the turnaround time for your plan. Request unlimited revisions until the design is exactly right.</p>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-lg font-bold mb-2">3</div>
+            <h3 class="card-title">Review &amp; Revise</h3>
+            <p class="text-base-content/70">Receive your deliverables within the turnaround time for your plan. Request unlimited revisions until the design is exactly right.</p>
+          </div>
         </div>
-        <div class="diff-card reveal">
-          <div class="diff-card__icon" style="background:rgba(0,200,83,0.15)">4</div>
-          <h3 class="diff-card__title">Repeat</h3>
-          <p class="diff-card__text">Once a request is complete, submit your next one. Keep your queue full and maintain a steady flow of design output for your business.</p>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-lg font-bold mb-2">4</div>
+            <h3 class="card-title">Repeat</h3>
+            <p class="text-base-content/70">Once a request is complete, submit your next one. Keep your queue full and maintain a steady flow of design output for your business.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== FAQ MINI SECTION ===== -->
-  <section class="section section--sm" id="faq" style="background:var(--bg-card)">
-    <div class="container text-center">
-      <span class="section-label">FAQ</span>
-      <h2 class="section-title reveal">Common questions about the process</h2>
+  <section class="py-16 lg:py-24 bg-base-200" id="faq">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">FAQ</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-8 reveal">Common questions about the process</h2>
 
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-item__question">
-            What info do I need to start?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">To get started, provide a brief describing your project, any brand assets (logos, colors, fonts), and reference examples of designs you like. The more detail you share, the faster and more accurately we can deliver. Don't worry if you don't have everything &mdash; we'll guide you through what's needed.</div>
+      <div class="join join-vertical w-full reveal">
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion" checked="checked">
+          <div class="collapse-title font-semibold">What info do I need to start?</div>
+          <div class="collapse-content text-base-content/70 text-left">
+            <p>To get started, provide a brief describing your project, any brand assets (logos, colors, fonts), and reference examples of designs you like. The more detail you share, the faster and more accurately we can deliver. Don't worry if you don't have everything &mdash; we'll guide you through what's needed.</p>
           </div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-item__question">
-            How do I communicate with the team?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">All communication happens through our project management system. Submit requests, leave feedback, request revisions, and track progress &mdash; all in one place. No scattered emails or Slack threads. Everything stays organized and transparent.</div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">How do I communicate with the team?</div>
+          <div class="collapse-content text-base-content/70 text-left">
+            <p>All communication happens through our project management system. Submit requests, leave feedback, request revisions, and track progress &mdash; all in one place. No scattered emails or Slack threads. Everything stays organized and transparent.</p>
           </div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Can I change my plan?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Yes. You can upgrade or downgrade your plan at any time. Changes take effect on your next billing cycle. No penalties or fees for switching. Start with the Starter plan and upgrade to Growth or Scale as your needs grow.</div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">Can I change my plan?</div>
+          <div class="collapse-content text-base-content/70 text-left">
+            <p>Yes. You can upgrade or downgrade your plan at any time. Changes take effect on your next billing cycle. No penalties or fees for switching. Start with the Starter plan and upgrade to Growth or Scale as your needs grow.</p>
           </div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-item__question">
-            What if I'm not satisfied?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">All plans include unlimited revisions. Request changes until you're 100% satisfied &mdash; there is no cap on the number of revision rounds. If the service isn't right for you, cancel anytime. There are no long-term contracts or cancellation fees.</div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">What if I'm not satisfied?</div>
+          <div class="collapse-content text-base-content/70 text-left">
+            <p>All plans include unlimited revisions. Request changes until you're 100% satisfied &mdash; there is no cap on the number of revision rounds. If the service isn't right for you, cancel anytime. There are no long-term contracts or cancellation fees.</p>
           </div>
         </div>
       </div>
 
-      <div style="text-align:center;margin-top:var(--space-2xl)">
-        <a href="/faq.html" class="btn btn--ghost">See all FAQs &rarr;</a>
+      <div class="mt-8">
+        <a href="/faq.html" class="btn btn-ghost">See all FAQs &rarr;</a>
       </div>
     </div>
   </section>
 
   <!-- ===== FINAL CTA ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-block reveal">
-        <h2 class="cta-block__title">Ready to get started?</h2>
-        <p class="cta-block__text">Join Dentsu, Talabat, and 100+ companies who trust MyDesigner for unlimited design and development.</p>
-        <div class="btn-group" style="justify-content:center">
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call</a>
+  <section class="py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="card bg-primary text-primary-content reveal">
+        <div class="card-body items-center text-center py-16">
+          <h2 class="text-3xl lg:text-4xl font-bold">Ready to get started?</h2>
+          <p class="max-w-xl mt-4 opacity-90">Join Dentsu, Talabat, and 100+ companies who trust MyDesigner for unlimited design and development.</p>
+          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-lg bg-white text-primary hover:bg-white/90 border-none mt-6">Book a call</a>
+          <p class="text-sm opacity-70 mt-4">No contracts. Cancel anytime. Starting at $1,400/mo</p>
         </div>
-        <p class="microcopy" style="text-align:center">No contracts. Cancel anytime. Starting at $1,400/mo</p>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <a href="/" class="nav__logo" style="margin-bottom:var(--space-sm)">
-            <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
-            MyDesigner
-          </a>
-          <p>MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Pages</h4>
-          <nav class="footer__links">
-            <a href="/services.html">Services</a>
-            <a href="/how-it-works.html">How It Works</a>
-            <a href="/pricing.html">Pricing</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/faq.html">FAQ</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Compare</h4>
-          <nav class="footer__links">
-            <a href="/vs/designjoy.html">vs DesignJoy</a>
-            <a href="/vs/penji.html">vs Penji</a>
-            <a href="/vs/manypixels.html">vs ManyPixels</a>
-            <a href="/vs/kimp.html">vs Kimp</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Get Started</h4>
-          <nav class="footer__links">
-            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5">Book a Call</a>
-          </nav>
-        </div>
+  <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10" role="contentinfo">
+    <aside>
+      <a href="/" class="flex items-center gap-2 font-bold text-lg mb-2">
+        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">
+        MyDesigner
+      </a>
+      <p class="max-w-xs">MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
+    </aside>
+    <nav>
+      <h6 class="footer-title">Pages</h6>
+      <a href="/services.html" class="link link-hover">Services</a>
+      <a href="/how-it-works.html" class="link link-hover">How It Works</a>
+      <a href="/pricing.html" class="link link-hover">Pricing</a>
+      <a href="/portfolio.html" class="link link-hover">Portfolio</a>
+      <a href="/faq.html" class="link link-hover">FAQ</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Compare</h6>
+      <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
+      <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
+      <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
+      <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Get Started</h6>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
+    </nav>
+  </footer>
+  <footer class="footer sm:footer-horizontal bg-base-300 text-base-content border-t border-base-300 px-10 py-4">
+    <aside class="grid-flow-col items-center">
+      <p>&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
+    </aside>
+    <nav class="md:place-self-center md:justify-self-end">
+      <div class="grid grid-flow-col gap-4">
+        <a href="https://x.com/mydesigner_gg" aria-label="X (Twitter)" class="link link-hover">&#120143;</a>
+        <a href="https://www.linkedin.com/showcase/mydesigner-sukratu/?viewAsMember=true" aria-label="LinkedIn" class="link link-hover">in</a>
+        <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram" class="link link-hover">&#128247;</a>
       </div>
-
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
-        <div class="footer__social">
-          <a href="https://twitter.com/mydesignergg" aria-label="Twitter">&#120143;</a>
-          <a href="https://linkedin.com/company/mydesigner" aria-label="LinkedIn">in</a>
-          <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram">&#128247;</a>
-        </div>
-      </div>
-    </div>
+    </nav>
   </footer>
 
   <!-- Mobile floating CTA -->
   <div class="floating-cta">
-    <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call &mdash; it's free</a>
+    <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg w-full">Book a call — it's free</a>
   </div>
-
   <script src="js/main.js"></script>
 </body>
 </html>

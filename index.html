@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +20,9 @@
   <meta name="twitter:title" content="MyDesigner — Unlimited Design + Development Subscription">
   <meta name="twitter:description" content="Unlimited UI/UX design, Webflow/Framer development, and graphic design from $1,400/mo. No contracts.">
 
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <!-- Organization Schema -->
   <script type="application/ld+json">
@@ -50,8 +51,8 @@
     "serviceType": ["UI/UX Design", "Graphic Design", "Webflow Development", "Framer Development", "Brand Identity Design"],
     "priceRange": "$1,400 - $3,800 per month",
     "sameAs": [
-      "https://twitter.com/mydesignergg",
-      "https://linkedin.com/company/mydesigner",
+      "https://x.com/mydesigner_gg",
+      "https://www.linkedin.com/showcase/mydesigner-sukratu/?viewAsMember=true",
       "https://instagram.com/mydesigner.gg"
     ],
     "contactPoint": {
@@ -167,60 +168,60 @@
   }
   </script>
 </head>
-<body>
+<body class="bg-base-100 text-base-content">
 
   <!-- ===== NAVIGATION ===== -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="/" class="nav__logo" aria-label="MyDesigner home">
-        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
+  <nav class="navbar bg-base-100 sticky top-0 z-50 px-4 lg:px-8" role="navigation" aria-label="Main navigation">
+    <div class="navbar-start">
+      <a href="/" class="flex items-center gap-2 font-bold text-lg" aria-label="MyDesigner home">
+        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">
         MyDesigner
       </a>
-
-      <div class="nav__links">
-        <a href="/services.html" class="nav__link">Services</a>
-        <a href="/how-it-works.html" class="nav__link">How It Works</a>
-        <a href="/pricing.html" class="nav__link">Pricing</a>
-        <a href="/portfolio.html" class="nav__link">Portfolio</a>
-        <a href="/faq.html" class="nav__link">FAQ</a>
-      </div>
-
-      <div class="nav__cta">
-        <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--sm">Book a call</a>
-      </div>
-
-      <button class="nav__hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-
-    <div class="nav__mobile-menu">
-      <a href="/services.html">Services</a>
-      <a href="/how-it-works.html">How It Works</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary">Book a call</a>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-1">
+        <li><a href="/services.html" class="font-medium">Services</a></li>
+        <li><a href="/how-it-works.html" class="font-medium">How It Works</a></li>
+        <li><a href="/pricing.html" class="font-medium">Pricing</a></li>
+        <li><a href="/portfolio.html" class="font-medium">Portfolio</a></li>
+        <li><a href="/faq.html" class="font-medium">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
+      <div class="dropdown dropdown-end lg:hidden">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-square">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </div>
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/how-it-works.html">How It Works</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
   <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero__tag">✦ Unlimited Design Subscription</div>
-      <h1 class="hero__title">Design + Development,<br><span class="text-gradient">One Subscription</span></h1>
-      <p class="hero__subtitle">MyDesigner is an unlimited design subscription service offering UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee. No contracts. Cancel anytime.</p>
-      <div class="btn-group" style="justify-content:center">
-        <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call</a>
-        <a href="/pricing.html" class="btn btn--secondary btn--lg">See pricing</a>
+  <section class="py-20 lg:py-32 text-center" data-hero>
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="badge badge-outline mb-6">Unlimited Design Subscription</div>
+      <h1 class="text-4xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">Design + Development,<br>One Subscription</h1>
+      <p class="text-lg lg:text-xl text-base-content/70 max-w-2xl mx-auto mb-8">MyDesigner is an unlimited design subscription service offering UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee. No contracts. Cancel anytime.</p>
+      <div class="flex flex-wrap justify-center gap-3 mb-4">
+        <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Book a call</a>
+        <a href="/pricing.html" class="btn btn-outline btn-lg">See pricing</a>
       </div>
-      <p class="microcopy" style="text-align:center">No contracts. Cancel anytime. Starting at <strong>$1,400/mo</strong></p>
+      <p class="text-sm text-base-content/50">No contracts. Cancel anytime. Starting at <strong>$1,400/mo</strong></p>
     </div>
   </section>
 
   <!-- ===== CLIENT LOGO MARQUEE ===== -->
-  <section class="marquee" aria-label="Trusted by">
-    <p class="marquee__label">Trusted by growing companies worldwide</p>
+  <section class="py-8 overflow-hidden border-t border-b border-base-200" aria-label="Trusted by">
+    <p class="text-center text-sm text-base-content/50 mb-6">Trusted by growing companies worldwide</p>
     <div class="marquee__track">
       <div class="marquee__item"><img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99cd63a4fcf5bd6a01ce5_dentsu.svg" alt="Dentsu" height="28"></div>
       <div class="marquee__item"><img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99cd63a4fcf5bd6a01ce3_calfus.png" alt="Calfus" height="28"></div>
@@ -234,176 +235,196 @@
   </section>
 
   <!-- ===== DIFFERENTIATORS ===== -->
-  <section class="section" id="why-us">
-    <div class="container text-center">
-      <span class="section-label">Why MyDesigner</span>
-      <h2 class="section-title reveal">Everything you need. Nothing you don't.</h2>
-      <p class="section-subtitle reveal" style="margin:0 auto">Unlike competitors who only deliver design files, MyDesigner combines design AND development in one subscription.</p>
+  <section class="py-16 lg:py-24" id="why-us">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Why MyDesigner</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Everything you need. Nothing you don't.</h2>
+      <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Unlike competitors who only deliver design files, MyDesigner combines design AND development in one subscription.</p>
 
-      <div class="differentiators">
-        <div class="diff-card reveal">
-          <div class="diff-card__icon">🛠</div>
-          <h3 class="diff-card__title">Development Included</h3>
-          <p class="diff-card__text">Webflow &amp; Framer development in every plan. Get a live, working website — not just a mockup.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card bg-base-200 reveal">
+          <div class="card-body items-center text-center">
+            <span class="text-3xl mb-2">🛠</span>
+            <h3 class="card-title">Development Included</h3>
+            <p class="text-base-content/70">Webflow &amp; Framer development in every plan. Get a live, working website — not just a mockup.</p>
+          </div>
         </div>
-        <div class="diff-card reveal">
-          <div class="diff-card__icon">💰</div>
-          <h3 class="diff-card__title">Fixed Monthly Fee</h3>
-          <p class="diff-card__text">No per-project pricing, no surprise invoices. Unlimited requests and revisions from $1,400/month.</p>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body items-center text-center">
+            <span class="text-3xl mb-2">💰</span>
+            <h3 class="card-title">Fixed Monthly Fee</h3>
+            <p class="text-base-content/70">No per-project pricing, no surprise invoices. Unlimited requests and revisions from $1,400/month.</p>
+          </div>
         </div>
-        <div class="diff-card reveal">
-          <div class="diff-card__icon">🚀</div>
-          <h3 class="diff-card__title">Cancel Anytime</h3>
-          <p class="diff-card__text">No long-term contracts. Pause or cancel your subscription whenever you want. Zero cancellation fees.</p>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body items-center text-center">
+            <span class="text-3xl mb-2">🚀</span>
+            <h3 class="card-title">Cancel Anytime</h3>
+            <p class="text-base-content/70">No long-term contracts. Pause or cancel your subscription whenever you want. Zero cancellation fees.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== HOW IT WORKS ===== -->
-  <section class="section section--sm" id="how-it-works" style="background:var(--bg-card)">
-    <div class="container text-center">
-      <span class="section-label">How It Works</span>
-      <h2 class="section-title reveal">Three steps to great design</h2>
-      <p class="section-subtitle reveal" style="margin:0 auto">Getting started is simple. No onboarding calls required.</p>
+  <section class="py-16 lg:py-24 bg-base-200" id="how-it-works">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">How It Works</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Three steps to great design</h2>
+      <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Getting started is simple. No onboarding calls required.</p>
 
-      <div class="steps">
-        <div class="step reveal">
-          <div class="step__number">1</div>
-          <h3 class="step__title">Subscribe</h3>
-          <p class="step__text">Choose a plan that fits your needs. Start with the Daily plan to test us, or go monthly for unlimited access.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card bg-base-100 reveal">
+          <div class="card-body items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-lg font-bold mb-2">1</div>
+            <h3 class="card-title">Subscribe</h3>
+            <p class="text-base-content/70">Choose a plan that fits your needs. Start with the Daily plan to test us, or go monthly for unlimited access.</p>
+          </div>
         </div>
-        <div class="step reveal">
-          <div class="step__number">2</div>
-          <h3 class="step__title">Request</h3>
-          <p class="step__text">Submit design or development requests through our project management system. Add briefs, references, and details.</p>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-lg font-bold mb-2">2</div>
+            <h3 class="card-title">Request</h3>
+            <p class="text-base-content/70">Submit design or development requests through our project management system. Add briefs, references, and details.</p>
+          </div>
         </div>
-        <div class="step reveal">
-          <div class="step__number">3</div>
-          <h3 class="step__title">Receive</h3>
-          <p class="step__text">Get your designs within 24-72 hours. Request unlimited revisions until you're 100% satisfied.</p>
+        <div class="card bg-base-100 reveal">
+          <div class="card-body items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-lg font-bold mb-2">3</div>
+            <h3 class="card-title">Receive</h3>
+            <p class="text-base-content/70">Get your designs within 24-72 hours. Request unlimited revisions until you're 100% satisfied.</p>
+          </div>
         </div>
       </div>
 
-      <div style="text-align:center;margin-top:var(--space-3xl)">
-        <a href="/how-it-works.html" class="btn btn--secondary">Learn more about the process</a>
+      <div class="mt-10">
+        <a href="/how-it-works.html" class="btn btn-outline">Learn more about the process</a>
       </div>
     </div>
   </section>
 
   <!-- ===== SERVICES ===== -->
-  <section class="section" id="services">
-    <div class="container text-center">
-      <span class="section-label">Services</span>
-      <h2 class="section-title reveal">One subscription, every design skill</h2>
-      <p class="section-subtitle reveal" style="margin:0 auto">From product design to brand identity to live websites — all under one roof.</p>
+  <section class="py-16 lg:py-24" id="services">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Services</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">One subscription, every design skill</h2>
+      <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">From product design to brand identity to live websites — all under one roof.</p>
 
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="service-card__icon">🎨</div>
-          <h3 class="service-card__title">UI/UX Design</h3>
-          <p class="service-card__text">Beautiful, functional interfaces for web and mobile applications.</p>
-          <ul class="service-card__list">
-            <li>Web app UI design</li>
-            <li>Mobile app UI design</li>
-            <li>Website design</li>
-            <li>Wireframing &amp; prototyping</li>
-          </ul>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <span class="text-3xl mb-2">🎨</span>
+            <h3 class="card-title">UI/UX Design</h3>
+            <p class="text-base-content/70">Beautiful, functional interfaces for web and mobile applications.</p>
+            <ul class="text-left text-sm mt-3 space-y-1">
+              <li>Web app UI design</li>
+              <li>Mobile app UI design</li>
+              <li>Website design</li>
+              <li>Wireframing &amp; prototyping</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">⚡</div>
-          <h3 class="service-card__title">No-Code Development</h3>
-          <p class="service-card__text">Live, editable websites designed and built by the same team.</p>
-          <ul class="service-card__list">
-            <li>Webflow development</li>
-            <li>Framer development</li>
-            <li>Landing pages</li>
-            <li>Full website builds</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <span class="text-3xl mb-2">⚡</span>
+            <h3 class="card-title">No-Code Development</h3>
+            <p class="text-base-content/70">Live, editable websites designed and built by the same team.</p>
+            <ul class="text-left text-sm mt-3 space-y-1">
+              <li>Webflow development</li>
+              <li>Framer development</li>
+              <li>Landing pages</li>
+              <li>Full website builds</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card reveal">
-          <div class="service-card__icon">✏️</div>
-          <h3 class="service-card__title">Graphic Design</h3>
-          <p class="service-card__text">Everything visual — from brand identity to marketing collateral.</p>
-          <ul class="service-card__list">
-            <li>Brand identity &amp; logos</li>
-            <li>Social media design</li>
-            <li>Presentation design</li>
-            <li>Print &amp; packaging</li>
-          </ul>
+        <div class="card bg-base-200 reveal">
+          <div class="card-body">
+            <span class="text-3xl mb-2">✏️</span>
+            <h3 class="card-title">Graphic Design</h3>
+            <p class="text-base-content/70">Everything visual — from brand identity to marketing collateral.</p>
+            <ul class="text-left text-sm mt-3 space-y-1">
+              <li>Brand identity &amp; logos</li>
+              <li>Social media design</li>
+              <li>Presentation design</li>
+              <li>Print &amp; packaging</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div style="text-align:center;margin-top:var(--space-3xl)">
-        <a href="/services.html" class="btn btn--secondary">View all services</a>
+      <div class="mt-10">
+        <a href="/services.html" class="btn btn-outline">View all services</a>
       </div>
     </div>
   </section>
 
   <!-- ===== PORTFOLIO ===== -->
-  <section class="section section--sm" id="portfolio" style="background:var(--bg-card)">
-    <div class="container text-center">
-      <span class="section-label">Our Work</span>
-      <h2 class="section-title reveal">Designs that deliver results</h2>
-      <p class="section-subtitle reveal" style="margin:0 auto">From startups to global enterprises, see what we've built.</p>
+  <section class="py-16 lg:py-24 bg-base-200" id="portfolio">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Our Work</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Designs that deliver results</h2>
+      <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">From startups to global enterprises, see what we've built.</p>
 
-      <div class="portfolio-showcase reveal">
-        <div class="portfolio-showcase__item portfolio-showcase__item--wide">
-          <span class="portfolio-showcase__icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </span>
-          <h3 class="portfolio-showcase__title">SaaS Dashboard UI</h3>
-          <span class="portfolio-showcase__tag">UI/UX Design</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+        <div class="card bg-base-100 md:col-span-2">
+          <div class="card-body items-center text-center py-12">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mb-3 opacity-60"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <h3 class="card-title">SaaS Dashboard UI</h3>
+            <span class="badge badge-ghost">UI/UX Design</span>
+          </div>
         </div>
-        <div class="portfolio-showcase__item">
-          <span class="portfolio-showcase__icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
-          </span>
-          <h3 class="portfolio-showcase__title">Brand Identity</h3>
-          <span class="portfolio-showcase__tag">Graphic Design</span>
+        <div class="card bg-base-100">
+          <div class="card-body items-center text-center py-12">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mb-3 opacity-60"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
+            <h3 class="card-title">Brand Identity</h3>
+            <span class="badge badge-ghost">Graphic Design</span>
+          </div>
         </div>
-        <div class="portfolio-showcase__item">
-          <span class="portfolio-showcase__icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          </span>
-          <h3 class="portfolio-showcase__title">Webflow Landing Page</h3>
-          <span class="portfolio-showcase__tag">No-Code Development</span>
+        <div class="card bg-base-100">
+          <div class="card-body items-center text-center py-12">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mb-3 opacity-60"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            <h3 class="card-title">Webflow Landing Page</h3>
+            <span class="badge badge-ghost">No-Code Development</span>
+          </div>
         </div>
-        <div class="portfolio-showcase__item portfolio-showcase__item--wide">
-          <span class="portfolio-showcase__icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          </span>
-          <h3 class="portfolio-showcase__title">E-commerce Redesign</h3>
-          <span class="portfolio-showcase__tag">UI/UX Design</span>
+        <div class="card bg-base-100 md:col-span-2">
+          <div class="card-body items-center text-center py-12">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mb-3 opacity-60"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <h3 class="card-title">E-commerce Redesign</h3>
+            <span class="badge badge-ghost">UI/UX Design</span>
+          </div>
         </div>
       </div>
 
-      <div style="text-align:center;margin-top:var(--space-2xl)">
-        <a href="/portfolio.html" class="btn btn--secondary">View full portfolio</a>
+      <div class="mt-10">
+        <a href="/portfolio.html" class="btn btn-outline">View full portfolio</a>
       </div>
     </div>
   </section>
 
   <!-- ===== TESTIMONIAL ===== -->
-  <section class="section" id="testimonial">
-    <div class="container">
-      <div class="testimonial reveal">
-        <blockquote class="testimonial__quote">MyDesigner has been part of our company from day one. They helped us with everything design — from branding to product design to marketing materials. The quality is consistently excellent.</blockquote>
-        <p class="testimonial__author">Satisfied Client</p>
-        <p class="testimonial__role">Serving clients including Dentsu, Talabat &amp; USA Table Tennis</p>
+  <section class="py-16 lg:py-24" id="testimonial">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="card bg-base-200 reveal">
+        <div class="card-body items-center text-center py-12">
+          <blockquote class="text-xl lg:text-2xl font-medium leading-relaxed mb-6">"MyDesigner has been part of our company from day one. They helped us with everything design — from branding to product design to marketing materials. The quality is consistently excellent."</blockquote>
+          <p class="font-semibold">Satisfied Client</p>
+          <p class="text-sm text-base-content/50">Serving clients including Dentsu, Talabat &amp; USA Table Tennis</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== COMPARISON TABLE ===== -->
-  <section class="section section--sm" id="compare" style="background:var(--bg-card)">
-    <div class="container text-center">
-      <span class="section-label">Compare</span>
-      <h2 class="section-title reveal">MyDesigner vs the alternatives</h2>
-      <p class="section-subtitle reveal" style="margin:0 auto">See how a design subscription stacks up against traditional hiring.</p>
+  <section class="py-16 lg:py-24 bg-base-200" id="compare">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Compare</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">MyDesigner vs the alternatives</h2>
+      <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">See how a design subscription stacks up against traditional hiring.</p>
 
-      <div class="vs-table-wrapper reveal">
-        <table class="comparison-table">
+      <div class="overflow-x-auto reveal">
+        <table class="table table-zebra bg-base-100 rounded-box">
           <thead>
             <tr>
               <th>Feature</th>
@@ -414,7 +435,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="highlight">
+            <tr class="font-semibold">
               <td>Monthly Cost</td>
               <td>$1,400–$3,800</td>
               <td>$5,000–$25,000+</td>
@@ -423,14 +444,14 @@
             </tr>
             <tr>
               <td>Unlimited Requests</td>
-              <td class="check">✓</td>
-              <td class="cross">✗</td>
-              <td class="cross">✗</td>
-              <td class="check">✓</td>
+              <td class="text-success">✓</td>
+              <td class="text-error">✗</td>
+              <td class="text-error">✗</td>
+              <td class="text-success">✓</td>
             </tr>
             <tr>
               <td>Web Development</td>
-              <td class="check">✓ Webflow + Framer</td>
+              <td class="text-success">✓ Webflow + Framer</td>
               <td>Varies</td>
               <td>Varies</td>
               <td>Single skill</td>
@@ -444,17 +465,17 @@
             </tr>
             <tr>
               <td>Contracts</td>
-              <td class="check">Cancel anytime</td>
-              <td class="cross">6-12 months</td>
+              <td class="text-success">Cancel anytime</td>
+              <td class="text-error">6-12 months</td>
               <td>Per project</td>
-              <td class="cross">Employment</td>
+              <td class="text-error">Employment</td>
             </tr>
             <tr>
               <td>Multi-skill Team</td>
-              <td class="check">✓</td>
-              <td class="check">✓</td>
-              <td class="cross">✗</td>
-              <td class="cross">✗</td>
+              <td class="text-success">✓</td>
+              <td class="text-success">✓</td>
+              <td class="text-error">✗</td>
+              <td class="text-error">✗</td>
             </tr>
           </tbody>
         </table>
@@ -463,242 +484,211 @@
   </section>
 
   <!-- ===== PRICING ===== -->
-  <section class="section" id="pricing">
-    <div class="container text-center">
-      <span class="section-label">Pricing</span>
-      <h2 class="section-title reveal">Simple, transparent pricing</h2>
-      <p class="section-subtitle reveal" style="margin:0 auto">Unlimited design requests. Unlimited revisions. No long-term contracts.</p>
+  <section class="py-16 lg:py-24" id="pricing">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">Pricing</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Simple, transparent pricing</h2>
+      <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Unlimited design requests. Unlimited revisions. No long-term contracts.</p>
 
-      <div class="pricing-cards reveal">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
         <!-- Daily -->
-        <div class="pricing-card">
-          <h3 class="pricing-card__name">Daily</h3>
-          <p class="pricing-card__desc">Perfect for short projects or testing our service.</p>
-          <div class="pricing-card__price">
-            <span class="pricing-card__amount">$80</span>
-            <span class="pricing-card__period">/day</span>
+        <div class="card bg-base-200">
+          <div class="card-body">
+            <h3 class="card-title justify-center">Daily</h3>
+            <p class="text-sm text-base-content/70">Perfect for short projects or testing our service.</p>
+            <div class="text-center my-4">
+              <span class="text-4xl font-extrabold">$80</span>
+              <span class="text-base-content/50">/day</span>
+            </div>
+            <ul class="text-sm space-y-2">
+              <li>All design services</li>
+              <li>Webflow/Framer development</li>
+              <li>1 request at a time</li>
+              <li>Unlimited revisions</li>
+              <li>Source files included</li>
+              <li>Minimum 3 days</li>
+            </ul>
+            <p class="text-xs text-base-content/50 text-center mt-4">No contracts. Cancel anytime.</p>
           </div>
-          <ul class="pricing-card__features">
-            <li>All design services</li>
-            <li>Webflow/Framer development</li>
-            <li>1 request at a time</li>
-            <li>Unlimited revisions</li>
-            <li>Source files included</li>
-            <li>Minimum 3 days</li>
-          </ul>
-          <p class="microcopy" style="text-align:center">No contracts. Cancel anytime.</p>
         </div>
 
         <!-- Starter -->
-        <div class="pricing-card">
-          <h3 class="pricing-card__name">Starter</h3>
-          <p class="pricing-card__desc">Everything you need to launch and grow.</p>
-          <div class="pricing-card__price">
-            <span class="pricing-card__amount">$1,400</span>
-            <span class="pricing-card__period">/mo</span>
+        <div class="card bg-base-200">
+          <div class="card-body">
+            <h3 class="card-title justify-center">Starter</h3>
+            <p class="text-sm text-base-content/70">Everything you need to launch and grow.</p>
+            <div class="text-center my-4">
+              <span class="text-4xl font-extrabold">$1,400</span>
+              <span class="text-base-content/50">/mo</span>
+            </div>
+            <ul class="text-sm space-y-2">
+              <li>UI/UX design</li>
+              <li>Graphic design</li>
+              <li>Webflow/Framer development</li>
+              <li>1 request at a time</li>
+              <li>Unlimited revisions</li>
+              <li>48-72 hour turnaround</li>
+              <li>Source files included</li>
+            </ul>
+            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary mt-4">Book a call</a>
+            <p class="text-xs text-base-content/50 text-center mt-2">No contracts. Cancel anytime.</p>
           </div>
-          <ul class="pricing-card__features">
-            <li>UI/UX design</li>
-            <li>Graphic design</li>
-            <li>Webflow/Framer development</li>
-            <li>1 request at a time</li>
-            <li>Unlimited revisions</li>
-            <li>48-72 hour turnaround</li>
-            <li>Source files included</li>
-          </ul>
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary">Book a call</a>
-          <p class="microcopy" style="text-align:center">No contracts. Cancel anytime.</p>
         </div>
 
         <!-- Growth (Popular) -->
-        <div class="pricing-card pricing-card--popular">
-          <span class="pricing-badge">Most Popular</span>
-          <h3 class="pricing-card__name">Growth</h3>
-          <p class="pricing-card__desc">Move faster with parallel requests and a dedicated manager.</p>
-          <div class="pricing-card__price">
-            <span class="pricing-card__amount">$2,600</span>
-            <span class="pricing-card__period">/mo</span>
+        <div class="card bg-primary text-primary-content border-2 border-primary">
+          <div class="card-body">
+            <div class="flex justify-center"><span class="badge badge-secondary">Most Popular</span></div>
+            <h3 class="card-title justify-center">Growth</h3>
+            <p class="text-sm opacity-80">Move faster with parallel requests and a dedicated manager.</p>
+            <div class="text-center my-4">
+              <span class="text-4xl font-extrabold">$2,600</span>
+              <span class="opacity-70">/mo</span>
+            </div>
+            <ul class="text-sm space-y-2">
+              <li>Everything in Starter</li>
+              <li>Dedicated design manager</li>
+              <li>2 requests at a time</li>
+              <li>24-48 hour turnaround</li>
+              <li>Priority communication</li>
+            </ul>
+            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-secondary mt-4">Book a call</a>
+            <p class="text-xs opacity-60 text-center mt-2">No contracts. Cancel anytime.</p>
           </div>
-          <ul class="pricing-card__features">
-            <li>Everything in Starter</li>
-            <li>Dedicated design manager</li>
-            <li>2 requests at a time</li>
-            <li>24-48 hour turnaround</li>
-            <li>Priority communication</li>
-          </ul>
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary">Book a call</a>
-          <p class="microcopy" style="text-align:center">No contracts. Cancel anytime.</p>
         </div>
 
         <!-- Scale -->
-        <div class="pricing-card">
-          <h3 class="pricing-card__name">Scale</h3>
-          <p class="pricing-card__desc">Maximum output with a dedicated team focused on your brand.</p>
-          <div class="pricing-card__price">
-            <span class="pricing-card__amount">$3,800</span>
-            <span class="pricing-card__period">/mo</span>
+        <div class="card bg-base-200">
+          <div class="card-body">
+            <h3 class="card-title justify-center">Scale</h3>
+            <p class="text-sm text-base-content/70">Maximum output with a dedicated team focused on your brand.</p>
+            <div class="text-center my-4">
+              <span class="text-4xl font-extrabold">$3,800</span>
+              <span class="text-base-content/50">/mo</span>
+            </div>
+            <ul class="text-sm space-y-2">
+              <li>Everything in Growth</li>
+              <li>Dedicated design team</li>
+              <li>3 requests at a time</li>
+              <li>Fastest turnaround</li>
+              <li>Strategic design partnership</li>
+            </ul>
+            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary mt-4">Book a call</a>
+            <p class="text-xs text-base-content/50 text-center mt-2">No contracts. Cancel anytime.</p>
           </div>
-          <ul class="pricing-card__features">
-            <li>Everything in Growth</li>
-            <li>Dedicated design team</li>
-            <li>3 requests at a time</li>
-            <li>Fastest turnaround</li>
-            <li>Strategic design partnership</li>
-          </ul>
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary">Book a call</a>
-          <p class="microcopy" style="text-align:center">No contracts. Cancel anytime.</p>
         </div>
       </div>
 
-      <div style="text-align:center;margin-top:var(--space-2xl)">
-        <a href="/pricing.html" class="btn btn--ghost">See detailed pricing comparison →</a>
+      <div class="mt-10">
+        <a href="/pricing.html" class="link link-hover text-base-content/60">See detailed pricing comparison →</a>
       </div>
     </div>
   </section>
 
   <!-- ===== FAQ ===== -->
-  <section class="section section--sm" id="faq" style="background:var(--bg-card)">
-    <div class="container text-center">
-      <span class="section-label">FAQ</span>
-      <h2 class="section-title reveal">Frequently asked questions</h2>
+  <section class="py-16 lg:py-24 bg-base-200" id="faq">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">FAQ</span>
+      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-8 reveal">Frequently asked questions</h2>
 
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-item__question">
-            What is MyDesigner?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">MyDesigner is an unlimited design subscription service by Sukratu, based in Pune, India. For a fixed monthly fee starting at $1,400, you get unlimited design requests including UI/UX design, Webflow/Framer development, graphic design, and branding. There are no long-term contracts — cancel anytime.</div>
-          </div>
+      <div class="join join-vertical w-full text-left reveal">
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion" checked>
+          <div class="collapse-title font-semibold">What is MyDesigner?</div>
+          <div class="collapse-content text-base-content/70">MyDesigner is an unlimited design subscription service by Sukratu, based in Pune, India. For a fixed monthly fee starting at $1,400, you get unlimited design requests including UI/UX design, Webflow/Framer development, graphic design, and branding. There are no long-term contracts — cancel anytime.</div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-item__question">
-            How much does MyDesigner cost?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">MyDesigner offers several tiers: Starter at $1,400/month, Growth at $2,600/month, Scale at $3,800/month, and Yearly at $15,000/year. A Daily plan at $80/day (minimum 3 days) is also available. All plans include unlimited requests and revisions.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">How much does MyDesigner cost?</div>
+          <div class="collapse-content text-base-content/70">MyDesigner offers several tiers: Starter at $1,400/month, Growth at $2,600/month, Scale at $3,800/month, and Yearly at $15,000/year. A Daily plan at $80/day (minimum 3 days) is also available. All plans include unlimited requests and revisions.</div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Does MyDesigner include Webflow development?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Yes. MyDesigner includes full Webflow and Framer development in all plans. You receive a live, editable site — not just design mockups. Submit a request for a landing page and receive a working Webflow or Framer site.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">Does MyDesigner include Webflow development?</div>
+          <div class="collapse-content text-base-content/70">Yes. MyDesigner includes full Webflow and Framer development in all plans. You receive a live, editable site — not just design mockups. Submit a request for a landing page and receive a working Webflow or Framer site.</div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-item__question">
-            Can I cancel anytime?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Yes. All monthly plans are cancel-anytime with no long-term contracts or cancellation fees. You're billed monthly on your subscription date.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">Can I cancel anytime?</div>
+          <div class="collapse-content text-base-content/70">Yes. All monthly plans are cancel-anytime with no long-term contracts or cancellation fees. You're billed monthly on your subscription date.</div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-item__question">
-            How fast is the turnaround?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">Turnaround times vary by plan: Starter offers 48-72 hours, Growth and Scale plans offer 24-48 hours. All plans include unlimited revisions until you're 100% satisfied.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">How fast is the turnaround?</div>
+          <div class="collapse-content text-base-content/70">Turnaround times vary by plan: Starter offers 48-72 hours, Growth and Scale plans offer 24-48 hours. All plans include unlimited revisions until you're 100% satisfied.</div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-item__question">
-            What design files do I receive?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">You receive source files appropriate to the project: Figma files for UI/UX, AI/PSD/PNG/JPG/PDF/SVG for graphics, and live editable site access for Webflow/Framer projects. You own everything completely.</div>
-          </div>
+        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
+          <input type="radio" name="faq-accordion">
+          <div class="collapse-title font-semibold">What design files do I receive?</div>
+          <div class="collapse-content text-base-content/70">You receive source files appropriate to the project: Figma files for UI/UX, AI/PSD/PNG/JPG/PDF/SVG for graphics, and live editable site access for Webflow/Framer projects. You own everything completely.</div>
         </div>
       </div>
 
-      <div style="text-align:center;margin-top:var(--space-2xl)">
-        <a href="/faq.html" class="btn btn--ghost">See all FAQs →</a>
+      <div class="mt-8">
+        <a href="/faq.html" class="link link-hover text-base-content/60">See all FAQs →</a>
       </div>
     </div>
   </section>
 
   <!-- ===== FINAL CTA ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-block reveal">
-        <h2 class="cta-block__title">Ready to transform your design workflow?</h2>
-        <p class="cta-block__text">Join Dentsu, Talabat, and 100+ companies who trust MyDesigner for unlimited design and development.</p>
-        <div class="btn-group" style="justify-content:center">
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call</a>
+  <section class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="card bg-primary text-primary-content reveal">
+        <div class="card-body items-center text-center py-12">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-4">Ready to transform your design workflow?</h2>
+          <p class="opacity-80 mb-6 max-w-xl">Join Dentsu, Talabat, and 100+ companies who trust MyDesigner for unlimited design and development.</p>
+          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-secondary btn-lg">Book a call</a>
+          <p class="text-xs opacity-60 mt-3">No contracts. Cancel anytime. Starting at $1,400/mo</p>
         </div>
-        <p class="microcopy" style="text-align:center">No contracts. Cancel anytime. Starting at $1,400/mo</p>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <a href="/" class="nav__logo" style="margin-bottom:var(--space-sm)">
-            <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32">
-            MyDesigner
-          </a>
-          <p>MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Pages</h4>
-          <nav class="footer__links">
-            <a href="/services.html">Services</a>
-            <a href="/how-it-works.html">How It Works</a>
-            <a href="/pricing.html">Pricing</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/faq.html">FAQ</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Compare</h4>
-          <nav class="footer__links">
-            <a href="/vs/designjoy.html">vs DesignJoy</a>
-            <a href="/vs/penji.html">vs Penji</a>
-            <a href="/vs/manypixels.html">vs ManyPixels</a>
-            <a href="/vs/kimp.html">vs Kimp</a>
-          </nav>
-        </div>
-
-        <div>
-          <h4 class="footer__heading">Get Started</h4>
-          <nav class="footer__links">
-            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5">Book a Call</a>
-          </nav>
-        </div>
+  <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10" role="contentinfo">
+    <aside>
+      <a href="/" class="flex items-center gap-2 font-bold text-lg mb-2">
+        <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c2c/64f99f79a108f46dcdb190ee_mydesigner_logo.svg" alt="MyDesigner" height="32" class="h-8">
+        MyDesigner
+      </a>
+      <p class="max-w-xs">MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
+    </aside>
+    <nav>
+      <h6 class="footer-title">Pages</h6>
+      <a href="/services.html" class="link link-hover">Services</a>
+      <a href="/how-it-works.html" class="link link-hover">How It Works</a>
+      <a href="/pricing.html" class="link link-hover">Pricing</a>
+      <a href="/portfolio.html" class="link link-hover">Portfolio</a>
+      <a href="/faq.html" class="link link-hover">FAQ</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Compare</h6>
+      <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
+      <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
+      <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
+      <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Get Started</h6>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
+    </nav>
+  </footer>
+  <footer class="footer sm:footer-horizontal bg-base-300 text-base-content border-t border-base-300 px-10 py-4">
+    <aside class="grid-flow-col items-center">
+      <p>&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
+    </aside>
+    <nav class="md:place-self-center md:justify-self-end">
+      <div class="grid grid-flow-col gap-4">
+        <a href="https://x.com/mydesigner_gg" aria-label="X (Twitter)" class="link link-hover">𝕏</a>
+        <a href="https://www.linkedin.com/showcase/mydesigner-sukratu/?viewAsMember=true" aria-label="LinkedIn" class="link link-hover">in</a>
+        <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram" class="link link-hover">📷</a>
       </div>
-
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
-        <div class="footer__social">
-          <a href="https://twitter.com/mydesignergg" aria-label="Twitter">𝕏</a>
-          <a href="https://linkedin.com/company/mydesigner" aria-label="LinkedIn">in</a>
-          <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram">📷</a>
-        </div>
-      </div>
-    </div>
+    </nav>
   </footer>
 
   <!-- Mobile floating CTA -->
   <div class="floating-cta">
-    <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn--primary btn--lg">Book a call — it's free</a>
+    <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg w-full">Book a call — it's free</a>
   </div>
 
   <script src="js/main.js"></script>
