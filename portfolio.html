@@ -23,9 +23,11 @@
   <meta name="twitter:title" content="Portfolio — MyDesigner | Our Design & Development Work">
   <meta name="twitter:description" content="From startups to global enterprises like Dentsu and USA Table Tennis — see the quality we deliver. UI/UX, web development, graphic design, and branding.">
 
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/daisyui@5" as="style">
+    <link rel="preload" href="css/styles.css" as="style">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" defer></script>
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
@@ -70,7 +72,7 @@
     <div class="navbar-end gap-2">
       <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
       <div class="dropdown dropdown-end lg:hidden">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-square">
+        <div tabindex="0" role="button" aria-label="Open menu" class="btn btn-ghost btn-square">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </div>
         <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
@@ -84,6 +86,7 @@
       </div>
     </div>
   </nav>
+  <main>
 
   <!-- ===== PAGE HEADER ===== -->
   <header class="py-16 lg:py-24 text-center" data-hero>
@@ -346,6 +349,7 @@
     </div>
   </section>
 
+  </main>
   <!-- ===== FOOTER ===== -->
   <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10" role="contentinfo">
     <aside>
@@ -355,7 +359,7 @@
       <p class="max-w-xs">MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
     </aside>
     <nav>
-      <h6 class="footer-title">Pages</h6>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Pages</p>
       <a href="/services.html" class="link link-hover">Services</a>
       <a href="/how-it-works.html" class="link link-hover">How It Works</a>
       <a href="/pricing.html" class="link link-hover">Pricing</a>
@@ -363,14 +367,14 @@
       <a href="/faq.html" class="link link-hover">FAQ</a>
     </nav>
     <nav>
-      <h6 class="footer-title">Compare</h6>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Compare</p>
       <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
       <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
       <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
       <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
     </nav>
     <nav>
-      <h6 class="footer-title">Get Started</h6>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Get Started</p>
       <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
     </nav>
   </footer>
