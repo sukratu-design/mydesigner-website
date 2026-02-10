@@ -87,6 +87,42 @@
   });
 })();
 
+/* ========== LOADING SPINNER ON BUTTONS ========== */
+(function() {
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.btn');
+    if (!btn || btn.classList.contains('btn-loading')) return;
+
+    // Skip portfolio filter buttons and anchor-only links
+    if (btn.classList.contains('portfolio-filter')) return;
+    var href = btn.getAttribute('href');
+    if (href && href.startsWith('#')) return;
+
+    // Add spinner state
+    btn.classList.add('btn-loading');
+    btn.style.pointerEvents = 'none';
+
+    // Store original content and inject spinner
+    var originalHTML = btn.innerHTML;
+    var spinnerSize = btn.classList.contains('btn-sm') ? 'loading-sm' : 'loading-md';
+    var spinner = '<span class="loading loading-spinner ' + spinnerSize + '"></span>';
+    btn.innerHTML = spinner + ' ' + originalHTML;
+
+    // For links, let navigation happen naturally after a brief visual feedback
+    if (btn.tagName === 'A' && href) {
+      // Spinner shows, then browser navigates
+      return;
+    }
+
+    // For non-link buttons, reset after 2s
+    setTimeout(function() {
+      btn.innerHTML = originalHTML;
+      btn.classList.remove('btn-loading');
+      btn.style.pointerEvents = '';
+    }, 2000);
+  });
+})();
+
 /* ========== SMOOTH SCROLL FOR ANCHOR LINKS ========== */
 (function() {
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
