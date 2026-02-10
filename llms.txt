@@ -1,0 +1,52 @@
+# MyDesigner
+
+> Unlimited design subscription service by Sukratu. Based in Pune, India, serving clients globally. Fixed monthly pricing for UI/UX design, Webflow/Framer development, and graphic design.
+
+## What We Do
+
+MyDesigner provides unlimited design requests for a fixed monthly fee. No per-project pricing, no long-term contracts. Subscribe, submit requests, receive professional designs within 24-72 hours.
+
+## Services
+
+- [Product Design](/services.html): Web app UI, mobile app UI, website design
+- [No-Code Development](/services.html): Webflow and Framer website development
+- [Graphic Design](/services.html): Brand identity, social media, presentations, print
+- [Additional Services](/services.html): Wireframing, prototyping, infographics, case studies, emailers
+
+## Pricing
+
+| Plan | Price | Requests at Once | Turnaround |
+|------|-------|------------------|------------|
+| Daily | $80/day (min 3 days) | 1 | 24-72h |
+| Starter | $1,400/month | 1 | 48-72h |
+| Growth | $2,600/month | 2 | 24-48h |
+| Scale | $3,800/month | 3 | 24-48h |
+| Yearly | $15,000/year | 1 | 48-72h |
+
+All plans include unlimited requests, unlimited revisions, and full source files.
+
+## Key Facts
+
+- Founded by Sukratu
+- Based in Pune, India
+- Serves clients in India, United States, and globally
+- Fixed monthly pricing from $1,400-$3,800/month
+- No long-term contracts — cancel anytime
+- Includes Webflow and Framer development (not just design)
+- Unlimited revisions on all plans
+
+## Clients
+
+Notable clients include Dentsu, Calfus, Talabat, and USA Table Tennis.
+
+## Comparisons
+
+- **vs DesignJoy:** Lower price ($1,400 vs $4,995), includes development
+- **vs Penji:** Higher price but includes web development
+- **vs ManyPixels:** Includes Webflow/Framer development, no motion graphics
+- **vs Kimp:** Bundled design + development, no video editing
+
+## Contact
+
+- Website: https://mydesigner.gg
+- Location: Pune, India
