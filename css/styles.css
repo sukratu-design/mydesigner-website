@@ -10,6 +10,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'TheSeasons';
+  src: url('../assets/fonts/TheSeasons-Bd.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ========== DaisyUI Theme Overrides ========== */
 :root {
   --color-base-100: oklch(1 0 0);
@@ -43,10 +51,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6,
-.logo-text {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'TheSeasons', Georgia, 'Times New Roman', serif;
   font-weight: 400 !important;
+}
+
+.logo-text {
+  font-family: 'TheSeasons', Georgia, 'Times New Roman', serif;
+  font-weight: 700 !important;
 }
 
 /* ========== Scroll Reveal ========== */
