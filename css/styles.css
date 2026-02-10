@@ -1,6 +1,15 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+/* The Seasons — self-hosted */
+@font-face {
+  font-family: 'TheSeasons';
+  src: url('../assets/fonts/TheSeasons-Reg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ========== DaisyUI Theme Overrides ========== */
 :root {
   --color-base-100: oklch(1 0 0);
@@ -35,7 +44,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'the-seasons', Georgia, 'Times New Roman', serif;
+  font-family: 'TheSeasons', Georgia, 'Times New Roman', serif;
   font-weight: 400 !important;
 }
 
