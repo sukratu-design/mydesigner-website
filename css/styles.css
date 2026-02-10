@@ -61,6 +61,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700 !important;
 }
 
+/* ========== Comparison Table Zebra ========== */
+.compare-table tbody tr:nth-child(even) {
+  background-color: oklch(0.92 0 0);
+}
+
 /* ========== Scroll Reveal ========== */
 .reveal {
   opacity: 0;
