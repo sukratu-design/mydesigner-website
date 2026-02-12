@@ -15,7 +15,9 @@ function getFirebaseApp() {
 
   const projectId = assertEnv('FIREBASE_PROJECT_ID');
   const clientEmail = assertEnv('FIREBASE_CLIENT_EMAIL');
-  const privateKey = assertEnv('FIREBASE_PRIVATE_KEY').replace(/\\n/g, '\n');
+  const privateKey = process.env.FIREBASE_PRIVATE_KEY_BASE64
+    ? Buffer.from(process.env.FIREBASE_PRIVATE_KEY_BASE64, 'base64').toString('utf8')
+    : assertEnv('FIREBASE_PRIVATE_KEY').replace(/\\n/g, '\n');
 
   return admin.initializeApp({
     credential: admin.credential.cert({
