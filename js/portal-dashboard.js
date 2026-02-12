@@ -5,14 +5,6 @@ import {
   signOut,
 } from 'https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js';
 
-const config = window.MYDESIGNER_PORTAL_CONFIG;
-if (!config || !config.firebase) {
-  throw new Error('Missing portal config');
-}
-
-const app = initializeApp(config.firebase);
-const auth = getAuth(app);
-
 const emailEl = document.querySelector('#user-email');
 const statusDotEl = document.querySelector('#subscription-status-dot');
 const statusTextEl = document.querySelector('#subscription-status-text');
@@ -34,6 +26,7 @@ const planNames = { starter: 'Starter', growth: 'Growth', scale: 'Scale' };
 
 let currentUser = null;
 let currentSubscription = null;
+let auth = null;
 
 function toDateString(epochSeconds) {
   if (!epochSeconds) return 'N/A';
@@ -142,6 +135,15 @@ async function authedFetch(path, options = {}) {
   return data;
 }
 
+async function getPortalConfig() {
+  const response = await fetch('/.netlify/functions/portal-public-config');
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok || !data.firebase) {
+    throw new Error(data.error || 'Failed to load portal config');
+  }
+  return data;
+}
+
 async function refreshSubscription() {
   hideMessage();
   const data = await authedFetch('/.netlify/functions/portal-subscription');
@@ -235,28 +237,41 @@ async function runButtonAction(button, fn) {
   }
 }
 
-onAuthStateChanged(auth, async (user) => {
-  if (!user) {
-    window.location.href = '/portal/login.html';
+async function initAuthAndData() {
+  try {
+    const config = await getPortalConfig();
+    const app = initializeApp(config.firebase);
+    auth = getAuth(app);
+  } catch (err) {
+    showMessage(err.message || 'Portal is temporarily unavailable.', 'error');
+    refreshBtn.disabled = true;
     return;
   }
 
-  currentUser = user;
-  emailEl.textContent = user.email || 'Signed in';
+  onAuthStateChanged(auth, async (user) => {
+    if (!user) {
+      window.location.href = '/portal/login.html';
+      return;
+    }
 
-  const query = new URLSearchParams(window.location.search);
-  if (query.get('checkout') === 'success') {
-    showMessage('Checkout completed. Syncing subscription status...', 'success');
-  }
+    currentUser = user;
+    emailEl.textContent = user.email || 'Signed in';
 
-  try {
-    await refreshSubscription();
-  } catch (err) {
-    showMessage(err.message || 'Failed to load subscription.', 'error');
-  }
-});
+    const query = new URLSearchParams(window.location.search);
+    if (query.get('checkout') === 'success') {
+      showMessage('Checkout completed. Syncing subscription status...', 'success');
+    }
+
+    try {
+      await refreshSubscription();
+    } catch (err) {
+      showMessage(err.message || 'Failed to load subscription.', 'error');
+    }
+  });
+}
 
 logoutBtn.addEventListener('click', async () => {
+  if (!auth) return;
   await signOut(auth);
   window.location.href = '/portal/login.html';
 });
@@ -287,3 +302,5 @@ planCards.forEach((card) => {
     })
   );
 });
+
+initAuthAndData();

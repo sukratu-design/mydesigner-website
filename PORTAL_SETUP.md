@@ -20,17 +20,16 @@ Set these env vars in Netlify with scope limited to branch `staging-portal`:
 - `FIREBASE_PROJECT_ID`
 - `FIREBASE_CLIENT_EMAIL`
 - `FIREBASE_PRIVATE_KEY`
+- `FIREBASE_API_KEY`
+- `FIREBASE_AUTH_DOMAIN`
+- `FIREBASE_APP_ID`
+- `FIREBASE_STORAGE_BUCKET`
+- `FIREBASE_MESSAGING_SENDER_ID`
 - `STRIPE_SECRET_KEY`
 - `STRIPE_WEBHOOK_SECRET`
 - `STRIPE_PRICE_STARTER`
 - `STRIPE_PRICE_GROWTH`
 - `STRIPE_PRICE_SCALE`
-
-Optional (frontend config is currently hardcoded in `js/portal-config.js`):
-
-- `FIREBASE_API_KEY`
-- `FIREBASE_AUTH_DOMAIN`
-- `FIREBASE_APP_ID`
 
 ## Stripe Webhook Endpoint (staging)
 

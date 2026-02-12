@@ -6,14 +6,6 @@ import {
   createUserWithEmailAndPassword,
 } from 'https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js';
 
-const config = window.MYDESIGNER_PORTAL_CONFIG;
-if (!config || !config.firebase) {
-  throw new Error('Missing portal config');
-}
-
-const app = initializeApp(config.firebase);
-const auth = getAuth(app);
-
 const form = document.querySelector('#auth-form');
 const titleEl = document.querySelector('#auth-title');
 const subtitleEl = document.querySelector('#auth-subtitle');
@@ -22,6 +14,7 @@ const toggleBtn = document.querySelector('#auth-toggle');
 const errorEl = document.querySelector('#auth-error');
 
 let mode = 'login';
+let auth;
 
 function setMode(nextMode) {
   mode = nextMode;
@@ -45,42 +38,65 @@ function showError(message) {
   errorEl.classList.remove('hidden');
 }
 
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    window.location.href = '/portal/';
+async function getPortalConfig() {
+  const response = await fetch('/.netlify/functions/portal-public-config');
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok || !data.firebase) {
+    throw new Error(data.error || 'Failed to load portal config');
   }
-});
+  return data;
+}
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  errorEl.classList.add('hidden');
-
-  const formData = new FormData(form);
-  const email = String(formData.get('email') || '').trim();
-  const password = String(formData.get('password') || '');
-
-  if (!email || !password) {
-    showError('Email and password are required.');
+async function init() {
+  try {
+    const config = await getPortalConfig();
+    const app = initializeApp(config.firebase);
+    auth = getAuth(app);
+  } catch (err) {
+    showError(err.message || 'Portal is temporarily unavailable.');
+    submitBtn.disabled = true;
+    toggleBtn.disabled = true;
     return;
   }
 
-  try {
-    setLoading(true);
-    if (mode === 'login') {
-      await signInWithEmailAndPassword(auth, email, password);
-    } else {
-      await createUserWithEmailAndPassword(auth, email, password);
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      window.location.href = '/portal/';
     }
-    window.location.href = '/portal/';
-  } catch (err) {
-    showError(err.message || 'Authentication failed.');
-  } finally {
-    setLoading(false);
-  }
-});
+  });
 
-toggleBtn.addEventListener('click', () => {
-  setMode(mode === 'login' ? 'signup' : 'login');
-});
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorEl.classList.add('hidden');
+
+    const formData = new FormData(form);
+    const email = String(formData.get('email') || '').trim();
+    const password = String(formData.get('password') || '');
+
+    if (!email || !password) {
+      showError('Email and password are required.');
+      return;
+    }
+
+    try {
+      setLoading(true);
+      if (mode === 'login') {
+        await signInWithEmailAndPassword(auth, email, password);
+      } else {
+        await createUserWithEmailAndPassword(auth, email, password);
+      }
+      window.location.href = '/portal/';
+    } catch (err) {
+      showError(err.message || 'Authentication failed.');
+    } finally {
+      setLoading(false);
+    }
+  });
+
+  toggleBtn.addEventListener('click', () => {
+    setMode(mode === 'login' ? 'signup' : 'login');
+  });
+}
 
 setMode('login');
+init();
