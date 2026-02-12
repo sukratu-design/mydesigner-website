@@ -24,6 +24,10 @@ const messageEl = document.querySelector('#portal-message');
 const refreshBtn = document.querySelector('#refresh-subscription-btn');
 const logoutBtn = document.querySelector('#logout-btn');
 const planCards = Array.from(document.querySelectorAll('[data-plan-card]'));
+const confirmStopModal = document.querySelector('#confirm-stop-modal');
+const confirmStopMessage = document.querySelector('#confirm-stop-message');
+const confirmStopApproveBtn = document.querySelector('#confirm-stop-approve');
+const confirmStopCancelBtn = document.querySelector('#confirm-stop-cancel');
 
 const planOrder = { starter: 1, growth: 2, scale: 3 };
 const planNames = { starter: 'Starter', growth: 'Growth', scale: 'Scale' };
@@ -177,6 +181,43 @@ async function stopSubscriptionAtPeriodEnd() {
   await refreshSubscription();
 }
 
+function confirmStopAction() {
+  const until = currentSubscription ? toDateString(currentSubscription.currentPeriodEnd) : 'the end of this billing period';
+  const text = `Your plan will remain active until ${until}. Do you want to continue?`;
+
+  if (!confirmStopModal || typeof confirmStopModal.showModal !== 'function') {
+    return Promise.resolve(window.confirm(text));
+  }
+
+  return new Promise((resolve) => {
+    confirmStopMessage.textContent = text;
+
+    const closeAndResolve = (value) => {
+      confirmStopApproveBtn.removeEventListener('click', onApprove);
+      confirmStopCancelBtn.removeEventListener('click', onCancel);
+      confirmStopModal.removeEventListener('close', onClose);
+      resolve(value);
+    };
+
+    const onApprove = () => {
+      confirmStopModal.close();
+      closeAndResolve(true);
+    };
+
+    const onCancel = () => {
+      confirmStopModal.close();
+      closeAndResolve(false);
+    };
+
+    const onClose = () => closeAndResolve(false);
+
+    confirmStopApproveBtn.addEventListener('click', onApprove);
+    confirmStopCancelBtn.addEventListener('click', onCancel);
+    confirmStopModal.addEventListener('close', onClose, { once: true });
+    confirmStopModal.showModal();
+  });
+}
+
 async function runButtonAction(button, fn) {
   const originalLabel = button.textContent;
 
@@ -233,6 +274,10 @@ planCards.forEach((card) => {
       }
 
       if (currentSubscription.plan === plan) {
+        const confirmed = await confirmStopAction();
+        if (!confirmed) {
+          return;
+        }
         await stopSubscriptionAtPeriodEnd();
         return;
       }
