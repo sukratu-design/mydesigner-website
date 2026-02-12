@@ -49,7 +49,10 @@
       <article class="card bg-base-200 border border-base-300">
         <div class="card-body">
           <p class="text-sm text-base-content/60">Status</p>
-          <p id="subscription-status" class="text-xl font-semibold">Loading...</p>
+          <p id="subscription-status" class="text-xl font-semibold flex items-center gap-2">
+            <span id="subscription-status-dot" class="h-2.5 w-2.5 rounded-full bg-base-content/30"></span>
+            <span id="subscription-status-text">Loading...</span>
+          </p>
         </div>
       </article>
 
@@ -62,9 +65,9 @@
 
       <article class="card bg-base-200 border border-base-300">
         <div class="card-body">
-          <p class="text-sm text-base-content/60">Current period ends</p>
-          <p id="subscription-renewal" class="text-base font-semibold">Loading...</p>
-          <p class="text-xs text-base-content/60 mt-1">Cancel at period end: <span id="subscription-cancel-flag">Loading...</span></p>
+          <p class="text-sm text-base-content/60">Your subscription period</p>
+          <p id="subscription-period" class="text-base font-semibold">Loading...</p>
+          <p id="subscription-period-note" class="text-xs text-base-content/60 mt-1">Loading...</p>
         </div>
       </article>
     </section>

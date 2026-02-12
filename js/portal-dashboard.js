@@ -14,10 +14,11 @@ const app = initializeApp(config.firebase);
 const auth = getAuth(app);
 
 const emailEl = document.querySelector('#user-email');
-const statusEl = document.querySelector('#subscription-status');
+const statusDotEl = document.querySelector('#subscription-status-dot');
+const statusTextEl = document.querySelector('#subscription-status-text');
 const planEl = document.querySelector('#subscription-plan');
-const renewalEl = document.querySelector('#subscription-renewal');
-const cancelFlagEl = document.querySelector('#subscription-cancel-flag');
+const periodEl = document.querySelector('#subscription-period');
+const periodNoteEl = document.querySelector('#subscription-period-note');
 const messageEl = document.querySelector('#portal-message');
 
 const refreshBtn = document.querySelector('#refresh-subscription-btn');
@@ -33,6 +34,16 @@ let currentSubscription = null;
 function toDateString(epochSeconds) {
   if (!epochSeconds) return 'N/A';
   return new Date(epochSeconds * 1000).toLocaleString();
+}
+
+function toPlanDisplay(plan) {
+  if (!plan || typeof plan !== 'string') return 'N/A';
+  return plan.charAt(0).toUpperCase() + plan.slice(1);
+}
+
+function setStatus(isActive) {
+  statusTextEl.textContent = isActive ? 'Active' : 'Inactive';
+  statusDotEl.className = `h-2.5 w-2.5 rounded-full ${isActive ? 'bg-success' : 'bg-error'}`;
 }
 
 function showMessage(text, kind = 'info') {
@@ -91,18 +102,20 @@ function setSubscriptionUI(subscription) {
   currentSubscription = subscription;
 
   if (!subscription) {
-    statusEl.textContent = 'No active subscription';
+    setStatus(false);
     planEl.textContent = 'N/A';
-    renewalEl.textContent = 'N/A';
-    cancelFlagEl.textContent = 'N/A';
+    periodEl.textContent = 'N/A';
+    periodNoteEl.textContent = 'No active subscription. Subscribe to start your plan.';
     setPlanCards(null);
     return;
   }
 
-  statusEl.textContent = subscription.status || 'unknown';
-  planEl.textContent = subscription.plan || 'custom';
-  renewalEl.textContent = toDateString(subscription.currentPeriodEnd);
-  cancelFlagEl.textContent = subscription.cancelAtPeriodEnd ? 'Yes (ends current period)' : 'No';
+  setStatus(true);
+  planEl.textContent = toPlanDisplay(subscription.plan);
+  periodEl.textContent = `${toDateString(subscription.currentPeriodStart)} to ${toDateString(subscription.currentPeriodEnd)}`;
+  periodNoteEl.textContent = subscription.cancelAtPeriodEnd
+    ? 'Your plan is scheduled to cancel.'
+    : 'Your plan will auto-renew.';
   setPlanCards(subscription);
 }
 

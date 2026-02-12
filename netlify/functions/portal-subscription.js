@@ -80,6 +80,7 @@ exports.handler = async (event) => {
             id: current.id,
             status: current.status,
             cancelAtPeriodEnd: Boolean(current.cancel_at_period_end),
+            currentPeriodStart: current.current_period_start || null,
             currentPeriodEnd: current.current_period_end || null,
             priceId,
             plan: currentPlan,
