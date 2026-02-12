@@ -20,12 +20,12 @@ const renewalEl = document.querySelector('#subscription-renewal');
 const cancelFlagEl = document.querySelector('#subscription-cancel-flag');
 const messageEl = document.querySelector('#portal-message');
 
-const startBtn = document.querySelector('#start-subscription-btn');
-const stopBtn = document.querySelector('#stop-subscription-btn');
-const upgradeBtn = document.querySelector('#upgrade-subscription-btn');
 const refreshBtn = document.querySelector('#refresh-subscription-btn');
 const logoutBtn = document.querySelector('#logout-btn');
-const planSelect = document.querySelector('#plan-select');
+const planCards = Array.from(document.querySelectorAll('[data-plan-card]'));
+
+const planOrder = { starter: 1, growth: 2, scale: 3 };
+const planNames = { starter: 'Starter', growth: 'Growth', scale: 'Scale' };
 
 let currentUser = null;
 let currentSubscription = null;
@@ -45,6 +45,52 @@ function hideMessage() {
   messageEl.classList.add('hidden');
 }
 
+function getPlanDirectionLabel(currentPlan, targetPlan) {
+  if (!currentPlan || !planOrder[currentPlan] || !planOrder[targetPlan]) {
+    return `Switch to ${planNames[targetPlan]}`;
+  }
+
+  if (planOrder[targetPlan] > planOrder[currentPlan]) {
+    return `Upgrade to ${planNames[targetPlan]}`;
+  }
+
+  return `Downgrade to ${planNames[targetPlan]}`;
+}
+
+function setPlanCards(subscription) {
+  const currentPlan = subscription ? subscription.plan : null;
+
+  planCards.forEach((card) => {
+    const plan = card.dataset.planCard;
+    const switchBtn = card.querySelector(`[data-switch-plan="${plan}"]`);
+    const stopBtn = card.querySelector(`[data-stop-plan="${plan}"]`);
+    const currentBadge = card.querySelector('[data-current-badge]');
+    const isCurrent = Boolean(subscription && currentPlan === plan);
+
+    if (currentBadge) {
+      currentBadge.classList.toggle('hidden', !isCurrent);
+    }
+
+    if (!subscription) {
+      switchBtn.disabled = false;
+      switchBtn.textContent = `Start ${planNames[plan]}`;
+      stopBtn.disabled = true;
+      return;
+    }
+
+    if (isCurrent) {
+      switchBtn.disabled = true;
+      switchBtn.textContent = 'Current Plan';
+      stopBtn.disabled = Boolean(subscription.cancelAtPeriodEnd);
+      return;
+    }
+
+    switchBtn.disabled = false;
+    switchBtn.textContent = getPlanDirectionLabel(currentPlan, plan);
+    stopBtn.disabled = true;
+  });
+}
+
 function setSubscriptionUI(subscription) {
   currentSubscription = subscription;
 
@@ -53,9 +99,7 @@ function setSubscriptionUI(subscription) {
     planEl.textContent = 'N/A';
     renewalEl.textContent = 'N/A';
     cancelFlagEl.textContent = 'N/A';
-    startBtn.disabled = false;
-    stopBtn.disabled = true;
-    upgradeBtn.disabled = true;
+    setPlanCards(null);
     return;
   }
 
@@ -63,10 +107,7 @@ function setSubscriptionUI(subscription) {
   planEl.textContent = subscription.plan || 'custom';
   renewalEl.textContent = toDateString(subscription.currentPeriodEnd);
   cancelFlagEl.textContent = subscription.cancelAtPeriodEnd ? 'Yes (ends current period)' : 'No';
-
-  startBtn.disabled = true;
-  stopBtn.disabled = subscription.cancelAtPeriodEnd;
-  upgradeBtn.disabled = false;
+  setPlanCards(subscription);
 }
 
 async function authedFetch(path, options = {}) {
@@ -94,13 +135,7 @@ async function refreshSubscription() {
   setSubscriptionUI(data.subscription || null);
 }
 
-async function startSubscription() {
-  const plan = planSelect.value;
-  if (!plan) {
-    showMessage('Select a plan before starting.', 'error');
-    return;
-  }
-
+async function startSubscription(plan) {
   const data = await authedFetch('/.netlify/functions/portal-start-subscription', {
     method: 'POST',
     body: JSON.stringify({ plan }),
@@ -113,40 +148,39 @@ async function startSubscription() {
   window.location.href = data.checkoutUrl;
 }
 
-async function stopSubscription() {
-  await authedFetch('/.netlify/functions/portal-stop-subscription', {
-    method: 'POST',
-    body: JSON.stringify({}),
-  });
-  showMessage('Subscription will cancel at the end of the current billing period.', 'success');
-  await refreshSubscription();
-}
-
-async function upgradeSubscription() {
-  const plan = planSelect.value;
-  if (!plan) {
-    showMessage('Select a plan to upgrade.', 'error');
-    return;
-  }
-
+async function changeSubscriptionPlan(plan) {
   await authedFetch('/.netlify/functions/portal-upgrade-subscription', {
     method: 'POST',
     body: JSON.stringify({ plan }),
   });
-  showMessage('Subscription updated with immediate proration.', 'success');
+
+  showMessage(`Switched to ${planNames[plan]} with immediate proration.`, 'success');
   await refreshSubscription();
 }
 
-async function runAction(fn, button) {
+async function stopSubscriptionAtPeriodEnd() {
+  await authedFetch('/.netlify/functions/portal-stop-subscription', {
+    method: 'POST',
+    body: JSON.stringify({}),
+  });
+
+  showMessage('Subscription will cancel at the end of the current billing period.', 'success');
+  await refreshSubscription();
+}
+
+async function runButtonAction(button, fn) {
+  const originalLabel = button.textContent;
+
   try {
     button.disabled = true;
+    button.textContent = 'Please wait...';
     hideMessage();
     await fn();
   } catch (err) {
     showMessage(err.message || 'Action failed.', 'error');
+    button.textContent = originalLabel;
   } finally {
     await refreshSubscription().catch(() => {});
-    button.disabled = false;
   }
 }
 
@@ -176,7 +210,42 @@ logoutBtn.addEventListener('click', async () => {
   window.location.href = '/portal/login.html';
 });
 
-startBtn.addEventListener('click', () => runAction(startSubscription, startBtn));
-stopBtn.addEventListener('click', () => runAction(stopSubscription, stopBtn));
-upgradeBtn.addEventListener('click', () => runAction(upgradeSubscription, upgradeBtn));
-refreshBtn.addEventListener('click', () => runAction(refreshSubscription, refreshBtn));
+refreshBtn.addEventListener('click', () => runButtonAction(refreshBtn, refreshSubscription));
+
+planCards.forEach((card) => {
+  const plan = card.dataset.planCard;
+  const switchBtn = card.querySelector(`[data-switch-plan="${plan}"]`);
+  const stopBtn = card.querySelector(`[data-stop-plan="${plan}"]`);
+
+  switchBtn.addEventListener('click', () =>
+    runButtonAction(switchBtn, async () => {
+      if (!currentSubscription) {
+        await startSubscription(plan);
+        return;
+      }
+
+      if (currentSubscription.plan === plan) {
+        showMessage(`${planNames[plan]} is already your current plan.`, 'info');
+        return;
+      }
+
+      await changeSubscriptionPlan(plan);
+    })
+  );
+
+  stopBtn.addEventListener('click', () =>
+    runButtonAction(stopBtn, async () => {
+      if (!currentSubscription) {
+        showMessage('No active subscription to stop.', 'error');
+        return;
+      }
+
+      if (currentSubscription.plan !== plan) {
+        showMessage('You can stop only from your active plan card.', 'error');
+        return;
+      }
+
+      await stopSubscriptionAtPeriodEnd();
+    })
+  );
+});

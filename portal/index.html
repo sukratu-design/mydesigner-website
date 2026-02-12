@@ -40,6 +40,7 @@
     <header>
       <h1 class="text-3xl lg:text-4xl font-bold">Subscription Portal</h1>
       <p class="text-base-content/70 mt-2">Start, stop, or upgrade your plan anytime.</p>
+      <button id="refresh-subscription-btn" class="btn btn-ghost btn-sm mt-4">Refresh status</button>
     </header>
 
     <div id="portal-message" class="alert hidden"></div>
@@ -68,28 +69,79 @@
       </article>
     </section>
 
-    <section class="card bg-base-200 border border-base-300">
-      <div class="card-body space-y-4">
-        <h2 class="card-title">Manage Subscription</h2>
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold">Manage Subscription</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article class="card bg-base-200 border border-base-300" data-plan-card="starter">
+          <div class="card-body">
+            <div class="flex items-center justify-between">
+              <h3 class="card-title text-xl">Starter</h3>
+              <span class="badge badge-primary hidden" data-current-badge>Current</span>
+            </div>
+            <p class="text-base-content/70 text-sm">Everything you need to launch and grow. Ideal for growing startups.</p>
+            <div class="my-4">
+              <span class="text-4xl font-bold">$1,400</span>
+              <span class="text-base-content/60">/mo</span>
+            </div>
+            <ul class="space-y-2 text-sm mb-6">
+              <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> UI/UX design</li>
+              <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Graphic design</li>
+              <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Webflow/Framer development</li>
+              <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> 1 request at a time</li>
+            </ul>
+            <button class="btn btn-primary w-full" data-switch-plan="starter">Switch to Starter</button>
+            <button class="btn btn-outline w-full mt-2" data-stop-plan="starter">Stop at Period End</button>
+          </div>
+        </article>
 
-        <label class="form-control max-w-xs">
-          <span class="label-text">Select plan</span>
-          <select id="plan-select" class="select select-bordered">
-            <option value="starter">Starter</option>
-            <option value="growth">Growth</option>
-            <option value="scale">Scale</option>
-          </select>
-        </label>
+        <article class="card bg-primary text-primary-content border-2 border-primary" data-plan-card="growth">
+          <div class="card-body">
+            <div class="flex items-center justify-between">
+              <h3 class="card-title text-xl">Growth</h3>
+              <div class="flex items-center gap-2">
+                <span class="badge badge-secondary">Most Popular</span>
+                <span class="badge badge-outline hidden border-primary-content/40 text-primary-content" data-current-badge>Current</span>
+              </div>
+            </div>
+            <p class="text-primary-content/80 text-sm">Move faster with parallel requests. Built for scaling companies.</p>
+            <div class="my-4">
+              <span class="text-4xl font-bold">$2,600</span>
+              <span class="text-primary-content/70">/mo</span>
+            </div>
+            <ul class="space-y-2 text-sm mb-6">
+              <li class="flex items-start gap-2"><span>&#10003;</span> Everything in Starter</li>
+              <li class="flex items-start gap-2"><span>&#10003;</span> Dedicated design manager</li>
+              <li class="flex items-start gap-2"><span>&#10003;</span> 2 requests at a time</li>
+              <li class="flex items-start gap-2"><span>&#10003;</span> 24-48 hour turnaround</li>
+            </ul>
+            <button class="btn btn-secondary w-full" data-switch-plan="growth">Switch to Growth</button>
+            <button class="btn btn-outline w-full mt-2 bg-transparent text-primary-content border-primary-content/40 hover:bg-primary-content/10" data-stop-plan="growth">Stop at Period End</button>
+          </div>
+        </article>
 
-        <div class="flex flex-wrap gap-3">
-          <button id="start-subscription-btn" class="btn btn-primary">Start Subscription</button>
-          <button id="upgrade-subscription-btn" class="btn btn-secondary">Upgrade Now (Prorated)</button>
-          <button id="stop-subscription-btn" class="btn btn-outline">Stop at Period End</button>
-          <button id="refresh-subscription-btn" class="btn btn-ghost">Refresh</button>
-        </div>
-
-        <p class="text-sm text-base-content/70">Stop keeps your subscription active until the current billing period ends. Upgrade applies immediately with Stripe prorations.</p>
+        <article class="card bg-base-200 border border-base-300" data-plan-card="scale">
+          <div class="card-body">
+            <div class="flex items-center justify-between">
+              <h3 class="card-title text-xl">Scale</h3>
+              <span class="badge badge-primary hidden" data-current-badge>Current</span>
+            </div>
+            <p class="text-base-content/70 text-sm">Maximum output with a dedicated team. For high-volume teams.</p>
+            <div class="my-4">
+              <span class="text-4xl font-bold">$3,800</span>
+              <span class="text-base-content/60">/mo</span>
+            </div>
+            <ul class="space-y-2 text-sm mb-6">
+              <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Everything in Growth</li>
+              <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Dedicated design team</li>
+              <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> 3 requests at a time</li>
+              <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Fastest turnaround</li>
+            </ul>
+            <button class="btn btn-primary w-full" data-switch-plan="scale">Switch to Scale</button>
+            <button class="btn btn-outline w-full mt-2" data-stop-plan="scale">Stop at Period End</button>
+          </div>
+        </article>
       </div>
+      <p class="text-sm text-base-content/70">Stop keeps your subscription active until the current billing period ends. Switching plans applies immediately with Stripe prorations.</p>
     </section>
   </main>
 
