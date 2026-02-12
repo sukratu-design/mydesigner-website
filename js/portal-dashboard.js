@@ -62,8 +62,7 @@ function setPlanCards(subscription) {
 
   planCards.forEach((card) => {
     const plan = card.dataset.planCard;
-    const switchBtn = card.querySelector(`[data-switch-plan="${plan}"]`);
-    const stopBtn = card.querySelector(`[data-stop-plan="${plan}"]`);
+    const actionBtn = card.querySelector(`[data-plan-action="${plan}"]`);
     const currentBadge = card.querySelector('[data-current-badge]');
     const isCurrent = Boolean(subscription && currentPlan === plan);
 
@@ -72,22 +71,19 @@ function setPlanCards(subscription) {
     }
 
     if (!subscription) {
-      switchBtn.disabled = false;
-      switchBtn.textContent = `Start ${planNames[plan]}`;
-      stopBtn.disabled = true;
+      actionBtn.disabled = false;
+      actionBtn.textContent = 'Subscribe';
       return;
     }
 
     if (isCurrent) {
-      switchBtn.disabled = true;
-      switchBtn.textContent = 'Current Plan';
-      stopBtn.disabled = Boolean(subscription.cancelAtPeriodEnd);
+      actionBtn.disabled = Boolean(subscription.cancelAtPeriodEnd);
+      actionBtn.textContent = subscription.cancelAtPeriodEnd ? 'Stopping at Period End' : 'Stop at Period End';
       return;
     }
 
-    switchBtn.disabled = false;
-    switchBtn.textContent = getPlanDirectionLabel(currentPlan, plan);
-    stopBtn.disabled = true;
+    actionBtn.disabled = false;
+    actionBtn.textContent = getPlanDirectionLabel(currentPlan, plan);
   });
 }
 
@@ -214,38 +210,21 @@ refreshBtn.addEventListener('click', () => runButtonAction(refreshBtn, refreshSu
 
 planCards.forEach((card) => {
   const plan = card.dataset.planCard;
-  const switchBtn = card.querySelector(`[data-switch-plan="${plan}"]`);
-  const stopBtn = card.querySelector(`[data-stop-plan="${plan}"]`);
+  const actionBtn = card.querySelector(`[data-plan-action="${plan}"]`);
 
-  switchBtn.addEventListener('click', () =>
-    runButtonAction(switchBtn, async () => {
+  actionBtn.addEventListener('click', () =>
+    runButtonAction(actionBtn, async () => {
       if (!currentSubscription) {
         await startSubscription(plan);
         return;
       }
 
       if (currentSubscription.plan === plan) {
-        showMessage(`${planNames[plan]} is already your current plan.`, 'info');
+        await stopSubscriptionAtPeriodEnd();
         return;
       }
 
       await changeSubscriptionPlan(plan);
-    })
-  );
-
-  stopBtn.addEventListener('click', () =>
-    runButtonAction(stopBtn, async () => {
-      if (!currentSubscription) {
-        showMessage('No active subscription to stop.', 'error');
-        return;
-      }
-
-      if (currentSubscription.plan !== plan) {
-        showMessage('You can stop only from your active plan card.', 'error');
-        return;
-      }
-
-      await stopSubscriptionAtPeriodEnd();
     })
   );
 });
