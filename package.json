@@ -1,0 +1,13 @@
+{
+  "name": "mydesigner-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "MyDesigner marketing site and customer portal",
+  "scripts": {
+    "test": "echo \"No tests configured\""
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.1",
+    "stripe": "^18.0.0"
+  }
+}
