@@ -219,18 +219,19 @@ function confirmStopAction() {
 }
 
 async function runButtonAction(button, fn) {
-  const originalLabel = button.textContent;
+  const originalHtml = button.innerHTML;
 
   try {
     button.disabled = true;
-    button.textContent = 'Please wait...';
+    button.innerHTML = '<span class="loading loading-spinner loading-xs"></span>';
     hideMessage();
     await fn();
   } catch (err) {
     showMessage(err.message || 'Action failed.', 'error');
-    button.textContent = originalLabel;
   } finally {
     await refreshSubscription().catch(() => {});
+    button.innerHTML = originalHtml;
+    button.disabled = false;
   }
 }
 
