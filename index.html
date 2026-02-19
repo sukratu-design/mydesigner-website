@@ -755,6 +755,14 @@
     <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg w-full">Book a call — it's free</a>
   </div>
 
+  <script>
+    (function () {
+      var hash = window.location.hash || '';
+      if (hash.includes('invite_token=') || hash.includes('confirmation_token=') || hash.includes('recovery_token=')) {
+        window.location.replace('/admin/' + hash);
+      }
+    })();
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
