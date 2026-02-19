@@ -147,7 +147,12 @@ function pageShell({ title, description, canonicalPath, body, ogType = 'website'
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style>
     .blog-wrap { max-width: 860px; }
-    .blog-prose h2, .blog-prose h3, .blog-prose h4 { margin-top: 2rem; margin-bottom: 0.75rem; }
+    .blog-prose h1, .blog-prose h2, .blog-prose h3, .blog-prose h4, .blog-prose h5, .blog-prose h6 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 700 !important;
+    }
     .blog-prose p, .blog-prose li { line-height: 1.75; margin-bottom: 1rem; }
     .blog-prose ul, .blog-prose ol { margin-left: 1.25rem; margin-bottom: 1rem; }
     .blog-prose code { background: var(--color-base-200); border-radius: 6px; padding: 0.1rem 0.35rem; }
