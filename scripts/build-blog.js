@@ -153,6 +153,12 @@ function pageShell({ title, description, canonicalPath, body, ogType = 'website'
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       font-weight: 700 !important;
     }
+    .blog-prose h1 { font-size: 2.15rem; line-height: 1.2; }
+    .blog-prose h2 { font-size: 1.85rem; line-height: 1.25; }
+    .blog-prose h3 { font-size: 1.55rem; line-height: 1.3; }
+    .blog-prose h4 { font-size: 1.3rem; line-height: 1.35; }
+    .blog-prose h5 { font-size: 1.15rem; line-height: 1.4; }
+    .blog-prose h6 { font-size: 1.05rem; line-height: 1.45; }
     .blog-prose p, .blog-prose li { line-height: 1.75; margin-bottom: 1rem; }
     .blog-prose ul, .blog-prose ol { margin-left: 1.25rem; margin-bottom: 1rem; }
     .blog-prose code { background: var(--color-base-200); border-radius: 6px; padding: 0.1rem 0.35rem; }
