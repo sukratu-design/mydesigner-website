@@ -8,9 +8,27 @@
 <body>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.init();
-    }
+    (function () {
+      function hasToken(str) {
+        return /(?:invite_token|confirmation_token|recovery_token)=/.test(str || "");
+      }
+
+      // Some email templates use query params, while Netlify Identity expects hash params.
+      if (hasToken(window.location.search) && !hasToken(window.location.hash)) {
+        var normalized = window.location.search.replace(/^\?/, "#");
+        window.location.replace(window.location.pathname + normalized);
+        return;
+      }
+
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.init();
+
+        // If user arrives with an auth token in URL, open widget immediately.
+        if (hasToken(window.location.hash)) {
+          window.netlifyIdentity.open();
+        }
+      }
+    })();
   </script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
