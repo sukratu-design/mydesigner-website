@@ -188,7 +188,14 @@ function pageShell({ title, description, canonicalPath, body, ogType = 'website'
 function buildBlogIndex(posts) {
   const cards = posts
     .map((post) => {
+      const cover = post.coverImage
+        ? `<figure class="px-6 pt-6">
+          <img src="${post.coverImage}" alt="${escapeXml(post.title)}" class="w-full h-56 object-cover rounded-box border border-base-300">
+        </figure>`
+        : '';
+
       return `<article class="card bg-base-200 border border-base-300 hover:shadow-lg transition-shadow">
+        ${cover}
         <div class="card-body">
           <div class="text-sm text-base-content/70">${post.dateDisplay} · ${escapeXml(post.author)}</div>
           <h2 class="card-title text-2xl"><a class="hover:underline" href="/blog/${post.slug}.html">${escapeXml(post.title)}</a></h2>
