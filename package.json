@@ -4,10 +4,14 @@
   "version": "1.0.0",
   "description": "MyDesigner marketing site and customer portal",
   "scripts": {
+    "build": "npm run build:blog",
+    "build:blog": "node scripts/build-blog.js",
     "test": "echo \"No tests configured\""
   },
   "dependencies": {
     "firebase-admin": "^13.0.1",
+    "gray-matter": "^4.0.3",
+    "marked": "^16.3.0",
     "stripe": "^18.0.0"
   }
 }
