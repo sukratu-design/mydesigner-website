@@ -1,0 +1,76 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="og" x1="400" y1="150" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFA848"/>
+      <stop offset="100%" stop-color="#FF640D"/>
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
+      <circle cx="18" cy="18" r="1.6" fill="#E4E4E4"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Brand rings — top-right -->
+  <circle cx="1110" cy="80"  r="170" stroke="#F0F0F0" stroke-width="38" fill="none"/>
+  <circle cx="1110" cy="80"  r="240" stroke="#F0F0F0" stroke-width="28" fill="none"/>
+  <circle cx="1110" cy="80"  r="310" stroke="#EFEFEF" stroke-width="20" fill="none"/>
+  <circle cx="1110" cy="80"  r="380" stroke="#EEEEEE" stroke-width="14" fill="none"/>
+
+  <!-- ─── Diverse shapes: different forms, different sizes, all belonging ─── -->
+
+  <!-- Large circle — top-left area -->
+  <circle cx="280" cy="210" r="72" stroke="#D0D0D0" stroke-width="1.5" fill="#F8F8F8"/>
+  <!-- Medium square — left -->
+  <rect x="140" y="340" width="56" height="56" rx="6" stroke="#D0D0D0" stroke-width="1.5" fill="#F8F8F8"/>
+  <!-- Small circle — bottom-left -->
+  <circle cx="260" cy="440" r="28" stroke="#D0D0D0" stroke-width="1.5" fill="#F8F8F8"/>
+
+  <!-- Medium rounded rect — centre-top -->
+  <rect x="420" y="130" width="90" height="64" rx="10" stroke="#D0D0D0" stroke-width="1.5" fill="#F8F8F8"/>
+  <!-- Large rounded square — centre -->
+  <rect x="440" y="260" width="120" height="120" rx="14" stroke="#D0D0D0" stroke-width="1.5" fill="#F8F8F8"/>
+  <!-- Small circle — centre-bottom -->
+  <circle cx="520" cy="460" r="22" stroke="#D0D0D0" stroke-width="1.5" fill="#F8F8F8"/>
+
+  <!-- Triangle — right area (using polygon) -->
+  <polygon points="720,180 780,300 660,300" stroke="#D0D0D0" stroke-width="1.5" fill="#F8F8F8" stroke-linejoin="round"/>
+  <!-- Small square — right -->
+  <rect x="690" y="370" width="42" height="42" rx="4" stroke="#D0D0D0" stroke-width="1.5" fill="#F8F8F8"/>
+  <!-- Medium circle — far right -->
+  <circle cx="830" cy="310" r="48" stroke="#D0D0D0" stroke-width="1.5" fill="#F8F8F8"/>
+  <!-- Tiny circle — bottom-right -->
+  <circle cx="780" cy="490" r="16" stroke="#D0D0D0" stroke-width="1.5" fill="#F8F8F8"/>
+
+  <!-- ─── Orange-highlighted shapes (the "included" ones — diverse but valued) ─── -->
+
+  <!-- Orange circle — centre-left (prominent) -->
+  <circle cx="370" cy="340" r="40" stroke="url(#og)" stroke-width="2" fill="none" opacity="0.40"/>
+  <circle cx="370" cy="340" r="40" fill="#FFA848" opacity="0.06"/>
+
+  <!-- Orange rounded rect — right-centre -->
+  <rect x="730" y="340" width="80" height="52" rx="8" stroke="url(#og)" stroke-width="1.8" fill="none" opacity="0.38"/>
+  <rect x="730" y="340" width="80" height="52" rx="8" fill="#FFA848" opacity="0.05"/>
+
+  <!-- Orange small diamond — top-centre -->
+  <rect x="570" y="170" width="30" height="30" rx="4" transform="rotate(45 585 185)" stroke="url(#og)" stroke-width="1.6" fill="none" opacity="0.35"/>
+
+  <!-- ─── Connection lines between shapes — the inclusive network ─── -->
+  <line x1="280" y1="280" x2="370" y2="340" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="370" y1="340" x2="500" y2="320" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="560" y1="320" x2="720" y2="240" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="500" y1="380" x2="520" y2="438" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="560" y1="320" x2="730" y2="366" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="170" y1="370" x2="260" y2="412" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- ─── Small orange connector dots ─── -->
+  <circle cx="370" cy="340" r="3" fill="#FFA848" opacity="0.45"/>
+  <circle cx="500" cy="320" r="3" fill="#FFA848" opacity="0.40"/>
+  <circle cx="560" cy="320" r="3" fill="#FFA848" opacity="0.35"/>
+
+  <!-- Accent lines -->
+  <line x1="120" y1="560" x2="380" y2="210" stroke="#FFA848" stroke-width="1" stroke-linecap="round" opacity="0.14"/>
+  <line x1="800" y1="500" x2="940" y2="420" stroke="#FFA848" stroke-width="1" stroke-linecap="round" opacity="0.10"/>
+</svg>
