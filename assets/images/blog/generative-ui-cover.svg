@@ -1,0 +1,81 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="og" x1="440" y1="185" x2="760" y2="465" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFA848"/>
+      <stop offset="100%" stop-color="#FF640D"/>
+    </linearGradient>
+    <linearGradient id="ogFill" x1="440" y1="185" x2="760" y2="465" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFA848" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#FF640D" stop-opacity="0.02"/>
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
+      <circle cx="18" cy="18" r="1.6" fill="#E4E4E4"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Brand rings — top-right, barely visible -->
+  <circle cx="1110" cy="80"  r="170" stroke="#F0F0F0" stroke-width="38" fill="none"/>
+  <circle cx="1110" cy="80"  r="240" stroke="#F0F0F0" stroke-width="28" fill="none"/>
+  <circle cx="1110" cy="80"  r="310" stroke="#EFEFEF" stroke-width="20" fill="none"/>
+  <circle cx="1110" cy="80"  r="380" stroke="#EEEEEE" stroke-width="14" fill="none"/>
+
+  <!-- ─── Left panel — static, taller portrait layout ─── -->
+  <rect x="138" y="138" width="206" height="354" rx="10" fill="#FAFAFA" stroke="#DCDCDC" stroke-width="1.5"/>
+  <!-- Inner skeleton rows -->
+  <rect x="160" y="165" width="162" height="11" rx="3" fill="#E6E6E6"/>
+  <rect x="160" y="186" width="110" height="8"  rx="2" fill="#EEEEEE"/>
+  <rect x="160" y="208" width="162" height="72" rx="6" fill="#F0F0F0"/>
+  <rect x="160" y="296" width="162" height="8"  rx="2" fill="#EEEEEE"/>
+  <rect x="160" y="314" width="130" height="8"  rx="2" fill="#EEEEEE"/>
+  <rect x="160" y="332" width="162" height="8"  rx="2" fill="#EEEEEE"/>
+  <rect x="160" y="360" width="162" height="8"  rx="2" fill="#EEEEEE"/>
+  <rect x="160" y="378" width="100" height="8"  rx="2" fill="#EEEEEE"/>
+  <rect x="160" y="432" width="58"  height="24" rx="5" fill="#E4E4E4"/>
+
+  <!-- ─── Centre panel — active / adaptive, highlighted ─── -->
+  <!-- Soft orange shadow / glow behind -->
+  <rect x="434" y="182" width="334" height="266" rx="12" fill="#FFF6EE" opacity="0.7"/>
+  <!-- Panel border in muted orange -->
+  <rect x="438" y="186" width="326" height="258" rx="10" fill="#FFFCFA" stroke="url(#og)" stroke-width="1.4"/>
+  <!-- Inner skeleton — slightly warmer tones -->
+  <rect x="460" y="212" width="240" height="11" rx="3" fill="#F0E8DF"/>
+  <rect x="460" y="233" width="160" height="8"  rx="2" fill="#F4EDE5"/>
+  <!-- "Adaptive" label pill -->
+  <rect x="460" y="253" width="68"  height="18" rx="9" fill="#FFA848" opacity="0.18"/>
+  <!-- Content blocks -->
+  <rect x="460" y="284" width="282" height="56" rx="6" fill="#F6EEE8" opacity="0.8"/>
+  <rect x="460" y="356" width="240" height="8"  rx="2" fill="#F0E8DF"/>
+  <rect x="460" y="374" width="180" height="8"  rx="2" fill="#F0E8DF"/>
+  <rect x="460" y="392" width="220" height="8"  rx="2" fill="#F0E8DF"/>
+  <!-- CTA button placeholder - subtle orange -->
+  <rect x="460" y="410" width="80"  height="24" rx="5" fill="#FFA848" opacity="0.22"/>
+
+  <!-- ─── Right panel — static, medium portrait ─── -->
+  <rect x="826" y="158" width="196" height="314" rx="10" fill="#FAFAFA" stroke="#DCDCDC" stroke-width="1.5"/>
+  <!-- Inner skeleton -->
+  <rect x="848" y="184" width="152" height="11" rx="3" fill="#E6E6E6"/>
+  <rect x="848" y="205" width="100" height="8"  rx="2" fill="#EEEEEE"/>
+  <rect x="848" y="228" width="152" height="64" rx="6" fill="#F0F0F0"/>
+  <rect x="848" y="308" width="152" height="8"  rx="2" fill="#EEEEEE"/>
+  <rect x="848" y="326" width="110" height="8"  rx="2" fill="#EEEEEE"/>
+  <rect x="848" y="344" width="152" height="8"  rx="2" fill="#EEEEEE"/>
+  <rect x="848" y="400" width="56"  height="24" rx="5" fill="#E4E4E4"/>
+
+  <!-- ─── Dashed connector lines between panels ─── -->
+  <line x1="344" y1="315" x2="438" y2="315" stroke="#D0D0D0" stroke-width="1" stroke-dasharray="5 4"/>
+  <line x1="764" y1="315" x2="826" y2="315" stroke="#D0D0D0" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- Connector dots — orange, very muted -->
+  <circle cx="344" cy="315" r="3.5" fill="#FFA848" opacity="0.28"/>
+  <circle cx="438" cy="315" r="3.5" fill="#FFA848" opacity="0.32"/>
+  <circle cx="764" cy="315" r="3.5" fill="#FFA848" opacity="0.32"/>
+  <circle cx="826" cy="315" r="3.5" fill="#FFA848" opacity="0.28"/>
+
+  <!-- Subtle diagonal accent -->
+  <line x1="120" y1="560" x2="430" y2="185" stroke="#FFA848" stroke-width="1" stroke-linecap="round" opacity="0.10"/>
+  <line x1="770" y1="445" x2="950" y2="560" stroke="#FFA848" stroke-width="1" stroke-linecap="round" opacity="0.08"/>
+</svg>

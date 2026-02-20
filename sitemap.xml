@@ -68,19 +68,25 @@
   </url>
   <url>
     <loc>https://mydesigner.gg/blog/</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mydesigner.gg/blog/welcome-to-mydesigner-blog.html</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://mydesigner.gg/blog/the-return-of-personality-why-startup-brands-are-ditching-perfection-in-2026.html</loc>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mydesigner.gg/blog/generative-ui-how-ai-powered-interfaces-are-redefining-design-in-2026.html</loc>
     <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mydesigner.gg/blog/ai-fatigue-the-rise-of-strategic-ux-in-2026.html</loc>
+    <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
