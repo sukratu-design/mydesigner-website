@@ -6,7 +6,7 @@ excerpt: Both platforms can build beautiful websites. But they solve different p
   actually needs.
 date: 2026-02-22T09:00
 author: MyDesigner Team
-coverImage: /assets/images/blog/webflow-vs-framer-cover.svg
+coverImage: /assets/images/blog/webflow-vs-framer-cover.avif
 draft: false
 ---
 ## The Problem: "Which One Should We Use?"

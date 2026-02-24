@@ -5,7 +5,7 @@ excerpt: Most startups treat accessibility as a compliance checkbox. In 2026, th
   smartest ones are treating it as a growth strategy — and the data backs them up.
 date: 2026-02-21T09:00
 author: MyDesigner Team
-coverImage: /assets/images/blog/accessibility-growth-lever-cover.svg
+coverImage: /assets/images/blog/accessibility-growth-lever-cover.avif
 draft: false
 ---
 ## The Problem: Accessibility Is Still an Afterthought

@@ -7,7 +7,7 @@ excerpt: Generative UI is turning static product experiences into adaptive,
   conversion and retention.
 date: 2026-02-19T09:57
 author: MyDesigner Team
-coverImage: /assets/images/blog/generative-ui-cover.svg
+coverImage: /assets/images/blog/generative-ui-cover.avif
 draft: false
 ---
 ## The problem: Static interfaces are holding growth back

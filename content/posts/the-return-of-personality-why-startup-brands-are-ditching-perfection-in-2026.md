@@ -6,7 +6,7 @@ excerpt: AI tools made design faster and smoother than ever. So why are the most
   human imperfection over algorithmic polish?
 date: 2026-02-20T09:00
 author: MyDesigner Team
-coverImage: /assets/images/blog/return-of-personality-cover.svg
+coverImage: /assets/images/blog/return-of-personality-cover.avif
 draft: false
 ---
 ## The Problem: Everything Looks the Same

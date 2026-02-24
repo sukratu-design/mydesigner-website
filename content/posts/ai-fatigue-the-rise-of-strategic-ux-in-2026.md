@@ -7,7 +7,7 @@ excerpt: Founders and marketers are seeing a surge of AI‑powered design tools
   that surface‑level UI tricks no longer differentiate a product.
 date: 2026-02-18T10:12
 author: MyDesigner Team
-coverImage: /assets/images/blog/ai-fatigue-cover.svg
+coverImage: /assets/images/blog/ai-fatigue-cover.avif
 draft: false
 ---
 ## The Problem: AI is Everywhere, but Trust is Crumbling
