@@ -249,6 +249,55 @@ function pageShell({ title, description, canonicalPath, body, ogType = 'website'
 `;
 }
 
+function subscribeBlock() {
+  return `<div class="mt-12 py-10 px-8 bg-base-200 rounded-box border border-base-300 text-center">
+  <p class="text-xs uppercase tracking-widest text-base-content/50 mb-2">Stay in the loop</p>
+  <h3 class="text-2xl font-bold mb-2">Get new posts in your inbox</h3>
+  <p class="text-base-content/70 mb-6 max-w-sm mx-auto">No spam. Design, growth, and product insights from the MyDesigner team — straight to your inbox.</p>
+  <form name="blog-subscribe" data-netlify="true" id="subscribe-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" novalidate>
+    <input type="hidden" name="form-name" value="blog-subscribe">
+    <input type="email" name="email" placeholder="your@email.com" required class="input input-bordered flex-1" autocomplete="email">
+    <button type="submit" class="btn btn-primary">Subscribe</button>
+  </form>
+  <p id="subscribe-msg" class="mt-3 text-sm hidden"></p>
+  <script>
+  (function () {
+    var form = document.getElementById('subscribe-form');
+    var msg  = document.getElementById('subscribe-msg');
+    if (!form) return;
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var email = form.email.value.trim();
+      var btn = form.querySelector('button[type=submit]');
+      btn.disabled = true;
+      btn.textContent = 'Subscribing\u2026';
+      msg.className = 'mt-3 text-sm hidden';
+      try {
+        var res = await fetch('/.netlify/functions/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email })
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          msg.textContent = '\u2713 You\u2019re subscribed! Check your inbox.';
+          msg.className = 'mt-3 text-sm text-success';
+        } else {
+          throw new Error();
+        }
+      } catch (_) {
+        msg.textContent = 'Something went wrong \u2014 please try again.';
+        msg.className = 'mt-3 text-sm text-error';
+        btn.disabled = false;
+        btn.textContent = 'Subscribe';
+      }
+      msg.classList.remove('hidden');
+    });
+  })();
+  </script>
+</div>`;
+}
+
 function buildBlogIndex(posts) {
   const cards = posts
     .map((post) => {
@@ -281,6 +330,7 @@ function buildBlogIndex(posts) {
         <a class="btn btn-outline btn-sm" href="/rss.xml">Subscribe via RSS</a>
       </div>
       <div class="grid gap-6">${cards || '<p>No posts published yet.</p>'}</div>
+      ${subscribeBlock()}
     </section>
   </main>`;
 
@@ -307,6 +357,7 @@ function buildBlogPostPage(post) {
       </header>
       ${cover}
       <section class="blog-prose">${post.htmlContent}</section>
+      ${subscribeBlock()}
     </article>
   </main>`;
 
