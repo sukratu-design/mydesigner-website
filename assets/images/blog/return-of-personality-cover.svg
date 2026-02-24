@@ -1,85 +1,84 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
   <defs>
-    <!-- Orange brand gradient -->
-    <linearGradient id="blobGrad" x1="350" y1="140" x2="730" y2="530" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFA848"/>
-      <stop offset="100%" stop-color="#FF640D"/>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF6E8"/>
+      <stop offset="100%" stop-color="#FEF0D8"/>
     </linearGradient>
-    <linearGradient id="blobGradSoft" x1="500" y1="100" x2="800" y2="400" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFA848" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#FF640D" stop-opacity="0.06"/>
-    </linearGradient>
-    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+    <linearGradient id="blobBL" x1="0" y1="630" x2="460" y2="0" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#FFA848" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#FF640D" stop-opacity="0.08"/>
+      <stop offset="68%" stop-color="#FFD4A0" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#FFA848" stop-opacity="0"/>
     </linearGradient>
-    <!-- Dot pattern -->
-    <pattern id="dots" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
-      <circle cx="18" cy="18" r="1.6" fill="#E4E4E4"/>
+    <linearGradient id="blobTR" x1="1200" y1="0" x2="730" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFA848" stop-opacity="0.21"/>
+      <stop offset="68%" stop-color="#FFCB87" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#FFA848" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="centerVeil" cx="600" cy="315" r="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF8EE" stop-opacity="0.88"/>
+      <stop offset="75%" stop-color="#FFF8EE" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FFF8EE" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gridPat" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.12"/>
     </pattern>
-    <!-- Grain noise filter -->
-    <filter id="noise" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" stitchTiles="stitch" result="noiseOut"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.06 0" in="noiseOut" result="tinted"/>
-      <feComposite in="SourceGraphic" in2="tinted" operator="over"/>
-    </filter>
+    <pattern id="dotPat" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1.2" fill="#FFA848" fill-opacity="0.28"/>
+    </pattern>
   </defs>
 
-  <!-- ─── Background ─── -->
-  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#gridPat)"/>
 
-  <!-- ─── Dot grid (whole canvas, very subtle) ─── -->
-  <rect width="1200" height="630" fill="url(#dots)"/>
+  <!-- Dot pattern — top-left -->
+  <rect x="0" y="0" width="295" height="205" fill="url(#dotPat)" opacity="0.73"/>
+  <!-- Dot pattern — bottom-right -->
+  <rect x="820" y="355" width="380" height="275" fill="url(#dotPat)" opacity="0.68"/>
 
-  <!-- ─── Brand concentric rings — top-right, barely visible ─── -->
-  <circle cx="1110" cy="80"  r="170" stroke="#F0F0F0" stroke-width="38" fill="none"/>
-  <circle cx="1110" cy="80"  r="240" stroke="#F0F0F0" stroke-width="28" fill="none"/>
-  <circle cx="1110" cy="80"  r="310" stroke="#EFEFEF" stroke-width="20" fill="none"/>
-  <circle cx="1110" cy="80"  r="380" stroke="#EEEEEE" stroke-width="14" fill="none"/>
+  <!-- Wave blob — bottom-left (rounder, more organic) -->
+  <path d="M -65 630 C 85 595, 205 545, 262 448 C 348 318, 205 245, 295 125 C 362 38, 182 -12, -65 0 Z" fill="url(#blobBL)"/>
 
-  <!-- ─── "Perfection" element — perfect circle, hairline stroke, center-left ─── -->
-  <circle cx="510" cy="315" r="230" stroke="#DADADA" stroke-width="1.5" fill="none"/>
-  <!-- A second smaller perfect circle (another "same" brand) -->
-  <circle cx="700" cy="220" r="90"  stroke="#E8E8E8" stroke-width="1"   fill="none"/>
-  <!-- A third -->
-  <circle cx="680" cy="450" r="55"  stroke="#E8E8E8" stroke-width="1"   fill="none"/>
+  <!-- Wave blob — top-right (slightly flatter) -->
+  <path d="M 1265 0 C 1082 68, 942 148, 902 268 C 832 418, 1042 458, 965 572 C 915 648, 1092 652, 1265 630 Z" fill="url(#blobTR)"/>
 
-  <!-- ─── Small perfect squares scattered — "AI-same" motif ─── -->
-  <rect x="178" y="155" width="18" height="18" rx="2" fill="#EBEBEB"/>
-  <rect x="155" y="430" width="12" height="12" rx="1.5" fill="#EBEBEB"/>
-  <rect x="820" y="530" width="14" height="14" rx="2" fill="#EBEBEB"/>
-  <rect x="920" y="350" width="10" height="10" rx="1.5" fill="#EBEBEB"/>
-  <rect x="240" y="490" width="8"  height="8"  rx="1" fill="#E8E8E8"/>
+  <!-- Flowing curves — left side -->
+  <path d="M -45 555 C 108 428, 65 286, 195 165 C 275 86, 395 98, 358 -36" fill="none" stroke="#FFD4A0" stroke-width="2" stroke-opacity="0.31" stroke-linecap="round"/>
+  <path d="M -45 642 C 138 492, 95 335, 228 205 C 328 116, 445 130, 408 -24" fill="none" stroke="#FFA848" stroke-width="1.5" stroke-opacity="0.27" stroke-linecap="round"/>
+  <path d="M -45 468 C 86 368, 45 248, 152 138 C 228 60, 338 72, 305 -44" fill="none" stroke="#FFA848" stroke-width="0.8" stroke-opacity="0.17" stroke-linecap="round"/>
 
-  <!-- ─── Soft orange echo blob (behind main blob, lighter) ─── -->
-  <path d="
-    M 430 165
-    C 560 95, 740 145, 780 285
-    C 820 425, 740 530, 610 555
-    C 480 580, 340 530, 285 415
-    C 230 300, 300 235, 430 165 Z
-  " fill="url(#blobGradSoft)"/>
+  <!-- Flowing curves — right side -->
+  <path d="M 1245 75 C 1088 205, 1152 348, 1012 468 C 912 558, 794 538, 835 668" fill="none" stroke="#FFD4A0" stroke-width="2" stroke-opacity="0.31" stroke-linecap="round"/>
+  <path d="M 1345 115 C 1165 248, 1228 388, 1088 508 C 988 595, 868 572, 908 702" fill="none" stroke="#FFA848" stroke-width="1.5" stroke-opacity="0.27" stroke-linecap="round"/>
+  <path d="M 1148 48 C 1008 182, 1072 318, 932 432 C 832 518, 718 495, 758 622" fill="none" stroke="#FFA848" stroke-width="0.8" stroke-opacity="0.17" stroke-linecap="round"/>
 
-  <!-- ─── Main organic blob — the "personality" ─── -->
-  <path d="
-    M 395 195
-    C 490 128, 650 155, 700 265
-    C 750 375, 720 480, 635 520
-    C 550 560, 415 545, 345 465
-    C 275 385, 275 280, 395 195 Z
-  " fill="url(#blobGrad)"/>
+  <!-- Concentric arcs — top-left -->
+  <path d="M 20 208 A 186 186 0 0 1 208 20" fill="none" stroke="#FFA848" stroke-width="1" stroke-opacity="0.27" stroke-linecap="round"/>
+  <path d="M 20 260 A 239 239 0 0 1 260 20" fill="none" stroke="#FFA848" stroke-width="0.7" stroke-opacity="0.17" stroke-linecap="round"/>
+  <path d="M 20 315 A 292 292 0 0 1 315 20" fill="none" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.12" stroke-linecap="round"/>
 
-  <!-- ─── Thin orange accent strokes ─── -->
-  <!-- Diagonal slash — energy / disruption -->
-  <line x1="820" y1="570" x2="990" y2="420" stroke="#FFA848" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-  <line x1="150" y1="560" x2="240" y2="490" stroke="#FF8A28" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+  <!-- Concentric arcs — bottom-right -->
+  <path d="M 1180 422 A 186 186 0 0 1 994 610" fill="none" stroke="#FFA848" stroke-width="1" stroke-opacity="0.27" stroke-linecap="round"/>
+  <path d="M 1180 370 A 239 239 0 0 1 941 610" fill="none" stroke="#FFA848" stroke-width="0.7" stroke-opacity="0.17" stroke-linecap="round"/>
+  <path d="M 1180 315 A 292 292 0 0 1 888 610" fill="none" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.12" stroke-linecap="round"/>
 
-  <!-- ─── Small orange dot accents ─── -->
-  <circle cx="770" cy="160" r="5"   fill="#FFA848" opacity="0.65"/>
-  <circle cx="810" cy="182" r="3"   fill="#FF8428" opacity="0.5"/>
-  <circle cx="250" cy="205" r="4"   fill="#FF8428" opacity="0.4"/>
-  <circle cx="200" cy="388" r="6"   fill="#FFA848" opacity="0.3"/>
+  <!-- Geometric accents — top-right -->
+  <rect x="975" y="50" width="11" height="11" rx="1.5" transform="rotate(45 980.5 55.5)" fill="#FFA848" fill-opacity="0.31"/>
+  <circle cx="838" cy="92" r="5" fill="none" stroke="#FFA848" stroke-width="1.5" stroke-opacity="0.37"/>
+  <circle cx="838" cy="92" r="10" fill="none" stroke="#FFA848" stroke-width="0.7" stroke-opacity="0.17"/>
+  <circle cx="1052" cy="120" r="2.5" fill="#FFA848" fill-opacity="0.27"/>
+  <circle cx="1065" cy="112" r="1.7" fill="#FFA848" fill-opacity="0.17"/>
+  <circle cx="1060" cy="130" r="1.4" fill="#FFA848" fill-opacity="0.13"/>
 
-  <!-- ─── Grain noise overlay for tactile feel ─── -->
-  <rect width="1200" height="630" fill="white" opacity="0.01" filter="url(#noise)"/>
+  <!-- Geometric accents — bottom-left -->
+  <rect x="142" y="528" width="11" height="11" rx="1.5" transform="rotate(45 147.5 533.5)" fill="#FFA848" fill-opacity="0.31"/>
+  <circle cx="302" cy="488" r="5" fill="none" stroke="#FFA848" stroke-width="1.5" stroke-opacity="0.37"/>
+  <circle cx="302" cy="488" r="10" fill="none" stroke="#FFA848" stroke-width="0.7" stroke-opacity="0.17"/>
+  <circle cx="145" cy="396" r="2.5" fill="#FFA848" fill-opacity="0.27"/>
+  <circle cx="133" cy="388" r="1.7" fill="#FFA848" fill-opacity="0.17"/>
+  <circle cx="139" cy="406" r="1.4" fill="#FFA848" fill-opacity="0.13"/>
+
+  <line x1="0" y1="315" x2="258" y2="315" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.12"/>
+  <line x1="942" y1="315" x2="1200" y2="315" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.12"/>
+
+  <rect width="1200" height="630" fill="url(#centerVeil)"/>
 </svg>

@@ -1,81 +1,84 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
   <defs>
-    <linearGradient id="og" x1="440" y1="185" x2="760" y2="465" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFA848"/>
-      <stop offset="100%" stop-color="#FF640D"/>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF6E8"/>
+      <stop offset="100%" stop-color="#FEF0D8"/>
     </linearGradient>
-    <linearGradient id="ogFill" x1="440" y1="185" x2="760" y2="465" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFA848" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="#FF640D" stop-opacity="0.02"/>
+    <linearGradient id="blobBL" x1="0" y1="630" x2="520" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFA848" stop-opacity="0.30"/>
+      <stop offset="60%" stop-color="#FFD4A0" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FFA848" stop-opacity="0"/>
     </linearGradient>
-    <pattern id="dots" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
-      <circle cx="18" cy="18" r="1.6" fill="#E4E4E4"/>
+    <linearGradient id="blobTR" x1="1200" y1="0" x2="680" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFA848" stop-opacity="0.24"/>
+      <stop offset="60%" stop-color="#FFCB87" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#FFA848" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="centerVeil" cx="600" cy="315" r="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF8EE" stop-opacity="0.88"/>
+      <stop offset="75%" stop-color="#FFF8EE" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FFF8EE" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gridPat" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.12"/>
+    </pattern>
+    <pattern id="dotPat" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1.2" fill="#FFA848" fill-opacity="0.28"/>
     </pattern>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="630" fill="#FFFFFF"/>
-  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#gridPat)"/>
 
-  <!-- Brand rings — top-right, barely visible -->
-  <circle cx="1110" cy="80"  r="170" stroke="#F0F0F0" stroke-width="38" fill="none"/>
-  <circle cx="1110" cy="80"  r="240" stroke="#F0F0F0" stroke-width="28" fill="none"/>
-  <circle cx="1110" cy="80"  r="310" stroke="#EFEFEF" stroke-width="20" fill="none"/>
-  <circle cx="1110" cy="80"  r="380" stroke="#EEEEEE" stroke-width="14" fill="none"/>
+  <!-- Dot pattern — top-left -->
+  <rect x="0" y="0" width="320" height="210" fill="url(#dotPat)" opacity="0.75"/>
+  <!-- Dot pattern — bottom-right -->
+  <rect x="790" y="340" width="410" height="290" fill="url(#dotPat)" opacity="0.70"/>
 
-  <!-- ─── Left panel — static, taller portrait layout ─── -->
-  <rect x="138" y="138" width="206" height="354" rx="10" fill="#FAFAFA" stroke="#DCDCDC" stroke-width="1.5"/>
-  <!-- Inner skeleton rows -->
-  <rect x="160" y="165" width="162" height="11" rx="3" fill="#E6E6E6"/>
-  <rect x="160" y="186" width="110" height="8"  rx="2" fill="#EEEEEE"/>
-  <rect x="160" y="208" width="162" height="72" rx="6" fill="#F0F0F0"/>
-  <rect x="160" y="296" width="162" height="8"  rx="2" fill="#EEEEEE"/>
-  <rect x="160" y="314" width="130" height="8"  rx="2" fill="#EEEEEE"/>
-  <rect x="160" y="332" width="162" height="8"  rx="2" fill="#EEEEEE"/>
-  <rect x="160" y="360" width="162" height="8"  rx="2" fill="#EEEEEE"/>
-  <rect x="160" y="378" width="100" height="8"  rx="2" fill="#EEEEEE"/>
-  <rect x="160" y="432" width="58"  height="24" rx="5" fill="#E4E4E4"/>
+  <!-- Wave blob — bottom-left (wider, extends further right) -->
+  <path d="M -100 630 C 40 555, 210 480, 285 365 C 385 222, 175 155, 305 42 C 385 -25, 138 -32, -100 0 Z" fill="url(#blobBL)"/>
 
-  <!-- ─── Centre panel — active / adaptive, highlighted ─── -->
-  <!-- Soft orange shadow / glow behind -->
-  <rect x="434" y="182" width="334" height="266" rx="12" fill="#FFF6EE" opacity="0.7"/>
-  <!-- Panel border in muted orange -->
-  <rect x="438" y="186" width="326" height="258" rx="10" fill="#FFFCFA" stroke="url(#og)" stroke-width="1.4"/>
-  <!-- Inner skeleton — slightly warmer tones -->
-  <rect x="460" y="212" width="240" height="11" rx="3" fill="#F0E8DF"/>
-  <rect x="460" y="233" width="160" height="8"  rx="2" fill="#F4EDE5"/>
-  <!-- "Adaptive" label pill -->
-  <rect x="460" y="253" width="68"  height="18" rx="9" fill="#FFA848" opacity="0.18"/>
-  <!-- Content blocks -->
-  <rect x="460" y="284" width="282" height="56" rx="6" fill="#F6EEE8" opacity="0.8"/>
-  <rect x="460" y="356" width="240" height="8"  rx="2" fill="#F0E8DF"/>
-  <rect x="460" y="374" width="180" height="8"  rx="2" fill="#F0E8DF"/>
-  <rect x="460" y="392" width="220" height="8"  rx="2" fill="#F0E8DF"/>
-  <!-- CTA button placeholder - subtle orange -->
-  <rect x="460" y="410" width="80"  height="24" rx="5" fill="#FFA848" opacity="0.22"/>
+  <!-- Wave blob — top-right (wider at top) -->
+  <path d="M 1300 0 C 1122 92, 938 182, 878 318 C 798 482, 1052 512, 958 612 C 902 682, 1148 672, 1300 630 Z" fill="url(#blobTR)"/>
 
-  <!-- ─── Right panel — static, medium portrait ─── -->
-  <rect x="826" y="158" width="196" height="314" rx="10" fill="#FAFAFA" stroke="#DCDCDC" stroke-width="1.5"/>
-  <!-- Inner skeleton -->
-  <rect x="848" y="184" width="152" height="11" rx="3" fill="#E6E6E6"/>
-  <rect x="848" y="205" width="100" height="8"  rx="2" fill="#EEEEEE"/>
-  <rect x="848" y="228" width="152" height="64" rx="6" fill="#F0F0F0"/>
-  <rect x="848" y="308" width="152" height="8"  rx="2" fill="#EEEEEE"/>
-  <rect x="848" y="326" width="110" height="8"  rx="2" fill="#EEEEEE"/>
-  <rect x="848" y="344" width="152" height="8"  rx="2" fill="#EEEEEE"/>
-  <rect x="848" y="400" width="56"  height="24" rx="5" fill="#E4E4E4"/>
+  <!-- Flowing curves — left side -->
+  <path d="M -55 520 C 118 392, 72 248, 212 128 C 300 46, 425 60, 388 -45" fill="none" stroke="#FFD4A0" stroke-width="2" stroke-opacity="0.32" stroke-linecap="round"/>
+  <path d="M -55 610 C 158 462, 112 308, 252 178 C 358 88, 478 105, 438 -32" fill="none" stroke="#FFA848" stroke-width="1.5" stroke-opacity="0.28" stroke-linecap="round"/>
+  <path d="M -55 435 C 98 332, 55 215, 172 105 C 252 28, 368 42, 332 -55" fill="none" stroke="#FFA848" stroke-width="0.8" stroke-opacity="0.18" stroke-linecap="round"/>
 
-  <!-- ─── Dashed connector lines between panels ─── -->
-  <line x1="344" y1="315" x2="438" y2="315" stroke="#D0D0D0" stroke-width="1" stroke-dasharray="5 4"/>
-  <line x1="764" y1="315" x2="826" y2="315" stroke="#D0D0D0" stroke-width="1" stroke-dasharray="5 4"/>
+  <!-- Flowing curves — right side -->
+  <path d="M 1255 45 C 1085 182, 1155 332, 1005 452 C 902 542, 778 518, 820 650" fill="none" stroke="#FFD4A0" stroke-width="2" stroke-opacity="0.32" stroke-linecap="round"/>
+  <path d="M 1355 85 C 1165 228, 1235 372, 1085 492 C 982 578, 858 552, 900 685" fill="none" stroke="#FFA848" stroke-width="1.5" stroke-opacity="0.28" stroke-linecap="round"/>
+  <path d="M 1158 25 C 1012 165, 1078 305, 930 418 C 828 504, 712 480, 752 608" fill="none" stroke="#FFA848" stroke-width="0.8" stroke-opacity="0.18" stroke-linecap="round"/>
 
-  <!-- Connector dots — orange, very muted -->
-  <circle cx="344" cy="315" r="3.5" fill="#FFA848" opacity="0.28"/>
-  <circle cx="438" cy="315" r="3.5" fill="#FFA848" opacity="0.32"/>
-  <circle cx="764" cy="315" r="3.5" fill="#FFA848" opacity="0.32"/>
-  <circle cx="826" cy="315" r="3.5" fill="#FFA848" opacity="0.28"/>
+  <!-- Concentric arcs — top-left -->
+  <path d="M 20 215 A 192 192 0 0 1 215 20" fill="none" stroke="#FFA848" stroke-width="1" stroke-opacity="0.28" stroke-linecap="round"/>
+  <path d="M 20 268 A 245 245 0 0 1 268 20" fill="none" stroke="#FFA848" stroke-width="0.7" stroke-opacity="0.18" stroke-linecap="round"/>
+  <path d="M 20 322 A 298 298 0 0 1 322 20" fill="none" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.13" stroke-linecap="round"/>
 
-  <!-- Subtle diagonal accent -->
-  <line x1="120" y1="560" x2="430" y2="185" stroke="#FFA848" stroke-width="1" stroke-linecap="round" opacity="0.10"/>
-  <line x1="770" y1="445" x2="950" y2="560" stroke="#FFA848" stroke-width="1" stroke-linecap="round" opacity="0.08"/>
+  <!-- Concentric arcs — bottom-right -->
+  <path d="M 1180 415 A 192 192 0 0 1 988 608" fill="none" stroke="#FFA848" stroke-width="1" stroke-opacity="0.28" stroke-linecap="round"/>
+  <path d="M 1180 362 A 245 245 0 0 1 935 608" fill="none" stroke="#FFA848" stroke-width="0.7" stroke-opacity="0.18" stroke-linecap="round"/>
+  <path d="M 1180 308 A 298 298 0 0 1 882 608" fill="none" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.13" stroke-linecap="round"/>
+
+  <!-- Geometric accents — top-right -->
+  <rect x="988" y="55" width="11" height="11" rx="1.5" transform="rotate(45 993.5 60.5)" fill="#FFA848" fill-opacity="0.32"/>
+  <circle cx="852" cy="95" r="5" fill="none" stroke="#FFA848" stroke-width="1.5" stroke-opacity="0.38"/>
+  <circle cx="852" cy="95" r="10" fill="none" stroke="#FFA848" stroke-width="0.7" stroke-opacity="0.18"/>
+  <circle cx="1065" cy="125" r="2.5" fill="#FFA848" fill-opacity="0.28"/>
+  <circle cx="1078" cy="117" r="1.7" fill="#FFA848" fill-opacity="0.18"/>
+  <circle cx="1073" cy="135" r="1.4" fill="#FFA848" fill-opacity="0.14"/>
+
+  <!-- Geometric accents — bottom-left -->
+  <rect x="152" y="535" width="11" height="11" rx="1.5" transform="rotate(45 157.5 540.5)" fill="#FFA848" fill-opacity="0.32"/>
+  <circle cx="312" cy="495" r="5" fill="none" stroke="#FFA848" stroke-width="1.5" stroke-opacity="0.38"/>
+  <circle cx="312" cy="495" r="10" fill="none" stroke="#FFA848" stroke-width="0.7" stroke-opacity="0.18"/>
+  <circle cx="158" cy="402" r="2.5" fill="#FFA848" fill-opacity="0.28"/>
+  <circle cx="146" cy="394" r="1.7" fill="#FFA848" fill-opacity="0.18"/>
+  <circle cx="152" cy="412" r="1.4" fill="#FFA848" fill-opacity="0.14"/>
+
+  <line x1="0" y1="315" x2="265" y2="315" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.13"/>
+  <line x1="935" y1="315" x2="1200" y2="315" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.13"/>
+
+  <rect width="1200" height="630" fill="url(#centerVeil)"/>
 </svg>

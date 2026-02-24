@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF6E8"/>
+      <stop offset="100%" stop-color="#FEF0D8"/>
+    </linearGradient>
+    <linearGradient id="blobBL" x1="0" y1="630" x2="480" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFA848" stop-opacity="0.28"/>
+      <stop offset="65%" stop-color="#FFD4A0" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#FFA848" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="blobTR" x1="1200" y1="0" x2="720" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFA848" stop-opacity="0.22"/>
+      <stop offset="65%" stop-color="#FFCB87" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#FFA848" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="centerVeil" cx="600" cy="315" r="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF8EE" stop-opacity="0.88"/>
+      <stop offset="75%" stop-color="#FFF8EE" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FFF8EE" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gridPat" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.12"/>
+    </pattern>
+    <pattern id="dotPat" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1.2" fill="#FFA848" fill-opacity="0.28"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Grid overlay -->
+  <rect width="1200" height="630" fill="url(#gridPat)"/>
+
+  <!-- Dot pattern — top-left corner -->
+  <rect x="0" y="0" width="300" height="200" fill="url(#dotPat)" opacity="0.75"/>
+
+  <!-- Dot pattern — bottom-right corner -->
+  <rect x="810" y="360" width="390" height="270" fill="url(#dotPat)" opacity="0.7"/>
+
+  <!-- Wave blob — bottom-left -->
+  <path d="M -60 630 C 60 580, 160 530, 220 440 C 300 320, 170 230, 250 110 C 310 20, 160 -10, -60 0 Z" fill="url(#blobBL)"/>
+
+  <!-- Wave blob — top-right -->
+  <path d="M 1260 0 C 1100 60, 980 140, 940 260 C 880 410, 1060 460, 990 580 C 940 660, 1100 660, 1260 630 Z" fill="url(#blobTR)"/>
+
+  <!-- Thin flowing curves — left side (bottom-left to top-right diagonal) -->
+  <path d="M -40 560 C 100 430, 60 290, 190 170 C 270 90, 390 100, 355 -30" fill="none" stroke="#FFD4A0" stroke-width="2" stroke-opacity="0.32" stroke-linecap="round"/>
+  <path d="M -40 640 C 130 490, 90 330, 225 200 C 325 110, 440 120, 405 -20" fill="none" stroke="#FFA848" stroke-width="1.5" stroke-opacity="0.28" stroke-linecap="round"/>
+  <path d="M -40 470 C 80 365, 45 245, 155 135 C 230 58, 340 68, 308 -42" fill="none" stroke="#FFA848" stroke-width="0.8" stroke-opacity="0.18" stroke-linecap="round"/>
+
+  <!-- Thin flowing curves — right side (top-right to bottom-left diagonal) -->
+  <path d="M 1240 70 C 1080 200, 1145 345, 1005 465 C 908 555, 790 535, 830 665" fill="none" stroke="#FFD4A0" stroke-width="2" stroke-opacity="0.32" stroke-linecap="round"/>
+  <path d="M 1340 110 C 1160 245, 1225 385, 1085 505 C 988 592, 868 570, 910 700" fill="none" stroke="#FFA848" stroke-width="1.5" stroke-opacity="0.28" stroke-linecap="round"/>
+  <path d="M 1145 42 C 1005 175, 1068 312, 928 428 C 831 514, 722 492, 760 618" fill="none" stroke="#FFA848" stroke-width="0.8" stroke-opacity="0.18" stroke-linecap="round"/>
+
+  <!-- Concentric arc accents — top-left -->
+  <path d="M 20 210 A 185 185 0 0 1 210 20" fill="none" stroke="#FFA848" stroke-width="1" stroke-opacity="0.28" stroke-linecap="round"/>
+  <path d="M 20 260 A 238 238 0 0 1 260 20" fill="none" stroke="#FFA848" stroke-width="0.7" stroke-opacity="0.18" stroke-linecap="round"/>
+  <path d="M 20 315 A 292 292 0 0 1 315 20" fill="none" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.13" stroke-linecap="round"/>
+
+  <!-- Concentric arc accents — bottom-right -->
+  <path d="M 1180 420 A 185 185 0 0 1 990 610" fill="none" stroke="#FFA848" stroke-width="1" stroke-opacity="0.28" stroke-linecap="round"/>
+  <path d="M 1180 370 A 238 238 0 0 1 940 610" fill="none" stroke="#FFA848" stroke-width="0.7" stroke-opacity="0.18" stroke-linecap="round"/>
+  <path d="M 1180 315 A 292 292 0 0 1 888 610" fill="none" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.13" stroke-linecap="round"/>
+
+  <!-- Geometric accents — top-right zone -->
+  <rect x="972" y="52" width="11" height="11" rx="1.5" transform="rotate(45 977.5 57.5)" fill="#FFA848" fill-opacity="0.32"/>
+  <circle cx="840" cy="90" r="5" fill="none" stroke="#FFA848" stroke-width="1.5" stroke-opacity="0.38"/>
+  <circle cx="840" cy="90" r="10" fill="none" stroke="#FFA848" stroke-width="0.7" stroke-opacity="0.18"/>
+  <circle cx="1055" cy="118" r="2.5" fill="#FFA848" fill-opacity="0.28"/>
+  <circle cx="1068" cy="110" r="1.7" fill="#FFA848" fill-opacity="0.18"/>
+  <circle cx="1063" cy="128" r="1.4" fill="#FFA848" fill-opacity="0.14"/>
+
+  <!-- Geometric accents — bottom-left zone -->
+  <rect x="138" y="525" width="11" height="11" rx="1.5" transform="rotate(45 143.5 530.5)" fill="#FFA848" fill-opacity="0.32"/>
+  <circle cx="298" cy="488" r="5" fill="none" stroke="#FFA848" stroke-width="1.5" stroke-opacity="0.38"/>
+  <circle cx="298" cy="488" r="10" fill="none" stroke="#FFA848" stroke-width="0.7" stroke-opacity="0.18"/>
+  <circle cx="148" cy="398" r="2.5" fill="#FFA848" fill-opacity="0.28"/>
+  <circle cx="136" cy="390" r="1.7" fill="#FFA848" fill-opacity="0.18"/>
+  <circle cx="142" cy="407" r="1.4" fill="#FFA848" fill-opacity="0.14"/>
+
+  <!-- Subtle horizontal rule lines flanking center -->
+  <line x1="0" y1="315" x2="260" y2="315" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.13"/>
+  <line x1="940" y1="315" x2="1200" y2="315" stroke="#FFA848" stroke-width="0.5" stroke-opacity="0.13"/>
+
+  <!-- Center clarity veil (negative space protection) -->
+  <rect width="1200" height="630" fill="url(#centerVeil)"/>
+</svg>
