@@ -14,18 +14,17 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: JSON.stringify({ error: 'Valid email required' }) };
   }
 
-  const apiKey = process.env.KIT_API_KEY;
-  if (!apiKey) {
+  const apiKey  = process.env.KIT_API_KEY;
+  const formId  = process.env.KIT_FORM_ID;
+
+  if (!apiKey || !formId) {
     return { statusCode: 500, body: JSON.stringify({ error: 'Server misconfiguration' }) };
   }
 
-  const res = await fetch('https://api.kit.com/v4/subscribers', {
+  const res = await fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`
-    },
-    body: JSON.stringify({ email_address: email })
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ api_key: apiKey, email })
   });
 
   if (!res.ok) {
