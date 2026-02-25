@@ -178,7 +178,6 @@ function pageShell({ title, description, canonicalPath, body, ogType = 'website'
         <li><a href="/services.html" class="font-medium">Services</a></li>
         <li><a href="/how-it-works.html" class="font-medium">How It Works</a></li>
         <li><a href="/pricing.html" class="font-medium">Pricing</a></li>
-        <li><a href="/portal/" class="font-medium">Portal</a></li>
         <li><a href="/portfolio.html" class="font-medium">Portfolio</a></li>
         <li><a href="/blog/" class="font-medium">Blog</a></li>
         <li><a href="/faq.html" class="font-medium">FAQ</a></li>
@@ -194,7 +193,6 @@ function pageShell({ title, description, canonicalPath, body, ogType = 'website'
           <li><a href="/services.html">Services</a></li>
           <li><a href="/how-it-works.html">How It Works</a></li>
           <li><a href="/pricing.html">Pricing</a></li>
-          <li><a href="/portal/">Portal</a></li>
           <li><a href="/portfolio.html">Portfolio</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/faq.html">FAQ</a></li>

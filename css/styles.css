@@ -152,6 +152,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* ========== Project Page — Deliverables heading ========== */
+.deliverables-heading {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 700 !important;
+}
+
 /* ========== Portfolio Page ========== */
 .portfolio-item__image {
   width: 100%;
