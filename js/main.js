@@ -123,6 +123,82 @@
   });
 })();
 
+/* ========== CUSTOM VIEW CURSOR ========== */
+(function() {
+  // Only on non-touch devices
+  if (window.matchMedia('(hover: none)').matches) return;
+
+  // Create cursor bubble
+  var cursor = document.createElement('div');
+  cursor.setAttribute('aria-hidden', 'true');
+  cursor.style.cssText = [
+    'position:fixed',
+    'width:88px',
+    'height:88px',
+    'background:#000',
+    'border-radius:50%',
+    'display:flex',
+    'align-items:center',
+    'justify-content:center',
+    'pointer-events:none',
+    'z-index:99999',
+    'top:0',
+    'left:0',
+    'transform:translate(-50%,-50%) scale(0)',
+    'opacity:0',
+    'transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s ease',
+    'will-change:transform,left,top'
+  ].join(';');
+  cursor.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  document.body.appendChild(cursor);
+
+  // Track mouse — update position directly (no transition on position = no lag)
+  document.addEventListener('mousemove', function(e) {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top  = e.clientY + 'px';
+  });
+
+  // Shrink slightly on mousedown, restore on mouseup
+  document.addEventListener('mousedown', function() {
+    if (cursor.style.opacity === '1') {
+      cursor.style.transform = 'translate(-50%,-50%) scale(0.85)';
+    }
+  });
+  document.addEventListener('mouseup', function() {
+    if (cursor.style.opacity === '1') {
+      cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+    }
+  });
+
+  function show() {
+    cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+    cursor.style.opacity = '1';
+  }
+  function hide() {
+    cursor.style.transform = 'translate(-50%,-50%) scale(0)';
+    cursor.style.opacity = '0';
+  }
+
+  // Apply to all target elements — portfolio cards, project images, work cards
+  function bindCursor() {
+    var targets = document.querySelectorAll(
+      '.portfolio-item, [data-cursor="view"], .work-gallery-img, .project-card'
+    );
+    targets.forEach(function(el) {
+      el.style.cursor = 'none';
+      el.addEventListener('mouseenter', show);
+      el.addEventListener('mouseleave', hide);
+    });
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindCursor);
+  } else {
+    bindCursor();
+  }
+})();
+
 /* ========== SMOOTH SCROLL FOR ANCHOR LINKS ========== */
 (function() {
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
