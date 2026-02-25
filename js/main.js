@@ -133,8 +133,8 @@
   cursor.setAttribute('aria-hidden', 'true');
   cursor.style.cssText = [
     'position:fixed',
-    'width:88px',
-    'height:88px',
+    'width:44px',
+    'height:44px',
     'background:#000',
     'border-radius:50%',
     'display:flex',
@@ -149,7 +149,7 @@
     'transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s ease',
     'will-change:transform,left,top'
   ].join(';');
-  cursor.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  cursor.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   document.body.appendChild(cursor);
 
   // Track mouse — update position directly (no transition on position = no lag)
@@ -186,6 +186,7 @@
     );
     targets.forEach(function(el) {
       el.style.cursor = 'none';
+      el.querySelectorAll('*').forEach(function(child) { child.style.cursor = 'none'; });
       el.addEventListener('mouseenter', show);
       el.addEventListener('mouseleave', hide);
     });
