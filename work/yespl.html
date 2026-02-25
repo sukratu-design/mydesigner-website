@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJS1P09VE8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-BJS1P09VE8");
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YESPL — MyDesigner Portfolio</title>
+  <meta name="description" content="How MyDesigner built a modern, responsive Framer website for YESPL — a multidisciplinary engineering consultancy providing MEP solutions.">
+  <link rel="canonical" href="https://mydesigner.gg/work/yespl.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mydesigner.gg/work/yespl.html">
+  <meta property="og:title" content="YESPL — MyDesigner Portfolio">
+  <meta property="og:description" content="Engineering precision, built with Framer. A clean, fast website for YESPL's MEP consultancy.">
+  <meta property="og:image" content="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c59/68887a97578ece95c92b0cd9_thumbnail.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YESPL — MyDesigner Portfolio">
+  <meta name="twitter:description" content="Engineering precision, built with Framer. A clean, fast website for YESPL's MEP consultancy.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mydesigner.gg/"},
+      {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://mydesigner.gg/portfolio.html"},
+      {"@type": "ListItem", "position": 3, "name": "YESPL", "item": "https://mydesigner.gg/work/yespl.html"}
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/daisyui@5" as="style">
+  <link rel="preload" href="/css/styles.css" as="style">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+    .project-prose p { line-height: 1.8; margin-bottom: 1.25rem; font-size: 1.0625rem; }
+    .meta-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.5; margin-bottom: 0.25rem; }
+    .meta-value { font-size: 0.9375rem; font-weight: 500; }
+    .image-reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .image-reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-base-100 text-base-content">
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar bg-base-100 sticky top-0 z-50 px-4 lg:px-8 border-b border-base-200" role="navigation" aria-label="Main navigation">
+    <div class="navbar-start">
+      <a href="/" class="flex items-center gap-2 font-bold text-lg" aria-label="MyDesigner home">
+        <img src="/assets/images/mydesigner-logo.svg" alt="MyDesigner" class="h-8">
+      </a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-1">
+        <li><a href="/services.html" class="font-medium">Services</a></li>
+        <li><a href="/how-it-works.html" class="font-medium">How It Works</a></li>
+        <li><a href="/pricing.html" class="font-medium">Pricing</a></li>
+        <li><a href="/portfolio.html" class="font-medium">Portfolio</a></li>
+        <li><a href="/blog/" class="font-medium">Blog</a></li>
+        <li><a href="/faq.html" class="font-medium">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
+      <div class="dropdown dropdown-end lg:hidden">
+        <div tabindex="0" role="button" aria-label="Open menu" class="btn btn-ghost btn-square">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </div>
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/how-it-works.html">How It Works</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===== PROJECT HEADER ===== -->
+    <section class="pt-12 pb-8 lg:pt-16 lg:pb-10">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="breadcrumbs text-sm mb-6">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/portfolio.html">Portfolio</a></li>
+            <li>YESPL</li>
+          </ul>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="badge badge-outline">Web Development</span>
+          <span class="badge badge-outline">Framer</span>
+        </div>
+        <h1 class="text-3xl lg:text-5xl font-bold leading-tight mb-4 max-w-3xl">
+          YESPL: Engineering Precision, Built with Framer
+        </h1>
+        <p class="text-lg text-base-content/70 max-w-2xl">
+          A modern, future-ready website for a multidisciplinary MEP engineering consultancy — delivered in three weeks with Framer's no-code platform.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== PROJECT META BAR ===== -->
+    <section class="border-y border-base-200 py-6">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+          <div>
+            <p class="meta-label">Client</p>
+            <p class="meta-value">YESPL</p>
+          </div>
+          <div>
+            <p class="meta-label">Timeline</p>
+            <p class="meta-value">3 weeks</p>
+          </div>
+          <div>
+            <p class="meta-label">Services</p>
+            <p class="meta-value">Framer Website Design &amp; Development</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HERO IMAGE ===== -->
+    <section class="py-8 lg:py-10 bg-base-200">
+      <div class="max-w-6xl mx-auto px-4">
+        <img
+          src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c59/68887a97578ece95c92b0cd9_thumbnail.png"
+          alt="YESPL Website — Hero"
+          class="w-full rounded-2xl shadow-md image-reveal"
+          data-cursor="view"
+          loading="eager"
+        >
+      </div>
+    </section>
+
+    <!-- ===== CASE STUDY BODY ===== -->
+    <section class="py-14 lg:py-20">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+
+          <div class="lg:col-span-2 project-prose">
+            <h2 class="text-2xl lg:text-3xl font-bold mb-5">The Challenge</h2>
+            <p>
+              YESPL is a multidisciplinary engineering consultancy providing MEP (mechanical, electrical, and plumbing) solutions to commercial and infrastructure clients. As a firm built on technical rigour and reliability, they needed a digital presence that communicated their capabilities clearly — without losing the warmth that distinguishes a trusted partner from a faceless vendor.
+            </p>
+            <p>
+              The brief called for speed without compromise: YESPL needed to be live quickly, with a site that felt premium, was easy to update, and could scale as the business grew. Traditional development timelines weren't going to cut it.
+            </p>
+
+            <h2 class="text-2xl lg:text-3xl font-bold mb-5 mt-10">Our Approach</h2>
+            <p>
+              We chose Framer as the platform — its no-code capabilities allowed us to move rapidly from design to a live, interactive site without sacrificing visual quality. The design direction was clean and minimal, with bold typographic hierarchy and a structured layout that makes YESPL's service offerings immediately legible. Colour was used sparingly but purposefully to signal precision and modernity.
+            </p>
+            <p>
+              Every section was mapped to a specific stage in the client decision journey — from initial awareness through service discovery to contact. Navigation was simplified to keep visitors focused, and the mobile experience was treated with equal care, reflecting the reality that prospects often research on phones first.
+            </p>
+
+            <h2 class="text-2xl lg:text-3xl font-bold mb-5 mt-10">The Result</h2>
+            <p>
+              YESPL launched a modern, future-ready website in record time. The Framer build is lightweight and fast, the content is immediately scannable, and the site accurately reflects the team's engineering ethos — efficient, structured, and precise. YESPL now has a digital presence that matches the quality of the work they deliver.
+            </p>
+          </div>
+
+          <div class="lg:col-span-1">
+            <div class="sticky top-24 space-y-6">
+              <div class="card bg-base-200 border border-base-300 p-6">
+                <h3 class="font-bold mb-4 text-sm uppercase tracking-wider opacity-60">Deliverables</h3>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex gap-2 items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    Framer website design &amp; build
+                  </li>
+                  <li class="flex gap-2 items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    Responsive design (mobile, tablet, desktop)
+                  </li>
+                  <li class="flex gap-2 items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    Page interactions &amp; animations
+                  </li>
+                  <li class="flex gap-2 items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    SEO foundations &amp; launch
+                  </li>
+                  <li class="flex gap-2 items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    Client CMS handoff
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECT GALLERY ===== -->
+    <section class="pb-14 lg:pb-20 bg-base-200">
+      <div class="max-w-6xl mx-auto px-4 pt-10 lg:pt-14">
+        <h2 class="text-xl font-bold uppercase tracking-widest text-base-content/40 mb-8 text-center">Project Screens</h2>
+        <div class="mb-6">
+          <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c59/68887aefb0aeb61dc2deb21b_1.png" alt="YESPL — Homepage" class="w-full rounded-2xl shadow-sm image-reveal" data-cursor="view" loading="lazy">
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c59/68887afb13d854983caeb4b8_2.png" alt="YESPL — Services overview" class="w-full rounded-2xl shadow-sm image-reveal" data-cursor="view" loading="lazy">
+          <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c59/68887b0595a2084d1b4e9d12_3.png" alt="YESPL — About the team" class="w-full rounded-2xl shadow-sm image-reveal" data-cursor="view" loading="lazy">
+          <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c59/68887b0e95a2084d1b4ea1ae_4.png" alt="YESPL — Project portfolio" class="w-full rounded-2xl shadow-sm image-reveal" data-cursor="view" loading="lazy">
+          <img src="https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c59/68887b8eb0aeb61dc2dec7ec_6.png" alt="YESPL — Contact and footer" class="w-full rounded-2xl shadow-sm image-reveal" data-cursor="view" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NEXT / BACK NAV ===== -->
+    <section class="py-6 border-t border-base-200">
+      <div class="max-w-5xl mx-auto px-4 flex items-center justify-between">
+        <a href="/portfolio.html" class="btn btn-ghost btn-sm gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          All Projects
+        </a>
+        <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Start a project like this →</a>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="py-16 lg:py-20 bg-base-200">
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="card bg-primary text-primary-content">
+          <div class="card-body items-center text-center py-12">
+            <h2 class="text-2xl lg:text-3xl font-bold mb-3">Ready to build something like this?</h2>
+            <p class="opacity-80 mb-6 max-w-lg">Get unlimited design and Framer/Webflow development for a flat monthly fee. No contracts, no surprises.</p>
+            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-secondary btn-lg">Book a free call</a>
+            <p class="text-xs opacity-60 mt-3">No contracts. Cancel anytime. Starting at $1,400/mo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10 border-t border-base-300" role="contentinfo">
+    <aside>
+      <a href="/" class="flex items-center gap-2 font-bold text-lg mb-2">
+        <img src="/assets/images/mydesigner-logo.svg" alt="MyDesigner" class="h-8">
+      </a>
+      <p class="max-w-xs">MyDesigner is an unlimited design subscription by Sukratu. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
+    </aside>
+    <nav>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Pages</p>
+      <a href="/services.html" class="link link-hover">Services</a>
+      <a href="/how-it-works.html" class="link link-hover">How It Works</a>
+      <a href="/pricing.html" class="link link-hover">Pricing</a>
+      <a href="/portfolio.html" class="link link-hover">Portfolio</a>
+      <a href="/blog/" class="link link-hover">Blog</a>
+      <a href="/faq.html" class="link link-hover">FAQ</a>
+    </nav>
+    <nav>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Compare</p>
+      <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
+      <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
+      <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
+      <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
+    </nav>
+    <nav>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Get Started</p>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
+    </nav>
+  </footer>
+  <footer class="footer sm:footer-horizontal bg-base-300 text-base-content border-t border-base-300 px-10 py-4">
+    <aside class="grid-flow-col items-center">
+      <p>&copy; 2026 MyDesigner by Sukratu. All rights reserved.</p>
+    </aside>
+    <nav class="md:place-self-center md:justify-self-end">
+      <div class="grid grid-flow-col gap-4">
+        <a href="https://x.com/mydesigner_gg" aria-label="X (Twitter)" class="link link-hover"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/showcase/mydesigner-sukratu/?viewAsMember=true" aria-label="LinkedIn" class="link link-hover"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram" class="link link-hover"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+      </div>
+    </nav>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.image-reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
