@@ -684,6 +684,81 @@
     </div>
   </section>
 
+  <!-- BLOG_CAROUSEL_START -->
+  <section class="py-16 lg:py-24 bg-base-100" id="blog-preview">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-end justify-between mb-8">
+        <div>
+          <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">From the Blog</span>
+          <h2 class="text-3xl lg:text-4xl font-bold mt-1">Latest insights</h2>
+        </div>
+        <a href="/blog/" class="btn btn-outline btn-sm hidden sm:inline-flex">View all posts &rarr;</a>
+      </div>
+      <div class="relative">
+        <div id="blog-carousel" class="flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4" style="scrollbar-width:none;-ms-overflow-style:none;">
+    <div class="flex-none w-[85vw] sm:w-[45vw] lg:w-[calc(25%-1rem)] snap-start">
+      <div class="card bg-base-200 border border-base-300 hover:shadow-lg transition-shadow h-full">
+        <figure class="overflow-hidden"><img src="/assets/images/blog/web-summit-qatar-2026-cover.jpg" alt="We Attended Web Summit Qatar 2026 — Here&apos;s What We Took Away" class="w-full h-48 object-cover" loading="lazy"></figure>
+        <div class="card-body gap-2">
+          <div class="text-xs text-base-content/60">February 25, 2026</div>
+          <h3 class="card-title text-base leading-snug line-clamp-2">We Attended Web Summit Qatar 2026 — Here&apos;s What We Took Away</h3>
+          <p class="text-sm text-base-content/70 line-clamp-3 flex-1">The MyDesigner team flew to Doha to attend one of the world&apos;s fastest-growing tech conferences. 30,000 attendees, 1,600 startups, 127 countries, and four days of conversations that reminded us why design is now a business-critical function.</p>
+          <div class="card-actions justify-end pt-2">
+            <a href="/blog/web-summit-qatar-2026.html" class="btn btn-primary btn-sm">Read &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-none w-[85vw] sm:w-[45vw] lg:w-[calc(25%-1rem)] snap-start">
+      <div class="card bg-base-200 border border-base-300 hover:shadow-lg transition-shadow h-full">
+        <figure class="overflow-hidden"><img src="/assets/images/blog/onboarding-retention-cover.svg" alt="The UX of Onboarding: Why Your First 5 Minutes Define Startup Retention in 2026" class="w-full h-48 object-cover" loading="lazy"></figure>
+        <div class="card-body gap-2">
+          <div class="text-xs text-base-content/60">February 25, 2026</div>
+          <h3 class="card-title text-base leading-snug line-clamp-2">The UX of Onboarding: Why Your First 5 Minutes Define Startup Retention in 2026</h3>
+          <p class="text-sm text-base-content/70 line-clamp-3 flex-1">Most startups lose 60–80% of new users in the first week — not because the product is bad, but because onboarding fails to deliver a clear &quot;aha moment&quot; fast enough. Here&apos;s a research-backed framework to fix it.</p>
+          <div class="card-actions justify-end pt-2">
+            <a href="/blog/ux-of-onboarding-startup-retention-2026.html" class="btn btn-primary btn-sm">Read &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-none w-[85vw] sm:w-[45vw] lg:w-[calc(25%-1rem)] snap-start">
+      <div class="card bg-base-200 border border-base-300 hover:shadow-lg transition-shadow h-full">
+        <figure class="overflow-hidden"><img src="/assets/images/blog/design-debt-cover.avif" alt="Design Debt: The Hidden Cost Quietly Stunting Your Startup&apos;s Growth" class="w-full h-48 object-cover" loading="lazy"></figure>
+        <div class="card-body gap-2">
+          <div class="text-xs text-base-content/60">February 24, 2026</div>
+          <h3 class="card-title text-base leading-snug line-clamp-2">Design Debt: The Hidden Cost Quietly Stunting Your Startup&apos;s Growth</h3>
+          <p class="text-sm text-base-content/70 line-clamp-3 flex-1">Every startup accumulates it. Few talk about it. Design debt — the gap between what your product looks like and what it should — is silently slowing your team, confusing your users, and costing you customers. Here&apos;s how to spot it and start paying it down.</p>
+          <div class="card-actions justify-end pt-2">
+            <a href="/blog/design-debt-the-hidden-cost-stunting-startup-growth.html" class="btn btn-primary btn-sm">Read &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-none w-[85vw] sm:w-[45vw] lg:w-[calc(25%-1rem)] snap-start">
+      <div class="card bg-base-200 border border-base-300 hover:shadow-lg transition-shadow h-full">
+        <figure class="overflow-hidden"><img src="/assets/images/blog/webflow-vs-framer-cover.avif" alt="Webflow vs Framer in 2026: How to Choose the Right Platform for Your Startup" class="w-full h-48 object-cover" loading="lazy"></figure>
+        <div class="card-body gap-2">
+          <div class="text-xs text-base-content/60">February 22, 2026</div>
+          <h3 class="card-title text-base leading-snug line-clamp-2">Webflow vs Framer in 2026: How to Choose the Right Platform for Your Startup</h3>
+          <p class="text-sm text-base-content/70 line-clamp-3 flex-1">Both platforms can build beautiful websites. But they solve different problems. Here&apos;s a practical framework for choosing the right one — based on what your startup actually needs.</p>
+          <div class="card-actions justify-end pt-2">
+            <a href="/blog/webflow-vs-framer-in-2026-how-to-choose-for-your-startup.html" class="btn btn-primary btn-sm">Read &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+        <button onclick="document.getElementById('blog-carousel').scrollBy({left:-(document.getElementById('blog-carousel').offsetWidth*0.85),behavior:'smooth'})" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 btn btn-circle btn-sm bg-base-100 border border-base-300 shadow-md hidden lg:flex" aria-label="Previous">&larr;</button>
+        <button onclick="document.getElementById('blog-carousel').scrollBy({left:document.getElementById('blog-carousel').offsetWidth*0.85,behavior:'smooth'})" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 btn btn-circle btn-sm bg-base-100 border border-base-300 shadow-md hidden lg:flex" aria-label="Next">&rarr;</button>
+      </div>
+      <div class="mt-6 text-center sm:hidden">
+        <a href="/blog/" class="btn btn-outline btn-sm">View all posts &rarr;</a>
+      </div>
+    </div>
+  </section>
+  <!-- BLOG_CAROUSEL_END -->
+
   <!-- ===== FINAL CTA ===== -->
   <section class="py-16 lg:py-24">
     <div class="max-w-3xl mx-auto px-4">
