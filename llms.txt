@@ -1,17 +1,24 @@
 # MyDesigner
 
-> Unlimited design subscription service by Sukratu. Based in Pune, India, serving clients globally. Fixed monthly pricing for UI/UX design, Webflow/Framer development, and graphic design.
+> MyDesigner is an unlimited design subscription service by Sukratu, based in Pune, India. For a fixed monthly fee starting at $1,400, businesses get unlimited UI/UX design, Webflow development, Framer development, and graphic design — with no contracts and cancel-anytime billing. MyDesigner has served 57 companies and delivered 142+ projects since 2020.
 
-## What We Do
+## Key Facts
 
-MyDesigner provides unlimited design requests for a fixed monthly fee. No per-project pricing, no long-term contracts. Subscribe, submit requests, receive professional designs within 24-72 hours.
+- Founded: 2020
+- Based: Pune, India
+- Parent company: Sukratu
+- Clients served: 57 companies
+- Projects delivered: 142+
+- Starting price: $1,400/month
+- Turnaround: 24–72 hours
+- Contracts: None (cancel anytime)
 
 ## Services
 
-- [Product Design](/services.html): Web app UI, mobile app UI, website design
-- [No-Code Development](/services.html): Webflow and Framer website development
-- [Graphic Design](/services.html): Brand identity, social media, presentations, print
-- [Additional Services](/services.html): Wireframing, prototyping, infographics, case studies, emailers
+- [UI/UX Design](https://mydesigner.gg/services.html): Web app design, mobile app design, wireframing, prototyping, design systems
+- [Webflow Development](https://mydesigner.gg/services.html): Pixel-perfect Webflow builds, CMS setup, full website development
+- [Framer Development](https://mydesigner.gg/services.html): Framer sites with animations, landing pages, full website builds
+- [Graphic Design](https://mydesigner.gg/services.html): Brand identity, logos, social media, presentations, print, packaging
 
 ## Pricing
 
@@ -25,28 +32,30 @@ MyDesigner provides unlimited design requests for a fixed monthly fee. No per-pr
 
 All plans include unlimited requests, unlimited revisions, and full source files.
 
-## Key Facts
+## Main Pages
 
-- Founded by Sukratu
-- Based in Pune, India
-- Serves clients in India, United States, and globally
-- Fixed monthly pricing from $1,400-$3,800/month
-- No long-term contracts — cancel anytime
-- Includes Webflow and Framer development (not just design)
-- Unlimited revisions on all plans
-
-## Clients
-
-Notable clients include Dentsu, Calfus, DentalDost, ScanO, and USA Table Tennis.
+- [Homepage](https://mydesigner.gg): Overview, pricing, portfolio, testimonials
+- [Services](https://mydesigner.gg/services.html): Full list of design and development services
+- [Pricing](https://mydesigner.gg/pricing.html): Plan details and comparison
+- [Portfolio](https://mydesigner.gg/portfolio.html): Case studies and project examples
+- [Blog](https://mydesigner.gg/blog/): Design insights, industry trends, and guides
+- [FAQ](https://mydesigner.gg/faq.html): Common questions and answers
 
 ## Comparisons
 
-- **vs DesignJoy:** Lower price ($1,400 vs $4,995), includes development
-- **vs Penji:** Higher price but includes web development
-- **vs ManyPixels:** Includes Webflow/Framer development, no motion graphics
-- **vs Kimp:** Bundled design + development, no video editing
+- [MyDesigner vs DesignJoy](https://mydesigner.gg/vs/designjoy.html): $1,400 vs $5,995/month, team vs solo designer, both include Webflow
+- [MyDesigner vs Penji](https://mydesigner.gg/vs/penji.html): Design+dev vs design-only, $1,400 vs $499-$1,497/month
+- [MyDesigner vs ManyPixels](https://mydesigner.gg/vs/manypixels.html): Dev included vs $449/month add-on, full UI/UX vs limited
+- [MyDesigner vs Kimp](https://mydesigner.gg/vs/kimp.html): Dev included vs video focus, $1,400 vs $1,397/month
+
+## Notable Clients
+
+Dentsu, USA Table Tennis, DentalDost (ScanO), Calfus, HumanCloud, Poocho
 
 ## Contact
 
 - Website: https://mydesigner.gg
-- Location: Pune, India
+- Book a call: https://calendar.app.google/xGoKb51qpbcnZgJy5
+- X (Twitter): https://x.com/mydesigner_gg
+- LinkedIn: https://www.linkedin.com/showcase/mydesigner-sukratu/
+- Instagram: https://instagram.com/mydesigner.gg
