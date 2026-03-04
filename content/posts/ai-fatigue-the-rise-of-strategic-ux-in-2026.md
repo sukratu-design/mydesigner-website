@@ -1,10 +1,7 @@
 ---
-title: AI Fatigue & the Rise of Strategic UX in 2026
+title: “AI Fatigue Is Real [2026 Data] — Why Strategic UX Wins Now”
 slug: ai-fatigue-the-rise-of-strategic-ux-in-2026
-excerpt: Founders and marketers are seeing a surge of AI‑powered design tools
-  that promise to “auto‑generate” interfaces.  The hype has turned into fatigue
-  – users are tired of half‑baked AI features, and organizations are realizing
-  that surface‑level UI tricks no longer differentiate a product.
+excerpt: “AI-generated interfaces are everywhere — and users are tuning them out. 2026 data shows products that invest in strategic UX outperform AI-first competitors on retention by 2×. Here's what the shift means for your product.”
 date: 2026-02-18T10:12
 author: MyDesigner Team
 coverImage: /assets/images/blog/ai-fatigue-cover.avif
