@@ -28,7 +28,8 @@
         "slug": "apollo-radiology",
         "title": "Apollo Radiology",
         "category": "webdev",
-        "badge": "Web Development",
+        "platform": "webflow",
+        "badge": "Webflow Development",
         "thumb": "https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c59/6891fe07cbf35c33d2810abd_thumbnail.png",
         "desc": "Transforming healthcare with Webflow-powered precision"
     },
@@ -52,7 +53,8 @@
         "slug": "ecstra",
         "title": "Ecstra",
         "category": "webdev",
-        "badge": "Web Development",
+        "platform": "webflow",
+        "badge": "Webflow Development",
         "thumb": "https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c59/688899a4c46dd38c84f77141_thumbnail.png",
         "desc": "Seamlessly developing Ecstra's digital presence"
     },
@@ -92,7 +94,8 @@
         "slug": "mda",
         "title": "Maharashtra Dyslexia Association",
         "category": "webdev",
-        "badge": "Web Development",
+        "platform": "framer",
+        "badge": "Framer Development",
         "thumb": "https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c59/6891f9621f33f4a1c9e94435_thumbnail.png",
         "desc": "Digital transformation built on Framer"
     },
@@ -116,7 +119,8 @@
         "slug": "poocho-website",
         "title": "Poocho Website",
         "category": "webdev",
-        "badge": "Web Development",
+        "platform": "webflow",
+        "badge": "Webflow Development",
         "thumb": "https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c59/688872ad4fe7e34ca37538f9_thumbnail.png",
         "desc": "Website design & Webflow development for a research productivity platform"
     },
@@ -148,7 +152,8 @@
         "slug": "yespl",
         "title": "YESPL",
         "category": "webdev",
-        "badge": "Web Development",
+        "platform": "framer",
+        "badge": "Framer Development",
         "thumb": "https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c59/68887a97578ece95c92b0cd9_thumbnail.png",
         "desc": "Engineering precision, built with Framer"
     }

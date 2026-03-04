@@ -532,6 +532,7 @@ const SERVICE_CONFIGS = [
     slug: 'framer-development',
     label: 'Framer Development',
     category: 'webdev',
+    platform: 'framer',
     valuerop: 'Pixel-Perfect Framer Sites, Fast',
     subheadline: 'We build blazing-fast, fully responsive Framer websites — designed to convert and built to scale.',
     included: [
@@ -553,6 +554,7 @@ const SERVICE_CONFIGS = [
     slug: 'webflow-development',
     label: 'Webflow Development',
     category: 'webdev',
+    platform: 'webflow',
     valuerop: 'Production-Ready Webflow Sites',
     subheadline: 'We design and develop high-converting Webflow websites that your team can manage without a developer.',
     included: [
@@ -699,7 +701,9 @@ const SERVICE_CONFIGS = [
 ];
 
 function buildServicePage(config) {
-  const categoryProjects = PROJECTS.filter((p) => p.category === config.category);
+  const categoryProjects = PROJECTS.filter((p) =>
+    p.category === config.category && (!config.platform || p.platform === config.platform)
+  );
 
   const projectCards = categoryProjects.map((p) => `
         <div class="portfolio-item" data-category="${p.category}">
