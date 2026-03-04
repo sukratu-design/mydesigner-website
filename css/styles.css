@@ -21,8 +21,8 @@
 /* ========== DaisyUI Theme Overrides ========== */
 :root {
   --color-base-100: oklch(1 0 0);
-  --color-base-200: #FFF3EB;
-  --color-base-300: #FFE4D0;
+  --color-base-200: #FFF7F1;
+  --color-base-300: #FFE9D9;
   --color-base-content: oklch(0.15 0 0);
   --color-primary: oklch(0.15 0 0);
   --color-primary-content: oklch(1 0 0);
