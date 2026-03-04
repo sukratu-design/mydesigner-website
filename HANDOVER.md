@@ -3,23 +3,24 @@
 
 ---
 
-## Session: Analytics Improvements (Mar 4 2026)
+## Session: Analytics Improvements + Follow-ups (Mar 4 2026)
 
 ### What Was Done
 
 **Task 1 — Single Source of Truth for Projects Data**
 - **Created** `data/projects.js` — Node.js module exporting all 18 projects. This is now the canonical location for project data.
+- **Added** `platform` field (`'framer'` or `'webflow'`) to all 5 webdev projects so Framer/Webflow service pages can filter correctly.
 - **Updated** `scripts/build-blog.js` to `require('../data/projects.js')` and to regenerate `js/related-projects.js` as a build output via `buildRelatedProjectsScript()`.
 - **Workflow going forward**: add a project to `data/projects.js` and run `npm run build:blog` — it propagates to service pages and the browser-side related-projects widget automatically.
 
 **Task 2 — Build-Time Service Page Generation**
 - **Added** `buildServicePages()` and `SERVICE_CONFIGS` array to `scripts/build-blog.js`.
 - **Generated** 8 new service pages in `services/`:
-  - `framer-development.html`, `webflow-development.html` (category: `webdev`)
+  - `framer-development.html` (shows MDA + YESPL), `webflow-development.html` (shows Apollo Radiology, Ecstra, Poocho Website)
   - `web-app-design.html`, `website-design.html` (category: `uiux`)
   - `brand-identity.html` (category: `branding`)
   - `presentation-design.html`, `booth-designs.html`, `social-media-creatives.html` (category: `graphic`)
-- Each page has: BreadcrumbList schema, Service schema, FAQPage schema, portfolio grid pre-filtered to service category, pricing CTA strip, nav + footer matching the rest of the site.
+- Each page has: BreadcrumbList schema, Service schema, FAQPage schema, portfolio grid pre-filtered to service category (+ platform for webdev), pricing CTA strip, nav + footer matching the rest of the site.
 - All 8 URLs added to `STATIC_SITEMAP_PAGES` in `build-blog.js` (priority 0.8, monthly).
 
 **Task 3 — www → non-www Redirect**
@@ -40,6 +41,22 @@
 - **Added** social proof bar (3 testimonials) above pricing cards — `Aditya R./Ecstra`, `Priya M./ContractWrangler`, `Rohan S./MDA`
 - **Added** secondary CTA strip below pricing cards: "Book a free 30-min discovery call"
 - **Fixed** canonical and og:url from `pricing.html` → `pricing` (clean path)
+
+**Follow-up: Service page links in services.html**
+- **Wrapped** all 8 service cards in `<a href="/services/[slug].html">` anchor tags with hover effects and "Learn more →" text.
+
+**Follow-up: Framer/Webflow attribution fix**
+- MDA and YESPL were incorrectly listed as Webflow; corrected to `platform: 'framer'` and `badge: 'Framer Development'` in `data/projects.js`.
+- `buildServicePage()` filter updated to: `p.category === config.category && (!config.platform || p.platform === config.platform)`.
+
+**Follow-up: Portfolio grid reorder**
+- New order in `portfolio.html`: Apollo Radiology (1) → Dentsu (2) → FluentPet (3) → Poocho App (4) → Ecstra (5) → Poocho Website (6) → then remaining 12.
+- Apollo Radiology (new position 1) gets `fetchpriority="high"`; DentalDost (moved to position 7) changed to `loading="lazy"`.
+
+**Follow-up: Brand background color**
+- `css/styles.css` CSS variables updated:
+  - `--color-base-200`: `#FFF7F1` (warm cream, used for alternating section backgrounds)
+  - `--color-base-300`: `#FFE9D9` (slightly deeper warm, used for some card backgrounds)
 
 ---
 
