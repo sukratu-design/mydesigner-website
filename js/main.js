@@ -214,10 +214,21 @@
 })();
 
 
-/* ========== DYNAMIC COPYRIGHT YEAR ========== */
+/* ========== DYNAMIC COPYRIGHT YEAR & LAST UPDATED DATE ========== */
 (function() {
-  var year = new Date().getFullYear();
+  var now = new Date();
+  var year = now.getFullYear();
+  var monthYear = now.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+
+  // Update © year in footer
   document.querySelectorAll('footer p').forEach(function(p) {
     p.innerHTML = p.innerHTML.replace(/© \d{4}/, '© ' + year);
+  });
+
+  // Update "Last updated: Month Year" anywhere on the page
+  document.querySelectorAll('p, em').forEach(function(el) {
+    if (el.childElementCount === 0 && /Last updated:/i.test(el.textContent)) {
+      el.innerHTML = el.innerHTML.replace(/Last updated:.*$/i, 'Last updated: ' + monthYear);
+    }
   });
 })();
