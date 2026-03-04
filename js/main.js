@@ -212,3 +212,12 @@
     });
   });
 })();
+
+
+/* ========== DYNAMIC COPYRIGHT YEAR ========== */
+(function() {
+  var year = new Date().getFullYear();
+  document.querySelectorAll('footer p').forEach(function(p) {
+    p.innerHTML = p.innerHTML.replace(/© \d{4}/, '© ' + year);
+  });
+})();
