@@ -4,7 +4,7 @@ slug: "dense-interfaces-information-hierarchy-2026"
 excerpt: "Minimalism is out. Dense, information-rich UIs are in. Here's why 2026 startups are ditching whitespace for data-driven design that converts."
 date: 2026-03-08
 author: "MyDesigner Team"
-coverImage: "/images/blog/dense-interfaces-cover.jpg"
+coverImage: "/assets/images/blog/dense-interfaces-cover.jpg"
 draft: false
 ---
 
