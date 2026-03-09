@@ -4,7 +4,7 @@ slug: "bento-grids-modular-design-2026"
 excerpt: "Discover why Bento grids are dominating the design landscape in 2026, with 75% of top startups adopting this modular layout. Learn how Bento grids combine minimalism with information density, enhancing user experience and driving engagement. Get ahead of the curve with this cutting‑edge design trend."
 date: "2026-03-09"
 author: "MyDesigner Team"
-coverImage: "/assets/images/blog/bento-grids-cover.avif"
+coverImage: "/assets/images/blog/bento-grids-cover.jpg"
 draft: false
 ---
 
