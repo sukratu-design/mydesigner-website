@@ -12,23 +12,23 @@ draft: false
 
 **Minimalism has jumped the shark.** Somewhere between Apple's aesthetic and "less is more," startups started treating whitespace like the ultimate design principle. The result? Interfaces so minimal they're practically invisible—and users so confused they bounce.
 
-**The data doesn't lie.** Nielsen Norman Group's 2025 eye-tracking research found users spend **68% more time** scanning "dense" information-rich layouts compared to minimalist alternatives. Why? Because dense doesn't mean cluttered—it means **strategic information hierarchy**.
+**The data doesn't lie.** Research on UI density and cognitive load shows that **minimalist interfaces can actually increase cognitive strain** when users need to hunt through multiple clicks to find information ([UI Density Research](https://sh.diva-portal.org/smash/get/diva2:1993063/FULLTEXT01.pdf)). Dense doesn't mean cluttered—it means **strategic information hierarchy**.
 
 **Startups are waking up.** Notion, Linear, Superhuman, and even Stripe's latest redesigns all share one thing: they pack more information per screen while maintaining clarity. That's not an accident. It's **intentional density**, and it's the 2026 design meta.
 
 ## What Information Hierarchy Actually Means
 
-**Hierarchy isn't about removing elements.** It's about arranging them so users instantly understand what matters. The difference between cluttered chaos and strategic density? **Visual weight, contrast, and clear entry points.**
+**Hierarchy isn't about removing elements.** It's about arranging them so users instantly understand what matters. The difference between cluttered chaos and strategic density? **Visual weight, contrast, and clear entry points** ([Nielsen Norman Group](https://www.nngroup.com/articles/visual-hierarchy-ux-definition)).
 
-**UX Collective's 2025 analysis** of 500+ SaaS interfaces found that "dense" designs with strong hierarchy had **41% higher task completion rates** than minimalist alternatives. Users didn't get overwhelmed—they got empowered.
+**Research on information-rich interfaces** shows that well-designed dense layouts can improve task efficiency by reducing the number of clicks and navigation steps required ([Understanding UI Density](https://www.ruixen.com/blog/ui-density)). Users didn't get overwhelmed—they got empowered.
 
 **Think Bloomberg Terminal, not Apple.** Bloomberg's interface is legendarily dense, but traders love it because **everything they need is visible at once**. No hunting through submenus. No guessing. Just data, arranged by priority.
 
 ## Why This Matters for Startups
 
-**Speed kills (the competition).** Awwwards' 2026 State of Web Design report found that **dense, information-rich dashboards** reduced time-to-insight by an average of **3.2 seconds** compared to minimalist alternatives. In SaaS, that's the difference between a power user and a churned account.
+**Speed kills (the competition).** Dense, information-rich dashboards reduce the number of clicks and page loads needed to access key metrics—a critical advantage for power users who need instant insights.
 
-**Enterprise buyers expect density.** SeeSaw Labs' B2B research showed that **73% of enterprise buyers** rated "information density" as a top-3 factor in software evaluations. They want dashboards that do more, not less.
+**Enterprise buyers expect density.** Research shows that dashboard users can process **7±2 chunks of information efficiently**, but beyond that threshold, cognitive overload occurs ([SaaS Dashboard Design Research](https://www.sanjaydey.com/saas-dashboard-design-information-architecture-cognitive-overload)). The key is strategic density—showing more without overwhelming.
 
 **Mobile isn't an excuse anymore.** Progressive disclosure and collapsible sections mean you can pack density into mobile without sacrificing usability. Users swipe and tap—leverage that behavior instead of fighting it.
 
@@ -36,7 +36,7 @@ draft: false
 
 1. **Audit your whitespace.** Open your dashboard and count how many clicks it takes to see key metrics. If it's more than zero, you're hiding value behind minimalism.
 
-2. **Use visual hierarchy, not removal.** Instead of deleting elements, use **size, color, and position** to guide the eye. Bold headers, subtle body text, and high-contrast CTAs = clarity without clutter.
+2. **Use visual hierarchy, not removal.** Instead of deleting elements, use **size, color, and position** to guide the eye. Bold headers, subtle body text, and high-contrast CTAs = clarity without clutter ([Nielsen Norman Group](https://www.nngroup.com/articles/visual-hierarchy-ux-definition)).
 
 3. **Embrace tables and lists.** Dense data displays (think Linear's issue list or Notion's database views) let power users scan faster. Pair them with filters and search for control.
 
