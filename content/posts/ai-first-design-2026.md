@@ -1,29 +1,3 @@
-**What needed to be done**
-
-The task was to locate every inline citation of the form  
-
-```
-[Source Name](URL)
-```  
-
-and wrap it in parentheses so that it appears as  
-
-```
-([Source Name](URL))
-```  
-
-while leaving all other content—including front‑matter, bold formatting, and the body text—unchanged.
-
-**Steps taken**
-
-1. **Scanned the entire post** for any markdown link that was not already surrounded by parentheses.  
-2. **Added opening and closing parentheses** around each citation, ensuring the link itself (`[Source Name](URL)`) stayed intact.  
-3. Verified that no other markdown (e.g., bold `**...**`) or front‑matter was altered.  
-4. Re‑read the post to confirm every citation now follows the required format.
-
-**Result – Fully corrected blog post**
-
-```markdown
 ---
 title: "AI-First Design: Building Interfaces That Feel Intelligent in 2026"
 date: "2026-03-10"
