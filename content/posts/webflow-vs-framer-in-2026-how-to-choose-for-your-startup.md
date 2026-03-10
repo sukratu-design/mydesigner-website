@@ -31,8 +31,8 @@ Neither is "better." They're built for different priorities.
 
 ### Choose Webflow if you need:
 
-* **A robust CMS** — Webflow supports up to 40 collections and 10,000 database items. If you're building a blog, job board, resource hub, or multi-language content site, Webflow's CMS is dramatically more powerful.
-* **Long-term SEO control** — Full metadata management, canonical tags, clean semantic HTML, 301 redirects, and structured data. Webflow averages a 94 SEO score out of the box.
+* **A robust CMS** — Webflow supports up to 40 collections and 10,000 database items ([Webflow pricing](https://webflow.com/pricing)). If you're building a blog, job board, resource hub, or multi-language content site, Webflow's CMS is dramatically more powerful.
+* **Long-term SEO control** — Full metadata management, canonical tags, clean semantic HTML, 301 redirects, and structured data. Webflow gives you granular control over every SEO element from day one.
 * **E-commerce** — Native e-commerce with product pages, carts, and checkout. Framer requires third-party tools for this.
 * **Complex site architecture** — Multi-page sites with relational content, nested collections, and advanced filtering. Webflow handles complexity that Framer can't match yet.
 

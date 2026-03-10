@@ -38,9 +38,9 @@ Design debt isn't just an aesthetic problem — it's a business problem with mea
 
 **Slower development velocity.** When there's no single source of truth for components, engineers spend time recreating UI elements or debating which version is "correct." UI inconsistency directly increases QA cycles and regression testing time, multiplying the cost of every release.
 
-**Lower user trust.** Inconsistency signals carelessness to users, even subconsciously. Nielsen Norman Group's analysis of B2B SaaS products found that visual inconsistency correlates with lower perceived credibility — especially on pricing and checkout pages where trust matters most.
+**Lower user trust.** Inconsistency signals carelessness to users, even subconsciously. Visual inconsistency correlates with lower perceived credibility — especially on pricing and checkout pages where trust matters most.
 
-**Higher design costs over time.** Every new feature built on top of an inconsistent foundation inherits that inconsistency. Paying down design debt in year 3 costs three to five times more than addressing it in year 1, because the surface area has grown so much larger.
+**Higher design costs over time.** Every new feature built on top of an inconsistent foundation inherits that inconsistency. The longer design debt goes unaddressed, the harder it is to fix — because the surface area keeps growing and every inconsistency eventually lives in dozens of components.
 
 **Conversion leakage.** Inconsistent UI creates cognitive friction at decision points. When a user's eye catches that something is "off" — a misaligned button, an unexpected color — it introduces a moment of hesitation. In aggregate, those moments cost you conversions you never even knew you lost.
 

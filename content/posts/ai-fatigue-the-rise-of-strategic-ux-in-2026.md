@@ -1,7 +1,7 @@
 ---
-title: “AI Fatigue Is Real [2026 Data] — Why Strategic UX Wins Now”
+title: “AI Fatigue Is Real — Why Strategic UX Wins Now”
 slug: ai-fatigue-the-rise-of-strategic-ux-in-2026
-excerpt: “AI-generated interfaces are everywhere — and users are tuning them out. 2026 data shows products that invest in strategic UX outperform AI-first competitors on retention by 2×. Here's what the shift means for your product.”
+excerpt: “AI-generated interfaces are everywhere — and users are tuning them out. In 2026, products investing in strategic UX are outperforming AI-first interfaces on trust and retention. Here's what the shift means for your product.”
 date: 2026-02-18T10:12
 author: MyDesigner Team
 coverImage: /assets/images/blog/ai-fatigue-cover.avif
@@ -9,7 +9,7 @@ draft: false
 ---
 ## The Problem: AI is Everywhere, but Trust is Crumbling
 
-In the past year, Nielsen Norman Group’s *State of UX 2026* reported that AI hype has shifted to “AI fatigue.”  Companies rushed to embed chat‑bots, auto‑layout generators, and generative UI components, only to discover:
+In the past year, AI hype has visibly shifted to “AI fatigue” — a pattern widely observed across product teams and design practitioners in 2026. Companies rushed to embed chat‑bots, auto‑layout generators, and generative UI components, only to discover:
 
 * **Inconsistent output** – designs that look polished but don’t align with brand voice or accessibility standards.
 * **User disappointment** – AI “sparkles” add noise rather than value, leading to higher churn.

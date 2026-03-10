@@ -21,7 +21,7 @@ This is the unintended consequence of AI-assisted design. When tools can generat
 
 ## The 2026 Design Rebellion Is Real
 
-The design community has noticed. According to Awwwards' 2026 trend reports and UX Collective's annual round-up, the dominant counter-movement this year is a deliberate return to **personality, texture, and warmth** — in direct response to the sterility of AI-generated design.
+The design community has noticed. The dominant counter-movement emerging across the design world in 2026 is a deliberate return to **personality, texture, and warmth** — in direct response to the sterility of AI-generated design.
 
 What does this look like in practice?
 
@@ -37,7 +37,7 @@ These aren't arbitrary aesthetic choices. They're strategic responses to the hom
 
 ## Why Personality Is a Business Strategy
 
-Nielsen Norman Group's *State of UX 2026* made a blunt observation: **UI surface is no longer a differentiator.** With AI generating competent interfaces at scale, looking "clean and professional" is now just the price of entry — not a competitive advantage.
+The pattern is clear: **UI surface is no longer a differentiator.** With AI generating competent interfaces at scale, looking "clean and professional" is now just the price of entry — not a competitive advantage.
 
 What *does* differentiate? Memorability. Emotional resonance. The feeling a brand leaves behind after a first visit.
 

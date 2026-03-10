@@ -12,7 +12,7 @@ draft: false
 
 Your product might be excellent. Your marketing might be working. But if users churn in the first session, none of it matters.
 
-Research from Mixpanel's 2026 Product Benchmarks report shows that **the median app loses 68% of new users within 7 days**. The top performers — those in the 75th percentile of retention — don't have fundamentally better features. They have fundamentally better onboarding.
+Industry benchmarks consistently show that **most apps lose over 70% of new users within the first 7 days** ([Mixpanel Product Benchmarks](https://mixpanel.com/blog/product-benchmarks/)). The top performers — those in the 75th percentile of retention — don't have fundamentally better features. They have fundamentally better onboarding.
 
 The reason is simple: **users don't give you time, they give you attention — and attention is borrowed, not owned.** When someone signs up for your product, they're asking one silent question: *"How fast can you show me that this was worth it?"*
 
