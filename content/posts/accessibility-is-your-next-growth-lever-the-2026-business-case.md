@@ -1,3 +1,46 @@
+**Audit & Fix – Full Reasoning and Updated Blog Post**
+
+---
+
+### 1. Identify Every Statistic / Data Claim  
+
+| # | Statistic / Claim | Location in Original Post |
+|---|-------------------|---------------------------|
+| 1 | **95.9% of websites** still have at least one detectable accessibility failure | “The Problem” section |
+| 2 | The average homepage has **56.8 errors** | “The Problem” section |
+| 3 | **71% of customers with disabilities** simply leave when a site is difficult to use | “The Problem” section |
+| 4 | Global disability economy has **$23 trillion** in spending power | “The Numbers Don't Lie” section |
+| 5 | Roughly **1.3 billion** people live with a disability | “The Numbers Don't Lie” section |
+| 6 | **Over 4,600 ADA filings in 2025** | “The Numbers Don't Lie” section |
+| 7 | Average settlement for a small‑business accessibility lawsuit exceeds **$50,000** | “The Numbers Don't Lie” section |
+| 8 | **2,014 filings in the first half of 2025**, a **37%** YoY increase | “The Legal Landscape Has Teeth Now” section |
+| 9 | EU Accessibility Act effective **June 2025**, making WCAG 2.1 AA a legal requirement | “The Legal Landscape Has Teeth Now” section |
+|10| US public‑entity deadline **April 2026** for WCAG 2.1 AA compliance | “The Legal Landscape Has Teeth Now” section |
+
+---
+
+### 2. Verify Statistics & Add Sources (or remove if no source)
+
+| # | Verified Source (formatted as required) |
+|---|------------------------------------------|
+| 1 | ([WebAIM Million 2024](https://webaim.org/projects/million/2024)) |
+| 2 | ([WebAIM Million 2024](https://webaim.org/projects/million/2024)) |
+| 3 | ([Click‑Away Pound Survey 2016](https://www.clickawaypound.com/cap16finalreport.html)) |
+| 4 | ([The $23 Trillion Disability Market Report](https://theresourcekey.com/23tdisabilitymarket/)) |
+| 5 | ([TestParty](https://testparty.ai/blog/accessibility-roi-statistics)) |
+| 6 | ([Vorgestern Agency](https://vorgesternagency.com/resources/web-accessibility-guide-2026.html)) |
+| 7 | ([TestParty](https://testparty.ai/blog/accessibility-roi-statistics)) |
+| 8 | ([EcomBack 2025 Mid‑Year ADA Lawsuit Report](https://www.ecomback.com/ada-website-lawsuits-recap-report/2025-mid-year-ada-website-lawsuit-report)) |
+| 9 | ([EU Accessibility Act](https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/12484-accessibility-act_en)) |
+|10| ([U.S. Access Board](https://www.access-board.gov/)) |
+
+All claims have a verifiable source; none needed removal.
+
+---
+
+### 3. Updated Blog Post (front‑matter, tone, **bold** kept)
+
+```markdown
 ---
 title: "Accessibility Is Your Next Growth Lever: The 2026 Business Case for Inclusive Design"
 slug: accessibility-is-your-next-growth-lever-the-2026-business-case
@@ -16,7 +59,7 @@ Most startups push accessibility to "Phase 2" — after launch, after funding,
 
 ## The Numbers Don't Lie
 
-The global disability economy represents a significant market with **$23 trillion** in spending power ([The $23 Trillion Disability Market Report](https://theresourcekey.com/23tdisabilitymarket/)). Worldwide, roughly **1.3 billion** people live with a disability, underscoring the scale of the opportunity ([TestParty](https://testparty.ai/blog/accessibility-roi-statistics)).
+The global disability economy represents a significant market with **$23 trillion** in spending power ([The $23 Trillion Disability Market Report](https://theresourcekey.com/23tdisabilitymarket/)). Worldwide, roughly **1.3 billion** people live with a disability ([TestParty](https://testparty.ai/blog/accessibility-roi-statistics)).
 
 The business case is getting impossible to ignore:
 
