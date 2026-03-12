@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /lighthouse-report.report.html
+Disallow: /admin/
 
 Sitemap: https://mydesigner.gg/sitemap.xml

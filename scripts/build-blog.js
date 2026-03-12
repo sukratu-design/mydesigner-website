@@ -128,9 +128,12 @@ function buildPostObject(fileName) {
   };
 }
 
-function pageShell({ title, description, canonicalPath, body, ogType = 'website', ogImage = '/assets/images/og-image.jpg' }) {
+function pageShell({ title, description, canonicalPath, body, ogType = 'website', ogImage = '/assets/images/og-image.jpg', structuredData = [] }) {
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
   const imageUrl = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
+  const schemaBlocks = structuredData
+    .map((schema) => `  <script type="application/ld+json">${JSON.stringify(schema)}</script>`)
+    .join('\n');
 
   return `<!DOCTYPE html>
 <html lang="en" data-theme="light">
@@ -149,6 +152,7 @@ function pageShell({ title, description, canonicalPath, body, ogType = 'website'
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeXml(title)}">
   <meta name="twitter:description" content="${escapeXml(description)}">
+${schemaBlocks ? schemaBlocks + '\n' : ''}
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/daisyui@5" as="style">
@@ -371,6 +375,41 @@ function buildBlogPostPage(post) {
   </main>`;
 
   const ogImage = post.coverImage || '/assets/images/og-image.jpg';
+  const postUrl = `${SITE_URL}/blog/${post.slug}.html`;
+  const imageUrl = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
+
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog/` },
+        { '@type': 'ListItem', position: 3, name: post.title, item: postUrl }
+      ]
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.excerpt,
+      image: imageUrl,
+      datePublished: post.dateIso,
+      dateModified: post.dateIso,
+      author: {
+        '@type': 'Organization',
+        name: 'MyDesigner',
+        url: SITE_URL
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'MyDesigner',
+        url: SITE_URL,
+        logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/images/mydesigner-logo.svg` }
+      },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl }
+    }
+  ];
 
   return pageShell({
     title: `${post.title} | MyDesigner Blog`,
@@ -378,7 +417,8 @@ function buildBlogPostPage(post) {
     canonicalPath: `/blog/${post.slug}.html`,
     ogType: 'article',
     ogImage,
-    body
+    body,
+    structuredData
   });
 }
 
