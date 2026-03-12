@@ -44,6 +44,23 @@
   --noise: 0;
 }
 
+/* ========== Link Underline ========== */
+a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-color: #FF8025;
+  text-underline-offset: 3px;
+}
+
+nav a,
+.navbar a,
+footer a,
+.footer a,
+.card-title a,
+.dropdown-content a,
+.menu a {
+  text-decoration: none;
+}
+
 /* ========== Typography ========== */
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
