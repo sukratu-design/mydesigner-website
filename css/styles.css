@@ -62,8 +62,13 @@ footer a,
 .footer a,
 .card-title a,
 .dropdown-content a,
-.menu a {
+.menu a,
+a.block {
   text-decoration: none;
+}
+
+a.block:hover {
+  color: inherit;
 }
 
 /* ========== Typography ========== */
