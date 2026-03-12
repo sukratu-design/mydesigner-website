@@ -49,6 +49,11 @@ a:not(.btn) {
   text-decoration: underline;
   text-decoration-color: #FF8025;
   text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+a:not(.btn):hover {
+  color: #FF8025;
 }
 
 nav a,
