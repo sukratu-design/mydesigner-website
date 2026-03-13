@@ -35,7 +35,25 @@ const STATIC_SITEMAP_PAGES = [
   { loc: '/services/brand-identity.html', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
   { loc: '/services/presentation-design.html', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
   { loc: '/services/booth-designs.html', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/services/social-media-creatives.html', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' }
+  { loc: '/services/social-media-creatives.html', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/work/neustreet.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/dentaldost.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/slash.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/vettly.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/ahhf.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/contractwrangler.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/poocho-app.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/poocho-website.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/fluentpet.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/uber-cards.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/scano.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/dentsu.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/travelsaving.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/nada.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/apollo-radiology.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/ecstra.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/yespl.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/mda.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' }
 ];
 
 marked.setOptions({

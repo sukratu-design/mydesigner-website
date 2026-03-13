@@ -3,3 +3,5 @@ node_modules/
 .DS_Store
 /blog/
 rss.xml
+*.pen
+mydesigner-analytics-insights.md

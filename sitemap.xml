@@ -116,9 +116,15 @@
   </url>
   <url>
     <loc>https://mydesigner.gg/blog/</loc>
-    <lastmod>2026-03-10</lastmod>
+    <lastmod>2026-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mydesigner.gg/blog/the-real-cost-of-hiring-a-designer.html</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mydesigner.gg/blog/ai-first-design-2026.html</loc>
