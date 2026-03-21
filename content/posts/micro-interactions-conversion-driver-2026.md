@@ -1,8 +1,9 @@
 ---
-title: Micro-Interactions: The Silent Conversion Driver Startups Ignore in 2026  
-slug: micro-interactions-conversion-driver-2026  
-excerpt: **Micro‑interactions are the hidden lever that can lift your conversion rates by double‑digits—if you finally start using them.**  
-published: false
+title: "Micro-Interactions: The Silent Conversion Driver Startups Ignore in 2026"
+slug: micro-interactions-conversion-driver-2026
+excerpt: "Micro-interactions are the hidden lever that can lift your conversion rates by double-digits — if you finally start using them."
+date: 2026-03-21T09:00
+draft: true
 ---
 
 ## The Problem  
