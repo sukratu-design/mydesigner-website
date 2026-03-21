@@ -1,9 +1,29 @@
 [build]
-  command = "npm run build:blog"
+  command = "npm run build"
   publish = "."
 
 [functions]
   directory = "netlify/functions"
+
+[[redirects]]
+  from = "/portfolio/ui-ux-design"
+  to = "/portfolio/ui-ux-design.html"
+  status = 200
+
+[[redirects]]
+  from = "/portfolio/web-development"
+  to = "/portfolio/web-development.html"
+  status = 200
+
+[[redirects]]
+  from = "/portfolio/graphic-design"
+  to = "/portfolio/graphic-design.html"
+  status = 200
+
+[[redirects]]
+  from = "/portfolio/branding"
+  to = "/portfolio/branding.html"
+  status = 200
 
 [[redirects]]
   from = "/admin"
