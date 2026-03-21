@@ -2,7 +2,7 @@
 title: "The Design-to-Dev Handoff Is Broken — Here's How Startup Teams Fix It"
 slug: design-to-dev-handoff
 excerpt: "The design-to-dev handoff is one of the most consistently broken parts of startup product building. Here's the honest diagnosis — and what teams actually shipping great products do differently."
-date: 2026-03-21T08:00
+date: 2026-03-13T08:00
 author: MyDesigner Team
 coverImage: /assets/images/blog/design-to-dev-handoff-cover.jpg
 draft: false
