@@ -156,6 +156,24 @@
         "badge": "Framer Development",
         "thumb": "https://cdn.prod.website-files.com/64f99cd63a4fcf5bd6a01c59/68887a97578ece95c92b0cd9_thumbnail.png",
         "desc": "Engineering precision, built with Framer"
+    },
+    {
+        "slug": "takumi",
+        "title": "Takumi",
+        "category": "webdev",
+        "platform": "framer",
+        "badge": "Framer Development",
+        "thumb": "/assets/images/portfolio/takumi.webp",
+        "desc": "Framer website for an AI consultancy rooted in Japanese craftsmanship"
+    },
+    {
+        "slug": "kkhavo",
+        "title": "Kkhavo",
+        "category": "webdev",
+        "platform": "framer",
+        "badge": "Framer Development",
+        "thumb": "/assets/images/portfolio/kkhavo.webp",
+        "desc": "Premium wellness brand website — heritage storytelling in Framer"
     }
 ];
 

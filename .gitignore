@@ -6,3 +6,4 @@ rss.xml
 *.pen
 mydesigner-analytics-insights.md
 .env
+.gstack/
