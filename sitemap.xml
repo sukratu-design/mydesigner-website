@@ -224,9 +224,15 @@
   </url>
   <url>
     <loc>https://mydesigner.gg/blog/</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mydesigner.gg/blog/micro-interactions-design-detail.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mydesigner.gg/blog/why-your-product-never-looks-like-the-designs.html</loc>
