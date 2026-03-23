@@ -262,39 +262,32 @@
 
   <main>
   <!-- ===== HERO ===== -->
-  <section class="py-20 lg:py-32 text-center" data-hero>
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="badge badge-outline mb-6">Unlimited Design Subscription</div>
-      <h1 class="text-4xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">Your On-Demand Design Team</h1>
-      <p class="text-lg lg:text-xl text-base-content/70 max-w-2xl mx-auto mb-8">MyDesigner is an unlimited design subscription service by Sukratu, founded in 2020 in Pune, India. For a fixed monthly fee starting at $1,400, companies get unlimited UI/UX design, Webflow development, Framer development, and graphic design — with no contracts and cancel-anytime billing. Trusted by 57 companies including Dentsu and USA Table Tennis.</p>
-      <div class="flex flex-wrap justify-center gap-3 mb-4">
-        <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Book a call</a>
-        <a href="/pricing.html" class="btn btn-outline btn-lg">See pricing</a>
-      </div>
-      <p class="text-sm text-base-content/60">No contracts. Cancel anytime. Starting at <strong>$1,400/mo</strong></p>
-    </div>
-  </section>
+  <section class="py-20 lg:py-32" data-hero>
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-  <!-- ===== BY THE NUMBERS ===== -->
-  <section class="py-12 bg-base-200" aria-label="Key statistics">
-    <div class="max-w-5xl mx-auto px-4">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <!-- Left: headline + CTAs -->
         <div>
-          <p class="text-3xl lg:text-4xl font-bold">57</p>
-          <p class="text-sm text-base-content/70 mt-1">Companies served</p>
+          <p class="text-sm font-semibold uppercase tracking-wider text-base-content/50 mb-4">Unlimited Design Subscription</p>
+          <h1 class="text-5xl lg:text-6xl leading-[1.05] mb-6">Your On-Demand Design Team</h1>
+          <p class="text-lg text-base-content/65 leading-relaxed mb-8 max-w-lg">UI/UX design, Webflow &amp; Framer development, and graphic design — all in one subscription. Starting at $1,400/mo. No contracts.</p>
+          <div class="flex flex-wrap gap-3 mb-5">
+            <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Book a call</a>
+            <a href="/pricing.html" class="btn btn-outline btn-lg">See pricing</a>
+          </div>
+          <p class="text-sm text-base-content/50">No contracts. Cancel anytime. Starting at <strong>$1,400/mo</strong></p>
         </div>
-        <div>
-          <p class="text-3xl lg:text-4xl font-bold">24–72h</p>
-          <p class="text-sm text-base-content/70 mt-1">Average turnaround</p>
+
+        <!-- Right: animated logo rings -->
+        <div class="flex items-center justify-center" aria-hidden="true">
+          <div class="logo-container">
+            <div class="md-ring md-ring-1"></div>
+            <div class="md-ring md-ring-2"></div>
+            <div class="md-ring md-ring-3"></div>
+            <div class="core"></div>
+          </div>
         </div>
-        <div>
-          <p class="text-3xl lg:text-4xl font-bold">$1,400</p>
-          <p class="text-sm text-base-content/70 mt-1">Starting price/month</p>
-        </div>
-        <div>
-          <p class="text-3xl lg:text-4xl font-bold">142+</p>
-          <p class="text-sm text-base-content/70 mt-1">Projects delivered</p>
-        </div>
+
       </div>
     </div>
   </section>
@@ -919,5 +912,7 @@
     })();
   </script>
   <script src="js/main.js"></script>
+
+
 </body>
 </html>

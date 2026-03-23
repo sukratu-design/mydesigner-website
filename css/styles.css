@@ -1,3 +1,39 @@
+/* ========== Hero rings animation ========== */
+.logo-container {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.core {
+  width: 136px;
+  height: 136px;
+  background: linear-gradient(135deg, #ff9d42, #f57c00);
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.md-ring {
+  position: absolute;
+  border: 8px solid #f57c00;
+  border-radius: 50%;
+  animation: pulse 3s infinite ease-in-out;
+  box-shadow: none !important;
+}
+
+.md-ring-1 { width: 187px; height: 187px; animation-delay: 0s;   z-index: 3; }
+.md-ring-2 { width: 238px; height: 238px; animation-delay: 0.2s; z-index: 2; }
+.md-ring-3 { width: 289px; height: 289px; animation-delay: 0.4s; z-index: 1; }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1);    opacity: 1;   }
+  50%       { transform: scale(1.05); opacity: 0.7; }
+}
+
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -202,3 +238,9 @@ h1, h2, h3, h4, h5, h6 {
 .portfolio-item:hover .portfolio-item__image img {
   transform: scale(1.05);
 }
+
+/* PREVIEW OVERRIDE */
+.reveal { opacity: 1 !important; transform: none !important; }
+
+/* PREVIEW OVERRIDE */
+.reveal { opacity: 1 !important; transform: none !important; }
