@@ -366,38 +366,60 @@
 
   <!-- ===== HOW IT WORKS ===== -->
   <section class="py-16 lg:py-24 bg-base-200" id="how-it-works">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">How It Works</span>
-      <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Three steps to great design</h2>
-      <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">Getting started is simple. No onboarding calls required.</p>
+    <div class="max-w-6xl mx-auto px-4">
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="card bg-base-100 reveal">
-          <div class="card-body items-center text-center">
-            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-lg font-bold mb-2">1</div>
-            <h3 class="card-title">Subscribe</h3>
-            <p class="text-base-content/70">Choose a plan that fits your needs. Start with the Daily plan to test us, or go monthly for unlimited access.</p>
-          </div>
-        </div>
-        <div class="card bg-base-100 reveal">
-          <div class="card-body items-center text-center">
-            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-lg font-bold mb-2">2</div>
-            <h3 class="card-title">Request</h3>
-            <p class="text-base-content/70">Submit design or development requests through our project management system. Add briefs, references, and details.</p>
-          </div>
-        </div>
-        <div class="card bg-base-100 reveal">
-          <div class="card-body items-center text-center">
-            <div class="w-12 h-12 rounded-full bg-primary text-primary-content flex items-center justify-center text-lg font-bold mb-2">3</div>
-            <h3 class="card-title">Receive</h3>
-            <p class="text-base-content/70">Get your designs within 24-72 hours. Request unlimited revisions until you're 100% satisfied.</p>
-          </div>
-        </div>
+      <!-- Section header — left-aligned -->
+      <div class="mb-16 reveal">
+        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/50">How It Works</span>
+        <h2 class="text-3xl lg:text-4xl mt-2 mb-3">Three steps to great design</h2>
+        <p class="text-base-content/60 max-w-xl">Getting started is simple. No onboarding calls required.</p>
       </div>
 
-      <div class="mt-10">
-        <a href="/how-it-works.html" class="btn btn-outline">Learn more about the process</a>
+      <!-- Step timeline -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-0 reveal">
+
+        <!-- Step 1 -->
+        <div class="relative pr-8 pb-12 md:pb-0">
+          <!-- connector line (hidden on last item via sibling rule below) -->
+          <div class="hidden md:block absolute top-10 left-[calc(4rem+1px)] right-0 h-px bg-base-300"></div>
+          <div class="flex items-start gap-5">
+            <span class="shrink-0 text-7xl lg:text-8xl font-bold leading-none select-none" style="font-family:'TheSeasons',Georgia,serif; color:#FF8025; opacity:0.18;">1</span>
+            <div class="pt-3">
+              <h3 class="text-lg font-semibold mb-2">Subscribe</h3>
+              <p class="text-base-content/65 text-sm leading-relaxed">Pick a plan. Start with a single day to test the waters, or jump straight to monthly for unlimited access. No calls, no proposals.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative pr-8 pb-12 md:pb-0">
+          <div class="hidden md:block absolute top-10 left-[calc(4rem+1px)] right-0 h-px bg-base-300"></div>
+          <div class="flex items-start gap-5">
+            <span class="shrink-0 text-7xl lg:text-8xl font-bold leading-none select-none" style="font-family:'TheSeasons',Georgia,serif; color:#FF8025; opacity:0.18;">2</span>
+            <div class="pt-3">
+              <h3 class="text-lg font-semibold mb-2">Request</h3>
+              <p class="text-base-content/65 text-sm leading-relaxed">Submit requests via Linear — your PM tool. Add a brief, drop references, set priority. One active request at a time, worked on daily.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative pb-0">
+          <div class="flex items-start gap-5">
+            <span class="shrink-0 text-7xl lg:text-8xl font-bold leading-none select-none" style="font-family:'TheSeasons',Georgia,serif; color:#FF8025; opacity:0.18;">3</span>
+            <div class="pt-3">
+              <h3 class="text-lg font-semibold mb-2">Receive</h3>
+              <p class="text-base-content/65 text-sm leading-relaxed">Designs land in 24–72 hours. Review, request revisions, or approve — all in the same tool. Unlimited revisions until it's right.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <div class="mt-12 reveal">
+        <a href="/how-it-works.html" class="btn btn-outline">See the full process</a>
+      </div>
+
     </div>
   </section>
 
