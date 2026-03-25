@@ -1,0 +1,86 @@
+# The UX onboarding playbook: how startups cut churn in 2026
+
+> Source: https://mydesigner.gg/blog/ux-of-onboarding-startup-retention-2026
+> Humanized: 2026-03-25
+
+*Top-quartile startups cut week-one churn not with better features, but with better onboarding — here's the framework.*
+
+---
+
+Your product might be excellent. Your marketing might be working. But if users churn in the first session, none of it matters.
+
+[Mixpanel's product benchmarks](https://mixpanel.com/blog/product-benchmarks/) show that most apps lose over 70% of new users within the first 7 days. The top performers — those in the 75th percentile of retention — don't have fundamentally better features. They have fundamentally better onboarding.
+
+The reason is simple: users don't give you time, they give you attention. When someone signs up, they're asking one silent question: *"How fast can you show me that this was worth it?"*
+
+If you can't answer that in the first five minutes, they're gone.
+
+---
+
+## Why most startup onboarding fails
+
+Most founders design onboarding around their own mental model of the product — not the user's. That usually produces one of three failure modes.
+
+**The feature tour trap.** An exhaustive walkthrough of every feature, completed before the user has done anything meaningful. By the time the tour ends, they've learned nothing useful and remember even less.
+
+**The blank slate problem.** The user lands in an empty dashboard with a "Get started" prompt and no context. Without scaffolding, most people freeze — and leave.
+
+**The value delay.** The core value is buried 4–7 steps deep. Users have to create an account, verify email, fill a profile, accept a tutorial, and configure settings before experiencing anything that justifies the sign-up.
+
+Each of these is a design failure, not a product failure.
+
+---
+
+## The 3-phase onboarding framework
+
+Great onboarding follows a clear arc: Welcome → Activate → Expand.
+
+### Phase 1: Welcome and context (under 30 seconds)
+
+The first screen should do one thing: confirm the user made the right decision. That means a single benefit-oriented headline, a clear indication of what happens next, and zero friction — no mandatory profile setup, no payment required, no email verification wall.
+
+Defer every non-essential step. The welcome moment is about momentum, not data collection.
+
+### Phase 2: Guided activation (under 2 minutes)
+
+This is where users reach their first "aha moment" — the point at which the product's core value clicks. Your job is to design the shortest possible path from sign-up to that moment.
+
+Map it like this: What is the single action that makes users *feel* the value? What is the minimum number of steps to complete it? Remove everything else.
+
+For a project management tool, the aha moment might be seeing a first task assigned to a teammate. For an analytics tool, watching a first event appear in the dashboard. For a design tool, seeing a first mockup render.
+
+Build toward the aha moment, not around it.
+
+### Phase 3: Progressive disclosure (ongoing)
+
+Once users have experienced the core value, introduce advanced features contextually — at the moment they become relevant — rather than upfront.
+
+This is the opposite of the feature tour. Instead of showing users what the product can do, show them what they can do next, now that they've done this. Every new feature reveal should be triggered by user behavior, not a fixed timeline.
+
+---
+
+## 5 actionable takeaways for founders
+
+**1. Define your activation event.** What is the single user action that predicts long-term retention? Design your entire onboarding flow to reach it as fast as possible. If you don't know what it is, run a cohort analysis: which action, in the first session, correlates most strongly with 30-day retention?
+
+**2. Time your onboarding.** Record a session of a first-time user going through your flow. Time it. If it takes more than 5 minutes to reach the aha moment, it's too long. Cut, simplify, defer.
+
+**3. Use checklists strategically.** A well-designed onboarding checklist works because it gives users a visible progress indicator and a clear set of next actions. Keep it short: 3–5 items, each tied to a meaningful outcome, not a feature.
+
+**4. Test with real strangers.** Usability-test your onboarding with 5 people who have never seen your product. Watch where they hesitate, what they skip, and what confuses them. You'll find more actionable insights in 90 minutes of testing than in 3 months of analytics.
+
+**5. Measure what happens after completion.** Don't just track what percentage of users finish onboarding. Track what they do in the first 24 hours afterward. High completion with low subsequent engagement means your onboarding is hitting the milestones but missing the mission.
+
+---
+
+## How onboarding is a design problem
+
+Onboarding isn't just a product decision — it's a design one. The copy, the visual hierarchy, the empty states, the micro-interactions: every detail shapes how quickly a user understands and trusts your product.
+
+The first five minutes of your product aren't a tutorial. They're a promise. If users reach a genuine moment of value before their attention expires, you've earned the right to show them everything else. If they don't, no amount of features, marketing, or pricing will compensate.
+
+Audit your activation event. Map the shortest path to it. Remove everything that isn't that path.
+
+---
+
+[MyDesigner](https://mydesigner.gg) works with startups to redesign onboarding flows from the ground up — from identifying activation events to testing prototype-level flows with real users before a line of code is written.
