@@ -1,3 +1,43 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Commands
+
+```bash
+npm run build            # Build everything (blog HTML + portfolio pages)
+npm run build:blog       # Regenerate blog/*.html, rss.xml, sitemap.xml from content/posts/
+npm run build:portfolio  # Regenerate portfolio/*.html from data/projects.js
+
+# Generate a blog cover image (saves to /tmp/ preview + assets/images/blog/ final)
+node scripts/generate-blog-image.js "<topic description>" <slug>
+```
+
+There are no tests configured (`npm test` is a no-op).
+
+## Architecture
+
+This is a **static site generator** — Node.js build scripts convert source data into HTML files that Netlify serves directly.
+
+**Build pipeline:**
+1. `scripts/build-blog.js` reads `content/posts/*.md`, parses YAML frontmatter + markdown (`gray-matter` + `marked`), and outputs `blog/<slug>.html` for each published post, plus `rss.xml` and `sitemap.xml`.
+2. `scripts/build-portfolio.js` reads `data/projects.js` (single source of truth for all portfolio work) and outputs four category pages under `portfolio/`.
+
+**Key source files:**
+- `content/posts/*.md` — Blog post source (frontmatter: title, slug, excerpt, date, author, coverImage, draft)
+- `data/projects.js` — All portfolio projects with category tags (`uiux`, `webdev`, `graphic`, `branding`)
+- `css/styles.css` + `css/variables.css` — Global styles (DaisyUI + custom)
+
+**Generated files (not committed):**
+- `blog/*.html` — Listed in `.gitignore`
+- `rss.xml`, `.netlify/` — Also gitignored
+
+**Deploy:** Netlify auto-deploys on push to `main`. Build command is `npm run build`, publish directory is `.` (root). Clean URLs are handled via `[[redirects]]` in `netlify.toml`.
+
+**Serverless functions:** `netlify/functions/` (Firebase Admin + Stripe are available for backend logic).
+
+---
+
 # mydesigner-website — Claude Instructions
 
 ## Blog Publish Workflow
