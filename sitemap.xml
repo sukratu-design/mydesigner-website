@@ -224,9 +224,15 @@
   </url>
   <url>
     <loc>https://mydesigner.gg/blog/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mydesigner.gg/blog/credibility-by-design-saas-cold-traffic.html</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mydesigner.gg/blog/why-your-landing-page-isnt-converting.html</loc>
