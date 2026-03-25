@@ -8,68 +8,68 @@ coverImage: /assets/images/blog/design-debt-cover.avif
 draft: false
 ---
 
-## The Problem: Your Product Looked Great at Launch. Then You Kept Shipping.
+## The problem: your product looked great at launch, then you kept shipping
 
-Every startup tells the same design story. You launch with a focused, coherent visual system. A handful of screens, one consistent font stack, a color palette you were proud of. Then growth happens: new features ship, edge cases get patched, a contractor builds a section that doesn't quite match. Six months later, your product has four shades of blue, two different button styles, and a settings page that looks like it came from a different company.
+Every startup tells the same design story. You launch with a focused, coherent visual system — a handful of screens, one consistent font stack, a color palette you were proud of. Then growth happens: new features ship, edge cases get patched, a contractor builds a section that doesn't quite match. Six months later, your product has four shades of blue, two button styles, and a settings page that looks like it came from a different company.
 
-This is design debt — and it compounds faster than technical debt.
+This is design debt. And it compounds faster than technical debt.
 
 Unlike a broken API or a slow database query, design debt doesn't throw an error. It quietly erodes user trust, slows your team's velocity, and makes every new feature harder to build correctly.
 
 ---
 
-## What Design Debt Actually Looks Like
+## What design debt actually looks like
 
 Design debt shows up in ways that are easy to rationalize until they become impossible to ignore:
 
-- **Inconsistent component styles** — buttons, cards, and form inputs built at different times by different people, each with slightly different spacing, radius, or color
-- **Undefined design tokens** — hardcoded hex values scattered across stylesheets, making a brand refresh a multi-day project instead of a variable change
-- **Outdated pages** — marketing pages that still use your old brand colors, creating a jarring contrast when users move between your site and your product
-- **Undocumented decisions** — no shared design system means every new hire or contractor reinvents the same wheel, introducing more inconsistency with every addition
-- **Accessibility gaps baked in** — color contrast ratios and focus states that were never set correctly and now affect every component that inherits them
+- Inconsistent component styles — buttons, cards, and inputs built at different times, each with slightly different spacing, radius, or color
+- Undefined design tokens — hardcoded hex values scattered across stylesheets, making a brand refresh a multi-day project instead of a variable change
+- Outdated pages — marketing pages still using your old brand colors, creating a jarring contrast when users move between site and product
+- Undocumented decisions — no shared design system means every new hire or contractor reinvents the same wheel
+- Accessibility gaps baked in — color contrast ratios and focus states never set correctly, now inherited by every component downstream
 
 None of these feel urgent when they first appear. Together, they become a structural drag on everything your team builds.
 
 ---
 
-## The Real Business Cost
+## The real business cost
 
-Design debt isn't just an aesthetic problem — it's a business problem with measurable consequences.
+Design debt isn't just an aesthetic problem — it has measurable business consequences.
 
-**Slower development velocity.** When there's no single source of truth for components, engineers spend time recreating UI elements or debating which version is "correct." UI inconsistency directly increases QA cycles and regression testing time, multiplying the cost of every release.
+**Development slows down.** When there's no single source of truth for components, engineers spend time recreating UI elements or debating which version is correct. UI inconsistency [directly increases QA cycles and regression testing time](https://www.smashingmagazine.com/2022/05/design-system-roi/), multiplying the cost of every release.
 
-**Lower user trust.** Inconsistency signals carelessness to users, even subconsciously. Visual inconsistency correlates with lower perceived credibility — especially on pricing and checkout pages where trust matters most.
+**User trust drops.** [Visual inconsistency correlates with lower perceived credibility](https://www.nngroup.com/articles/credibility-and-design/) — especially on pricing and checkout pages where trust matters most. Users register inconsistency subconsciously, even if they can't name it.
 
-**Higher design costs over time.** Every new feature built on top of an inconsistent foundation inherits that inconsistency. The longer design debt goes unaddressed, the harder it is to fix — because the surface area keeps growing and every inconsistency eventually lives in dozens of components.
+**Design costs compound.** Every new feature built on an inconsistent foundation inherits that inconsistency. The longer design debt goes unaddressed, the more surface area it covers — and the more components eventually need rework.
 
-**Conversion leakage.** Inconsistent UI creates cognitive friction at decision points. When a user's eye catches that something is "off" — a misaligned button, an unexpected color — it introduces a moment of hesitation. In aggregate, those moments cost you conversions you never even knew you lost.
-
----
-
-## Actionable Takeaways for Founders & Marketers
-
-1. **Run a visual audit before your next big feature** — Screenshot every screen in your product and line them up side by side. Look for button variants, heading sizes, background colors, spacing inconsistencies. If you can spot more than three inconsistencies in five minutes, you have design debt worth addressing.
-
-2. **Establish a single source of truth for your design tokens** — Agree on a core set of design variables: primary and secondary colors, spacing scale, border radius, and font sizes. Document them in Figma and enforce them in your codebase.
-
-3. **Prioritize debt that affects trust, not just aesthetics** — Focus on inconsistencies at high-stakes moments — checkout, onboarding, pricing pages, account settings.
-
-4. **Treat design debt in sprints, not rewrites** — Run a focused "cleanup sprint" every quarter: pick the five worst offenders, standardize them, and document the decision.
-
-5. **Don't build on top of a broken foundation** — Scope a two-day design review before the sprint starts, not after the inconsistency has shipped to production.
+**Conversions leak.** Inconsistent UI creates cognitive friction at decision points. A misaligned button or an unexpected color introduces a moment of hesitation. [In aggregate, that friction costs conversions](https://baymard.com/blog/checkout-usability) you never knew you were losing.
 
 ---
 
-## Where MyDesigner Fits In
+## How to start paying it down
 
-Design debt accumulates fastest at startups that are growing quickly without a dedicated design function. Rather than a one-off agency engagement, MyDesigner works as an ongoing design partner — auditing, cleaning, and building on your foundation continuously as your product evolves.
+1. **Run a visual audit before your next big feature.** Screenshot every screen and line them up side by side. Look for button variants, heading sizes, background colors, spacing inconsistencies. If you spot more than three issues in five minutes, you have debt worth addressing.
+
+2. **Establish a single source of truth for design tokens.** Agree on a core set of variables: primary and secondary colors, spacing scale, border radius, font sizes. Document them in Figma and enforce them in code.
+
+3. **Prioritize debt that affects trust, not just aesthetics.** Focus on inconsistencies at high-stakes moments — checkout, onboarding, pricing pages, account settings.
+
+4. **Treat debt in sprints, not rewrites.** Run a focused cleanup sprint every quarter: pick the five worst offenders, standardize them, document the decision.
+
+5. **Don't build on a broken foundation.** Scope a two-day design review before the sprint starts, not after the inconsistency ships to production.
 
 ---
 
-## The Bottom Line
+## Where MyDesigner fits in
 
-Design debt is the tax your startup pays for shipping fast without a system. Left unaddressed, it compounds — slowing your team, eroding user trust, and making every future feature more expensive to build correctly.
+Design debt accumulates fastest at startups growing quickly without a dedicated design function. Rather than a one-off agency engagement, [MyDesigner](https://mydesigner.gg) works as an ongoing design partner — auditing, cleaning, and building on your foundation continuously as your product evolves.
 
-**Audit your product. Define your tokens. Pay down the debt before it charges interest.**
+---
+
+## The bottom line
+
+Design debt is the tax your startup pays for shipping fast without a system. Left unaddressed, it compounds — slowing your team, eroding user trust, and making every future feature more expensive to build.
+
+Audit your product. Define your tokens. Pay down the debt before it charges interest.
 
 Ready to clean up your design foundation? [Talk to our team](https://calendar.app.google/xGoKb51qpbcnZgJy5) and let's scope your design debt sprint.

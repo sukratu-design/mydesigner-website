@@ -8,72 +8,64 @@ coverImage: /assets/images/blog/web-summit-qatar-2026-cover.jpg
 draft: false
 ---
 
-## The Moment We Walked In
+## The moment we walked in
 
-There's something about standing in front of that giant Web Summit sign at the Doha Exhibition and Convention Centre that makes it all real. We'd been following the event for years — and this February, the MyDesigner team finally made the trip to Doha to be part of it firsthand.
-
-Web Summit Qatar 2026 ran from **February 1–4** at the **DECC (Doha Exhibition and Convention Centre)** — a venue that matched the scale of the event perfectly. Over **30,000 attendees from 127 countries** filled the halls, making this the largest edition yet, more than doubling attendance from the inaugural edition just two years ago.
+This February, the MyDesigner team made the trip to Doha for [Web Summit Qatar 2026](https://qatar.websummit.com/), held from February 1–4 at the Doha Exhibition and Convention Centre. Over [30,000 attendees from 127 countries](https://qatar.websummit.com/) filled the halls — the largest edition yet, more than double the attendance from the inaugural event two years ago.
 
 ---
 
-## What Made This Edition Special
+## What made this edition special
 
-This wasn't just a conference. It was a signal.
+[1,600+ startups](https://qatar.websummit.com/) participated, making it the largest single-venue startup gathering in the MENA region. Nearly 1,000 investors were present. Google Cloud, Microsoft, Amazon, Meta, and TikTok all had booths. The speaker lineup included [Cliff Obrecht](https://www.canva.com/newsroom/news/web-summit-qatar/) (co-founder of Canva) and [Cristóbal Valenzuela](https://runwayml.com/) (CEO of Runway), alongside keynotes from Qatar's Prime Minister and members of the royal family.
 
-**1,600+ startups** participated — the largest single-venue startup gathering in the MENA region. Nearly **1,000 investors** were in the building. Major names like Google Cloud, Microsoft, Amazon, Meta, and TikTok had booths. And the speaker lineup was remarkable: from **Cliff Obrecht** (Co-founder of Canva) to **Cristóbal Valenzuela** (CEO of Runway), to keynotes from Qatar's Prime Minister and members of the royal family.
+14 specialized tracks covered the AI Summit, Fintech Summit, New Energy, Health, and Government — focused on where technology is actually headed, not where it's being marketed.
 
-The 14 specialized tracks covered everything from the AI Summit and Fintech Summit to New Energy, Health, and Government — each asking hard questions about where technology is actually headed, not just where it's being marketed.
-
-What struck us most: the conversations happening *between* sessions were as valuable as the sessions themselves. The mix of MENA founders, global investors, and international operators created a room where geography no longer felt like a limitation.
+The conversations between sessions were as valuable as the sessions themselves. The mix of MENA founders, global investors, and international operators made geography feel irrelevant.
 
 ---
 
-## What We Heard (That Reinforced What We Already Believe)
+## What we heard (that reinforced what we already believe)
 
-We attended talks across the **AI Summit** and **Fintech Summit** tracks, and one theme kept surfacing: **execution design is the differentiator**.
+Across the AI Summit and Fintech Summit tracks, one theme kept coming up: execution design is the differentiator.
 
-Founders at the 100-person stage and the 100,000-user stage were grappling with the same problem — their product works, but users don't experience it that way. Onboarding flows are confusing. Dashboards are cluttered. Mobile experiences lag behind the desktop. The underlying tech is solid. The design layer is where trust is lost.
+Founders at 100 people and at 100,000 users were facing the same problem — their product works, but users don't experience it that way. Onboarding flows are confusing. Dashboards are cluttered. Mobile lags behind desktop. The tech is solid. The design layer is where trust breaks down.
 
-That's exactly the gap MyDesigner.gg exists to close.
+That's the gap [MyDesigner.gg](https://mydesigner.gg) exists to close.
 
-We also found genuine interest from MENA founders in working with design partners who understand the startup context — not just aesthetics, but velocity, conversion, and the business logic behind every design decision.
+MENA founders also showed genuine interest in working with design partners who understand the startup context — not just aesthetics, but velocity, conversion, and the business logic behind every design decision.
 
 ---
 
-## Startup Island Was Our Favourite Corner
+## Startup Island was our favourite corner
 
-Web Summit's **Startup Island** is worth calling out specifically. Hundreds of early-stage companies from across the world were showcasing their products — and it was a masterclass in what separates memorable products from forgettable ones.
+Web Summit's Startup Island brought together hundreds of early-stage companies from around the world. It was a masterclass in what separates memorable products from forgettable ones.
 
-The startups with the most attention weren't always the ones with the most impressive technology. They were the ones with the clearest value proposition on the screen, the most intuitive demo flow, and the most confident visual identity. Good design was doing heavy lifting, even at the seed stage.
+The startups drawing the most attention weren't always the most technically impressive. They had the clearest value proposition on screen, the most intuitive demo flow, and the most confident visual identity. Good design was doing heavy lifting, even at the seed stage.
 
 ---
 
 ## The Night Summit
 
-The evenings belonged to the **Night Summit** in the DECC Park — a rare event format that turns networking into something actually enjoyable. Under the open Doha sky, the formal conference energy gave way to real conversations: founders talking to investors without rehearsed pitches, designers swapping war stories, and ideas forming that probably won't be announced for another 12 months.
+The evenings moved to the DECC Park for the Night Summit — an event format that turns networking into something actually enjoyable. Under the open Doha sky, the formal conference energy gave way to real conversations: founders talking to investors without rehearsed pitches, designers swapping war stories, ideas forming that probably won't be announced for another year.
 
-It reminded us why in-person still matters, even in 2026.
-
----
-
-## What We're Bringing Back
-
-Attending Web Summit Qatar wasn't just a trip — it was a reality check on where the global startup ecosystem is moving, and where design fits in that movement.
-
-A few things we're carrying home:
-
-- **Founders are investing in design earlier.** The days of "we'll fix the UX after product-market fit" are fading fast. The founders we spoke to understand that design is part of finding PMF, not a reward for it.
-- **The MENA market is real.** The energy in the room was unlike anything we'd expected. Qatar, Saudi Arabia, UAE — there's a generation of founders building ambitious products who need world-class design partners.
-- **AI is a capability, not a category.** The most interesting companies at the summit weren't pitching "AI products." They were using AI as infrastructure and competing on experience, trust, and brand.
+It's a reminder of why in-person still matters, even in 2026.
 
 ---
 
-## Let's Build Something Together
+## What we're bringing back
 
-If you're a founder in the MENA region — or anywhere — and you're thinking about levelling up your product's design, we'd love to connect. We came back from Doha with a full notebook and a clearer sense of where we want to take MyDesigner.gg next.
+A few things we're carrying home from Doha:
 
-[**Book a free design call →**](https://calendar.app.google/xGoKb51qpbcnZgJy5)
+- Founders are investing in design earlier. The "we'll fix the UX after PMF" mindset is fading. The founders we spoke to understand that design is part of finding product-market fit, not a reward for it.
+- The MENA market is real. Qatar, Saudi Arabia, UAE — there's a generation of founders building ambitious products who need world-class design partners.
+- AI is a capability, not a category. The most interesting companies at the summit weren't pitching "AI products." They were using AI as infrastructure and competing on experience, trust, and brand.
 
 ---
 
-*MyDesigner.gg is an unlimited design subscription for startups and growing businesses. UI/UX, Webflow, Framer, and graphic design — for a fixed monthly fee.*
+## Let's build something together
+
+If you're a founder thinking about levelling up your product's design, we'd love to connect. [Book a free design call →](https://calendar.app.google/xGoKb51qpbcnZgJy5)
+
+---
+
+*[MyDesigner.gg](https://mydesigner.gg) is an unlimited design subscription for startups and growing businesses — UI/UX, Webflow, Framer, and graphic design for a fixed monthly fee.*
