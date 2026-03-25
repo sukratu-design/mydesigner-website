@@ -10,122 +10,102 @@ draft: false
 
 Most startup founders believe they know their users.
 
-They've spoken to a handful of early adopters, read the same industry reports, and convinced themselves that their intuition — sharpened by years in the industry — is close enough to certainty. They design the product. They build it. They ship it.
+They've talked to a handful of early adopters, skimmed the same reports, and convinced themselves their intuition is close enough. They design. They build. They ship.
 
-And then the numbers come back flat.
+Then the numbers come back flat.
 
-This isn't a rare story. It's the dominant one. [CB Insights, which has analysed hundreds of startup post-mortems](https://www.cbinsights.com/research/startup-failure-reasons-top/), consistently finds that failure to validate real user needs ranks among the top reasons early-stage companies collapse — before technical problems, before funding issues, before competition. The product was built for a user who didn't quite exist, or didn't quite care.
+[CB Insights](https://www.cbinsights.com/research/report/startup-failure-reasons-top/), which has analysed hundreds of startup post-mortems, consistently finds that building for the wrong user is one of the top reasons early companies fail — ahead of technical problems, ahead of funding. The product was built for someone who didn't quite exist, or didn't care enough.
 
-User research doesn't fix everything. But it is the most reliable mechanism startups have for stress-testing their assumptions before those assumptions become expensive mistakes. The irony is that most founders treat it as a luxury — something you do once you have enough runway, enough team, enough time.
-
-This guide is for founders who don't have unlimited runway, team, or time. It's the case for doing research early, doing it lean, and making it count.
+User research won't fix everything. But it's the most reliable way to stress-test your assumptions before they get expensive. Most founders treat it as a luxury — something to do once there's more runway, more people. That logic tends to cost them.
 
 ---
 
-## The Research Myth Holding You Back
+## The myth that's holding you back
 
-When founders hear "user research", they picture a fully-equipped UX lab, two-way mirrors, professional moderators, and a six-week timeline. That version of research exists. It's not what early-stage startups need.
+When founders hear "user research," they picture a UX lab: two-way mirrors, professional moderators, a six-week timeline. That version exists. Startups don't need it.
 
-The goal of user research isn't perfect data. It's directional clarity — enough signal to make a better decision than you would by guessing. And for that purpose, you need far fewer resources than you think.
+The goal isn't perfect data. It's enough signal to make a better call than you'd make by guessing. For that, you need far less than you think.
 
-Jakob Nielsen of the Nielsen Norman Group demonstrated this with a finding that's become something of a founding principle in UX practice: [testing with just five users uncovers approximately 85% of usability problems](https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/). Not 85% of all possible feedback. 85% of the problems that actually impair the experience. After that, you encounter diminishing returns — the same issues surfacing again, consuming time you could spend fixing them.
+[Jakob Nielsen showed this](https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/) with a finding that's shaped UX practice for 30 years: testing with five users uncovers around 85% of usability problems. Not every possible issue — the ones that actually break the experience. After five sessions, you hit diminishing returns and start hearing the same things again.
 
-Five conversations. That's often all it takes to understand whether your onboarding flow is confusing, whether your pricing page creates friction, or whether the feature you spent three sprints building is being entirely ignored.
-
-The question isn't whether you can afford to do research. It's whether you can afford not to.
+Five conversations. That's often enough to know whether your onboarding confuses people, whether your pricing page creates friction, or whether the feature you spent three sprints on is being quietly ignored.
 
 ---
 
-## Four Methods That Work Without a Research Team
+## Four methods that work without a research team
 
-These are the methods that fit startup constraints — low cost, fast turnaround, high signal.
+### 1. Moderated usability testing
 
-### 1. Moderated Usability Testing
+Sit with a real user and ask them to complete a specific task in your product without your help. Don't explain. Don't guide. Watch.
 
-Sit with a real user (in person or over a video call) and ask them to complete a specific task in your product without your help. Don't explain. Don't guide. Just watch.
+You're not testing the user — you're testing the design. Every moment of hesitation, every backtrack, every misclick is information. Ask them to think out loud ("What are you expecting here?") and resist every instinct to jump in and fix it.
 
-You're not testing the user. You're testing the design. Every moment they hesitate, backtrack, or misclick is information. Ask them to think out loud as they go — "What are you expecting to happen here?" — and resist every instinct to jump in.
+Five sessions over a week will surface more than most dashboards will in a month. [Maze](https://maze.co/) and [Lookback](https://www.lookback.com/) make remote sessions easy to record and share.
 
-Five sessions like this, run over a week, will surface more actionable insight than most analytics dashboards will in a month. Tools like [Maze](https://maze.co) and [Lookback](https://www.lookback.com) make remote sessions easy to record and share with your team.
+### 2. Problem discovery interviews
 
-### 2. Problem Discovery Interviews
+Before you test a solution, check whether the problem is real.
 
-Before you test a solution, test the problem.
+A 30-minute conversation about a user's current workflow — what they're trying to get done, where it breaks, what they've already tried — is worth more than any survey at this stage. You're not validating your product yet. You're checking whether the problem is frequent and painful enough to change behaviour.
 
-A 30-minute conversation structured around your user's current workflow — what they're trying to achieve, where things break down, what they've tried, what they've given up on — is worth more than any survey at this stage. You're not validating your solution yet. You're validating that the problem is real, frequent, and painful enough to motivate change.
+One rule: don't pitch during discovery. The moment you start selling, they stop being honest.
 
-The most important rule: don't pitch during discovery. The moment you start selling, the user stops telling you the truth.
+Recruit through LinkedIn, your existing customers, or panels like [User Interviews](https://www.userinterviews.com/). Eight to ten conversations is usually enough when you're exploring a new space; five is often all you need to spot a pattern.
 
-Recruit through LinkedIn outreach, your existing customer base, relevant Slack communities, or paid panels like [User Interviews](https://www.userinterviews.com). Aim for 8–10 conversations when exploring a new problem space; 5 is often enough to spot recurring patterns.
+### 3. First-click testing
 
-### 3. First-Click Testing
+For navigation and layout questions, this is fast and easy to act on. Show users a screenshot and ask: "If you wanted to do X, where would you click first?"
 
-For navigation, layout, and information architecture questions, first-click testing is a fast and reliable method. You show a user a screenshot of a screen and ask: "If you wanted to do X, where would you click first?"
+The data is simple and quantifiable. If 7 out of 10 people click the wrong thing, you have a problem. If 9 out of 10 get it right, move on. [Optimal Workshop](https://www.optimalworkshop.com/product/first-click-testing) and Maze run these tests without scheduling — results in hours.
 
-The data is simple, quantifiable, and immediately actionable. If 7 out of 10 users click the wrong element, you have a clear design problem. If 9 out of 10 get it right, you can move on with confidence.
+### 4. Continuous interviews
 
-Free and low-cost tools like [Optimal Workshop](https://www.optimalworkshop.com) and [Maze](https://maze.co) run first-click tests asynchronously — no scheduling, no moderation, results in hours.
+The biggest mistake startups make is treating research as a one-off project.
 
-### 4. Continuous Interview Programmes
-
-The biggest mistake startups make with research is treating it as a project rather than a practice.
-
-A continuous interview programme means committing to a small number of user conversations every week — even just two or three — on a rolling basis. Not tied to a specific sprint or launch. Just a standing habit of staying close to real users.
-
-Teresa Torres, whose work on continuous discovery has shaped how many modern product teams operate, [makes the case](https://www.producttalk.org/2021/08/product-discovery/) that weekly customer contact is the single practice most likely to improve decision quality across a product team. It doesn't require a research team. It requires a calendar invite and a commitment to showing up.
+A continuous interview programme is just a commitment to a few user conversations every week, on a rolling basis. Not tied to a sprint or a launch. [Teresa Torres](https://www.producttalk.org/continuous-discovery-habits/), whose work on continuous discovery has shaped how modern product teams operate, argues that weekly customer contact is the single practice most likely to improve decision quality. It doesn't take a research function. It takes a recurring calendar invite.
 
 ---
 
-## Turning Research Into Decisions
+## Turning findings into decisions
 
-Research that doesn't change decisions is just documentation. The point is to act on what you find — and to have a clear enough process that findings don't disappear into a Notion graveyard.
+Research that doesn't change what you do is just documentation.
 
-A few principles that keep research operational:
+Write down what happened, not what you think it means. During sessions, record exactly what the user did and said. Interpretation comes after, and it should involve more than one person.
 
-**Separate observation from interpretation.** When you're taking notes during a session, write down exactly what the user did and said — not what you think it means. Interpretation comes after, and it should involve more than one person.
+Look for the pattern, not the outlier. One user who struggled with your onboarding is interesting. Four users who struggled at the same step is a finding.
 
-**Look for patterns, not outliers.** One user who hates your onboarding flow is interesting. Four users who all struggle at the same step is a finding. Don't over-index on individual feedback; let the pattern make the case.
+Attach every finding to a real decision. "Users are confused by the pricing page" only becomes useful when there's a redesign on the roadmap. Without a decision to inform, it gets ignored.
 
-**Tie findings to decisions.** Every research insight should connect to a specific decision your team is trying to make. "Users are confused by the pricing page" becomes actionable when the team has a pricing page redesign on the roadmap. Without a decision to inform, the finding floats free.
-
-**Document the decision, not just the finding.** When research leads to a product change, record it. This builds institutional memory, helps justify future research investment, and gives you a feedback loop when you test the revised version.
+And when research changes something in your product, write that down too. It's the only way to build institutional memory and know whether the change actually worked.
 
 ---
 
-## When to Do Research (And When Not To)
+## When to do it — and when to stop
 
-Not every decision needs a research round. Part of building research literacy is knowing where the high-value questions are.
+Not every decision needs a research round.
 
-Research is most useful at inflection points: before you redesign a core flow, before you invest in building a major feature, before you launch in a new market, and after you've shipped something and want to understand how it's actually being used.
+Research is most useful before you redesign a core flow, before you commit to building a major feature, before you enter a new market. Least useful as a way to delay a call you've already made. If you're running interviews to avoid shipping, stop. Ship, measure, learn.
 
-Research is least useful as a delay tactic. If you're conducting interviews to postpone a hard decision you already know needs to be made, stop. Ship, measure, learn.
-
-The goal is to spend your research budget — of time, money, and attention — where the uncertainty is highest and the cost of being wrong is greatest. For most early-stage startups, that's not the colour of a button. It's whether the core job-to-be-done you've built around is the one your users actually need done.
+Put your research time where uncertainty is highest and the cost of being wrong is greatest. For most early-stage companies, that isn't the colour of a button. It's whether the problem you've built around is one users actually need solved.
 
 ---
 
-## The Compounding Return on Research
+## Why it compounds
 
-Here's the thing most founders miss: research compounds.
+Research compounds. Every insight makes the next decision slightly more informed. Every pattern you spot reduces the chance you repeat the same mistake in a different form. A team that stays genuinely close to its users builds a mental model that's hard for competitors to match — not because they have better instincts, but because they've done more reps.
 
-Every insight you gather makes your next design decision slightly more informed. Every pattern you spot reduces the likelihood of repeating the same mistake in a different form. Over time, a team that maintains regular contact with its users builds a mental model of those users that is genuinely hard to replicate — and genuinely hard to disrupt.
-
-McKinsey's 2018 [Business Value of Design report](https://www.mckinsey.com/capabilities/mckinsey-design/our-insights/the-business-value-of-design), which tracked design performance across 300 publicly listed companies over five years, found that companies in the top quartile for design outperformed their industry counterparts on both revenue growth and total returns to shareholders by a significant margin. The best-performing companies shared one trait in particular: they didn't treat design as a delivery function. They treated user insight as a continuous input into the business.
-
-That's the standard worth aiming for — not a research project, but a research practice.
+[McKinsey's 2018 Business Value of Design report](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-business-value-of-design) tracked performance across 300 public companies over five years. Companies in the top quartile for design outperformed peers on both revenue and shareholder returns. The strongest performers treated user insight as a continuous input into the business, not something they did at the start of a project.
 
 ---
 
-## Start This Week
+## Start this week
 
-If you don't have a single user conversation scheduled in the next seven days, that's where to start.
+If you don't have a user conversation scheduled in the next seven days, that's your starting point.
 
-Pick one question that's shaping a product decision right now. Identify five people who fit your target user profile. Reach out today. Schedule a 30-minute call. Prepare five open-ended questions. Listen more than you talk.
+Pick one question that's shaping a product decision right now. Find five people who match your target user. Reach out today. Book 30 minutes. Ask open questions. Listen more than you talk.
 
-You don't need a research tool, a UX team, or a budget line item. You need a willingness to be surprised by what your users actually think — and a commitment to build from what you find.
-
-That's the research practice. Everything else follows.
+You don't need a budget or a team for this. You just need to be willing to hear something that surprises you.
 
 ---
 
-*mydesigner.gg works with startups to build design systems and ship products that users actually want to use. If you're making product decisions by instinct and want a more reliable signal, [let's talk](https://www.mydesigner.gg/contact).*
+*MyDesigner works with startups to ship products users actually want to use. If you're making product decisions by instinct and want a more reliable signal, [let's talk](https://mydesigner.gg).*
