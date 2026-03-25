@@ -8,79 +8,80 @@ coverImage: /assets/images/blog/hiring-designer-cost-cover.jpg
 draft: false
 ---
 
-Most startup founders think about hiring a designer the same way they think about hiring any other role: identify the need, post the job, make an offer, start work. Clean. Linear. Predictable.
+Most startup founders think about hiring a designer the same way they think about any other role: identify the need, post the job, make an offer, start work. Clean. Linear. Predictable.
 
-The reality is messier — and considerably more expensive — than that mental model suggests. Here's what the actual numbers look like, and why the instinct to hire fast often works against the startups that act on it.
+The reality is messier — and considerably more expensive.
 
-## What a Designer Actually Costs
+---
 
-The starting point most founders use is the salary figure. According to [ZipRecruiter](https://www.ziprecruiter.com/Salaries/Ui-Ux-Designer-Salary), the average annual pay for a UI/UX designer in the United States as of February 2026 is **$108,008**.
+## What a designer actually costs
 
-That number is already a stretch for early-stage startups. But salary is only part of what you're paying.
+The number most founders start with is salary. According to [ZipRecruiter](https://www.ziprecruiter.com/Salaries/Ui-Ux-Designer-Salary), the average annual pay for a UI/UX designer in the US as of early 2026 is **$108,008**.
 
-The U.S. Bureau of Labor Statistics reports that [benefits add approximately 29–31% on top of wages](https://www.bls.gov/news.release/ecec.nr0.htm) for private sector workers. Factor in health insurance, payroll taxes, paid time off, and retirement contributions, and a $108,008 salary becomes a real annual cost closer to **$140,000** — or roughly **$11,667 per month**.
+That's already a stretch for early-stage startups. But salary is only part of what you're paying.
 
-That's before you account for:
+The [U.S. Bureau of Labor Statistics](https://www.bls.gov/news.release/ecec.nr0.htm) reports that benefits add approximately 29–31% on top of wages for private sector workers. Factor in health insurance, payroll taxes, paid time off, and retirement contributions, and a $108,008 salary becomes a real annual cost closer to **$140,000** — or roughly **$11,667 per month**.
+
+That's before:
 - Recruiting fees (typically 15–25% of first-year salary for design roles)
 - Onboarding time, tooling, and software licences
 - Management overhead
-- The cost of a bad hire, which the U.S. Department of Labor estimates at [up to 30% of annual salary](https://www.dol.gov/)
+- The cost of a bad hire, which the [U.S. Department of Labor](https://www.dol.gov/) estimates at up to 30% of annual salary
 
-## The Two to Three Month Gap Nobody Plans For
+---
 
-Even if you're ready to pay, you can't start tomorrow. Design hiring is notoriously slow.
+## The two-to-three month gap nobody plans for
 
-According to [Eleken](https://www.eleken.co/blog-posts/how-much-does-it-cost-to-hire-a-designer-for-your-startup), it typically takes **two to three months** to hire an in-house designer at a startup — longer than most generic hiring benchmarks because portfolio review, design exercises, and culture-fit assessment add rounds that technical hiring often does not require.
+Even if you're ready to pay, you can't start tomorrow. Design hiring is slow.
 
-For a startup in active product development, that's 60–90 days without the design support you need. Screens don't get built. Flows stay broken. User onboarding stays rough.
+According to [Eleken](https://www.eleken.co/blog-posts/how-much-does-it-cost-to-hire-a-designer-for-your-startup), it typically takes **two to three months** to hire an in-house designer at a startup — longer than most hiring benchmarks because portfolio review, design exercises, and culture-fit assessment add rounds that technical hiring often doesn't require.
 
-The compounding effect matters here. Research consistently links poor UX to elevated churn, lower conversion, and increased support costs. The [Nielsen Norman Group](https://www.nngroup.com/articles/ux-debt/) identifies design debt as a direct drag on user efficiency and error rates — and notes that users who have one bad experience with a product rarely give it a second chance.
+For a startup in active product development, that's 60–90 days without the design support you need. Screens don't get built. Flows stay broken. Onboarding stays rough.
 
-## What the Subscription Model Actually Costs
+The compounding effect matters. Research consistently links poor UX to elevated churn, lower conversion, and increased support costs. The [Nielsen Norman Group](https://www.nngroup.com/articles/ux-debt/) identifies design debt as a direct drag on user efficiency — and notes that users who have one bad experience rarely give a product a second chance.
 
-Design subscription services — where you pay a flat monthly fee for continuous design delivery — have expanded significantly as an alternative. Pricing across the market [ranges from around $499 to nearly $4,000 per month](https://penji.co/subscription-design-services/), depending on capacity and turnaround speed.
+---
 
-At [mydesigner.gg](https://www.mydesigner.gg), for example, plans start at **$1,400/month** for a single concurrent request with 48–72 hour turnaround, scaling to **$3,800/month** for a dedicated design team with priority delivery. You can cancel anytime.
+## What the subscription model actually costs
 
-The comparison with full-time hiring is not just about monthly rate. It's about:
+Design subscription services — a flat monthly fee for continuous design delivery — have expanded significantly as an alternative. Pricing [ranges from around $499 to nearly $4,000 per month](https://penji.co/subscription-design-services/) depending on capacity and turnaround.
 
-- **Speed to start**: A subscription service can start within days, not months
-- **No hiring risk**: No recruiting fees, no bad-hire costs, no severance
-- **Flexibility**: You scale up or down with actual business need
-- **Breadth**: Most subscription services cover UI/UX, graphic design, and web development — roles that would require multiple full-time hires to replicate
+At [mydesigner.gg](https://mydesigner.gg), plans start at **$1,400/month** for a single concurrent request with 48–72 hour turnaround, scaling to **$3,800/month** for a dedicated design team with priority delivery. Cancel anytime.
 
-## When Full-Time Hiring Does Make Sense
+The comparison with full-time hiring isn't just about monthly rate. It's about:
 
-This is not an argument that startups should never hire designers. They should — but at the right stage.
+- **Speed to start** — A subscription service starts within days, not months
+- **No hiring risk** — No recruiting fees, no bad-hire costs, no severance
+- **Flexibility** — Scale up or down with actual business need
+- **Breadth** — Most subscription services cover UI/UX, graphic design, and web development — roles that would require multiple full-time hires to replicate
+
+---
+
+## When full-time hiring does make sense
+
+This isn't an argument that startups should never hire designers. They should — but at the right stage.
 
 Full-time design hires make most sense when:
-- You have a stable, defined product with consistent and predictable design needs
-- Your design work has become complex enough to require deep institutional knowledge
-- You're past Series A and can absorb the overhead without compromising runway
+- You have a stable product with consistent, predictable design needs
+- Your design work requires deep institutional knowledge
+- You're past Series A and can absorb the overhead without compressing runway
 - You need someone embedded in cross-functional planning, not just execution
 
-Before that point — in the validation, pre-seed, and seed stages — the economics of subscription often win clearly. You get design output immediately, preserve cash for product and growth, and avoid the irreversible costs of a hire that does not work out.
+Before that point — in the validation, pre-seed, and seed stages — the economics of subscription often win clearly. You get design output immediately, preserve cash for product and growth, and avoid the irreversible costs of a hire that doesn't work out.
 
-## The Actual Decision Framework
+---
 
-When evaluating whether to hire or subscribe, ask these questions:
+## The actual decision framework
 
-1. **How predictable is your design volume?** If you have three big months and two quiet ones, a full-time hire is expensive dead weight in quiet periods.
-2. **Do you know exactly what kind of designer you need?** Hiring the wrong specialism (e.g. a brand designer when you need a product designer) is common and costly.
+When evaluating whether to hire or subscribe, ask:
+
+1. **How predictable is your design volume?** If you have three busy months and two quiet ones, a full-time hire is expensive dead weight in the quiet periods.
+2. **Do you know exactly what kind of designer you need?** Hiring the wrong specialism (a brand designer when you need a product designer) is common and costly.
 3. **What is your runway?** A $140,000-a-year commitment looks different at 12 months runway than at 24.
-4. **How quickly do you need to start?** If the answer is "now," hiring is not your option.
+4. **How quickly do you need to start?** If the answer is "now," hiring isn't your option.
 
-The startup design decision is not really about hiring versus subscribing. It's about matching your spending to your stage — and understanding that the cheaper-looking option often is not.
-
----
-
-*mydesigner.gg is an unlimited design subscription offering UI/UX, Webflow/Framer development, and graphic design for startups. Plans start at $1,400/month with no contracts.*
+The startup design decision isn't really about hiring versus subscribing. It's about matching your spending to your stage — and understanding that the cheaper-looking option often isn't.
 
 ---
 
-**Sources:**
-- [ZipRecruiter — UI/UX Designer Salary (Feb 2026)](https://www.ziprecruiter.com/Salaries/Ui-Ux-Designer-Salary)
-- [U.S. Bureau of Labor Statistics — Employer Costs for Employee Compensation](https://www.bls.gov/news.release/ecec.nr0.htm)
-- [Eleken — The Cost of Hiring a Designer for Your Startup](https://www.eleken.co/blog-posts/how-much-does-it-cost-to-hire-a-designer-for-your-startup)
-- [Nielsen Norman Group — UX Debt](https://www.nngroup.com/articles/ux-debt/)
-- [Penji — Subscription Design Services Comparison](https://penji.co/subscription-design-services/)
+*mydesigner.gg is a design subscription for startups — UI/UX, Webflow/Framer development, and graphic design. Plans start at $1,400/month with no contracts. [See plans.](https://mydesigner.gg)*
