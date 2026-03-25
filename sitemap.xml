@@ -224,9 +224,15 @@
   </url>
   <url>
     <loc>https://mydesigner.gg/blog/</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mydesigner.gg/blog/the-trust-gap-why-your-startups-design-is-killing-conversions.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mydesigner.gg/blog/user-research-playbook-startups.html</loc>
