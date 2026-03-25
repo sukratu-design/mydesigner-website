@@ -42,21 +42,36 @@ if (!topic || !slug) {
   process.exit(1);
 }
 
-function buildPrompt(topic) {
+// Brand palette combos — described by name to avoid model rendering hex strings as text
+const PALETTE_COMBOS = [
+  { bg: 'deep dark burgundy',    accent: 'dusty rose pink',      highlight: 'warm amber gold' },
+  { bg: 'soft periwinkle blue',  accent: 'pale mint green',      highlight: 'pure white' },
+  { bg: 'dusty rose pink',       accent: 'warm amber gold',      highlight: 'pure white' },
+  { bg: 'deep dark burgundy',    accent: 'soft periwinkle blue', highlight: 'pale mint green' },
+  { bg: 'burnt orange',          accent: 'warm amber gold',      highlight: 'deep dark burgundy' },
+  { bg: 'soft periwinkle blue',  accent: 'dusty rose pink',      highlight: 'pure white' },
+];
+
+function buildPrompt(topic, slug) {
+  // Pick a combo deterministically based on slug so the same post always gets the same palette
+  const idx = [...(slug || topic)].reduce((acc, c) => acc + c.charCodeAt(0), 0) % PALETTE_COMBOS.length;
+  const { bg, accent, highlight } = PALETTE_COMBOS[idx];
+
   return `Generate a modern abstract cover image for a blog post about ${topic}.
 
 Style requirements:
-- Warm orange gradient background (light amber orange to deep burnt orange)
-- Strictly monochromatic orange palette — all elements must be in shades of light orange, pale orange, cream, white, or soft golden only
-- NO blue, NO grey, NO green, NO purple, NO contrasting colors of any kind — only orange tones and white/cream
-- Clean abstract composition with UI wireframe or data visualization aesthetic — flowing lines, geometric shapes, subtle glows
-- Absolutely NO TEXT, NO LETTERS, NO NUMBERS, NO LABELS, NO ANNOTATIONS anywhere in the image
-- Pure visual/abstract only — zero typographic elements of any kind
-- Professional, contemporary design feel
-- Should work as a blog header image
+- Background: ${bg}
+- Primary shapes and elements: ${accent}
+- Highlights and glows: ${highlight}
+- Clean abstract composition — flowing lines, geometric shapes, layered UI panels, subtle glows, data visualization aesthetic
+- Professional, contemporary feel suitable for a startup / product design blog header (16:9 wide format)
 
-The composition should feel sophisticated and data-driven, matching a startup/product design audience.
-IMPORTANT: Monochromatic orange and white only. Zero text. Zero contrasting colors.`;
+CRITICAL — THIS IS THE MOST IMPORTANT RULE:
+- ZERO text of any kind — no letters, no words, no numbers, no labels, no annotations, no captions, no hex codes, no symbols
+- Purely abstract and visual — no typography whatsoever
+- If the image contains any text or characters it will be rejected
+
+The composition should feel sophisticated and data-driven.`;
 }
 
 function callImagenAPI(prompt) {
@@ -103,7 +118,7 @@ function callImagenAPI(prompt) {
 }
 
 async function main() {
-  const prompt = buildPrompt(topic);
+  const prompt = buildPrompt(topic, slug);
 
   console.log(`\nGenerating cover image for: "${topic}"`);
   console.log('Model: imagen-4.0-generate-001');
