@@ -22,7 +22,7 @@ This post is about why that is expensive, what trust actually looks like at the 
 
 The [Stanford Web Credibility Research Project](https://credibility.stanford.edu/) studied how people evaluate website credibility across thousands of participants. The findings were stark: 46.1% of respondents cited design look as the single largest factor in their credibility assessment — more than any content-related factor. When you bundle in information design and structure, nearly 75% of credibility judgements were rooted in visual presentation, not in what the website actually said.
 
-This matters enormously in B2B SaaS, where conversion happens across a long trust arc. The median B2B SaaS landing page converts at approximately [3.8%](https://firstpagesage.com/seo-blog/b2b-landing-page-conversion-rates/). Top performers hit 8–12%. The gap between those two numbers is rarely explained by copy alone. Visual credibility — the immediate, subconscious sense that this company knows what it is doing — is doing a significant share of the work.
+This matters enormously in B2B SaaS, where conversion happens across a long trust arc — a dynamic we explored in depth in [the trust gap: why your startup's design is killing conversions](/blog/the-trust-gap-why-your-startups-design-is-killing-conversions). The median B2B SaaS landing page converts at approximately [3.8%](https://firstpagesage.com/seo-blog/b2b-landing-page-conversion-rates/). Top performers hit 8–12%. The gap between those two numbers is rarely explained by copy alone. Visual credibility — the immediate, subconscious sense that this company knows what it is doing — is doing a significant share of the work.
 
 [McKinsey's Design Index](https://www.mckinsey.com/capabilities/mckinsey-design/our-insights/the-business-value-of-design), which tracked 300 publicly listed companies over five years, found that top-quartile design performers achieved 32 percentage points higher revenue growth and 56 percentage points higher total shareholder returns versus industry peers. These are not vanity metrics. This is design functioning as a compounding business asset.
 
@@ -48,13 +48,13 @@ Trust signals at the visual level fall into a few distinct categories. Most star
 
 **The logo section as checkbox.** Trusted-by logo bars are now so ubiquitous that visitors filter them unless they recognise every logo present. Five obscure logos in low-contrast grey do less credibility work than one well-known logo rendered with proper clearspace and attribution. If your social proof is weak, design for quality over quantity: one strong case study link with a headline result beats a wall of unfamiliar logos.
 
-**The pricing page that hedges everything.** Opacity in pricing is a trust signal — a negative one. Visitors interpret "Contact us for pricing" as a red flag. Where pricing cannot be shown, design should compensate: a clear explanation of what determines pricing, a ballpark range, or a visible comparison of plan structures. Pricing pages built in dense, overloaded tables create anxiety. Whitespace creates confidence.
+**The pricing page that hedges everything.** Opacity in pricing is a trust signal — a negative one. Visitors interpret "Contact us for pricing" as a red flag. Where pricing cannot be shown, design should compensate: a clear explanation of what determines pricing, a ballpark range, or a visible comparison of plan structures. Pricing pages built in dense, overloaded tables create anxiety. Whitespace creates confidence. (For reference, here's [how we approach pricing transparency](/pricing).)
 
 ---
 
 ## Closing the gap without a full redesign
 
-A full visual redesign is not always the right first move. If your fundamentals are solid but your credibility signals are weak, targeted interventions often outperform a ground-up rebuild.
+A full visual redesign is not always the right first move. If your fundamentals are solid but your credibility signals are weak, targeted interventions often outperform a ground-up rebuild. We cover the specifics of [what makes a SaaS landing page drive signups](/blog/saas-landing-page-design-2026-what-drives-signups) in a separate deep dive.
 
 Replace stock photography in your hero with a real product screenshot or a short screen-capture video. Add a single, prominent customer logo if you have one. Take your two strongest customer quotes and redesign them as featured callouts with the customer's name, role, company, and a specific metric achieved. Strip your demo request or trial signup form to the absolute minimum required to route the lead. Define a single type scale — three or four sizes maximum — apply it rigorously, and ensure spacing increments are consistent throughout.
 

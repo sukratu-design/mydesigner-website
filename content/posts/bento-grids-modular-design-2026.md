@@ -18,7 +18,7 @@ Bento grids solve this. And in 2026, they're showing up everywhere.
 
 The name comes from the compartmentalised Japanese lunch box — different sections, different sizes, everything in its place. In UI terms, bento grids use variable-sized cards arranged in a modular layout where card size reflects content priority. High-priority information gets more space; secondary data gets less. The hierarchy is visual and immediate, without relying solely on colour or typography to do the work.
 
-Unlike traditional uniform grids, bento layouts are asymmetric by design. Unlike dense dashboards, they stay readable because the structure does the organising — not the user.
+Unlike traditional uniform grids, bento layouts are asymmetric by design. Unlike [dense dashboards](/blog/dense-interfaces-information-hierarchy-2026), they stay readable because the structure does the organising — not the user.
 
 [Nielsen Norman Group research on chunking](https://www.nngroup.com/articles/chunking/) shows that grouping information into visually distinct sections lowers perceived cognitive load and helps users process content more efficiently. Bento grids apply this principle at the layout level.
 
@@ -32,7 +32,7 @@ Three properties make bento grids practical for product teams:
 
 **Responsive by design.** Cards reflow and rearrange at different screen sizes, maintaining information density without sacrificing usability on mobile. This isn't a bonus — it's built into how the pattern works.
 
-**Component-based.** Each card is a self-contained unit, which makes bento grids easy to maintain and iterate. Swap a card, resize it, reorder it — the rest of the layout adjusts. For fast-moving teams, this matters.
+**Component-based.** Each card is a self-contained unit, which makes bento grids easy to maintain and iterate. Swap a card, resize it, reorder it — the rest of the layout adjusts. This modularity is especially powerful when paired with a [design system built for speed](/blog/design-systems-for-startups-when-to-build-and-how-to-start-lean).
 
 **Content-aware hierarchy.** The layout communicates priority without extra design effort. Users understand what's important before they read a word, because size and position do the work.
 
@@ -77,4 +77,4 @@ If your dashboard or homepage still follows a rigid, uniform grid, it's worth as
 
 ---
 
-*MyDesigner builds modern design systems for startups — including bento-based dashboards, component libraries, and responsive product interfaces. [See how it works.](https://mydesigner.gg)*
+*MyDesigner builds modern design systems for startups — including bento-based dashboards, component libraries, and responsive product interfaces. [See how it works](/how-it-works) or check out our [web app design service](/services/web-app-design).*

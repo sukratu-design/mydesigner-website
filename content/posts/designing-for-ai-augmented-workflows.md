@@ -3,14 +3,14 @@ title: "Designing for AI-Augmented Workflows: How to Integrate AI Features Witho
 slug: designing-for-ai-augmented-workflows
 excerpt: "Integrating AI into an existing SaaS product without alienating your users requires more than good intentions — it demands disciplined UX thinking. Here's how to add AI features that feel native, not bolted on."
 date: 2026-03-26T08:00
-author: Anand Madhavan
+author: MyDesigner Team
 coverImage: /assets/images/blog/designing-for-ai-augmented-workflows-cover.jpg
 draft: false
 ---
 
 "We're adding AI" sounds like progress. It sounds inevitable. But if you've spent the last few months trying to graft an AI copilot onto a product with thousands of daily active users, you know the reality is messier than that.
 
-Building AI first from scratch is one thing. Your design system, mental models, interaction patterns can all be shaped around AI from day one. Retrofitting AI into an existing product is different. Your users already have habits. They have a mental model of how your tool works. They have workflows they've spent months, sometimes years, building up. When you introduce a system that starts making suggestions, generating content, or taking actions on their behalf, you're renegotiating the relationship between your product and the people who use it.
+Building [AI-first from scratch](/blog/ai-first-design-2026) is one thing. Your design system, mental models, interaction patterns can all be shaped around AI from day one. Retrofitting AI into an existing product is different. Your users already have habits. They have a mental model of how your tool works. They have workflows they've spent months, sometimes years, building up. When you introduce a system that starts making suggestions, generating content, or taking actions on their behalf, you're renegotiating the relationship between your product and the people who use it.
 
 Get it wrong, and you don't just confuse users. You burn trust that took years to earn.
 
@@ -70,7 +70,7 @@ Introduce AI features in sequence, tied to moments of natural use. A user who ha
 
 ### Make AI feel like the same product
 
-This one gets overlooked. If your product uses a right-hand panel for contextual information, the AI panel goes there. If your interaction model is command-palette-driven, AI should live in the command palette. Introducing a completely new interaction paradigm for AI, whether that's a floating chatbot or a separate "AI mode" with its own visual language, signals that this is an add-on. Once users see it that way, changing that perception is an uphill battle.
+This one gets overlooked. If your product uses a right-hand panel for contextual information, the AI panel goes there. If your interaction model is command-palette-driven, AI should live in the command palette. Introducing a completely new interaction paradigm for AI, whether that's a floating chatbot or a separate "AI mode" with its own visual language, signals that this is an add-on. This is where a solid [design system](/blog/design-systems-for-startups-when-to-build-and-how-to-start-lean) pays dividends — AI features that follow established patterns feel native rather than bolted on. Once users see it that way, changing that perception is an uphill battle.
 
 ---
 
@@ -91,3 +91,5 @@ Design the undo and dismiss flows with the same care you'd give the AI feature i
 ---
 
 The bar for AI integration is higher than it was two years ago. People have seen enough bad implementations that they show up skeptical now, not curious. Which honestly makes it easier to stand out if you do it well. Most of the competition is still treating AI as a checkbox.
+
+Need help designing AI features that feel native to your product? [See our web app design service](/services/web-app-design) or [explore how MyDesigner works](/how-it-works).

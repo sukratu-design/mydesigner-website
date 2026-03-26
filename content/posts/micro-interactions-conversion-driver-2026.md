@@ -8,7 +8,7 @@ draft: true
 
 ## The Problem  
 
-Startups pour resources into big‑picture branding, feature roadmaps, and growth hacks, yet **the tiniest moments of friction stay invisible**. Buttons that feel “dead,” loaders that spin forever, and form errors that disappear without a cue—all signal a product that’s **unpolished and untrustworthy**. According to a 2026 Fluid22 analysis, **85% of users say they’re more likely to stay on a product that offers clear, instant feedback** [Fluid22](https://fluid22.com/insights/micro-interactions-that-matter-for-ux-wins-in-2026). Yet a staggering **60% of users abandon a site after a single poor interaction** [Medium](https://medium.com/@designstudiouiux/the-10-ui-ux-trends-everyone-is-copying-in-2026). The result? **Higher churn, lower conversion, and a brand perception that feels “unfinished.”**  
+Startups pour resources into big‑picture branding, feature roadmaps, and growth hacks, yet **the tiniest moments of friction stay invisible**. Buttons that feel “dead,” loaders that spin forever, and form errors that disappear without a cue—all signal a product that’s **unpolished and untrustworthy**. This [trust gap](/blog/the-trust-gap-why-your-startups-design-is-killing-conversions) costs more than most founders realize. According to a 2026 Fluid22 analysis, **85% of users say they’re more likely to stay on a product that offers clear, instant feedback** [Fluid22](https://fluid22.com/insights/micro-interactions-that-matter-for-ux-wins-in-2026). Yet a staggering **60% of users abandon a site after a single poor interaction** [Medium](https://medium.com/@designstudiouiux/the-10-ui-ux-trends-everyone-is-copying-in-2026). The result? **Higher churn, lower conversion, and a brand perception that feels “unfinished.”**  
 
 ## Why Micro‑Interactions Matter  
 
@@ -16,7 +16,7 @@ Micro‑interactions are no longer decorative flourishes; they are **conversion�
 
 ## Speed & Accessibility: The 300 ms Sweet Spot  
 
-Speed is the new credibility. Research from Ripplix shows that **interactions under 300 ms feel instantaneous**, while anything slower creates a cognitive lag that users interpret as sluggishness. When micro‑animations respect this threshold, **task completion times improve by 40%** across diverse user groups [Movadex](https://movadex.com/blog/article/boost-engagement-with-micro-interactions-in-your-ui). Accessibility isn’t an afterthought either—ARIA‑compatible micro‑feedback ensures **screen‑reader users receive the same contextual cues**, expanding your usable market by **up to 15%** according to a 2026 TechQware audit [TechQware](https://www.techqware.com/blog/motion-design-micro-interactions-what-users-expect).  
+Speed is the new credibility. Research from Ripplix shows that **interactions under 300 ms feel instantaneous**, while anything slower creates a cognitive lag that users interpret as sluggishness. When micro‑animations respect this threshold, **task completion times improve by 40%** across diverse user groups [Movadex](https://movadex.com/blog/article/boost-engagement-with-micro-interactions-in-your-ui). Accessibility isn’t an afterthought either — in fact, [it’s your next growth lever](/blog/accessibility-is-your-next-growth-lever-the-2026-business-case)—ARIA‑compatible micro‑feedback ensures **screen‑reader users receive the same contextual cues**, expanding your usable market by **up to 15%** according to a 2026 TechQware audit [TechQware](https://www.techqware.com/blog/motion-design-micro-interactions-what-users-expect).  
 
 ## Context‑Aware Motion: From “Nice” to “Necessary”  
 
@@ -32,7 +32,7 @@ Speed is the new credibility. Research from Ripplix shows that **interactions un
 
 ## How MyDesigner Fits In  
 
-**At MyDesigner, we help startups turn every click, swipe, and submit into a moment of delight that drives revenue.** Our team lives on the cutting edge of micro‑interaction trends, ensuring your product feels **fresh, modern, and built for how people actually use software in 2026**. We offer **unlimited design requests with a 48‑hour turnaround—no agencies, no bloated contracts, just fast, polished work that ships**. Whether you need a new loading animation, an accessible toast system, or a full motion‑design overhaul, we deliver the precise, data‑backed micro‑interactions that convert.  
+**At MyDesigner, we help startups turn every click, swipe, and submit into a moment of delight that drives revenue.** Our team lives on the cutting edge of micro‑interaction trends, ensuring your product feels **fresh, modern, and built for how people actually use software in 2026**. We offer **unlimited design requests with a 48‑hour turnaround—no agencies, no bloated contracts, just fast, polished work that ships**. Whether you need a new loading animation, an accessible toast system, or a full motion‑design overhaul, we deliver the precise, data‑backed micro‑interactions that convert. [See our pricing plans](/pricing).  
 
 ## The Bottom Line  
 

@@ -38,8 +38,8 @@ Neither is better. They're built for different priorities.
 
 ### Choose Framer if you need:
 
-- Speed to launch — a polished landing page can go from Figma concept to live URL in hours. Framer's canvas-based editor is the fastest path from design to deploy.
-- Animation-forward design — micro-interactions, scroll-triggered effects, and fluid page transitions are native. You get motion design without writing code.
+- Speed to launch — a polished [landing page](/blog/saas-landing-page-design-2026-what-drives-signups) can go from Figma concept to live URL in hours. Framer's canvas-based editor is the fastest path from design to deploy.
+- Animation-forward design — [micro-interactions](/blog/micro-interactions-conversion-driver-2026), scroll-triggered effects, and fluid page transitions are native. You get motion design without writing code.
 - A Figma-like workflow — if your team lives in Figma, Framer will feel immediately familiar: layers, frames, auto-layout, variants.
 - High-fidelity single-page sites — product launch pages, waitlist pages, portfolios, and one-pagers where visual polish matters more than content volume.
 
@@ -71,7 +71,7 @@ Ask yourself five questions:
 
 4. Don't underestimate CMS requirements. You might not need a blog today, but if your content strategy includes SEO-driven articles, case studies, or a resource library — plan for it now. Migrating CMS content between platforms is painful.
 
-5. Invest in custom design regardless of platform. Both Webflow and Framer are only as good as the design they execute. A template on either platform will look like a template.
+5. Invest in custom design regardless of platform. Both Webflow and Framer are only as good as the design they execute. A template on either platform will look like a template. See our [website design service](/services/website-design) for how we approach platform-agnostic design.
 
 ---
 

@@ -38,7 +38,7 @@ Micro-interactions bridge real response time and *perceived* response time. A sk
 
 Perception is reality.
 
-[Research shows that even subtle micro-interactions measurably improve perceived usability scores](https://dl.acm.org/doi/fullHtml/10.1145/3452853.3452865) — and perceived usability directly predicts whether users return. [88% of consumers won't come back after a frustrating experience](https://uxcam.com/blog/ux-statistics/). "Frustrating" doesn't mean a crash. It can mean a form that didn't confirm submission, or a button that didn't respond to a tap.
+[Research shows that even subtle micro-interactions measurably improve perceived usability scores](https://dl.acm.org/doi/fullHtml/10.1145/3452853.3452865) — and perceived usability directly predicts whether users return. [88% of consumers won't come back after a frustrating experience](https://uxcam.com/blog/ux-statistics/). "Frustrating" doesn't mean a crash. It can mean a form that didn't confirm submission, or a button that didn't respond to a tap. This is one reason [your landing page might not be converting](/blog/why-your-landing-page-isnt-converting).
 
 [Users form a visual opinion of an interface in as little as 50 milliseconds](https://www.designrush.com/agency/website-design-development/trends/web-design-statistics) — before they've read a word. The signals they're processing in those 50ms: motion, responsiveness, and visual coherence. Micro-interactions are working from the very first frame.
 
@@ -77,11 +77,11 @@ Buttons that respond visually to hover and press feel physical. They confirm: "I
 These four categories are achievable with tools your team likely already uses:
 
 - **CSS transitions** — hover states, form feedback, success confirmations
-- **[Framer Motion](https://www.framer.com/motion/) or [GSAP](https://gsap.com/)** — richer animation for React-based products
+- **[Framer Motion](https://www.framer.com/motion/) or [GSAP](https://gsap.com/)** — richer animation for React-based products (we also offer [Framer development](/services/framer-development) if you need hands-on help)
 - **[Lottie files](https://lottiefiles.com/)** — lightweight JSON animations used by Airbnb and others for loading and success states
 - **Your component library** — Tailwind, MUI, and Radix UI all include accessible, animated interaction states out of the box
 
-The skill isn't building custom animations. It's knowing where friction lives in your product and placing a small, considered moment there. A product designer — even on a short engagement — can audit your core flows, identify the 8–10 moments that matter, and spec them in a day.
+The skill isn't building custom animations. It's knowing where friction lives in your product and placing a small, considered moment there. Skipping this kind of detail is a form of [design debt that compounds over time](/blog/design-debt-the-hidden-cost-stunting-startup-growth). A product designer — even on a short engagement — can audit your core flows, identify the 8–10 moments that matter, and spec them in a day.
 
 [For every £1 invested in UX, the return is estimated at £100](https://uxcam.com/blog/ux-statistics/). Micro-interactions are one of the highest-leverage places to spend that investment, because they touch every user, every session, across every flow.
 

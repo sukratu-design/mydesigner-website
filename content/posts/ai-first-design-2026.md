@@ -40,7 +40,7 @@ For startups specifically, the stakes are high on four fronts:
 - **Speed** — AI-assisted design tools compress iteration cycles, getting products to market faster
 - **Expectations** — users now encounter AI-native products daily; a static interface signals a product that isn’t keeping up
 
-AI integration isn’t a differentiator anymore. It’s baseline. The question is how well you’ve built it in.
+AI integration isn’t a differentiator anymore. It’s baseline. The question is how well you’ve built it in — and whether [your design supports the intelligence rather than fighting it](/blog/generative-ui-how-ai‑powered-interfaces-are-redefining-design-in-2026).
 
 ---
 
@@ -56,7 +56,7 @@ Before any visual UI is built, test core tasks using voice. Tools like [Voiceflo
 AI-powered autocomplete in search bars and key form fields changes the feel of a product faster than almost any other single change. Track suggestion acceptance rates — 60% adoption within the first month is a reasonable early target.
 
 **4. Rethink layout density**
-Sparse white-space layouts make less sense when an interface is dynamically adjusting to context. Modular, density-flexible grids — where sections can expand or collapse based on user intent — handle AI-driven content changes more gracefully than rigid fixed layouts.
+Sparse white-space layouts make less sense when an interface is dynamically adjusting to context. Modular, density-flexible grids — like [bento grids](/blog/bento-grids-modular-design-2026) — where sections can expand or collapse based on user intent, handle AI-driven content changes more gracefully than rigid fixed layouts.
 
 **5. Define metrics before you ship**
 Decide upfront how you’ll measure the impact of AI features: conversion lift, time-to-task, churn reduction. Tie each AI feature to a specific metric and review it weekly. Without this, AI investment is invisible on the balance sheet and gets cut first.
@@ -71,4 +71,4 @@ The gap between "has AI features" and "feels intelligent" is a design problem. I
 
 ---
 
-*MyDesigner works with startups to build AI-ready design systems and ship products that feel as smart as they are. [See how it works.](https://mydesigner.gg)*
+*MyDesigner works with startups to build AI-ready design systems and ship products that feel as smart as they are. [See how it works](/how-it-works) or explore our [web app design service](/services/web-app-design).*

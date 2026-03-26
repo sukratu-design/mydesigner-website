@@ -57,7 +57,7 @@ A 20-screen Figma file is not a handoff — it's a gallery. Engineers need compo
 Every interactive element has more than one state: default, hover, focus, active, disabled, loading, error, empty. If your design only shows the logged-in, data-loaded, everything-went-right version, you've designed roughly 30% of the product. The other 70% gets improvised during implementation — and improvised design is inconsistent design.
 
 **3. No agreed spacing or type system**
-"It looks like about 12px" is not a spec. Without a defined spacing scale and type system — ideally as design tokens that exist in both Figma and your codebase — every implementation decision is a judgment call. Judgment calls compound into inconsistency. Inconsistency compounds into design debt.
+"It looks like about 12px" is not a spec. Without a defined spacing scale and type system — ideally as design tokens that exist in both Figma and your codebase — every implementation decision is a judgment call. Judgment calls compound into inconsistency. Inconsistency compounds into [design debt](/blog/design-debt-the-hidden-cost-stunting-startup-growth).
 
 **4. Handing over and disappearing**
 Handoff is not a one-time event. It's a conversation. Designers who drop files and consider themselves done are handing engineers a decision-making burden they shouldn't carry. Unanswered questions become silent implementation guesses.
@@ -87,7 +87,7 @@ The tools aren't the problem. The problem is building the shared vocabulary and 
 
 **They keep designers in the loop through implementation.** A designer doing a 30-minute implementation review mid-sprint — not to approve every pixel, but to catch decisions that drifted — is far more effective than a full QA round after the fact. [Atlassian's design team](https://www.atlassian.com/blog/teamwork/what-is-agile) embeds designers in sprint cycles rather than operating them sequentially upstream. That principle scales down to a five-person team.
 
-**They invest in design tokens before it hurts.** A half-day mapping your Figma colour, spacing, and type values to named tokens — and wiring those into your CSS or component library — eliminates an entire category of handoff errors for the rest of the product's life.
+**They invest in design tokens before it hurts.** A half-day mapping your Figma colour, spacing, and type values to named tokens — and wiring those into your CSS or component library — eliminates an entire category of handoff errors for the rest of the product's life. This is exactly what a [lean design system](/blog/design-systems-for-startups-when-to-build-and-how-to-start-lean) gives you from day one.
 
 ---
 
@@ -103,4 +103,4 @@ That's how good design actually ships.
 
 ---
 
-*MyDesigner connects startups with senior product designers who know how to work inside a build cycle — not just upstream of one. [Book a call](https://mydesigner.gg) to see how it works.*
+*MyDesigner connects startups with senior product designers who know how to work inside a build cycle — not just upstream of one. [See how it works](/how-it-works) or [book a call](https://calendar.app.google/xGoKb51qpbcnZgJy5) to get started.*

@@ -28,7 +28,7 @@ The goal isn't perfect data. It's enough signal to make a better call than you'd
 
 [Jakob Nielsen showed this](https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/) with a finding that's shaped UX practice for 30 years: testing with five users uncovers around 85% of usability problems. Not every possible issue — the ones that actually break the experience. After five sessions, you hit diminishing returns and start hearing the same things again.
 
-Five conversations. That's often enough to know whether your onboarding confuses people, whether your pricing page creates friction, or whether the feature you spent three sprints on is being quietly ignored.
+Five conversations. That's often enough to know whether your [onboarding confuses people](/blog/ux-of-onboarding-startup-retention-2026), whether your pricing page creates friction, or whether the feature you spent three sprints on is being quietly ignored.
 
 ---
 
@@ -86,7 +86,7 @@ Not every decision needs a research round.
 
 Research is most useful before you redesign a core flow, before you commit to building a major feature, before you enter a new market. Least useful as a way to delay a call you've already made. If you're running interviews to avoid shipping, stop. Ship, measure, learn.
 
-Put your research time where uncertainty is highest and the cost of being wrong is greatest. For most early-stage companies, that isn't the colour of a button. It's whether the problem you've built around is one users actually need solved.
+Put your research time where uncertainty is highest and the cost of being wrong is greatest. For most early-stage companies, that isn't the colour of a button. It's whether the problem you've built around is one users actually need solved. Understanding how [design credibility shapes cold-traffic conversions](/blog/credibility-by-design-saas-cold-traffic) can help you prioritise which research questions matter most.
 
 ---
 
@@ -94,7 +94,7 @@ Put your research time where uncertainty is highest and the cost of being wrong 
 
 Research compounds. Every insight makes the next decision slightly more informed. Every pattern you spot reduces the chance you repeat the same mistake in a different form. A team that stays genuinely close to its users builds a mental model that's hard for competitors to match — not because they have better instincts, but because they've done more reps.
 
-[McKinsey's 2018 Business Value of Design report](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-business-value-of-design) tracked performance across 300 public companies over five years. Companies in the top quartile for design outperformed peers on both revenue and shareholder returns. The strongest performers treated user insight as a continuous input into the business, not something they did at the start of a project.
+[McKinsey's 2018 Business Value of Design report](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-business-value-of-design) tracked performance across 300 public companies over five years. Companies in the top quartile for design outperformed peers on both [revenue and shareholder returns](/blog/design-roi-revenue-growth). The strongest performers treated user insight as a continuous input into the business, not something they did at the start of a project.
 
 ---
 

@@ -7,7 +7,7 @@ const { marked } = require('marked');
 
 const SITE_URL = 'https://mydesigner.gg';
 const SITE_TITLE = 'MyDesigner Blog';
-const SITE_DESCRIPTION = 'Insights on design, product, branding, and growth from the MyDesigner team.';
+const SITE_DESCRIPTION = 'Design strategy, SaaS UI/UX tips, and brand insights for founders and growth teams. Learn how design drives conversions, trust, and revenue.';
 const POSTS_DIR = path.join(process.cwd(), 'content', 'posts');
 const BLOG_DIR = path.join(process.cwd(), 'blog');
 const RSS_PATH = path.join(process.cwd(), 'rss.xml');
@@ -594,6 +594,7 @@ const SERVICE_CONFIGS = [
     platform: 'framer',
     valuerop: 'Pixel-Perfect Framer Sites, Fast',
     subheadline: 'We build blazing-fast, fully responsive Framer websites — designed to convert and built to scale.',
+    metaDescription: 'High-performance Framer websites with smooth animations and interactions, built by subscription. Unlimited Framer development included from $1,400/mo.',
     included: [
       'Custom Framer component design & build',
       'Responsive layouts (mobile, tablet, desktop)',
@@ -616,6 +617,7 @@ const SERVICE_CONFIGS = [
     platform: 'webflow',
     valuerop: 'Production-Ready Webflow Sites',
     subheadline: 'We design and develop high-converting Webflow websites that your team can manage without a developer.',
+    metaDescription: 'Pixel-perfect Webflow sites built as part of your design subscription — CMS setup, animations, and responsive design included. From $1,400/mo, cancel anytime.',
     included: [
       'Custom Webflow design & development',
       'Responsive across all breakpoints',
@@ -637,6 +639,7 @@ const SERVICE_CONFIGS = [
     category: 'uiux',
     valuerop: 'UX That Converts & Retains',
     subheadline: 'We design intuitive web application interfaces that reduce friction, improve retention, and look exceptional.',
+    metaDescription: 'SaaS dashboards, admin panels, and web app interfaces designed for clarity and conversion — unlimited UI/UX design requests included in every MyDesigner plan.',
     included: [
       'User flows & information architecture',
       'Wireframes & interactive prototypes',
@@ -658,6 +661,7 @@ const SERVICE_CONFIGS = [
     category: 'uiux',
     valuerop: 'Websites That Build Trust & Drive Leads',
     subheadline: 'We design conversion-focused websites that communicate your brand\'s value clearly and look great on every device.',
+    metaDescription: 'Marketing websites and landing pages designed to convert — included in every MyDesigner plan. Request as many designs as you need, with unlimited revisions.',
     included: [
       'Homepage & key page design (up to 8 pages)',
       'Mobile-first responsive layouts',
@@ -679,6 +683,7 @@ const SERVICE_CONFIGS = [
     category: 'branding',
     valuerop: 'Brands That Stand Out & Scale',
     subheadline: 'We create cohesive brand identities that communicate who you are, build trust, and differentiate you from the competition.',
+    metaDescription: 'Complete brand identity systems — logos, color palettes, and style guides — available in your MyDesigner subscription. Unlimited revisions, no extra cost.',
     included: [
       'Logo design (primary + variations)',
       'Brand colour palette & typography system',
@@ -700,6 +705,7 @@ const SERVICE_CONFIGS = [
     category: 'graphic',
     valuerop: 'Pitch Decks That Win Rooms',
     subheadline: 'We design investor-ready pitch decks and executive presentations that communicate clearly and leave a lasting impression.',
+    metaDescription: 'Investor pitch decks and sales presentations designed to impress — part of your MyDesigner subscription. Fast turnaround, unlimited revisions, no extra fees.',
     included: [
       'Slide layout & visual hierarchy design',
       'Data visualisation & infographic creation',
@@ -721,6 +727,7 @@ const SERVICE_CONFIGS = [
     category: 'graphic',
     valuerop: 'Exhibition Stands That Stop Foot Traffic',
     subheadline: 'We design eye-catching booth and exhibition graphics that communicate your brand\'s story and attract the right attendees.',
+    metaDescription: 'Trade show booths, exhibition displays, and event graphics designed as part of your subscription. Unlimited designs, fast turnaround, cancel anytime.',
     included: [
       'Booth backdrop & banner design',
       'Pull-up & retractable banner graphics',
@@ -742,6 +749,7 @@ const SERVICE_CONFIGS = [
     category: 'graphic',
     valuerop: 'Scroll-Stopping Social Content, Consistently',
     subheadline: 'We design on-brand social media creatives that maintain visual consistency and drive engagement across every platform.',
+    metaDescription: 'Scroll-stopping social media graphics and templates for every platform, included in your MyDesigner subscription. Unlimited requests, 24–72 hour delivery.',
     included: [
       'Instagram, LinkedIn & Twitter/X post designs',
       'Story & Reel cover graphics',
@@ -834,7 +842,7 @@ function buildServicePage(config) {
 
   const valuerop = config.valuerop || `Expert ${config.label} for Growing Startups`;
   const metaTitle = `${config.label} — MyDesigner | ${valuerop}`;
-  const metaDesc = config.subheadline;
+  const metaDesc = config.metaDescription || config.subheadline;
   const canonicalPath = `/services/${config.slug}.html`;
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
 

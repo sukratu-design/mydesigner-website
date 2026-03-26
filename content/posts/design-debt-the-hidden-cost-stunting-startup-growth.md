@@ -38,7 +38,7 @@ Design debt isn't just an aesthetic problem — it has measurable business conse
 
 **Development slows down.** When there's no single source of truth for components, engineers spend time recreating UI elements or debating which version is correct. UI inconsistency [directly increases QA cycles and regression testing time](https://www.smashingmagazine.com/2022/05/design-system-roi/), multiplying the cost of every release.
 
-**User trust drops.** [Visual inconsistency correlates with lower perceived credibility](https://www.nngroup.com/articles/credibility-and-design/) — especially on pricing and checkout pages where trust matters most. Users register inconsistency subconsciously, even if they can't name it.
+**User trust drops.** [Visual inconsistency correlates with lower perceived credibility](https://www.nngroup.com/articles/credibility-and-design/) — especially on pricing and checkout pages where trust matters most. Users register inconsistency subconsciously, even if they can't name it. This is the [trust gap](/blog/the-trust-gap-why-your-startups-design-is-killing-conversions) that quietly kills conversions.
 
 **Design costs compound.** Every new feature built on an inconsistent foundation inherits that inconsistency. The longer design debt goes unaddressed, the more surface area it covers — and the more components eventually need rework.
 
@@ -50,7 +50,7 @@ Design debt isn't just an aesthetic problem — it has measurable business conse
 
 1. **Run a visual audit before your next big feature.** Screenshot every screen and line them up side by side. Look for button variants, heading sizes, background colors, spacing inconsistencies. If you spot more than three issues in five minutes, you have debt worth addressing.
 
-2. **Establish a single source of truth for design tokens.** Agree on a core set of variables: primary and secondary colors, spacing scale, border radius, font sizes. Document them in Figma and enforce them in code.
+2. **Establish a single source of truth for design tokens.** Agree on a core set of variables: primary and secondary colors, spacing scale, border radius, font sizes. Document them in Figma and enforce them in code. A [lean design system](/blog/design-systems-for-startups-when-to-build-and-how-to-start-lean) can be built in a day and prevents debt from compounding.
 
 3. **Prioritize debt that affects trust, not just aesthetics.** Focus on inconsistencies at high-stakes moments — checkout, onboarding, pricing pages, account settings.
 
@@ -62,7 +62,7 @@ Design debt isn't just an aesthetic problem — it has measurable business conse
 
 ## Where MyDesigner fits in
 
-Design debt accumulates fastest at startups growing quickly without a dedicated design function. Rather than a one-off agency engagement, [MyDesigner](https://mydesigner.gg) works as an ongoing design partner — auditing, cleaning, and building on your foundation continuously as your product evolves.
+Design debt accumulates fastest at startups growing quickly without a dedicated design function. Rather than a one-off agency engagement, [MyDesigner](https://mydesigner.gg) works as an ongoing design partner — auditing, cleaning, and building on your foundation continuously as your product evolves. [See how it works](/how-it-works) and what a [design subscription](/pricing) looks like in practice.
 
 ---
 

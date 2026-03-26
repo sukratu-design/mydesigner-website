@@ -28,7 +28,7 @@ Most founders design onboarding around their own mental model of the product —
 
 **The value delay.** The core value is buried 4–7 steps deep. Users have to create an account, verify email, fill a profile, accept a tutorial, and configure settings before experiencing anything that justifies the sign-up.
 
-Each of these is a design failure, not a product failure.
+Each of these is a design failure, not a product failure. And the [trust gap](/blog/the-trust-gap-why-your-startups-design-is-killing-conversions) that results from poor onboarding often drives users away before they ever experience your core value.
 
 ---
 
@@ -68,7 +68,7 @@ This is the opposite of the feature tour. Instead of showing users what the prod
 
 **3. Use checklists strategically.** A well-designed onboarding checklist works because it gives users a visible progress indicator and a clear set of next actions. Keep it short: 3–5 items, each tied to a meaningful outcome, not a feature.
 
-**4. Test with real strangers.** Usability-test your onboarding with 5 people who have never seen your product. Watch where they hesitate, what they skip, and what confuses them. You'll find more actionable insights in 90 minutes of testing than in 3 months of analytics.
+**4. Test with real strangers.** Usability-test your onboarding with 5 people who have never seen your product. Watch where they hesitate, what they skip, and what confuses them. You'll find more actionable insights in 90 minutes of testing than in 3 months of analytics. Our [user research playbook for startups](/blog/user-research-playbook-startups) covers how to run these sessions lean.
 
 **5. Measure what happens after completion.** Don't just track what percentage of users finish onboarding. Track what they do in the first 24 hours afterward. High completion with low subsequent engagement means your onboarding is hitting the milestones but missing the mission.
 
@@ -76,7 +76,7 @@ This is the opposite of the feature tour. Instead of showing users what the prod
 
 ## How onboarding is a design problem
 
-Onboarding isn't just a product decision — it's a design one. The copy, the visual hierarchy, the empty states, the micro-interactions: every detail shapes how quickly a user understands and trusts your product.
+Onboarding isn't just a product decision — it's a design one. The copy, the visual hierarchy, the empty states, the [micro-interactions](/blog/micro-interactions-conversion-driver-2026): every detail shapes how quickly a user understands and trusts your product.
 
 The first five minutes of your product aren't a tutorial. They're a promise. If users reach a genuine moment of value before their attention expires, you've earned the right to show them everything else. If they don't, no amount of features, marketing, or pricing will compensate.
 

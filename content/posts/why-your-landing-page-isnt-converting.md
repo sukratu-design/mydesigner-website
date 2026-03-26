@@ -40,7 +40,7 @@ Conversion is fundamentally an act of trust. A visitor who clicks "Start Free Tr
 
 [Baymard Institute research](https://baymard.com/lists/cart-abandonment-rate) on e-commerce abandonment is instructive here: 18% of US online shoppers have abandoned a checkout because they didn't trust the site with their credit card information. The same psychology applies to SaaS sign-ups and demo bookings — the threshold is just lower.
 
-**Missing or unconvincing social proof.** A single pull-quote from an unnamed "Head of Product at a Series B startup" is not social proof — it is decoration. Effective trust signals are specific: named individuals, verifiable companies, and outcomes that are concrete rather than vague. "We saved 12 hours a week in reporting" beats "This tool changed how we work" every time.
+**Missing or unconvincing social proof.** We've written extensively about how [credibility drives conversions from cold traffic](/blog/credibility-by-design-saas-cold-traffic). A single pull-quote from an unnamed "Head of Product at a Series B startup" is not social proof — it is decoration. Effective trust signals are specific: named individuals, verifiable companies, and outcomes that are concrete rather than vague. "We saved 12 hours a week in reporting" beats "This tool changed how we work" every time.
 
 **No visual consistency between ads and page.** If a user clicks an ad that promises a specific benefit and lands on a generic homepage, conversion drops sharply. This disconnect — known as a message match failure — signals to users (unconsciously) that something is off. The language and imagery in your ad should be mirrored as closely as possible on the landing page they reach.
 
@@ -56,7 +56,7 @@ Every additional step between a visitor's intent and your conversion goal costs 
 
 **The form asks for too much, too soon.** Asking for company size, phone number, team role, and intended use case before a user has even tried the product is asking for trust you haven't yet earned. Progressive disclosure — asking only for an email to start, then gathering context once a user is inside the product — typically outperforms long sign-up forms significantly.
 
-**The CTA is ambiguous.** "Get Started" is one of the most common and least effective calls to action in SaaS. It tells a user nothing about what will happen when they click. "Start your free 14-day trial — no card required" removes uncertainty at the moment of decision. Specificity reduces the cognitive work required to act.
+**The CTA is ambiguous.** "Get Started" is one of the most common and least effective calls to action in SaaS — a symptom of the broader [trust gap](/blog/the-trust-gap-why-your-startups-design-is-killing-conversions) that plagues startup pages. It tells a user nothing about what will happen when they click. "Start your free 14-day trial — no card required" removes uncertainty at the moment of decision. Specificity reduces the cognitive work required to act.
 
 **Mobile is an afterthought.** As of 2025, [more than 60% of global web traffic comes from mobile devices](https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/worldwide). Yet many startup landing pages are designed desktop-first and retrofitted for mobile. Buttons that are too small to tap comfortably, forms that expand awkwardly on small screens, and hero sections that crop at mobile viewport widths all create friction that is invisible on a 27-inch monitor during a design review.
 
@@ -78,7 +78,7 @@ You don't need a full redesign to address these issues. Start with a focused aud
 
 ---
 
-Landing pages are not static assets. They are the single most measurable part of your design system, and they should be treated as living documents — reviewed regularly, tested continuously, and improved based on what users actually do, not what you assume they will.
+Landing pages are not static assets. They are the single most measurable part of your design system — and if you're building on [Webflow or Framer](/blog/webflow-vs-framer-in-2026-how-to-choose-for-your-startup), choosing the right platform matters too. They should be treated as living documents — reviewed regularly, tested continuously, and improved based on what users actually do, not what you assume they will.
 
 If your page isn't converting at the rate your product deserves, the problem is almost always findable. It's a hierarchy issue, a trust issue, or a friction issue. Diagnose which one you have, fix that first, and measure the result before you move on.
 

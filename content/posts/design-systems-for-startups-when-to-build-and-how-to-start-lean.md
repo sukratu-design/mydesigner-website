@@ -26,7 +26,7 @@ The instinct to build a comprehensive system before you start designing is almos
 
 In the early stages, your UI decisions are hypotheses. Your colour palette might change after user testing. Your component structure will shift when you discover new use cases. Invest heavily in a design system before the product has found its footing, and you'll spend most of your time maintaining a system rather than using it.
 
-The opposite is equally costly. Wait too long — past your second engineer, past your first major feature release, past the point where two parts of the product look like they came from different companies — and you're not building a design system. You're paying back design debt at interest.
+The opposite is equally costly. Wait too long — past your second engineer, past your first major feature release, past the point where two parts of the product look like they came from different companies — and you're not building a design system. You're paying back [design debt](/blog/design-debt-the-hidden-cost-stunting-startup-growth) at interest.
 
 **The right signal is simpler than most founders expect:** the moment you make the same design decision twice. The second time you choose a button colour, define a heading size, or set a card border radius — that's your signal. Capture it. Don't make it a third time without a documented standard.
 
@@ -63,7 +63,7 @@ Establish your colour variables and spacing scale before you design anything. A 
 After your first set of screens, extract the patterns. What UI elements appeared more than twice? Turn them into components. Documentation can wait — reusability can't.
 
 **Stage 3 — Documented system (before the first engineer joins)**
-The moment another person builds from your designs, you need written standards. Document token definitions, core components with their states, and basic usage rules. This is what stops your first engineer from making 40 design decisions you never intended to delegate.
+The moment another person builds from your designs, you need written standards. Document token definitions, core components with their states, and basic usage rules. This is what stops your first engineer from making 40 design decisions you never intended to delegate. A solid system also dramatically improves the [design-to-dev handoff](/blog/design-to-dev-handoff).
 
 **Stage 4 — Living system (ongoing)**
 A living design system is one that gets updated when decisions change. Assign someone — even part-time — responsibility for keeping it current. If it becomes a historical record of how things used to look, it stops being useful.
@@ -101,4 +101,4 @@ Start with your tokens. Build your first component. Document the decision you ju
 
 ---
 
-*MyDesigner helps startups establish and maintain their design foundations — token layers, component libraries, and handoff to engineering — as part of an ongoing subscription. [See how it works.](https://mydesigner.gg)*
+*MyDesigner helps startups establish and maintain their design foundations — token layers, component libraries, and handoff to engineering — as part of an ongoing subscription. [See how it works](/how-it-works) or explore our [web app design service](/services/web-app-design).*

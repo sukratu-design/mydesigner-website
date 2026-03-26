@@ -12,7 +12,7 @@ Minimalism became the default design mode for a generation of startups. Clean, s
 
 But the pendulum has swung too far. When minimalism means hiding information behind extra clicks, it stops being good UX and starts being a usability problem.
 
-The products gaining ground in 2026 — Notion, Linear, Superhuman, Stripe — share something in common: they pack more information per screen while staying legible. That's not an accident. It's intentional density.
+The products gaining ground in 2026 — Notion, Linear, Superhuman, Stripe — share something in common: they pack more information per screen while staying legible. That's not an accident. It's intentional density, often achieved through [modular bento grid layouts](/blog/bento-grids-modular-design-2026).
 
 ---
 
@@ -30,7 +30,7 @@ Bloomberg Terminal is the extreme example. It's legendarily dense, but traders l
 
 ## Why it matters for product teams
 
-**Power users don't want simplicity — they want speed.** Dense, information-rich dashboards reduce clicks and page loads to access key metrics. For users who live in your product, that efficiency compounds into a meaningfully better experience.
+**Power users don't want simplicity — they want speed.** Dense, information-rich dashboards reduce clicks and page loads to access key metrics. For users who live in your product, that efficiency compounds into a meaningfully better experience. Well-placed [micro-interactions](/blog/micro-interactions-conversion-driver-2026) can further guide the eye without adding visual clutter.
 
 **Enterprise buyers expect it.** B2B software buyers are evaluating products on how quickly they can get to information. An interface that hides data behind progressive disclosure feels like friction to someone who knows what they want.
 
@@ -65,4 +65,4 @@ The goal was never whitespace for its own sake. It was clarity. And clarity, it 
 
 ---
 
-*MyDesigner designs high-density, high-clarity interfaces for startups — dashboards, SaaS products, and data-heavy views built to convert without overwhelming. [See how it works.](https://mydesigner.gg)*
+*MyDesigner designs high-density, high-clarity interfaces for startups — dashboards, SaaS products, and data-heavy views built to convert without overwhelming. [See how it works](/how-it-works) or explore our [web app design service](/services/web-app-design).*

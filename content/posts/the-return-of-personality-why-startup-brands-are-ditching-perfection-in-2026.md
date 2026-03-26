@@ -27,7 +27,7 @@ In practice, this means:
 - Opinionated typography — custom typefaces, variable fonts with character, and headlines that take a clear visual stance rather than defaulting to Inter or DM Sans
 - Organic shapes and imperfect geometry — hand-drawn curves, asymmetric layouts, illustrated elements that signal human craft
 - Maximalist color confidence — deep saturated palettes, unexpected accent colors, bold contrasts that AI generators tend to avoid
-- Animated personality — micro-interactions with real character: bouncy, springy, playful — not generic CSS transitions
+- Animated personality — [micro-interactions](/blog/micro-interactions-design-detail) with real character: bouncy, springy, playful — not generic CSS transitions
 
 These aren't arbitrary aesthetic choices. They're strategic responses to the homogenization problem.
 
@@ -37,7 +37,7 @@ UI surface is no longer a differentiator. With AI generating competent interface
 
 What does differentiate? Memorability. Emotional resonance. The feeling a brand leaves behind after a first visit.
 
-[Research consistently links](https://www.nngroup.com/articles/brand-experience/) distinctive brand identity to lower churn, higher word-of-mouth referral rates, and stronger conversion on marketing-driven acquisition. When your website feels like you — not like a template — visitors are more likely to trust you with their problems. In crowded categories like fintech, SaaS, health tech, and productivity, trust is what closes the deal.
+[Research consistently links](https://www.nngroup.com/articles/brand-experience/) distinctive brand identity to lower churn, higher word-of-mouth referral rates, and stronger conversion on marketing-driven acquisition. When your website feels like you — not like a template — visitors are more likely to [trust you with their problems](/blog/the-trust-gap-why-your-startups-design-is-killing-conversions). In crowded categories like fintech, SaaS, health tech, and productivity, trust is what closes the deal.
 
 The brands winning in 2026 aren't the most polished. They're the most remembered.
 
@@ -47,7 +47,7 @@ The brands winning in 2026 aren't the most polished. They're the most remembered
 
 2. **Pick one personality signal and commit.** A signature illustration style. A bold typeface that's all your own. An unexpected brand color. A recurring visual motif. One strong signal of character creates a halo effect across the whole brand.
 
-3. **Design your website like a brand, not a template.** No-code tools like Webflow and Framer give you complete creative freedom — but only if you use them intentionally. Starting from a generic theme and tweaking it is still starting from someone else's aesthetic.
+3. **Design your website like a brand, not a template.** No-code tools like [Webflow](/services/webflow-development) and [Framer](/services/framer-development) give you complete creative freedom — but only if you use them intentionally. Starting from a generic theme and tweaking it is still starting from someone else's aesthetic.
 
 4. **Use imperfection deliberately.** A grainy texture overlay on a hero section. A slightly hand-drawn icon set. A headline that breaks the grid just slightly. These choices signal craft — they tell visitors a human made this with intention.
 

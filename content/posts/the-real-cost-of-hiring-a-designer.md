@@ -38,7 +38,7 @@ According to [Eleken](https://www.eleken.co/blog-posts/how-much-does-it-cost-to-
 
 For a startup in active product development, that's 60–90 days without the design support you need. Screens don't get built. Flows stay broken. Onboarding stays rough.
 
-The compounding effect matters. Research consistently links poor UX to elevated churn, lower conversion, and increased support costs. The [Nielsen Norman Group](https://www.nngroup.com/articles/ux-debt/) identifies design debt as a direct drag on user efficiency — and notes that users who have one bad experience rarely give a product a second chance.
+The compounding effect matters. Research consistently links poor UX to elevated churn, lower conversion, and increased support costs. The [Nielsen Norman Group](https://www.nngroup.com/articles/ux-debt/) identifies [design debt](/blog/design-debt-the-hidden-cost-stunting-startup-growth) as a direct drag on user efficiency — and notes that users who have one bad experience rarely give a product a second chance.
 
 ---
 
@@ -53,7 +53,7 @@ The comparison with full-time hiring isn't just about monthly rate. It's about:
 - **Speed to start** — A subscription service starts within days, not months
 - **No hiring risk** — No recruiting fees, no bad-hire costs, no severance
 - **Flexibility** — Scale up or down with actual business need
-- **Breadth** — Most subscription services cover UI/UX, graphic design, and web development — roles that would require multiple full-time hires to replicate
+- **Breadth** — Most subscription services cover UI/UX, graphic design, and web development — roles that would require multiple full-time hires to replicate. [See how it works](/how-it-works)
 
 ---
 
@@ -84,4 +84,4 @@ The startup design decision isn't really about hiring versus subscribing. It's a
 
 ---
 
-*mydesigner.gg is a design subscription for startups — UI/UX, Webflow/Framer development, and graphic design. Plans start at $1,400/month with no contracts. [See plans.](https://mydesigner.gg)*
+*mydesigner.gg is a design subscription for startups — UI/UX, Webflow/Framer development, and graphic design. Plans start at $1,400/month with no contracts. [See plans](/pricing).*

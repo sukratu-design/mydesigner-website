@@ -62,9 +62,9 @@ Large incumbents can coast on name recognition. Startups can't. Every unfamiliar
 
 ## Five design moves that close the trust gap
 
-**1. Audit your hero section ruthlessly.** Your above-the-fold experience carries disproportionate weight. Ask: does the visual hierarchy immediately communicate what you do, who it's for, and why it's credible? If a new visitor can't answer all three within five seconds, redesign before you optimise anything else.
+**1. Audit your hero section ruthlessly.** Your above-the-fold experience carries disproportionate weight. If your [landing page isn't converting](/blog/why-your-landing-page-isnt-converting), the hero is the first place to look. Ask: does the visual hierarchy immediately communicate what you do, who it's for, and why it's credible? If a new visitor can't answer all three within five seconds, redesign before you optimise anything else.
 
-**2. Build or borrow a lightweight design system.** You don't need a full Figma design system on day one. But defining four or five type styles, a limited colour palette, and one button family will immediately lift visual coherence. Consistency doesn't require a large team — it requires a decision and a commitment to maintain it.
+**2. Build or borrow a lightweight design system.** You don't need a full Figma design system on day one. But defining four or five type styles, a limited colour palette, and one button family will immediately lift visual coherence. Consistency doesn't require a large team — it requires a decision and a commitment to maintain it. If you're unsure where to start, our guide on [design systems for startups](/blog/design-systems-for-startups-when-to-build-and-how-to-start-lean) covers a lean approach.
 
 **3. Move social proof up the page.** If your testimonials or client logos are below the fold, you're saving your best credibility evidence for people who've already decided to keep scrolling. Bring it above the first scroll point. Frame testimonials around outcomes, not sentiment.
 
@@ -76,9 +76,9 @@ Large incumbents can coast on name recognition. Startups can't. Every unfamiliar
 
 ## The compounding return on trust design
 
-Trust isn't just a conversion metric — it compounds. Users who trust your product at first glance are more likely to complete onboarding, invite colleagues, and upgrade when the moment arrives. The downstream revenue impact of a 10% improvement in initial trust is rarely limited to that initial conversion; it ripples through activation, retention, and referral.
+Trust isn't just a conversion metric — it compounds. Users who trust your product at first glance are more likely to [complete onboarding](/blog/ux-of-onboarding-startup-retention-2026), invite colleagues, and upgrade when the moment arrives. The downstream revenue impact of a 10% improvement in initial trust is rarely limited to that initial conversion; it ripples through activation, retention, and referral.
 
-For startups operating with lean teams and tight acquisition budgets, improving trust design is one of the highest-leverage investments available. Unlike paid acquisition, it doesn't require ongoing spend. Unlike SEO, it compounds immediately. Unlike feature development, it benefits every user equally, from the first visit.
+For startups operating with lean teams and tight acquisition budgets, improving trust design is one of the [highest-leverage design investments](/blog/design-roi-revenue-growth) available. Unlike paid acquisition, it doesn't require ongoing spend. Unlike SEO, it compounds immediately. Unlike feature development, it benefits every user equally, from the first visit.
 
 The trust gap is real. It's measurable. And in a market where users make decisions in milliseconds, closing it is one of the most important things a startup can do.
 

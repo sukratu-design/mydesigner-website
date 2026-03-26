@@ -60,7 +60,7 @@ The most common mistake isn't ignoring design entirely. It's treating it as a on
 
 A product gets designed at launch, looks reasonable, and then gets handed to engineers who build features on top of it. The nav grows a new item every quarter. The dashboard gets a new panel. A new pricing tier appears. Nobody's watching the overall coherence — and slowly, the product accumulates what designers call *visual debt*: inconsistency, clutter, and cognitive load that wasn't there at the start.
 
-The degradation is harder to see from the inside. From the outside — especially from a prospective customer comparing you to a competitor — it's immediately visible.
+The degradation is harder to see from the inside. From the outside — especially from a prospective customer comparing you to a competitor — it's immediately visible. This is what [design debt](/blog/design-debt-the-hidden-cost-stunting-startup-growth) looks like in practice, and it compounds with every release.
 
 Meanwhile, competitors who've maintained design discipline convert better, retain users longer, and generate stronger word-of-mouth. The compounding advantage is significant over a two-to-three year product lifecycle.
 
@@ -70,9 +70,9 @@ Meanwhile, competitors who've maintained design discipline convert better, retai
 
 Not all design work has equal leverage. If you're resource-constrained, focus here:
 
-**1. Homepage and primary landing pages.** This is where first impressions form and where you win or lose attention. A clear value proposition, strong visual hierarchy, and credible social proof — executed cleanly — will outperform a clever headline on a cluttered page every time.
+**1. Homepage and primary landing pages.** This is where first impressions form and where you win or lose attention. A clear value proposition, strong visual hierarchy, and [credible social proof](/blog/credibility-by-design-saas-cold-traffic) — executed cleanly — will outperform a clever headline on a cluttered page every time.
 
-**2. Onboarding flow.** First-run experience has an outsized effect on retention. Users who successfully complete onboarding are significantly more likely to convert to paid and stay. Every friction point in that flow — a confusing empty state, an unclear next step, a form that asks too much too soon — is revenue leaving.
+**2. Onboarding flow.** First-run experience has an outsized effect on retention. Users who successfully complete onboarding are significantly more likely to convert to paid and stay. Every friction point in that flow — a confusing empty state, an unclear next step, a form that asks too much too soon — is revenue leaving. Getting the [UX of onboarding right](/blog/ux-of-onboarding-startup-retention-2026) is one of the highest-leverage design investments a startup can make.
 
 **3. Pricing page.** Conversion intent is highest here, so design friction is most costly. Clarity of tiers, the framing of your value, placement of the CTA — these directly affect whether a prospective customer buys or leaves to "think about it" and doesn't come back.
 
@@ -88,6 +88,6 @@ The most efficient moment to invest in design isn't when you can afford to. It's
 
 ---
 
-[MyDesigner](https://mydesigner.gg) works with startups on exactly this kind of ongoing design investment — UI/UX, web builds, and brand work — at a fixed monthly cost, without the overhead of a full-time hire.
+[MyDesigner](https://mydesigner.gg) works with startups on exactly this kind of ongoing design investment — [UI/UX, web builds, and brand work](/services) — at a fixed monthly cost, without [the overhead of a full-time hire](/blog/the-real-cost-of-hiring-a-designer).
 
 Because the most expensive design decision you'll make is assuming design can wait.

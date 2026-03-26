@@ -12,7 +12,7 @@ draft: false
 
 [96.3% of websites have at least one detectable accessibility failure](https://webaim.org/projects/million/), with the average homepage carrying over 50 automatically detectable errors. And [71% of customers with disabilities simply leave when a site is hard to use](https://www.clickawaypound.com/).
 
-Most startups push accessibility to "Phase 2" — after launch, after funding, after the redesign. In 2026, that calculus has changed. Accessibility is a measurable competitive advantage with hard numbers behind it.
+Most startups push accessibility to "Phase 2" — after launch, after funding, after the redesign. In 2026, that calculus has changed. Accessibility is a measurable competitive advantage with hard numbers behind it — and ignoring it is a form of [design debt that compounds over time](/blog/design-debt-the-hidden-cost-stunting-startup-growth).
 
 ---
 
@@ -42,7 +42,7 @@ For startups selling to enterprise clients, accessibility compliance is increasi
 
 2. **Fix the high-impact basics first.** Color contrast, alt text, keyboard navigation, and form labels account for the vast majority of failures. These are targeted fixes, not design overhauls.
 
-3. **Bake accessibility into your design system, not your QA process.** If it's caught in testing, it's already too late. Define accessible color palettes, minimum touch targets, and focus-state styles at the design-token level so every component is compliant by default.
+3. **Bake accessibility into your design system, not your QA process.** If it's caught in testing, it's already too late. Define accessible color palettes, minimum touch targets, and focus-state styles at the design-token level so every component is compliant by default. If you haven't built a design system yet, here's [when to start and how to keep it lean](/blog/design-systems-for-startups-when-to-build-and-how-to-start-lean).
 
 4. **Use it as a sales differentiator.** Add an accessibility statement to your site. Reference WCAG compliance in your sales deck. Enterprise buyers look for this, and most of your competitors aren't doing it.
 
@@ -54,7 +54,7 @@ For startups selling to enterprise clients, accessibility compliance is increasi
 
 At [MyDesigner](https://mydesigner.gg), accessibility is built into every design decision from the start — not added at the end. We design with WCAG 2.1 AA as a baseline: proper contrast ratios, semantic markup, keyboard-navigable layouts, screen-reader-friendly content structures.
 
-When we build in Webflow or Framer, we ship sites that are inclusive by default. Your brand reaches more people, ranks better in search, and clears compliance requirements without a separate remediation project.
+When we build in [Webflow or Framer](/blog/webflow-vs-framer-in-2026-how-to-choose-for-your-startup), we ship sites that are inclusive by default. Your brand reaches more people, ranks better in search, and clears compliance requirements without a separate remediation project.
 
 ---
 

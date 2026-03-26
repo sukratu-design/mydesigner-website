@@ -48,7 +48,7 @@ At a large company, handoff friction is annoying. At a startup, it's existential
 
 You don't have the engineering headcount to absorb rework. You don't have the runway to ship three versions of a feature. You can't afford a product that looks off-brand or unpolished at the exact moment you're trying to win early customers.
 
-[McKinsey's Business Value of Design report](https://www.mckinsey.com/capabilities/mckinsey-design/our-insights/the-business-value-of-design) tracked 300 publicly listed companies over five years and found that top-quartile design performers achieved 32 percentage points higher revenue growth than peers. Design execution — not just design thinking — is a commercial differentiator.
+[McKinsey's Business Value of Design report](https://www.mckinsey.com/capabilities/mckinsey-design/our-insights/the-business-value-of-design) tracked 300 publicly listed companies over five years and found that top-quartile design performers achieved 32 percentage points higher revenue growth than peers. [Design execution](/blog/design-roi-revenue-growth) — not just design thinking — is a commercial differentiator.
 
 For startups, this plays out at the product level. Users don't distinguish between "the design was great but the build was sloppy." They just experience an interface that feels wrong. And they leave.
 
@@ -59,7 +59,7 @@ For startups, this plays out at the product level. Users don't distinguish betwe
 Good handoff isn't about tools. Figma, Zeplin, Storybook — these help, but they're not the solution. The solution is a shared language and a structured process.
 
 **1. Named and documented components.**
-Every interactive element in the design file should match the codebase naming. If your developer calls it `ButtonPrimary`, the Figma component should be `ButtonPrimary`. This sounds trivial. It eliminates an entire category of miscommunication.
+Every interactive element in the design file should match the codebase naming. A proper [design system](/blog/design-systems-for-startups-when-to-build-and-how-to-start-lean) makes this significantly easier. If your developer calls it `ButtonPrimary`, the Figma component should be `ButtonPrimary`. This sounds trivial. It eliminates an entire category of miscommunication.
 
 **2. State coverage by default.**
 Before any handoff: default, hover, active, disabled, loading, error, empty. These aren't edge cases — they're baseline requirements. Any component handed off without its full state set is an incomplete spec.
@@ -96,7 +96,7 @@ Founders consistently underestimate handoff friction because the costs are invis
 - A component library nobody trusts, so everyone writes new components instead
 - A product that looks like it was built by three different teams — because effectively, it was
 
-These costs compound. A misaligned component becomes a misaligned page becomes a misaligned product. By the time it's visible, the debt is significant.
+These costs compound. A misaligned component becomes a misaligned page becomes a misaligned product. By the time it's visible, the [design debt](/blog/design-debt-the-hidden-cost-stunting-startup-growth) is significant.
 
 The teams that ship clean products consistently aren't the ones with the best individual designers or most skilled developers. They're the ones where design and development share a context, a vocabulary, and a process.
 

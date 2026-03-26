@@ -28,7 +28,7 @@ The conversations between sessions were as valuable as the sessions themselves. 
 
 Across the AI Summit and Fintech Summit tracks, one theme kept coming up: execution design is the differentiator.
 
-Founders at 100 people and at 100,000 users were facing the same problem — their product works, but users don't experience it that way. Onboarding flows are confusing. Dashboards are cluttered. Mobile lags behind desktop. The tech is solid. The design layer is where trust breaks down.
+Founders at 100 people and at 100,000 users were facing the same problem — their product works, but users don't experience it that way. Onboarding flows are confusing. Dashboards are cluttered. Mobile lags behind desktop. The tech is solid. The [design layer is where trust breaks down](/blog/the-trust-gap-why-your-startups-design-is-killing-conversions).
 
 That's the gap [MyDesigner.gg](https://mydesigner.gg) exists to close.
 
@@ -56,9 +56,9 @@ It's a reminder of why in-person still matters, even in 2026.
 
 A few things we're carrying home from Doha:
 
-- Founders are investing in design earlier. The "we'll fix the UX after PMF" mindset is fading. The founders we spoke to understand that design is part of finding product-market fit, not a reward for it.
+- Founders are investing in design earlier. The "we'll fix the UX after PMF" mindset is fading. The founders we spoke to understand that [design is part of finding product-market fit](/blog/design-roi-revenue-growth), not a reward for it.
 - The MENA market is real. Qatar, Saudi Arabia, UAE — there's a generation of founders building ambitious products who need world-class design partners.
-- AI is a capability, not a category. The most interesting companies at the summit weren't pitching "AI products." They were using AI as infrastructure and competing on experience, trust, and brand.
+- AI is a capability, not a category. The most interesting companies at the summit weren't pitching "AI products." They were using AI as infrastructure and competing on experience, trust, and brand. This echoes what we've been seeing in [AI-first design trends](/blog/ai-first-design-2026) across the industry.
 
 ---
 

@@ -32,7 +32,7 @@ This misreads what investors are actually evaluating.
 
 When a VC looks at your product or marketing site, they're not asking "does this look nice?" They're asking: does this team pay attention? Can they execute? Do they understand their users well enough to build something usable?
 
-Sloppy typography, misaligned components, a mobile nav that doesn't quite work — these aren't aesthetic failures. They're signals. They suggest a team that ships without caring about outcomes, or one that's deprioritised experience in ways that will get expensive later.
+Sloppy typography, misaligned components, a mobile nav that doesn't quite work — these aren't aesthetic failures. They're signals. They suggest a team that ships without caring about outcomes, or one that's deprioritised experience in ways that will get expensive later. This kind of accumulated [design debt can quietly stunt a startup's growth](/blog/design-debt-the-hidden-cost-stunting-startup-growth) long before investors even see the product.
 
 Conversely, clear visual hierarchy, consistent components, and purposeful interactions signal a team that sweats details. Investors assume that rigour carries over into roadmap decisions, hiring, and customer relationships.
 
@@ -76,13 +76,13 @@ The threshold isn't perfection. It's "this team clearly cares about their produc
 
 You don't need a year-long brand sprint or a senior design hire to get there. You need to address the highest-leverage touchpoints before active outreach begins.
 
-**Website first.** It should clearly communicate what you do, for whom, and why — without the visitor having to work for it. Visual consistency with your product should be immediately legible.
+**Website first.** It should clearly communicate what you do, for whom, and why — without the visitor having to work for it. Visual consistency with your product should be immediately legible. If your [landing page isn't converting](/blog/why-your-landing-page-isnt-converting), investors will notice the same problems your prospects do.
 
 **Audit your core product flows.** What does an investor see when they watch your demo or try a trial? Fix the obvious friction points: broken layouts, inconsistent button styles, dead-end navigation. You're not redesigning — you're ensuring the experience communicates care.
 
 **Treat your deck as a visual document.** Consistent type scale, a limited colour palette used purposefully, whitespace as structure. Coherent, not decorated.
 
-**Create a simple visual identity baseline.** Even a one-page brand reference covering fonts, colours, and imagery style is enough. Apply it everywhere. Coherence across touchpoints matters more than polish on any single one.
+**Create a simple visual identity baseline.** Even a one-page brand reference covering fonts, colours, and imagery style is enough. Apply it everywhere. Coherence across touchpoints matters more than polish on any single one. A [brand identity service](/services/brand-identity) can help you establish this foundation quickly.
 
 ---
 

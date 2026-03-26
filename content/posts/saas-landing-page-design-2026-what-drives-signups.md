@@ -24,7 +24,7 @@ You have roughly five seconds to communicate what you do, who it is for, and why
 
 Most SaaS landing pages fail this test not because the value proposition is weak — it is because it is buried. The headline does the work of a tagline ("Smarter workflows, faster growth") while the actual explanation sits two sections below the fold.
 
-Lead with specificity. "Project management for remote engineering teams" beats "Work better together." The former qualifies your visitor; the latter bores them.
+Lead with specificity. "Project management for remote engineering teams" beats "Work better together." The former qualifies your visitor; the latter bores them. If your page still isn't performing after this fix, [dig deeper into why it's not converting](/blog/why-your-landing-page-isnt-converting).
 
 ---
 
@@ -42,7 +42,7 @@ Your H1 should be significantly larger than your H2 — not just slightly. The s
 
 Social proof is not a checkbox. Dropping five logos under your hero and calling it "trusted by" is the minimum viable version of a strategy that can meaningfully accelerate conversions.
 
-[BrightLocal's Consumer Review Survey](https://brightlocal.com/research/local-consumer-review-survey/) found that 92% of consumers read online reviews before making a purchase decision. For SaaS, visitors are running a risk calculation — your job is to reduce their perceived risk as quickly as possible.
+[BrightLocal's Consumer Review Survey](https://brightlocal.com/research/local-consumer-review-survey/) found that 92% of consumers read online reviews before making a purchase decision. For SaaS, visitors are running a risk calculation — your job is to [reduce their perceived risk](/blog/credibility-by-design-saas-cold-traffic) as quickly as possible.
 
 Specific testimonials outperform generic ones. "Cut our onboarding time by 40%" is worth more than "Amazing tool, highly recommend." Logos without context are decoration — pair recognisable brand logos with a specific use case or outcome. Third-party review aggregates like G2 and Capterra carry independent credibility that no in-house copy can replicate. And recency matters: testimonials from two years ago do not carry the same weight as ones posted this quarter.
 
@@ -88,8 +88,8 @@ Risk-reduction copy near your CTA consistently lifts conversions. [A case study 
 
 The startups that win on conversion in 2026 are not the ones with the most beautiful landing pages. They are the ones that have stress-tested every design decision against a single question: does this reduce friction, or add it?
 
-Your landing page is a series of micro-decisions. The distance between your headline and your sub-copy. The contrast ratio on your primary button. Whether your testimonials read like they came from real humans or from a marketing brief. Each one shifts your visitor's risk calculation — toward or away from that signup.
+Your landing page is a series of micro-decisions. The distance between your headline and your sub-copy. The contrast ratio on your primary button. Whether your testimonials read like they came from real humans or from a marketing brief. Even [small micro-interactions](/blog/micro-interactions-design-detail) on your CTA buttons can shift behaviour. Each one shifts your visitor's risk calculation — toward or away from that signup.
 
 ---
 
-*[MyDesigner](https://mydesigner.gg) builds landing pages for SaaS startups that are designed to convert — not just to impress. If you're ready to close the gap between your traffic and your signups, [get in touch](https://mydesigner.gg).*
+*[MyDesigner](https://mydesigner.gg) builds landing pages for SaaS startups that are designed to convert — not just to impress. Explore our [website design service](/services/website-design) or [get in touch](https://mydesigner.gg).*

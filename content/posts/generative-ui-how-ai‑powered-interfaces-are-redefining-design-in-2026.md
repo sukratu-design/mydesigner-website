@@ -26,9 +26,9 @@ Three capabilities define most early implementations:
 
 ## Actionable takeaways for founders and marketers
 
-1. **Audit your design system for modularity.** Break UI components into atomic parts that can be swapped or hidden by AI. This prepares your product for dynamic assembly without a full redesign.
+1. **Audit your design system for modularity.** Break UI components into atomic parts that can be swapped or hidden by AI. This prepares your product for dynamic assembly without a [full redesign](/blog/design-systems-for-startups-when-to-build-and-how-to-start-lean).
 2. **Collect intent signals.** Beyond clicks, capture keystroke patterns, scroll speed, and device context to improve prediction accuracy.
-3. **Start small with “micro-GenUI.”** Pilot adaptive forms on high-friction checkout steps. Measure conversion lift before expanding to full-screen experiences.
+3. **Start small with “micro-GenUI.”** Pilot adaptive forms on high-friction checkout steps. Measure conversion lift before expanding to full-screen experiences — [micro-interactions alone can move the needle significantly](/blog/micro-interactions-design-detail).
 4. **Maintain brand consistency.** Define style tokens — color, typography, spacing — that the AI can reference, so every generated variation stays on-brand.
 5. **Plan for ethical AI.** Implement transparent data-usage notices and give users a one-click opt-out from AI-driven personalization.
 
@@ -38,7 +38,7 @@ At [MyDesigner.gg](https://mydesigner.gg) we help startups and growing products 
 
 - **Design system workshops** — We modularize your components today so tomorrow’s AI can remix them on the fly.
 - **AI-ready prototyping** — Using Figma’s Variable Fonts and Component Overrides, we build prototypes that demonstrate adaptive scenarios.
-- **Brand-first personalization** — Our branding work defines the visual DNA — color palettes, tone of voice, iconography — that the generative engine will respect as UI variants proliferate.
+- **Brand-first personalization** — Our [brand identity work](/services/brand-identity) defines the visual DNA — color palettes, tone of voice, iconography — that the generative engine will respect as UI variants proliferate.
 - **Ethical design consultation** — We advise on data-privacy best practices and craft clear consent flows so you can innovate without eroding trust.
 
 ## The bottom line
