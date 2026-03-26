@@ -44,12 +44,12 @@ if (!topic || !slug) {
 
 // Brand palette combos — described by name to avoid model rendering hex strings as text
 const PALETTE_COMBOS = [
-  { bg: 'deep dark burgundy',    accent: 'dusty rose pink',      highlight: 'warm amber gold' },
-  { bg: 'soft periwinkle blue',  accent: 'pale mint green',      highlight: 'pure white' },
-  { bg: 'dusty rose pink',       accent: 'warm amber gold',      highlight: 'pure white' },
-  { bg: 'deep dark burgundy',    accent: 'soft periwinkle blue', highlight: 'pale mint green' },
-  { bg: 'burnt orange',          accent: 'warm amber gold',      highlight: 'deep dark burgundy' },
-  { bg: 'soft periwinkle blue',  accent: 'dusty rose pink',      highlight: 'pure white' },
+  { bg: 'soft periwinkle blue',  accent: 'warm burnt orange',    highlight: 'pure white' },
+  { bg: 'pale mint green',       accent: 'warm burnt orange',    highlight: 'soft periwinkle blue' },
+  { bg: 'light blush pink',      accent: 'warm burnt orange',    highlight: 'pale mint green' },
+  { bg: 'soft lavender',         accent: 'warm burnt orange',    highlight: 'pale mint green' },
+  { bg: 'warm cream white',      accent: 'warm burnt orange',    highlight: 'soft periwinkle blue' },
+  { bg: 'pale sky blue',         accent: 'warm burnt orange',    highlight: 'dusty rose pink' },
 ];
 
 function buildPrompt(topic, slug) {
