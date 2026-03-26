@@ -170,6 +170,7 @@ function pageShell({ title, description, canonicalPath, body, ogType = 'website'
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeXml(title)}">
   <meta name="twitter:description" content="${escapeXml(description)}">
+  <meta name="twitter:image" content="${imageUrl}">
 ${schemaBlocks ? schemaBlocks + '\n' : ''}
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
@@ -935,6 +936,7 @@ ${faqItems}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeXml(metaTitle)}">
   <meta name="twitter:description" content="${escapeXml(metaDesc)}">
+  <meta name="twitter:image" content="${imageUrl}">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/daisyui@5" as="style">

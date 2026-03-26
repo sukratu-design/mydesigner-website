@@ -200,6 +200,7 @@ function buildPage(cat) {
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${cat.metaTitle}">
   <meta name="twitter:description" content="${cat.metaDesc}">
+  <meta name="twitter:image" content="https://mydesigner.gg/assets/images/og-image.jpg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
