@@ -200,6 +200,27 @@
   }
 })();
 
+/* ========== GA4 CONVERSION TRACKING ========== */
+(function() {
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="calendar.app.google"]');
+    if (!link) return;
+
+    // Determine CTA label from button text
+    var label = (link.textContent || '').trim();
+    var page = window.location.pathname;
+
+    // Fire GA4 event
+    if (typeof gtag === 'function') {
+      gtag('event', 'book_a_call', {
+        event_category: 'conversion',
+        event_label: label,
+        page_location: page
+      });
+    }
+  });
+})();
+
 /* ========== SMOOTH SCROLL FOR ANCHOR LINKS ========== */
 (function() {
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
