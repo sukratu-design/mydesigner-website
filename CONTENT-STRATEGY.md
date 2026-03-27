@@ -146,14 +146,14 @@ All 24 posts are educational thought leadership. This builds authority but doesn
 
 | Week | Tuesday | Thursday | Funnel Stage |
 |------|---------|----------|-------------|
-| **1** (Mar 27) | #33 Pricing page design | #34 SaaS pricing principles | Awareness |
-| **2** | #35 Conversion design playbook | Case Study #1 (portfolio project) | Awareness + Decision |
-| **3** | #36 Design brief is broken | Case Study #2 | Awareness + Decision |
-| **4** | #39 Performance as design decision | "Best Design Subscriptions 2026" | Awareness + Consideration |
-| **5** | #40 Empty states | "When to Invest in Brand Identity" (new) | Awareness + Consideration |
-| **6** | #41 Product-led growth UX | Case Study #3 | Awareness + Decision |
-| **7** | #43 Landing page blueprint | "Launch a SaaS Site in Webflow" (new) | Awareness + Consideration |
-| **8** | #45 User research guide | "Framer for Startups" (new) | Awareness + Consideration |
+| **1** | Mar 31: #33 Pricing page design | Apr 2: #34 SaaS pricing principles | Awareness |
+| **2** | Apr 7: #35 Conversion design playbook | Apr 9: Case Study #1 (portfolio project) | Awareness + Decision |
+| **3** | Apr 14: #36 Design brief is broken | Apr 16: Case Study #2 | Awareness + Decision |
+| **4** | Apr 21: #39 Performance as design decision | Apr 23: "Best Design Subscriptions 2026" | Awareness + Consideration |
+| **5** | Apr 28: #40 Empty states | Apr 30: "When to Invest in Brand Identity" (new) | Awareness + Consideration |
+| **6** | May 5: #41 Product-led growth UX | May 7: Case Study #3 | Awareness + Decision |
+| **7** | May 12: #43 Landing page blueprint | May 14: "Launch a SaaS Site in Webflow" (new) | Awareness + Consideration |
+| **8** | May 19: #45 User research guide | May 21: "Framer for Startups" (new) | Awareness + Consideration |
 
 After week 8: continue with #47, #48, remaining new content, and more case studies.
 
