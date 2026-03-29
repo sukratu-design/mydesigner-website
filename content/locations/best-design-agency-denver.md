@@ -40,10 +40,11 @@ This guide covers both options. We profile 10 Denver agencies you should know ab
 
 <div class="card bg-base-200 border border-base-300 mb-6">
 <div class="card-body">
-<div class="flex gap-4 items-start">
-<img src="https://www.google.com/s2/favicons?domain=savagecreative.com&sz=64" alt="Savage Creative logo" class="w-12 h-12 rounded-lg shrink-0 mt-1 bg-white p-1">
+<div class="flex gap-3 items-center mb-3">
+<img src="https://www.google.com/s2/favicons?domain=savagecreative.com&sz=64" alt="Savage Creative logo" class="w-10 h-10 rounded-lg shrink-0 bg-white p-1">
+<h3 class="text-xl font-bold !mt-0 !mb-0">1. Savage Creative</h3>
+</div>
 <div>
-<h3 class="text-xl font-bold mb-2">1. Savage Creative</h3>
 <p><a href="https://clutch.co/profile/savage-creative">Savage Creative</a> carries <a href="https://clutch.co/profile/savage-creative#reviews">100% positive reviews on Clutch</a> and focuses on brand strategy tied to market positioning. They do not just design logos. They build brand systems that connect visual identity to competitive differentiation. Their website design work follows the same strategic framework.</p>
 <p><strong>Specialty:</strong> Brand strategy, website design, market differentiation<br>
 <strong>Best for:</strong> Mid-market companies repositioning against entrenched competitors<br>
@@ -56,10 +57,11 @@ This guide covers both options. We profile 10 Denver agencies you should know ab
 
 <div class="card bg-base-200 border border-base-300 mb-6">
 <div class="card-body">
-<div class="flex gap-4 items-start">
-<img src="https://www.google.com/s2/favicons?domain=contrastandco.com&sz=64" alt="Contrast & Co. logo" class="w-12 h-12 rounded-lg shrink-0 mt-1 bg-white p-1">
+<div class="flex gap-3 items-center mb-3">
+<img src="https://www.google.com/s2/favicons?domain=contrastandco.com&sz=64" alt="Contrast & Co. logo" class="w-10 h-10 rounded-lg shrink-0 bg-white p-1">
+<h3 class="text-xl font-bold !mt-0 !mb-0">2. Contrast & Co.</h3>
+</div>
 <div>
-<h3 class="text-xl font-bold mb-2">2. Contrast & Co.</h3>
 <p>More than <a href="https://clutch.co/agencies/creative/denver">80% of Contrast & Co.'s Clutch reviews</a> call out their communication as a standout. They handle brand identity, web development, and marketing design as an integrated package. Strong fit for companies that want one agency relationship instead of juggling three vendors.</p>
 <p><strong>Specialty:</strong> Brand identity, web development, marketing design<br>
 <strong>Best for:</strong> Companies running a full rebrand across digital and print<br>
@@ -72,10 +74,11 @@ This guide covers both options. We profile 10 Denver agencies you should know ab
 
 <div class="card bg-base-200 border border-base-300 mb-6">
 <div class="card-body">
-<div class="flex gap-4 items-start">
-<img src="https://www.google.com/s2/favicons?domain=upqode.com&sz=64" alt="UPQODE logo" class="w-12 h-12 rounded-lg shrink-0 mt-1 bg-white p-1">
+<div class="flex gap-3 items-center mb-3">
+<img src="https://www.google.com/s2/favicons?domain=upqode.com&sz=64" alt="UPQODE logo" class="w-10 h-10 rounded-lg shrink-0 bg-white p-1">
+<h3 class="text-xl font-bold !mt-0 !mb-0">3. UPQODE</h3>
+</div>
 <div>
-<h3 class="text-xl font-bold mb-2">3. UPQODE</h3>
 <p><a href="https://clutch.co/profile/upqode">UPQODE</a> combines web development with UI/UX design and technical SEO. <a href="https://clutch.co/profile/upqode#reviews">Ninety percent of reviews</a> note professionalism and on-time delivery. They build sites that are engineered to load fast and rank well, not just look good in a Figma mockup.</p>
 <p><strong>Specialty:</strong> Web development, UI/UX design, technical SEO<br>
 <strong>Best for:</strong> Businesses that need a website built for performance and organic search<br>
@@ -88,10 +91,11 @@ This guide covers both options. We profile 10 Denver agencies you should know ab
 
 <div class="card bg-base-200 border border-base-300 mb-6">
 <div class="card-body">
-<div class="flex gap-4 items-start">
-<img src="https://www.google.com/s2/favicons?domain=opieproductions.com&sz=64" alt="Opie Productions logo" class="w-12 h-12 rounded-lg shrink-0 mt-1 bg-white p-1">
+<div class="flex gap-3 items-center mb-3">
+<img src="https://www.google.com/s2/favicons?domain=opieproductions.com&sz=64" alt="Opie Productions logo" class="w-10 h-10 rounded-lg shrink-0 bg-white p-1">
+<h3 class="text-xl font-bold !mt-0 !mb-0">4. Opie Productions</h3>
+</div>
 <div>
-<h3 class="text-xl font-bold mb-2">4. Opie Productions</h3>
 <p><a href="https://www.designrush.com/agency/creative-agencies/colorado/denver">Thirty-plus years in Denver</a> gives <a href="https://www.opieproductions.com/">Opie Productions</a> a track record few competitors can match. They specialize in visually compelling websites that balance design ambition with usability. Their longevity signals stability, which matters if your project spans several months.</p>
 <p><strong>Specialty:</strong> Web design, web development<br>
 <strong>Best for:</strong> Established businesses investing in a flagship website<br>
@@ -104,10 +108,11 @@ This guide covers both options. We profile 10 Denver agencies you should know ab
 
 <div class="card bg-base-200 border border-base-300 mb-6">
 <div class="card-body">
-<div class="flex gap-4 items-start">
-<img src="https://www.google.com/s2/favicons?domain=studiomast.co&sz=64" alt="Studio Mast logo" class="w-12 h-12 rounded-lg shrink-0 mt-1 bg-white p-1">
+<div class="flex gap-3 items-center mb-3">
+<img src="https://www.google.com/s2/favicons?domain=studiomast.co&sz=64" alt="Studio Mast logo" class="w-10 h-10 rounded-lg shrink-0 bg-white p-1">
+<h3 class="text-xl font-bold !mt-0 !mb-0">5. Studio Mast</h3>
+</div>
 <div>
-<h3 class="text-xl font-bold mb-2">5. Studio Mast</h3>
 <p>A <a href="https://www.builtincolorado.com/articles/graphic-design-agencies-denver-colorado">two-creative team</a> that works with Denver locals, national brands, and UK clients. <a href="https://studiomast.co/">Studio Mast</a> does branding and nothing else. That focus means the founders are directly involved in every project. You get senior-level creative thinking from day one.</p>
 <p><strong>Specialty:</strong> Branding, identity systems<br>
 <strong>Best for:</strong> Brands that want founder-level attention on their identity<br>
@@ -120,10 +125,11 @@ This guide covers both options. We profile 10 Denver agencies you should know ab
 
 <div class="card bg-base-200 border border-base-300 mb-6">
 <div class="card-body">
-<div class="flex gap-4 items-start">
-<img src="https://www.google.com/s2/favicons?domain=twistdesigngroup.com&sz=64" alt="Twist Design Group logo" class="w-12 h-12 rounded-lg shrink-0 mt-1 bg-white p-1">
+<div class="flex gap-3 items-center mb-3">
+<img src="https://www.google.com/s2/favicons?domain=twistdesigngroup.com&sz=64" alt="Twist Design Group logo" class="w-10 h-10 rounded-lg shrink-0 bg-white p-1">
+<h3 class="text-xl font-bold !mt-0 !mb-0">6. Twist Design Group</h3>
+</div>
 <div>
-<h3 class="text-xl font-bold mb-2">6. Twist Design Group</h3>
 <p><a href="https://www.builtincolorado.com/articles/graphic-design-agencies-denver-colorado">Nearly 20 years in Denver</a>, covering branding, logo, packaging, web, trade show booths, and restaurant-specific design. <a href="https://twistdesigngroup.com/">Twist Design Group</a> is the rare agency that can handle your menu design, your storefront signage, and your website in one engagement.</p>
 <p><strong>Specialty:</strong> Branding, packaging, web, trade show, restaurant design<br>
 <strong>Best for:</strong> Brick-and-mortar businesses with physical and digital design needs<br>
@@ -136,10 +142,11 @@ This guide covers both options. We profile 10 Denver agencies you should know ab
 
 <div class="card bg-base-200 border border-base-300 mb-6">
 <div class="card-body">
-<div class="flex gap-4 items-start">
-<img src="https://www.google.com/s2/favicons?domain=tacitodesign.com&sz=64" alt="Tacito Design logo" class="w-12 h-12 rounded-lg shrink-0 mt-1 bg-white p-1">
+<div class="flex gap-3 items-center mb-3">
+<img src="https://www.google.com/s2/favicons?domain=tacitodesign.com&sz=64" alt="Tacito Design logo" class="w-10 h-10 rounded-lg shrink-0 bg-white p-1">
+<h3 class="text-xl font-bold !mt-0 !mb-0">7. Tacito Design</h3>
+</div>
 <div>
-<h3 class="text-xl font-bold mb-2">7. Tacito Design</h3>
 <p><a href="https://www.builtincolorado.com/articles/graphic-design-agencies-denver-colorado">Tacito Design</a> covers logo creation, signage, packaging, uniform design, and brand messaging. They think about brands as systems that span every customer touchpoint, from the website to the delivery truck.</p>
 <p><strong>Specialty:</strong> Logo, signage, packaging, uniforms, brand messaging<br>
 <strong>Best for:</strong> New businesses building a brand across physical and digital surfaces<br>
@@ -152,10 +159,11 @@ This guide covers both options. We profile 10 Denver agencies you should know ab
 
 <div class="card bg-base-200 border border-base-300 mb-6">
 <div class="card-body">
-<div class="flex gap-4 items-start">
-<img src="https://www.google.com/s2/favicons?domain=evergreendesignstudio.com&sz=64" alt="Evergreen Design Studio logo" class="w-12 h-12 rounded-lg shrink-0 mt-1 bg-white p-1">
+<div class="flex gap-3 items-center mb-3">
+<img src="https://www.google.com/s2/favicons?domain=evergreendesignstudio.com&sz=64" alt="Evergreen Design Studio logo" class="w-10 h-10 rounded-lg shrink-0 bg-white p-1">
+<h3 class="text-xl font-bold !mt-0 !mb-0">8. Evergreen Design Studio</h3>
+</div>
 <div>
-<h3 class="text-xl font-bold mb-2">8. Evergreen Design Studio</h3>
 <p><a href="https://www.evergreendesignstudio.com/evergreen-design-studio-awarded-top-company/">Ranked #1 on Visual Objects</a> for Denver graphic design. <a href="https://www.evergreendesignstudio.com/">Evergreen Design Studio</a> handles brand identity, marketing collateral, and digital design with a track record that has earned consistent top rankings across review platforms.</p>
 <p><strong>Specialty:</strong> Graphic design, brand identity, marketing collateral<br>
 <strong>Best for:</strong> Companies that prioritize a proven, top-rated design partner<br>
@@ -168,10 +176,11 @@ This guide covers both options. We profile 10 Denver agencies you should know ab
 
 <div class="card bg-base-200 border border-base-300 mb-6">
 <div class="card-body">
-<div class="flex gap-4 items-start">
-<img src="https://www.google.com/s2/favicons?domain=onetoncreative.com&sz=64" alt="One Ton Creative logo" class="w-12 h-12 rounded-lg shrink-0 mt-1 bg-white p-1">
+<div class="flex gap-3 items-center mb-3">
+<img src="https://www.google.com/s2/favicons?domain=onetoncreative.com&sz=64" alt="One Ton Creative logo" class="w-10 h-10 rounded-lg shrink-0 bg-white p-1">
+<h3 class="text-xl font-bold !mt-0 !mb-0">9. One Ton Creative</h3>
+</div>
 <div>
-<h3 class="text-xl font-bold mb-2">9. One Ton Creative</h3>
 <p>A boutique graphic design firm in Denver built around brand-focused work. <a href="https://www.builtincolorado.com/articles/graphic-design-agencies-denver-colorado">One Ton Creative</a> keeps their client list small, which means higher creative involvement per account. Good fit for small businesses that want a design partner who actually learns their brand.</p>
 <p><strong>Specialty:</strong> Graphic design, brand-focused creative<br>
 <strong>Best for:</strong> Small businesses wanting a dedicated, long-term design relationship<br>
@@ -184,10 +193,11 @@ This guide covers both options. We profile 10 Denver agencies you should know ab
 
 <div class="card bg-base-200 border border-base-300 mb-6">
 <div class="card-body">
-<div class="flex gap-4 items-start">
-<img src="https://www.google.com/s2/favicons?domain=rootlessagency.com&sz=64" alt="Rootless Agency logo" class="w-12 h-12 rounded-lg shrink-0 mt-1 bg-white p-1">
+<div class="flex gap-3 items-center mb-3">
+<img src="https://www.google.com/s2/favicons?domain=rootlessagency.com&sz=64" alt="Rootless Agency logo" class="w-10 h-10 rounded-lg shrink-0 bg-white p-1">
+<h3 class="text-xl font-bold !mt-0 !mb-0">10. Rootless Agency</h3>
+</div>
 <div>
-<h3 class="text-xl font-bold mb-2">10. Rootless Agency</h3>
 <p><a href="https://clutch.co/agencies/graphic-designers/denver">Rootless Agency</a> focuses on logo creation, brand design, and graphic design. Client feedback is consistently positive. They work fast, which makes them a practical choice for startups and new businesses building initial visual identity assets on a timeline.</p>
 <p><strong>Specialty:</strong> Logo creation, brand design, graphic design<br>
 <strong>Best for:</strong> Startups building their first brand identity<br>
