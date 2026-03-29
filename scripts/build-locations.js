@@ -200,7 +200,6 @@ function buildLocationPage(fileName) {
     <article class="mx-auto blog-wrap">
       <a href="/locations/" class="link link-hover text-sm">\u2190 All Locations</a>
       <header class="mt-4 mb-8">
-        <p class="text-sm text-base-content/70 mb-3">${dateDisplay} \u00b7 ${escapeXml(author)}</p>
         <h1 class="text-4xl lg:text-5xl mb-4">${escapeXml(title)}</h1>
         <p class="text-lg text-base-content/70">${escapeXml(excerpt)}</p>
       </header>
