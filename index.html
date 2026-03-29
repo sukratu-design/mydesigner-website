@@ -262,15 +262,13 @@
   </nav>
 
   <main>
-  <!-- ===== HERO ===== -->
-  <section class="py-20 lg:py-32" data-hero>
+  <!-- ===== HERO (Mobile: static layout) ===== -->
+  <section class="py-20 lg:hidden" data-hero>
     <div class="max-w-6xl mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
-        <!-- Left: headline + CTAs -->
+      <div class="grid grid-cols-1 gap-12 items-center">
         <div>
           <p class="text-sm font-semibold uppercase tracking-wider text-base-content/50 mb-4">Unlimited Design Subscription</p>
-          <h1 class="text-5xl lg:text-6xl leading-[1.05] mb-6">Your On-Demand Design Team</h1>
+          <h1 class="text-5xl leading-[1.05] mb-6">Your On-Demand Design Team</h1>
           <p class="text-lg text-base-content/65 leading-relaxed mb-8 max-w-lg">UI/UX design, Webflow &amp; Framer development, and graphic design — all in one subscription. Starting at $1,400/mo. No contracts.</p>
           <div class="flex flex-wrap gap-3 mb-5">
             <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Book a call</a>
@@ -278,8 +276,6 @@
           </div>
           <p class="text-sm text-base-content/50">No contracts. Cancel anytime. Starting at <strong>$1,400/mo</strong></p>
         </div>
-
-        <!-- Right: animated logo rings -->
         <div class="flex items-center justify-center" aria-hidden="true">
           <div class="logo-container">
             <div class="md-ring md-ring-1"></div>
@@ -288,7 +284,30 @@
             <div class="core"></div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ===== HERO (Desktop: pretext interactive layout) ===== -->
+  <section class="hidden lg:block" data-hero>
+    <div class="pretext-hero" id="pretextHero">
+      <!-- Text lines injected by pretext JS -->
+
+      <!-- CTA buttons -->
+      <div class="pretext-hero__cta" id="pretextCta">
+        <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Book a call</a>
+        <a href="/pricing.html" class="btn btn-outline btn-lg">See pricing</a>
+      </div>
+
+      <!-- Subtitle -->
+      <div class="pretext-hero__sub" id="pretextSub">No contracts. Cancel anytime. Starting at <strong>$1,400/mo</strong></div>
+
+      <!-- Obstacle: logo rings -->
+      <div class="pretext-hero__obstacle" id="pretextObstacle">
+        <div class="md-ring md-ring-3"></div>
+        <div class="md-ring md-ring-2"></div>
+        <div class="md-ring md-ring-1"></div>
+        <div class="core"></div>
       </div>
     </div>
   </section>
@@ -931,6 +950,206 @@
   </script>
   <script src="js/main.js"></script>
 
+  <!-- Pretext interactive hero (desktop only) -->
+  <script type="module">
+    if (window.innerWidth >= 1024) {
+      const { prepareWithSegments, layoutNextLine } = await import('https://esm.sh/@chenglou/pretext@0.0.3');
+
+      const LABEL = "Unlimited Design Subscription";
+      const HEADLINE = "Your On-Demand Design Team";
+      const BODY = "UI/UX design, Webflow & Framer development, and graphic design \u2014 all in one subscription. Starting at $1,400/mo. No contracts.";
+
+      const LABEL_FONT = "600 14px Inter";
+      const HEADLINE_FONT = "400 52px TheSeasons";
+      const BODY_FONT = "400 18px Inter";
+      const LABEL_LH = 20;
+      const HEADLINE_LH = 62;
+      const BODY_LH = 30;
+      const OBSTACLE_RADIUS = 160;
+      const TEXT_PADDING = 20;
+      const LERP = 0.12;
+
+      const canvas = document.getElementById('pretextHero');
+      const obstacleEl = document.getElementById('pretextObstacle');
+      const ctaBar = document.getElementById('pretextCta');
+      const subtitle = document.getElementById('pretextSub');
+
+      if (!canvas) throw new Error('pretextHero not found');
+
+      let obstacleX, obstacleY, targetX, targetY;
+      let linePool = [];
+      let animFrame = null;
+
+      const preparedHeadline = prepareWithSegments(HEADLINE, HEADLINE_FONT);
+      const preparedBody = prepareWithSegments(BODY, BODY_FONT);
+
+      function circleIntervalForBand(cx, cy, r, bandTop, bandBottom) {
+        const top = Math.max(bandTop, cy - r);
+        const bottom = Math.min(bandBottom, cy + r);
+        if (top >= bottom) return null;
+        const closestY = Math.max(bandTop, Math.min(bandBottom, cy));
+        const dy = closestY - cy;
+        const halfWidth = Math.sqrt(Math.max(0, r * r - dy * dy));
+        return { left: cx - halfWidth, right: cx + halfWidth };
+      }
+
+      function carveSlots(full, blocked) {
+        if (!blocked.length) return [full];
+        const sorted = [...blocked].sort((a, b) => a.left - b.left);
+        const slots = [];
+        let cursor = full.left;
+        for (const b of sorted) {
+          if (b.left > cursor) slots.push({ left: cursor, right: Math.min(b.left, full.right) });
+          cursor = Math.max(cursor, b.right);
+        }
+        if (cursor < full.right) slots.push({ left: cursor, right: full.right });
+        return slots.filter(s => (s.right - s.left) > 80);
+      }
+
+      function getLineEl(i) {
+        while (linePool.length <= i) {
+          const el = document.createElement('div');
+          el.className = 'pretext-hero__line';
+          canvas.appendChild(el);
+          linePool.push(el);
+        }
+        return linePool[i];
+      }
+
+      function render() {
+        const rect = canvas.getBoundingClientRect();
+        const W = rect.width;
+        const H = rect.height;
+
+        if (targetX != null) {
+          obstacleX += (targetX - obstacleX) * LERP;
+          obstacleY += (targetY - obstacleY) * LERP;
+        }
+        obstacleX = Math.max(OBSTACLE_RADIUS, Math.min(W - OBSTACLE_RADIUS, obstacleX));
+        obstacleY = Math.max(OBSTACLE_RADIUS, Math.min(H - OBSTACLE_RADIUS, obstacleY));
+        obstacleEl.style.transform = `translate(${obstacleX}px, ${obstacleY}px)`;
+
+        const padLeft = 16;
+        const regionLeft = padLeft;
+        const regionRight = W * 0.52;
+        const effectiveR = OBSTACLE_RADIUS + TEXT_PADDING;
+
+        let li = 0;
+        let y = 80;
+
+        // Label
+        const labelEl = getLineEl(li++);
+        labelEl.textContent = LABEL.toUpperCase();
+        labelEl.style.font = LABEL_FONT;
+        labelEl.style.left = `${regionLeft}px`;
+        labelEl.style.top = `${y}px`;
+        labelEl.style.color = 'rgba(0,0,0,0.45)';
+        labelEl.style.letterSpacing = '2px';
+        labelEl.style.display = '';
+        y += LABEL_LH + 20;
+
+        // Headline
+        let hCur = { segmentIndex: 0, graphemeIndex: 0 };
+        while (hCur.segmentIndex < preparedHeadline.segments.length) {
+          const blocked = [];
+          const iv = circleIntervalForBand(obstacleX, obstacleY, effectiveR, y, y + HEADLINE_LH);
+          if (iv) blocked.push(iv);
+          const slots = carveSlots({ left: regionLeft, right: regionRight }, blocked);
+          if (!slots.length) { y += HEADLINE_LH; continue; }
+          const line = layoutNextLine(preparedHeadline, hCur, slots[0].right - slots[0].left);
+          if (line) {
+            const el = getLineEl(li++);
+            el.textContent = line.text;
+            el.style.font = HEADLINE_FONT;
+            el.style.left = `${slots[0].left}px`;
+            el.style.top = `${y}px`;
+            el.style.color = '#1a1a1a';
+            el.style.letterSpacing = '-0.5px';
+            el.style.display = '';
+            hCur = line.end;
+          }
+          y += HEADLINE_LH;
+        }
+
+        y += 24;
+
+        // Body
+        let bCur = { segmentIndex: 0, graphemeIndex: 0 };
+        while (bCur.segmentIndex < preparedBody.segments.length) {
+          const blocked = [];
+          const iv = circleIntervalForBand(obstacleX, obstacleY, effectiveR, y, y + BODY_LH);
+          if (iv) blocked.push(iv);
+          const slots = carveSlots({ left: regionLeft, right: regionRight }, blocked);
+          if (!slots.length) { y += BODY_LH; continue; }
+          const line = layoutNextLine(preparedBody, bCur, slots[0].right - slots[0].left);
+          if (line) {
+            const el = getLineEl(li++);
+            el.textContent = line.text;
+            el.style.font = BODY_FONT;
+            el.style.left = `${slots[0].left}px`;
+            el.style.top = `${y}px`;
+            el.style.color = 'rgba(26,26,26,0.65)';
+            el.style.letterSpacing = '0px';
+            el.style.display = '';
+            bCur = line.end;
+          }
+          y += BODY_LH;
+        }
+
+        // CTA + subtitle
+        y += 28;
+        ctaBar.style.left = `${regionLeft}px`;
+        ctaBar.style.top = `${y}px`;
+        y += 60;
+        subtitle.style.left = `${regionLeft}px`;
+        subtitle.style.top = `${y}px`;
+
+        // Hide unused
+        for (let i = li; i < linePool.length; i++) linePool[i].style.display = 'none';
+
+        const dx = targetX != null ? targetX - obstacleX : 0;
+        const dy = targetY != null ? targetY - obstacleY : 0;
+        if (dx * dx + dy * dy > 0.5) {
+          animFrame = requestAnimationFrame(render);
+        } else {
+          animFrame = null;
+        }
+      }
+
+      function scheduleRender() {
+        if (!animFrame) animFrame = requestAnimationFrame(render);
+      }
+
+      canvas.addEventListener('pointermove', (e) => {
+        const r = canvas.getBoundingClientRect();
+        targetX = e.clientX - r.left;
+        targetY = e.clientY - r.top;
+        scheduleRender();
+      });
+
+      canvas.addEventListener('pointerleave', () => {
+        const r = canvas.getBoundingClientRect();
+        targetX = r.width * 0.72;
+        targetY = r.height * 0.42;
+        scheduleRender();
+      });
+
+      window.addEventListener('resize', () => {
+        const r = canvas.getBoundingClientRect();
+        targetX = Math.min(targetX, r.width - OBSTACLE_RADIUS);
+        targetY = Math.min(targetY, r.height - OBSTACLE_RADIUS);
+        scheduleRender();
+      });
+
+      // Init
+      const initRect = canvas.getBoundingClientRect();
+      obstacleX = initRect.width * 0.72;
+      obstacleY = initRect.height * 0.42;
+      targetX = obstacleX;
+      targetY = obstacleY;
+      render();
+    }
+  </script>
 
 </body>
 </html>

@@ -1,3 +1,59 @@
+/* ========== Pretext interactive hero (desktop) ========== */
+.pretext-hero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  min-height: 560px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+}
+
+.pretext-hero__line {
+  position: absolute;
+  white-space: nowrap;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.pretext-hero__obstacle {
+  position: absolute;
+  top: 0; left: 0;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 10;
+}
+
+/* Reuse ring styles but position centered on obstacle origin */
+.pretext-hero__obstacle .md-ring,
+.pretext-hero__obstacle .core {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: none;
+}
+
+.pretext-hero__obstacle .md-ring {
+  box-shadow: none !important;
+}
+
+.pretext-hero__cta {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 20;
+}
+
+.pretext-hero__sub {
+  position: absolute;
+  font-size: 14px;
+  color: rgba(0,0,0,0.45);
+  z-index: 20;
+  pointer-events: none;
+}
+
 /* ========== Hero rings animation ========== */
 .logo-container {
   position: relative;
