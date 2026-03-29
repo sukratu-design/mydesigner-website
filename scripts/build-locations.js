@@ -1,0 +1,266 @@
+#!/usr/bin/env node
+
+/**
+ * Build location pages from content/locations/*.md → locations/*.html
+ * Mirrors the blog build pipeline but outputs to /locations/ with
+ * location-specific schema (BreadcrumbList + WebPage).
+ */
+
+const fs = require('fs');
+const path = require('path');
+const matter = require('gray-matter');
+const { marked } = require('marked');
+
+const SITE_URL = 'https://mydesigner.gg';
+const LOCATIONS_SRC = path.join(process.cwd(), 'content', 'locations');
+const LOCATIONS_OUT = path.join(process.cwd(), 'locations');
+
+marked.setOptions({ mangle: false, headerIds: true });
+
+function ensureDir(dirPath) {
+  fs.mkdirSync(dirPath, { recursive: true });
+}
+
+function escapeXml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+function formatDisplayDate(date) {
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric', month: 'long', day: 'numeric'
+  }).format(date);
+}
+
+function pageShell({ title, description, canonicalPath, body, ogImage = '/assets/images/og-image.jpg', structuredData = [] }) {
+  const canonicalUrl = `${SITE_URL}${canonicalPath}`;
+  const imageUrl = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
+  const schemaBlocks = structuredData
+    .map((schema) => `  <script type="application/ld+json">${JSON.stringify(schema)}</script>`)
+    .join('\n');
+
+  return `<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${title}</title>
+  <meta name="description" content="${escapeXml(description)}">
+  <link rel="canonical" href="${canonicalUrl}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="${canonicalUrl}">
+  <meta property="og:title" content="${escapeXml(title)}">
+  <meta property="og:description" content="${escapeXml(description)}">
+  <meta property="og:image" content="${imageUrl}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeXml(title)}">
+  <meta name="twitter:description" content="${escapeXml(description)}">
+  <meta name="twitter:image" content="${imageUrl}">
+${schemaBlocks ? schemaBlocks + '\n' : ''}
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/daisyui@5" as="style">
+  <link rel="preload" href="/css/styles.css" as="style">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    .blog-wrap { max-width: 860px; }
+    .blog-prose h1, .blog-prose h2, .blog-prose h3, .blog-prose h4, .blog-prose h5, .blog-prose h6 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 700 !important;
+    }
+    .blog-prose h1 { font-size: 2.15rem; line-height: 1.2; }
+    .blog-prose h2 { font-size: 1.85rem; line-height: 1.25; }
+    .blog-prose h3 { font-size: 1.55rem; line-height: 1.3; }
+    .blog-prose h4 { font-size: 1.3rem; line-height: 1.35; }
+    .blog-prose h5 { font-size: 1.15rem; line-height: 1.4; }
+    .blog-prose h6 { font-size: 1.05rem; line-height: 1.45; }
+    .blog-prose p, .blog-prose li { line-height: 1.75; margin-bottom: 1rem; }
+    .blog-prose ul, .blog-prose ol { margin-left: 1.25rem; margin-bottom: 1rem; }
+    .blog-prose code { background: var(--color-base-200); border-radius: 6px; padding: 0.1rem 0.35rem; }
+    .blog-prose pre { background: var(--color-base-200); border-radius: 10px; padding: 1rem; overflow-x: auto; margin-bottom: 1rem; }
+    .blog-prose blockquote { border-left: 3px solid var(--color-base-300); padding-left: 1rem; color: color-mix(in oklab, var(--color-base-content) 75%, transparent); }
+  </style>
+</head>
+<body class="bg-base-100 text-base-content">
+  <nav class="navbar bg-base-100 sticky top-0 z-50 px-4 lg:px-8" role="navigation" aria-label="Main navigation">
+    <div class="navbar-start">
+      <a href="/" class="flex items-center gap-2 font-bold text-lg" aria-label="MyDesigner home">
+        <img src="/assets/images/mydesigner-logo.svg" alt="MyDesigner" class="h-8">
+      </a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-1">
+        <li><a href="/services.html" class="font-medium">Services</a></li>
+        <li><a href="/how-it-works.html" class="font-medium">How It Works</a></li>
+        <li><a href="/pricing.html" class="font-medium">Pricing</a></li>
+        <li><a href="/portfolio.html" class="font-medium">Portfolio</a></li>
+        <li><a href="/blog/" class="font-medium">Blog</a></li>
+        <li><a href="/faq.html" class="font-medium">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
+      <div class="dropdown dropdown-end lg:hidden">
+        <div tabindex="0" role="button" aria-label="Open menu" class="btn btn-ghost btn-square">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </div>
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/how-it-works.html">How It Works</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  ${body}
+  <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10" role="contentinfo">
+    <aside>
+      <a href="/" class="flex items-center gap-2 font-bold text-lg mb-2">
+        <img src="/assets/images/mydesigner-logo.svg" alt="MyDesigner" class="h-8">
+      </a>
+      <p class="max-w-xs">MyDesigner is an unlimited design subscription by <a href="https://sukratu.co" target="_blank" rel="noopener" class="link link-hover">Sukratu</a>. Based in Pune, India, we provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
+    </aside>
+    <nav>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Pages</p>
+      <a href="/services.html" class="link link-hover">Services</a>
+      <a href="/how-it-works.html" class="link link-hover">How It Works</a>
+      <a href="/pricing.html" class="link link-hover">Pricing</a>
+      <a href="/portfolio.html" class="link link-hover">Portfolio</a>
+      <a href="/blog/" class="link link-hover">Blog</a>
+      <a href="/faq.html" class="link link-hover">FAQ</a>
+    </nav>
+    <nav>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Compare</p>
+      <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
+      <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
+      <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
+      <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
+    </nav>
+    <nav>
+      <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Get Started</p>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
+    </nav>
+  </footer>
+  <footer class="footer sm:footer-horizontal bg-base-300 text-base-content border-t border-base-300 px-10 py-4">
+    <aside class="grid-flow-col items-center">
+      <p>&copy; 2026 MyDesigner by <a href="https://sukratu.co" target="_blank" rel="noopener" class="link link-hover">Sukratu</a>. All rights reserved.</p>
+    </aside>
+    <nav class="md:place-self-center md:justify-self-end">
+      <div class="grid grid-flow-col gap-4">
+        <a href="https://x.com/mydesigner_gg" aria-label="X (Twitter)" class="link link-hover"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/showcase/mydesigner-sukratu/?viewAsMember=true" aria-label="LinkedIn" class="link link-hover"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://instagram.com/mydesigner.gg" aria-label="Instagram" class="link link-hover"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+      </div>
+    </nav>
+  </footer>
+</body>
+</html>
+`;
+}
+
+function buildLocationPage(fileName) {
+  const fullPath = path.join(LOCATIONS_SRC, fileName);
+  const raw = fs.readFileSync(fullPath, 'utf8');
+  const { data, content } = matter(raw);
+
+  const title = String(data.title || '').trim();
+  const excerpt = String(data.excerpt || '').trim();
+  const slug = String(data.slug || '').trim() || fileName.replace(/\.md$/, '');
+  const author = String(data.author || 'MyDesigner Team').trim();
+  const coverImage = String(data.coverImage || '').trim();
+  const draft = Boolean(data.draft);
+  const dateValue = new Date(data.date);
+  const dateDisplay = formatDisplayDate(dateValue);
+
+  if (draft) return null;
+  if (!title || !excerpt) {
+    console.error(`Skipping ${fileName}: missing title or excerpt`);
+    return null;
+  }
+
+  const htmlContent = marked.parse(content);
+
+  const cover = coverImage
+    ? `<img src="${coverImage}" alt="${escapeXml(title)}" class="w-full rounded-box border border-base-300 mb-8">`
+    : '';
+
+  const body = `<main class="px-4 py-12 lg:py-16">
+    <article class="mx-auto blog-wrap">
+      <a href="/locations/" class="link link-hover text-sm">\u2190 All Locations</a>
+      <header class="mt-4 mb-8">
+        <p class="text-sm text-base-content/70 mb-3">${dateDisplay} \u00b7 ${escapeXml(author)}</p>
+        <h1 class="text-4xl lg:text-5xl mb-4">${escapeXml(title)}</h1>
+        <p class="text-lg text-base-content/70">${escapeXml(excerpt)}</p>
+      </header>
+      ${cover}
+      <section class="blog-prose">${htmlContent}</section>
+    </article>
+  </main>`;
+
+  const pageUrl = `/locations/${slug}.html`;
+  const ogImage = coverImage || '/assets/images/og-image.jpg';
+
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Locations', item: `${SITE_URL}/locations/` },
+        { '@type': 'ListItem', position: 3, name: title, item: `${SITE_URL}${pageUrl}` }
+      ]
+    }
+  ];
+
+  const html = pageShell({
+    title: `${title} | MyDesigner`,
+    description: excerpt,
+    canonicalPath: pageUrl,
+    ogImage,
+    body,
+    structuredData
+  });
+
+  return { slug, html };
+}
+
+// --- Main ---
+function main() {
+  if (!fs.existsSync(LOCATIONS_SRC)) {
+    console.log('No content/locations/ directory found, skipping locations build.');
+    return;
+  }
+
+  const files = fs.readdirSync(LOCATIONS_SRC).filter((f) => f.endsWith('.md')).sort();
+  if (files.length === 0) {
+    console.log('No location pages found.');
+    return;
+  }
+
+  ensureDir(LOCATIONS_OUT);
+
+  let built = 0;
+  for (const file of files) {
+    const result = buildLocationPage(file);
+    if (!result) continue;
+    const outPath = path.join(LOCATIONS_OUT, `${result.slug}.html`);
+    fs.writeFileSync(outPath, result.html);
+    built++;
+  }
+
+  console.log(`Built locations: ${built} published pages`);
+}
+
+main();

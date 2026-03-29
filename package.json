@@ -4,9 +4,10 @@
   "version": "1.0.0",
   "description": "MyDesigner marketing site and customer portal",
   "scripts": {
-    "build": "npm run build:blog && npm run build:portfolio",
+    "build": "npm run build:blog && npm run build:portfolio && npm run build:locations",
     "build:blog": "node scripts/build-blog.js",
     "build:portfolio": "node scripts/build-portfolio.js",
+    "build:locations": "node scripts/build-locations.js",
     "test": "echo \"No tests configured\""
   },
   "dependencies": {

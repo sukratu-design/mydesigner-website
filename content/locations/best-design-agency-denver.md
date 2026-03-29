@@ -4,7 +4,7 @@ slug: best-design-agency-denver
 excerpt: "Denver's top design agencies ranked by specialty, pricing, and real reviews. Includes cost math comparing local agencies vs. remote design subscriptions."
 date: 2026-03-29T12:00
 author: MyDesigner Team
-coverImage: /assets/images/blog/best-design-agency-denver-cover.jpg
+coverImage: /assets/images/locations/best-design-agency-denver-cover.jpg
 draft: false
 ---
 
@@ -233,10 +233,10 @@ Local agencies typically quote 1-3 week timelines for new projects, with discove
 
 Looking for design agencies in other cities? Check out our guides:
 
-- [Best Design Agency in Austin](/blog/best-design-agency-austin)
-- [Best Design Agency in Chicago](/blog/best-design-agency-chicago)
-- [Best Design Agency in Los Angeles](/blog/best-design-agency-los-angeles)
-- [Best Design Agency in New York](/blog/best-design-agency-new-york)
-- [Best Design Agency in San Francisco](/blog/best-design-agency-san-francisco)
-- [Best Design Agency in Seattle](/blog/best-design-agency-seattle)
-- [Best Design Agency in Miami](/blog/best-design-agency-miami)
+- [Best Design Agency in Austin](/locations/best-design-agency-austin)
+- [Best Design Agency in Chicago](/locations/best-design-agency-chicago)
+- [Best Design Agency in Los Angeles](/locations/best-design-agency-los-angeles)
+- [Best Design Agency in New York](/locations/best-design-agency-new-york)
+- [Best Design Agency in San Francisco](/locations/best-design-agency-san-francisco)
+- [Best Design Agency in Seattle](/locations/best-design-agency-seattle)
+- [Best Design Agency in Miami](/locations/best-design-agency-miami)
