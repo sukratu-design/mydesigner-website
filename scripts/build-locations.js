@@ -198,8 +198,7 @@ function buildLocationPage(fileName) {
 
   const body = `<main class="px-4 py-12 lg:py-16">
     <article class="mx-auto blog-wrap">
-      <a href="/locations/" class="link link-hover text-sm">\u2190 All Locations</a>
-      <header class="mt-4 mb-8">
+      <header class="mb-8">
         <h1 class="text-4xl lg:text-5xl mb-4">${escapeXml(title)}</h1>
         <p class="text-lg text-base-content/70">${escapeXml(excerpt)}</p>
       </header>
