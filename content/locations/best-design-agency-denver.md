@@ -45,7 +45,7 @@ This guide covers both options. We profile 10 Denver agencies you should know ab
 <h3 class="text-xl font-bold !mt-0 !mb-0">1. Savage Creative</h3>
 </div>
 <div>
-<p><a href="https://clutch.co/profile/savage-creative">Savage Creative</a> carries <a href="https://clutch.co/profile/savage-creative#reviews">100% positive reviews on Clutch</a> and focuses on brand strategy tied to market positioning. They do not just design logos. They build brand systems that connect visual identity to competitive differentiation. Their website design work follows the same strategic framework.</p>
+<p><a href="https://savagecreative.com/">Savage Creative</a> carries <a href="https://clutch.co/profile/savage-creative#reviews">100% positive reviews on Clutch</a> and focuses on brand strategy tied to market positioning. They do not just design logos. They build brand systems that connect visual identity to competitive differentiation. Their website design work follows the same strategic framework.</p>
 <p><strong>Specialty:</strong> Brand strategy, website design, market differentiation<br>
 <strong>Best for:</strong> Mid-market companies repositioning against entrenched competitors<br>
 <strong>Typical cost:</strong> <a href="https://clutch.co/agencies/design/denver">$10,000-$30,000 per engagement</a><br>
@@ -62,7 +62,7 @@ This guide covers both options. We profile 10 Denver agencies you should know ab
 <h3 class="text-xl font-bold !mt-0 !mb-0">2. Contrast & Co.</h3>
 </div>
 <div>
-<p>More than <a href="https://clutch.co/agencies/creative/denver">80% of Contrast & Co.'s Clutch reviews</a> call out their communication as a standout. They handle brand identity, web development, and marketing design as an integrated package. Strong fit for companies that want one agency relationship instead of juggling three vendors.</p>
+<p><a href="https://contrastandco.com/">Contrast & Co.</a> has more than <a href="https://clutch.co/agencies/creative/denver">80% of Clutch reviews</a> calling out their communication as a standout. They handle brand identity, web development, and marketing design as an integrated package. Strong fit for companies that want one agency relationship instead of juggling three vendors.</p>
 <p><strong>Specialty:</strong> Brand identity, web development, marketing design<br>
 <strong>Best for:</strong> Companies running a full rebrand across digital and print<br>
 <strong>Typical cost:</strong> <a href="https://clutch.co/agencies/design/denver">$8,000-$25,000 per engagement</a><br>
@@ -79,7 +79,7 @@ This guide covers both options. We profile 10 Denver agencies you should know ab
 <h3 class="text-xl font-bold !mt-0 !mb-0">3. UPQODE</h3>
 </div>
 <div>
-<p><a href="https://clutch.co/profile/upqode">UPQODE</a> combines web development with UI/UX design and technical SEO. <a href="https://clutch.co/profile/upqode#reviews">Ninety percent of reviews</a> note professionalism and on-time delivery. They build sites that are engineered to load fast and rank well, not just look good in a Figma mockup.</p>
+<p><a href="https://upqode.com/">UPQODE</a> combines web development with UI/UX design and technical SEO. <a href="https://clutch.co/profile/upqode#reviews">Ninety percent of reviews</a> note professionalism and on-time delivery. They build sites that are engineered to load fast and rank well, not just look good in a Figma mockup.</p>
 <p><strong>Specialty:</strong> Web development, UI/UX design, technical SEO<br>
 <strong>Best for:</strong> Businesses that need a website built for performance and organic search<br>
 <strong>Typical cost:</strong> <a href="https://clutch.co/agencies/design/denver">$5,000-$20,000 per project</a><br>
