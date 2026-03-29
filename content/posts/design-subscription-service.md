@@ -24,7 +24,8 @@ Here is what the market looks like right now, condensed:
 
 **Quick comparison of the top providers:**
 
-<table>
+<div class="overflow-x-auto">
+<table class="table table-zebra bg-base-100 rounded-box">
   <thead>
     <tr>
       <th>Provider</th>
@@ -77,15 +78,16 @@ Here is what the market looks like right now, condensed:
       <td>Large team</td>
       <td>12-24 hours</td>
     </tr>
-    <tr>
-      <td><strong>MyDesigner</strong></td>
-      <td><strong>$1,400/mo</strong></td>
-      <td><strong>1-3</strong></td>
-      <td><strong>4 specialist designers + web developer</strong></td>
-      <td><strong>24-72 hours</strong></td>
+    <tr class="font-semibold">
+      <td>MyDesigner</td>
+      <td>$1,400/mo</td>
+      <td>1-3</td>
+      <td>4 specialist designers + web developer</td>
+      <td>24-72 hours</td>
     </tr>
   </tbody>
 </table>
+</div>
 
 ---
 
@@ -118,14 +120,56 @@ An agency charges $150-$300/hour. A single website project ranges from $10,000-$
 
 **Break-even analysis:**
 
-| Hiring Model | Monthly Cost | Requests/Month | Cost Per Request |
-|---|---|---|---|
-| Full-time designer (US) | $6,700-$10,800 | 10-15 | $450-$1,080 |
-| Freelancer ($100/hr avg) | $4,000-$8,000 | 5-8 | $500-$1,600 |
-| Agency ($200/hr avg) | $8,000-$20,000 | 3-5 | $1,600-$6,667 |
-| Budget subscription | $499-$549 | 8-12 | $42-$69 |
-| Mid-tier subscription | $1,400-$2,600 | 10-15 | $93-$260 |
-| Premium subscription | $5,995-$6,000 | 8-12 | $500-$750 |
+<div class="overflow-x-auto">
+<table class="table table-zebra bg-base-100 rounded-box">
+  <thead>
+    <tr>
+      <th>Hiring Model</th>
+      <th>Monthly Cost</th>
+      <th>Requests/Month</th>
+      <th>Cost Per Request</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Full-time designer (US)</td>
+      <td>$6,700-$10,800</td>
+      <td>10-15</td>
+      <td>$450-$1,080</td>
+    </tr>
+    <tr>
+      <td>Freelancer ($100/hr avg)</td>
+      <td>$4,000-$8,000</td>
+      <td>5-8</td>
+      <td>$500-$1,600</td>
+    </tr>
+    <tr>
+      <td>Agency ($200/hr avg)</td>
+      <td>$8,000-$20,000</td>
+      <td>3-5</td>
+      <td>$1,600-$6,667</td>
+    </tr>
+    <tr>
+      <td>Budget subscription</td>
+      <td>$499-$549</td>
+      <td>8-12</td>
+      <td>$42-$69</td>
+    </tr>
+    <tr class="font-semibold">
+      <td>Mid-tier subscription</td>
+      <td>$1,400-$2,600</td>
+      <td>10-15</td>
+      <td>$93-$260</td>
+    </tr>
+    <tr>
+      <td>Premium subscription</td>
+      <td>$5,995-$6,000</td>
+      <td>8-12</td>
+      <td>$500-$750</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 The break-even point: if you need more than 5 design deliverables per month, a subscription beats freelancers. If you need more than 3, it beats agencies. A full-time hire only wins when you need someone embedded in daily standups and product meetings 40 hours a week.
 
@@ -154,7 +198,8 @@ This team model means your Instagram carousel is built by someone who lives in t
 
 The pricing landscape is wide. Here is how MyDesigner stacks against three popular alternatives across plan tiers:
 
-<table>
+<div class="overflow-x-auto">
+<table class="table table-zebra bg-base-100 rounded-box">
   <thead>
     <tr>
       <th>Feature</th>
@@ -165,7 +210,7 @@ The pricing landscape is wide. Here is how MyDesigner stacks against three popul
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr class="font-semibold">
       <td>Monthly Price</td>
       <td>$2,600</td>
       <td>$5,995</td>
@@ -223,6 +268,7 @@ The pricing landscape is wide. Here is how MyDesigner stacks against three popul
     </tr>
   </tbody>
 </table>
+</div>
 
 For deeper breakdowns: [MyDesigner vs. Kimp](/vs/kimp.html) | [MyDesigner vs. Penji](/vs/penji.html) | [MyDesigner vs. Designjoy](/vs/designjoy.html)
 
@@ -232,14 +278,56 @@ For deeper breakdowns: [MyDesigner vs. Kimp](/vs/kimp.html) | [MyDesigner vs. Pe
 
 **Methodology:** We calculated the effective cost per design request for a company submitting 10 requests/month across 12 months at each provider's mid-tier plan. This accounts for the monthly fee only (no setup costs, no add-ons).
 
-| Provider | Annual Spend | Total Requests (120) | Cost Per Request |
-|---|---|---|---|
-| Penji Pro | $8,388 | 120 | $69.90 |
-| MyDesigner Starter | $16,800 | 120 | $140.00 |
-| Kimp Combined | $20,364 | 120 | $169.70 |
-| MyDesigner Growth | $31,200 | 120 | $260.00 |
-| Designjoy | $71,940 | 120 | $599.50 |
-| Superside | $72,000+ | 120 | $600.00+ |
+<div class="overflow-x-auto">
+<table class="table table-zebra bg-base-100 rounded-box">
+  <thead>
+    <tr>
+      <th>Provider</th>
+      <th>Annual Spend</th>
+      <th>Total Requests (120)</th>
+      <th>Cost Per Request</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Penji Pro</td>
+      <td>$8,388</td>
+      <td>120</td>
+      <td>$69.90</td>
+    </tr>
+    <tr class="font-semibold">
+      <td>MyDesigner Starter</td>
+      <td>$16,800</td>
+      <td>120</td>
+      <td>$140.00</td>
+    </tr>
+    <tr>
+      <td>Kimp Combined</td>
+      <td>$20,364</td>
+      <td>120</td>
+      <td>$169.70</td>
+    </tr>
+    <tr class="font-semibold">
+      <td>MyDesigner Growth</td>
+      <td>$31,200</td>
+      <td>120</td>
+      <td>$260.00</td>
+    </tr>
+    <tr>
+      <td>Designjoy</td>
+      <td>$71,940</td>
+      <td>120</td>
+      <td>$599.50</td>
+    </tr>
+    <tr>
+      <td>Superside</td>
+      <td>$72,000+</td>
+      <td>120</td>
+      <td>$600.00+</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 **Analysis:** Budget providers win on raw per-request cost. But the calculation changes when you factor in revision rounds, quality consistency, and whether the output ships without internal rework. A $70 deliverable that requires 3 hours of internal cleanup costs more than a $260 deliverable that ships as-is. MyDesigner's $15,000/year plan drops the annual cost to $125 per request while maintaining the full specialist team.
 
@@ -306,13 +394,56 @@ All plans at MyDesigner are month-to-month with no contract. Cancel anytime and 
 
 ## MyDesigner Plans at a Glance
 
-| Plan | Price | Concurrent Requests | Turnaround | Key Feature |
-|---|---|---|---|---|
-| Daily | $80/day (3-day min) | 1 | Same-day to 24hr | Pay only when you need it |
-| Starter | $1,400/mo | 1 | 48-72 hours | Full specialist team access |
-| Growth | $2,600/mo | 2 | 24-48 hours | Dedicated design manager |
-| Scale | $3,800/mo | 3 | Fastest | Dedicated team, priority queue |
-| Yearly | $15,000/year | 1 | 48-72 hours | Best annual value |
+<div class="overflow-x-auto">
+<table class="table table-zebra bg-base-100 rounded-box">
+  <thead>
+    <tr>
+      <th>Plan</th>
+      <th>Price</th>
+      <th>Concurrent Requests</th>
+      <th>Turnaround</th>
+      <th>Key Feature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Daily</td>
+      <td>$80/day (3-day min)</td>
+      <td>1</td>
+      <td>Same-day to 24hr</td>
+      <td>Pay only when you need it</td>
+    </tr>
+    <tr>
+      <td>Starter</td>
+      <td>$1,400/mo</td>
+      <td>1</td>
+      <td>48-72 hours</td>
+      <td>Full specialist team access</td>
+    </tr>
+    <tr class="font-semibold">
+      <td>Growth</td>
+      <td>$2,600/mo</td>
+      <td>2</td>
+      <td>24-48 hours</td>
+      <td>Dedicated design manager</td>
+    </tr>
+    <tr>
+      <td>Scale</td>
+      <td>$3,800/mo</td>
+      <td>3</td>
+      <td>Fastest</td>
+      <td>Dedicated team, priority queue</td>
+    </tr>
+    <tr>
+      <td>Yearly</td>
+      <td>$15,000/year</td>
+      <td>1</td>
+      <td>48-72 hours</td>
+      <td>Best annual value</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 All plans include unlimited revisions, no contracts, and the full 4-designer + web dev team.
 
