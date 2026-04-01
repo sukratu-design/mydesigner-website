@@ -14,7 +14,7 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://identity.netlify.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' https: data:; font-src 'self' https:; connect-src 'self' https://api.convertkit.com https://www.google-analytics.com https://region1.google-analytics.com; frame-src https://calendar.app.google; frame-ancestors 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://identity.netlify.com https://unpkg.com https://esm.sh; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' https: data:; font-src 'self' https:; connect-src 'self' https://api.convertkit.com https://www.google-analytics.com https://region1.google-analytics.com https://www.google.com; frame-src https://calendar.app.google; frame-ancestors 'self'"
 
 # Force clean URLs: redirect .html to extensionless (except index.html files)
 [[redirects]]
