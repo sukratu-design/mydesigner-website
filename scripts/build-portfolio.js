@@ -65,12 +65,12 @@ const NAV = `
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1 gap-1">
-        <li><a href="/services.html" class="font-medium">Services</a></li>
-        <li><a href="/how-it-works.html" class="font-medium">How It Works</a></li>
-        <li><a href="/pricing.html" class="font-medium">Pricing</a></li>
-        <li><a href="/portfolio.html" class="font-medium">Portfolio</a></li>
+        <li><a href="/services" class="font-medium">Services</a></li>
+        <li><a href="/how-it-works" class="font-medium">How It Works</a></li>
+        <li><a href="/pricing" class="font-medium">Pricing</a></li>
+        <li><a href="/portfolio" class="font-medium">Portfolio</a></li>
         <li><a href="/blog/" class="font-medium">Blog</a></li>
-        <li><a href="/faq.html" class="font-medium">FAQ</a></li>
+        <li><a href="/faq" class="font-medium">FAQ</a></li>
       </ul>
     </div>
     <div class="navbar-end gap-2">
@@ -80,12 +80,12 @@ const NAV = `
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </div>
         <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
-          <li><a href="/services.html">Services</a></li>
-          <li><a href="/how-it-works.html">How It Works</a></li>
-          <li><a href="/pricing.html">Pricing</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/faq">FAQ</a></li>
           <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
         </ul>
       </div>
@@ -102,19 +102,19 @@ const FOOTER = `
     </aside>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Pages</p>
-      <a href="/services.html" class="link link-hover">Services</a>
-      <a href="/how-it-works.html" class="link link-hover">How It Works</a>
-      <a href="/pricing.html" class="link link-hover">Pricing</a>
-      <a href="/portfolio.html" class="link link-hover">Portfolio</a>
+      <a href="/services" class="link link-hover">Services</a>
+      <a href="/how-it-works" class="link link-hover">How It Works</a>
+      <a href="/pricing" class="link link-hover">Pricing</a>
+      <a href="/portfolio" class="link link-hover">Portfolio</a>
       <a href="/blog/" class="link link-hover">Blog</a>
-      <a href="/faq.html" class="link link-hover">FAQ</a>
+      <a href="/faq" class="link link-hover">FAQ</a>
     </nav>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Compare</p>
-      <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
-      <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
-      <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
-      <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
+      <a href="/vs/designjoy" class="link link-hover">vs DesignJoy</a>
+      <a href="/vs/penji" class="link link-hover">vs Penji</a>
+      <a href="/vs/manypixels" class="link link-hover">vs ManyPixels</a>
+      <a href="/vs/kimp" class="link link-hover">vs Kimp</a>
     </nav>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Get Started</p>
@@ -136,14 +136,14 @@ const FOOTER = `
 
 function filterTabs(activeSlug) {
   const tabs = [
-    { label: 'All', href: '/portfolio.html' },
+    { label: 'All', href: '/portfolio' },
     { label: 'UI/UX Design', href: '/portfolio/ui-ux-design' },
     { label: 'Web Development', href: '/portfolio/web-development' },
     { label: 'Graphic Design', href: '/portfolio/graphic-design' },
     { label: 'Branding', href: '/portfolio/branding' },
   ];
   return tabs.map(t => {
-    const active = (activeSlug === null && t.href === '/portfolio.html') || t.href.endsWith(activeSlug)
+    const active = (activeSlug === null && t.href === '/portfolio') || t.href.endsWith(activeSlug)
       ? 'btn-active' : '';
     return `<a href="${t.href}" class="btn btn-sm ${active}">${t.label}</a>`;
   }).join('\n        ');
@@ -155,7 +155,7 @@ function projectCard(p) {
     : p.thumb;
   return `
         <div>
-          <a href="/work/${p.slug}.html" class="block group">
+          <a href="/work/${p.slug}" class="block group">
             <div class="card bg-base-100 shadow-sm hover:shadow-lg transition-shadow overflow-hidden">
               <figure class="overflow-hidden"><img src="${thumb}" width="800" height="450" alt="${p.title}" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy"></figure>
               <div class="card-body p-4">
@@ -207,7 +207,7 @@ function buildPage(cat) {
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mydesigner.gg/"},
-      {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://mydesigner.gg/portfolio.html"},
+      {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://mydesigner.gg/portfolio"},
       {"@type": "ListItem", "position": 3, "name": "${cat.title}", "item": "${url}"}
     ]
   }
@@ -224,7 +224,7 @@ ${NAV}
     <header class="py-16 lg:py-24 text-center">
       <div class="max-w-4xl mx-auto px-4">
         <div class="breadcrumbs text-sm mb-8 mx-auto w-fit">
-          <ul><li><a href="/">Home</a></li><li><a href="/portfolio.html">Portfolio</a></li><li>${cat.title}</li></ul>
+          <ul><li><a href="/">Home</a></li><li><a href="/portfolio">Portfolio</a></li><li>${cat.title}</li></ul>
         </div>
         <h1 class="text-4xl lg:text-5xl font-bold">${cat.heading}</h1>
         <p class="text-lg lg:text-xl opacity-70 mt-4 max-w-2xl mx-auto">${cat.description}</p>

@@ -192,7 +192,7 @@
 
   var cards = related.map(function(p) {
     return [
-      '<a href="/work/' + p.slug + '.html" class="block group">',
+      '<a href="/work/' + p.slug + '" class="block group">',
         '<div class="card bg-base-100 border border-base-200 hover:shadow-lg transition-shadow overflow-hidden">',
           '<figure class="overflow-hidden">',
             '<img src="' + p.thumb + '" alt="' + p.title + '" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">',

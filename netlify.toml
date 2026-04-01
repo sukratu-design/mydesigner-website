@@ -5,6 +5,14 @@
 [functions]
   directory = "netlify/functions"
 
+# Force clean URLs: redirect .html to extensionless (except index.html files)
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat"
+  status = 301
+  force = true
+
+# Portfolio category rewrites (clean URL → .html file)
 [[redirects]]
   from = "/portfolio/ui-ux-design"
   to = "/portfolio/ui-ux-design.html"

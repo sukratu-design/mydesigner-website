@@ -18,42 +18,42 @@ const PROJECTS = require('../data/projects.js');
 
 const STATIC_SITEMAP_PAGES = [
   { loc: '/', lastmod: '2026-02-10', changefreq: 'weekly', priority: '1.0' },
-  { loc: '/pricing.html', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.9' },
-  { loc: '/services.html', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/how-it-works.html', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/faq.html', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
-  { loc: '/portfolio.html', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
+  { loc: '/pricing', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.9' },
+  { loc: '/services', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/how-it-works', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/faq', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
+  { loc: '/portfolio', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
   { loc: '/vs/', lastmod: '2026-02-11', changefreq: 'monthly', priority: '0.7' },
-  { loc: '/vs/designjoy.html', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
-  { loc: '/vs/penji.html', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
-  { loc: '/vs/manypixels.html', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
-  { loc: '/vs/kimp.html', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
-  { loc: '/services/framer-development.html', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/services/webflow-development.html', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/services/web-app-design.html', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/services/website-design.html', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/services/brand-identity.html', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/services/presentation-design.html', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/services/booth-designs.html', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/services/social-media-creatives.html', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/work/neustreet.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/dentaldost.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/slash.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/vettly.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/ahhf.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/contractwrangler.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/poocho-app.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/poocho-website.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/fluentpet.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/uber-cards.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/scano.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/dentsu.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/travelsaving.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/nada.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/apollo-radiology.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/ecstra.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/yespl.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
-  { loc: '/work/mda.html', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' }
+  { loc: '/vs/designjoy', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
+  { loc: '/vs/penji', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
+  { loc: '/vs/manypixels', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
+  { loc: '/vs/kimp', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
+  { loc: '/services/framer-development', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/services/webflow-development', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/services/web-app-design', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/services/website-design', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/services/brand-identity', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/services/presentation-design', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/services/booth-designs', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/services/social-media-creatives', lastmod: '2026-03-04', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/work/neustreet', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/dentaldost', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/slash', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/vettly', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/ahhf', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/contractwrangler', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/poocho-app', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/poocho-website', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/fluentpet', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/uber-cards', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/scano', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/dentsu', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/travelsaving', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/nada', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/apollo-radiology', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/ecstra', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/yespl', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' },
+  { loc: '/work/mda', lastmod: '2026-02-10', changefreq: 'yearly', priority: '0.6' }
 ];
 
 marked.setOptions({
@@ -209,12 +209,12 @@ ${schemaBlocks ? schemaBlocks + '\n' : ''}
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1 gap-1">
-        <li><a href="/services.html" class="font-medium">Services</a></li>
-        <li><a href="/how-it-works.html" class="font-medium">How It Works</a></li>
-        <li><a href="/pricing.html" class="font-medium">Pricing</a></li>
-        <li><a href="/portfolio.html" class="font-medium">Portfolio</a></li>
+        <li><a href="/services" class="font-medium">Services</a></li>
+        <li><a href="/how-it-works" class="font-medium">How It Works</a></li>
+        <li><a href="/pricing" class="font-medium">Pricing</a></li>
+        <li><a href="/portfolio" class="font-medium">Portfolio</a></li>
         <li><a href="/blog/" class="font-medium">Blog</a></li>
-        <li><a href="/faq.html" class="font-medium">FAQ</a></li>
+        <li><a href="/faq" class="font-medium">FAQ</a></li>
       </ul>
     </div>
     <div class="navbar-end gap-2">
@@ -224,12 +224,12 @@ ${schemaBlocks ? schemaBlocks + '\n' : ''}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </div>
         <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
-          <li><a href="/services.html">Services</a></li>
-          <li><a href="/how-it-works.html">How It Works</a></li>
-          <li><a href="/pricing.html">Pricing</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/faq">FAQ</a></li>
           <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
         </ul>
       </div>
@@ -245,19 +245,19 @@ ${schemaBlocks ? schemaBlocks + '\n' : ''}
     </aside>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Pages</p>
-      <a href="/services.html" class="link link-hover">Services</a>
-      <a href="/how-it-works.html" class="link link-hover">How It Works</a>
-      <a href="/pricing.html" class="link link-hover">Pricing</a>
-      <a href="/portfolio.html" class="link link-hover">Portfolio</a>
+      <a href="/services" class="link link-hover">Services</a>
+      <a href="/how-it-works" class="link link-hover">How It Works</a>
+      <a href="/pricing" class="link link-hover">Pricing</a>
+      <a href="/portfolio" class="link link-hover">Portfolio</a>
       <a href="/blog/" class="link link-hover">Blog</a>
-      <a href="/faq.html" class="link link-hover">FAQ</a>
+      <a href="/faq" class="link link-hover">FAQ</a>
     </nav>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Compare</p>
-      <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
-      <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
-      <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
-      <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
+      <a href="/vs/designjoy" class="link link-hover">vs DesignJoy</a>
+      <a href="/vs/penji" class="link link-hover">vs Penji</a>
+      <a href="/vs/manypixels" class="link link-hover">vs ManyPixels</a>
+      <a href="/vs/kimp" class="link link-hover">vs Kimp</a>
     </nav>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Get Started</p>
@@ -343,10 +343,10 @@ function buildBlogIndex(posts) {
         ${cover}
         <div class="card-body">
           <div class="text-sm text-base-content/70">${post.dateDisplay} · ${escapeXml(post.author)}</div>
-          <h2 class="card-title text-2xl"><a class="hover:underline" href="/blog/${post.slug}.html">${escapeXml(post.title)}</a></h2>
+          <h2 class="card-title text-2xl"><a class="hover:underline" href="/blog/${post.slug}">${escapeXml(post.title)}</a></h2>
           <p>${escapeXml(post.excerpt)}</p>
           <div class="card-actions justify-end">
-            <a class="btn btn-primary btn-sm" href="/blog/${post.slug}.html">Read article</a>
+            <a class="btn btn-primary btn-sm" href="/blog/${post.slug}">Read article</a>
           </div>
         </div>
       </article>`;
@@ -394,7 +394,7 @@ function buildBlogPostPage(post) {
   </main>`;
 
   const ogImage = post.coverImage || '/assets/images/og-image.jpg';
-  const postUrl = `${SITE_URL}/blog/${post.slug}.html`;
+  const postUrl = `${SITE_URL}/blog/${post.slug}`;
   const imageUrl = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
 
   const structuredData = [
@@ -433,7 +433,7 @@ function buildBlogPostPage(post) {
   return pageShell({
     title: `${post.title} | MyDesigner Blog`,
     description: post.excerpt,
-    canonicalPath: `/blog/${post.slug}.html`,
+    canonicalPath: `/blog/${post.slug}`,
     ogType: 'article',
     ogImage,
     body,
@@ -445,7 +445,7 @@ function buildRss(posts) {
   const latest = posts[0] ? posts[0].date.toUTCString() : new Date().toUTCString();
   const items = posts
     .map((post) => {
-      const postUrl = `${SITE_URL}/blog/${post.slug}.html`;
+      const postUrl = `${SITE_URL}/blog/${post.slug}`;
       return `<item>
       <title>${escapeXml(post.title)}</title>
       <link>${postUrl}</link>
@@ -472,6 +472,22 @@ function buildRss(posts) {
 `;
 }
 
+function getLocationPages() {
+  const locDir = path.join(process.cwd(), 'content', 'locations');
+  if (!fs.existsSync(locDir)) return [];
+  return fs.readdirSync(locDir)
+    .filter((f) => f.endsWith('.md'))
+    .map((f) => {
+      const raw = fs.readFileSync(path.join(locDir, f), 'utf8');
+      const { data } = matter(raw);
+      if (data.draft) return null;
+      const slug = String(data.slug || '').trim() || f.replace(/\.md$/, '');
+      const date = data.date ? toIsoDateOnly(new Date(data.date)) : toIsoDateOnly(new Date());
+      return { loc: `/locations/${slug}`, lastmod: date, changefreq: 'monthly', priority: '0.6' };
+    })
+    .filter(Boolean);
+}
+
 function buildSitemap(posts) {
   const dynamicPages = [
     ...STATIC_SITEMAP_PAGES,
@@ -482,11 +498,12 @@ function buildSitemap(posts) {
       priority: '0.8'
     },
     ...posts.map((post) => ({
-      loc: `/blog/${post.slug}.html`,
+      loc: `/blog/${post.slug}`,
       lastmod: post.dateOnly,
       changefreq: 'monthly',
       priority: '0.7'
-    }))
+    })),
+    ...getLocationPages()
   ];
 
   const urls = dynamicPages
@@ -523,7 +540,7 @@ function buildHomepageCarousel(posts) {
           <h3 class="card-title text-base leading-snug line-clamp-2">${escapeXml(post.title)}</h3>
           <p class="text-sm text-base-content/70 line-clamp-3 flex-1">${escapeXml(post.excerpt)}</p>
           <div class="card-actions justify-end pt-2">
-            <a href="/blog/${post.slug}.html" class="btn btn-primary btn-sm">Read &rarr;</a>
+            <a href="/blog/${post.slug}" class="btn btn-primary btn-sm">Read &rarr;</a>
           </div>
         </div>
       </div>
@@ -774,7 +791,7 @@ function buildServicePage(config) {
 
   const projectCards = categoryProjects.map((p) => `
         <div class="portfolio-item" data-category="${p.category}">
-          <a href="/work/${p.slug}.html" class="block group">
+          <a href="/work/${p.slug}" class="block group">
             <div class="card bg-base-100 border border-base-200 hover:shadow-lg transition-shadow overflow-hidden">
               <figure class="overflow-hidden">
                 <img src="${p.thumb}" alt="${escapeXml(p.title)}" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
@@ -818,8 +835,8 @@ function buildServicePage(config) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
-      { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services.html` },
-      { '@type': 'ListItem', position: 3, name: config.label, item: `${SITE_URL}/services/${config.slug}.html` }
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services` },
+      { '@type': 'ListItem', position: 3, name: config.label, item: `${SITE_URL}/services/${config.slug}` }
     ]
   };
 
@@ -843,7 +860,7 @@ function buildServicePage(config) {
   const valuerop = config.valuerop || `Expert ${config.label} for Growing Startups`;
   const metaTitle = `${config.label} — MyDesigner | ${valuerop}`;
   const metaDesc = config.metaDescription || config.subheadline;
-  const canonicalPath = `/services/${config.slug}.html`;
+  const canonicalPath = `/services/${config.slug}`;
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
 
   const body = `
@@ -857,14 +874,14 @@ function buildServicePage(config) {
     <section class="py-16 lg:py-24 text-center" data-hero>
       <div class="max-w-4xl mx-auto px-4">
         <div class="breadcrumbs text-sm mb-4 mx-auto w-fit">
-          <ul><li><a href="/">Home</a></li><li><a href="/services.html">Services</a></li><li>${escapeXml(config.label)}</li></ul>
+          <ul><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li>${escapeXml(config.label)}</li></ul>
         </div>
         <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Service</span>
         <h1 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">${escapeXml(config.label)}</h1>
         <p class="text-lg text-base-content/70 max-w-2xl mx-auto mb-8">${escapeXml(config.subheadline)}</p>
         <div class="flex flex-wrap gap-3 justify-center">
           <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Book a call</a>
-          <a href="/pricing.html" class="btn btn-outline btn-lg">See pricing</a>
+          <a href="/pricing" class="btn btn-outline btn-lg">See pricing</a>
         </div>
       </div>
     </section>
@@ -890,13 +907,13 @@ ${includedItems}
             <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Our Work</span>
             <h2 class="text-3xl lg:text-4xl font-bold mt-1">${escapeXml(config.label)} Projects</h2>
           </div>
-          <a href="/portfolio.html" class="btn btn-outline btn-sm hidden sm:inline-flex">View all work &rarr;</a>
+          <a href="/portfolio" class="btn btn-outline btn-sm hidden sm:inline-flex">View all work &rarr;</a>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 ${projectCards}
         </div>
         <div class="mt-8 text-center sm:hidden">
-          <a href="/portfolio.html" class="btn btn-outline btn-sm">View all work &rarr;</a>
+          <a href="/portfolio" class="btn btn-outline btn-sm">View all work &rarr;</a>
         </div>
       </div>
     </section>
@@ -906,7 +923,7 @@ ${projectCards}
       <div class="max-w-4xl mx-auto px-4 text-center">
         <p class="text-base-content/70 mb-4">Starting from <strong>$1,400/mo</strong> &middot; No contract &middot; Cancel anytime</p>
         <div class="flex flex-wrap gap-3 justify-center">
-          <a href="/pricing.html" class="btn btn-outline">See pricing</a>
+          <a href="/pricing" class="btn btn-outline">See pricing</a>
           <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary">Book a call</a>
         </div>
       </div>
@@ -962,12 +979,12 @@ ${faqItems}
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1 gap-1">
-        <li><a href="/services.html" class="font-medium">Services</a></li>
-        <li><a href="/how-it-works.html" class="font-medium">How It Works</a></li>
-        <li><a href="/pricing.html" class="font-medium">Pricing</a></li>
-        <li><a href="/portfolio.html" class="font-medium">Portfolio</a></li>
+        <li><a href="/services" class="font-medium">Services</a></li>
+        <li><a href="/how-it-works" class="font-medium">How It Works</a></li>
+        <li><a href="/pricing" class="font-medium">Pricing</a></li>
+        <li><a href="/portfolio" class="font-medium">Portfolio</a></li>
         <li><a href="/blog/" class="font-medium">Blog</a></li>
-        <li><a href="/faq.html" class="font-medium">FAQ</a></li>
+        <li><a href="/faq" class="font-medium">FAQ</a></li>
       </ul>
     </div>
     <div class="navbar-end gap-2">
@@ -977,12 +994,12 @@ ${faqItems}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </div>
         <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-lg mt-2">
-          <li><a href="/services.html">Services</a></li>
-          <li><a href="/how-it-works.html">How It Works</a></li>
-          <li><a href="/pricing.html">Pricing</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/faq">FAQ</a></li>
           <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
         </ul>
       </div>
@@ -998,19 +1015,19 @@ ${faqItems}
     </aside>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Pages</p>
-      <a href="/services.html" class="link link-hover">Services</a>
-      <a href="/how-it-works.html" class="link link-hover">How It Works</a>
-      <a href="/pricing.html" class="link link-hover">Pricing</a>
-      <a href="/portfolio.html" class="link link-hover">Portfolio</a>
+      <a href="/services" class="link link-hover">Services</a>
+      <a href="/how-it-works" class="link link-hover">How It Works</a>
+      <a href="/pricing" class="link link-hover">Pricing</a>
+      <a href="/portfolio" class="link link-hover">Portfolio</a>
       <a href="/blog/" class="link link-hover">Blog</a>
-      <a href="/faq.html" class="link link-hover">FAQ</a>
+      <a href="/faq" class="link link-hover">FAQ</a>
     </nav>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Compare</p>
-      <a href="/vs/designjoy.html" class="link link-hover">vs DesignJoy</a>
-      <a href="/vs/penji.html" class="link link-hover">vs Penji</a>
-      <a href="/vs/manypixels.html" class="link link-hover">vs ManyPixels</a>
-      <a href="/vs/kimp.html" class="link link-hover">vs Kimp</a>
+      <a href="/vs/designjoy" class="link link-hover">vs DesignJoy</a>
+      <a href="/vs/penji" class="link link-hover">vs Penji</a>
+      <a href="/vs/manypixels" class="link link-hover">vs ManyPixels</a>
+      <a href="/vs/kimp" class="link link-hover">vs Kimp</a>
     </nav>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Get Started</p>
@@ -1072,7 +1089,7 @@ function buildRelatedProjectsScript() {
 
   var cards = related.map(function(p) {
     return [
-      '<a href="/work/' + p.slug + '.html" class="block group">',
+      '<a href="/work/' + p.slug + '" class="block group">',
         '<div class="card bg-base-100 border border-base-200 hover:shadow-lg transition-shadow overflow-hidden">',
           '<figure class="overflow-hidden">',
             '<img src="' + p.thumb + '" alt="' + p.title + '" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">',
