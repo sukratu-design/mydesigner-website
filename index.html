@@ -585,34 +585,59 @@
       <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">The Team</span>
       <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4 reveal">Real people. Real work.</h2>
       <p class="text-base-content/70 max-w-2xl mx-auto mb-12 reveal">A dedicated, multi-disciplinary design team based in Pune, India. No freelancers, no outsourcing.</p>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 reveal">
-        <div class="flex flex-col items-center gap-2">
-          <div class="avatar"><div class="w-28 h-28 rounded-full overflow-hidden bg-base-200"><img src="/assets/images/team/anand.png" alt="Anand Bongir" class="w-full h-full object-cover" style="filter:contrast(1.4) brightness(0.95);" loading="lazy"></div></div>
+      <style>
+        .team-avatar { position: relative; width: 140px; height: 140px; border-radius: 9999px; overflow: hidden; }
+        .team-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.4s ease; }
+        .team-avatar .team-color { opacity: 0; }
+        .team-avatar:hover .team-color { opacity: 1; }
+        .team-avatar:hover .team-gray { opacity: 0; }
+      </style>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 reveal">
+        <div class="flex flex-col items-center gap-3">
+          <div class="team-avatar">
+            <img src="/assets/images/team/anand.png" alt="Anand Bongir" class="team-gray" loading="lazy">
+            <img src="/assets/images/team/colored/anand.png" alt="Anand Bongir" class="team-color" loading="lazy">
+          </div>
           <p class="font-semibold text-sm">Anand Bongir</p>
           <p class="text-xs text-base-content/60">Founder & CEO</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <div class="avatar"><div class="w-28 h-28 rounded-full overflow-hidden bg-base-200"><img src="/assets/images/team/ketaki.png" alt="Ketaki Karwe" class="w-full h-full object-cover" style="filter:contrast(1.4) brightness(0.95);" loading="lazy"></div></div>
+        <div class="flex flex-col items-center gap-3">
+          <div class="team-avatar">
+            <img src="/assets/images/team/ketaki.png" alt="Ketaki Karwe" class="team-gray" loading="lazy">
+            <img src="/assets/images/team/colored/ketaki.png" alt="Ketaki Karwe" class="team-color" loading="lazy">
+          </div>
           <p class="font-semibold text-sm">Ketaki Karwe</p>
           <p class="text-xs text-base-content/60">COO</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <div class="avatar"><div class="w-28 h-28 rounded-full overflow-hidden bg-base-200"><img src="/assets/images/team/gayatri.png" alt="Gayatri" class="w-full h-full object-cover" style="filter:contrast(1.4) brightness(0.95);" loading="lazy"></div></div>
-          <p class="font-semibold text-sm">Gayatri</p>
+        <div class="flex flex-col items-center gap-3">
+          <div class="team-avatar">
+            <img src="/assets/images/team/gayatri.png" alt="Gayatri Nerlekar" class="team-gray" loading="lazy">
+            <img src="/assets/images/team/colored/gayatri.png" alt="Gayatri Nerlekar" class="team-color" loading="lazy">
+          </div>
+          <p class="font-semibold text-sm">Gayatri Nerlekar</p>
           <p class="text-xs text-base-content/60">Senior Designer</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <div class="avatar"><div class="w-28 h-28 rounded-full overflow-hidden bg-base-200"><img src="/assets/images/team/charuta.png" alt="Charuta" class="w-full h-full object-cover" style="filter:contrast(1.4) brightness(0.95);" loading="lazy"></div></div>
-          <p class="font-semibold text-sm">Charuta</p>
+        <div class="flex flex-col items-center gap-3">
+          <div class="team-avatar">
+            <img src="/assets/images/team/charuta.png" alt="Charuta Karandikar" class="team-gray" loading="lazy">
+            <img src="/assets/images/team/colored/charuta.png" alt="Charuta Karandikar" class="team-color" loading="lazy">
+          </div>
+          <p class="font-semibold text-sm">Charuta Karandikar</p>
           <p class="text-xs text-base-content/60">Graphic Designer</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <div class="avatar"><div class="w-28 h-28 rounded-full overflow-hidden bg-base-200"><img src="/assets/images/team/ganeshk.png" alt="Ganesh Katkar" class="w-full h-full object-cover" style="filter:contrast(1.4) brightness(0.95);" loading="lazy"></div></div>
+        <div class="flex flex-col items-center gap-3">
+          <div class="team-avatar">
+            <img src="/assets/images/team/ganeshk.png" alt="Ganesh Katkar" class="team-gray" loading="lazy">
+            <img src="/assets/images/team/colored/ganeshk.png" alt="Ganesh Katkar" class="team-color" loading="lazy">
+          </div>
           <p class="font-semibold text-sm">Ganesh Katkar</p>
           <p class="text-xs text-base-content/60">Graphic Designer</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <div class="avatar"><div class="w-28 h-28 rounded-full overflow-hidden bg-base-200"><img src="/assets/images/team/ganeshb.png" alt="Ganesh Bansode" class="w-full h-full object-cover" style="filter:contrast(1.4) brightness(0.95);" loading="lazy"></div></div>
+        <div class="flex flex-col items-center gap-3">
+          <div class="team-avatar">
+            <img src="/assets/images/team/ganeshb.png" alt="Ganesh Bansode" class="team-gray" loading="lazy">
+            <img src="/assets/images/team/colored/ganeshb.png" alt="Ganesh Bansode" class="team-color" loading="lazy">
+          </div>
           <p class="font-semibold text-sm">Ganesh Bansode</p>
           <p class="text-xs text-base-content/60">Product Designer & No-code Dev</p>
         </div>
