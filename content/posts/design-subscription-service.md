@@ -188,7 +188,7 @@ At [MyDesigner](https://mydesigner.gg), the team behind every account includes 4
 
 This team model means your Instagram carousel is built by someone who lives in that format, while your SaaS dashboard is handled by a dedicated UI designer. The work quality difference between a specialist and a generalist on complex UI tasks is significant.
 
-**Prove-It Fact #1:** MyDesigner has served 57+ companies since 2020, including Dentsu and USA Table Tennis. The team operates from Pune, India, with all 6 members (including a COO) working from the same office. Source: [mydesigner.gg](https://mydesigner.gg).
+**Prove-It Fact #1:** MyDesigner has served 57+ companies since 2020, including Dentsu and USA Table Tennis. The team has all 6 members (including a COO) working from the same office. Source: [mydesigner.gg](https://mydesigner.gg).
 
 **Prove-It Fact #2:** At $1,400/mo for the Starter plan, MyDesigner's entry price is 77% lower than Designjoy's $5,995/mo, while providing a 4-person specialist team versus a single designer. Source: public pricing pages as of March 2026.
 
