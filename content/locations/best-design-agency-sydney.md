@@ -239,15 +239,3 @@ For execution-heavy work (social graphics, landing pages, UI screens, pitch deck
 
 **What is the fastest way to get design work done in Sydney?**
 Local agencies typically quote 2-4 week timelines for new projects, with discovery and onboarding adding more time upfront. Design subscriptions like MyDesigner start delivering within 24-48 hours of your first request because onboarding is streamlined and the team is already in place.
-
-## Explore More City Guides
-
-Looking for design agencies in other cities? Check out our guides:
-
-- [Best Design Agency in Melbourne](/locations/best-design-agency-melbourne)
-- [Best Design Agency in Austin](/locations/best-design-agency-austin)
-- [Best Design Agency in Chicago](/locations/best-design-agency-chicago)
-- [Best Design Agency in Los Angeles](/locations/best-design-agency-los-angeles)
-- [Best Design Agency in New York](/locations/best-design-agency-new-york)
-- [Best Design Agency in San Francisco](/locations/best-design-agency-san-francisco)
-- [Best Design Agency in Seattle](/locations/best-design-agency-seattle)

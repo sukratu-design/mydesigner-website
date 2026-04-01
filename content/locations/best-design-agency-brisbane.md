@@ -244,15 +244,3 @@ Local agencies typically quote 2-4 week timelines for new projects, with discove
 
 **How will the 2032 Olympics affect Brisbane's design market?**
 The Olympics are already driving demand for brand, environmental, and experience design across Brisbane. Agencies are busier, talent is flowing into the city, and rates are gradually rising. For businesses planning major brand work in the next few years, locking in Brisbane agency relationships now may secure better rates than waiting until the Olympic build-up intensifies.
-
-## Explore More City Guides
-
-Looking for design agencies in other cities? Check out our guides:
-
-- [Best Design Agency in Sydney](/locations/best-design-agency-sydney)
-- [Best Design Agency in Melbourne](/locations/best-design-agency-melbourne)
-- [Best Design Agency in Perth](/locations/best-design-agency-perth)
-- [Best Design Agency in Austin](/locations/best-design-agency-austin)
-- [Best Design Agency in Denver](/locations/best-design-agency-denver)
-- [Best Design Agency in Seattle](/locations/best-design-agency-seattle)
-- [Best Design Agency in Boston](/locations/best-design-agency-boston)

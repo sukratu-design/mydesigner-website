@@ -240,15 +240,3 @@ For execution-heavy work (social graphics, landing pages, UI screens, pitch deck
 
 **What is the fastest way to get design work done in Perth?**
 Local agencies typically quote 2-4 week timelines for new projects, with discovery and onboarding adding more time upfront. Design subscriptions like MyDesigner start delivering within 24-48 hours of your first request because onboarding is streamlined and the team is already in place. Perth's smaller agency market can also mean longer wait times during busy periods, particularly around resources sector reporting seasons.
-
-## Explore More City Guides
-
-Looking for design agencies in other cities? Check out our guides:
-
-- [Best Design Agency in Sydney](/locations/best-design-agency-sydney)
-- [Best Design Agency in Melbourne](/locations/best-design-agency-melbourne)
-- [Best Design Agency in Brisbane](/locations/best-design-agency-brisbane)
-- [Best Design Agency in Austin](/locations/best-design-agency-austin)
-- [Best Design Agency in Denver](/locations/best-design-agency-denver)
-- [Best Design Agency in Seattle](/locations/best-design-agency-seattle)
-- [Best Design Agency in San Francisco](/locations/best-design-agency-san-francisco)
