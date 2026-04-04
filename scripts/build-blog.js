@@ -128,7 +128,7 @@ function buildPostObject(fileName) {
     throw new Error(`Invalid or missing frontmatter field "date" in ${fileName}`);
   }
 
-  const htmlContent = marked.parse(content);
+  const htmlContent = marked.parse(content).replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, '</table></div>');
 
   return {
     title,
@@ -198,6 +198,12 @@ ${schemaBlocks ? schemaBlocks + '\n' : ''}
     .blog-prose code { background: var(--color-base-200); border-radius: 6px; padding: 0.1rem 0.35rem; }
     .blog-prose pre { background: var(--color-base-200); border-radius: 10px; padding: 1rem; overflow-x: auto; margin-bottom: 1rem; }
     .blog-prose blockquote { border-left: 3px solid var(--color-base-300); padding-left: 1rem; color: color-mix(in oklab, var(--color-base-content) 75%, transparent); }
+    .blog-prose .table-wrap { overflow-x: auto; margin-bottom: 1.5rem; border-radius: 0.75rem; border: 1px solid var(--color-base-300); }
+    .blog-prose table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    .blog-prose th { background: var(--color-base-200); font-weight: 700; text-align: left; padding: 0.75rem 1rem; white-space: nowrap; }
+    .blog-prose td { padding: 0.75rem 1rem; border-top: 1px solid var(--color-base-200); }
+    .blog-prose tr:nth-child(even) td { background: var(--color-base-200); }
+    .blog-prose th:first-child, .blog-prose td:first-child { font-weight: 600; }
   </style>
 </head>
 <body class="bg-base-100 text-base-content">
