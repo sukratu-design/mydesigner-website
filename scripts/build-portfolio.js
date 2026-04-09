@@ -217,6 +217,8 @@ function buildPage(cat) {
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<!-- Traffic Source Analytics -->
+<script defer src="https://traffic.sukratu-test.com/t.js" data-site="1"></script>
 </head>
 <body class="bg-base-100 text-base-content">
 ${NAV}

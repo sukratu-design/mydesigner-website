@@ -205,6 +205,8 @@ ${schemaBlocks ? schemaBlocks + '\n' : ''}
     .blog-prose tr:nth-child(even) td { background: var(--color-base-200); }
     .blog-prose th:first-child, .blog-prose td:first-child { font-weight: 600; }
   </style>
+<!-- Traffic Source Analytics -->
+<script defer src="https://traffic.sukratu-test.com/t.js" data-site="1"></script>
 </head>
 <body class="bg-base-100 text-base-content">
   <nav class="navbar bg-base-100 sticky top-0 z-50 px-4 lg:px-8" role="navigation" aria-label="Main navigation">
@@ -975,6 +977,8 @@ ${faqItems}
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<!-- Traffic Source Analytics -->
+<script defer src="https://traffic.sukratu-test.com/t.js" data-site="1"></script>
 </head>
 <body class="bg-base-100 text-base-content">
   <nav class="navbar bg-base-100 sticky top-0 z-50 px-4 lg:px-8" role="navigation" aria-label="Main navigation">
