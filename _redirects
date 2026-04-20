@@ -1,1 +1,11 @@
 https://www.mydesigner.gg/* https://mydesigner.gg/:splat 301!
+
+# Force .html → clean URL (kills duplicate-content pairs in Google's index).
+# index.html first so we don't 301 to a nonexistent /index path.
+/index.html                 /                   301!
+/:a/index.html              /:a/                301!
+/:a/:b/index.html           /:a/:b/             301!
+/:a.html                    /:a                 301!
+/:a/:b.html                 /:a/:b              301!
+/:a/:b/:c.html              /:a/:b/:c           301!
+/:a/:b/:c/:d.html           /:a/:b/:c/:d        301!
