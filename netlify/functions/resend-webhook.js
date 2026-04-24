@@ -1,3 +1,4 @@
+const { connectLambda, getStore } = require('@netlify/blobs');
 const { Webhook } = require('svix');
 
 const ALLOWED_EVENTS = new Set([
@@ -19,6 +20,14 @@ const RESPONSE_HEADERS = {
 };
 
 const api = {
+  initializeBlobs(event) {
+    connectLambda(event);
+  },
+
+  getStore() {
+    return getStore('resend-events');
+  },
+
   getHeader(event, name) {
     const headers = event.headers || {};
     const target = name.toLowerCase();
@@ -79,6 +88,25 @@ const api = {
     return new Webhook(secret).verify(payload, headers);
   },
 
+  makeEventKey(eventType, svixId, createdAt) {
+    const ts = new Date(createdAt || Date.now()).toISOString();
+    return `${ts}_${svixId}_${eventType}`;
+  },
+
+  async persistEvent(event, payload, eventType) {
+    const store = api.getStore();
+    const svixId = api.getHeader(event, 'svix-id') || 'unknown';
+    const key = api.makeEventKey(eventType, svixId, payload.created_at || new Date().toISOString());
+    await store.setJSON(key, payload, {
+      metadata: {
+        svix_id: svixId,
+        event_type: eventType,
+        created_at: payload.created_at || new Date().toISOString(),
+      },
+    });
+    return key;
+  },
+
   async forwardIfConfigured(event) {
     const forwardUrl = process.env.RESEND_FORWARD_WEBHOOK_URL;
     if (!forwardUrl) {
@@ -111,6 +139,8 @@ const api = {
 
 exports.api = api;
 exports.handler = async (event) => {
+  api.initializeBlobs(event);
+
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, headers: RESPONSE_HEADERS, body: JSON.stringify({ error: 'Method Not Allowed' }) };
   }
@@ -141,6 +171,7 @@ exports.handler = async (event) => {
     };
   }
 
+  const queueKey = await api.persistEvent(event, payload, eventType);
   const forwardResult = await api.forwardIfConfigured(event);
 
   return {
@@ -150,6 +181,7 @@ exports.handler = async (event) => {
       ok: true,
       event_type: eventType,
       endpoint: '/.netlify/functions/resend-webhook',
+      queue_key: queueKey,
       forward: forwardResult,
     }),
   };

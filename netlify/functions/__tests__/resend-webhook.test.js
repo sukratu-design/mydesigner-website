@@ -7,6 +7,10 @@ async function run() {
   const originalForward = api.forwardIfConfigured;
   const originalRate = api.enforceRateLimit;
   const originalFetch = global.fetch;
+  const originalGetStore = api.getStore;
+  const originalInit = api.initializeBlobs;
+
+  api.initializeBlobs = () => {};
 
   let res = await handler({ httpMethod: 'GET' });
   assert.equal(res.statusCode, 405);
@@ -20,7 +24,8 @@ async function run() {
   res = await handler({ httpMethod: 'POST', body: '{}', headers: { 'content-type': 'application/json' } });
   assert.equal(res.statusCode, 400);
 
-  api.verifySignature = async () => ({ type: 'Email.Sent' });
+  api.getStore = () => ({ setJSON: async () => {} });
+  api.verifySignature = async () => ({ type: 'Email.Sent', created_at: '2026-04-24T05:00:00Z' });
   api.forwardIfConfigured = async () => ({ forwarded: false });
   res = await handler({ httpMethod: 'POST', body: JSON.stringify({ type: 'Email.Sent' }), headers: { 'content-type': 'application/json' } });
   assert.equal(res.statusCode, 200);
@@ -31,11 +36,11 @@ async function run() {
   assert.equal(parsed.forward.forwarded, false);
   assert.equal(res.headers['X-Content-Type-Options'], 'nosniff');
 
-  api.verifySignature = async () => ({ type: 'email.opened' });
+  api.verifySignature = async () => ({ type: 'email.opened', created_at: '2026-04-24T05:00:00Z' });
   res = await handler({ httpMethod: 'POST', body: JSON.stringify({ type: 'email.opened' }), headers: { 'content-type': 'application/json' } });
   assert.equal(res.statusCode, 400);
 
-  api.verifySignature = async () => ({ type: 'email.received' });
+  api.verifySignature = async () => ({ type: 'email.received', created_at: '2026-04-24T05:01:00Z' });
   process.env.RESEND_FORWARD_WEBHOOK_URL = 'https://example.com/hook';
   global.fetch = async (url, options) => {
     assert.equal(url, 'https://example.com/hook');
@@ -58,6 +63,8 @@ async function run() {
   res = await handler({ httpMethod: 'POST', body: JSON.stringify({ type: 'email.sent' }), headers: { 'content-type': 'application/json' } });
   assert.equal(res.statusCode, 429);
 
+  api.getStore = originalGetStore;
+  api.initializeBlobs = originalInit;
   api.verifySignature = originalVerify;
   api.forwardIfConfigured = originalForward;
   api.enforceRateLimit = originalRate;
