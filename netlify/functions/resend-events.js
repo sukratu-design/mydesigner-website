@@ -58,7 +58,7 @@ const api = {
     const selected = filtered.slice(0, limit);
     const events = [];
     for (const key of selected) {
-      const payload = await store.get(key, { type: 'json', consistency: 'strong' });
+      const payload = await store.get(key, { type: 'json' });
       if (payload) events.push({ key, payload });
     }
     const nextCursor = selected.length ? selected[selected.length - 1] : since || null;
