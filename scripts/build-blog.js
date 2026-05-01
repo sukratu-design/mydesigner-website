@@ -22,6 +22,7 @@ const STATIC_SITEMAP_PAGES = [
   { loc: '/services', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.8' },
   { loc: '/how-it-works', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.8' },
   { loc: '/faq', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
+  { loc: '/contact', lastmod: '2026-05-01', changefreq: 'monthly', priority: '0.8' },
   { loc: '/portfolio', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
   { loc: '/vs/', lastmod: '2026-02-11', changefreq: 'monthly', priority: '0.7' },
   { loc: '/vs/designjoy', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
