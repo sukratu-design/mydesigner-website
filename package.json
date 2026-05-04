@@ -8,7 +8,7 @@
     "build:blog": "node scripts/build-blog.js",
     "build:portfolio": "node scripts/build-portfolio.js",
     "build:locations": "node scripts/build-locations.js",
-    "test": "node scripts/check-contact-page.js"
+    "test": "node scripts/check-contact-page.js && node scripts/check-homepage-portfolio.js"
   },
   "dependencies": {
     "firebase-admin": "^13.0.1",
