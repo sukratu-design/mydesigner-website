@@ -17,12 +17,16 @@ const SERVICES_DIR = path.join(process.cwd(), 'services');
 const PROJECTS = require('../data/projects.js');
 
 const STATIC_SITEMAP_PAGES = [
-  { loc: '/', lastmod: '2026-02-10', changefreq: 'weekly', priority: '1.0' },
-  { loc: '/pricing', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.9' },
-  { loc: '/services', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/how-it-works', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/faq', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
-  { loc: '/portfolio', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
+  { loc: '/', lastmod: '2026-05-01', changefreq: 'weekly', priority: '1.0' },
+  { loc: '/pricing', lastmod: '2026-05-01', changefreq: 'monthly', priority: '0.9' },
+  { loc: '/services', lastmod: '2026-05-01', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/conversion-design', lastmod: '2026-05-01', changefreq: 'monthly', priority: '0.9' },
+  { loc: '/founder-content-engine', lastmod: '2026-05-01', changefreq: 'monthly', priority: '0.9' },
+  { loc: '/ai-ready-brand-system', lastmod: '2026-05-01', changefreq: 'monthly', priority: '0.9' },
+  { loc: '/how-it-works', lastmod: '2026-05-01', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/faq', lastmod: '2026-05-01', changefreq: 'monthly', priority: '0.7' },
+  { loc: '/portfolio', lastmod: '2026-05-05', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/contact', lastmod: '2026-05-05', changefreq: 'monthly', priority: '0.7' },
   { loc: '/vs/', lastmod: '2026-02-11', changefreq: 'monthly', priority: '0.7' },
   { loc: '/vs/designjoy', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
   { loc: '/vs/penji', lastmod: '2026-02-10', changefreq: 'monthly', priority: '0.7' },
@@ -226,7 +230,7 @@ ${schemaBlocks ? schemaBlocks + '\n' : ''}
       </ul>
     </div>
     <div class="navbar-end gap-2">
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Talk through your creative needs</a>
       <div class="dropdown dropdown-end lg:hidden">
         <div tabindex="0" role="button" aria-label="Open menu" class="btn btn-ghost btn-square">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -238,7 +242,7 @@ ${schemaBlocks ? schemaBlocks + '\n' : ''}
           <li><a href="/portfolio">Portfolio</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/faq">FAQ</a></li>
-          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
+          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Talk through your needs</a></li>
         </ul>
       </div>
     </div>
@@ -249,7 +253,7 @@ ${schemaBlocks ? schemaBlocks + '\n' : ''}
       <a href="/" class="flex items-center gap-2 font-bold text-lg mb-2">
         <img src="/assets/images/mydesigner-logo.svg" alt="MyDesigner" class="h-8">
       </a>
-      <p class="max-w-xs">MyDesigner is an unlimited design subscription by <a href="https://sukratu.co" target="_blank" rel="noopener" class="link link-hover">Sukratu</a>. We provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
+      <p class="max-w-xs">MyDesigner is an AI-native creative team by <a href="https://sukratu.co" target="_blank" rel="noopener" class="link link-hover">Sukratu</a>. We help growing companies ship web, product, brand, and growth creative with human-level taste, faster execution, and Client Memory that compounds over time.</p>
     </aside>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Pages</p>
@@ -269,7 +273,7 @@ ${schemaBlocks ? schemaBlocks + '\n' : ''}
     </nav>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Get Started</p>
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Talk through your creative needs</a>
     </nav>
   </footer>
   <footer class="footer sm:footer-horizontal bg-base-300 text-base-content border-t border-base-300 px-10 py-4">
@@ -792,7 +796,232 @@ const SERVICE_CONFIGS = [
   }
 ];
 
+const SERVICE_REPOSITIONING = {
+  'website-design': {
+    role: 'Conversion websites & landing pages',
+    h1: 'Website design for teams that need to turn attention into action',
+    metaTitle: 'Website Design — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'Marketing websites, campaign pages, and landing pages shaped by strategy, brand context, and conversion logic — not just pretty screens. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    fit: 'Best when a team needs a clearer website, a launch page, a campaign landing page, or a redesign that must explain the offer and move visitors toward action.',
+    included: [
+      'Messaging and page-structure direction before design',
+      'Homepage, landing page, and key conversion-page design',
+      'Mobile-first responsive layouts',
+      'CTA hierarchy and section sequencing',
+      'Brand-aligned visual system in Figma',
+      'Developer-ready handoff or Webflow/Framer build path'
+    ],
+    memory: 'Client Memory should store your offer, ICP, proof points, previous landing pages, brand rules, conversion notes, and pages that have already worked, so every new page starts with context instead of a blank brief.',
+    relatedLinks: [
+      ['/services/webflow-development', 'Webflow development'],
+      ['/services/framer-development', 'Framer development'],
+      ['/portfolio', 'View proof'],
+      ['/pricing', 'See operating rhythms']
+    ],
+    faq: [
+      { q: 'Is this just visual website design?', a: 'No. This is conversion website design: message hierarchy, offer clarity, section flow, CTA logic, and brand-consistent visual execution.' },
+      { q: 'Can you design landing pages for campaigns?', a: 'Yes. Landing pages are one of the clearest fits because they benefit from fast creative execution plus stored context about your audience, offer, and brand.' },
+      { q: 'Can this include Webflow or Framer development?', a: 'Yes. If build is needed, MyDesigner can connect the design work to a Webflow or Framer build path.' },
+      { q: 'How does Client Memory help website work?', a: 'It keeps the offer, proof, audience, brand rules, prior page decisions, and reusable sections available for future pages and iterations.' }
+    ]
+  },
+  'web-app-design': {
+    role: 'Product UI & UX support',
+    h1: 'Web app design that makes complex products easier to use',
+    metaTitle: 'Web App Design — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'SaaS dashboards, internal tools, portals, and product interfaces designed with clarity, hierarchy, and continuity across every screen. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    fit: 'Best when a founder, product team, or engineering team needs sharper product UI, clearer flows, better dashboard structure, or a Figma system developers can actually use.',
+    included: [
+      'User-flow and information-architecture support',
+      'Wireframes for high-risk flows',
+      'High-fidelity Figma UI design',
+      'Dashboard and table design systems',
+      'Reusable components and interaction states',
+      'Developer-ready specs and handoff notes'
+    ],
+    memory: 'Client Memory should capture product terminology, user roles, flows, design-system rules, edge cases, prior UX decisions, and implementation constraints so new screens stay coherent.',
+    relatedLinks: [
+      ['/services/brand-identity', 'Brand identity'],
+      ['/portfolio', 'View product work'],
+      ['/how-it-works', 'How the workflow runs']
+    ],
+    faq: [
+      { q: 'Do you replace product research?', a: 'No. MyDesigner can work from existing research, customer insights, product notes, and stakeholder context. Full research work should be scoped separately.' },
+      { q: 'Can you work inside our existing design system?', a: 'Yes. We can absorb current components, constraints, usage rules, and prior design decisions into Client Memory so new work stays consistent.' },
+      { q: 'Can engineering use the files directly?', a: 'Yes. The output can include developer-ready Figma files, component states, and handoff notes for implementation.' },
+      { q: 'How do you keep product screens consistent over time?', a: 'Client Memory stores flows, components, patterns, and past decisions so future UI requests do not reset context.' }
+    ]
+  },
+  'webflow-development': {
+    role: 'Conversion website build',
+    h1: 'Webflow development for websites your team can actually ship and manage',
+    metaTitle: 'Webflow Development — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'Responsive, CMS-ready Webflow builds for marketing sites, landing pages, and content systems — designed for speed, polish, and handoff clarity. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    fit: 'Best when you have a Figma design to build, need design plus Webflow execution, or want a marketing site your team can edit after launch.',
+    included: [
+      'Figma-to-Webflow implementation',
+      'Responsive build across breakpoints',
+      'CMS structure and content modelling',
+      'Animations and interaction polish',
+      'SEO, Open Graph, sitemap, and launch basics',
+      'Staging review and production handoff'
+    ],
+    memory: 'Client Memory should store CMS structure, component decisions, animation preferences, brand rules, launch checklist, reusable page sections, and previous site decisions.',
+    relatedLinks: [
+      ['/services/website-design', 'Website design'],
+      ['/services/framer-development', 'Framer development'],
+      ['/portfolio', 'View related work']
+    ],
+    faq: [
+      { q: 'Do you only build, or also design?', a: 'Both are possible. MyDesigner can build from supplied Figma files or handle design plus Webflow execution when the scope calls for it.' },
+      { q: 'Will our team be able to edit the site?', a: 'Yes. Webflow Editor and CMS setup can give your team operational independence after launch.' },
+      { q: 'Can you support launches and campaign pages after the main site?', a: 'Yes. Once the system exists, Client Memory helps future pages ship faster and stay more consistent.' },
+      { q: 'Do you handle integrations?', a: 'We can support common website integrations such as forms, CRM embeds, analytics, and marketing tools. Custom backend work should be scoped separately.' }
+    ]
+  },
+  'framer-development': {
+    role: 'Interactive website build',
+    h1: 'Framer development for polished marketing sites and launch pages',
+    metaTitle: 'Framer Development — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'Fast, polished Framer websites with responsive layouts, motion, CMS structure, and brand-consistent execution for launches and modern teams. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    fit: 'Best when speed, visual polish, interaction quality, and flexible page production matter more than heavy enterprise CMS complexity.',
+    included: [
+      'Design-to-Framer implementation',
+      'Responsive layouts for key breakpoints',
+      'Framer CMS setup where useful',
+      'Motion, transitions, and micro-interactions',
+      'SEO metadata and launch setup',
+      'Handoff documentation and editable structure'
+    ],
+    memory: 'Client Memory should store motion preferences, page patterns, brand rules, CMS choices, reusable sections, and launch notes so future Framer pages stay consistent.',
+    relatedLinks: [
+      ['/services/website-design', 'Website design'],
+      ['/services/webflow-development', 'Webflow development'],
+      ['/portfolio', 'View related work']
+    ],
+    faq: [
+      { q: 'When should we choose Framer instead of Webflow?', a: 'Framer is strong for fast, polished marketing sites and interactive launch pages. Webflow may fit deeper CMS and operational workflows better.' },
+      { q: 'Can you migrate an existing site to Framer?', a: 'Yes, when the scope is clear. Complex sites should start with a discovery pass so migration risk is understood.' },
+      { q: 'Can the team edit after handoff?', a: 'Yes. We structure Framer pages and CMS areas so your team can edit content after launch.' },
+      { q: 'How does Client Memory help Framer work?', a: 'It stores reusable page patterns, brand rules, interactions, and prior decisions so new pages do not drift.' }
+    ]
+  },
+  'brand-identity': {
+    role: 'AI-ready brand system',
+    h1: 'Brand identity systems that make every future asset easier to ship',
+    metaTitle: 'Brand Identity — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'Logos, visual systems, guidelines, examples, templates, and usable rules that help your team create consistently across web, product, sales, and campaigns. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    fit: 'Best when a company is launching, refreshing, cleaning up inconsistent visuals, or preparing to use AI and templates without breaking brand consistency.',
+    included: [
+      'Logo direction and identity refinement',
+      'Color, typography, and visual-language system',
+      'Brand guidelines and usage rules',
+      'Template starters for key channels',
+      'Source files and export-ready assets',
+      'Prompt-ready brand examples for future creative production'
+    ],
+    memory: 'Brand identity is not only a logo deliverable. It becomes the foundation for future creative decisions, AI prompts, templates, examples, and quality control inside Client Memory.',
+    relatedLinks: [
+      ['/services/social-media-creatives', 'Growth creative'],
+      ['/services/website-design', 'Website design'],
+      ['/how-it-works', 'How Client Memory works']
+    ],
+    faq: [
+      { q: 'Is this only logo design?', a: 'No. Logos can be included, but the goal is a usable brand system that helps every future asset stay consistent.' },
+      { q: 'Can you refresh an existing brand?', a: 'Yes. A refresh can modernize the identity while preserving the recognition and equity that should not change.' },
+      { q: 'Do you create brand guidelines?', a: 'Yes. Guidelines can include practical rules, examples, templates, and AI-ready prompts where appropriate.' },
+      { q: 'How does this help with AI content creation?', a: 'A clear brand system gives AI tools constraints, examples, and rules so output gets closer to your brand instead of becoming generic.' }
+    ]
+  },
+  'presentation-design': {
+    role: 'Decks & sales assets',
+    h1: 'Presentation design that helps complex ideas land clearly',
+    metaTitle: 'Presentation Design — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'Investor decks, sales decks, strategy presentations, and internal narratives structured for clarity, trust, and decision-making. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    fit: 'Best when the team has a story to tell — fundraising, sales, partnership, strategy, product, or internal alignment — and needs the deck to feel sharp and easy to follow.',
+    included: [
+      'Narrative and slide-structure cleanup',
+      'Slide layout and visual hierarchy',
+      'Data visualization and infographic design',
+      'Brand-aligned diagrams, icons, and visual systems',
+      'PowerPoint, Keynote, Google Slides, or Figma delivery',
+      'Reusable slide patterns for future decks'
+    ],
+    memory: 'Client Memory should store the company narrative, positioning, proof points, product explanations, previous deck patterns, common objections, and brand rules so future decks improve instead of restarting.',
+    relatedLinks: [
+      ['/services/brand-identity', 'Brand identity'],
+      ['/services/social-media-creatives', 'Growth creative'],
+      ['/portfolio', 'View related work']
+    ],
+    faq: [
+      { q: 'Do you write the deck or only design it?', a: 'MyDesigner can sharpen structure and clarity around content you provide. Full copywriting or strategy depth depends on the scope.' },
+      { q: 'Can you redesign an existing pitch deck?', a: 'Yes. This is one of the strongest use cases: making existing thinking sharper, more visual, and easier to present.' },
+      { q: 'Can you make reusable templates?', a: 'Yes. Reusable slide patterns can be stored in Client Memory so future sales and founder communication gets faster.' },
+      { q: 'Which formats do you deliver?', a: 'We can deliver PowerPoint, Keynote, Google Slides, or Figma files depending on how your team presents and edits.' }
+    ]
+  },
+  'social-media-creatives': {
+    role: 'Growth campaign creative',
+    h1: 'Social media creatives that keep campaigns moving without losing the brand',
+    metaTitle: 'Social Media Design — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'LinkedIn, Instagram, X, ad creative, carousels, covers, and campaign assets produced with brand consistency and enough variation to keep testing. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    fit: 'Best when a growth, founder, or marketing team needs steady creative output for campaigns, launches, content, ads, and experiments.',
+    included: [
+      'Platform-specific post and carousel designs',
+      'Ad creative variations for testing',
+      'Founder/content asset templates',
+      'Story, reel, and cover graphics',
+      'Editable Figma or Canva templates where useful',
+      'Campaign-level visual consistency across batches'
+    ],
+    memory: 'Client Memory should store audience, offers, campaign learnings, content pillars, visual rules, winning examples, past assets, and channel preferences so creative variation stays on-brand.',
+    relatedLinks: [
+      ['/services/brand-identity', 'Brand identity'],
+      ['/services/presentation-design', 'Decks and sales assets'],
+      ['/pricing', 'See operating rhythms']
+    ],
+    faq: [
+      { q: 'How many posts can we get?', a: 'Output depends on the operating rhythm: one focused lane, parallel growth execution, or a sprint depending on the priority and complexity.' },
+      { q: 'Can you design ad variations?', a: 'Yes. MyDesigner can create structured creative variation for testing while keeping the campaign connected to your brand.' },
+      { q: 'Can our team edit the templates?', a: 'Yes. Editable Figma or Canva templates can help your team adapt recurring formats without losing consistency.' },
+      { q: 'How do you avoid everything looking generic?', a: 'Human taste plus Client Memory. Stored examples, rules, channel preferences, and performance learnings guide every batch.' }
+    ]
+  },
+  'booth-designs': {
+    role: 'Event & offline campaign creative',
+    h1: 'Booth and exhibition design that carries your brand into the room',
+    metaTitle: 'Booth & Exhibition Design — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'Trade show booths, banners, handouts, display assets, and event graphics designed as one coherent brand experience before the deadline hits. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    fit: 'Best when an event, expo, booth, or sales presence needs high-clarity visuals, print-ready assets, and consistent messaging across physical touchpoints.',
+    included: [
+      'Booth backdrop and display graphics',
+      'Pull-up banners and event signage',
+      'Flyers, brochures, handouts, and leave-behinds',
+      'Name badges, table covers, and supporting assets',
+      'Print-ready files with bleed and resolution checks',
+      'Event message hierarchy and asset consistency'
+    ],
+    memory: 'Client Memory should store event goals, booth dimensions, vendor specs, audience, offers, brand rules, previous event assets, and print constraints so recurring events get easier.',
+    relatedLinks: [
+      ['/services/presentation-design', 'Presentation design'],
+      ['/services/brand-identity', 'Brand identity'],
+      ['/contact', 'Talk through an event need']
+    ],
+    faq: [
+      { q: 'Do you print the materials?', a: 'MyDesigner supplies print-ready design files and can support specs where possible. Printing is handled by your chosen vendor.' },
+      { q: 'Can you work with tight event deadlines?', a: 'Yes, depending on priority and scope. Share vendor specs and deadlines immediately so the work can be planned realistically.' },
+      { q: 'Can you adapt one booth system into many sizes?', a: 'Yes. This is a strong consistency use case because one event system can become banners, handouts, table assets, and other formats.' },
+      { q: 'How does Client Memory help event work?', a: 'It preserves specs, message hierarchy, reusable event assets, brand rules, and print constraints for future booths and campaigns.' }
+    ]
+  }
+};
+
 function buildServicePage(config) {
+  config = {
+    ...config,
+    ...(SERVICE_REPOSITIONING[config.slug] || {})
+  };
+
   const categoryProjects = PROJECTS.filter((p) =>
     p.category === config.category && (!config.platform || p.platform === config.platform)
   );
@@ -828,6 +1057,14 @@ function buildServicePage(config) {
           <div class="collapse-content text-base-content/70"><p>${escapeXml(item.a)}</p></div>
         </div>`).join('\n');
 
+  const relatedLinks = (config.relatedLinks || [
+    ['/services', 'Explore all services'],
+    ['/portfolio', 'View proof'],
+    ['/pricing', 'See operating rhythms']
+  ]).map(([href, label]) =>
+    `          <a href="${href}" class="btn btn-outline btn-sm">${escapeXml(label)}</a>`
+  ).join('\n');
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -861,15 +1098,18 @@ function buildServicePage(config) {
       price: '1400',
       priceCurrency: 'USD',
       priceSpecification: { '@type': 'UnitPriceSpecification', price: '1400', priceCurrency: 'USD', unitText: 'month' },
-      description: 'Starting from $1,400/mo. No contract. Cancel anytime.'
+      description: 'Transparent creative sprint, subscription, and partner options based on the operating rhythm your team needs.'
     }
   };
 
   const valuerop = config.valuerop || `Expert ${config.label} for Growing Startups`;
-  const metaTitle = `${config.label} — MyDesigner | ${valuerop}`;
+  const metaTitle = config.metaTitle || `${config.label} — MyDesigner | ${valuerop}`;
   const metaDesc = config.metaDescription || config.subheadline;
+  const heroSubcopy = config.heroSubcopy || metaDesc.split(' Work with ')[0];
   const canonicalPath = `/services/${config.slug}`;
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
+
+  serviceSchema.description = heroSubcopy;
 
   const body = `
   <!-- JSON-LD Schemas -->
@@ -879,27 +1119,42 @@ function buildServicePage(config) {
 
   <main>
     <!-- Hero -->
-    <section class="py-16 lg:py-24 text-center" data-hero>
+    <section class="py-16 lg:py-24" data-hero>
       <div class="max-w-4xl mx-auto px-4">
-        <div class="breadcrumbs text-sm mb-4 mx-auto w-fit">
+        <div class="breadcrumbs text-sm mb-8">
           <ul><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li>${escapeXml(config.label)}</li></ul>
         </div>
-        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Service</span>
-        <h1 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">${escapeXml(config.label)}</h1>
-        <p class="text-lg text-base-content/70 max-w-2xl mx-auto mb-8">${escapeXml(config.subheadline)}</p>
-        <div class="flex flex-wrap gap-3 justify-center">
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Book a call</a>
-          <a href="/pricing" class="btn btn-outline btn-lg">See pricing</a>
+        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">${escapeXml(config.role || config.label)}</span>
+        <h1 class="text-4xl lg:text-6xl font-bold mt-3 mb-5 leading-tight">${escapeXml(config.h1 || config.label)}</h1>
+        <p class="text-lg text-base-content/70 max-w-3xl mb-8">${escapeXml(heroSubcopy)}</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Talk through this work</a>
+          <a href="#related-work" class="btn btn-outline btn-lg">See related work</a>
         </div>
       </div>
     </section>
 
-    <!-- What's Included -->
+    <!-- Fit -->
     <section class="py-12 lg:py-16 bg-base-200">
       <div class="max-w-4xl mx-auto px-4">
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body lg:grid lg:grid-cols-[.35fr_.65fr] gap-8">
+            <div>
+              <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Use this when</span>
+              <h2 class="text-2xl lg:text-3xl font-bold mt-2">This capability fits a specific bottleneck.</h2>
+            </div>
+            <p class="text-base-content/70 leading-relaxed">${escapeXml(config.fit)}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What MyDesigner Helps Ship -->
+    <section class="py-12 lg:py-16">
+      <div class="max-w-4xl mx-auto px-4">
         <div class="text-center mb-10">
-          <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">What You Get</span>
-          <h2 class="text-3xl lg:text-4xl font-bold mt-2">What's Included</h2>
+          <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">What MyDesigner helps ship</span>
+          <h2 class="text-3xl lg:text-4xl font-bold mt-2">Concrete outputs, not vague design help.</h2>
         </div>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
 ${includedItems}
@@ -907,13 +1162,39 @@ ${includedItems}
       </div>
     </section>
 
+    <!-- Process + Client Memory -->
+    <section class="py-12 lg:py-16 bg-base-200">
+      <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-8 items-start">
+        <div>
+          <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">How this work runs</span>
+          <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4">A shipping rhythm with human taste.</h2>
+          <ol class="space-y-3 text-base-content/70">
+            <li><strong>1. Diagnose</strong> the creative bottleneck.</li>
+            <li><strong>2. Gather</strong> the context that affects quality.</li>
+            <li><strong>3. Create</strong> the first direction quickly.</li>
+            <li><strong>4. Review</strong> with human taste and business judgment.</li>
+            <li><strong>5. Ship</strong> the asset and store the learning in Client Memory.</li>
+          </ol>
+        </div>
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body">
+            <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Client Memory</span>
+            <h2 class="text-2xl lg:text-3xl font-bold">Every engagement builds Client Memory.</h2>
+            <p class="text-base-content/70 leading-relaxed">Your brand rules, examples, reusable patterns, past decisions, prompts, templates, and performance learnings should not disappear after each request. MyDesigner turns that context into a living creative system so every new asset starts faster and stays closer to your brand.</p>
+            <p class="text-base-content/70 leading-relaxed">${escapeXml(config.memory)}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Portfolio Grid -->
-    <section class="py-12 lg:py-16">
+    <section class="py-12 lg:py-16" id="related-work">
       <div class="max-w-7xl mx-auto px-4">
         <div class="flex items-end justify-between mb-8">
           <div>
-            <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Our Work</span>
-            <h2 class="text-3xl lg:text-4xl font-bold mt-1">${escapeXml(config.label)} Projects</h2>
+            <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Related work</span>
+            <h2 class="text-3xl lg:text-4xl font-bold mt-1">Proof that connects to ${escapeXml((config.role || config.label).toLowerCase())}</h2>
+            <p class="text-base-content/70 mt-3 max-w-3xl">These projects show the taste, structure, and execution quality MyDesigner now makes faster and more repeatable through the AI-native creative-team model.</p>
           </div>
           <a href="/portfolio" class="btn btn-outline btn-sm hidden sm:inline-flex">View all work &rarr;</a>
         </div>
@@ -926,13 +1207,18 @@ ${projectCards}
       </div>
     </section>
 
-    <!-- Pricing CTA Strip -->
-    <section class="py-10 bg-base-200">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <p class="text-base-content/70 mb-4">Starting from <strong>$1,400/mo</strong> &middot; No contract &middot; Cancel anytime</p>
-        <div class="flex flex-wrap gap-3 justify-center">
-          <a href="/pricing" class="btn btn-outline">See pricing</a>
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary">Book a call</a>
+    <!-- Related Services -->
+    <section class="py-12 lg:py-16 bg-base-200">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body">
+            <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Related paths</span>
+            <h2 class="text-2xl lg:text-3xl font-bold">Keep exploring the capability architecture.</h2>
+            <div class="flex flex-wrap gap-3 mt-4">
+${relatedLinks}
+              <a href="/services" class="btn btn-outline btn-sm">All services</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -944,6 +1230,18 @@ ${projectCards}
         <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-8">${escapeXml(config.label)} — Questions Answered</h2>
         <div class="join join-vertical w-full text-left">
 ${faqItems}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Strip -->
+    <section class="py-16 lg:py-20 bg-neutral text-neutral-content">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4">Want to see if this is the right work to ship next?</h2>
+        <p class="text-lg text-neutral-content/80 max-w-2xl mx-auto mb-8">Bring the bottleneck, examples, and current context. We will help you decide whether this should be a sprint, a focused lane, or part of a larger creative operating rhythm.</p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Talk through this work</a>
+          <a href="/pricing" class="btn btn-outline btn-neutral-content btn-lg">See pricing</a>
         </div>
       </div>
     </section>
@@ -998,7 +1296,7 @@ ${faqItems}
       </ul>
     </div>
     <div class="navbar-end gap-2">
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Talk through your creative needs</a>
       <div class="dropdown dropdown-end lg:hidden">
         <div tabindex="0" role="button" aria-label="Open menu" class="btn btn-ghost btn-square">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -1010,7 +1308,7 @@ ${faqItems}
           <li><a href="/portfolio">Portfolio</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/faq">FAQ</a></li>
-          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
+          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Talk through your needs</a></li>
         </ul>
       </div>
     </div>
@@ -1021,7 +1319,7 @@ ${faqItems}
       <a href="/" class="flex items-center gap-2 font-bold text-lg mb-2">
         <img src="/assets/images/mydesigner-logo.svg" alt="MyDesigner" class="h-8">
       </a>
-      <p class="max-w-xs">MyDesigner is an unlimited design subscription by <a href="https://sukratu.co" target="_blank" rel="noopener" class="link link-hover">Sukratu</a>. We provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
+      <p class="max-w-xs">MyDesigner is an AI-native creative team by <a href="https://sukratu.co" target="_blank" rel="noopener" class="link link-hover">Sukratu</a>. We help growing companies ship web, product, brand, and growth creative with human-level taste, faster execution, and Client Memory that compounds over time.</p>
     </aside>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Pages</p>
@@ -1041,7 +1339,7 @@ ${faqItems}
     </nav>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Get Started</p>
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Talk through your creative needs</a>
     </nav>
   </footer>
   <footer class="footer sm:footer-horizontal bg-base-300 text-base-content border-t border-base-300 px-10 py-4">
