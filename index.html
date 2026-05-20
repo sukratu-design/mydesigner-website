@@ -34,9 +34,9 @@
   <meta name="twitter:image" content="https://mydesigner.gg/assets/images/og-image.jpg">
 
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/daisyui@5" as="style">
-  <link rel="preload" href="/css/styles.css?v=20260520-marquee" as="style">
+  <link rel="preload" href="/css/styles.css?v=20260520-hero-type" as="style">
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=20260520-marquee">
+  <link rel="stylesheet" href="/css/styles.css?v=20260520-hero-type">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <!-- Organization Schema -->
@@ -1213,7 +1213,7 @@
       }
     })();
   </script>
-  <script src="/js/main.js?v=20260520-marquee"></script>
+  <script src="/js/main.js?v=20260520-hero-type"></script>
 
   <!-- Pretext interactive hero (desktop only) -->
   <script type="module">
@@ -1224,9 +1224,9 @@
       const HEADLINE = "AI-speed creative execution. Human-level taste.";
       const BODY = "MyDesigner helps founders and growing teams turn business goals into high-converting websites, founder content, brand systems, and campaign assets, shipped every week by real designers and strategists.";
 
-      const LABEL_FONT = "700 12px Inter";
+      const LABEL_FONT = "700 12px Inter, Arial, sans-serif";
       const HEADLINE_FONT = "700 52px TheSeasons";
-      const BODY_FONT = "400 18px Inter";
+      const BODY_FONT = "400 18px Inter, Arial, sans-serif";
       const LABEL_LH = 20;
       const HEADLINE_LH = 62;
       const BODY_LH = 30;
@@ -1318,6 +1318,9 @@
         const labelEl = getLineEl(li++);
         labelEl.textContent = LABEL.toUpperCase();
         labelEl.style.font = LABEL_FONT;
+        labelEl.style.fontFamily = 'Inter, Arial, -apple-system, BlinkMacSystemFont, sans-serif';
+        labelEl.style.fontSize = '12px';
+        labelEl.style.fontWeight = '700';
         labelEl.style.left = `${regionLeft}px`;
         labelEl.style.top = `${y}px`;
         labelEl.style.color = 'rgba(0,0,0,0.45)';
@@ -1363,6 +1366,9 @@
             const el = getLineEl(li++);
             el.textContent = line.text;
             el.style.font = BODY_FONT;
+            el.style.fontFamily = 'Inter, Arial, -apple-system, BlinkMacSystemFont, sans-serif';
+            el.style.fontSize = '18px';
+            el.style.fontWeight = '400';
             el.style.left = `${slots[0].left}px`;
             el.style.top = `${y}px`;
             el.style.color = 'rgba(26,26,26,0.65)';
@@ -1380,6 +1386,7 @@
         y += 60;
         subtitle.style.left = `${regionLeft}px`;
         subtitle.style.top = `${y}px`;
+        subtitle.style.fontFamily = 'Inter, Arial, -apple-system, BlinkMacSystemFont, sans-serif';
 
         // Hide unused
         for (let i = li; i < linePool.length; i++) linePool[i].style.display = 'none';
