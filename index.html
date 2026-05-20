@@ -1230,6 +1230,18 @@
 
       if (!canvas) throw new Error('pretextHero not found');
 
+      async function waitForHeroFonts() {
+        if (!document.fonts || !document.fonts.load) return;
+        await Promise.all([
+          document.fonts.load(LABEL_FONT),
+          document.fonts.load(HEADLINE_FONT),
+          document.fonts.load(BODY_FONT)
+        ]);
+        await document.fonts.ready;
+      }
+
+      await waitForHeroFonts();
+
       let obstacleX, obstacleY, targetX, targetY;
       let linePool = [];
       let animFrame = null;
