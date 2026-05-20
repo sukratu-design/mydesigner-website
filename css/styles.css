@@ -36,7 +36,7 @@
   display: block;
   margin-bottom: 20px;
   color: rgba(0,0,0,0.45);
-  font: 600 14px Inter, sans-serif;
+  font: 700 12px Inter, -apple-system, BlinkMacSystemFont, sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -45,9 +45,10 @@
   max-width: 600px;
   margin-bottom: 24px;
   color: #1a1a1a;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
   font-size: 52px;
   line-height: 1.12;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
 }
 
 .pretext-hero__fallback p {
