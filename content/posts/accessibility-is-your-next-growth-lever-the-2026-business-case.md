@@ -64,4 +64,4 @@ Accessibility in 2026 is a growth lever — one that expands your market, improv
 
 Audit your site. Fix the basics. Build it into your system.
 
-Ready to make your product accessible and competitive? [Book a call with our team](https://mydesigner.gg/#book-call) and let's start with a design audit.
+Ready to make your product accessible and competitive? [Talk through what your team needs to ship](https://calendar.app.google/xGoKb51qpbcnZgJy5) and let's start with the highest-risk experience.

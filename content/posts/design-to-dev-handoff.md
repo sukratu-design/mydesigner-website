@@ -103,4 +103,4 @@ That's how good design actually ships.
 
 ---
 
-*MyDesigner connects startups with senior product designers who know how to work inside a build cycle — not just upstream of one. [See how it works](/how-it-works) or [book a call](https://calendar.app.google/xGoKb51qpbcnZgJy5) to get started.*
+*MyDesigner helps growing teams ship product UI and website work with build-aware design, human creative direction, and Client Memory. [See how it works](/how-it-works) or [talk through what your team needs to ship](https://calendar.app.google/xGoKb51qpbcnZgJy5).*

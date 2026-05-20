@@ -50,7 +50,7 @@ AI integration isn’t a differentiator anymore. It’s baseline. The question i
 Create a data-layer diagram linking user context (device, time of day, behaviour history) to UI variables (layout density, component states, colour). This becomes the foundation for a context-aware design system rather than a one-size-fits-all interface.
 
 **2. Prototype voice flows early**
-Before any visual UI is built, test core tasks using voice. Tools like [Voiceflow](https://www.voiceflow.com/) and [Google Dialogflow](https://cloud.google.com/dialogflow) let you build low-fidelity voice prototypes quickly. Run five core tasks with real users and iterate. Voice problems are much cheaper to fix before a visual layer exists.
+Before any visual UI is built, test core tasks using voice. Tools like [Voiceflow](https://www.voiceflow.com/) and [Google Dialogflow](https://cloud.google.com/dialogflow) let you build low-fidelity voice prototypes quickly. Run five core tasks with real users and iterate. Voice problems are far easier to fix before a visual layer exists.
 
 **3. Add streaming suggestions to forms and search**
 AI-powered autocomplete in search bars and key form fields changes the feel of a product faster than almost any other single change. Track suggestion acceptance rates — 60% adoption within the first month is a reasonable early target.

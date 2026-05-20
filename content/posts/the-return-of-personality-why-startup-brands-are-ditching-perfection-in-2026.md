@@ -67,4 +67,4 @@ The brands that win loyalty in 2026 won't be the most polished. They'll be the o
 
 Audit your identity. Own your character. Build it live.
 
-[Book a call with our team](https://mydesigner.gg/#book-call) and let's find your signal.
+[Talk through your brand system](https://calendar.app.google/xGoKb51qpbcnZgJy5) and let's find your signal.

@@ -484,22 +484,6 @@ function buildRss(posts) {
 `;
 }
 
-function getLocationPages() {
-  const locDir = path.join(process.cwd(), 'content', 'locations');
-  if (!fs.existsSync(locDir)) return [];
-  return fs.readdirSync(locDir)
-    .filter((f) => f.endsWith('.md'))
-    .map((f) => {
-      const raw = fs.readFileSync(path.join(locDir, f), 'utf8');
-      const { data } = matter(raw);
-      if (data.draft) return null;
-      const slug = String(data.slug || '').trim() || f.replace(/\.md$/, '');
-      const date = data.date ? toIsoDateOnly(new Date(data.date)) : toIsoDateOnly(new Date());
-      return { loc: `/locations/${slug}`, lastmod: date, changefreq: 'monthly', priority: '0.6' };
-    })
-    .filter(Boolean);
-}
-
 function buildSitemap(posts) {
   const dynamicPages = [
     ...STATIC_SITEMAP_PAGES,
@@ -514,8 +498,7 @@ function buildSitemap(posts) {
       lastmod: post.dateOnly,
       changefreq: 'monthly',
       priority: '0.7'
-    })),
-    ...getLocationPages()
+    }))
   ];
 
   const urls = dynamicPages
@@ -623,7 +606,7 @@ const SERVICE_CONFIGS = [
     platform: 'framer',
     valuerop: 'Pixel-Perfect Framer Sites, Fast',
     subheadline: 'We build blazing-fast, fully responsive Framer websites — designed to convert and built to scale.',
-    metaDescription: 'High-performance Framer websites with smooth animations and interactions, built by subscription. Unlimited Framer development included from $1,400/mo.',
+    metaDescription: 'High-performance Framer websites with smooth animations and interactions, shaped by human creative direction and built inside an AI-native creative workflow.',
     included: [
       'Custom Framer component design & build',
       'Responsive layouts (mobile, tablet, desktop)',
@@ -634,7 +617,7 @@ const SERVICE_CONFIGS = [
     ],
     faq: [
       { q: 'Do you work from existing designs or start from scratch?', a: 'Both. We can build directly in Framer from your Figma files or create the design and development end-to-end.' },
-      { q: 'How long does a typical Framer project take?', a: 'A standard marketing site is usually delivered within 5–10 business days on the Starter plan. Turnaround depends on scope and your plan\'s concurrency.' },
+      { q: 'How long does a typical Framer project take?', a: 'Timelines depend on page count, animation complexity, CMS needs, review speed, and whether the work is a focused sprint or part of an ongoing creative rhythm.' },
       { q: 'Will the site be editable by our team after handoff?', a: 'Yes. We set up Framer CMS and component structures so your non-technical team can update content without touching code.' },
       { q: 'Can you migrate an existing website to Framer?', a: 'Absolutely. We handle full migrations, preserving URL structures, SEO metadata, and visual design during the transition.' }
     ]
@@ -646,7 +629,7 @@ const SERVICE_CONFIGS = [
     platform: 'webflow',
     valuerop: 'Production-Ready Webflow Sites',
     subheadline: 'We design and develop high-converting Webflow websites that your team can manage without a developer.',
-    metaDescription: 'Pixel-perfect Webflow sites built as part of your design subscription — CMS setup, animations, and responsive design included. From $1,400/mo, cancel anytime.',
+    metaDescription: 'Pixel-perfect Webflow sites built with CMS setup, animations, responsive design, and launch support inside an AI-native creative workflow.',
     included: [
       'Custom Webflow design & development',
       'Responsive across all breakpoints',
@@ -659,7 +642,7 @@ const SERVICE_CONFIGS = [
       { q: 'Do you build from Figma designs or design in Webflow directly?', a: 'We do both. Share your Figma files and we\'ll build pixel-perfectly in Webflow, or we\'ll handle the full design-to-development workflow.' },
       { q: 'Can we edit the site ourselves after launch?', a: 'Yes. Webflow\'s Editor makes it easy for non-technical teams to update copy, images, and CMS content without touching the Designer.' },
       { q: 'Do you handle Webflow hosting and publishing?', a: 'We configure and publish to Webflow Hosting or help you connect a custom domain. We can also assist with Netlify or Cloudflare deployments.' },
-      { q: 'What about integrations like HubSpot or Mailchimp?', a: 'We regularly integrate Webflow sites with HubSpot, Mailchimp, Zapier, Memberstack, and other SaaS tools as part of the subscription.' }
+      { q: 'What about integrations like HubSpot or Mailchimp?', a: 'We regularly integrate Webflow sites with HubSpot, Mailchimp, Zapier, Memberstack, and other SaaS tools when they are part of the scoped build.' }
     ]
   },
   {
@@ -668,7 +651,7 @@ const SERVICE_CONFIGS = [
     category: 'uiux',
     valuerop: 'UX That Converts & Retains',
     subheadline: 'We design intuitive web application interfaces that reduce friction, improve retention, and look exceptional.',
-    metaDescription: 'SaaS dashboards, admin panels, and web app interfaces designed for clarity and conversion — unlimited UI/UX design requests included in every MyDesigner plan.',
+    metaDescription: 'SaaS dashboards, admin panels, and web app interfaces designed for clarity, consistency, and handoff inside an AI-native creative workflow.',
     included: [
       'User flows & information architecture',
       'Wireframes & interactive prototypes',
@@ -678,10 +661,10 @@ const SERVICE_CONFIGS = [
       'Developer-ready Figma handoff'
     ],
     faq: [
-      { q: 'Do you conduct user research as part of this service?', a: 'We provide UX audits and heuristic reviews within the subscription. Full user research studies are scoped separately on request.' },
+      { q: 'Do you conduct user research as part of this service?', a: 'We can provide UX audits and heuristic reviews when they fit the brief. Full user research studies are scoped separately on request.' },
       { q: 'What tools do you use for web app design?', a: 'Figma is our primary tool for all UI/UX work. We deliver interactive prototypes, auto-layout components, and full design tokens.' },
       { q: 'Can you work within our existing design system?', a: 'Yes. We frequently extend and apply existing design systems and component libraries rather than starting from scratch.' },
-      { q: 'How many screens or flows can we expect per month?', a: 'Output varies by complexity, but on the Starter plan clients typically see 10–20 unique screens per month with full revisions included.' }
+      { q: 'How many screens or flows can we expect?', a: 'Output varies by complexity, context quality, review speed, and operating rhythm. We recommend the right scope after seeing the product and priority flows.' }
     ]
   },
   {
@@ -690,7 +673,7 @@ const SERVICE_CONFIGS = [
     category: 'uiux',
     valuerop: 'Websites That Build Trust & Drive Leads',
     subheadline: 'We design conversion-focused websites that communicate your brand\'s value clearly and look great on every device.',
-    metaDescription: 'Marketing websites and landing pages designed to convert — included in every MyDesigner plan. Request as many designs as you need, with unlimited revisions.',
+    metaDescription: 'Marketing websites and landing pages designed to convert, with message hierarchy, brand context, and practical handoff or build support.',
     included: [
       'Homepage & key page design (up to 8 pages)',
       'Mobile-first responsive layouts',
@@ -700,8 +683,8 @@ const SERVICE_CONFIGS = [
       'Figma source files & style guide'
     ],
     faq: [
-      { q: 'Is development included in website design?', a: 'UI/UX design delivers Figma files ready for development. If you also need Webflow or Framer development, that\'s included in the same subscription — just add the request.' },
-      { q: 'How many pages are included?', a: 'A standard engagement covers up to 8 pages. Additional pages are added as separate requests in your queue — no extra charge on any plan.' },
+      { q: 'Is development included in website design?', a: 'UI/UX design can deliver Figma files ready for development. If you also need Webflow or Framer development, we scope that as part of the same website workflow.' },
+      { q: 'How many pages are included?', a: 'Page count depends on the website scope. We confirm the right structure after reviewing the offer, audience, content, and launch goal.' },
       { q: 'Do you follow a brand guide if we have one?', a: 'Yes. Share your existing brand guide and assets and we\'ll design strictly within those guidelines for visual consistency.' },
       { q: 'Can you redesign an existing website?', a: 'Yes, redesigns are our most common request. We audit the current site, identify UX issues, and propose a modernised design before execution.' }
     ]
@@ -712,7 +695,7 @@ const SERVICE_CONFIGS = [
     category: 'branding',
     valuerop: 'Brands That Stand Out & Scale',
     subheadline: 'We create cohesive brand identities that communicate who you are, build trust, and differentiate you from the competition.',
-    metaDescription: 'Complete brand identity systems — logos, color palettes, and style guides — available in your MyDesigner subscription. Unlimited revisions, no extra cost.',
+    metaDescription: 'Complete brand identity systems, from logos and color palettes to style guides and templates, built to keep creative consistent across teams and AI workflows.',
     included: [
       'Logo design (primary + variations)',
       'Brand colour palette & typography system',
@@ -722,7 +705,7 @@ const SERVICE_CONFIGS = [
       'Source files in AI, EPS, SVG & PNG'
     ],
     faq: [
-      { q: 'How many logo concepts do we get?', a: 'We present 2–3 distinct logo directions. You choose a direction, we refine it through unlimited revisions until it\'s exactly right.' },
+      { q: 'How many logo concepts do we get?', a: 'We present a small set of distinct directions, then refine the strongest route through focused feedback cycles.' },
       { q: 'Is a brand guidelines document included?', a: 'Yes. Every brand identity project includes a PDF brand guidelines document covering logo usage, colour, typography, and do/don\'ts.' },
       { q: 'Can you refresh an existing brand rather than start from scratch?', a: 'Yes. Brand refreshes are common — we modernise the existing identity while preserving recognition equity you\'ve already built.' },
       { q: 'What file formats will we receive?', a: 'You receive all source files: Adobe Illustrator (.ai), EPS, SVG, and PNG (transparent background) at multiple sizes.' }
@@ -734,7 +717,7 @@ const SERVICE_CONFIGS = [
     category: 'graphic',
     valuerop: 'Pitch Decks That Win Rooms',
     subheadline: 'We design investor-ready pitch decks and executive presentations that communicate clearly and leave a lasting impression.',
-    metaDescription: 'Investor pitch decks and sales presentations designed to impress — part of your MyDesigner subscription. Fast turnaround, unlimited revisions, no extra fees.',
+    metaDescription: 'Investor pitch decks and sales presentations designed for clarity, hierarchy, and confidence, with focused feedback cycles and brand-consistent execution.',
     included: [
       'Slide layout & visual hierarchy design',
       'Data visualisation & infographic creation',
@@ -756,7 +739,7 @@ const SERVICE_CONFIGS = [
     category: 'graphic',
     valuerop: 'Exhibition Stands That Stop Foot Traffic',
     subheadline: 'We design eye-catching booth and exhibition graphics that communicate your brand\'s story and attract the right attendees.',
-    metaDescription: 'Trade show booths, exhibition displays, and event graphics designed as part of your subscription. Unlimited designs, fast turnaround, cancel anytime.',
+    metaDescription: 'Trade show booths, exhibition displays, and event graphics designed with brand clarity, print-ready production, and deadline-aware creative execution.',
     included: [
       'Booth backdrop & banner design',
       'Pull-up & retractable banner graphics',
@@ -767,9 +750,9 @@ const SERVICE_CONFIGS = [
     ],
     faq: [
       { q: 'Do you supply the printed materials or just design files?', a: 'We supply print-ready design files (PDF, AI, EPS). Printing is handled by your local or online print vendor.' },
-      { q: 'Can you work with an upcoming event deadline?', a: 'Yes. Mention your deadline when submitting the request and we\'ll prioritise accordingly. Growth and Scale plans offer the fastest turnaround.' },
+      { q: 'Can you work with an upcoming event deadline?', a: 'Yes. Mention your deadline when sharing the brief and we will recommend a realistic sprint or production rhythm.' },
       { q: 'What dimensions and file specs do you need from us?', a: 'Share the vendor\'s spec sheet (dimensions, bleed, DPI, colour mode) and we\'ll design and export to those exact specifications.' },
-      { q: 'Can you design multiple booth sizes for the same event?', a: 'Yes. Multiple size variants of the same design are treated as revisions, not separate requests.' }
+      { q: 'Can you design multiple booth sizes for the same event?', a: 'Yes. Multiple size variants of the same concept can be scoped together so the event system stays consistent.' }
     ]
   },
   {
@@ -778,7 +761,7 @@ const SERVICE_CONFIGS = [
     category: 'graphic',
     valuerop: 'Scroll-Stopping Social Content, Consistently',
     subheadline: 'We design on-brand social media creatives that maintain visual consistency and drive engagement across every platform.',
-    metaDescription: 'Scroll-stopping social media graphics and templates for every platform, included in your MyDesigner subscription. Unlimited requests, 24–72 hour delivery.',
+    metaDescription: 'Scroll-stopping social media graphics and templates for every platform, created with brand context, reusable formats, and AI-native production support.',
     included: [
       'Instagram, LinkedIn & Twitter/X post designs',
       'Story & Reel cover graphics',
@@ -788,7 +771,7 @@ const SERVICE_CONFIGS = [
       'Editable Figma or Canva templates'
     ],
     faq: [
-      { q: 'How many posts can I get per month?', a: 'Output depends on complexity and your plan. Starter clients typically receive 15–25 individual post designs per month with revisions.' },
+      { q: 'How many posts can I get per month?', a: 'Output depends on complexity, content readiness, template reuse, and the operating rhythm we set for your team.' },
       { q: 'Do you design for all social platforms?', a: 'Yes — Instagram, LinkedIn, Twitter/X, Facebook, Pinterest, and YouTube thumbnails. Specify the platforms in your request.' },
       { q: 'Can you create templates our team can edit?', a: 'Yes. We deliver editable Figma or Canva templates so your team can swap copy and images for future posts independently.' },
       { q: 'Will the designs follow our brand guidelines?', a: 'Every creative is designed to your brand guide. Share your brand kit on onboarding and we apply it consistently across every post.' }
@@ -1389,10 +1372,10 @@ function buildRelatedProjectsScript() {
   if (related.length === 0) return;
 
   var categoryLabels = {
-    uiux:     'UI/UX Design',
-    branding: 'Branding',
-    webdev:   'Web Development',
-    graphic:  'Graphic Design'
+    uiux:     'product UI proof',
+    branding: 'brand system proof',
+    webdev:   'website and build proof',
+    graphic:  'growth creative proof'
   };
 
   var cards = related.map(function(p) {
@@ -1415,7 +1398,7 @@ function buildRelatedProjectsScript() {
 
   var container = section.querySelector('div');
   container.innerHTML =
-    '<h2 class="text-xl font-bold mb-8">More ' + (categoryLabels[category] || 'Projects') + '</h2>' +
+    '<h2 class="text-xl font-bold mb-8">More ' + (categoryLabels[category] || 'project proof') + '</h2>' +
     '<div class="grid grid-cols-1 md:grid-cols-3 gap-6">' + cards + '</div>';
 })();
 `;

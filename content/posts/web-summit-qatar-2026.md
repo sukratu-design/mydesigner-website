@@ -64,8 +64,8 @@ A few things we're carrying home from Doha:
 
 ## Let's build something together
 
-If you're a founder thinking about levelling up your product's design, we'd love to connect. [Book a free design call →](https://calendar.app.google/xGoKb51qpbcnZgJy5)
+If you're a founder thinking about levelling up your product's design, we'd love to connect. [Talk through what your team needs to ship →](https://calendar.app.google/xGoKb51qpbcnZgJy5)
 
 ---
 
-*[MyDesigner.gg](https://mydesigner.gg) is an unlimited design subscription for startups and growing businesses — UI/UX, Webflow, Framer, and graphic design for a fixed monthly fee.*
+*[MyDesigner.gg](https://mydesigner.gg) is an AI-native creative team for growing companies — human creative direction, AI-speed execution, and Client Memory across web, product, brand, and growth creative.*

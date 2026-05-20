@@ -44,9 +44,9 @@ The compounding effect matters. Research consistently links poor UX to elevated 
 
 ## What the subscription model actually costs
 
-Design subscription services — a flat monthly fee for continuous design delivery — have expanded significantly as an alternative. Pricing [ranges from around $499 to nearly $4,000 per month](https://penji.co/subscription-design-services/) depending on capacity and turnaround.
+Design subscription services and ongoing creative teams have expanded significantly as alternatives. Pricing [ranges from around $499 to nearly $4,000 per month](https://penji.co/subscription-design-services/) depending on capacity, specialist mix, and turnaround.
 
-At [mydesigner.gg](https://mydesigner.gg), plans start at **$1,400/month** for a single concurrent request with 48–72 hour turnaround, scaling to **$3,800/month** for a dedicated design team with priority delivery. Cancel anytime.
+At [mydesigner.gg](https://mydesigner.gg), teams can start with a focused sprint or plug into an ongoing creative operating rhythm starting at **$1,400/month**. The point is not just request volume; it is access to web, product, brand, and growth creative with human direction, AI-speed production, and Client Memory.
 
 The comparison with full-time hiring isn't just about monthly rate. It's about:
 
@@ -80,8 +80,8 @@ When evaluating whether to hire or subscribe, ask:
 3. **What is your runway?** A $140,000-a-year commitment looks different at 12 months runway than at 24.
 4. **How quickly do you need to start?** If the answer is "now," hiring isn't your option.
 
-The startup design decision isn't really about hiring versus subscribing. It's about matching your spending to your stage — and understanding that the cheaper-looking option often isn't.
+The startup design decision isn't really about hiring versus subscribing. It's about matching your creative capacity to your stage — and understanding that the option that looks leanest on paper can still be expensive if it slows shipping.
 
 ---
 
-*mydesigner.gg is a design subscription for startups — UI/UX, Webflow/Framer development, and graphic design. Plans start at $1,400/month with no contracts. [See plans](/pricing).*
+*MyDesigner is an AI-native creative team for growing companies — UI/UX, Webflow/Framer builds, brand systems, decks, and growth creative with Client Memory. [See pricing](/pricing).*

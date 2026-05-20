@@ -112,4 +112,4 @@ The Figma file should be a specification, not a sketch. Treat it like one.
 
 ---
 
-*MyDesigner connects startups with senior product designers who know how to work inside a build cycle — not just upstream of one. [Book a call](https://mydesigner.gg) to see how it works.*
+*MyDesigner helps growing teams ship product UI with human creative direction, build-aware handoff, and Client Memory that keeps decisions from disappearing. [Talk through your product UI](https://calendar.app.google/xGoKb51qpbcnZgJy5) to see how it works.*
