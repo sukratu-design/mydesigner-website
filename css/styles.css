@@ -45,10 +45,10 @@
   max-width: 600px;
   margin-bottom: 24px;
   color: #1a1a1a;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-family: 'TheSeasons', Georgia, 'Times New Roman', serif !important;
   font-size: 52px;
   line-height: 1.12;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
 }
 
 .pretext-hero__fallback p {
