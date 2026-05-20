@@ -1232,7 +1232,6 @@
       const BODY_LH = 30;
       const OBSTACLE_RADIUS = 160;
       const TEXT_PADDING = 20;
-      const LERP = 0.12;
 
       const canvas = document.getElementById('pretextHero');
       const obstacleEl = document.getElementById('pretextObstacle');
@@ -1253,9 +1252,8 @@
 
       await waitForHeroFonts();
 
-      let obstacleX, obstacleY, targetX, targetY;
+      let obstacleX, obstacleY;
       let linePool = [];
-      let animFrame = null;
 
       const preparedHeadline = prepareWithSegments(HEADLINE, HEADLINE_FONT);
       const preparedBody = prepareWithSegments(BODY, BODY_FONT);
@@ -1296,14 +1294,8 @@
       function render() {
         const rect = canvas.getBoundingClientRect();
         const W = rect.width;
-        const H = rect.height;
 
-        if (targetX != null) {
-          obstacleX += (targetX - obstacleX) * LERP;
-          obstacleY += (targetY - obstacleY) * LERP;
-        }
         obstacleX = Math.max(OBSTACLE_RADIUS, Math.min(W - OBSTACLE_RADIUS, obstacleX));
-        obstacleY = Math.max(OBSTACLE_RADIUS, Math.min(H - OBSTACLE_RADIUS, obstacleY));
         obstacleEl.style.transform = `translate(${obstacleX}px, ${obstacleY}px)`;
 
         const padLeft = 16;
@@ -1391,46 +1383,19 @@
         // Hide unused
         for (let i = li; i < linePool.length; i++) linePool[i].style.display = 'none';
 
-        const dx = targetX != null ? targetX - obstacleX : 0;
-        const dy = targetY != null ? targetY - obstacleY : 0;
-        if (dx * dx + dy * dy > 0.5) {
-          animFrame = requestAnimationFrame(render);
-        } else {
-          animFrame = null;
-        }
       }
-
-      function scheduleRender() {
-        if (!animFrame) animFrame = requestAnimationFrame(render);
-      }
-
-      canvas.addEventListener('pointermove', (e) => {
-        const r = canvas.getBoundingClientRect();
-        targetX = e.clientX - r.left;
-        targetY = e.clientY - r.top;
-        scheduleRender();
-      });
-
-      canvas.addEventListener('pointerleave', () => {
-        const r = canvas.getBoundingClientRect();
-        targetX = r.width * 0.72;
-        targetY = r.height * 0.42;
-        scheduleRender();
-      });
 
       window.addEventListener('resize', () => {
         const r = canvas.getBoundingClientRect();
-        targetX = Math.min(targetX, r.width - OBSTACLE_RADIUS);
-        targetY = Math.min(targetY, r.height - OBSTACLE_RADIUS);
-        scheduleRender();
+        obstacleX = r.width * 0.72;
+        obstacleY = r.height * 0.42;
+        render();
       });
 
       // Init
       const initRect = canvas.getBoundingClientRect();
       obstacleX = initRect.width * 0.72;
       obstacleY = initRect.height * 0.42;
-      targetX = obstacleX;
-      targetY = obstacleY;
       canvas.classList.add('is-ready');
       render();
     }
