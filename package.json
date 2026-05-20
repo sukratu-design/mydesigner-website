@@ -9,12 +9,14 @@
     "build:portfolio": "node scripts/build-portfolio.js",
     "sync:indexes": "node scripts/sync-directory-indexes.js",
     "preview": "node scripts/preview-server.js",
-    "test": "node scripts/check-vs-positioning.js && node scripts/check-contact-page.js && node scripts/check-service-detail-pages.js && node scripts/check-work-case-study-pages.js && node scripts/check-portfolio-category-pages.js && node scripts/check-blog-positioning.js"
+    "test": "node scripts/check-vs-positioning.js && node scripts/check-contact-page.js && node scripts/check-service-detail-pages.js && node scripts/check-work-case-study-pages.js && node scripts/check-portfolio-category-pages.js && node scripts/check-blog-positioning.js && node scripts/check-homepage-portfolio.js && node scripts/check-csp-analytics.js"
   },
   "dependencies": {
     "firebase-admin": "^13.0.1",
     "gray-matter": "^4.0.3",
     "marked": "^16.3.0",
-    "stripe": "^18.0.0"
+    "stripe": "^18.0.0",
+    "svix": "^1.64.1",
+    "@netlify/blobs": "^10.7.4"
   }
 }
