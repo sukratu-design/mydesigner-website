@@ -250,15 +250,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ========== Logo Marquee ========== */
-.marquee__track {
+.marquee {
   display: flex;
-  gap: 4rem;
-  animation: marquee 30s linear infinite;
-  width: max-content;
+  width: 100%;
+  overflow: hidden;
 }
 
-.marquee__track:hover {
-  animation-play-state: paused;
+.marquee__track {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: clamp(2.5rem, 5vw, 7rem);
+  flex: 0 0 100%;
+  min-width: 100%;
+  animation: marquee 30s linear infinite;
 }
 
 .marquee__item {
@@ -286,7 +291,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes marquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-100%); }
 }
 
 /* ========== Floating CTA (Mobile) ========== */

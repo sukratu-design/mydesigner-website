@@ -40,11 +40,14 @@
 
 /* ========== MARQUEE DUPLICATE ========== */
 (function() {
-  var track = document.querySelector('.marquee__track');
+  var marquee = document.querySelector('.marquee');
+  var track = marquee && marquee.querySelector('.marquee__track');
   if (!track) return;
+  if (marquee.querySelectorAll('.marquee__track').length > 1) return;
 
-  var items = track.innerHTML;
-  track.innerHTML = items + items;
+  var duplicate = track.cloneNode(true);
+  duplicate.setAttribute('aria-hidden', 'true');
+  marquee.appendChild(duplicate);
 })();
 
 /* ========== PORTFOLIO FILTERS ========== */
