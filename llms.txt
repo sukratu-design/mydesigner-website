@@ -1,6 +1,6 @@
 # MyDesigner
 
-> MyDesigner is an unlimited design subscription service by Sukratu, based in Pune, India. For a fixed monthly fee starting at $1,400, businesses get unlimited UI/UX design, Webflow development, Framer development, and graphic design — with no contracts and cancel-anytime billing. MyDesigner has served 57 companies and delivered 142+ projects since 2020.
+> MyDesigner is an AI-native creative team by Sukratu, based in Pune, India and serving growing companies globally. It helps teams ship websites, product UI, brand systems, pitch decks, social assets, Webflow/Framer builds, and growth creative with human creative direction, AI-speed execution, and Client Memory that compounds over time.
 
 ## Key Facts
 
@@ -9,44 +9,43 @@
 - Parent company: Sukratu
 - Clients served: 57 companies
 - Projects delivered: 142+
-- Starting price: $1,400/month
-- Turnaround: 24–72 hours
-- Contracts: None (cancel anytime)
+- Entry points: focused creative sprints, ongoing growth design support, and custom Creative Growth Partner engagements
+- Core operating model: diagnose, build Client Memory, create, ship, learn
 
 ## Services
 
-- [UI/UX Design](https://mydesigner.gg/services.html): Web app design, mobile app design, wireframing, prototyping, design systems
-- [Webflow Development](https://mydesigner.gg/services.html): Pixel-perfect Webflow builds, CMS setup, full website development
-- [Framer Development](https://mydesigner.gg/services.html): Framer sites with animations, landing pages, full website builds
-- [Graphic Design](https://mydesigner.gg/services.html): Brand identity, logos, social media, presentations, print, packaging
+- [Services](https://mydesigner.gg/services): Capability architecture for web, product, brand, and growth creative
+- [Website Design](https://mydesigner.gg/services/website-design): Marketing websites, campaign pages, landing pages, and conversion-focused page design
+- [Web App Design](https://mydesigner.gg/services/web-app-design): SaaS dashboards, product UI, internal tools, portals, and interface systems
+- [Webflow Development](https://mydesigner.gg/services/webflow-development): Responsive, CMS-ready Webflow builds and launch handoff
+- [Framer Development](https://mydesigner.gg/services/framer-development): Polished Framer websites, CMS structure, motion, and launch setup
+- [Brand Identity](https://mydesigner.gg/services/brand-identity): AI-ready brand systems, logo direction, guidelines, templates, and visual rules
+- [Presentation Design](https://mydesigner.gg/services/presentation-design): Investor decks, sales decks, strategy presentations, and reusable slide systems
+- [Social Media Creatives](https://mydesigner.gg/services/social-media-creatives): Campaign assets, social posts, ad variations, carousels, and content templates
+- [Booth & Exhibition Design](https://mydesigner.gg/services/booth-designs): Event graphics, booth systems, banners, handouts, and print-ready assets
 
-## Pricing
+## Offers
 
-| Plan | Price | Requests at Once | Turnaround |
-|------|-------|------------------|------------|
-| Daily | $80/day (min 3 days) | 1 | 24-72h |
-| Starter | $1,400/month | 1 | 48-72h |
-| Growth | $2,600/month | 2 | 24-48h |
-| Scale | $3,800/month | 3 | 24-48h |
-| Yearly | $15,000/year | 1 | 48-72h |
-
-All plans include unlimited requests, unlimited revisions, and full source files.
+- [Conversion Website Sprint](https://mydesigner.gg/conversion-design): focused website or landing-page sprint
+- [Founder Content Engine](https://mydesigner.gg/founder-content-engine): founder-led content and growth creative system
+- [AI-Ready Brand System](https://mydesigner.gg/ai-ready-brand-system): brand system designed to guide future human and AI-assisted creative production
+- [Pricing](https://mydesigner.gg/pricing): sprint, ongoing subscription, and custom partner options
 
 ## Main Pages
 
-- [Homepage](https://mydesigner.gg): Overview, pricing, portfolio, testimonials
-- [Services](https://mydesigner.gg/services.html): Full list of design and development services
-- [Pricing](https://mydesigner.gg/pricing.html): Plan details and comparison
-- [Portfolio](https://mydesigner.gg/portfolio.html): Case studies and project examples
-- [Blog](https://mydesigner.gg/blog/): Design insights, industry trends, and guides
-- [FAQ](https://mydesigner.gg/faq.html): Common questions and answers
+- [Homepage](https://mydesigner.gg): AI-native creative team positioning, services, portfolio proof, pricing, and FAQs
+- [How It Works](https://mydesigner.gg/how-it-works): operating model, Client Memory, creative rhythm, and delivery process
+- [Portfolio](https://mydesigner.gg/portfolio): proof across websites, product UI, brand systems, decks, social assets, and no-code builds
+- [FAQ](https://mydesigner.gg/faq): buyer questions about AI, Client Memory, workflow, ownership, pricing, and fit
+- [Contact](https://mydesigner.gg/contact): creative diagnosis and calendar handoff
+- [Blog](https://mydesigner.gg/blog/): design, growth, product, website, and brand insights
 
 ## Comparisons
 
-- [MyDesigner vs DesignJoy](https://mydesigner.gg/vs/designjoy.html): $1,400 vs $5,995/month, team vs solo designer, both include Webflow
-- [MyDesigner vs Penji](https://mydesigner.gg/vs/penji.html): Design+dev vs design-only, $1,400 vs $499-$1,497/month
-- [MyDesigner vs ManyPixels](https://mydesigner.gg/vs/manypixels.html): Dev included vs $449/month add-on, full UI/UX vs limited
-- [MyDesigner vs Kimp](https://mydesigner.gg/vs/kimp.html): Dev included vs video focus, $1,400 vs $1,397/month
+- [MyDesigner vs DesignJoy](https://mydesigner.gg/vs/designjoy): AI-native creative team versus solo request-queue model
+- [MyDesigner vs Penji](https://mydesigner.gg/vs/penji): broader creative operating system versus design-only production support
+- [MyDesigner vs ManyPixels](https://mydesigner.gg/vs/manypixels): web, product, brand, and growth support versus narrower subscription design output
+- [MyDesigner vs Kimp](https://mydesigner.gg/vs/kimp): creative operating rhythm versus graphics/video production subscription
 
 ## Notable Clients
 
@@ -55,7 +54,7 @@ Dentsu, USA Table Tennis, DentalDost (ScanO), Calfus, HumanCloud, Poocho
 ## Contact
 
 - Website: https://mydesigner.gg
-- Book a call: https://calendar.app.google/xGoKb51qpbcnZgJy5
+- Talk through creative needs: https://calendar.app.google/xGoKb51qpbcnZgJy5
 - X (Twitter): https://x.com/mydesigner_gg
 - LinkedIn: https://www.linkedin.com/showcase/mydesigner-sukratu/
 - Instagram: https://instagram.com/mydesigner.gg

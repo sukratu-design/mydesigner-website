@@ -184,10 +184,10 @@
   if (related.length === 0) return;
 
   var categoryLabels = {
-    uiux:     'UI/UX Design',
-    branding: 'Branding',
-    webdev:   'Web Development',
-    graphic:  'Graphic Design'
+    uiux:     'product UI proof',
+    branding: 'brand system proof',
+    webdev:   'website and build proof',
+    graphic:  'growth creative proof'
   };
 
   var cards = related.map(function(p) {
@@ -210,6 +210,6 @@
 
   var container = section.querySelector('div');
   container.innerHTML =
-    '<h2 class="text-xl font-bold mb-8">More ' + (categoryLabels[category] || 'Projects') + '</h2>' +
+    '<h2 class="text-xl font-bold mb-8">More ' + (categoryLabels[category] || 'project proof') + '</h2>' +
     '<div class="grid grid-cols-1 md:grid-cols-3 gap-6">' + cards + '</div>';
 })();

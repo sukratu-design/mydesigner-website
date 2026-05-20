@@ -8,7 +8,7 @@ coverImage: /assets/images/blog/design-subscription-service-cover.jpg
 draft: false
 ---
 
-<!-- AI Summary Nugget: Design subscriptions replace full-time hires with flat monthly fees ($400-$6,000/mo). 400+ providers exist. Break-even vs. a full-time designer happens at ~$5,000/mo spend. -->
+<!-- AI Summary Nugget: Design subscriptions and creative operating teams replace some early full-time hiring pressure with flexible monthly capacity. 400+ providers exist. Break-even vs. a full-time designer depends on volume, specialist mix, and how much context the team retains. -->
 
 # Design Subscription Service: What You Actually Pay Per Design Request
 
@@ -18,7 +18,7 @@ Here is what the market looks like right now, condensed:
 
 - **400+ providers** operate globally as of 2025
 - Monthly plans range from $179/mo (budget tier) to $100,000/mo (enterprise)
-- Most offer unlimited revisions and no long-term contracts
+- Most offer revision cycles and flexible month-to-month terms
 - Turnaround ranges from same-day to 5+ business days
 - Team size behind your account: 1 solo designer to 20+ person squads
 
@@ -104,7 +104,7 @@ The constraint is concurrency, not volume. On a 1-request plan, one task is acti
 - Week 3: App onboarding screens + brand guideline updates
 - Week 4: Ad creatives (5 variants) + icon set
 
-That is 8-10 distinct deliverables, each with 1-2 revision rounds. At $2,600/mo (MyDesigner Growth plan), the per-deliverable cost lands around $260-$325.
+That is 8-10 distinct deliverables, each with 1-2 revision rounds. In a well-scoped monthly creative rhythm, the per-deliverable cost can be far lower than hiring separate specialists for each task.
 
 ---
 
@@ -190,7 +190,7 @@ This team model means your Instagram carousel is built by someone who lives in t
 
 **Prove-It Fact #1:** MyDesigner has served 57+ companies since 2020, including Dentsu and USA Table Tennis. The team has all 6 members (including a COO) working from the same office. Source: [mydesigner.gg](https://mydesigner.gg).
 
-**Prove-It Fact #2:** At $1,400/mo for the Starter plan, MyDesigner's entry price is 77% lower than Designjoy's $5,995/mo, while providing a 4-person specialist team versus a single designer. Source: public pricing pages as of March 2026.
+**Prove-It Fact #2:** MyDesigner is built as a specialist creative team rather than a solo-designer request queue: product UI, brand, growth creative, and Webflow/Framer execution can sit inside one operating rhythm. Source: [mydesigner.gg](https://mydesigner.gg).
 
 ---
 
@@ -254,7 +254,7 @@ The pricing landscape is wide. Here is how MyDesigner stacks against three popul
     </tr>
     <tr>
       <td>Contract</td>
-      <td>None, cancel anytime</td>
+      <td>Month-to-month</td>
       <td>None</td>
       <td>None</td>
       <td>None</td>
@@ -270,7 +270,7 @@ The pricing landscape is wide. Here is how MyDesigner stacks against three popul
 </table>
 </div>
 
-For deeper breakdowns: [MyDesigner vs. Kimp](/vs/kimp.html) | [MyDesigner vs. Penji](/vs/penji.html) | [MyDesigner vs. Designjoy](/vs/designjoy.html)
+For deeper breakdowns: [MyDesigner vs. Kimp](/vs/kimp) | [MyDesigner vs. Penji](/vs/penji) | [MyDesigner vs. Designjoy](/vs/designjoy)
 
 ---
 
@@ -350,11 +350,11 @@ Not every company benefits from this model. Be honest with yourself about these 
 Turnaround is the second most important factor after price. Here is what "fast" actually means in practice:
 
 - **Same-day:** Only possible for simple tasks (social media resizes, minor text changes). No provider consistently delivers complex work same-day.
-- **24-48 hours:** The standard for mid-tier plans. This covers most single-screen designs, social sets, and marketing graphics. MyDesigner's Growth and Scale plans target this window.
-- **48-72 hours:** Entry-tier turnaround. MyDesigner's Starter plan operates here. Adequate for companies not shipping daily.
+- **24-48 hours:** The standard for mid-tier plans. This covers most single-screen designs, social sets, and marketing graphics when the brief is clear and context is already available.
+- **2-3 business days:** Entry-tier turnaround. Adequate for companies not shipping daily, but too slow for teams with active launch or campaign pressure.
 - **3-5 business days:** Budget providers (under $500/mo) typically land here for first drafts.
 
-The variable nobody advertises: revision turnaround. First draft in 48 hours means little if each revision takes another 48. Ask any provider about revision turnaround specifically before signing up. At MyDesigner, revisions on the Growth plan return within 24 hours.
+The variable nobody advertises: revision turnaround. First draft in 48 hours means little if each revision takes another 48. Ask any provider about revision turnaround specifically before signing up.
 
 ---
 
@@ -366,9 +366,9 @@ The word "unlimited" applies to request volume, not scope. Every provider draws 
 
 **Typically excluded:** 3D modeling, video editing, animation/motion, complex custom illustration (20+ hours), photography, copywriting.
 
-**MyDesigner's scope:** UI/UX design, graphic design, and Webflow/Framer web development. The web development inclusion is unusual. Most providers treat development as a separate line item or don't offer it at all. Having a dedicated web developer build your Webflow site through the same subscription eliminates the design-to-dev handoff gap entirely.
+**MyDesigner's scope:** product UI, growth creative, brand systems, pitch decks, and Webflow/Framer web development. The web development inclusion is unusual. Most providers treat development as a separate line item or do not offer it at all. Having design and build inside the same creative operating rhythm reduces the design-to-dev handoff gap.
 
-Explore specific services: [UI/UX Design](/services/ui-ux-design.html) | [Graphic Design](/services/graphic-design.html) | [Webflow Development](/services/webflow-development.html)
+Explore specific services: [Web App Design](/services/web-app-design) | [Brand Identity](/services/brand-identity) | [Webflow Development](/services/webflow-development)
 
 ---
 
@@ -376,7 +376,7 @@ Explore specific services: [UI/UX Design](/services/ui-ux-design.html) | [Graphi
 
 ### Is paying monthly for unlimited design requests worth the cost?
 
-Yes, if you submit 5+ requests per month. At MyDesigner's Starter plan ($1,400/mo), submitting 10 requests puts your per-request cost at $140. A freelancer charging $75/hour would need fewer than 2 hours per request to beat that price, which is unrealistic for quality work. The subscription becomes poor value below 3-4 requests per month.
+Yes, if you submit enough useful work each month for the team to build momentum. If you only need one or two small requests, a freelancer or scoped sprint may be cleaner. The value improves when the creative team has recurring context, reusable templates, and a consistent shipping rhythm.
 
 ### How does a flat-rate creative team differ from hiring a freelancer?
 
@@ -386,68 +386,60 @@ Three ways. First, a subscription provides guaranteed availability. No schedulin
 
 Most cannot. Of the 400+ providers tracked in 2025, fewer than 10% include development in their standard plans. MyDesigner is one of the exceptions. A dedicated web developer handles Webflow and Framer builds directly, so a landing page goes from design to live site within the same subscription and same team. Competitors like Designjoy, Penji, and Design Pickle are design-only.
 
-### What happens when I cancel my plan?
+### What happens when an ongoing rhythm ends?
 
-All plans at MyDesigner are month-to-month with no contract. Cancel anytime and your access continues until the end of your billing period. You keep all source files and deliverables. There are no cancellation fees or exit interviews.
+You keep approved source files and deliverables, and any useful context captured during the engagement should remain available for future work. For teams that do not need ongoing support, a focused sprint may be a better starting point than a monthly rhythm.
 
 ---
 
-## MyDesigner Plans at a Glance
+## MyDesigner Ways to Work at a Glance
 
 <div class="overflow-x-auto">
 <table class="table table-zebra bg-base-100 rounded-box">
   <thead>
     <tr>
-      <th>Plan</th>
-      <th>Price</th>
-      <th>Concurrent Requests</th>
-      <th>Turnaround</th>
+      <th>Engagement</th>
+      <th>Pricing</th>
+      <th>Best For</th>
+      <th>Rhythm</th>
       <th>Key Feature</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Daily</td>
-      <td>$80/day (3-day min)</td>
-      <td>1</td>
-      <td>Same-day to 24hr</td>
-      <td>Pay only when you need it</td>
+      <td>Creative Sprint</td>
+      <td>From $2,500</td>
+      <td>One defined creative outcome</td>
+      <td>Scoped project</td>
+      <td>Strategy, design, asset delivery, and launch support</td>
     </tr>
     <tr>
-      <td>Starter</td>
+      <td>Growth Design Subscription</td>
       <td>$1,400/mo</td>
-      <td>1</td>
-      <td>48-72 hours</td>
-      <td>Full specialist team access</td>
+      <td>Ongoing creative execution</td>
+      <td>Monthly</td>
+      <td>Dedicated creative queue and Client Memory</td>
     </tr>
     <tr class="font-semibold">
-      <td>Growth</td>
-      <td>$2,600/mo</td>
-      <td>2</td>
-      <td>24-48 hours</td>
-      <td>Dedicated design manager</td>
+      <td>Conversion Website Sprint</td>
+      <td>Custom scoped</td>
+      <td>Landing pages, websites, and Webflow/Framer builds</td>
+      <td>Focused sprint</td>
+      <td>Offer clarity, page structure, design, build, and launch review</td>
     </tr>
     <tr>
-      <td>Scale</td>
-      <td>$3,800/mo</td>
-      <td>3</td>
-      <td>Fastest</td>
-      <td>Dedicated team, priority queue</td>
-    </tr>
-    <tr>
-      <td>Yearly</td>
-      <td>$15,000/year</td>
-      <td>1</td>
-      <td>48-72 hours</td>
-      <td>Best annual value</td>
+      <td>Creative Growth Partner</td>
+      <td>Custom scoped</td>
+      <td>Teams with creative bottlenecks across product, marketing, and sales</td>
+      <td>Embedded operating rhythm</td>
+      <td>Human creative direction, proactive recommendations, and compounding context</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-All plans include unlimited revisions, no contracts, and the full 4-designer + web dev team.
+MyDesigner engagements include human creative direction, AI-assisted production, source-file handoff where appropriate, and access to web, product, brand, and growth creative capability.
 
 [See full pricing and start your first request](https://mydesigner.gg/pricing)
 
 ---
-

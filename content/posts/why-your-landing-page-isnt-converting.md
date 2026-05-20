@@ -84,4 +84,4 @@ If your page isn't converting at the rate your product deserves, the problem is 
 
 ---
 
-*[MyDesigner](https://mydesigner.gg) works with startups at precisely this stage — where the product is solid but the marketing surface needs to catch up. If your landing page is underperforming and you're not sure why, [a focused design audit](https://mydesigner.gg) is a faster and cheaper starting point than a full rebuild.*
+*[MyDesigner](https://mydesigner.gg) works with startups at precisely this stage — where the product is solid but the marketing surface needs to catch up. If your landing page is underperforming and you're not sure why, [talk through the page you need to ship](https://calendar.app.google/xGoKb51qpbcnZgJy5) before jumping into a full rebuild.*

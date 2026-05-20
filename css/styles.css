@@ -17,12 +17,49 @@
   will-change: transform;
 }
 
+.pretext-hero.is-ready .pretext-hero__fallback {
+  display: none;
+}
+
+.pretext-hero__fallback {
+  position: absolute;
+  left: 16px;
+  top: 80px;
+  max-width: 620px;
+  z-index: 15;
+}
+
+.pretext-hero__fallback-label {
+  display: block;
+  margin-bottom: 20px;
+  color: rgba(0,0,0,0.45);
+  font: 600 14px Inter, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.pretext-hero__fallback h1 {
+  max-width: 600px;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+  font-size: 52px;
+  line-height: 1.12;
+}
+
+.pretext-hero__fallback p {
+  max-width: 560px;
+  color: rgba(26,26,26,0.65);
+  font-size: 18px;
+  line-height: 30px;
+}
+
 .pretext-hero__obstacle {
   position: absolute;
   top: 0; left: 0;
   pointer-events: none;
   will-change: transform;
   z-index: 10;
+  transform: translate(72vw, 235px);
 }
 
 /* Reuse ring styles but position centered on obstacle origin */
@@ -40,6 +77,8 @@
 
 .pretext-hero__cta {
   position: absolute;
+  left: 16px;
+  top: 390px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -48,6 +87,8 @@
 
 .pretext-hero__sub {
   position: absolute;
+  left: 16px;
+  top: 462px;
   font-size: 14px;
   color: rgba(0,0,0,0.45);
   z-index: 20;

@@ -89,4 +89,4 @@ Webflow and Framer are both excellent in 2026. The mistake isn't choosing one ov
 
 Map your content. Define your priorities. Then pick the platform that fits.
 
-Not sure which is right for you? [Book a call with our team](https://mydesigner.gg/#book-call) and we'll help you decide — and build it.
+Not sure which is right for you? [Talk through the website you need to ship](https://calendar.app.google/xGoKb51qpbcnZgJy5) and we'll help you decide — and build it.

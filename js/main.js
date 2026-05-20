@@ -202,23 +202,124 @@
 
 /* ========== GA4 CONVERSION TRACKING ========== */
 (function() {
+  function trackEvent(name, params) {
+    if (typeof gtag !== 'function') return;
+
+    gtag('event', name, Object.assign({
+      event_category: 'conversion',
+      page_location: window.location.pathname
+    }, params || {}));
+  }
+
+  function normalizePath(href) {
+    var url;
+    try {
+      url = new URL(href, window.location.origin);
+    } catch (err) {
+      return '';
+    }
+
+    return url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+  }
+
+  function eventNameForCalendar(label, page) {
+    var key = (label + ' ' + page).toLowerCase();
+
+    if (normalizePath(page) === '/how-it-works') {
+      return key.includes('final') ? 'how_it_works_click_book_call_final' : 'how_it_works_click_book_call_hero';
+    }
+    if (key.includes('website sprint') || key.includes('conversion-design')) return 'book_website_sprint';
+    if (key.includes('content engine') || key.includes('founder-content-engine')) return 'book_founder_content_engine';
+    if (key.includes('brand system') || key.includes('ai-ready-brand-system')) return 'book_ai_ready_brand_system';
+    if (key.includes('partner')) return 'book_partner_call';
+    if (key.includes('subscription')) return 'start_subscription_click';
+    return 'book_creative_growth_call';
+  }
+
   document.addEventListener('click', function(e) {
     var link = e.target.closest('a[href*="calendar.app.google"]');
-    if (!link) return;
-
-    // Determine CTA label from button text
-    var label = (link.textContent || '').trim();
+    var label = '';
     var page = window.location.pathname;
 
-    // Fire GA4 event
-    if (typeof gtag === 'function') {
-      gtag('event', 'book_a_call', {
-        event_category: 'conversion',
+    if (link) {
+      label = (link.textContent || '').trim();
+      var calendarEvent = eventNameForCalendar(label, page);
+      if (normalizePath(page) === '/how-it-works' && link.closest('[data-final-cta]')) {
+        calendarEvent = 'how_it_works_click_book_call_final';
+      }
+      trackEvent(calendarEvent, {
         event_label: label,
-        page_location: page
+        link_url: link.href
       });
     }
+
+    var offerLink = e.target.closest('a[href]');
+    if (!offerLink) return;
+
+    var offerPath = normalizePath(offerLink.getAttribute('href'));
+    var currentPath = normalizePath(window.location.pathname);
+
+    if (currentPath === '/how-it-works') {
+      var howEvents = {
+        '/services': 'how_it_works_click_services',
+        '/conversion-design': 'how_it_works_click_website_sprint',
+        '/founder-content-engine': 'how_it_works_click_founder_content',
+        '/ai-ready-brand-system': 'how_it_works_click_brand_system',
+        '/pricing': 'how_it_works_click_pricing'
+      };
+
+      if (howEvents[offerPath]) {
+        trackEvent(howEvents[offerPath], {
+          event_label: (offerLink.textContent || '').trim(),
+          link_path: offerPath
+        });
+      }
+    }
+
+    var offerPaths = ['/conversion-design', '/founder-content-engine', '/ai-ready-brand-system', '/pricing'];
+    if (!offerPaths.includes(offerPath)) return;
+
+    var isPricingCta = offerPath === '/pricing' || !!offerLink.closest('#pricing, .pricing, [data-pricing]');
+    trackEvent(isPricingCta ? 'pricing_cta_click' : 'offer_card_click', {
+      event_label: (offerLink.textContent || '').trim(),
+      offer_path: offerPath
+    });
   });
+
+  document.addEventListener('submit', function(e) {
+    var form = e.target;
+    if (!form || form.tagName !== 'FORM') return;
+
+    trackEvent('form_submit', {
+      form_id: form.id || '',
+      form_name: form.getAttribute('name') || form.getAttribute('aria-label') || ''
+    });
+  });
+
+  var offerPages = ['/conversion-design', '/founder-content-engine', '/ai-ready-brand-system'];
+  var currentPath = normalizePath(window.location.pathname);
+  if (!offerPages.includes(currentPath)) return;
+
+  var firedDepths = {};
+  var depthTargets = [25, 50, 75, 100];
+
+  function checkScrollDepth() {
+    var scrollable = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+    var percent = Math.min(100, Math.round((window.scrollY / scrollable) * 100));
+
+    depthTargets.forEach(function(depth) {
+      if (percent >= depth && !firedDepths[depth]) {
+        firedDepths[depth] = true;
+        trackEvent('offer_page_scroll_depth', {
+          scroll_depth: depth,
+          offer_path: currentPath
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkScrollDepth, { passive: true });
+  checkScrollDepth();
 })();
 
 /* ========== SMOOTH SCROLL FOR ANCHOR LINKS ========== */

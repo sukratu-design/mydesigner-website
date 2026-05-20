@@ -21,38 +21,90 @@ const CATEGORIES = [
   {
     key: 'uiux',
     slug: 'ui-ux-design',
-    title: 'UI/UX Design',
-    heading: 'UI/UX Design Work',
-    description: 'Product design, mobile apps, web apps, and user experience design — from wireframes to production-ready UI.',
-    metaTitle: 'UI/UX Design Portfolio — MyDesigner',
-    metaDesc: 'Explore MyDesigner\'s UI/UX design work — mobile apps, web apps, and product design for startups and enterprises.',
+    title: 'Product UI',
+    heading: 'Product UI proof for complex apps, dashboards, and workflows',
+    description: 'Mobile apps, SaaS dashboards, web apps, and product interfaces that show how MyDesigner brings clarity, hierarchy, and reusable UI patterns to complex product work.',
+    metaTitle: 'Product UI Portfolio — MyDesigner | AI-Native Creative Team',
+    metaDesc: 'Explore product UI and UX case studies from MyDesigner: mobile apps, SaaS dashboards, web apps, and product interfaces shaped with clarity, hierarchy, and reusable patterns.',
+    proofLabel: 'Product UI & UX proof',
+    proofTitle: 'Complex products become easier to trust when the interface has structure.',
+    proofPoints: [
+      'Product flows stay clearer when screens share a system.',
+      'Dashboards, tables, onboarding, and mobile states need hierarchy, not decoration.',
+      'Reusable UI decisions become context future product work can build from.'
+    ],
+    memory: 'For product UI work, Client Memory should preserve terminology, user roles, flows, component decisions, edge cases, and implementation constraints so future screens stay coherent.',
+    services: [
+      ['/services/web-app-design', 'Web app design'],
+      ['/services/brand-identity', 'Brand identity'],
+      ['/how-it-works', 'How Client Memory works']
+    ],
   },
   {
     key: 'webdev',
     slug: 'web-development',
-    title: 'Web Development',
-    heading: 'Web Development Work',
-    description: 'Webflow and Framer websites designed and developed from concept to launch — responsive, fast, and production-ready.',
-    metaTitle: 'Web Development Portfolio — MyDesigner | Webflow & Framer',
-    metaDesc: 'Explore MyDesigner\'s Webflow and Framer development work — websites built with precision for startups and growing companies.',
+    title: 'Websites & Builds',
+    heading: 'Website and no-code build proof for teams that need to launch',
+    description: 'Webflow and Framer websites, conversion pages, and marketing sites that show structure, polish, responsive execution, and launch-ready handoff clarity.',
+    metaTitle: 'Website & Webflow Portfolio — MyDesigner | AI-Native Creative Team',
+    metaDesc: 'Explore MyDesigner website, Webflow, and Framer work: responsive marketing sites, conversion pages, CMS builds, and launch-ready no-code execution.',
+    proofLabel: 'Conversion website and no-code build proof',
+    proofTitle: 'A website is only useful when structure, polish, and handoff all survive launch.',
+    proofPoints: [
+      'Marketing pages need a clear story, not just a finished visual.',
+      'Webflow and Framer builds should be responsive, editable, and launch-ready.',
+      'Reusable sections and build decisions should make future pages faster.'
+    ],
+    memory: 'For website and build work, Client Memory should preserve page sections, CMS choices, launch checklists, brand rules, content patterns, animation preferences, and reusable components.',
+    services: [
+      ['/services/website-design', 'Website design'],
+      ['/services/webflow-development', 'Webflow development'],
+      ['/services/framer-development', 'Framer development']
+    ],
   },
   {
     key: 'graphic',
     slug: 'graphic-design',
-    title: 'Graphic Design',
-    heading: 'Graphic Design Work',
-    description: 'Pitch decks, social media design, presentation design, and visual communication — making complex ideas look clear.',
-    metaTitle: 'Graphic Design Portfolio — MyDesigner',
-    metaDesc: 'Explore MyDesigner\'s graphic design work — pitch decks, presentation design, and social media for startups and enterprises.',
+    title: 'Growth Creative',
+    heading: 'Growth creative proof for campaigns, decks, and communication assets',
+    description: 'Pitch decks, social assets, presentation design, and campaign creative that show how visual structure can make ideas easier to understand and ship.',
+    metaTitle: 'Growth Creative Portfolio — MyDesigner | Decks, Social & Campaign Assets',
+    metaDesc: 'Explore MyDesigner growth creative work: pitch decks, presentation design, social assets, campaign graphics, and communication design for growing teams.',
+    proofLabel: 'Growth creative and sales asset proof',
+    proofTitle: 'Campaign and sales assets work better when clarity leads the design.',
+    proofPoints: [
+      'Decks and campaign assets need message structure, not just decoration.',
+      'Reusable visual patterns help teams keep publishing without drifting off-brand.',
+      'Growth creative should support testing, sales conversations, and launch rhythm.'
+    ],
+    memory: 'For growth and deck work, Client Memory should preserve audience assumptions, campaign learnings, slide patterns, narrative structure, proof points, content pillars, objections, and brand rules.',
+    services: [
+      ['/services/social-media-creatives', 'Growth creative'],
+      ['/services/presentation-design', 'Presentation design'],
+      ['/services/brand-identity', 'Brand identity']
+    ],
   },
   {
     key: 'branding',
     slug: 'branding',
-    title: 'Branding',
-    heading: 'Branding Work',
-    description: 'Brand identity, logo design, visual systems, and brand strategy — building brands that are distinctive and durable.',
-    metaTitle: 'Branding Portfolio — MyDesigner | Brand Identity & Logo Design',
-    metaDesc: 'Explore MyDesigner\'s branding work — brand identity systems, logo design, and visual strategy for startups and growing companies.',
+    title: 'Brand Systems',
+    heading: 'Brand system proof for identities that need to scale into future assets',
+    description: 'Brand identity, logo design, visual systems, and product-brand foundations that create rules, examples, and reusable patterns for future creative work.',
+    metaTitle: 'Brand System Portfolio — MyDesigner | Brand Identity & Logo Design',
+    metaDesc: 'Explore MyDesigner brand system work: identity systems, logo design, visual rules, examples, and reusable brand patterns for growing companies.',
+    proofLabel: 'Brand system proof',
+    proofTitle: 'A useful brand system gives future creative work something to build from.',
+    proofPoints: [
+      'Brand work is more than a logo or static style guide.',
+      'Usable identities create rules, examples, and repeatable creative patterns.',
+      'Strong systems make web, product, sales, and campaign assets easier to ship.'
+    ],
+    memory: 'For brand work, Client Memory should preserve visual rules, logo usage, typography, color, examples, tone, templates, prompt-ready constraints, and quality-control references.',
+    services: [
+      ['/services/brand-identity', 'Brand identity'],
+      ['/services/social-media-creatives', 'Growth creative'],
+      ['/services/website-design', 'Website design']
+    ],
   },
 ];
 
@@ -74,7 +126,7 @@ const NAV = `
       </ul>
     </div>
     <div class="navbar-end gap-2">
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Talk through similar work</a>
       <div class="dropdown dropdown-end lg:hidden">
         <div tabindex="0" role="button" aria-label="Open menu" class="btn btn-ghost btn-square">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -86,7 +138,7 @@ const NAV = `
           <li><a href="/portfolio">Portfolio</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/faq">FAQ</a></li>
-          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
+          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Talk through similar work</a></li>
         </ul>
       </div>
     </div>
@@ -98,7 +150,7 @@ const FOOTER = `
       <a href="/" class="flex items-center gap-2 font-bold text-lg mb-2">
         <img src="/assets/images/mydesigner-logo.svg" alt="MyDesigner" class="h-8">
       </a>
-      <p class="max-w-xs">MyDesigner is an unlimited design subscription by <a href="https://sukratu.co" target="_blank" rel="noopener" class="link link-hover">Sukratu</a>. We provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
+      <p class="max-w-xs">MyDesigner is an AI-native creative team by <a href="https://sukratu.co" target="_blank" rel="noopener" class="link link-hover">Sukratu</a>. We help growing companies ship web, product, brand, and growth creative with human-level taste, faster execution, and Client Memory that compounds over time.</p>
     </aside>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Pages</p>
@@ -118,7 +170,7 @@ const FOOTER = `
     </nav>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Get Started</p>
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Book a Call</a>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="link link-hover">Talk through similar work</a>
     </nav>
   </footer>
   <footer class="footer sm:footer-horizontal bg-base-300 text-base-content border-t border-base-300 px-10 py-4">
@@ -137,10 +189,10 @@ const FOOTER = `
 function filterTabs(activeSlug) {
   const tabs = [
     { label: 'All', href: '/portfolio' },
-    { label: 'UI/UX Design', href: '/portfolio/ui-ux-design' },
-    { label: 'Web Development', href: '/portfolio/web-development' },
-    { label: 'Graphic Design', href: '/portfolio/graphic-design' },
-    { label: 'Branding', href: '/portfolio/branding' },
+    { label: 'Product UI', href: '/portfolio/ui-ux-design' },
+    { label: 'Websites & Builds', href: '/portfolio/web-development' },
+    { label: 'Growth Creative', href: '/portfolio/graphic-design' },
+    { label: 'Brand Systems', href: '/portfolio/branding' },
   ];
   return tabs.map(t => {
     const active = (activeSlug === null && t.href === '/portfolio') || t.href.endsWith(activeSlug)
@@ -173,6 +225,14 @@ function buildPage(cat) {
   const filtered = projects.filter(p => p.category === cat.key);
   const cards = filtered.map(projectCard).join('');
   const url = `https://mydesigner.gg/portfolio/${cat.slug}`;
+  const proofItems = cat.proofPoints.map(point => `
+          <li class="flex gap-3 rounded-box border border-base-300 bg-base-100 p-4">
+            <span class="text-primary font-bold">&#10003;</span>
+            <span>${point}</span>
+          </li>`).join('');
+  const serviceLinks = cat.services.map(([href, label]) =>
+    `              <a href="${href}" class="btn btn-outline btn-sm">${label}</a>`
+  ).join('\n');
 
   return `<!DOCTYPE html>
 <html lang="en" data-theme="light">
@@ -223,18 +283,42 @@ function buildPage(cat) {
 <body class="bg-base-100 text-base-content">
 ${NAV}
   <main>
-    <header class="py-16 lg:py-24 text-center">
+    <header class="py-16 lg:py-24">
       <div class="max-w-4xl mx-auto px-4">
-        <div class="breadcrumbs text-sm mb-8 mx-auto w-fit">
+        <div class="breadcrumbs text-sm mb-8">
           <ul><li><a href="/">Home</a></li><li><a href="/portfolio">Portfolio</a></li><li>${cat.title}</li></ul>
         </div>
-        <h1 class="text-4xl lg:text-5xl font-bold">${cat.heading}</h1>
-        <p class="text-lg lg:text-xl opacity-70 mt-4 max-w-2xl mx-auto">${cat.description}</p>
+        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">${cat.proofLabel}</span>
+        <h1 class="text-4xl lg:text-5xl font-bold mt-3">${cat.heading}</h1>
+        <p class="text-lg lg:text-xl opacity-70 mt-4 max-w-3xl">${cat.description}</p>
+        <div class="flex flex-wrap gap-3 mt-7">
+          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Talk through similar work</a>
+          <a href="/services" class="btn btn-outline btn-lg">See related services</a>
+        </div>
       </div>
     </header>
 
+    <section class="py-12 lg:py-16 bg-base-200">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 items-start">
+          <div>
+            <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">What this category proves</span>
+            <h2 class="text-3xl lg:text-4xl font-bold mt-2">${cat.proofTitle}</h2>
+            <p class="text-base-content/70 mt-4 leading-relaxed">These projects show the taste, structure, and execution quality behind MyDesigner's AI-native creative-team model. The work itself may predate the current operating model, but it demonstrates the judgment and shipping discipline that the model now makes faster and more repeatable.</p>
+          </div>
+          <ul class="grid gap-3">
+${proofItems}
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="py-12 lg:py-16">
       <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-3xl mb-8">
+          <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Browse proof</span>
+          <h2 class="text-3xl lg:text-4xl font-bold mt-2">Case studies in this proof category</h2>
+        </div>
         <div class="flex flex-wrap gap-2 justify-center mb-10">
         ${filterTabs(cat.slug)}
         </div>
@@ -244,17 +328,45 @@ ${cards}
       </div>
     </section>
 
-    <section class="py-16 lg:py-24">
-      <div class="max-w-4xl mx-auto px-4">
-        <div class="card bg-primary text-primary-content">
-          <div class="card-body items-center text-center py-16">
-            <h2 class="card-title text-3xl lg:text-4xl font-bold">Like what you see?</h2>
-            <p class="text-lg opacity-90 mt-2">Let's create something amazing together.</p>
-            <div class="card-actions mt-6">
-              <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-lg bg-white text-primary hover:bg-gray-100">Book a call</a>
+    <section class="py-12 lg:py-16 bg-base-200">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body lg:grid lg:grid-cols-[0.42fr_0.58fr] gap-8">
+            <div>
+              <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Client Memory</span>
+              <h2 class="text-2xl lg:text-3xl font-bold mt-2">Portfolio range gets stronger when context compounds.</h2>
             </div>
-            <p class="text-sm opacity-75 mt-4">No contracts. Cancel anytime. Starting at $1,400/mo</p>
+            <div class="space-y-4 text-base-content/70 leading-relaxed">
+              <p>Projects like these create reusable context: approved examples, visual patterns, decision history, templates, audience assumptions, and handoff notes. In MyDesigner's current operating model, that context becomes Client Memory - a living creative system that helps future assets start faster and stay closer to the brand.</p>
+              <p>${cat.memory}</p>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 lg:py-16">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body">
+            <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Related services</span>
+            <h2 class="text-2xl lg:text-3xl font-bold mt-2">Turn this proof into the next thing your team needs to ship.</h2>
+            <div class="flex flex-wrap gap-3 mt-5">
+${serviceLinks}
+              <a href="/services" class="btn btn-outline btn-sm">All services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 lg:py-20 bg-neutral text-neutral-content">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold">Want to ship work with this level of clarity and consistency?</h2>
+        <p class="opacity-80 mt-4 mb-7 max-w-xl mx-auto">Bring the closest examples and the business goal. We will talk through what kind of creative system, sprint, or recurring support fits.</p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Talk through similar work</a>
+          <a href="/how-it-works" class="btn btn-outline btn-neutral-content btn-lg">See how it works</a>
         </div>
       </div>
     </section>

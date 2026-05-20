@@ -42,13 +42,13 @@ But the cost is steep. A mid-level designer in the US runs $60,000–$100,000/ye
 
 Most companies hire too early and end up with a talented designer who's blocked — waiting on stakeholder input, underutilised, or simply not the right profile for every brief that lands.
 
-## The Design Subscription: The Model Built for 2026
+## The Creative Operating Rhythm: The Model Built for 2026
 
-A design subscription combines the multi-skill coverage of an agency with the cost predictability of a flat monthly fee — and none of the contract lock-in.
+A modern creative operating rhythm combines the multi-skill coverage of an agency with the continuity and context most request queues lack.
 
-At [MyDesigner](/), for example, you submit unlimited design requests and receive finished work in 24–72 hours. One subscription covers [UI/UX design](/services/web-app-design), [Webflow and Framer development](/services/webflow-development), graphic design, and [branding](/services/brand-identity). You get a live, working website — not a Figma file that requires another contractor to build.
+At [MyDesigner](/), one operating rhythm can cover [product UI](/services/web-app-design), [Webflow and Framer development](/services/webflow-development), growth creative, pitch decks, and [brand systems](/services/brand-identity). You get human creative direction, AI-speed production, and Client Memory instead of a fresh brief every time.
 
-The economics are straightforward: [starting at $1,400/month](/pricing), you're accessing a multi-disciplinary team for less than the cost of a single junior hire's monthly salary. No per-project quotes. No scope creep invoices. No long-term commitments — cancel any time.
+The economics are straightforward: [starting at $1,400/month](/pricing), you get access to a multi-disciplinary creative team without hiring several specialists before the need is steady.
 
 ## Side-by-Side: Which Model Wins?
 
@@ -72,6 +72,6 @@ Most founders, though, stay in the first camp far longer than they realise — a
 
 ## Start with One Request
 
-[MyDesigner](/) is a design subscription that includes UI/UX, Webflow and Framer development, graphic design, and branding — [from $1,400/month](/pricing) with no contracts. Over 57 companies including Dentsu and USA Table Tennis use it for ongoing design needs a single hire couldn't cover.
+[MyDesigner](/) is an AI-native creative team for growing companies, covering product UI, Webflow and Framer builds, brand systems, decks, and growth creative through one operating rhythm. Over 57 companies including Dentsu and USA Table Tennis have used it for creative needs a single hire could not cover.
 
-[Book a free call](https://calendar.app.google/xGoKb51qpbcnZgJy5) to get started.
+[Talk through what your team needs to ship](https://calendar.app.google/xGoKb51qpbcnZgJy5) to get started.
