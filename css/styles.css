@@ -47,6 +47,7 @@
   color: #1a1a1a;
   font-size: 52px;
   line-height: 1.12;
+  font-weight: 700 !important;
 }
 
 .pretext-hero__fallback p {
