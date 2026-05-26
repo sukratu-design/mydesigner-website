@@ -16,6 +16,9 @@ const SERVICES_DIR = path.join(process.cwd(), 'services');
 
 const PROJECTS = require('../data/projects.js');
 
+const NAV = require('./partials/nav');
+const FOOTER = require('./partials/footer');
+
 const STATIC_SITEMAP_PAGES = [
   { loc: '/', lastmod: '2026-05-01', changefreq: 'weekly', priority: '1.0' },
   { loc: '/pricing', lastmod: '2026-05-01', changefreq: 'monthly', priority: '0.9' },

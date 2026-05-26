@@ -1,285 +1,141 @@
-# HANDOVER
+# HANDOVER — mydesigner-website
+> Updated: 2026-03-22 | Branch: `main` | Last commit: `d190b4d`
 
-## Current State
+---
 
-This worktree is in the middle of a broad MyDesigner website repositioning from an "unlimited design subscription" frame toward:
+## What Was Done This Session
 
-> AI-native creative team for growing companies, with human taste, AI-powered execution, Client Memory, and a creative operating rhythm.
+### 1. Image Generation Pipeline Built
+Created `scripts/generate-blog-image.js` — CLI script calling Google's Imagen 4 API to generate monochromatic orange cover images for blog posts.
+- API: `imagen-4.0-generate-001` at `generativelanguage.googleapis.com`
+- Args: `node scripts/generate-blog-image.js "<topic>" <slug>`
+- Saves simultaneously to `/tmp/blog-cover-preview-<slug>.png` (preview) and `assets/images/blog/<slug>-cover.jpg` (final)
+- GEMINI_API_KEY stored in `.env` (gitignored)
+- Prompt enforces strictly monochromatic orange — NO text, NO letters/numbers/labels, NO blue/grey/green/purple
 
-No changes have been pushed or deployed. The repo is on a detached `HEAD` with a large dirty working tree. Treat all current modifications as intentional unless Anand asks otherwise.
+### 2. Blog Publishing Workflow Established
+Created `CLAUDE.md` (project root) defining the exact publish workflow:
+1. Prepare frontmatter
+2. Generate cover image with script
+3. `open /tmp/blog-cover-preview-<slug>.png` — always auto-open for user approval
+4. Wait for user approval
+5. Write `.md`, run `npm run build`, commit & push
 
-Local preview was most recently restarted on:
+### 3. Five Blog Posts Published
+All posts in `content/posts/`, all live on site:
 
-- `http://localhost:4176/services/website-design.html`
+| Post | Slug | Date |
+|------|------|------|
+| The Design-to-Dev Handoff Is Broken | `design-to-dev-handoff` | Mar 13 |
+| Why Your Product Never Looks Like the Designs | `why-your-product-never-looks-like-the-designs` | Mar 14 |
+| Micro-Interactions: The Design Detail Most Startups Skip | `micro-interactions-design-detail` | Mar 15 |
+| Your Design Is Losing You Money | `design-roi-revenue-growth` | Mar 16 |
+| Design Is Your First Due Diligence Test | `design-investor-due-diligence` | Mar 17 |
 
-Ports `4173`, `4174`, and `4175` have previously had stale listeners or dropped preview servers during this session. If the preview stops responding, start a fresh static server with `python3 -m http.server <port>` from the repo root.
+### 4. Takumi Portfolio Project Added
+- Added entry to `data/projects.js` (source of truth)
+- Created `work/takumi.html` — full case study page
+- Added card to `portfolio.html` (item #19)
+- Downloaded 9 gallery images + hero from Contra CDN to `assets/images/work/`
+- Thumbnail at `assets/images/portfolio/takumi.webp`
+- Live site link: takumitech.ai
 
-## What Got Done
+### 5. Shareable Portfolio Category Pages
+- Created `scripts/build-portfolio.js` — generates 4 category HTML pages from `data/projects.js`
+- Output: `portfolio/ui-ux-design.html`, `portfolio/web-development.html`, `portfolio/graphic-design.html`, `portfolio/branding.html`
+- Added clean URL rewrites in `netlify.toml` (status 200, no `.html` in URL)
+- Updated `package.json`: `"build": "npm run build:blog && npm run build:portfolio"`
+- Filter tabs on `portfolio.html` changed from `<button>` to `<a href="/portfolio/...">` links
 
-### Sitewide Creative Growth Repositioning
+### 6. Fixed Broken Build Pipeline
+Pre-existing draft `micro-interactions-conversion-driver-2026.md` had a YAML parse error (unquoted title with colon, missing date, `published: false` instead of `draft: true`) that was silently blocking all Netlify deployments. Fixed all three issues.
 
-Implemented the new high-level service direction from the initial creative-growth spec:
+---
 
-- Reworked major homepage/pricing/services language toward AI-native creative support.
-- Added new offer pages:
-  - `conversion-design.html`
-  - `founder-content-engine.html`
-  - `ai-ready-brand-system.html`
-- Updated supporting styles and analytics hooks in:
-  - `css/styles.css`
-  - `js/main.js`
+## What Worked / What Didn't
 
-### How It Works, Portfolio, FAQ
+### Worked
+- Imagen 4 (`imagen-4.0-generate-001`) generates consistent, on-brand results
+- Explicit color exclusions in prompt (`NO blue, NO grey, NO green, NO purple`) reliably prevent color bleed
+- Sequential blog dating (Mar 13 → Mar 17) keeps the feed looking organic
+- `data/projects.js` as single source of truth — category pages auto-update on build
 
-Implemented the three-page spec group:
+### Didn't Work / Was Abandoned
+- `gemini-3-pro-image-preview` — returns 503 consistently, completely unusable
+- First image attempts included blue isometric icons (fixed by adding explicit color exclusions)
+- First images included hex color codes as visible text (fixed by removing `#FFA848`-style values from prompt, using descriptive color names instead)
+- Netlify manual deploy via MCP failed — uploaded entire local directory including `.agent/skills/` causing extraction errors. Root cause was the YAML bug blocking git-based deploys.
 
-- `how-it-works.html`
-  - Reframed the operating model around Diagnose, Memory, Create, Ship, Learn.
-  - Added final CTA tracking with `data-final-cta`.
-  - Added How It Works-specific click tracking in `js/main.js`.
-- `portfolio.html`
-  - Repositioned portfolio as proof of range across web, product, brand, and growth.
-  - Added outcome-oriented filters and proof framing.
-- `faq.html`
-  - Rebuilt FAQ around AI, quality, Client Memory, pricing, workflow, ownership, comparisons, and fit.
-  - Fixed malformed FAQ JSON-LD encountered during implementation.
-
-Validation done for this group:
-
-- `npm run build`
-- `git diff --check`
-- JSON-LD parse checks
-- GStack browser desktop/mobile screenshots
-
-### VS Comparison Pages
-
-Implemented `/vs/*` repositioning:
-
-- `vs/index.html`
-- `vs/designjoy.html`
-- `vs/penji.html`
-- `vs/manypixels.html`
-- `vs/kimp.html`
-
-What changed:
-
-- Reframed comparisons around creative operating models, not commodity subscription feature/price checklists.
-- Removed percentage-savings and cheapness positioning.
-- Added Client Memory, AI-native creative team, human creative direction, fair competitor-fit sections, updated FAQs, clean breadcrumb URLs, and updated footer language.
-- Added `scripts/check-vs-positioning.js`.
-- Wired it into `npm test`.
-
-GStack screenshots captured during work:
-
-- `/private/tmp/mydesigner-vs-hub-polished.png`
-- `/private/tmp/mydesigner-vs-designjoy.png`
-- `/private/tmp/mydesigner-vs-penji-mobile.png`
-
-### Contact Page
-
-The spec referenced `contact.html`, but this worktree did not have that file. Created it fresh:
-
-- `contact.html`
-
-What it does:
-
-- Repositions `/contact` as a creative diagnosis and conversion handoff.
-- Keeps the Google Calendar CTA.
-- Adds sections for:
-  - what the call is for
-  - what to bring
-  - what the buyer will decide
-  - good-fit / not-good-fit routing
-  - compare-first links
-  - final CTA
-- Adds ContactPage schema and clean canonical.
-- Adds footer using the new AI-native creative team positioning.
-
-Also added:
-
-- `scripts/check-contact-page.js`
-- `/contact` sitemap entry in `scripts/build-blog.js`, regenerated into `sitemap.xml`.
-
-GStack screenshots:
-
-- `/private/tmp/mydesigner-contact.png`
-- `/private/tmp/mydesigner-contact-mobile.png`
-
-### Service Detail Pages
-
-Implemented the service detail pages spec by updating the generator source instead of hand-editing generated pages.
-
-Changed source:
-
-- `scripts/build-blog.js`
-
-Generated pages updated:
-
-- `services/website-design.html`
-- `services/web-app-design.html`
-- `services/webflow-development.html`
-- `services/framer-development.html`
-- `services/brand-identity.html`
-- `services/presentation-design.html`
-- `services/social-media-creatives.html`
-- `services/booth-designs.html`
-
-What changed:
-
-- Added `SERVICE_REPOSITIONING` in `scripts/build-blog.js`.
-- Rebuilt the service detail template to include:
-  - outcome-led H1
-  - service role/eyebrow
-  - fit/use-case section
-  - "What MyDesigner helps ship"
-  - Diagnose/Gather/Create/Review/Ship process
-  - Client Memory section with page-specific angle
-  - proof-oriented related work
-  - related service/internal links
-  - FAQ
-  - CTA strip
-  - updated footer copy
-- Updated Service and FAQ JSON-LD through the generator.
-- Added `scripts/check-service-detail-pages.js`.
-- Wired it into `npm test`.
-
-GStack screenshots:
-
-- `/private/tmp/mydesigner-service-website.png`
-- `/private/tmp/mydesigner-service-brand-mobile.png`
-
-## Verification Status
-
-Most recent successful checks:
-
-```bash
-npm run build
-npm test
-git diff --check
-```
-
-Current `npm test` runs:
-
-```bash
-node scripts/check-vs-positioning.js &&
-node scripts/check-contact-page.js &&
-node scripts/check-service-detail-pages.js
-```
-
-All three checks passed most recently.
-
-Additional JSON-LD parse checks were run manually for:
-
-- `contact.html`
-- all `services/*.html`
-- earlier `how-it-works.html`, `portfolio.html`, and `faq.html`
-
-## What Worked
-
-- Updating generated service detail pages at the generator level was the right move. Editing `services/*.html` alone would be overwritten by `npm run build`.
-- Small regression scripts were useful guardrails for positioning leaks:
-  - VS pages
-  - contact page
-  - service detail pages
-- GStack browser `chain` works reliably when the JSON input is an array of command arrays, for example:
-
-```bash
-printf '%s' '[["goto","http://localhost:4176/services/website-design.html"],["screenshot","/tmp/page.png"]]' | /Users/anand-mba/.agents/skills/gstack/browse/dist/browse chain
-```
-
-## What Did Not Work / Bugs Encountered
-
-- `contact.html` was missing even though the spec assumed it existed. Fixed by creating it fresh.
-- FAQ JSON-LD had malformed structure before the FAQ rebuild. Fixed during the FAQ implementation and validated afterward.
-- GStack browser `chain` failed when given an array of object commands. Correct format is array-of-arrays.
-- Several local preview ports became stale:
-  - `4173` and `4174` sometimes had listeners but did not respond.
-  - Restart on a fresh port rather than killing unknown listeners unless necessary.
-- Browser text assertions sometimes failed because rendered labels were uppercase, for example:
-  - `WHAT THIS PORTFOLIO PROVES`
-  - `JUMP TO WHAT MATTERS`
-  - `RELATED PATHS`
-  The visible pages were correct; tests should avoid brittle case-sensitive probes.
-- Some portfolio/service related-work cards may show blank image areas in screenshots if assets are missing or lazy-loaded late. This was seen before on portfolio/service pages and should be checked when doing the portfolio/category/case-study pass.
+---
 
 ## Key Decisions
 
-- Keep static HTML architecture; no framework migration.
-- Preserve SEO routes and keyword intent while changing the buying frame.
-- Use generated-source edits for pages produced by `scripts/build-blog.js`.
-- Use direct calendar CTA everywhere instead of adding forms, because no backend/routing was in scope.
-- Add focused regression scripts rather than broad end-to-end tests.
-- Keep competitor pages fair: competitors can be better fits for certain jobs.
-- Keep pricing visible but not as the page thesis.
-- Avoid claiming historical portfolio work used the new AI-native workflow unless verified.
+| Decision | Reason |
+|----------|--------|
+| Imagen 4 not Gemini image models | Only model that reliably works; Gemini image preview returns 503 |
+| Monochromatic orange palette | Brand consistency — matches existing blog cover aesthetic |
+| NO text/labels in image prompts | Imagen was rendering hex codes and labels as visible text |
+| `data/projects.js` as portfolio source of truth | Prevents drift between portfolio.html and category pages |
+| Netlify URL rewrites (status 200) | Clean shareable URLs without `.html` extension |
+| `draft: true` not `published: false` | `build-blog.js` reads the `draft` field; `published` is not recognized |
 
-## Gotchas For The Next Session
+---
 
-- `npm run build` rewrites:
-  - `services/*.html`
-  - portfolio category pages
-  - location pages
-  - blog outputs
-  - `js/related-projects.js`
-  - `sitemap.xml`
-  - parts of `index.html` blog carousel
-- Do not hand-edit generated service detail pages unless you also update `scripts/build-blog.js`.
-- `package.json` now has real tests. If adding more page groups, extend `npm test` carefully.
-- The worktree is already dirty with both older and current-session changes. Do not revert unrelated files.
-- The AGENTS instruction says all browsing should use gstack `/browse`, not other browser-control tools.
-- Local preview with Python SimpleHTTP does not always resolve clean routes like `/contact`; use `.html` paths locally when needed.
+## Gotchas / Non-Obvious Things
 
-## Next Steps
+1. **YAML frontmatter titles with colons must be quoted** — `title: Design Is Broken: Here's Why` will fail silently. Use `title: "Design Is Broken: Here's Why"`.
 
-1. Implement the next architecture group: likely `/work/*` individual case-study pages.
-2. Reposition `/portfolio/*` category pages after individual work pages, since category pages are generated by `scripts/build-portfolio.js`.
-3. Audit and update global nav/footer consistency across all generated templates:
-   - `scripts/build-blog.js`
-   - `scripts/build-portfolio.js`
-   - `scripts/build-locations.js`
-   - static top-level pages
-4. Check missing or lazy-loading portfolio images, especially cards that appeared blank in long screenshots.
-5. Add regression checks for whichever page group is implemented next.
-6. Run the standard loop after each group:
+2. **`published: false` does NOT work** — The build script reads the `draft` field only. Use `draft: true` to hide a post.
 
-```bash
-npm test
-npm run build
-npm test
-git diff --check
-```
+3. **`date` is required in frontmatter** — Posts without a `date` field cause build errors.
 
-7. Before shipping, do a final pass for old positioning phrases:
+4. **Image script saves to both locations simultaneously** — No copy step needed. `/tmp/` is preview; `assets/images/blog/` is final. Do not add a separate copy command.
 
-```bash
-rg -n "unlimited design subscription|77% less|77% lower|cheap|cheaper|low cost|Book a Design Subscription Call" .
-```
+5. **Always `open /tmp/blog-cover-preview-<slug>.png` after generation** — User confirmed this must happen automatically every time, not on request.
 
-## Important Files Map
+6. **Netlify auto-deploys from `main` via GitHub** — No manual deploy step. `git push origin main` after a successful `npm run build` is all that's needed.
 
-- `index.html` — homepage repositioning and blog carousel injection target.
-- `services.html` — services hub/capability architecture.
-- `pricing.html` — commercial architecture and operating rhythms.
-- `how-it-works.html` — Diagnose, Memory, Create, Ship, Learn operating model.
-- `portfolio.html` — proof/range page.
-- `faq.html` — buyer confidence and objection handling page.
-- `contact.html` — new contact/creative diagnosis page.
-- `conversion-design.html` — new conversion website sprint page.
-- `founder-content-engine.html` — new founder content/growth creative page.
-- `ai-ready-brand-system.html` — new AI-ready brand system page.
-- `vs/*.html` — competitor comparison pages repositioned around operating models.
-- `services/*.html` — generated service detail pages, do not hand-edit without updating generator.
-- `scripts/build-blog.js` — most important generator; now includes `SERVICE_REPOSITIONING`, sitemap static pages, service detail template, and service page generation.
-- `scripts/build-portfolio.js` — portfolio category generator; likely next relevant source for `/portfolio/*`.
-- `scripts/build-locations.js` — location page generator; likely future SEO page pass.
-- `scripts/check-vs-positioning.js` — VS page positioning regression checks.
-- `scripts/check-contact-page.js` — contact page positioning/schema checks.
-- `scripts/check-service-detail-pages.js` — generated service detail page checks.
-- `package.json` — `npm test` now runs all three regression scripts.
-- `js/main.js` — analytics/tracking; includes How It Works CTA tracking additions.
-- `css/styles.css` — visual system/style changes from the repositioning work.
-- `sitemap.xml` — regenerated sitemap including `/contact` and other updated routes.
+7. **`micro-interactions-conversion-driver-2026.md`** is a pre-existing draft (different from the published `micro-interactions-design-detail.md`). Fixed but not published. Needs a decision.
 
-## Final Note
+8. **Portfolio category pages are generated** — Do not edit `portfolio/ui-ux-design.html` etc. directly. Edit `scripts/build-portfolio.js` or `data/projects.js` and rebuild.
 
-The repositioning is partially implemented across many page groups, but not globally complete. The site now has a much stronger core story, yet older generated surfaces may still leak old subscription language. Future work should keep updating source generators first, then generated pages through `npm run build`.
+9. **Work case study pages are now generated** — The unique content lives in `content/work/{slug}.html` (these are the source of truth). Run `npm run build:work` (or full `npm run build`) to regenerate the pages in `work/`. The entire `work/` directory is gitignored (like `blog/`). Never edit files directly inside `work/`.
+
+---
+
+## Pending Items
+
+| Priority | Item |
+|----------|------|
+| **High** | Rotate `GEMINI_API_KEY` — was exposed in plaintext during conversation |
+| Medium | Decide on `micro-interactions-conversion-driver-2026.md` — publish or delete |
+| Medium | Commit untracked `assets/images/blog/design-debt-hidden-cost-cover.jpg` |
+| Low | Investigate uncommitted changes in `js/related-projects.js` and `services/framer-development.html` |
+| Low | Consider auto-generating `portfolio.html` from `data/projects.js` (currently hand-maintained) |
+| Low | Next blog post — next date in sequence is **March 18** |
+
+---
+
+## Important Files
+
+| File | Purpose |
+|------|---------|
+| `CLAUDE.md` | Claude's operating instructions — blog publish workflow |
+| `scripts/generate-blog-image.js` | Imagen 4 CLI — generates cover images |
+| `scripts/build-blog.js` | Static site builder for blog posts |
+| `scripts/build-portfolio.js` | Generates portfolio category pages from `data/projects.js` |
+| `scripts/build-work.js` | Generates work case study pages from `content/work/` fragments + shared partials |
+| `scripts/partials/` | Shared nav, footer, and copyright year (used by all generators) |
+| `data/projects.js` | Single source of truth for all portfolio projects |
+| `content/posts/*.md` | Blog post markdown files |
+| `assets/images/blog/` | Blog cover images (.jpg) |
+| `content/work/` | Source content for work case studies (HTML fragments) — the real source of truth |
+| `assets/images/work/` | Project case study images |
+| `assets/images/portfolio/` | Portfolio thumbnail images |
+| `netlify.toml` | Build config + clean URL rewrites for category pages |
+| `package.json` | Build scripts: `build`, `build:blog`, `build:portfolio` |
+| `portfolio.html` | Main portfolio page — hand-maintained, filter tabs link to category pages |
+| `portfolio/ui-ux-design.html` | Generated category page — do not edit directly |
+| `work/takumi.html` | Takumi case study page (generated — do not edit directly) |
+| `.env` | `GEMINI_API_KEY` — gitignored, never commit |
+| `content/posts/micro-interactions-conversion-driver-2026.md` | Pre-existing draft — status unresolved |

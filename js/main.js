@@ -339,21 +339,15 @@
 })();
 
 
-/* ========== DYNAMIC COPYRIGHT YEAR & LAST UPDATED DATE ========== */
+/* ========== DYNAMIC COPYRIGHT YEAR ========== */
 (function() {
-  var now = new Date();
-  var year = now.getFullYear();
-  var monthYear = now.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+  var year = new Date().getFullYear();
 
-  // Update © year in footer
-  document.querySelectorAll('footer p').forEach(function(p) {
-    p.innerHTML = p.innerHTML.replace(/© \d{4}/, '© ' + year);
-  });
+  // Robust selector: any element in footer that contains the copyright text
+  var copyrightEls = document.querySelectorAll('footer p, footer aside p, footer .grid-flow-col p');
 
-  // Update "Last updated: Month Year" anywhere on the page
-  document.querySelectorAll('p, em').forEach(function(el) {
-    if (el.childElementCount === 0 && /Last updated:/i.test(el.textContent)) {
-      el.innerHTML = el.innerHTML.replace(/Last updated:.*$/i, 'Last updated: ' + monthYear);
-    }
+  copyrightEls.forEach(function(el) {
+    // Handle both &copy; and ©, and any 4-digit year
+    el.innerHTML = el.innerHTML.replace(/(&copy;|©)\s*\d{4}/g, '$1 ' + year);
   });
 })();
