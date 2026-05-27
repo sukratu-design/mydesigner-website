@@ -5,13 +5,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run build            # Build everything (blog HTML + portfolio pages)
-npm run build:blog       # Regenerate blog/*.html, rss.xml, sitemap.xml from content/posts/
-npm run build:portfolio  # Regenerate portfolio/*.html from data/projects.js
+npm run build            # Full pipeline: services + work case studies + blog + portfolio + sync
+npm run build:blog       # Posts + RSS + sitemap + homepage carousel + related-projects.js
+npm run build:portfolio  # Category pages from data/projects.js
+npm run build:services   # Service detail pages (from SERVICE_CONFIGS in build-services.js)
+npm run build:work       # Work case studies from content/work/*.html fragments + shared partials
+npm run build:related-projects  # js/related-projects.js from data/projects.js
 
 # Generate a blog cover image (saves to /tmp/ preview + assets/images/blog/ final)
 node scripts/generate-blog-image.js "<topic description>" <slug>
 ```
+
+Note: Work case studies use content/work/ as editable source (Phase 2 of audit). Partials (nav/footer) are centralized in scripts/partials/ for DRY HTML across generators. build-blog.js is slim (~491 LOC) delegating to focused modules.
 
 There are no tests configured (`npm test` is a no-op).
 

@@ -16,7 +16,7 @@ const NAV = `
       </ul>
     </div>
     <div class="navbar-end gap-2">
-      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Book a call</a>
+      <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm hidden lg:inline-flex">Talk through your creative needs</a>
       <div class="dropdown dropdown-end lg:hidden">
         <div tabindex="0" role="button" aria-label="Open menu" class="btn btn-ghost btn-square">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -28,7 +28,7 @@ const NAV = `
           <li><a href="/portfolio">Portfolio</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/faq">FAQ</a></li>
-          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Book a call</a></li>
+          <li class="mt-2"><a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-sm">Talk through your creative needs</a></li>
         </ul>
       </div>
     </div>

@@ -6,7 +6,7 @@ const FOOTER = `
       <a href="/" class="flex items-center gap-2 font-bold text-lg mb-2">
         <img src="/assets/images/mydesigner-logo.svg" alt="MyDesigner" class="h-8">
       </a>
-      <p class="max-w-xs">MyDesigner is an unlimited design subscription by <a href="https://sukratu.co" target="_blank" rel="noopener" class="link link-hover">Sukratu</a>. We provide UI/UX design, Webflow/Framer development, and graphic design for a fixed monthly fee.</p>
+      <p class="max-w-xs">MyDesigner is an AI-native creative team for growing companies and an operating brand of <a href="https://sukratu.co" target="_blank" rel="noopener" class="link link-hover">Sukratu</a>. We help teams ship websites, product UI, campaign creative, founder content, and brand systems with speed, taste, and consistency.</p>
     </aside>
     <nav>
       <p class="footer-title font-bold text-sm uppercase tracking-wider opacity-60">Pages</p>
