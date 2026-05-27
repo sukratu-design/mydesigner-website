@@ -12,9 +12,7 @@ const projects = require('../data/projects');
 const WORK_DIR = path.join(process.cwd(), 'work');
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'work');
 
-function ensureDir(dir) {
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-}
+const { ensureDir } = require('./lib/utils');
 
 function extractMainContent(html) {
   // Try to get everything inside the first <main> tag

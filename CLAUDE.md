@@ -26,7 +26,7 @@ This is a **static site generator** — Node.js build scripts convert source dat
 **Key source files:**
 - `content/posts/*.md` — Blog post source (frontmatter: title, slug, excerpt, date, author, coverImage, draft)
 - `data/projects.js` — All portfolio projects with category tags (`uiux`, `webdev`, `graphic`, `branding`)
-- `css/styles.css` + `css/variables.css` — Global styles (DaisyUI + custom)
+- `css/styles.css` — Only custom styles file. DaisyUI 5 + Tailwind 4 are loaded via CDN in the templates. `variables.css` and `responsive.css` were removed as they were no longer needed.
 
 **Generated files (not committed):**
 - `blog/*.html` — Listed in `.gitignore`
