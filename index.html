@@ -1417,7 +1417,7 @@
 
     <!-- Chat Panel -->
     <div id="ai-panel"
-         class="absolute bottom-20 right-0 hidden w-[min(380px,calc(100vw-3rem))] overflow-hidden rounded-3xl border border-base-300 bg-base-100 shadow-2xl">
+         class="absolute bottom-[76px] right-0 hidden w-[min(380px,calc(100vw-1.5rem))] origin-bottom-right scale-95 opacity-0 overflow-hidden rounded-3xl border border-base-300 bg-base-100 shadow-2xl transition-all duration-200 md:bottom-20">
       
       <!-- Header -->
       <div class="flex items-center justify-between border-b border-base-300 bg-base-200/60 px-5 py-4">
@@ -1517,36 +1517,44 @@
 
       const knowledge = [
         {
-          patterns: ['price', 'cost', 'pricing', 'how much', 'plan', 'subscription'],
-          response: "Our plans start at $1,400/mo (Starter) and go up to $3,800/mo (Scale). Everything is unlimited — design, Webflow/Framer dev, graphic design, and revisions. No contracts. You can cancel anytime."
+          patterns: ['price', 'cost', 'pricing', 'how much', 'plan', 'subscription', '$'],
+          response: "Plans start at $1,400/mo (Starter) up to $3,800/mo (Scale). Everything is unlimited — design, Webflow/Framer development, graphic design, and revisions. No contracts, cancel or pause anytime."
         },
         {
-          patterns: ['how does it work', 'process', 'onboard', 'how it works'],
-          response: "1) Quick onboarding call to capture your brand, voice, and goals. 2) You send requests via Slack/Notion. 3) Dedicated designer + strategist ships work weekly. 4) Unlimited revisions until you're thrilled. We combine human taste with AI speed."
+          patterns: ['how does it work', 'process', 'onboard', 'how it works', 'start'],
+          response: "1) 15-min onboarding call to capture your brand + goals. 2) Send requests via Slack or Notion. 3) Dedicated designer + strategist ships work weekly. 4) Unlimited revisions. We use AI for speed but every deliverable gets human creative direction."
         },
         {
-          patterns: ['ai', 'artificial intelligence', 'how much ai'],
-          response: "We use AI heavily for exploration, variations, and production speed — but every pixel is directed and approved by senior human designers. Your \"Client Memory\" system ensures everything stays perfectly on-brand."
+          patterns: ['ai', 'artificial intelligence', 'how much ai', 'robot'],
+          response: "We use AI heavily for speed and exploration, but senior designers direct every project. Your private \"Client Memory\" (brand rules, past feedback, approved examples) keeps all work on-brand and high-taste."
         },
         {
-          patterns: ['webflow', 'framer', 'development', 'dev'],
-          response: "Yes — Webflow and Framer development are fully included. Most clients use us for both high-fidelity design and production-ready Webflow/Framer builds in the same subscription."
+          patterns: ['webflow', 'framer', 'development', 'dev', 'code'],
+          response: "Webflow and Framer development are fully included. Most clients use the same subscription for both high-fidelity design and production-ready code."
         },
         {
-          patterns: ['turnaround', 'fast', 'timeline', 'how long', 'speed'],
-          response: "Most requests are delivered in 1–3 business days. Rush work is often possible same-day. Because it's a subscription, there's no waiting for scope or contracts."
+          patterns: ['turnaround', 'fast', 'timeline', 'how long', 'speed', 'deliver'],
+          response: "Most requests ship in 1–3 business days. Rush requests are often possible same day. No scope negotiations — just send the request."
         },
         {
-          patterns: ['revision', 'change', 'edit'],
-          response: "Unlimited revisions are included. We iterate until it feels right. Most clients love that there is zero friction to requesting adjustments."
+          patterns: ['revision', 'change', 'edit', 'iterate'],
+          response: "Unlimited revisions are included. We keep going until it feels exactly right. Most clients say this is one of the best parts of working with us."
         },
         {
-          patterns: ['cancel', 'pause', 'stop'],
-          response: "You can cancel or pause anytime with no penalties. Many clients pause during launches or fundraising and resume later."
+          patterns: ['cancel', 'pause', 'stop', 'pause'],
+          response: "Cancel or pause anytime with zero penalties. Many clients pause during big launches or fundraising and come back when ready."
         },
         {
-          patterns: ['team', 'who', 'designer'],
-          response: "You get a dedicated senior designer + strategist who learns your brand deeply over time. Plus access to our full team for specialized work (motion, 3D, illustration, etc.)."
+          patterns: ['team', 'who', 'designer', 'people'],
+          response: "You get a dedicated senior designer + strategist who deeply learns your brand over time, plus access to specialists for motion, 3D, illustration, and more when needed."
+        },
+        {
+          patterns: ['include', 'what do i get', 'what\'s included'],
+          response: "Unlimited UI/UX design, Webflow + Framer development, graphic design, social creatives, pitch decks, brand systems, and revisions. One flat monthly fee."
+        },
+        {
+          patterns: ['for who', 'startup', 'agency', 'fit', 'good for'],
+          response: "Best for growing startups and design-forward agencies that need consistent, high-quality creative every week without hiring full-time."
         }
       ];
 
@@ -1560,30 +1568,92 @@
         return null;
       }
 
+      function showTypingIndicator() {
+        const div = document.createElement('div');
+        div.id = 'ai-typing';
+        div.className = 'flex justify-start';
+        div.innerHTML = `
+          <div class="max-w-[85%] rounded-3xl rounded-bl-lg border border-base-300 bg-base-200 px-4 py-3">
+            <div class="flex gap-1">
+              <span class="h-1.5 w-1.5 animate-bounce rounded-full bg-base-content/40" style="animation-delay: 0ms"></span>
+              <span class="h-1.5 w-1.5 animate-bounce rounded-full bg-base-content/40" style="animation-delay: 150ms"></span>
+              <span class="h-1.5 w-1.5 animate-bounce rounded-full bg-base-content/40" style="animation-delay: 300ms"></span>
+            </div>
+          </div>`;
+        messagesEl.appendChild(div);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      }
+
+      function hideTypingIndicator() {
+        const typing = document.getElementById('ai-typing');
+        if (typing) typing.remove();
+      }
+
       function handleUserMessage(message) {
         const reply = findBestResponse(message);
         
+        showTypingIndicator();
+        
         setTimeout(() => {
+          hideTypingIndicator();
+          
           if (reply) {
             addBotMessage(reply);
           } else {
-            addBotMessage("Great question. The fastest way to get a precise answer is to hop on a quick call — I can book you in right now.");
-            showQuickReplies(["Book a call", "See pricing", "How fast is delivery?"]);
+            addBotMessage("Great question. The fastest way to get a precise answer tailored to your situation is a quick call.");
+            showQuickReplies(["Book a call", "See pricing", "What's included?"]);
           }
-        }, 420);
+          saveChatHistory();
+        }, 650);
+      }
+
+      function saveChatHistory() {
+        try {
+          const msgs = Array.from(messagesEl.children).map(el => ({
+            text: el.textContent,
+            isUser: el.classList.contains('justify-end')
+          }));
+          sessionStorage.setItem('aiChatHistory', JSON.stringify(msgs));
+        } catch (e) {}
+      }
+
+      function loadChatHistory() {
+        try {
+          const saved = sessionStorage.getItem('aiChatHistory');
+          if (!saved) return false;
+          const history = JSON.parse(saved);
+          if (!history.length) return false;
+
+          history.forEach(item => {
+            const div = document.createElement('div');
+            div.className = item.isUser ? 'flex justify-end' : 'flex justify-start';
+            const bubble = document.createElement('div');
+            bubble.className = item.isUser
+              ? 'max-w-[85%] rounded-3xl rounded-br-lg bg-primary px-4 py-2.5 text-sm text-primary-content'
+              : 'max-w-[85%] rounded-3xl rounded-bl-lg border border-base-300 bg-base-200 px-4 py-2.5 text-sm';
+            bubble.textContent = item.text;
+            div.appendChild(bubble);
+            messagesEl.appendChild(div);
+          });
+          messagesEl.scrollTop = messagesEl.scrollHeight;
+          return true;
+        } catch (e) { return false; }
       }
 
       function openPanel() {
-        panel.classList.remove('hidden');
-        panel.classList.add('flex', 'flex-col');
+        panel.classList.remove('hidden', 'scale-95', 'opacity-0');
+        panel.classList.add('flex', 'flex-col', 'scale-100', 'opacity-100');
         isOpen = true;
 
-        if (messagesEl.children.length === 0) {
+        // Try to restore previous conversation, otherwise show welcome
+        const hasHistory = loadChatHistory();
+
+        if (!hasHistory && messagesEl.children.length === 0) {
           addBotMessage("Hi! I'm the MyDesigner assistant. I can help with pricing, how the subscription works, timelines, AI usage, or anything else about working with us.");
           showQuickReplies([
             "How much does it cost?",
             "How fast is delivery?",
-            "Do you do Webflow?",
+            "What's included?",
             "How much AI is involved?"
           ]);
         }
@@ -1591,8 +1661,8 @@
       }
 
       function closePanel() {
-        panel.classList.remove('flex', 'flex-col');
-        panel.classList.add('hidden');
+        panel.classList.remove('flex', 'flex-col', 'scale-100', 'opacity-100');
+        panel.classList.add('hidden', 'scale-95', 'opacity-0');
         isOpen = false;
       }
 
@@ -1614,6 +1684,7 @@
         input.value = '';
         quickRepliesEl.innerHTML = '';
         handleUserMessage(val);
+        // save happens inside handleUserMessage after bot reply
       });
 
       input.addEventListener('keydown', (e) => {
