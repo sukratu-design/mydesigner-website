@@ -194,6 +194,35 @@
   --noise: 0;
 }
 
+/* ========== Black Primary Branding (CTA Buttons) ========== */
+/* Force black as the main brand color for primary CTAs.
+   DaisyUI 5 + Tailwind 4 CDN combo sometimes ignores --color-primary,
+   so we override .btn-primary explicitly. */
+.btn-primary {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #1f1f1f !important;
+  border-color: #1f1f1f !important;
+  color: #ffffff !important;
+}
+
+/* Make the secondary/outline button match black branding too */
+.btn-outline {
+  border-color: #000000 !important;
+  color: #000000 !important;
+}
+
+.btn-outline:hover {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+  color: #ffffff !important;
+}
+
 /* ========== Link Underline ========== */
 a:not(.btn) {
   text-decoration: underline;
