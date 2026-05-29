@@ -1205,10 +1205,6 @@
     <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg w-full">Book a creative growth call</a>
   </div>
 
-  <ai-assist-bot></ai-assist-bot>
-  <link rel="stylesheet" href="/styles.css">
-  <script id="helper" src="/bundle.js?key=0c5ed5a95cb092ed0c0b3573a29ec2bd"></script>
-
   <script>
     (function () {
       var hash = window.location.hash || '';
@@ -1403,6 +1399,235 @@
       canvas.classList.add('is-ready');
       render();
     }
+  </script>
+
+  <!-- Lightweight MyDesigner AI Assistant (replaces heavy Angular bundle) -->
+  <div id="ai-assistant" class="fixed bottom-6 right-6 z-[999]">
+    <!-- Floating Action Button -->
+    <button id="ai-fab"
+            class="group flex h-14 items-center gap-2.5 rounded-full bg-base-content pl-5 pr-6 text-base-100 shadow-xl transition-all active:scale-[0.985] hover:shadow-2xl"
+            aria-label="Chat with MyDesigner Assistant">
+      <div class="flex h-8 w-8 items-center justify-center rounded-full bg-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+      </div>
+      <span class="text-sm font-semibold tracking-[-0.2px]">Ask anything</span>
+    </button>
+
+    <!-- Chat Panel -->
+    <div id="ai-panel"
+         class="absolute bottom-20 right-0 hidden w-[min(380px,calc(100vw-3rem))] overflow-hidden rounded-3xl border border-base-300 bg-base-100 shadow-2xl">
+      
+      <!-- Header -->
+      <div class="flex items-center justify-between border-b border-base-300 bg-base-200/60 px-5 py-4">
+        <div class="flex items-center gap-3">
+          <div class="flex h-9 w-9 items-center justify-center rounded-2xl bg-primary text-primary-content">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-1" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          <div>
+            <div class="text-sm font-semibold leading-none">MyDesigner Assistant</div>
+            <div class="mt-1 text-[10px] font-medium text-base-content/60">Usually replies instantly</div>
+          </div>
+        </div>
+        <button id="ai-close" class="btn btn-ghost btn-sm btn-square text-base-content/60 hover:text-base-content" aria-label="Close chat">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6h12v12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Messages -->
+      <div id="ai-messages" class="h-[380px] space-y-4 overflow-y-auto bg-base-100 p-5 text-sm leading-relaxed"></div>
+
+      <!-- Quick replies -->
+      <div id="ai-quick-replies" class="flex flex-wrap gap-2 border-t border-base-300 bg-base-100 px-5 py-3"></div>
+
+      <!-- Input -->
+      <div class="border-t border-base-300 bg-base-100 p-3">
+        <div class="flex items-center gap-2 rounded-2xl border border-base-300 bg-base-200 px-4 focus-within:border-primary/40">
+          <input id="ai-input" type="text" 
+                 class="flex-1 bg-transparent py-3 text-sm outline-none placeholder:text-base-content/50"
+                 placeholder="Ask about pricing, process, timelines..." />
+          <button id="ai-send"
+                  class="flex h-9 w-9 items-center justify-center rounded-2xl bg-primary text-primary-content transition hover:bg-primary/90 active:scale-95"
+                  aria-label="Send message">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7-7 7M5 12h14" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-1.5 px-1 text-center text-[10px] text-base-content/40">
+          Powered by MyDesigner • <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" target="_blank" class="link link-hover">Book a call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const fab = document.getElementById('ai-fab');
+      const panel = document.getElementById('ai-panel');
+      const closeBtn = document.getElementById('ai-close');
+      const messagesEl = document.getElementById('ai-messages');
+      const input = document.getElementById('ai-input');
+      const sendBtn = document.getElementById('ai-send');
+      const quickRepliesEl = document.getElementById('ai-quick-replies');
+
+      let isOpen = false;
+
+      function addMessage(text, isUser) {
+        const div = document.createElement('div');
+        div.className = isUser 
+          ? 'flex justify-end' 
+          : 'flex justify-start';
+        
+        const bubble = document.createElement('div');
+        bubble.className = isUser
+          ? 'max-w-[85%] rounded-3xl rounded-br-lg bg-primary px-4 py-2.5 text-sm text-primary-content'
+          : 'max-w-[85%] rounded-3xl rounded-bl-lg border border-base-300 bg-base-200 px-4 py-2.5 text-sm';
+        bubble.textContent = text;
+        
+        div.appendChild(bubble);
+        messagesEl.appendChild(div);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      }
+
+      function addBotMessage(text) {
+        addMessage(text, false);
+      }
+
+      function showQuickReplies(replies) {
+        quickRepliesEl.innerHTML = '';
+        replies.forEach(reply => {
+          const chip = document.createElement('button');
+          chip.className = 'rounded-full border border-base-300 bg-base-100 px-3 py-1 text-xs font-medium transition hover:border-primary/40 hover:bg-base-200 active:scale-[0.985]';
+          chip.textContent = reply;
+          chip.onclick = () => {
+            addMessage(reply, true);
+            quickRepliesEl.innerHTML = '';
+            handleUserMessage(reply);
+          };
+          quickRepliesEl.appendChild(chip);
+        });
+      }
+
+      const knowledge = [
+        {
+          patterns: ['price', 'cost', 'pricing', 'how much', 'plan', 'subscription'],
+          response: "Our plans start at $1,400/mo (Starter) and go up to $3,800/mo (Scale). Everything is unlimited — design, Webflow/Framer dev, graphic design, and revisions. No contracts. You can cancel anytime."
+        },
+        {
+          patterns: ['how does it work', 'process', 'onboard', 'how it works'],
+          response: "1) Quick onboarding call to capture your brand, voice, and goals. 2) You send requests via Slack/Notion. 3) Dedicated designer + strategist ships work weekly. 4) Unlimited revisions until you're thrilled. We combine human taste with AI speed."
+        },
+        {
+          patterns: ['ai', 'artificial intelligence', 'how much ai'],
+          response: "We use AI heavily for exploration, variations, and production speed — but every pixel is directed and approved by senior human designers. Your \"Client Memory\" system ensures everything stays perfectly on-brand."
+        },
+        {
+          patterns: ['webflow', 'framer', 'development', 'dev'],
+          response: "Yes — Webflow and Framer development are fully included. Most clients use us for both high-fidelity design and production-ready Webflow/Framer builds in the same subscription."
+        },
+        {
+          patterns: ['turnaround', 'fast', 'timeline', 'how long', 'speed'],
+          response: "Most requests are delivered in 1–3 business days. Rush work is often possible same-day. Because it's a subscription, there's no waiting for scope or contracts."
+        },
+        {
+          patterns: ['revision', 'change', 'edit'],
+          response: "Unlimited revisions are included. We iterate until it feels right. Most clients love that there is zero friction to requesting adjustments."
+        },
+        {
+          patterns: ['cancel', 'pause', 'stop'],
+          response: "You can cancel or pause anytime with no penalties. Many clients pause during launches or fundraising and resume later."
+        },
+        {
+          patterns: ['team', 'who', 'designer'],
+          response: "You get a dedicated senior designer + strategist who learns your brand deeply over time. Plus access to our full team for specialized work (motion, 3D, illustration, etc.)."
+        }
+      ];
+
+      function findBestResponse(message) {
+        const lower = message.toLowerCase();
+        for (const item of knowledge) {
+          if (item.patterns.some(p => lower.includes(p))) {
+            return item.response;
+          }
+        }
+        return null;
+      }
+
+      function handleUserMessage(message) {
+        const reply = findBestResponse(message);
+        
+        setTimeout(() => {
+          if (reply) {
+            addBotMessage(reply);
+          } else {
+            addBotMessage("Great question. The fastest way to get a precise answer is to hop on a quick call — I can book you in right now.");
+            showQuickReplies(["Book a call", "See pricing", "How fast is delivery?"]);
+          }
+        }, 420);
+      }
+
+      function openPanel() {
+        panel.classList.remove('hidden');
+        panel.classList.add('flex', 'flex-col');
+        isOpen = true;
+
+        if (messagesEl.children.length === 0) {
+          addBotMessage("Hi! I'm the MyDesigner assistant. I can help with pricing, how the subscription works, timelines, AI usage, or anything else about working with us.");
+          showQuickReplies([
+            "How much does it cost?",
+            "How fast is delivery?",
+            "Do you do Webflow?",
+            "How much AI is involved?"
+          ]);
+        }
+        input.focus();
+      }
+
+      function closePanel() {
+        panel.classList.remove('flex', 'flex-col');
+        panel.classList.add('hidden');
+        isOpen = false;
+      }
+
+      // Event listeners
+      fab.addEventListener('click', () => {
+        if (isOpen) {
+          closePanel();
+        } else {
+          openPanel();
+        }
+      });
+
+      closeBtn.addEventListener('click', closePanel);
+
+      sendBtn.addEventListener('click', () => {
+        const val = input.value.trim();
+        if (!val) return;
+        addMessage(val, true);
+        input.value = '';
+        quickRepliesEl.innerHTML = '';
+        handleUserMessage(val);
+      });
+
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          sendBtn.click();
+        }
+        if (e.key === 'Escape' && isOpen) {
+          closePanel();
+        }
+      });
+
+      // Optional: auto-open on very first visit (disabled by default for better UX)
+      // setTimeout(() => { if (!isOpen && messagesEl.children.length === 0) openPanel(); }, 45000);
+    })();
   </script>
 
 </body>
