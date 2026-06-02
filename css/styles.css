@@ -223,6 +223,31 @@
   color: #ffffff !important;
 }
 
+/* ========== Pricing featured card - black branding (fix purple out-of-place color) ========== */
+.card.bg-primary {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #333333 !important;
+}
+
+.card.bg-primary .badge,
+.card.bg-primary .badge-secondary {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.card.bg-primary .btn-secondary {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+}
+
+.card.bg-primary .btn-secondary:hover {
+  background-color: #f5f5f5 !important;
+  color: #000000 !important;
+}
+
 /* ========== Link Underline ========== */
 a:not(.btn) {
   text-decoration: underline;
