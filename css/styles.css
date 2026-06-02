@@ -87,7 +87,6 @@
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  animation: none;
 }
 
 .pretext-hero__obstacle .md-ring {
@@ -123,7 +122,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  /* background removed for cleaner integration with page bg */
 }
 
 .core {
@@ -136,6 +135,9 @@
 
 .md-ring {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border: 8px solid #f57c00;
   border-radius: 50%;
   animation: pulse 3s infinite ease-in-out;
@@ -146,9 +148,38 @@
 .md-ring-2 { width: 238px; height: 238px; animation-delay: 0.2s; z-index: 2; }
 .md-ring-3 { width: 289px; height: 289px; animation-delay: 0.4s; z-index: 1; }
 
+/* Responsive ring sizes for tablet/mobile to prevent overlap with buttons/text */
+@media (max-width: 1023px) {
+  .logo-container {
+    width: 280px;
+    height: 280px;
+  }
+  .core {
+    width: 112px;
+    height: 112px;
+  }
+  .md-ring-1 { width: 152px; height: 152px; }
+  .md-ring-2 { width: 194px; height: 194px; }
+  .md-ring-3 { width: 236px; height: 236px; }
+}
+
+@media (max-width: 639px) {
+  .logo-container {
+    width: 220px;
+    height: 220px;
+  }
+  .core {
+    width: 88px;
+    height: 88px;
+  }
+  .md-ring-1 { width: 120px; height: 120px; }
+  .md-ring-2 { width: 155px; height: 155px; }
+  .md-ring-3 { width: 190px; height: 190px; }
+}
+
 @keyframes pulse {
-  0%, 100% { transform: scale(1);    opacity: 1;   }
-  50%       { transform: scale(1.05); opacity: 0.7; }
+  0%, 100% { transform: translate(-50%, -50%) scale(1);    opacity: 1;   }
+  50%       { transform: translate(-50%, -50%) scale(1.05); opacity: 0.7; }
 }
 
 /* The Seasons — self-hosted */
