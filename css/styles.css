@@ -282,14 +282,28 @@
 
 /* Tighten the "why the old way breaks" problem boxes */
 .pain-point {
-  padding: 8px 12px !important;
-  font-size: 14px !important;
-  line-height: 1.25 !important;
-  min-height: 48px;
-  text-align: left;
+  padding: 1rem !important;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .pain-point p {
   margin: 0 !important;
+  font-size: 0.875rem;
+  line-height: 1.25;
+}
+
+/* Make the pain point grid rows fill the available height for even spread */
+.pain-grid {
+  grid-template-rows: repeat(3, 1fr);
+}
+@media (min-width: 1024px) {
+  .pain-grid {
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
 
 /* ========== Link Underline ========== */
