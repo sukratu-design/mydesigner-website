@@ -232,9 +232,10 @@
 
 .card.bg-primary .badge,
 .card.bg-primary .badge-secondary {
-  background-color: #333333 !important;
-  color: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
   border: none !important;
+  font-weight: 600;
 }
 
 .card.bg-primary .btn-secondary {
