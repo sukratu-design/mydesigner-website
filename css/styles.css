@@ -249,6 +249,13 @@
   color: #000000 !important;
 }
 
+/* Tighten the "why the old way breaks" problem boxes */
+.pain-point {
+  padding: 6px 14px !important;
+  font-size: 14px !important;
+  line-height: 1.25 !important;
+}
+
 /* ========== Link Underline ========== */
 a:not(.btn) {
   text-decoration: underline;
