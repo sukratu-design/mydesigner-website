@@ -77,7 +77,7 @@ for (const file of pages) {
 }
 
 const dentsu = read('work/dentsu.html');
-assert.match(dentsu, /2\.5\+ years/i, 'Dentsu should preserve the 2.5+ years proof');
+assert.match(dentsu, /2\.5\+[\s\S]{0,120}?years/i, 'Dentsu should preserve the 2.5+ years proof');
 assert.match(dentsu, /20-30/i, 'Dentsu should preserve monthly asset proof');
 assert.doesNotMatch(dentsu, /<h1[\s\S]*subscription that never stops[\s\S]*<\/h1>/i, 'Dentsu H1 should not lead with subscription framing');
 

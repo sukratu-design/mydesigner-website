@@ -1,0 +1,16 @@
+/* Build-time Tailwind 4 + daisyUI 5 entry point.
+   Compiled to css/site.css by `npm run build:css`.
+   Replaces the @tailwindcss/browser + daisyUI CDN setup (runtime compilation). */
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Explicit sources: blog/ and work/ output is gitignored, so automatic
+   source detection would skip it. Generator templates live in scripts/. */
+@source "../*.html";
+@source "../services/**/*.html";
+@source "../vs/**/*.html";
+@source "../work/**/*.html";
+@source "../portfolio/**/*.html";
+@source "../blog/**/*.html";
+@source "../js/**/*.js";
+@source "../scripts/**/*.js";

@@ -379,9 +379,8 @@ ${faqItems}
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
   <link rel="stylesheet" href="/css/styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <meta property="og:type" content="website">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:title" content="${metaTitle}">
