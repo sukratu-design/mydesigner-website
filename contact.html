@@ -30,11 +30,9 @@
   <meta name="twitter:description" content="Talk through your creative backlog, launches, Client Memory, and the right operating rhythm for your team.">
   <meta name="twitter:image" content="https://mydesigner.gg/assets/images/og-image.jpg">
 
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/daisyui@5" as="style">
   <link rel="preload" href="/css/styles.css" as="style">
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
   <link rel="stylesheet" href="/css/styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mydesigner.gg/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://mydesigner.gg/contact"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Contact MyDesigner","url":"https://mydesigner.gg/contact","description":"Book a call with MyDesigner to discuss your creative backlog, upcoming launches, brand consistency, Client Memory, and the right AI-native creative operating rhythm for your team.","mainEntity":{"@type":"Organization","name":"MyDesigner","url":"https://mydesigner.gg/","description":"MyDesigner is an AI-native creative team for growing companies and an operating brand of Sukratu.","contactPoint":{"@type":"ContactPoint","contactType":"sales","url":"https://calendar.app.google/xGoKb51qpbcnZgJy5","availableLanguage":"English"}}}</script>
@@ -83,33 +81,115 @@
         <p class="text-lg text-base-content/70 mt-5 max-w-3xl mx-auto reveal">Bring your creative backlog, upcoming launches, and current bottlenecks. We’ll help you decide whether you need a short sprint, one focused creative lane, parallel growth execution, or an embedded AI-native creative team with Client Memory.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center mt-8 reveal">
           <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Talk through your creative needs</a>
-          <a href="/pricing" class="btn btn-outline btn-lg">See operating rhythms</a>
+          <a href="#send-brief" class="btn btn-outline btn-lg">Not ready for a call? Send a brief</a>
         </div>
       </div>
     </header>
 
-    <section class="py-16 bg-base-200">
+    <!-- ===== SEND A BRIEF (low-friction alternative to booking a call) ===== -->
+    <section class="py-16 bg-base-200" id="send-brief">
+      <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Prefer writing to talking?</span>
+          <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-4">Send us your brief — we reply within one business day.</h2>
+          <p class="text-base-content/70 leading-relaxed mb-4">Tell us what you're trying to ship in a few sentences. Rough notes are fine — turning messy briefs into clear creative is literally what we do.</p>
+          <p class="text-base-content/70 leading-relaxed">Want proof before committing? Ask for a <strong>free 48-hour landing-page teardown</strong>: send your URL and we'll reply with three specific conversion fixes, no call required.</p>
+        </div>
+        <div class="card bg-base-100">
+          <div class="card-body">
+            <form name="contact-brief" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="brief-form" class="space-y-4">
+              <input type="hidden" name="form-name" value="contact-brief">
+              <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label class="form-control w-full">
+                  <span class="label-text mb-1 font-medium">Name</span>
+                  <input type="text" name="name" required class="input input-bordered w-full" autocomplete="name">
+                </label>
+                <label class="form-control w-full">
+                  <span class="label-text mb-1 font-medium">Work email</span>
+                  <input type="email" name="email" required class="input input-bordered w-full" autocomplete="email">
+                </label>
+              </div>
+              <label class="form-control w-full">
+                <span class="label-text mb-1 font-medium">Company or website</span>
+                <input type="text" name="company" class="input input-bordered w-full" placeholder="https://">
+              </label>
+              <label class="form-control w-full">
+                <span class="label-text mb-1 font-medium">What do you need?</span>
+                <select name="need" class="select select-bordered w-full">
+                  <option>Conversion website or landing page</option>
+                  <option>Ongoing design subscription</option>
+                  <option>Founder content</option>
+                  <option>Brand system</option>
+                  <option>Free 48-hour landing-page teardown</option>
+                  <option>Something else</option>
+                </select>
+              </label>
+              <label class="form-control w-full">
+                <span class="label-text mb-1 font-medium">Tell us about it</span>
+                <textarea name="message" rows="4" class="textarea textarea-bordered w-full" placeholder="What are you trying to ship, and by when?"></textarea>
+              </label>
+              <button type="submit" class="btn btn-primary w-full">Send brief</button>
+              <p id="brief-msg" class="text-sm hidden"></p>
+            </form>
+            <script>
+            (function () {
+              var form = document.getElementById('brief-form');
+              var msg = document.getElementById('brief-msg');
+              if (!form) return;
+              form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                var btn = form.querySelector('button[type=submit]');
+                btn.disabled = true;
+                btn.textContent = 'Sending…';
+                try {
+                  var res = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(new FormData(form)).toString()
+                  });
+                  if (!res.ok) throw new Error();
+                  form.querySelectorAll('input, select, textarea, button').forEach(function (el) { el.disabled = true; });
+                  msg.textContent = '✓ Got it — we’ll reply within one business day.';
+                  msg.className = 'text-sm text-success';
+                  if (typeof gtag === 'function') gtag('event', 'brief_submitted', { event_category: 'conversion', page_location: location.pathname });
+                } catch (_) {
+                  msg.textContent = 'Something went wrong — please email us or book a call instead.';
+                  msg.className = 'text-sm text-error';
+                  btn.disabled = false;
+                  btn.textContent = 'Send brief';
+                }
+                msg.classList.remove('hidden');
+              });
+            })();
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
       <div class="max-w-6xl mx-auto px-4">
         <div class="max-w-3xl mb-10">
           <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">What the call is for</span>
           <h2 class="text-3xl lg:text-4xl font-bold mt-2">You do not need to know the exact plan yet.</h2>
         </div>
         <div class="grid md:grid-cols-3 gap-5">
-          <article class="card bg-base-100 reveal">
+          <article class="card bg-base-200 reveal">
             <div class="card-body">
               <span class="text-3xl font-serif text-primary/30">01</span>
               <h3 class="card-title">Diagnose the creative bottleneck</h3>
               <p class="text-base-content/70">Tell us what your team is trying to ship: website, landing pages, product UI, campaign creative, founder content, pitch decks, brand systems, or an ongoing mix.</p>
             </div>
           </article>
-          <article class="card bg-base-100 reveal">
+          <article class="card bg-base-200 reveal">
             <div class="card-body">
               <span class="text-3xl font-serif text-primary/30">02</span>
               <h3 class="card-title">Identify the context we need to remember</h3>
               <p class="text-base-content/70">We’ll look at your brand rules, examples, current assets, repeated feedback, and past decisions so the work does not start from zero every time.</p>
             </div>
           </article>
-          <article class="card bg-base-100 reveal">
+          <article class="card bg-base-200 reveal">
             <div class="card-body">
               <span class="text-3xl font-serif text-primary/30">03</span>
               <h3 class="card-title">Recommend the right operating rhythm</h3>
