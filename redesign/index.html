@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyDesigner — Taste decides what ships. | AI-Native Creative Studio</title>
+  <meta name="description" content="MyDesigner is an AI-native creative studio. Machine speed, human taste — high-converting websites, founder content, brand systems, and campaign assets that refuse to be average.">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Space+Grotesk:wght@300..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       SIGNAL / NOISE — MyDesigner reimagined
+       Brand ember orange (#FFA848 → #FF640D) on warm ink. Editorial serif vs. instrument mono.
+       Headings: TheSeasons (brand serif, self-hosted).
+       Italic accent voice: Fraunces (TheSeasons has no italic cut).
+       ============================================================ */
+    @font-face {
+      font-family: 'TheSeasons';
+      src: url('/assets/fonts/TheSeasons-Reg.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'TheSeasons';
+      src: url('/assets/fonts/TheSeasons-Bd.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --ink: #0b0807;
+      --ink-2: #120d0a;
+      --ink-3: #1a130d;
+      --paper: #f4efe9;
+      --paper-dim: rgba(244, 239, 233, 0.62);
+      --paper-faint: rgba(244, 239, 233, 0.38);
+      --accent: #ff8a3d;
+      --accent-deep: #ff640d;
+      --accent-light: #ffa848;
+      --accent-dim: rgba(255, 138, 61, 0.55);
+      --line: rgba(244, 239, 233, 0.10);
+      --line-strong: rgba(244, 239, 233, 0.18);
+      --serif: "TheSeasons", "Fraunces", Georgia, serif;
+      --serif-accent: "Fraunces", Georgia, serif;
+      --sans: "Space Grotesk", -apple-system, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+      --gutter: clamp(1.25rem, 4vw, 4rem);
+      /* one size + tracking for every section label / kicker */
+      --label-size: 11px;
+      --label-track: 0.32em;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    html.lenis, html.lenis body { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--sans);
+      font-weight: 340;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--accent); color: var(--ink); }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+    /* ---------- texture + atmosphere ---------- */
+    .grain {
+      position: fixed; inset: -50%; z-index: 60; pointer-events: none;
+      width: 200%; height: 200%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.05;
+      animation: grain-shift 0.9s steps(2) infinite;
+    }
+    @keyframes grain-shift {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(2%, -1%); }
+      100% { transform: translate(-1%, 2%); }
+    }
+
+    .vignette {
+      position: fixed; inset: 0; z-index: 1; pointer-events: none;
+      background: radial-gradient(120% 90% at 50% 10%, transparent 55%, rgba(0,0,0,0.5) 100%);
+    }
+
+    /* ---------- custom cursor ---------- */
+    .cursor-dot, .cursor-ring { display: none; }
+    @media (hover: hover) and (pointer: fine) {
+      .cursor-dot {
+        display: block; position: fixed; z-index: 100; pointer-events: none;
+        width: 6px; height: 6px; border-radius: 50%;
+        background: var(--accent);
+        transform: translate(-50%, -50%);
+      }
+      .cursor-ring {
+        display: flex; align-items: center; justify-content: center;
+        position: fixed; z-index: 99; pointer-events: none;
+        width: 36px; height: 36px; border-radius: 50%;
+        border: 1px solid var(--accent-dim);
+        transform: translate(-50%, -50%);
+        transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+        font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em;
+        color: var(--ink); text-transform: uppercase;
+      }
+      .cursor-ring span { opacity: 0; transition: opacity 0.2s ease; }
+      .cursor-ring.is-active {
+        width: 72px; height: 72px;
+        background: var(--accent); border-color: var(--accent);
+      }
+      .cursor-ring.is-active span { opacity: 1; }
+    }
+
+    /* ---------- preloader ---------- */
+    .preloader {
+      position: fixed; inset: 0; z-index: 90;
+      background: var(--ink);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1.5rem;
+    }
+    .preloader__word {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.42em; text-transform: uppercase;
+      color: var(--paper-dim);
+    }
+    .preloader__count {
+      font-family: var(--serif); font-weight: 300;
+      font-size: clamp(3rem, 8vw, 5.5rem); line-height: 1;
+      font-variation-settings: "opsz" 144;
+      color: var(--paper);
+    }
+    .preloader__count em { font-style: italic; color: var(--accent); }
+
+    /* ---------- nav ---------- */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem var(--gutter);
+      opacity: 0;
+      transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+      border-bottom: 1px solid transparent;
+    }
+    .nav.is-scrolled {
+      background: rgba(7, 11, 10, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom-color: var(--line);
+    }
+    .nav__logo { display: flex; align-items: center; }
+    .nav__logo img { height: 26px; width: auto; }
+    .nav__links { display: none; gap: 2rem; list-style: none; }
+    @media (min-width: 900px) { .nav__links { display: flex; } }
+    .nav__links a {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--paper-dim);
+      transition: color 0.25s ease;
+    }
+    .nav__links a:hover { color: var(--accent); }
+    .nav__cta {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.65rem 1.2rem;
+      border: 1px solid var(--line-strong); border-radius: 999px;
+      color: var(--paper);
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    .nav__cta:hover { background: var(--accent); color: var(--ink); border-color: var(--accent); }
+
+    /* ---------- hero ---------- */
+    .hero {
+      position: relative; min-height: 100svh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 var(--gutter) clamp(2rem, 6vh, 4.5rem);
+    }
+    #field {
+      position: fixed; inset: 0; z-index: 0;
+      width: 100%; height: 100svh;
+      pointer-events: none;
+    }
+    .hero__inner { position: relative; z-index: 2; max-width: 1500px; width: 100%; margin: 0 auto; }
+    .hero__label {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-family: var(--mono); font-size: var(--label-size);
+      letter-spacing: var(--label-track); text-transform: uppercase; color: var(--accent);
+      margin-bottom: clamp(1.2rem, 3vh, 2rem);
+    }
+    .hero__label::before { content: ""; width: 36px; height: 1px; background: var(--accent-dim); }
+    .hero h1 {
+      font-family: var(--serif); font-weight: 320;
+      font-variation-settings: "opsz" 144;
+      font-size: clamp(2.8rem, 8.2vw, 8.2rem);
+      line-height: 0.98; letter-spacing: -0.015em;
+      max-width: 13ch;
+    }
+    .hero h1 .line { display: block; overflow: hidden; }
+    .hero h1 .line > span { display: inline-block; transform: translateY(112%); }
+    .hero h1 em {
+      font-style: italic; font-weight: 380; color: var(--accent);
+    }
+    .hero__bottom {
+      display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+      gap: 2rem; margin-top: clamp(1.8rem, 4vh, 3rem);
+    }
+    .hero__sub {
+      max-width: 42ch; color: var(--paper-dim);
+      font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    }
+    .hero__sub strong { color: var(--paper); font-weight: 500; }
+    .hero__ctas { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+
+    .btn {
+      position: relative; display: inline-flex; align-items: center; gap: 0.7rem;
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 1rem 1.7rem; border-radius: 999px;
+      transition: transform 0.25s ease;
+      will-change: transform;
+    }
+    .btn--solid { background: linear-gradient(135deg, var(--accent-light), var(--accent-deep)); color: var(--ink); }
+    .btn--solid:hover { background: linear-gradient(135deg, #ffb866, var(--accent)); }
+    .btn--ghost { border: 1px solid var(--line-strong); color: var(--paper); }
+    .btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn .arrow { transition: transform 0.3s ease; }
+    .btn:hover .arrow { transform: translateX(4px); }
+
+    .hero__scroll {
+      position: absolute; right: var(--gutter); bottom: clamp(2rem, 6vh, 4.5rem);
+      display: none; align-items: center; gap: 0.6rem;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--paper-faint);
+      writing-mode: vertical-rl;
+    }
+    @media (min-width: 1100px) { .hero__scroll { display: flex; } }
+    .hero__scroll::after {
+      content: ""; width: 1px; height: 48px;
+      background: linear-gradient(var(--accent), transparent);
+      animation: scroll-pulse 2s ease-in-out infinite;
+    }
+    @keyframes scroll-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+    /* ---------- shared section chrome ---------- */
+    section { position: relative; z-index: 2; }
+    .shell { max-width: 1500px; margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+    .kicker {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-family: var(--mono); font-size: var(--label-size); letter-spacing: var(--label-track);
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 1.6rem;
+    }
+    .kicker::before { content: ""; width: 28px; height: 1px; background: var(--accent-dim); }
+    .kicker .idx { color: var(--paper-faint); }
+    .h2 {
+      font-family: var(--serif); font-weight: 320;
+      font-variation-settings: "opsz" 144;
+      font-size: clamp(2rem, 4.6vw, 4.2rem);
+      line-height: 1.04; letter-spacing: -0.01em;
+    }
+    .h2 em { font-style: italic; color: var(--accent); font-weight: 380; }
+
+    /* TheSeasons ships no italic — all italic accents speak in Fraunces */
+    .hero h1 em, .h2 em, .finale h2 em, .process__memory h3 em,
+    .quote blockquote, .preloader__count em, .manifesto .w.accent {
+      font-family: var(--serif-accent);
+    }
+
+    .reveal { opacity: 0; transform: translateY(36px); }
+
+    /* ---------- marquee ---------- */
+    .marquee-band {
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      padding: 1.4rem 0; overflow: hidden;
+      background: var(--ink);
+    }
+    .marquee { display: flex; width: max-content; animation: marquee 36s linear infinite; }
+    .marquee-band:hover .marquee { animation-play-state: paused; }
+    .marquee__group { display: flex; align-items: center; }
+    .marquee__item {
+      display: flex; align-items: center; gap: 2.6rem;
+      padding-right: 2.6rem;
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--paper-dim); white-space: nowrap;
+    }
+    .marquee__item::after { content: "✺"; color: var(--accent); font-size: 10px; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    /* ---------- manifesto ---------- */
+    .manifesto { padding: clamp(7rem, 16vh, 12rem) 0; }
+    #manifestoText {
+      font-family: var(--serif); font-weight: 320;
+      font-variation-settings: "opsz" 110;
+      font-size: clamp(1.6rem, 3.6vw, 3.3rem);
+      line-height: 1.28; letter-spacing: -0.005em;
+      max-width: 24ch;
+    }
+    .manifesto .w { color: rgba(244, 239, 233, 0.16); transition: color 0.3s linear; }
+    .manifesto .w.lit { color: var(--paper); }
+    .manifesto .w.accent.lit { color: var(--accent); font-style: italic; }
+
+    /* ---------- stats ---------- */
+    .stats { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .stats__grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 900px) { .stats__grid { grid-template-columns: repeat(4, 1fr); } }
+    .stat {
+      padding: clamp(2rem, 4vw, 3.5rem) var(--gutter);
+      border-right: 1px solid var(--line);
+    }
+    .stat:last-child { border-right: 0; }
+    .stats__grid .stat:nth-child(2) { border-right: 0; }
+    @media (min-width: 900px) { .stats__grid .stat:nth-child(2) { border-right: 1px solid var(--line); } }
+    .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    @media (min-width: 900px) { .stat:nth-child(-n+2) { border-bottom: 0; } }
+    .stat__num {
+      font-family: var(--serif); font-weight: 300;
+      font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: 1;
+      font-variation-settings: "opsz" 144;
+    }
+    .stat__num sup { font-size: 0.45em; color: var(--accent); }
+    .stat__label {
+      margin-top: 0.8rem;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--paper-faint);
+    }
+
+    /* ---------- services ---------- */
+    .services { padding: clamp(6rem, 14vh, 10rem) 0 clamp(4rem, 10vh, 8rem); }
+    .services__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1.5rem; margin-bottom: clamp(2.5rem, 6vh, 4.5rem); }
+    .services__head > p { max-width: 36ch; color: var(--paper-dim); font-size: 0.98rem; }
+    .svc { border-top: 1px solid var(--line); }
+    .svc:last-child { border-bottom: 1px solid var(--line); }
+    .svc__row {
+      display: grid; grid-template-columns: auto 1fr; gap: 1.2rem 2rem;
+      align-items: baseline;
+      padding: clamp(1.6rem, 3.4vw, 2.8rem) 0;
+      transition: padding 0.35s ease;
+    }
+    @media (min-width: 900px) {
+      .svc__row { grid-template-columns: 5rem 1fr 1fr auto; }
+    }
+    .svc__idx { font-family: var(--mono); font-size: 12px; color: var(--paper-faint); letter-spacing: 0.1em; }
+    .svc__name {
+      font-family: var(--serif); font-weight: 330;
+      font-variation-settings: "opsz" 120;
+      font-size: clamp(1.5rem, 3vw, 2.6rem); line-height: 1.08;
+      transition: color 0.3s ease, transform 0.35s ease;
+    }
+    .svc__desc { color: var(--paper-dim); font-size: 0.95rem; max-width: 44ch; }
+    .svc__desc .tags {
+      display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.9rem;
+    }
+    .svc__desc .tags span {
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 0.3rem 0.65rem; border: 1px solid var(--line); border-radius: 999px;
+      color: var(--paper-faint);
+    }
+    .svc__price {
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em;
+      color: var(--accent); white-space: nowrap;
+    }
+    .svc:hover .svc__name { color: var(--accent); transform: translateX(8px); }
+    .svc__price small { display: block; color: var(--paper-faint); letter-spacing: 0.18em; font-size: 9px; margin-top: 0.3rem; text-transform: uppercase; }
+
+    /* ---------- process ---------- */
+    .process { padding: clamp(6rem, 14vh, 10rem) 0; background: var(--ink-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .process__grid {
+      display: grid; gap: 2.5rem; margin-top: clamp(3rem, 7vh, 5rem);
+      grid-template-columns: 1fr;
+      position: relative;
+    }
+    @media (min-width: 900px) { .process__grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; } }
+    .process__line {
+      position: absolute; top: 21px; left: 0; right: 0; height: 1px;
+      display: none;
+    }
+    @media (min-width: 900px) { .process__line { display: block; } }
+    .process__line .track { width: 100%; height: 100%; background: var(--line); }
+    .process__line .fill {
+      position: absolute; inset: 0; transform-origin: left center; transform: scaleX(0);
+      background: linear-gradient(90deg, var(--accent), var(--accent-dim));
+    }
+    .step { position: relative; }
+    .step__dot {
+      width: 43px; height: 43px; border-radius: 50%;
+      border: 1px solid var(--line-strong);
+      background: var(--ink-2);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 11px; color: var(--accent);
+      margin-bottom: 1.4rem;
+      position: relative; z-index: 1;
+    }
+    .step h3 {
+      font-family: var(--serif); font-weight: 360;
+      font-size: 1.45rem; line-height: 1.15; margin-bottom: 0.7rem;
+      font-variation-settings: "opsz" 100;
+    }
+    .step p { color: var(--paper-dim); font-size: 0.92rem; max-width: 30ch; }
+    .process__memory {
+      margin-top: clamp(3.5rem, 8vh, 5.5rem);
+      border: 1px solid var(--line-strong); border-radius: 18px;
+      padding: clamp(1.8rem, 4vw, 3rem);
+      display: grid; gap: 1.5rem;
+      background:
+        radial-gradient(60% 120% at 85% 0%, rgba(255, 122, 40, 0.08), transparent 70%),
+        var(--ink);
+    }
+    @media (min-width: 900px) { .process__memory { grid-template-columns: auto 1fr; align-items: center; gap: 3rem; } }
+    .process__memory .ring-ico { width: 64px; height: 64px; flex: 0 0 auto; }
+    .process__memory h3 {
+      font-family: var(--serif); font-weight: 340; font-size: clamp(1.4rem, 2.4vw, 2rem);
+      margin-bottom: 0.5rem;
+    }
+    .process__memory h3 em { font-style: italic; color: var(--accent); }
+    .process__memory p { color: var(--paper-dim); font-size: 0.95rem; max-width: 62ch; }
+
+    /* ---------- work ---------- */
+    .work { padding: clamp(6rem, 14vh, 10rem) 0; }
+    .work__grid {
+      display: grid; gap: clamp(2rem, 5vw, 4rem);
+      margin-top: clamp(3rem, 7vh, 5rem);
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 800px) { .work__grid { grid-template-columns: 1fr 1fr; } }
+    .proj { display: block; }
+    @media (min-width: 800px) {
+      .proj:nth-child(even) { transform: translateY(clamp(2rem, 6vw, 5rem)); }
+    }
+    .proj__media {
+      position: relative; overflow: hidden; border-radius: 14px;
+      aspect-ratio: 4 / 3; background: var(--ink-3);
+    }
+    .proj__media img {
+      width: 100%; height: 100%; object-fit: cover;
+      transform: scale(1.015);
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
+      filter: saturate(0.92);
+    }
+    .proj:hover .proj__media img { transform: scale(1.07); filter: saturate(1.05); }
+    .proj__media::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(7, 11, 10, 0.55));
+      opacity: 0; transition: opacity 0.45s ease;
+    }
+    .proj:hover .proj__media::after { opacity: 1; }
+    .proj__meta {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 1rem; margin-top: 1.1rem;
+    }
+    .proj__title {
+      font-family: var(--serif); font-weight: 350; font-size: clamp(1.2rem, 2vw, 1.6rem);
+      transition: color 0.3s ease;
+    }
+    .proj:hover .proj__title { color: var(--accent); }
+    .proj__badge {
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--paper-faint); white-space: nowrap;
+    }
+    .proj__desc { margin-top: 0.35rem; color: var(--paper-dim); font-size: 0.9rem; }
+    .work__more { margin-top: clamp(3.5rem, 8vh, 5rem); text-align: center; }
+
+    /* ---------- voices ---------- */
+    .voices { padding: clamp(6rem, 14vh, 10rem) 0; background: var(--ink-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .voices__grid { display: grid; gap: 2rem; margin-top: clamp(3rem, 6vh, 4rem); }
+    @media (min-width: 900px) { .voices__grid { grid-template-columns: 1fr 1fr; } }
+    .quote {
+      border: 1px solid var(--line); border-radius: 18px;
+      padding: clamp(1.8rem, 4vw, 3rem);
+      background: var(--ink);
+      display: flex; flex-direction: column; gap: 1.6rem;
+    }
+    .quote blockquote {
+      font-family: var(--serif); font-weight: 330; font-style: italic;
+      font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.4;
+      font-variation-settings: "opsz" 60;
+    }
+    .quote blockquote::before { content: "“"; color: var(--accent); }
+    .quote blockquote::after { content: "”"; color: var(--accent); }
+    .quote figcaption { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--paper-dim); }
+    .quote figcaption strong { color: var(--paper); font-weight: 500; display: block; margin-bottom: 0.25rem; }
+
+    /* ---------- pricing ---------- */
+    .pricing { padding: clamp(6rem, 14vh, 10rem) 0; }
+    .pricing__lede { margin-top: 1.4rem; max-width: 52ch; color: var(--paper-dim); font-size: 0.98rem; }
+    .pricing__grid { display: grid; gap: 1.2rem; margin-top: clamp(3rem, 7vh, 5rem); }
+    @media (min-width: 980px) { .pricing__grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; } }
+    .plan {
+      border: 1px solid var(--line-strong); border-radius: 20px;
+      padding: clamp(1.8rem, 3.5vw, 2.6rem);
+      display: flex; flex-direction: column; gap: 1.4rem;
+      transition: border-color 0.35s ease, transform 0.35s ease;
+      background: var(--ink-2);
+    }
+    .plan:hover { border-color: var(--accent-dim); transform: translateY(-6px); }
+    .plan--hero {
+      background:
+        radial-gradient(80% 100% at 50% 0%, rgba(255, 122, 40, 0.11), transparent 70%),
+        var(--ink-2);
+      border-color: var(--accent-dim);
+    }
+    .plan__tag {
+      align-self: flex-start;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+      padding: 0.35rem 0.8rem; border-radius: 999px;
+      border: 1px solid var(--line-strong); color: var(--paper-dim);
+    }
+    .plan--hero .plan__tag { border-color: var(--accent); color: var(--accent); }
+    .plan h3 { font-family: var(--serif); font-weight: 350; font-size: 1.6rem; }
+    .plan__price { font-family: var(--serif); font-weight: 300; font-size: clamp(2.4rem, 4vw, 3.2rem); line-height: 1; font-variation-settings: "opsz" 144; }
+    .plan__price small { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--paper-faint); }
+    .plan p.lede { color: var(--paper-dim); font-size: 0.93rem; }
+    .plan ul { list-style: none; display: grid; gap: 0.65rem; margin-top: auto; }
+    .plan li {
+      display: flex; gap: 0.7rem; align-items: baseline;
+      font-size: 0.9rem; color: var(--paper-dim);
+    }
+    .plan li::before { content: "→"; color: var(--accent); font-family: var(--mono); font-size: 0.8rem; }
+    .plan .btn { justify-content: center; margin-top: 1.6rem; }
+    .pricing__note {
+      margin-top: 2rem; text-align: center;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+      color: var(--paper-faint);
+    }
+    .pricing__note em { color: var(--accent); font-style: normal; }
+
+    /* ---------- faq ---------- */
+    .faq { padding: clamp(5rem, 12vh, 9rem) 0; border-top: 1px solid var(--line); }
+    .faq__list { margin-top: clamp(2.5rem, 6vh, 4rem); max-width: 60rem; }
+    .faq details { border-top: 1px solid var(--line); }
+    .faq details:last-child { border-bottom: 1px solid var(--line); }
+    .faq summary {
+      list-style: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+      padding: 1.6rem 0;
+      font-family: var(--serif); font-weight: 340; font-size: clamp(1.15rem, 2vw, 1.5rem);
+      transition: color 0.25s ease;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary:hover { color: var(--accent); }
+    .faq summary .plus {
+      flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%;
+      border: 1px solid var(--line-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 14px; color: var(--accent);
+      transition: transform 0.35s ease, background-color 0.3s ease;
+    }
+    .faq details[open] summary .plus { transform: rotate(45deg); background: rgba(255, 122, 40, 0.14); }
+    .faq details p { padding: 0 0 1.7rem; color: var(--paper-dim); max-width: 62ch; font-size: 0.96rem; }
+
+    /* ---------- finale ---------- */
+    .finale {
+      position: relative; padding: clamp(8rem, 20vh, 14rem) 0 clamp(4rem, 8vh, 6rem);
+      text-align: center; overflow: hidden;
+    }
+    .finale__rings {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -55%);
+      width: min(120vw, 900px); aspect-ratio: 1; pointer-events: none; opacity: 0.5;
+    }
+    .finale__rings .r {
+      position: absolute; inset: 0; border-radius: 50%;
+      border: 1px solid rgba(255, 138, 61, 0.18);
+      animation: ring-spin 24s linear infinite;
+    }
+    .finale__rings .r2 { inset: 12%; animation-duration: 32s; animation-direction: reverse; border-color: rgba(255, 138, 61, 0.13); }
+    .finale__rings .r3 { inset: 26%; animation-duration: 18s; border-color: rgba(244, 239, 233, 0.08); }
+    .finale__rings .r::after {
+      content: ""; position: absolute; top: -3px; left: 50%;
+      width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+    @keyframes ring-spin { to { transform: rotate(360deg); } }
+    .finale__kicker {
+      font-family: var(--mono); font-size: var(--label-size); letter-spacing: var(--label-track);
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1.8rem;
+    }
+    .finale h2 {
+      font-family: var(--serif); font-weight: 310;
+      font-variation-settings: "opsz" 144;
+      font-size: clamp(3rem, 9.5vw, 9rem); line-height: 0.98; letter-spacing: -0.02em;
+      position: relative; z-index: 1;
+    }
+    .finale h2 em { font-style: italic; color: var(--accent); font-weight: 380; }
+    .finale .btn { margin-top: clamp(2.2rem, 5vh, 3.5rem); }
+    .finale__micro {
+      margin-top: 1.4rem;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--paper-faint);
+    }
+
+    /* ---------- footer ---------- */
+    footer {
+      position: relative; z-index: 2;
+      border-top: 1px solid var(--line);
+      padding: 2.2rem var(--gutter);
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--paper-faint);
+    }
+    footer nav { display: flex; flex-wrap: wrap; gap: 1.6rem; }
+    footer a { transition: color 0.25s ease; }
+    footer a:hover { color: var(--accent); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .grain, .finale__rings .r, .hero__scroll::after { animation: none !important; }
+      .marquee { animation-duration: 200s; }
+      .reveal { opacity: 1; transform: none; }
+      .hero h1 .line > span { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- atmosphere -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"><span>View</span></div>
+
+  <!-- preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__word">MyDesigner · Signal from Noise</div>
+    <div class="preloader__count"><span id="loadCount">00</span><em>%</em></div>
+  </div>
+
+  <!-- nav -->
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#top" data-cursor aria-label="MyDesigner home">
+      <img src="/redesign/logo-dark.svg" alt="MyDesigner">
+    </a>
+    <ul class="nav__links">
+      <li><a href="#manifesto" data-cursor>Manifesto</a></li>
+      <li><a href="#services" data-cursor>Services</a></li>
+      <li><a href="#process" data-cursor>Process</a></li>
+      <li><a href="#work" data-cursor>Work</a></li>
+      <li><a href="#pricing" data-cursor>Pricing</a></li>
+    </ul>
+    <a class="nav__cta" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a call</a>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <canvas id="field" aria-hidden="true"></canvas>
+      <div class="hero__inner">
+        <p class="hero__label" id="heroLabel">AI-Native Creative Studio — Est. 2020</p>
+        <h1 id="heroTitle" aria-label="AI can make anything. Taste decides what ships.">
+          <span class="line"><span>AI can make</span></span>
+          <span class="line"><span>anything.</span></span>
+          <span class="line"><span><em>Taste</em> decides</span></span>
+          <span class="line"><span>what ships.</span></span>
+        </h1>
+        <div class="hero__bottom" id="heroBottom">
+          <p class="hero__sub">We're the creative team for founders who refuse to ship average. <strong>Machine speed, human judgment</strong> — websites, founder content, brand systems, and campaign assets that convert.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--solid magnetic" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a creative growth call <span class="arrow">→</span></a>
+            <a class="btn btn--ghost magnetic" href="#work" data-cursor>See the work</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll">Scroll</div>
+    </section>
+
+    <!-- ===== CLIENT MARQUEE ===== -->
+    <section class="marquee-band" aria-label="Clients">
+      <div class="marquee">
+        <div class="marquee__group">
+          <span class="marquee__item">Dentsu</span>
+          <span class="marquee__item">Calfus</span>
+          <span class="marquee__item">Poocho</span>
+          <span class="marquee__item">HumanCloud</span>
+          <span class="marquee__item">Approach</span>
+          <span class="marquee__item">ScanO by DentalDost</span>
+          <span class="marquee__item">USA Table Tennis</span>
+          <span class="marquee__item">Apollo Radiology</span>
+        </div>
+        <div class="marquee__group" aria-hidden="true">
+          <span class="marquee__item">Dentsu</span>
+          <span class="marquee__item">Calfus</span>
+          <span class="marquee__item">Poocho</span>
+          <span class="marquee__item">HumanCloud</span>
+          <span class="marquee__item">Approach</span>
+          <span class="marquee__item">ScanO by DentalDost</span>
+          <span class="marquee__item">USA Table Tennis</span>
+          <span class="marquee__item">Apollo Radiology</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MANIFESTO ===== -->
+    <section class="manifesto" id="manifesto">
+      <div class="shell">
+        <p class="kicker"><span class="idx">01</span> The Manifesto</p>
+        <p id="manifestoText">The internet is filling with infinite average. Generated sites, generated posts, generated brands — fluent, fast, and *forgettable.* Production is no longer scarce. *Judgment is.* We pair machine speed with human taste, so everything you ship feels *unmistakably yours.*</p>
+      </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats" aria-label="Track record">
+      <div class="stats__grid">
+        <div class="stat">
+          <p class="stat__num"><span data-count="57">0</span></p>
+          <p class="stat__label">Clients served</p>
+        </div>
+        <div class="stat">
+          <p class="stat__num"><span data-count="142">0</span><sup>+</sup></p>
+          <p class="stat__label">Projects shipped</p>
+        </div>
+        <div class="stat">
+          <p class="stat__num">24–72<sup>h</sup></p>
+          <p class="stat__label">Typical turnaround</p>
+        </div>
+        <div class="stat">
+          <p class="stat__num">2020</p>
+          <p class="stat__label">Shipping since</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="services">
+      <div class="shell">
+        <div class="services__head reveal">
+          <div>
+            <p class="kicker"><span class="idx">02</span> What we make</p>
+            <h2 class="h2">Four motions.<br>One <em>creative engine.</em></h2>
+          </div>
+          <p>Every engagement starts from the business goal, not the deliverable. Pick the motion that matches where you are.</p>
+        </div>
+
+        <article class="svc reveal">
+          <a class="svc__row" href="/services" data-cursor>
+            <span class="svc__idx">/01</span>
+            <h3 class="svc__name">Conversion Website Sprint</h3>
+            <div class="svc__desc">
+              Offer clarity, conversion architecture, design, and a live Webflow or Framer build — launched, QA'd, and reviewed after real traffic hits it.
+              <div class="tags"><span>Webflow</span><span>Framer</span><span>CRO</span><span>Copy</span></div>
+            </div>
+            <p class="svc__price">2–4 Ship Weeks<small>Custom scope</small></p>
+          </a>
+        </article>
+
+        <article class="svc reveal">
+          <a class="svc__row" href="/founder-content-engine" data-cursor>
+            <span class="svc__idx">/02</span>
+            <h3 class="svc__name">Founder Content Engine</h3>
+            <div class="svc__desc">
+              Your voice, systematized. A repeatable engine for founder-led content that compounds — written, designed, and shipped on rhythm.
+              <div class="tags"><span>LinkedIn</span><span>X</span><span>Carousels</span><span>Ghostwriting</span></div>
+            </div>
+            <p class="svc__price">From $1,250/wk<small>Ship Week</small></p>
+          </a>
+        </article>
+
+        <article class="svc reveal">
+          <a class="svc__row" href="/ai-ready-brand-system" data-cursor>
+            <span class="svc__idx">/03</span>
+            <h3 class="svc__name">AI-Ready Brand System</h3>
+            <div class="svc__desc">
+              Brand rules, templates, examples, and a prompt library — so human and AI output stays consistent no matter who (or what) makes it.
+              <div class="tags"><span>Identity</span><span>Guidelines</span><span>Prompt library</span><span>QA</span></div>
+            </div>
+            <p class="svc__price">2 Ship Weeks<small>$2,500 one-time</small></p>
+          </a>
+        </article>
+
+        <article class="svc reveal">
+          <a class="svc__row" href="/pricing" data-cursor>
+            <span class="svc__idx">/04</span>
+            <h3 class="svc__name">Growth Weeks</h3>
+            <div class="svc__desc">
+              An always-on creative team across web, brand, product UI, decks, and campaigns. Every discipline, week after week, sharpened by Client Memory.
+              <div class="tags"><span>UI/UX</span><span>Brand</span><span>Decks</span><span>Campaigns</span></div>
+            </div>
+            <p class="svc__price">$350/wk<small>Billed monthly · pause anytime</small></p>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="process" id="process">
+      <div class="shell">
+        <p class="kicker reveal"><span class="idx">03</span> The Operating Loop</p>
+        <h2 class="h2 reveal">From messy goal<br>to <em>shipped creative.</em></h2>
+
+        <div class="process__grid">
+          <div class="process__line" aria-hidden="true"><div class="track"></div><div class="fill" id="processFill"></div></div>
+          <div class="step reveal">
+            <div class="step__dot">01</div>
+            <h3>Brief</h3>
+            <p>Tell us the business goal, not the deliverable. "We need more demos" beats "we need a banner."</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__dot">02</div>
+            <h3>Direction</h3>
+            <p>Human creative directors decide what's worth making, why it matters, and where it should ship.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__dot">03</div>
+            <h3>Production</h3>
+            <p>AI-speed execution by real designers. Most focused assets ship in 24–72 hours.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__dot">04</div>
+            <h3>Ship &amp; learn</h3>
+            <p>QA'd, launched, measured — and every learning is fed back into your Client Memory.</p>
+          </div>
+        </div>
+
+        <div class="process__memory reveal">
+          <svg class="ring-ico" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="brandGrad2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffa848"/><stop offset="1" stop-color="#ff640d"/>
+              </linearGradient>
+            </defs>
+            <circle cx="32" cy="32" r="29" stroke="url(#brandGrad2)" stroke-width="1" opacity="0.9"/>
+            <circle cx="32" cy="32" r="19" stroke="#f4efe9" stroke-width="1" opacity="0.45"/>
+            <circle cx="32" cy="32" r="9" stroke="url(#brandGrad2)" stroke-width="1" opacity="0.6"/>
+            <circle cx="32" cy="32" r="3" fill="#ff8a3d"/>
+          </svg>
+          <div>
+            <h3>Client Memory — your creative gets <em>sharper over time.</em></h3>
+            <p>Every brief, decision, revision, and result is captured in a living memory of your brand. Month three is faster than month one. Month six feels like an in-house team that's been with you for years.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WORK ===== -->
+    <section class="work" id="work">
+      <div class="shell">
+        <div class="reveal">
+          <p class="kicker"><span class="idx">04</span> Selected Work</p>
+          <h2 class="h2">Proof, not <em>promises.</em></h2>
+        </div>
+
+        <div class="work__grid">
+          <a class="proj reveal" href="/portfolio/web-development" data-cursor="view">
+            <div class="proj__media"><img src="/assets/images/portfolio/apollo-radiology.webp" alt="Apollo Radiology website" loading="lazy"></div>
+            <div class="proj__meta"><h3 class="proj__title">Apollo Radiology</h3><span class="proj__badge">Webflow</span></div>
+            <p class="proj__desc">Transforming healthcare with Webflow-powered precision.</p>
+          </a>
+          <a class="proj reveal" href="/portfolio/ui-ux-design" data-cursor="view">
+            <div class="proj__media"><img src="/assets/images/portfolio/poocho-app.webp" alt="Poocho app design" loading="lazy"></div>
+            <div class="proj__meta"><h3 class="proj__title">Poocho</h3><span class="proj__badge">UI/UX</span></div>
+            <p class="proj__desc">India's first research productivity tool.</p>
+          </a>
+          <a class="proj reveal" href="/portfolio/branding" data-cursor="view">
+            <div class="proj__media"><img src="/assets/images/portfolio/vettly.webp" alt="Vettly.ai branding" loading="lazy"></div>
+            <div class="proj__meta"><h3 class="proj__title">Vettly.ai</h3><span class="proj__badge">Branding</span></div>
+            <p class="proj__desc">Cohesive branding and a smarter web app for AI-driven hiring.</p>
+          </a>
+          <a class="proj reveal" href="/portfolio/ui-ux-design" data-cursor="view">
+            <div class="proj__media"><img src="/assets/images/portfolio/neustreet.webp" alt="Neustreet marketplace design" loading="lazy"></div>
+            <div class="proj__meta"><h3 class="proj__title">Neustreet</h3><span class="proj__badge">UI/UX</span></div>
+            <p class="proj__desc">The marketplace for modern collectibles.</p>
+          </a>
+          <a class="proj reveal" href="/portfolio/web-development" data-cursor="view">
+            <div class="proj__media"><img src="/assets/images/portfolio/takumi.webp" alt="Takumi website" loading="lazy"></div>
+            <div class="proj__meta"><h3 class="proj__title">Takumi</h3><span class="proj__badge">Framer</span></div>
+            <p class="proj__desc">An AI consultancy rooted in Japanese craftsmanship.</p>
+          </a>
+          <a class="proj reveal" href="/portfolio/branding" data-cursor="view">
+            <div class="proj__media"><img src="/assets/images/portfolio/scano.webp" alt="ScanO branding" loading="lazy"></div>
+            <div class="proj__meta"><h3 class="proj__title">ScanO</h3><span class="proj__badge">Branding</span></div>
+            <p class="proj__desc">Designing India's first smile-scanning brand.</p>
+          </a>
+        </div>
+
+        <div class="work__more reveal">
+          <a class="btn btn--ghost magnetic" href="/portfolio" data-cursor>Browse all 142+ projects <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VOICES ===== -->
+    <section class="voices">
+      <div class="shell">
+        <p class="kicker reveal"><span class="idx">05</span> Client Voices</p>
+        <h2 class="h2 reveal">Don't take <em>our</em> word for it.</h2>
+        <div class="voices__grid">
+          <figure class="quote reveal">
+            <blockquote>MyDesigner has been part of our company from day one. They helped us with everything design — from branding to product design to marketing materials. The quality is consistently excellent.</blockquote>
+            <figcaption><strong>Rajat Kabade</strong>ScanO by DentalDost</figcaption>
+          </figure>
+          <figure class="quote reveal">
+            <blockquote>The team at MyDesigner brought our vision to life with real creativity and speed. Absolutely exceeded expectations.</blockquote>
+            <figcaption><strong>Taapsi R</strong>Poocho</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="pricing" id="pricing">
+      <div class="shell">
+        <div class="reveal">
+          <p class="kicker"><span class="idx">06</span> Pricing</p>
+          <h2 class="h2">Hire a creative team<br><em>by the week.</em></h2>
+          <p class="pricing__lede">Agencies sell months because they need them. With AI-speed production, the week is the honest unit of progress — so that's what we price.</p>
+        </div>
+
+        <div class="pricing__grid">
+          <div class="plan reveal">
+            <span class="plan__tag">Start here, zero commitment</span>
+            <h3>Ship Week</h3>
+            <p class="plan__price">$1,250 <small>/ week, one-time</small></p>
+            <p class="lede">One week, one finished thing. Brief us Monday — a landing page, brand sprint, content engine, or pitch deck ships Friday.</p>
+            <ul>
+              <li>Defined outcome, agreed up front</li>
+              <li>Strategy + design + build included</li>
+              <li>No commitment beyond the week</li>
+            </ul>
+            <a class="btn btn--ghost" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a Ship Week</a>
+          </div>
+
+          <div class="plan plan--hero reveal">
+            <span class="plan__tag">Most teams run on this</span>
+            <h3>Growth Weeks</h3>
+            <p class="plan__price">$350 <small>/ week · billed monthly ($1,400)</small></p>
+            <p class="lede">An always-on creative team across web, brand, product UI, decks, and campaign assets — sharpened every week by Client Memory.</p>
+            <ul>
+              <li>Unlimited requests, one at a time</li>
+              <li>24–72h turnaround on focused assets</li>
+              <li>Webflow &amp; Framer development included</li>
+              <li>Pause or cancel anytime</li>
+            </ul>
+            <a class="btn btn--solid" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a creative growth call</a>
+          </div>
+
+          <div class="plan reveal">
+            <span class="plan__tag">Deeper function</span>
+            <h3>Partner Weeks</h3>
+            <p class="plan__price">$950 <small>/ week · billed monthly ($3,800)</small></p>
+            <p class="lede">A real creative function: dedicated creative direction, parallel workstreams, and a weekly planning rhythm tied to your growth goals.</p>
+            <ul>
+              <li>Dedicated creative direction</li>
+              <li>Parallel workstreams</li>
+              <li>Weekly growth-planning rhythm</li>
+            </ul>
+            <a class="btn btn--ghost" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Talk to us</a>
+          </div>
+        </div>
+
+        <p class="pricing__note">A full-time designer costs $1,500+/week fully loaded — and takes two months to hire. <em>Your first week with us ships something.</em></p>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+      <div class="shell">
+        <p class="kicker reveal"><span class="idx">07</span> Questions</p>
+        <h2 class="h2 reveal">Asked &amp; <em>answered.</em></h2>
+        <div class="faq__list reveal">
+          <details>
+            <summary>What exactly is MyDesigner? <span class="plus">+</span></summary>
+            <p>An AI-native creative studio by Sukratu. We help founders and growing teams ship high-converting websites, founder content, AI-ready brand systems, campaign assets, and Webflow/Framer builds — with AI-speed production and human creative direction.</p>
+          </details>
+          <details>
+            <summary>Why not just use AI tools ourselves? <span class="plus">+</span></summary>
+            <p>You should — for drafts. But AI gives you options, not direction. Growth teams still need taste, prioritization, brand memory, and production discipline. That judgment layer is what you're actually buying.</p>
+          </details>
+          <details>
+            <summary>How fast is the turnaround? <span class="plus">+</span></summary>
+            <p>Most focused assets ship in 24–72 hours. Larger websites, product UI, and brand systems are planned around the quality bar and review cycle, with timelines agreed up front.</p>
+          </details>
+          <details>
+            <summary>Is Webflow / Framer development included? <span class="plus">+</span></summary>
+            <p>Yes, in all plans. You receive a live, editable site — not just design mockups.</p>
+          </details>
+          <details>
+            <summary>Why is pricing per week? <span class="plus">+</span></summary>
+            <p>Because with AI-speed production, a week is what a month used to be. Agencies sell months because their process needs them; ours doesn't. Weekly pricing keeps the commitment small and the accountability high — every week has to ship something. Ongoing plans are still billed monthly to keep admin simple.</p>
+          </details>
+          <details>
+            <summary>Do we have to commit to ongoing weeks? <span class="plus">+</span></summary>
+            <p>No. Start with a single Ship Week — one defined outcome, shipped in five days. Continue into Growth Weeks only if that first week earns it.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINALE ===== -->
+    <section class="finale">
+      <div class="finale__rings" aria-hidden="true">
+        <div class="r"></div>
+        <div class="r r2"></div>
+        <div class="r r3"></div>
+      </div>
+      <div class="shell">
+        <p class="finale__kicker reveal">The bar is open</p>
+        <h2 class="reveal">Don't ship<br><em>average.</em></h2>
+        <a class="btn btn--solid magnetic reveal" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a creative growth call <span class="arrow">→</span></a>
+        <p class="finale__micro reveal">20 minutes · No pitch deck · Leave with a sharper plan either way</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 MyDesigner by Sukratu</span>
+    <nav>
+      <a href="/services" data-cursor>Services</a>
+      <a href="/portfolio" data-cursor>Portfolio</a>
+      <a href="/blog/" data-cursor>Blog</a>
+      <a href="/faq" data-cursor>FAQ</a>
+      <a href="https://x.com/mydesigner_gg" data-cursor>X</a>
+      <a href="https://www.linkedin.com/showcase/mydesigner-sukratu" data-cursor>LinkedIn</a>
+      <a href="https://instagram.com/mydesigner.gg" data-cursor>Instagram</a>
+    </nav>
+    <span>Signal / Noise — Concept 01</span>
+  </footer>
+
+  <!-- libs -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* ============================================================
+       Smooth scroll (Lenis) wired into GSAP's ticker
+       ============================================================ */
+    let lenis = null;
+    if (!reduced && typeof Lenis !== 'undefined') {
+      lenis = new Lenis({ smoothWheel: true, lerp: 0.1 });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener('click', (e) => {
+          const target = document.querySelector(a.getAttribute('href'));
+          if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -40 }); }
+        });
+      });
+    }
+
+    /* ============================================================
+       THREE.JS — Signal from Noise
+       9,000 particles scattered in space assemble into the three
+       MyDesigner orbital rings, then disperse again on scroll.
+       ============================================================ */
+    const canvas = document.getElementById('field');
+    const uniforms = {
+      uTime: { value: 0 },
+      uProgress: { value: reduced ? 1 : 0 },   // 0 = noise, 1 = signal (rings)
+      uScatter: { value: 0 },                   // scroll-driven dispersal
+      uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) },
+    };
+
+    let renderer = null;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false, powerPreference: 'high-performance' });
+    } catch (e) { /* WebGL unavailable — page still works without the field */ }
+
+    if (renderer) {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.1, 60);
+      camera.position.set(0, 0, 9);
+
+      const COUNT = 9000;
+      const scatter = new Float32Array(COUNT * 3);
+      const target = new Float32Array(COUNT * 3);
+      const rand = new Float32Array(COUNT);
+
+      // Three tilted orbital rings — the MyDesigner mark in space.
+      const rings = [
+        { r: 2.1, tube: 0.045, euler: new THREE.Euler(Math.PI / 2.25, 0, 0.25) },
+        { r: 2.85, tube: 0.06, euler: new THREE.Euler(Math.PI / 2.6, 0.55, -0.3) },
+        { r: 3.6, tube: 0.085, euler: new THREE.Euler(Math.PI / 1.95, -0.45, 0.5) },
+      ];
+
+      const v = new THREE.Vector3();
+      for (let i = 0; i < COUNT; i++) {
+        // scattered start: a loose gaussian cloud filling the viewport depth
+        scatter[i * 3 + 0] = (Math.random() + Math.random() + Math.random() - 1.5) * 9.5;
+        scatter[i * 3 + 1] = (Math.random() + Math.random() + Math.random() - 1.5) * 7.0;
+        scatter[i * 3 + 2] = (Math.random() + Math.random() + Math.random() - 1.5) * 7.0;
+
+        const ring = rings[i % 3];
+        const angle = Math.random() * Math.PI * 2;
+        const wobble = ring.tube * (Math.random() + Math.random() - 1) * 3;
+        v.set(Math.cos(angle) * (ring.r + wobble), wobble * 1.6, Math.sin(angle) * (ring.r + wobble));
+        v.applyEuler(ring.euler);
+        target[i * 3 + 0] = v.x;
+        target[i * 3 + 1] = v.y;
+        target[i * 3 + 2] = v.z;
+
+        rand[i] = Math.random();
+      }
+
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.BufferAttribute(scatter, 3));
+      geo.setAttribute('aTarget', new THREE.BufferAttribute(target, 3));
+      geo.setAttribute('aRand', new THREE.BufferAttribute(rand, 1));
+
+      const mat = new THREE.ShaderMaterial({
+        uniforms,
+        transparent: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+        vertexShader: /* glsl */`
+          attribute vec3 aTarget;
+          attribute float aRand;
+          uniform float uTime;
+          uniform float uProgress;
+          uniform float uScatter;
+          uniform float uPixelRatio;
+          varying float vRand;
+          varying float vMix;
+
+          void main() {
+            vRand = aRand;
+            // staggered per-particle assembly, pulled apart again by scroll
+            float assembled = uProgress * (1.0 - uScatter * 0.92);
+            float p = clamp((assembled - aRand * 0.38) / 0.62, 0.0, 1.0);
+            p = p * p * (3.0 - 2.0 * p);
+            vMix = p;
+
+            vec3 pos = mix(position, aTarget, p);
+            // gentle living wobble
+            float amp = mix(0.22, 0.035, p);
+            pos += amp * vec3(
+              sin(uTime * 0.6 + aRand * 43.0),
+              cos(uTime * 0.45 + aRand * 31.0),
+              sin(uTime * 0.7 + aRand * 17.0)
+            );
+
+            vec4 mv = modelViewMatrix * vec4(pos, 1.0);
+            gl_Position = projectionMatrix * mv;
+            float size = mix(1.1, 2.6, fract(aRand * 7.31));
+            gl_PointSize = size * uPixelRatio * (6.5 / -mv.z);
+          }
+        `,
+        fragmentShader: /* glsl */`
+          varying float vRand;
+          varying float vMix;
+          void main() {
+            float d = length(gl_PointCoord - 0.5);
+            float a = smoothstep(0.5, 0.06, d);
+            // the logo gradient in space: #FFA848 -> #FF640D, with warm paper dust between
+            vec3 amber = vec3(1.0, 0.659, 0.282);
+            vec3 ember = vec3(1.0, 0.392, 0.051);
+            vec3 brand = mix(amber, ember, fract(vRand * 5.13));
+            vec3 paper = vec3(0.82, 0.77, 0.71);
+            vec3 col = mix(paper, brand, step(0.55, fract(vRand * 3.71)));
+            float alpha = a * mix(0.16, 0.85, vMix + 0.18);
+            gl_FragColor = vec4(col, alpha);
+          }
+        `,
+      });
+
+      const points = new THREE.Points(geo, mat);
+      const group = new THREE.Group();
+      group.add(points);
+      group.position.x = 1.2; // weight the formation right, under the headline's negative space
+      scene.add(group);
+
+      // mouse parallax
+      const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
+      addEventListener('pointermove', (e) => {
+        mouse.tx = (e.clientX / innerWidth - 0.5) * 2;
+        mouse.ty = (e.clientY / innerHeight - 0.5) * 2;
+      }, { passive: true });
+
+      const resize = () => {
+        renderer.setSize(innerWidth, innerHeight);
+        renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+        uniforms.uPixelRatio.value = Math.min(devicePixelRatio, 2);
+        camera.aspect = innerWidth / innerHeight;
+        camera.updateProjectionMatrix();
+      };
+      resize();
+      addEventListener('resize', resize);
+
+      const clock = new THREE.Clock();
+      let raf;
+      const tick = () => {
+        uniforms.uTime.value = clock.getElapsedTime();
+        if (!reduced) {
+          group.rotation.y += 0.0011;
+          mouse.x += (mouse.tx - mouse.x) * 0.04;
+          mouse.y += (mouse.ty - mouse.y) * 0.04;
+          group.rotation.x = mouse.y * 0.16;
+          group.rotation.z = mouse.x * 0.06;
+        }
+        renderer.render(scene, camera);
+        raf = requestAnimationFrame(tick);
+      };
+      tick();
+
+      // pause rendering when the field has scrolled out of relevance
+      ScrollTrigger.create({
+        trigger: '#hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        onUpdate: (self) => {
+          uniforms.uScatter.value = self.progress;
+          canvas.style.opacity = String(1 - self.progress * 0.9);
+        },
+      });
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) cancelAnimationFrame(raf); else tick();
+      });
+    }
+
+    /* ============================================================
+       Preloader → hero entrance choreography
+       ============================================================ */
+    const preloader = document.getElementById('preloader');
+    const countEl = document.getElementById('loadCount');
+    const heroLines = gsap.utils.toArray('#heroTitle .line > span');
+
+    const enterHero = () => {
+      const tl = gsap.timeline();
+      tl.to(preloader, { yPercent: -100, duration: 0.9, ease: 'power3.inOut' })
+        .set(preloader, { display: 'none' })
+        .to('#nav', { opacity: 1, duration: 0.8, ease: 'power2.out' }, '-=0.5');
+      if (!reduced) {
+        tl.to(heroLines, { y: 0, duration: 1.1, ease: 'power4.out', stagger: 0.09 }, '-=0.9')
+          .from('#heroLabel', { opacity: 0, x: -24, duration: 0.8, ease: 'power2.out' }, '-=0.9')
+          .from('#heroBottom', { opacity: 0, y: 28, duration: 0.9, ease: 'power2.out' }, '-=0.7');
+        // the signal assembles out of the noise
+        tl.to(uniforms.uProgress, { value: 1, duration: 2.6, ease: 'power2.inOut' }, '-=1.4');
+      } else {
+        gsap.set(heroLines, { y: 0 });
+      }
+    };
+
+    if (reduced) {
+      preloader.style.display = 'none';
+      document.getElementById('nav').style.opacity = '1';
+      gsap.set(heroLines, { y: 0 });
+    } else {
+      const counter = { v: 0 };
+      gsap.to(counter, {
+        v: 100, duration: 1.3, ease: 'power2.inOut',
+        onUpdate: () => { countEl.textContent = String(Math.round(counter.v)).padStart(2, '0'); },
+        onComplete: enterHero,
+      });
+    }
+
+    /* ============================================================
+       Scroll choreography
+       ============================================================ */
+    // nav chrome
+    ScrollTrigger.create({
+      start: 80,
+      onUpdate: (self) => document.getElementById('nav').classList.toggle('is-scrolled', self.scroll() > 80),
+    });
+
+    // generic reveals
+    gsap.utils.toArray('.reveal').forEach((el) => {
+      gsap.to(el, {
+        opacity: 1, y: 0, duration: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' },
+      });
+    });
+
+    // manifesto: words light up as you scroll through the pinned block
+    const mEl = document.getElementById('manifestoText');
+    const wordsHtml = mEl.textContent.trim().split(/\s+/).map((w) => {
+      const accent = w.startsWith('*');
+      const clean = w.replace(/\*/g, '');
+      return `<span class="w${accent ? ' accent' : ''}">${clean}</span>`;
+    }).join(' ');
+    mEl.innerHTML = wordsHtml;
+    const words = mEl.querySelectorAll('.w');
+    ScrollTrigger.create({
+      trigger: '#manifesto',
+      start: 'top 65%',
+      end: 'bottom 45%',
+      scrub: 0.4,
+      onUpdate: (self) => {
+        const lit = Math.floor(self.progress * words.length);
+        words.forEach((w, i) => w.classList.toggle('lit', i <= lit));
+      },
+    });
+
+    // stat counters
+    gsap.utils.toArray('[data-count]').forEach((el) => {
+      const end = Number(el.dataset.count);
+      const obj = { v: 0 };
+      ScrollTrigger.create({
+        trigger: el, start: 'top 90%', once: true,
+        onEnter: () => gsap.to(obj, {
+          v: end, duration: 1.8, ease: 'power2.out',
+          onUpdate: () => { el.textContent = String(Math.round(obj.v)); },
+        }),
+      });
+    });
+
+    // process line draw
+    const fill = document.getElementById('processFill');
+    if (fill) {
+      gsap.to(fill, {
+        scaleX: 1, ease: 'none',
+        scrollTrigger: { trigger: '.process__grid', start: 'top 75%', end: 'bottom 55%', scrub: 0.5 },
+      });
+    }
+
+    /* ============================================================
+       Cursor + magnetic buttons (fine pointers only)
+       ============================================================ */
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches && !reduced) {
+      const dot = document.querySelector('.cursor-dot');
+      const ring = document.querySelector('.cursor-ring');
+      const ringLabel = ring.querySelector('span');
+      const pos = { x: innerWidth / 2, y: innerHeight / 2 };
+      const ringPos = { x: pos.x, y: pos.y };
+      addEventListener('pointermove', (e) => { pos.x = e.clientX; pos.y = e.clientY; }, { passive: true });
+      gsap.ticker.add(() => {
+        ringPos.x += (pos.x - ringPos.x) * 0.16;
+        ringPos.y += (pos.y - ringPos.y) * 0.16;
+        dot.style.left = pos.x + 'px'; dot.style.top = pos.y + 'px';
+        ring.style.left = ringPos.x + 'px'; ring.style.top = ringPos.y + 'px';
+      });
+      document.querySelectorAll('[data-cursor]').forEach((el) => {
+        el.addEventListener('pointerenter', () => {
+          ring.classList.add('is-active');
+          ringLabel.textContent = el.dataset.cursor === 'view' ? 'View' : '→';
+        });
+        el.addEventListener('pointerleave', () => ring.classList.remove('is-active'));
+      });
+
+      document.querySelectorAll('.magnetic').forEach((el) => {
+        el.addEventListener('pointermove', (e) => {
+          const r = el.getBoundingClientRect();
+          gsap.to(el, {
+            x: (e.clientX - r.left - r.width / 2) * 0.25,
+            y: (e.clientY - r.top - r.height / 2) * 0.35,
+            duration: 0.4, ease: 'power2.out',
+          });
+        });
+        el.addEventListener('pointerleave', () => gsap.to(el, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' }));
+      });
+    }
+  </script>
+</body>
+</html>
