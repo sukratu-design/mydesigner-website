@@ -233,6 +233,9 @@
       white-space: nowrap;
     }
     .nav__plans:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    @media (max-width: 640px) {
+      .nav__services { display: none; }
+    }
 
     /* very narrow: tighten the pill + gaps so logo + Plans + pill fit at 375px */
     @media (max-width: 460px) {
@@ -843,6 +846,7 @@
     </a>
     <div class="nav__right">
       <a class="nav__plans" href="#ch-plans" id="navPlans" data-cursor>Plans</a>
+      <a class="nav__plans nav__services" href="/story/services.html" data-cursor>Services</a>
       <div class="mode" role="radiogroup" aria-label="Edition">
         <button type="button" id="modeHumans" role="radio" aria-checked="true" data-cursor>Humans</button>
         <button type="button" id="modeAgents" role="radio" aria-checked="false" data-cursor>Agents</button>
@@ -1266,7 +1270,9 @@
   <footer>
     <span>© 2026 MyDesigner by Sukratu</span>
     <nav>
-      <a href="/services" data-cursor>Services</a>
+      <a href="/story/about.html" data-cursor>About</a>
+      <a href="/story/work.html" data-cursor>Work</a>
+      <a href="/story/services.html" data-cursor>Services</a>
       <a href="/portfolio" data-cursor>Portfolio</a>
       <a href="/blog/" data-cursor>Blog</a>
       <a href="https://x.com/mydesigner_gg" data-cursor>X</a>

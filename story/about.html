@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en" data-view="humans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About MyDesigner — AI-speed creative, human direction</title>
+  <meta name="description" content="MyDesigner is an AI-native creative team for growing companies, combining AI-speed execution with human creative direction and taste.">
+  <meta name="theme-color" content="#0b0807">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="canonical" href="https://mydesigner.gg/story/about.html">
+
+  <meta property="og:title" content="About MyDesigner">
+  <meta property="og:description" content="AI gives speed. Human direction gives shape.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mydesigner.gg/story/about.html">
+  <meta property="og:image" content="https://mydesigner.gg/assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About MyDesigner">
+  <meta name="twitter:description" content="AI gives speed. Human direction gives shape.">
+  <meta name="twitter:image" content="https://mydesigner.gg/assets/images/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Space+Grotesk:wght@300..700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       ORBIT — About page (Concept 02)
+       Same tokens and chrome as story/index.html, tuned for reading.
+       ============================================================ */
+    @font-face {
+      font-family: 'TheSeasons';
+      src: url('/assets/fonts/TheSeasons-Reg.otf') format('opentype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'TheSeasons';
+      src: url('/assets/fonts/TheSeasons-Bd.otf') format('opentype');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+
+    :root {
+      --ink: #0b0807;
+      --ink-2: #120d0a;
+      --ink-3: #1a130d;
+      --paper: #f4efe9;
+      --paper-dim: rgba(244, 239, 233, 0.62);
+      --paper-faint: rgba(244, 239, 233, 0.55);  /* 0.38 failed WCAG AA on ink for small mono text */
+      --accent: #ff8a3d;
+      --accent-deep: #ff640d;
+      --accent-light: #ffa848;
+      --accent-dim: rgba(255, 138, 61, 0.55);
+      --line: rgba(244, 239, 233, 0.10);
+      --line-strong: rgba(244, 239, 233, 0.18);
+      --serif: "TheSeasons", "Fraunces", Georgia, serif;
+      --serif-accent: "Fraunces", Georgia, serif;
+      --sans: "Space Grotesk", -apple-system, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+      --gutter: clamp(1.25rem, 4vw, 4rem);
+      --label-size: 11px;
+      --label-track: 0.32em;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :focus { outline: none; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+    .mode button:focus-visible, .btn:focus-visible, .nav__cta:focus-visible,
+    .nav__link:focus-visible, .rail button:focus-visible, .motion-toggle:focus-visible {
+      outline-offset: 4px; border-radius: 999px;
+    }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+    .sr-only:focus, a.sr-only:focus-visible {
+      position: static; width: auto; height: auto;
+      margin: 0; clip: auto; white-space: normal;
+    }
+
+    html { scroll-behavior: auto; }
+    html.lenis, html.lenis body { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--sans);
+      font-weight: 340;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--accent); color: var(--ink); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+    #field {
+      position: fixed; inset: 0; z-index: 0;
+      width: 100%; height: 100svh;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+    .grain {
+      position: fixed; inset: -50%; z-index: 60; pointer-events: none;
+      width: 200%; height: 200%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.05;
+      animation: grain-shift 0.9s steps(2) infinite;
+    }
+    @keyframes grain-shift {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(2%, -1%); }
+      100% { transform: translate(-1%, 2%); }
+    }
+    .vignette {
+      position: fixed; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        radial-gradient(110% 85% at 50% 12%, transparent 54%, rgba(0,0,0,0.56) 100%),
+        linear-gradient(180deg, rgba(11,8,7,0.1), rgba(11,8,7,0.72));
+    }
+    html.motion-off .grain { animation: none !important; }
+    html.motion-off #field { opacity: 0.15; }
+    html.static #field { display: none !important; }
+
+    .cursor-dot, .cursor-ring { display: none; }
+    @media (hover: hover) and (pointer: fine) {
+      .cursor-dot {
+        display: block; position: fixed; z-index: 100; pointer-events: none;
+        width: 6px; height: 6px; border-radius: 50%;
+        background: var(--accent);
+        transform: translate(-50%, -50%);
+      }
+      .cursor-ring {
+        display: flex; align-items: center; justify-content: center;
+        position: fixed; z-index: 99; pointer-events: none;
+        width: 36px; height: 36px; border-radius: 50%;
+        border: 1px solid var(--accent-dim);
+        transform: translate(-50%, -50%);
+        transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+        font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em;
+        color: var(--ink); text-transform: uppercase;
+      }
+      .cursor-ring span { opacity: 0; transition: opacity 0.2s ease; }
+      .cursor-ring.is-active {
+        width: 72px; height: 72px;
+        background: var(--accent); border-color: var(--accent);
+      }
+      .cursor-ring.is-active span { opacity: 1; }
+    }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 1.1rem var(--gutter);
+      opacity: 1;
+      transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+      border-bottom: 1px solid transparent;
+    }
+    .nav.is-scrolled {
+      background: rgba(11, 8, 7, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom-color: var(--line);
+    }
+    .nav__logo { display: flex; align-items: center; flex: 0 0 auto; }
+    .nav__logo img { height: 24px; width: auto; }
+    .nav__logo-text {
+      display: none;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--paper);
+    }
+    .nav__right { display: flex; align-items: center; gap: 0.9rem; min-width: 0; }
+    .nav__link {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--paper);
+      padding: 0.4rem 0.1rem;
+      border-bottom: 1px solid transparent;
+      transition: color 0.25s ease, border-color 0.25s ease;
+      white-space: nowrap;
+    }
+    .nav__link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .mode {
+      display: flex; align-items: center;
+      border: 1px solid var(--line-strong); border-radius: 999px;
+      padding: 3px;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .mode button {
+      padding: 0.78rem 0.95rem; border-radius: 999px;
+      color: var(--paper-dim);
+      transition: color 0.25s ease, background-color 0.25s ease;
+      white-space: nowrap;
+    }
+    .mode button:hover { color: var(--paper); }
+    .mode button[aria-checked="true"] {
+      background: linear-gradient(135deg, var(--accent-light), var(--accent-deep));
+      color: var(--ink);
+    }
+    .nav__cta {
+      display: none;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.65rem 1.2rem;
+      border: 1px solid var(--line-strong); border-radius: 999px;
+      color: var(--paper);
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      white-space: nowrap;
+    }
+    @media (min-width: 920px) { .nav__cta { display: inline-block; } }
+    .nav__cta:hover { background: var(--accent); color: var(--ink); border-color: var(--accent); }
+    @media (max-width: 600px) {
+      .nav { padding: 1.1rem clamp(0.9rem, 4vw, 1.5rem); }
+      .nav__right { gap: 0.55rem; }
+      .nav__link { letter-spacing: 0.12em; font-size: 10px; }
+      .mode button { padding: 0.6rem 0.62rem; letter-spacing: 0.1em; }
+    }
+    @media (max-width: 540px) {
+      .nav__link[href="/story/#ch-plans"] { display: none; }
+    }
+    @media (max-width: 460px) {
+      .nav__link[href="/story/work.html"] { display: none; }
+    }
+    @media (max-width: 430px) {
+      .nav__link[href="/story/"] { display: none; }
+    }
+
+    .progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 51;
+      background: linear-gradient(90deg, var(--accent-light), var(--accent-deep));
+      transform: scaleX(0); transform-origin: 0 50%;
+      pointer-events: none;
+      display: none;
+    }
+    @media (max-width: 1179px) { .progress { display: block; } }
+    html.static .progress, [data-view="agents"] .progress { display: none !important; }
+
+    .rail {
+      position: fixed; left: clamp(0.9rem, 2vw, 2rem); top: 50%; transform: translateY(-50%);
+      z-index: 40; display: none; flex-direction: column; gap: 0.85rem;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+    }
+    @media (min-width: 1180px) { .rail { display: flex; } }
+    .rail button {
+      display: flex; align-items: center; gap: 0.6rem;
+      color: var(--paper-faint);
+      transition: color 0.3s ease;
+      text-align: left; letter-spacing: inherit;
+    }
+    .rail button::before {
+      content: ""; width: 14px; height: 1px; background: currentColor;
+      transition: width 0.3s ease;
+    }
+    .rail button .name { opacity: 0; transform: translateX(-4px); transition: opacity 0.3s ease, transform 0.3s ease; }
+    .rail button:hover .name, .rail button.is-active .name { opacity: 1; transform: none; }
+    .rail button.is-active { color: var(--accent); }
+    .rail button.is-active::before { width: 26px; }
+
+    .hud {
+      position: fixed; left: var(--gutter); bottom: 1.2rem; z-index: 40;
+      display: none; gap: 1.6rem;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--paper-faint);
+    }
+    @media (min-width: 900px) { .hud { display: flex; } }
+    .hud em { font-style: normal; color: var(--accent); }
+
+    .motion-toggle {
+      position: fixed; right: clamp(0.9rem, 2vw, 1.4rem); bottom: 1.1rem; z-index: 52;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--paper-faint);
+      padding: 0.5rem 0.7rem;
+      border: 1px solid var(--line); border-radius: 999px;
+      background: rgba(11, 8, 7, 0.55);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      transition: color 0.25s ease, border-color 0.25s ease;
+    }
+    .motion-toggle:hover { color: var(--paper); border-color: var(--line-strong); }
+    .motion-toggle__star {
+      color: var(--accent); font-size: 11px; line-height: 1;
+      animation: motion-spin 6s linear infinite;
+    }
+    .motion-toggle__label em { font-style: normal; color: var(--accent); }
+    @keyframes motion-spin { to { transform: rotate(360deg); } }
+    html.motion-off .motion-toggle__star { animation: none; }
+    html.static .motion-toggle, [data-view="agents"] .motion-toggle { display: none !important; }
+
+    section { position: relative; z-index: 2; }
+    .shell {
+      width: min(100%, 1240px);
+      margin: 0 auto;
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+    @media (min-width: 1180px) and (max-width: 1580px) {
+      .shell { padding-left: calc(var(--gutter) + 6.5rem); }
+    }
+    .kicker {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-family: var(--mono); font-size: var(--label-size); letter-spacing: var(--label-track);
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 1.6rem;
+    }
+    .kicker::before { content: ""; width: 28px; height: 1px; background: var(--accent-dim); }
+    .kicker .idx { color: var(--paper-faint); }
+
+    .hero {
+      min-height: 100svh;
+      display: flex; align-items: flex-end;
+      padding: clamp(7rem, 14vh, 9rem) 0 clamp(3rem, 7vh, 5rem);
+    }
+    .hero__grid {
+      display: grid; gap: clamp(2.2rem, 5vw, 5rem);
+      grid-template-columns: 1fr;
+      align-items: end;
+    }
+    @media (min-width: 980px) { .hero__grid { grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.58fr); } }
+    .hero h1 {
+      font-family: var(--serif); font-weight: 320;
+      font-variation-settings: "opsz" 144;
+      font-size: clamp(3.1rem, 8vw, 8rem);
+      line-height: 0.98; letter-spacing: -0.015em;
+      max-width: 11ch;
+    }
+    .hero h1 em, .h2 em, .finale-h em {
+      font-family: var(--serif-accent); font-style: italic;
+      color: var(--accent); font-weight: 380;
+    }
+    .hero__sub {
+      max-width: 46ch; color: var(--paper-dim);
+      font-size: clamp(1rem, 1.45vw, 1.18rem);
+      margin-top: 1.6rem;
+    }
+    .hero__sub strong { color: var(--paper); font-weight: 500; }
+    .hero__fact {
+      border-top: 1px solid var(--line);
+      padding-top: 1.4rem;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--paper-faint);
+    }
+    .hero__fact em { font-style: normal; color: var(--accent); }
+    .hero__ctas, .cta-row {
+      display: flex; flex-wrap: wrap; gap: 0.9rem;
+      margin-top: 2rem;
+    }
+    .btn {
+      position: relative; display: inline-flex; align-items: center; gap: 0.7rem;
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 1rem 1.7rem; border-radius: 999px;
+      transition: transform 0.25s ease;
+      will-change: transform;
+    }
+    .btn--solid { background: linear-gradient(135deg, var(--accent-light), var(--accent-deep)); color: var(--ink); }
+    .btn--solid:hover { background: linear-gradient(135deg, #ffb866, var(--accent)); }
+    .btn--ghost { border: 1px solid var(--line-strong); color: var(--paper); }
+    .btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn .arrow { transition: transform 0.3s ease; }
+    .btn:hover .arrow { transform: translateX(4px); }
+
+    .reveal { opacity: 0; transform: translateY(36px); }
+    html.static .reveal { opacity: 1 !important; transform: none !important; }
+
+    .flow { padding: clamp(5rem, 12vh, 9rem) 0; }
+    .flow--tint {
+      background: linear-gradient(180deg, transparent, rgba(11, 8, 7, 0.82) 18%, rgba(11, 8, 7, 0.82) 82%, transparent);
+    }
+    .split {
+      display: grid; gap: clamp(2.2rem, 5vw, 5rem);
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+    @media (min-width: 900px) { .split { grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr); } }
+    .h2 {
+      font-family: var(--serif); font-weight: 320;
+      font-variation-settings: "opsz" 144;
+      font-size: clamp(2.2rem, 5vw, 5rem);
+      line-height: 1.02; letter-spacing: -0.012em;
+      max-width: 12ch;
+    }
+    .lede {
+      color: var(--paper-dim);
+      font-size: clamp(1rem, 1.45vw, 1.18rem);
+      max-width: 54ch;
+    }
+    .lede strong { color: var(--paper); font-weight: 500; }
+    .rule-line {
+      margin-top: 2rem;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--paper-faint);
+    }
+    .rule-line em { color: var(--accent); font-style: normal; }
+
+    .loop {
+      display: grid; gap: 0.8rem;
+      counter-reset: loop;
+    }
+    .step {
+      counter-increment: loop;
+      display: grid; gap: 0.5rem;
+      grid-template-columns: auto 1fr;
+      border-top: 1px solid var(--line);
+      padding: 1.2rem 0;
+    }
+    .step::before {
+      content: counter(loop, decimal-leading-zero);
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+      color: var(--accent);
+      padding-top: 0.3rem;
+      min-width: 3rem;
+    }
+    .step h3 {
+      font-family: var(--serif); font-weight: 340;
+      font-size: clamp(1.35rem, 2.3vw, 2rem);
+      line-height: 1.15;
+    }
+    .step p {
+      grid-column: 2;
+      color: var(--paper-dim);
+      max-width: 58ch;
+    }
+
+    .memory-panel {
+      border: 1px solid var(--accent-dim);
+      border-radius: 8px;
+      padding: clamp(1.6rem, 4vw, 3rem);
+      background:
+        radial-gradient(80% 120% at 50% 0%, rgba(255, 138, 61, 0.12), transparent 72%),
+        rgba(18, 13, 10, 0.72);
+    }
+    .memory-panel h3 {
+      font-family: var(--serif); font-weight: 330;
+      font-size: clamp(1.8rem, 4vw, 3.7rem);
+      line-height: 1.05; letter-spacing: -0.01em;
+      max-width: 12ch;
+    }
+    .memory-panel p {
+      margin-top: 1.2rem;
+      color: var(--paper-dim);
+      max-width: 54ch;
+    }
+    .memory-list {
+      display: grid; gap: 0.75rem;
+      list-style: none;
+      margin-top: 2rem;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--paper-faint);
+    }
+    .memory-list li {
+      border-top: 1px solid var(--line);
+      padding-top: 0.75rem;
+    }
+    .memory-list em { color: var(--accent); font-style: normal; }
+
+    .for-grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: 1fr;
+      margin-top: clamp(2rem, 5vw, 3rem);
+    }
+    @media (min-width: 760px) { .for-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .mini {
+      border-top: 1px solid var(--line);
+      padding-top: 1.1rem;
+    }
+    .mini h3 {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .mini p { color: var(--paper-dim); font-size: 0.95rem; }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(0.9rem, 2vw, 1.25rem);
+      margin-top: clamp(2rem, 5vw, 3rem);
+    }
+    @media (min-width: 900px) { .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 340px) { .team-grid { grid-template-columns: 1fr; } }
+    .team-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(1rem, 2.8vw, 1.35rem);
+      background: rgba(18, 13, 10, 0.48);
+      transition: border-color 0.28s ease, background-color 0.28s ease, transform 0.28s ease;
+    }
+    .team-card:hover {
+      border-color: var(--line-strong);
+      background: rgba(18, 13, 10, 0.68);
+      transform: translateY(-2px);
+    }
+    .team-card__avatar {
+      position: relative;
+      width: clamp(6.5rem, 18vw, 8.25rem);
+      aspect-ratio: 1;
+      border: 1px solid var(--paper-faint);
+      border-radius: 50%;
+      padding: 4px;
+      overflow: hidden;
+      transition: border-color 0.28s ease;
+    }
+    .team-card:hover .team-card__avatar { border-color: var(--accent); }
+    .team-card__avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .team-card__photo--color {
+      position: absolute;
+      inset: 4px;
+      width: calc(100% - 8px);
+      height: calc(100% - 8px);
+      opacity: 0;
+      transition: opacity 0.28s ease;
+    }
+    .team-card:hover .team-card__photo--color { opacity: 1; }
+    .team-card__meta { margin-top: 1rem; }
+    .team-card h3 {
+      font-family: var(--serif); font-weight: 340;
+      font-size: clamp(1.15rem, 2vw, 1.55rem);
+      line-height: 1.12;
+    }
+    .team-card p {
+      margin-top: 0.35rem;
+      color: var(--paper-faint);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      line-height: 1.45;
+      text-transform: uppercase;
+    }
+    @media (hover: none), (pointer: coarse) {
+      .team-card__photo--color { opacity: 1; }
+    }
+    @media (max-width: 520px) {
+      .team-card { padding: 0.85rem; }
+      .team-card__avatar { width: min(7rem, 100%); }
+      .team-card p { letter-spacing: 0.1em; }
+    }
+
+    .finale {
+      text-align: center;
+      padding-bottom: clamp(4rem, 8vh, 6rem);
+    }
+    .finale .kicker { justify-content: center; }
+    .finale .kicker::after { content: ""; width: 28px; height: 1px; background: var(--accent-dim); }
+    .finale-h {
+      font-family: var(--serif); font-weight: 310;
+      font-variation-settings: "opsz" 144;
+      font-size: clamp(3rem, 8.5vw, 7.5rem);
+      line-height: 0.98; letter-spacing: -0.02em;
+    }
+    .finale p {
+      max-width: 48ch;
+      margin: 1.3rem auto 0;
+      color: var(--paper-dim);
+    }
+    .finale .cta-row { justify-content: center; }
+
+    footer {
+      position: relative; z-index: 2;
+      border-top: 1px solid var(--line);
+      padding: 2.2rem var(--gutter);
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--paper-faint);
+      background: var(--ink);
+    }
+    footer nav { display: flex; flex-wrap: wrap; gap: 1.6rem; }
+    footer a { transition: color 0.25s ease; }
+    footer a:hover { color: var(--accent); }
+    footer button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; }
+    footer button:hover { color: var(--accent); }
+
+    #agents { display: none; }
+    [data-view="agents"] #humans,
+    [data-view="agents"] #field,
+    [data-view="agents"] .grain,
+    [data-view="agents"] .vignette,
+    [data-view="agents"] .rail,
+    [data-view="agents"] .hud,
+    [data-view="agents"] .cursor-dot,
+    [data-view="agents"] .cursor-ring { display: none !important; }
+    [data-view="agents"] #agents { display: block; }
+    [data-view="agents"] body { cursor: auto; }
+    [data-view="agents"] .nav__logo img { display: none; }
+    [data-view="agents"] .nav__logo-text { display: inline-block; }
+
+    .md {
+      max-width: 76ch; margin: 0 auto;
+      padding: clamp(7rem, 14vh, 9rem) var(--gutter) 6rem;
+      font-family: var(--mono); font-size: 0.92rem; line-height: 1.85;
+      color: var(--paper-dim);
+    }
+    .md__banner {
+      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--paper-faint);
+      border: 1px dashed var(--line-strong); border-radius: 10px;
+      padding: 0.9rem 1.2rem; margin-bottom: 2.8rem;
+    }
+    .md__banner em { font-style: normal; color: var(--accent); }
+    .md pre.fm {
+      border: 1px solid var(--line); border-radius: 10px;
+      background: var(--ink-2);
+      padding: 1.3rem 1.5rem; margin-bottom: 3rem;
+      font-size: 0.82rem; line-height: 1.8;
+      overflow-x: auto;
+      color: var(--paper-dim);
+    }
+    .md pre.fm .k { color: var(--accent); }
+    .md pre.fm .c { color: var(--paper-faint); }
+    .md h1, .md h2, .md h3 { font-weight: 600; color: var(--paper); line-height: 1.3; }
+    .md h1 { font-size: 1.7rem; margin: 0 0 1.2rem; }
+    .md h2 { font-size: 1.15rem; margin: 3.2rem 0 1rem; }
+    .md h3 { font-size: 0.95rem; margin: 2rem 0 0.6rem; }
+    .md h1::before, .md h2::before, .md h3::before { color: var(--accent); margin-right: 0.6em; }
+    .md h1::before { content: "#"; }
+    .md h2::before { content: "##"; }
+    .md h3::before { content: "###"; }
+    .md p { margin-bottom: 1.1rem; }
+    .md strong { color: var(--paper); font-weight: 600; }
+    .md em { color: var(--accent); font-style: normal; }
+    .md blockquote {
+      border-left: 2px solid var(--accent);
+      padding: 0.1rem 0 0.1rem 1.2rem; margin: 1.4rem 0;
+      color: var(--paper);
+    }
+    .md ul, .md ol { margin: 0 0 1.2rem; padding-left: 0; list-style: none; }
+    .md ul li, .md ol li { padding-left: 1.6rem; position: relative; margin-bottom: 0.45rem; }
+    .md ul li::before { content: "-"; position: absolute; left: 0.2rem; color: var(--accent); }
+    .md ol { counter-reset: md; }
+    .md ol li { counter-increment: md; }
+    .md ol li::before { content: counter(md) "."; position: absolute; left: 0; color: var(--accent); }
+    .md hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 3rem 0; }
+    .md a { color: var(--paper); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--accent-dim); transition: color 0.2s ease; }
+    .md a:hover { color: var(--accent); }
+    .md .foot { margin-top: 3.5rem; font-size: 0.78rem; color: var(--paper-faint); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .grain, .motion-toggle__star { animation: none !important; }
+    }
+  </style>
+</head>
+<body id="top">
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"><span>View</span></div>
+
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="/story/" data-cursor aria-label="MyDesigner story">
+      <img src="/story/logo-dark.svg" alt="MyDesigner">
+      <span class="nav__logo-text">MyDesigner</span>
+    </a>
+    <div class="nav__right">
+      <a class="nav__link" href="/story/" data-cursor>Story</a>
+      <a class="nav__link" href="/story/#ch-plans" data-cursor>Plans</a>
+      <a class="nav__link" href="/story/services.html" data-cursor>Services</a>
+      <a class="nav__link" href="/story/work.html" data-cursor>Work</a>
+      <div class="mode" role="radiogroup" aria-label="Edition">
+        <button type="button" id="modeHumans" role="radio" aria-checked="true" data-cursor>Humans</button>
+        <button type="button" id="modeAgents" role="radio" aria-checked="false" data-cursor>Agents</button>
+      </div>
+      <a class="nav__cta" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a call</a>
+    </div>
+  </header>
+
+  <nav class="rail" id="rail" aria-label="Sections"></nav>
+
+  <button type="button" class="motion-toggle" id="motionToggle" aria-pressed="false" data-cursor>
+    <span class="motion-toggle__star" aria-hidden="true">✳</span>
+    <span class="motion-toggle__label">Motion <em id="motionState">on</em></span>
+  </button>
+
+  <div class="hud" aria-hidden="true">
+    <span id="hudPct">000%</span>
+  </div>
+
+  <main id="humans">
+    <a class="sr-only" href="?view=agents">Prefer a text-only version? View the Agents edition</a>
+
+    <section class="hero" id="about-hero" data-chapter="01" data-name="Signal">
+      <div class="shell">
+        <div class="hero__grid">
+          <div class="reveal">
+            <p class="kicker"><span class="idx">01</span> About MyDesigner</p>
+            <h1>AI-speed creative, held in <em>human orbit.</em></h1>
+            <p class="hero__sub">MyDesigner is an <strong>AI-native creative team</strong> for growing companies, and an operating brand of Sukratu.</p>
+            <div class="hero__ctas">
+              <a class="btn btn--solid magnetic" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a call <span class="arrow">→</span></a>
+              <a class="btn btn--ghost magnetic" href="#operate" data-scroll data-cursor>Read the loop ↓</a>
+            </div>
+          </div>
+          <p class="hero__fact reveal"><em>Based in India.</em> Serving clients worldwide. Contact: hello@mydesigner.gg.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow flow--tint" id="belief" data-chapter="02" data-name="Belief">
+      <div class="shell split">
+        <div class="reveal">
+          <p class="kicker"><span class="idx">02</span> Why We Exist</p>
+          <h2 class="h2">Same particles. Different <em>arrangement.</em></h2>
+        </div>
+        <div class="reveal">
+          <p class="lede">AI tools made production fast. They also made production generic. The work can arrive instantly and still feel like it came from nowhere.</p>
+          <p class="lede">MyDesigner combines AI-speed execution with human creative direction and taste. <strong>AI gives speed. Human direction gives shape.</strong></p>
+          <p class="rule-line"><em>Thesis</em> — speed is useful only when judgment has the controls.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow" id="operate" data-chapter="03" data-name="Loop">
+      <div class="shell split">
+        <div class="reveal">
+          <p class="kicker"><span class="idx">03</span> How We Operate</p>
+          <h2 class="h2">One revolution. Five fixed <em>moves.</em></h2>
+          <p class="lede">Not a project-scoped agency handoff. An ongoing creative operating rhythm that learns the brand and gets faster.</p>
+        </div>
+        <div class="loop">
+          <article class="step reveal">
+            <h3>Diagnose</h3>
+            <p>Start with the business problem before choosing the artifact.</p>
+          </article>
+          <article class="step reveal">
+            <h3>Build Client Memory</h3>
+            <p>Capture the context that should make the next request sharper than the last.</p>
+          </article>
+          <article class="step reveal">
+            <h3>Create</h3>
+            <p>Use AI-speed production under human creative direction and taste.</p>
+          </article>
+          <article class="step reveal">
+            <h3>Ship</h3>
+            <p>Deliver approved final work and source files in usable formats.</p>
+          </article>
+          <article class="step reveal">
+            <h3>Learn</h3>
+            <p>Feed approved, rejected, and performance learnings back into the next orbit.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow flow--tint" id="memory" data-chapter="04" data-name="Memory">
+      <div class="shell split">
+        <div class="reveal">
+          <p class="kicker"><span class="idx">04</span> Client Memory</p>
+          <h2 class="h2">The work should remember <em>you.</em></h2>
+        </div>
+        <div class="memory-panel reveal">
+          <h3>Context compounds.</h3>
+          <p>Client Memory is a living record per client: brand rules, messaging rules, approved and rejected directions, templates, prompts, and performance learnings.</p>
+          <p>Every request starts with more context than the last, so work gets faster and more consistent over time.</p>
+          <ul class="memory-list">
+            <li><em>Brand rules</em> and messaging rules</li>
+            <li><em>Approved / rejected</em> directions</li>
+            <li><em>Templates, prompts,</em> and performance learnings</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow" id="fit" data-chapter="05" data-name="Fit">
+      <div class="shell">
+        <div class="split">
+          <div class="reveal">
+            <p class="kicker"><span class="idx">05</span> Who We Serve</p>
+            <h2 class="h2">Built for teams that need creative output without the <em>department.</em></h2>
+          </div>
+          <p class="lede reveal">MyDesigner is for founders, growth teams, SaaS companies, service businesses, and funded teams that need consistent creative output without managing an in-house creative department.</p>
+        </div>
+
+        <div class="for-grid">
+          <div class="mini reveal">
+            <h3>What Ships</h3>
+            <p>Conversion websites and landing pages, product UI/UX, founder content, AI-ready brand systems, campaign creative, pitch decks, social assets, and Webflow/Framer builds.</p>
+          </div>
+          <div class="mini reveal">
+            <h3>Ownership</h3>
+            <p>Clients own approved final work and source files, including Figma, editable Webflow/Framer access, AI, PSD, SVG, and related files.</p>
+          </div>
+          <div class="mini reveal">
+            <h3>Operating Brand</h3>
+            <p>MyDesigner is an operating brand of <a href="https://sukratu.co" data-cursor>Sukratu</a>. Based in India, serving clients worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow flow--tint" id="team" data-chapter="06" data-name="Team">
+      <div class="shell">
+        <div class="split">
+          <div class="reveal">
+            <p class="kicker"><span class="idx">06</span> Team</p>
+            <h2 class="h2">The people inside the <em>orbit.</em></h2>
+          </div>
+          <p class="lede reveal">AI helps the work move faster. People still make the judgment calls. Your work is handled by designers, strategists, and builders who understand taste, clarity, brand consistency, and execution.</p>
+        </div>
+
+        <div class="team-grid" aria-label="MyDesigner team">
+          <article class="team-card reveal">
+            <figure class="team-card__avatar">
+              <img class="team-card__photo--gray" src="/assets/images/team/anand.png" alt="Anand Bongir" loading="lazy">
+              <img class="team-card__photo--color" src="/assets/images/team/colored/anand.png" alt="" loading="lazy" aria-hidden="true">
+            </figure>
+            <div class="team-card__meta">
+              <h3>Anand Bongir</h3>
+              <p>Founder &amp; CEO</p>
+            </div>
+          </article>
+          <article class="team-card reveal">
+            <figure class="team-card__avatar">
+              <img class="team-card__photo--gray" src="/assets/images/team/ketaki.png" alt="Ketaki Karwe" loading="lazy">
+              <img class="team-card__photo--color" src="/assets/images/team/colored/ketaki.png" alt="" loading="lazy" aria-hidden="true">
+            </figure>
+            <div class="team-card__meta">
+              <h3>Ketaki Karwe</h3>
+              <p>COO</p>
+            </div>
+          </article>
+          <article class="team-card reveal">
+            <figure class="team-card__avatar">
+              <img class="team-card__photo--gray" src="/assets/images/team/gayatri.png" alt="Gayatri Nerlekar" loading="lazy">
+              <img class="team-card__photo--color" src="/assets/images/team/colored/gayatri.png" alt="" loading="lazy" aria-hidden="true">
+            </figure>
+            <div class="team-card__meta">
+              <h3>Gayatri Nerlekar</h3>
+              <p>Senior Designer</p>
+            </div>
+          </article>
+          <article class="team-card reveal">
+            <figure class="team-card__avatar">
+              <img class="team-card__photo--gray" src="/assets/images/team/ganeshb.png" alt="Ganesh Bansode" loading="lazy">
+              <img class="team-card__photo--color" src="/assets/images/team/colored/ganeshb.png" alt="" loading="lazy" aria-hidden="true">
+            </figure>
+            <div class="team-card__meta">
+              <h3>Ganesh Bansode</h3>
+              <p>Product Designer &amp; No-code Dev</p>
+            </div>
+          </article>
+          <article class="team-card reveal">
+            <figure class="team-card__avatar">
+              <img class="team-card__photo--gray" src="/assets/images/team/ganeshk.png" alt="Ganesh Katkar" loading="lazy">
+              <img class="team-card__photo--color" src="/assets/images/team/colored/ganeshk.png" alt="" loading="lazy" aria-hidden="true">
+            </figure>
+            <div class="team-card__meta">
+              <h3>Ganesh Katkar</h3>
+              <p>Graphic Designer</p>
+            </div>
+          </article>
+          <article class="team-card reveal">
+            <figure class="team-card__avatar">
+              <img class="team-card__photo--gray" src="/assets/images/team/charuta.png" alt="Charuta Karandikar" loading="lazy">
+              <img class="team-card__photo--color" src="/assets/images/team/colored/charuta.png" alt="" loading="lazy" aria-hidden="true">
+            </figure>
+            <div class="team-card__meta">
+              <h3>Charuta Karandikar</h3>
+              <p>Graphic Designer</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow finale" id="next" data-chapter="07" data-name="Next">
+      <div class="shell">
+        <p class="kicker reveal"><span class="idx">07</span> Next Orbit</p>
+        <h2 class="finale-h reveal">Bring the brief into <em>orbit.</em></h2>
+        <p class="reveal">Start with a conversation, or read the full ORBIT story first. Plans live on the story page.</p>
+        <div class="cta-row reveal">
+          <a class="btn btn--solid magnetic" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a call <span class="arrow">→</span></a>
+          <a class="btn btn--ghost magnetic" href="/story/#ch-plans" data-cursor>See plans <span class="arrow">→</span></a>
+          <a class="btn btn--ghost magnetic" href="/story/" data-cursor>Back to story <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="agents" role="region" aria-label="Agent-readable About edition">
+    <article class="md">
+      <p class="md__banner">Agent-readable About edition — same facts, zero WebGL. <em>Humans:</em> switch tabs for the visual version.</p>
+
+      <pre class="fm"><span class="c">---</span>
+<span class="k">entity</span>: MyDesigner
+<span class="k">type</span>: AI-native creative team for growing companies
+<span class="k">operating_brand_of</span>: Sukratu (sukratu.co)
+<span class="k">team_size</span>: 6
+<span class="k">location</span>: India
+<span class="k">serves</span>: clients worldwide
+<span class="k">contact_email</span>: hello@mydesigner.gg
+<span class="k">booking_link</span>: https://calendar.app.google/xGoKb51qpbcnZgJy5
+<span class="k">plans</span>: /story/#ch-plans
+<span class="c">---</span></pre>
+
+      <h1>About MyDesigner</h1>
+      <blockquote>AI gives speed. Human direction gives shape.</blockquote>
+
+      <h2>What MyDesigner is</h2>
+      <p>MyDesigner is an <strong>AI-native creative team for growing companies</strong>, and an operating brand of <a href="https://sukratu.co">Sukratu</a>. It is based in India and serves clients worldwide. Contact: <a href="mailto:hello@mydesigner.gg">hello@mydesigner.gg</a>.</p>
+
+      <h2>Team</h2>
+      <ul>
+        <li><strong>Anand Bongir</strong> — Founder &amp; CEO</li>
+        <li><strong>Ketaki Karwe</strong> — COO</li>
+        <li><strong>Gayatri Nerlekar</strong> — Senior Designer</li>
+        <li><strong>Ganesh Bansode</strong> — Product Designer &amp; No-code Dev</li>
+        <li><strong>Ganesh Katkar</strong> — Graphic Designer</li>
+        <li><strong>Charuta Karandikar</strong> — Graphic Designer</li>
+      </ul>
+
+      <h2>Core thesis</h2>
+      <p>AI tools made production fast but also generic. MyDesigner combines AI-speed execution with human creative direction and taste.</p>
+      <p><em>AI gives speed. Human direction gives shape.</em></p>
+
+      <h2>Operating model</h2>
+      <ol>
+        <li><strong>Diagnose</strong> — understand the business problem.</li>
+        <li><strong>Build Client Memory</strong> — capture brand, messaging, templates, prompts, and learnings.</li>
+        <li><strong>Create</strong> — produce with AI-speed execution and human creative direction.</li>
+        <li><strong>Ship</strong> — deliver approved final work and source files.</li>
+        <li><strong>Learn</strong> — feed approved, rejected, and performance learnings into the next request.</li>
+      </ol>
+
+      <h2>Client Memory</h2>
+      <p>Client Memory is a living record per client: brand rules, messaging rules, approved and rejected directions, templates, prompts, and performance learnings. Every request starts with more context than the last, so work gets faster and more consistent over time.</p>
+
+      <h2>What MyDesigner ships</h2>
+      <ul>
+        <li>Conversion websites and landing pages.</li>
+        <li>Product UI/UX.</li>
+        <li>Founder content.</li>
+        <li>AI-ready brand systems.</li>
+        <li>Campaign creative.</li>
+        <li>Pitch decks.</li>
+        <li>Social assets.</li>
+        <li>Webflow/Framer builds.</li>
+      </ul>
+
+      <h2>Who it is for</h2>
+      <p>MyDesigner is for founders, growth teams, SaaS companies, service businesses, and funded teams that need consistent creative output without managing an in-house creative department.</p>
+
+      <h2>Positioning</h2>
+      <p>MyDesigner is not project-scoped like an agency. It is an ongoing creative operating rhythm that learns the brand and gets faster.</p>
+
+      <h2>Ownership</h2>
+      <p>Clients own approved final work and source files, including Figma, editable Webflow/Framer access, AI, PSD, SVG, and related files.</p>
+
+      <h2>Act</h2>
+      <ul>
+        <li>Book a call: <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5">calendar.app.google/xGoKb51qpbcnZgJy5</a></li>
+        <li>Email: <a href="mailto:hello@mydesigner.gg">hello@mydesigner.gg</a></li>
+        <li>Plans: <a href="/story/#ch-plans">/story/#ch-plans</a></li>
+        <li>Story: <a href="/story/">/story/</a></li>
+      </ul>
+
+      <hr>
+      <p class="foot">MyDesigner by Sukratu · ORBIT — Concept 02 · About edition.</p>
+    </article>
+  </div>
+
+  <footer>
+    <span>MyDesigner by Sukratu</span>
+    <nav>
+      <a href="/story/" data-cursor>Story</a>
+      <a href="/story/#ch-plans" data-cursor>Plans</a>
+      <a href="/story/services.html" data-cursor>Services</a>
+      <a href="/story/work.html" data-cursor>Work</a>
+      <a href="https://sukratu.co" data-cursor>Sukratu</a>
+      <a href="mailto:hello@mydesigner.gg" data-cursor>Email</a>
+      <button type="button" id="footAgents" data-cursor>Agents edition</button>
+    </nav>
+    <span>Orbit — Concept 02</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+
+  <script type="module">
+    // CDN-failure guard: if gsap/ScrollTrigger never loaded, do not add html.js.
+    if (typeof window.gsap === 'undefined' || typeof window.ScrollTrigger === 'undefined') {
+      document.documentElement.classList.add('static');
+      if (new URLSearchParams(location.search).get('view') === 'agents') {
+        document.documentElement.dataset.view = 'agents';
+      }
+      throw new Error('ORBIT About: gsap/ScrollTrigger unavailable — static edition active.');
+    }
+
+    document.documentElement.classList.add('js');
+    const html = document.documentElement;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const gsap = window.gsap;
+    const ScrollTrigger = window.ScrollTrigger;
+    gsap.registerPlugin(ScrollTrigger);
+    if (reduced) html.classList.add('static');
+
+    let view = new URLSearchParams(location.search).get('view') === 'agents' ? 'agents' : 'humans';
+    let humansScrollY = 0;
+    html.dataset.view = view;
+
+    let motionOn = true;
+    try { if (localStorage.getItem('md-motion') === 'off') motionOn = false; } catch (e) {}
+    if (!motionOn) html.classList.add('motion-off');
+
+    let lenis = null;
+    if (!reduced && typeof window.Lenis !== 'undefined') {
+      lenis = new window.Lenis({ smoothWheel: true, lerp: 0.09 });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    const railEl = document.getElementById('rail');
+    const hudPct = document.getElementById('hudPct');
+    const progressBar = document.getElementById('progress');
+    const sections = gsap.utils.toArray('[data-chapter]');
+
+    sections.forEach((sec) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.innerHTML = `<span class="num">${sec.dataset.chapter}</span><span class="name">${sec.dataset.name}</span>`;
+      b.addEventListener('click', () => {
+        if (lenis) lenis.scrollTo(sec, { offset: 0 }); else sec.scrollIntoView({ behavior: 'smooth' });
+      });
+      railEl.appendChild(b);
+      sec._railBtn = b;
+    });
+
+    if (!reduced) {
+      sections.forEach((sec) => {
+        ScrollTrigger.create({
+          trigger: sec,
+          start: 'top 55%',
+          end: 'bottom 45%',
+          onToggle: (self) => {
+            if (self.isActive) sections.forEach((s) => s._railBtn.classList.toggle('is-active', s === sec));
+          },
+        });
+      });
+      ScrollTrigger.create({
+        start: 0,
+        end: 'max',
+        onUpdate: (self) => {
+          const pct = String(Math.round(self.progress * 100)).padStart(3, '0') + '%';
+          hudPct.textContent = pct;
+          if (progressBar) progressBar.style.transform = 'scaleX(' + self.progress.toFixed(4) + ')';
+        },
+      });
+      ScrollTrigger.create({
+        start: 80,
+        onUpdate: (self) => document.getElementById('nav').classList.toggle('is-scrolled', self.scroll() > 80),
+      });
+      gsap.utils.toArray('.reveal').forEach((el) => {
+        gsap.to(el, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 88%' },
+        });
+      });
+    } else {
+      sections[0]?._railBtn.classList.add('is-active');
+      gsap.set('.reveal', { opacity: 1, y: 0 });
+    }
+
+    document.querySelectorAll('[data-scroll]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        if (lenis) lenis.scrollTo(target, { offset: 0 }); else target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    const motionBtn = document.getElementById('motionToggle');
+    const motionStateEl = document.getElementById('motionState');
+    function reflectMotion(writePreference = false) {
+      html.classList.toggle('motion-off', !motionOn);
+      motionStateEl.textContent = motionOn ? 'on' : 'off';
+      motionBtn.setAttribute('aria-pressed', String(!motionOn));
+      if (writePreference) {
+        try { localStorage.setItem('md-motion', motionOn ? 'on' : 'off'); } catch (e) {}
+      }
+    }
+    reflectMotion();
+    motionBtn.addEventListener('click', () => {
+      motionOn = !motionOn;
+      reflectMotion(true);
+      if (typeof window.__aboutSetMotion === 'function') window.__aboutSetMotion(motionOn);
+    });
+
+    const btnH = document.getElementById('modeHumans');
+    const btnA = document.getElementById('modeAgents');
+    function syncModeButtons() {
+      btnH.setAttribute('aria-checked', String(view === 'humans'));
+      btnA.setAttribute('aria-checked', String(view === 'agents'));
+      document.getElementById('nav').classList.toggle('is-scrolled', view === 'agents' || window.scrollY > 80);
+    }
+
+    function setView(next, writeHistory = true) {
+      if (next === view) return;
+      if (next === 'agents') {
+        humansScrollY = window.scrollY;
+        view = next;
+        html.dataset.view = 'agents';
+        if (lenis) lenis.scrollTo(0, { immediate: true, force: true });
+        else window.scrollTo(0, 0);
+      } else {
+        view = next;
+        html.dataset.view = 'humans';
+        void document.getElementById('humans').offsetHeight;
+        if (lenis) lenis.resize();
+        ScrollTrigger.refresh();
+        ensureScene();
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          if (lenis) lenis.resize();
+          window.scrollTo(0, humansScrollY);
+          if (lenis) lenis.scrollTo(humansScrollY, { immediate: true, force: true });
+        }));
+      }
+      syncModeButtons();
+      if (writeHistory) {
+        const url = new URL(location.href);
+        if (view === 'agents') url.searchParams.set('view', 'agents');
+        else url.searchParams.delete('view');
+        history.pushState({ view }, '', url);
+      }
+    }
+
+    btnH.addEventListener('click', () => setView('humans'));
+    btnA.addEventListener('click', () => setView('agents'));
+    document.getElementById('footAgents').addEventListener('click', () => setView('agents'));
+    addEventListener('popstate', () => {
+      const target = new URLSearchParams(location.search).get('view') === 'agents' ? 'agents' : 'humans';
+      setView(target, false);
+    });
+    syncModeButtons();
+
+    if (!reduced) {
+      let resizeT;
+      addEventListener('resize', () => {
+        clearTimeout(resizeT);
+        resizeT = setTimeout(() => { lenis?.resize(); ScrollTrigger.refresh(); }, 250);
+      });
+    }
+
+    /* ============================================================
+       Subtle Three.js background — three MyDesigner rings only.
+       Initialized lazily so ?view=agents creates zero WebGL.
+       ============================================================ */
+    let ringsReady = false;
+    let ringsFailed = false;
+    let threeModule = null;
+    let rafId = null;
+    let renderOnce = null;
+
+    async function ensureScene() {
+      if (ringsReady || ringsFailed || reduced || view !== 'humans') return;
+      try {
+        if (!threeModule) threeModule = await import('three');
+        initRings(threeModule);
+        ringsReady = true;
+      } catch (e) {
+        ringsFailed = true;
+        html.classList.add('static');
+        gsap.set('.reveal', { opacity: 1, y: 0 });
+      }
+    }
+
+    function initRings(THREE) {
+      const canvas = document.getElementById('field');
+      let renderer = null;
+      try {
+        renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false, powerPreference: 'high-performance' });
+      } catch (e) {
+        ringsFailed = true;
+        html.classList.add('static');
+        return;
+      }
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.1, 80);
+      camera.position.set(0, 0, 8.8);
+
+      const isMobile = matchMedia('(max-width: 768px)').matches;
+      const COUNT = isMobile ? 3600 : 5400;
+      const positions = new Float32Array(COUNT * 3);
+      const colors = new Float32Array(COUNT * 3);
+      const rings = [
+        { r: 2.1, tube: 0.045, euler: new THREE.Euler(Math.PI / 2.25, 0, 0.25) },
+        { r: 2.85, tube: 0.06, euler: new THREE.Euler(Math.PI / 2.6, 0.55, -0.3) },
+        { r: 3.6, tube: 0.085, euler: new THREE.Euler(Math.PI / 1.95, -0.45, 0.5) },
+      ];
+      const v = new THREE.Vector3();
+      const amber = new THREE.Color('#ffa848');
+      const ember = new THREE.Color('#ff640d');
+      const paper = new THREE.Color('#f4efe9');
+
+      for (let i = 0; i < COUNT; i++) {
+        const ring = rings[i % 3];
+        const a = Math.random() * Math.PI * 2;
+        const wob = ring.tube * (Math.random() + Math.random() - 1) * 3;
+        v.set(Math.cos(a) * (ring.r + wob), wob * 1.6, Math.sin(a) * (ring.r + wob));
+        v.applyEuler(ring.euler);
+        positions[i * 3 + 0] = v.x;
+        positions[i * 3 + 1] = v.y;
+        positions[i * 3 + 2] = v.z;
+
+        const c = paper.clone().lerp(i % 5 === 0 ? amber : ember, 0.62 + Math.random() * 0.28);
+        colors[i * 3 + 0] = c.r;
+        colors[i * 3 + 1] = c.g;
+        colors[i * 3 + 2] = c.b;
+      }
+
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+      const mat = new THREE.PointsMaterial({
+        size: 0.025,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.62,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      });
+      const points = new THREE.Points(geo, mat);
+      const group = new THREE.Group();
+      group.add(points);
+      group.position.set(1.35, -0.1, 0);
+      scene.add(group);
+
+      const SCOUNT = isMobile ? 450 : 750;
+      const sPos = new Float32Array(SCOUNT * 3);
+      for (let i = 0; i < SCOUNT; i++) {
+        const r = 16 + Math.random() * 16;
+        const th = Math.random() * Math.PI * 2;
+        const ph = Math.acos(2 * Math.random() - 1);
+        sPos[i * 3 + 0] = r * Math.sin(ph) * Math.cos(th);
+        sPos[i * 3 + 1] = r * Math.sin(ph) * Math.sin(th) * 0.58;
+        sPos[i * 3 + 2] = -Math.abs(r * Math.cos(ph)) - 4;
+      }
+      const sGeo = new THREE.BufferGeometry();
+      sGeo.setAttribute('position', new THREE.BufferAttribute(sPos, 3));
+      const sMat = new THREE.PointsMaterial({
+        color: '#d8cec2',
+        size: 0.012,
+        transparent: true,
+        opacity: 0.28,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      });
+      const stars = new THREE.Points(sGeo, sMat);
+      scene.add(stars);
+
+      let vwScale = 1;
+      const resize = () => {
+        renderer.setSize(innerWidth, innerHeight);
+        renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+        camera.aspect = innerWidth / innerHeight;
+        camera.updateProjectionMatrix();
+        vwScale = Math.min(1, camera.aspect * 1.25);
+        if (camera.aspect < 0.72) vwScale *= 0.82;
+        group.scale.setScalar(vwScale);
+        group.position.x = 1.35 * vwScale;
+      };
+      resize();
+      addEventListener('resize', resize);
+
+      const clock = new THREE.Clock();
+      let lastT = 0;
+      const tick = () => {
+        const t = clock.getElapsedTime();
+        const dt = Math.min(t - lastT, 0.05);
+        lastT = t;
+        if (motionOn && view === 'humans') {
+          group.rotation.x = -0.04 + Math.sin(t * 0.14) * 0.025;
+          group.rotation.y += dt * 0.045;
+          group.rotation.z = Math.sin(t * 0.1) * 0.035;
+          stars.rotation.y += dt * 0.008;
+          renderer.render(scene, camera);
+        }
+        rafId = requestAnimationFrame(tick);
+      };
+      renderOnce = () => {
+        group.rotation.x = -0.04;
+        renderer.render(scene, camera);
+      };
+      window.__aboutSetMotion = (on) => {
+        motionOn = on;
+        if (on) lastT = clock.getElapsedTime();
+        else renderOnce();
+      };
+      tick();
+      if (!motionOn) renderOnce();
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) cancelAnimationFrame(rafId);
+        else { lastT = clock.getElapsedTime(); tick(); }
+      });
+    }
+
+    ensureScene();
+
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches && !reduced) {
+      const dot = document.querySelector('.cursor-dot');
+      const ring = document.querySelector('.cursor-ring');
+      const ringLabel = ring.querySelector('span');
+      const pos = { x: innerWidth / 2, y: innerHeight / 2 };
+      const ringPos = { x: pos.x, y: pos.y };
+
+      addEventListener('pointermove', (e) => { pos.x = e.clientX; pos.y = e.clientY; }, { passive: true });
+      gsap.ticker.add(() => {
+        if (view !== 'humans') return;
+        ringPos.x += (pos.x - ringPos.x) * 0.16;
+        ringPos.y += (pos.y - ringPos.y) * 0.16;
+        dot.style.left = pos.x + 'px';
+        dot.style.top = pos.y + 'px';
+        ring.style.left = ringPos.x + 'px';
+        ring.style.top = ringPos.y + 'px';
+      });
+      document.querySelectorAll('[data-cursor]').forEach((el) => {
+        el.addEventListener('pointerenter', () => {
+          ring.classList.add('is-active');
+          ringLabel.textContent = el.dataset.cursor === 'view' ? 'View' : '→';
+        });
+        el.addEventListener('pointerleave', () => ring.classList.remove('is-active'));
+      });
+      document.querySelectorAll('.magnetic').forEach((el) => {
+        el.addEventListener('pointermove', (e) => {
+          const r = el.getBoundingClientRect();
+          gsap.to(el, {
+            x: (e.clientX - r.left - r.width / 2) * 0.25,
+            y: (e.clientY - r.top - r.height / 2) * 0.35,
+            duration: 0.4,
+            ease: 'power2.out',
+          });
+        });
+        el.addEventListener('pointerleave', () => gsap.to(el, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' }));
+      });
+    }
+  </script>
+
+  <noscript>
+    <style>
+      #field, .grain, .rail, .hud, .motion-toggle { display: none !important; }
+      .nav { opacity: 1 !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</body>
+</html>

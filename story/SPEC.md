@@ -544,6 +544,58 @@ kicker; all beat h3s gain a `9vh` cap; the CTA beat uses `.beat--snug`
 (h3 `min(clamp(1.9rem, 3.8vw, 3.2rem), 8vh)`, tighter paragraph margin).
 Verified 1512×772 + 375×812: beat clear of kicker/nav/HUD both ways.
 
+**Changelog 2026-06-12 (About page, Concept 02):** added `story/about.html` as
+a self-contained About page using the ORBIT token system, dark space chrome,
+film grain, custom cursor, magnetic CTAs, Lenis/GSAP ScrollTrigger, motion
+toggle persisted through `localStorage['md-motion']`, scroll-percentage-only
+HUD, optional left rail, static/reduced-motion fallbacks, CDN guard, noscript
+fallback, and a `?view=agents` markdown-style edition with pushState/popstate.
+The humans page is a 6-section flowing read: hero, belief, operating loop,
+Client Memory, audience/ownership/Sukratu, and CTA. Three.js is intentionally
+subtle: a lazy-loaded three-ring particle background only initializes in humans
+view, with 5,400 particles desktop / 3,600 mobile, DPR capped at 2, and the
+render loop paused while hidden or motion-off. About-page factual copy is
+restricted to the verified facts supplied for this page: no years, client
+counts, names, awards, offices, or pricing. `story/index.html` footer now links
+to `/story/about.html`; top nav was left unchanged to avoid crowding the
+mobile logo + Plans + Humans/Agents controls.
+
+**Changelog 2026-06-12 (About page Team section):** added a production-sourced
+6-person Team section to `story/about.html` between Fit and Next, renumbering
+the About-page chapters/kickers to Fit `05`, Team `06`, Next `07`. The humans
+edition uses ORBIT dark-theme circular avatars with grayscale-to-color hover
+swap and lazy-loaded production team images; the Agents edition adds
+`team_size: 6` frontmatter plus a zero-image Team list with name and role only.
+
+**Changelog 2026-06-13 (Work page, Concept 02):** added `story/work.html` as
+the ORBIT evidence page for the 20-project portfolio source in
+`data/projects.js`. The humans edition follows the About page chrome and
+flowing-section structure: short record hero, category-filtered project field,
+and CTA back to story/plans/booking. Filters cover All, UI/UX Design, Web
+Development, Graphic Design, and Branding, store shareable state in `?cat=`,
+and animate card visibility with GSAP `autoAlpha`/`scale` when motion is
+available. The page lazy-renders human cards so direct `?view=agents` loads no
+project images and no WebGL; the agents edition lists all projects by category
+with exact `data/projects.js` titles/descriptions and case-study URLs. Existing
+story/about footer/nav links now include `/story/work.html`.
+
+**Changelog 2026-06-13 (Services page, Concept 02):** added
+`story/services.html` as the ORBIT services manifest, using the About/Work chrome
+contract: fixed nav, Humans|Agents mode pill, motion toggle persisted as
+`localStorage['md-motion']`, HUD percentage only, grain, custom cursor, lazy
+Three.js rings/starfield, static/noscript fallbacks, pushState/popstate agents
+toggle, and non-throwing CDN failure tolerance. The humans edition is a flowing
+engine-room read: hero, four flagship offer cards, compact capability manifest,
+included-experience chips, and CTA to booking/plans/story. Source copy is taken
+from production `services.html`; the story page intentionally carries no prices,
+leaving pricing to `/story/#ch-plans`. Capability items are dense rows rather
+than heavy cards: UI/UX Design, Webflow + Framer Development, Everything Visual,
+and Specialized Design Projects. The agents edition exposes frontmatter with
+booking/plans/offer links, then markdown-style sections for each flagship offer
+and capability group. Existing `story/index.html`, `story/about.html`, and
+`story/work.html` nav/footer links now include `/story/services.html`, with
+mobile nav hiding tightened to prevent crowding.
+
 ## 12. Remaining work (in priority order)
 
 1. **Reduced-motion init path**: run once with `prefers-reduced-motion:
