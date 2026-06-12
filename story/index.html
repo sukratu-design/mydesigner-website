@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="en" data-view="humans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyDesigner — Out of noise, signal. | A story in nine orbits</title>
+  <meta name="description" content="A scrollytelling journey through the problem every founder has now — infinite average — and the weekly creative engine that cuts through it. MyDesigner: machine speed, human taste, priced by the week.">
+  <meta name="theme-color" content="#0b0807">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="canonical" href="https://mydesigner.gg/story/">
+
+  <!-- social cards (?view=agents canonicalizes to the base URL above) -->
+  <meta property="og:title" content="MyDesigner — Out of noise, signal.">
+  <meta property="og:description" content="A scrollytelling journey through infinite average — and the weekly creative engine that cuts through it. Machine speed, human taste, priced by the week.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mydesigner.gg/story/">
+  <meta property="og:image" content="https://mydesigner.gg/assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MyDesigner — Out of noise, signal.">
+  <meta name="twitter:description" content="A scrollytelling journey through infinite average — and the weekly creative engine that cuts through it.">
+  <meta name="twitter:image" content="https://mydesigner.gg/assets/images/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Space+Grotesk:wght@300..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       ORBIT — MyDesigner reimagined as a story (Concept 02)
+       One particle field plays every character: the noise, the grid
+       of average, the debris of old processes, the three rings of
+       the studio, and the single orbit that is the week.
+       Headings: TheSeasons (brand serif). Italic voice: Fraunces.
+       ============================================================ */
+    @font-face {
+      font-family: 'TheSeasons';
+      src: url('/assets/fonts/TheSeasons-Reg.otf') format('opentype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'TheSeasons';
+      src: url('/assets/fonts/TheSeasons-Bd.otf') format('opentype');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+
+    :root {
+      --ink: #0b0807;
+      --ink-2: #120d0a;
+      --ink-3: #1a130d;
+      --paper: #f4efe9;
+      --paper-dim: rgba(244, 239, 233, 0.62);
+      --paper-faint: rgba(244, 239, 233, 0.55);  /* 0.38 failed WCAG AA on ink for small mono text */
+      --accent: #ff8a3d;
+      --accent-deep: #ff640d;
+      --accent-light: #ffa848;
+      --accent-dim: rgba(255, 138, 61, 0.55);
+      --line: rgba(244, 239, 233, 0.10);
+      --line-strong: rgba(244, 239, 233, 0.18);
+      --serif: "TheSeasons", "Fraunces", Georgia, serif;
+      --serif-accent: "Fraunces", Georgia, serif;
+      --sans: "Space Grotesk", -apple-system, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+      --gutter: clamp(1.25rem, 4vw, 4rem);
+      --label-size: 11px;
+      --label-track: 0.32em;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* keyboard focus — visible on every interactive element (pill/rounded too) */
+    :focus { outline: none; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+    /* pills/rounded controls: larger offset reads cleaner around the radius */
+    .mode button:focus-visible, .btn:focus-visible, .nav__cta:focus-visible,
+    .rail button:focus-visible { outline-offset: 4px; border-radius: 999px; }
+    summary:focus-visible { outline-offset: 2px; }
+
+    /* visually-hidden but available to screen readers / keyboard */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+    .sr-only:focus, a.sr-only:focus-visible {
+      position: static; width: auto; height: auto;
+      margin: 0; clip: auto; white-space: normal;
+    }
+
+    html { scroll-behavior: auto; }
+    html.lenis, html.lenis body { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--sans);
+      font-weight: 340;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--accent); color: var(--ink); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+    /* ---------- atmosphere ---------- */
+    #field {
+      position: fixed; inset: 0; z-index: 0;
+      width: 100%; height: 100svh;
+      pointer-events: none;
+    }
+    .grain {
+      position: fixed; inset: -50%; z-index: 60; pointer-events: none;
+      width: 200%; height: 200%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.05;
+      animation: grain-shift 0.9s steps(2) infinite;
+    }
+    @keyframes grain-shift {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(2%, -1%); }
+      100% { transform: translate(-1%, 2%); }
+    }
+    .vignette {
+      position: fixed; inset: 0; z-index: 1; pointer-events: none;
+      background: radial-gradient(120% 90% at 50% 10%, transparent 55%, rgba(0,0,0,0.5) 100%);
+    }
+
+    /* ---------- custom cursor ---------- */
+    .cursor-dot, .cursor-ring { display: none; }
+    @media (hover: hover) and (pointer: fine) {
+      .cursor-dot {
+        display: block; position: fixed; z-index: 100; pointer-events: none;
+        width: 6px; height: 6px; border-radius: 50%;
+        background: var(--accent);
+        transform: translate(-50%, -50%);
+      }
+      .cursor-ring {
+        display: flex; align-items: center; justify-content: center;
+        position: fixed; z-index: 99; pointer-events: none;
+        width: 36px; height: 36px; border-radius: 50%;
+        border: 1px solid var(--accent-dim);
+        transform: translate(-50%, -50%);
+        transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+        font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em;
+        color: var(--ink); text-transform: uppercase;
+      }
+      .cursor-ring span { opacity: 0; transition: opacity 0.2s ease; }
+      .cursor-ring.is-active {
+        width: 72px; height: 72px;
+        background: var(--accent); border-color: var(--accent);
+      }
+      .cursor-ring.is-active span { opacity: 1; }
+    }
+
+    /* ---------- preloader ---------- */
+    .preloader {
+      position: fixed; inset: 0; z-index: 90;
+      background: var(--ink);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1.5rem;
+    }
+    .preloader__word {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.42em; text-transform: uppercase;
+      color: var(--paper-dim);
+    }
+    .preloader__count {
+      font-family: var(--serif); font-weight: 300;
+      font-size: clamp(3rem, 8vw, 5.5rem); line-height: 1;
+      font-variation-settings: "opsz" 144;
+      color: var(--paper);
+    }
+    .preloader__count em { font-style: italic; color: var(--accent); font-family: var(--serif-accent); }
+
+    /* ---------- nav + mode tabs ---------- */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 1.1rem var(--gutter);
+      opacity: 0;
+      transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+      border-bottom: 1px solid transparent;
+    }
+    .nav.is-scrolled {
+      background: rgba(11, 8, 7, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom-color: var(--line);
+    }
+    .nav__logo { display: flex; align-items: center; }
+    .nav__logo img { height: 24px; width: auto; }
+    .nav__right { display: flex; align-items: center; gap: 0.9rem; }
+    .mode {
+      display: flex; align-items: center;
+      border: 1px solid var(--line-strong); border-radius: 999px;
+      padding: 3px;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .mode button {
+      padding: 0.78rem 0.95rem; border-radius: 999px;  /* ≥40px tall hit area */
+      color: var(--paper-dim);
+      transition: color 0.25s ease, background-color 0.25s ease;
+      white-space: nowrap;
+    }
+    .mode button:hover { color: var(--paper); }
+    .mode button[aria-checked="true"] {
+      background: linear-gradient(135deg, var(--accent-light), var(--accent-deep));
+      color: var(--ink);
+    }
+    .nav__cta {
+      display: none;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.65rem 1.2rem;
+      border: 1px solid var(--line-strong); border-radius: 999px;
+      color: var(--paper);
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    @media (min-width: 760px) { .nav__cta { display: inline-block; } }
+    .nav__cta:hover { background: var(--accent); color: var(--ink); border-color: var(--accent); }
+
+    /* Plans — text-only nav link, visible at every width (the path to pricing) */
+    .nav__plans {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--paper);
+      padding: 0.4rem 0.1rem;
+      border-bottom: 1px solid transparent;
+      transition: color 0.25s ease, border-color 0.25s ease;
+      white-space: nowrap;
+    }
+    .nav__plans:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* very narrow: tighten the pill + gaps so logo + Plans + pill fit at 375px */
+    @media (max-width: 460px) {
+      .nav { padding: 1.1rem clamp(0.9rem, 4vw, 1.5rem); }
+      .nav__right { gap: 0.55rem; }
+      .nav__plans { letter-spacing: 0.12em; padding: 0.4rem 0; }
+      .mode button { padding: 0.6rem 0.62rem; letter-spacing: 0.1em; }
+    }
+
+    /* ---------- top progress bar (orientation aid below 1180px) ---------- */
+    .progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 51;
+      background: linear-gradient(90deg, var(--accent-light), var(--accent-deep));
+      transform: scaleX(0); transform-origin: 0 50%;
+      pointer-events: none;
+      display: none;
+    }
+    /* shown only below 1180px, where the chapter rail is absent */
+    @media (max-width: 1179px) { .progress { display: block; } }
+    /* never in the static fallback or the agents edition */
+    html.static .progress { display: none !important; }
+    [data-view="agents"] .progress { display: none !important; }
+
+    /* ---------- chapter rail ---------- */
+    .rail {
+      position: fixed; left: clamp(0.9rem, 2vw, 2rem); top: 50%; transform: translateY(-50%);
+      z-index: 40; display: none; flex-direction: column; gap: 0.85rem;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+    }
+    @media (min-width: 1180px) { .rail { display: flex; } }
+    .rail button {
+      display: flex; align-items: center; gap: 0.6rem;
+      color: var(--paper-faint);
+      transition: color 0.3s ease;
+      text-align: left; letter-spacing: inherit;
+    }
+    .rail button::before {
+      content: ""; width: 14px; height: 1px; background: currentColor;
+      transition: width 0.3s ease;
+    }
+    .rail button .name { opacity: 0; transform: translateX(-4px); transition: opacity 0.3s ease, transform 0.3s ease; }
+    .rail button:hover .name, .rail button.is-active .name { opacity: 1; transform: none; }
+    .rail button.is-active { color: var(--accent); }
+    .rail button.is-active::before { width: 26px; }
+
+    /* ---------- HUD ---------- */
+    .hud {
+      position: fixed; left: var(--gutter); bottom: 1.2rem; z-index: 40;
+      display: none; gap: 1.6rem;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--paper-faint);
+    }
+    @media (min-width: 900px) { .hud { display: flex; } }
+    .hud em { font-style: normal; color: var(--accent); }
+
+    /* ---------- motion toggle (WCAG 2.2.2) ---------- */
+    .motion-toggle {
+      position: fixed; right: clamp(0.9rem, 2vw, 1.4rem); bottom: 1.1rem; z-index: 52;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--paper-faint);
+      padding: 0.5rem 0.7rem;
+      border: 1px solid var(--line); border-radius: 999px;
+      background: rgba(11, 8, 7, 0.55);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      transition: color 0.25s ease, border-color 0.25s ease;
+    }
+    .motion-toggle:hover { color: var(--paper); border-color: var(--line-strong); }
+    .motion-toggle__star { color: var(--accent); font-size: 11px; line-height: 1;
+      animation: motion-spin 6s linear infinite; }
+    .motion-toggle__label em { font-style: normal; color: var(--accent); }
+    @keyframes motion-spin { to { transform: rotate(360deg); } }
+    /* paused state: the star stops turning, label de-emphasised */
+    html.motion-off .motion-toggle__star { animation: none; }
+    /* hide the control where there is no autonomous motion to pause */
+    html.static .motion-toggle { display: none !important; }
+    [data-view="agents"] .motion-toggle { display: none !important; }
+
+    /* motion paused: stop the grain churn and fade the (frozen) GL canvas back */
+    html.motion-off .grain { animation: none !important; }
+    html.motion-off #field { opacity: 0.15; transition: opacity 0.5s ease; }
+    #field { transition: opacity 0.5s ease; }
+
+    /* ---------- shared chrome ---------- */
+    section { position: relative; z-index: 2; }
+    .shell { max-width: 1400px; margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+    .kicker {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-family: var(--mono); font-size: var(--label-size); letter-spacing: var(--label-track);
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 1.6rem;
+    }
+    .kicker::before { content: ""; width: 28px; height: 1px; background: var(--accent-dim); }
+    .kicker .idx { color: var(--paper-faint); }
+    .h2 {
+      font-family: var(--serif); font-weight: 320;
+      font-variation-settings: "opsz" 144;
+      font-size: clamp(2rem, 4.6vw, 4.2rem);
+      line-height: 1.04; letter-spacing: -0.01em;
+    }
+    .h2 em, .hero h1 em, .beat h3 em, .finale-h em, .quote blockquote, .preloader__count em {
+      font-family: var(--serif-accent); font-style: italic;
+    }
+    .h2 em, .hero h1 em, .beat h3 em, .finale-h em { color: var(--accent); font-weight: 380; }
+
+    .btn {
+      position: relative; display: inline-flex; align-items: center; gap: 0.7rem;
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 1rem 1.7rem; border-radius: 999px;
+      transition: transform 0.25s ease;
+      will-change: transform;
+    }
+    .btn--solid { background: linear-gradient(135deg, var(--accent-light), var(--accent-deep)); color: var(--ink); }
+    .btn--solid:hover { background: linear-gradient(135deg, #ffb866, var(--accent)); }
+    .btn--ghost { border: 1px solid var(--line-strong); color: var(--paper); }
+    .btn--ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn .arrow { transition: transform 0.3s ease; }
+    .btn:hover .arrow { transform: translateX(4px); }
+
+    .reveal { opacity: 0; transform: translateY(36px); }
+    html.static .reveal { opacity: 1; transform: none; }
+
+    /* ---------- hero (prologue) ---------- */
+    .hero {
+      position: relative; min-height: 100svh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 var(--gutter) clamp(2rem, 6vh, 4.5rem);
+    }
+    .hero__inner { position: relative; z-index: 2; max-width: 1400px; width: 100%; margin: 0 auto; }
+    .hero__label {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-family: var(--mono); font-size: var(--label-size);
+      letter-spacing: var(--label-track); text-transform: uppercase; color: var(--accent);
+      margin-bottom: clamp(1.2rem, 3vh, 2rem);
+    }
+    .hero__label::before { content: ""; width: 36px; height: 1px; background: var(--accent-dim); }
+    .hero h1 {
+      font-family: var(--serif); font-weight: 320;
+      font-variation-settings: "opsz" 144;
+      font-size: clamp(3rem, 9vw, 9rem);
+      line-height: 0.98; letter-spacing: -0.015em;
+      max-width: 12ch;
+    }
+    .hero h1 .line { display: block; overflow: hidden; }
+    .hero h1 .line > span { display: inline-block; transform: translateY(112%); }
+    html.static .hero h1 .line > span { transform: none; }
+    .hero__bottom {
+      display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+      gap: 2rem; margin-top: clamp(1.8rem, 4vh, 3rem);
+    }
+    .hero__sub {
+      max-width: 44ch; color: var(--paper-dim);
+      font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    }
+    .hero__sub strong { color: var(--paper); font-weight: 500; }
+    .hero__clients {
+      margin-top: 1.1rem;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--paper-faint);
+    }
+    .hero__ctas { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+    .hero__skip {
+      display: inline-block; margin-top: 1.1rem;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--paper-faint);
+      border-bottom: 1px solid transparent;
+      transition: color 0.25s ease, border-color 0.25s ease;
+    }
+    .hero__skip:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+    .hero__scroll {
+      position: absolute; right: var(--gutter); bottom: clamp(2rem, 6vh, 4.5rem);
+      display: none; align-items: center; gap: 0.6rem;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--paper-faint);
+      writing-mode: vertical-rl;
+    }
+    @media (min-width: 1100px) { .hero__scroll { display: flex; } }
+
+    /* ---------- desktop overlap clearances ----------
+       The fixed chrome (rail left, scroll cue + motion toggle right, HUD
+       bottom-left) collides with content at common desktop widths. Reserve
+       space instead of letting layers stack. */
+    @media (min-width: 1180px) and (max-width: 1720px) {
+      /* rail occupies ~150px from the left edge; above 1720px the centered
+         1400px shell clears it naturally */
+      .hero, .shell { padding-left: calc(var(--gutter) + 7.5rem); }
+    }
+    @media (min-width: 1100px) {
+      /* keep the CTA row from sliding under the vertical scroll cue, and
+         lift the cue clear of the motion toggle below it */
+      .hero__bottom { padding-right: 4.5rem; }
+      .hero__scroll { bottom: clamp(6rem, 12vh, 8rem); }
+    }
+    @media (min-width: 900px) {
+      /* breathing room between the hero's skip link and the fixed HUD */
+      .hero { padding-bottom: clamp(3.5rem, 8vh, 5.5rem); }
+    }
+
+    .hero__scroll::after {
+      content: ""; width: 1px; height: 48px;
+      background: linear-gradient(var(--accent), transparent);
+      animation: scroll-pulse 2s ease-in-out infinite;
+    }
+    @keyframes scroll-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+    /* ---------- story chapters (sticky stages) ---------- */
+    .ch { position: relative; }
+    .ch__stage {
+      position: sticky; top: 0; height: 100svh;
+      display: grid; place-items: center;
+      overflow: hidden;
+      /* beats center inside the band below the kicker/nav and above the
+         HUD/motion chrome — tall beats compress instead of overlapping */
+      padding-top: clamp(7.5rem, 14vh, 9.5rem);
+      padding-bottom: clamp(3.5rem, 9vh, 5.5rem);
+    }
+    .ch__stage::before {
+      content: ""; position: absolute; left: 50%; top: 50%;
+      width: min(120vw, 980px); aspect-ratio: 1.25;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(closest-side, rgba(11, 8, 7, 0.68), rgba(11, 8, 7, 0.26) 58%, transparent 75%);
+      pointer-events: none;
+    }
+    /* narrow portrait: the orbit ring rides close to the beat text — darken the
+       center and push the plateau out so paragraphs/week markers stay legible */
+    @media (max-aspect-ratio: 7/10) and (max-width: 760px) {
+      .ch__stage::before {
+        width: 150vw; aspect-ratio: 0.95;
+        background: radial-gradient(closest-side, rgba(11, 8, 7, 0.9), rgba(11, 8, 7, 0.74) 50%, rgba(11, 8, 7, 0.3) 72%, transparent 86%);
+      }
+    }
+    .ch__kicker {
+      position: absolute; top: clamp(5.2rem, 11vh, 7.5rem); left: 50%; transform: translateX(-50%);
+      display: flex; align-items: center; gap: 0.8rem;
+      font-family: var(--mono); font-size: var(--label-size); letter-spacing: var(--label-track);
+      text-transform: uppercase; color: var(--accent); white-space: nowrap;
+      opacity: 0;
+    }
+    .ch__kicker .idx { color: var(--paper-faint); }
+    .ch__kicker::before, .ch__kicker::after {
+      content: ""; width: 26px; height: 1px; background: var(--accent-dim);
+    }
+    .beat {
+      grid-area: 1 / 1;
+      position: relative; z-index: 2;
+      max-width: min(88vw, 62ch);
+      text-align: center;
+      padding: 0 1rem;
+    }
+    /* hide from SR too (autoAlpha in the chapter timelines flips this in sync) */
+    html.js .beat { opacity: 0; visibility: hidden; }
+    .beat__tag {
+      display: inline-block; margin-bottom: 1.3rem;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--paper-faint);
+      border: 1px solid var(--line); border-radius: 999px;
+      padding: 0.38rem 0.85rem;
+    }
+    .beat__tag.glow { color: var(--accent); border-color: var(--accent-dim); }
+    /* quiet proof line (non-glow) — small mono, like a beat tag without the pill */
+    .beat__proof {
+      margin-top: 1.6rem;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--paper-faint);
+    }
+    .beat__proof em { font-style: normal; color: var(--accent); }
+    .beat h3 {
+      font-family: var(--serif); font-weight: 330;
+      font-variation-settings: "opsz" 144;
+      /* vh term keeps headlines from towering on short, wide viewports */
+      font-size: min(clamp(2rem, 5.2vw, 4.4rem), 9vh);
+      line-height: 1.05; letter-spacing: -0.012em;
+    }
+    /* content-heavy beats (headline + long paragraph + CTA row) trade display
+       size for fitting the stage band */
+    .beat--snug h3 { font-size: min(clamp(1.9rem, 3.8vw, 3.2rem), 8vh); }
+    .beat--snug p { margin-top: 1.1rem; }
+    .beat p {
+      margin: 1.4rem auto 0; max-width: 52ch;
+      color: var(--paper-dim);
+      font-size: clamp(0.95rem, 1.4vw, 1.12rem);
+    }
+    .beat p strong { color: var(--paper); font-weight: 500; }
+    .beat__week {
+      display: flex; justify-content: center; gap: clamp(0.8rem, 2.4vw, 1.8rem);
+      margin-top: 1.7rem;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em;
+      color: var(--paper-faint); text-transform: uppercase;
+    }
+    .beat__week span { display: flex; align-items: center; gap: 0.45rem; }
+    .beat__week i {
+      font-style: normal; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--paper-faint);
+    }
+    .beat__week .on { color: var(--accent); }
+    .beat__week .on i { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+
+    /* quiet contextual CTA at the orbit's emotional peak — mono, small, ghost.
+       Matches .beat__tag / .hero__skip language so it doesn't break the spell. */
+    .beat__cta {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 0.5rem 1.4rem; margin-top: 1.9rem;
+    }
+    .beat__cta-btn {
+      display: inline-block;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--paper);
+      padding: 0.65rem 1.1rem;
+      border: 1px solid var(--line-strong); border-radius: 999px;
+      transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+    }
+    .beat__cta-btn:hover { color: var(--accent); border-color: var(--accent); }
+    .beat__cta-link {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--paper-faint);
+      border-bottom: 1px solid transparent;
+      transition: color 0.25s ease, border-color 0.25s ease;
+    }
+    .beat__cta-link:hover { color: var(--accent); border-bottom-color: var(--accent-dim); }
+
+    /* static fallback: chapters become a readable column */
+    html.static .ch__stage { position: static; height: auto; display: block; padding: clamp(4rem, 9vh, 7rem) 0 0; }
+    html.static .ch__stage::before { display: none; }
+    html.static .ch__kicker { position: static; transform: none; justify-content: center; opacity: 1; margin-bottom: 3rem; }
+    html.static .beat { opacity: 1 !important; visibility: visible !important; margin: 0 auto 4.5rem; }
+
+    /* ---------- flowing sections (evidence / plans / voices / finale) ---------- */
+    .flow { padding: clamp(6rem, 14vh, 10rem) 0; }
+    .flow--tint { background: linear-gradient(180deg, transparent, rgba(11, 8, 7, 0.82) 18%, rgba(11, 8, 7, 0.82) 82%, transparent); }
+
+    .stats-line {
+      display: flex; flex-wrap: wrap; gap: 0.7rem 2.2rem;
+      margin-top: 1.6rem;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--paper-faint);
+    }
+    .stats-line em { font-style: normal; color: var(--accent); }
+
+    .work__grid {
+      display: grid; gap: clamp(2rem, 5vw, 4rem);
+      margin-top: clamp(3rem, 7vh, 5rem);
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 800px) { .work__grid { grid-template-columns: 1fr 1fr; } }
+    .proj { display: block; }
+    @media (min-width: 800px) {
+      .proj:nth-child(even) { transform: translateY(clamp(2rem, 6vw, 5rem)); }
+    }
+    .proj__media {
+      position: relative; overflow: hidden; border-radius: 14px;
+      aspect-ratio: 4 / 3; background: var(--ink-3);
+    }
+    .proj__media img {
+      width: 100%; height: 100%; object-fit: cover;
+      transform: scale(1.015);
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
+      filter: saturate(0.92);
+    }
+    .proj:hover .proj__media img { transform: scale(1.07); filter: saturate(1.05); }
+    .proj__meta {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 1rem; margin-top: 1.1rem;
+    }
+    .proj__title {
+      font-family: var(--serif); font-weight: 350; font-size: clamp(1.2rem, 2vw, 1.6rem);
+      transition: color 0.3s ease;
+    }
+    .proj:hover .proj__title { color: var(--accent); }
+    .proj__badge {
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--paper-faint); white-space: nowrap;
+    }
+    .proj__desc { margin-top: 0.35rem; color: var(--paper-dim); font-size: 0.9rem; }
+    .work__more { margin-top: clamp(3.5rem, 8vh, 5rem); text-align: center; }
+
+    /* pricing */
+    .pricing__lede { margin-top: 1.4rem; max-width: 52ch; color: var(--paper-dim); font-size: 0.98rem; }
+    .pricing__grid { display: grid; gap: 1.2rem; margin-top: clamp(3rem, 7vh, 5rem); }
+    @media (min-width: 980px) { .pricing__grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; } }
+    .plan {
+      border: 1px solid var(--line-strong); border-radius: 20px;
+      padding: clamp(1.8rem, 3.5vw, 2.6rem);
+      display: flex; flex-direction: column; gap: 1.4rem;
+      transition: border-color 0.35s ease, transform 0.35s ease;
+      background: var(--ink-2);
+    }
+    .plan:hover { border-color: var(--accent-dim); transform: translateY(-6px); }
+    .plan--hero {
+      background:
+        radial-gradient(80% 100% at 50% 0%, rgba(255, 122, 40, 0.11), transparent 70%),
+        var(--ink-2);
+      border-color: var(--accent-dim);
+    }
+    .plan__tag {
+      align-self: flex-start;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+      padding: 0.35rem 0.8rem; border-radius: 999px;
+      border: 1px solid var(--line-strong); color: var(--paper-dim);
+    }
+    .plan--hero .plan__tag { border-color: var(--accent); color: var(--accent); }
+    .plan h3 { font-family: var(--serif); font-weight: 350; font-size: 1.6rem; }
+    .plan__price { font-family: var(--serif); font-weight: 300; font-size: clamp(2.4rem, 4vw, 3.2rem); line-height: 1; font-variation-settings: "opsz" 144; }
+    .plan__price small { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--paper-faint); }
+    /* weekly-equivalence support line under the big monthly figure */
+    .plan__per { margin-top: -0.6rem; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--paper-faint); }
+    .plan p.lede { color: var(--paper-dim); font-size: 0.93rem; }
+    .plan ul { list-style: none; display: grid; gap: 0.65rem; margin-top: auto; }
+    .plan li {
+      display: flex; gap: 0.7rem; align-items: baseline;
+      font-size: 0.9rem; color: var(--paper-dim);
+    }
+    .plan li::before { content: "→"; color: var(--accent); font-family: var(--mono); font-size: 0.8rem; }
+    .plan .btn { justify-content: center; margin-top: 1.6rem; }
+    .pricing__note {
+      margin-top: 2rem; text-align: center;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+      color: var(--paper-faint);
+    }
+    .pricing__note em { color: var(--accent); font-style: normal; }
+
+    /* transmissions */
+    .voices__grid { display: grid; gap: 2rem; margin-top: clamp(3rem, 6vh, 4rem); }
+    @media (min-width: 900px) { .voices__grid { grid-template-columns: 1fr 1fr; } }
+    .quote {
+      border: 1px solid var(--line); border-radius: 18px;
+      padding: clamp(1.8rem, 4vw, 3rem);
+      background: var(--ink);
+      display: flex; flex-direction: column; gap: 1.5rem;
+    }
+    .quote__meta {
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--paper-faint);
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .quote__meta::before { content: "▮"; color: var(--accent); animation: blink 1.6s steps(2) infinite; }
+    @keyframes blink { 50% { opacity: 0.2; } }
+    .quote blockquote {
+      font-family: var(--serif); font-weight: 330; font-style: italic;
+      font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.4;
+      font-variation-settings: "opsz" 60;
+    }
+    .quote blockquote::before { content: "“"; color: var(--accent); }
+    .quote blockquote::after { content: "”"; color: var(--accent); }
+    .quote figcaption { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--paper-dim); }
+    .quote figcaption strong { color: var(--paper); font-weight: 500; display: block; margin-bottom: 0.25rem; }
+
+    /* faq */
+    .faq__list { margin-top: clamp(2.5rem, 6vh, 4rem); max-width: 60rem; margin-left: auto; margin-right: auto; }
+    .faq__list details { border-top: 1px solid var(--line); }
+    .faq__list details:last-child { border-bottom: 1px solid var(--line); }
+    .faq__list summary {
+      list-style: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+      padding: 1.5rem 0;
+      font-family: var(--serif); font-weight: 340; font-size: clamp(1.1rem, 1.9vw, 1.45rem);
+      transition: color 0.25s ease;
+      text-align: left;
+    }
+    .faq__list summary::-webkit-details-marker { display: none; }
+    .faq__list summary:hover { color: var(--accent); }
+    .faq__list summary .plus {
+      flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%;
+      border: 1px solid var(--line-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 14px; color: var(--accent);
+      transition: transform 0.35s ease, background-color 0.3s ease;
+    }
+    .faq__list details[open] summary .plus { transform: rotate(45deg); background: rgba(255, 122, 40, 0.14); }
+    .faq__list details p { padding: 0 0 1.6rem; color: var(--paper-dim); max-width: 62ch; font-size: 0.95rem; text-align: left; }
+
+    /* finale */
+    .finale { text-align: center; padding-bottom: clamp(4rem, 8vh, 6rem); }
+    .finale .kicker { justify-content: center; }
+    .finale .kicker::after { content: ""; width: 28px; height: 1px; background: var(--accent-dim); }
+    .finale-h {
+      font-family: var(--serif); font-weight: 310;
+      font-variation-settings: "opsz" 144;
+      font-size: clamp(3rem, 9.5vw, 8.5rem); line-height: 0.98; letter-spacing: -0.02em;
+    }
+    .finale__micro {
+      margin-top: 1.4rem;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--paper-faint);
+    }
+    .finale .btn { margin-top: clamp(2.2rem, 5vh, 3.5rem); }
+
+    /* footer */
+    footer {
+      position: relative; z-index: 2;
+      border-top: 1px solid var(--line);
+      padding: 2.2rem var(--gutter);
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--paper-faint);
+      background: var(--ink);
+    }
+    footer nav { display: flex; flex-wrap: wrap; gap: 1.6rem; }
+    footer a { transition: color 0.25s ease; }
+    footer a:hover { color: var(--accent); }
+    footer button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; }
+    footer button:hover { color: var(--accent); }
+
+    /* ============================================================
+       AGENTS EDITION — the whole site as refined markdown.
+       Zero images, zero WebGL, zero theater. Just typeset facts.
+       ============================================================ */
+    #agents { display: none; }
+    [data-view="agents"] #humans,
+    [data-view="agents"] #field,
+    [data-view="agents"] .grain,
+    [data-view="agents"] .vignette,
+    [data-view="agents"] .rail,
+    [data-view="agents"] .hud,
+    [data-view="agents"] .cursor-dot,
+    [data-view="agents"] .cursor-ring { display: none !important; }
+    [data-view="agents"] #agents { display: block; }
+    [data-view="agents"] body { cursor: auto; }
+
+    .md {
+      max-width: 76ch; margin: 0 auto;
+      padding: clamp(7rem, 14vh, 9rem) var(--gutter) 6rem;
+      font-family: var(--mono); font-size: 0.92rem; line-height: 1.85;
+      color: var(--paper-dim);
+    }
+    .md__banner {
+      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--paper-faint);
+      border: 1px dashed var(--line-strong); border-radius: 10px;
+      padding: 0.9rem 1.2rem; margin-bottom: 2.8rem;
+    }
+    .md__banner em { font-style: normal; color: var(--accent); }
+    .md pre.fm {
+      border: 1px solid var(--line); border-radius: 10px;
+      background: var(--ink-2);
+      padding: 1.3rem 1.5rem; margin-bottom: 3rem;
+      font-size: 0.82rem; line-height: 1.8;
+      overflow-x: auto;
+      color: var(--paper-dim);
+    }
+    .md pre.fm .k { color: var(--accent); }
+    .md pre.fm .c { color: var(--paper-faint); }
+    .md h1, .md h2, .md h3 { font-weight: 600; color: var(--paper); line-height: 1.3; }
+    .md h1 { font-size: 1.7rem; margin: 0 0 1.2rem; }
+    .md h2 { font-size: 1.15rem; margin: 3.2rem 0 1rem; }
+    .md h3 { font-size: 0.95rem; margin: 2rem 0 0.6rem; }
+    .md h1::before, .md h2::before, .md h3::before { color: var(--accent); margin-right: 0.6em; }
+    .md h1::before { content: "#"; }
+    .md h2::before { content: "##"; }
+    .md h3::before { content: "###"; }
+    .md p { margin-bottom: 1.1rem; }
+    .md strong { color: var(--paper); font-weight: 600; }
+    .md em { color: var(--accent); font-style: normal; }
+    .md blockquote {
+      border-left: 2px solid var(--accent);
+      padding: 0.1rem 0 0.1rem 1.2rem; margin: 1.4rem 0;
+      color: var(--paper);
+    }
+    .md blockquote .by { display: block; margin-top: 0.5rem; color: var(--paper-faint); font-size: 0.82rem; }
+    .md ul, .md ol { margin: 0 0 1.2rem; padding-left: 0; list-style: none; }
+    .md ul li, .md ol li { padding-left: 1.6rem; position: relative; margin-bottom: 0.45rem; }
+    .md ul li::before { content: "-"; position: absolute; left: 0.2rem; color: var(--accent); }
+    .md ol { counter-reset: md; }
+    .md ol li { counter-increment: md; }
+    .md ol li::before { content: counter(md) "."; position: absolute; left: 0; color: var(--accent); }
+    .md table {
+      width: 100%; border-collapse: collapse;
+      margin: 1.4rem 0 1.8rem; font-size: 0.85rem;
+    }
+    .md th, .md td {
+      text-align: left; padding: 0.65rem 0.9rem;
+      border: 1px solid var(--line);
+    }
+    .md th { color: var(--paper); font-weight: 600; background: var(--ink-2); }
+    .md td em { color: var(--accent); }
+    .md hr { border: 0; border-top: 1px dashed var(--line-strong); margin: 3rem 0; }
+    .md a { color: var(--paper); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--accent-dim); transition: color 0.2s ease; }
+    .md a:hover { color: var(--accent); }
+    .md .foot { margin-top: 3.5rem; font-size: 0.78rem; color: var(--paper-faint); }
+
+    /* reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .grain, .hero__scroll::after, .quote__meta::before { animation: none !important; }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- top progress bar — orientation aid below 1180px where the rail is absent -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"><span>View</span></div>
+
+  <!-- preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__word">MyDesigner · A story in nine orbits</div>
+    <div class="preloader__count"><span id="loadCount">00</span><em>%</em></div>
+  </div>
+
+  <!-- nav -->
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#top" data-cursor aria-label="MyDesigner home">
+      <img src="/story/logo-dark.svg" alt="MyDesigner">
+    </a>
+    <div class="nav__right">
+      <a class="nav__plans" href="#ch-plans" id="navPlans" data-cursor>Plans</a>
+      <div class="mode" role="radiogroup" aria-label="Edition">
+        <button type="button" id="modeHumans" role="radio" aria-checked="true" data-cursor>Humans</button>
+        <button type="button" id="modeAgents" role="radio" aria-checked="false" data-cursor>Agents</button>
+      </div>
+      <a class="nav__cta" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a call</a>
+    </div>
+  </header>
+
+  <!-- chapter rail -->
+  <nav class="rail" id="rail" aria-label="Chapters"></nav>
+
+  <!-- motion toggle (WCAG 2.2.2) — pause the autonomous particle field + grain -->
+  <button type="button" class="motion-toggle" id="motionToggle" aria-pressed="false" data-cursor>
+    <span class="motion-toggle__star" aria-hidden="true">✳</span>
+    <span class="motion-toggle__label">Motion <em id="motionState">on</em></span>
+  </button>
+
+  <!-- HUD -->
+  <div class="hud" aria-hidden="true">
+    <span id="hudPct">000%</span>
+  </div>
+
+  <!-- ================= HUMANS EDITION ================= -->
+  <main id="humans">
+
+    <a class="sr-only" href="?view=agents">Prefer a text-only version? View the Agents edition</a>
+
+    <!-- 01 · PROLOGUE -->
+    <section class="hero" id="ch-hero" data-chapter="01" data-name="Prologue" data-state="SIGNAL">
+      <div class="hero__inner" id="heroInner">
+        <p class="hero__label" id="heroLabel">A story in nine orbits · Est. 2020</p>
+        <h1 id="heroTitle" aria-label="Out of noise, signal.">
+          <span class="line"><span>Out of noise,</span></span>
+          <span class="line"><span><em>signal.</em></span></span>
+        </h1>
+        <div class="hero__bottom" id="heroBottom">
+          <div>
+            <p class="hero__sub">MyDesigner is a <strong>weekly creative engine</strong> for founders — design, web, and brand that ships every seven days. This page is the story of why. Scroll, and we'll tell it properly.</p>
+            <p class="hero__clients">Trusted by Dentsu · Apollo Radiology · Poocho · ScanO · USA Table Tennis · 52 more</p>
+          </div>
+          <div class="hero__ctas">
+            <a class="btn btn--solid magnetic" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a creative growth call <span class="arrow">→</span></a>
+            <button class="btn btn--ghost magnetic" id="beginStory" data-cursor>Begin the story ↓</button>
+          </div>
+          <a class="hero__skip" href="#ch-plans" id="heroSkip" data-cursor>In a hurry? Skip to plans ↓</a>
+        </div>
+      </div>
+      <div class="hero__scroll">Scroll</div>
+    </section>
+
+    <!-- 02 · THE NOISE -->
+    <section class="ch" id="ch-noise" style="height: 320svh" data-chapter="02" data-name="The Noise" data-state="NOISE">
+      <div class="ch__stage">
+        <h2 class="sr-only">Chapter 02 — The Noise</h2>
+        <p class="ch__kicker"><span class="idx">02</span> The Noise</p>
+        <div class="beat">
+          <h3>The sky has never<br>been this loud.</h3>
+          <p>AI handed every team on earth the same infinite design machine. Prompt in, pixels out. Production — the thing agencies used to sell — is no longer scarce.</p>
+        </div>
+        <div class="beat">
+          <span class="beat__tag">Observation 01 — Uniformity detected</span>
+          <h3>And infinite output<br>has a shape.</h3>
+          <p>Not chaos — <strong>sameness</strong>. The same templates, the same gradients, the same confident voice. Infinite average, perfectly aligned.</p>
+        </div>
+        <div class="beat">
+          <h3>Average became <em>free.</em></h3>
+          <p>Which quietly made <strong>different</strong> the most expensive thing in the market — and the only thing that still converts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · THE OLD MAPS -->
+    <section class="ch" id="ch-maps" style="height: 400svh" data-chapter="03" data-name="The Old Maps" data-state="DEBRIS">
+      <div class="ch__stage">
+        <h2 class="sr-only">Chapter 03 — The Old Maps</h2>
+        <p class="ch__kicker"><span class="idx">03</span> The Old Maps</p>
+        <div class="beat">
+          <h3>The old maps don't<br>survive this sky.</h3>
+          <p>You know them. You've probably sailed all three.</p>
+        </div>
+        <div class="beat">
+          <span class="beat__tag">ETA — One quarter</span>
+          <h3>The agency.</h3>
+          <p>Six weeks of discovery before a pixel moves. Retainers measured in months, momentum measured in decks. Built for a slower universe.</p>
+        </div>
+        <div class="beat">
+          <span class="beat__tag">Single point of failure</span>
+          <h3>The hire.</h3>
+          <p>Ninety days to find. A six-figure salary on the books. One resignation away from zero design capacity.</p>
+        </div>
+        <div class="beat">
+          <span class="beat__tag">Orbit — Unstable</span>
+          <h3>The freelancer.</h3>
+          <p>Brilliant — briefly. Comets light up the sky, then leave it. You can't build a company on a comet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · THE SIGNAL -->
+    <section class="ch" id="ch-signal" style="height: 400svh" data-chapter="04" data-name="The Signal" data-state="SIGNAL">
+      <div class="ch__stage">
+        <h2 class="sr-only">Chapter 04 — The Signal</h2>
+        <p class="ch__kicker"><span class="idx">04</span> The Signal</p>
+        <div class="beat">
+          <h3>Then — a <em>filter.</em></h3>
+          <p>Same particles as everyone else. Arranged like nobody else. The difference has a name: <strong>taste</strong>. Machine speed for production, human judgment for what ships.</p>
+        </div>
+        <div class="beat">
+          <span class="beat__tag glow">Ring 01 — Product &amp; UI</span>
+          <h3>Interfaces that make<br>complex feel obvious.</h3>
+          <p>Apps, dashboards, and design systems — product design that turns features into something people actually want to use.</p>
+        </div>
+        <div class="beat">
+          <span class="beat__tag glow">Ring 02 — Web</span>
+          <h3>Websites that ship<br>as working code.</h3>
+          <p>Conversion-first marketing sites, designed and built live in Webflow or Framer. You get a launched site, not a folder of mockups.</p>
+        </div>
+        <div class="beat">
+          <span class="beat__tag glow">Ring 03 — Brand</span>
+          <h3>A brand that binds<br>it all together.</h3>
+          <p>Identity, voice, and an AI-ready brand system — the rules, templates, and prompt libraries that keep everything you make, by human or machine, unmistakably yours.</p>
+          <p class="beat__proof">57 clients · 142+ projects shipped since 2020</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · THE ORBIT -->
+    <section class="ch" id="ch-orbit" style="height: 360svh" data-chapter="05" data-name="The Orbit" data-state="ORBIT">
+      <div class="ch__stage">
+        <h2 class="sr-only">Chapter 05 — The Orbit</h2>
+        <p class="ch__kicker"><span class="idx">05</span> The Orbit</p>
+        <div class="beat">
+          <h3>We don't sell months.<br>We sell <em>orbits.</em></h3>
+          <p>One revolution of this ring is one week — the honest unit of progress when production runs at machine speed.</p>
+        </div>
+        <div class="beat">
+          <h3>Monday, brief.<br>Friday, <em>shipped.</em></h3>
+          <p>Human creative direction decides what's worth making. AI-speed production builds it. QA reviews it before it lands. Most focused assets turn around in 24–72 hours.</p>
+          <div class="beat__week">
+            <span class="on"><i aria-hidden="true"></i>Mon · Brief</span>
+            <span><i aria-hidden="true"></i>Tue–Thu · Build</span>
+            <span class="on"><i aria-hidden="true"></i>Fri · Ship</span>
+          </div>
+        </div>
+        <div class="beat beat--snug">
+          <h3>Orbit after orbit, you<br>look like a company<br>that <em>ships.</em></h3>
+          <p>Every week ends with something real — a live page, a brand system, a deck, a campaign. And <strong>Client Memory</strong> — a living record of your brand's decisions, feedback, and outcomes — makes each orbit faster than the last: by month three it feels like an in-house team that's been with you for years.</p>
+          <div class="beat__cta">
+            <a class="beat__cta-btn" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Start with one Ship Week — $1,250</a>
+            <a class="beat__cta-link js-to-plans" href="#ch-plans" data-cursor>or see all plans ↓</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · THE EVIDENCE -->
+    <section class="flow flow--tint" id="ch-evidence" data-chapter="06" data-name="The Evidence" data-state="EVIDENCE">
+      <div class="shell">
+        <div class="reveal">
+          <p class="kicker"><span class="idx">06</span> The Evidence</p>
+          <h2 class="h2">Things we've put<br><em>into orbit.</em></h2>
+          <div class="stats-line">
+            <span><em>57</em> clients</span>
+            <span><em>142+</em> projects</span>
+            <span><em>24–72h</em> typical turnaround</span>
+            <span>shipping since <em>2020</em></span>
+          </div>
+        </div>
+
+        <div class="work__grid">
+          <a class="proj reveal" href="/portfolio/web-development" data-cursor="view">
+            <div class="proj__media"><img src="/assets/images/portfolio/apollo-radiology.webp" alt="Apollo Radiology website" loading="lazy"></div>
+            <div class="proj__meta"><h3 class="proj__title">Apollo Radiology</h3><span class="proj__badge">Webflow</span></div>
+            <p class="proj__desc">Transforming healthcare with Webflow-powered precision.</p>
+          </a>
+          <a class="proj reveal" href="/portfolio/ui-ux-design" data-cursor="view">
+            <div class="proj__media"><img src="/assets/images/portfolio/poocho-app.webp" alt="Poocho app design" loading="lazy"></div>
+            <div class="proj__meta"><h3 class="proj__title">Poocho</h3><span class="proj__badge">UI/UX</span></div>
+            <p class="proj__desc">India's first research productivity tool.</p>
+          </a>
+          <a class="proj reveal" href="/portfolio/branding" data-cursor="view">
+            <div class="proj__media"><img src="/assets/images/portfolio/vettly.webp" alt="Vettly.ai branding" loading="lazy"></div>
+            <div class="proj__meta"><h3 class="proj__title">Vettly.ai</h3><span class="proj__badge">Branding</span></div>
+            <p class="proj__desc">Cohesive branding and a smarter web app for AI-driven hiring.</p>
+          </a>
+          <a class="proj reveal" href="/portfolio/ui-ux-design" data-cursor="view">
+            <div class="proj__media"><img src="/assets/images/portfolio/neustreet.webp" alt="Neustreet marketplace design" loading="lazy"></div>
+            <div class="proj__meta"><h3 class="proj__title">Neustreet</h3><span class="proj__badge">UI/UX</span></div>
+            <p class="proj__desc">The marketplace for modern collectibles.</p>
+          </a>
+          <a class="proj reveal" href="/portfolio/web-development" data-cursor="view">
+            <div class="proj__media"><img src="/assets/images/portfolio/takumi.webp" alt="Takumi website" loading="lazy"></div>
+            <div class="proj__meta"><h3 class="proj__title">Takumi</h3><span class="proj__badge">Framer</span></div>
+            <p class="proj__desc">An AI consultancy rooted in Japanese craftsmanship.</p>
+          </a>
+          <a class="proj reveal" href="/portfolio/branding" data-cursor="view">
+            <div class="proj__media"><img src="/assets/images/portfolio/scano.webp" alt="ScanO branding" loading="lazy"></div>
+            <div class="proj__meta"><h3 class="proj__title">ScanO</h3><span class="proj__badge">Branding</span></div>
+            <p class="proj__desc">Designing India's first smile-scanning brand.</p>
+          </a>
+        </div>
+
+        <div class="work__more reveal">
+          <a class="btn btn--ghost magnetic" href="/portfolio" data-cursor>Browse all 142+ projects <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · FLIGHT PLANS -->
+    <section class="flow" id="ch-plans" data-chapter="07" data-name="Flight Plans" data-state="PLANS">
+      <div class="shell">
+        <div class="reveal">
+          <p class="kicker"><span class="idx">07</span> Flight Plans</p>
+          <h2 class="h2">Hire the engine<br><em>by the week.</em></h2>
+          <p class="pricing__lede">Agencies sell months because they need them. With AI-speed production, the week is the honest unit of progress — so that's what we price.</p>
+        </div>
+
+        <div class="pricing__grid">
+          <div class="plan reveal">
+            <span class="plan__tag">Start here, zero commitment</span>
+            <h3>Ship Week</h3>
+            <p class="plan__price">$1,250 <small>/ week, one-time</small></p>
+            <p class="lede">One orbit, one finished thing. Brief us Monday — a landing page, brand sprint, content engine, or pitch deck ships Friday.</p>
+            <ul>
+              <li>Defined outcome, agreed up front</li>
+              <li>Strategy + design + build included</li>
+              <li>No commitment beyond the week</li>
+            </ul>
+            <a class="btn btn--ghost" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a Ship Week</a>
+          </div>
+
+          <div class="plan plan--hero reveal">
+            <span class="plan__tag">Most teams run on this</span>
+            <h3>Growth Weeks</h3>
+            <p class="plan__price">$1,400 <small>/ month</small></p>
+            <p class="plan__per">≈ $350 per shipped week · pause or cancel anytime</p>
+            <p class="lede">An always-on creative team across web, brand, product UI, decks, founder content, and campaign assets — sharpened every orbit by Client Memory.</p>
+            <ul>
+              <li>Unlimited backlog — we work one request at a time, finish it, then pull the next</li>
+              <li>24–72h turnaround on focused assets</li>
+              <li>Webflow &amp; Framer development included</li>
+              <li>Client Memory keeps your brand context, decisions, and feedback</li>
+            </ul>
+            <a class="btn btn--solid" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a creative growth call</a>
+          </div>
+
+          <div class="plan reveal">
+            <span class="plan__tag">Deeper function</span>
+            <h3>Partner Weeks</h3>
+            <p class="plan__price">$3,800 <small>/ month</small></p>
+            <p class="plan__per">≈ $950 per shipped week · pause or cancel anytime</p>
+            <p class="lede">A real creative function: dedicated creative direction, parallel workstreams, and a weekly planning rhythm tied to your growth goals.</p>
+            <ul>
+              <li>Dedicated creative direction</li>
+              <li>Parallel workstreams</li>
+              <li>Weekly growth-planning rhythm</li>
+            </ul>
+            <a class="btn btn--ghost" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Talk to us</a>
+          </div>
+        </div>
+
+        <p class="pricing__note reveal">A standalone Ship Week runs above the committed weekly rate because it carries full onboarding and setup; commit to ongoing weeks and the per-week price drops to $350.</p>
+        <p class="pricing__note reveal">A full-time designer costs $1,500+/week fully loaded — and takes two months to hire. <em>Your first week with us ships something.</em></p>
+      </div>
+    </section>
+
+    <!-- 08 · TRANSMISSIONS -->
+    <section class="flow flow--tint" id="ch-voices" data-chapter="08" data-name="Transmissions" data-state="VOICES">
+      <div class="shell">
+        <p class="kicker reveal"><span class="idx">08</span> Transmissions</p>
+        <h2 class="h2 reveal">Received, with <em>thanks.</em></h2>
+        <div class="voices__grid">
+          <figure class="quote reveal">
+            <p class="quote__meta">Incoming · ScanO by DentalDost</p>
+            <blockquote>MyDesigner has been part of our company from day one. They helped us with everything design — from branding to product design to marketing materials. The quality is consistently excellent.</blockquote>
+            <figcaption><strong>Rajat Kabade</strong>ScanO by DentalDost</figcaption>
+          </figure>
+          <figure class="quote reveal">
+            <p class="quote__meta">Incoming · Poocho</p>
+            <blockquote>The team at MyDesigner brought our vision to life with real creativity and speed. Absolutely exceeded expectations.</blockquote>
+            <figcaption><strong>Taapsi R</strong>Poocho</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 · FIRST ORBIT -->
+    <section class="flow finale" id="ch-finale" data-chapter="09" data-name="First Orbit" data-state="GO">
+      <div class="shell">
+        <p class="kicker reveal"><span class="idx">09</span> Docking Questions</p>
+        <h2 class="h2 reveal">Before you <em>board.</em></h2>
+        <div class="faq__list reveal">
+          <details>
+            <summary>What exactly is MyDesigner? <span class="plus">+</span></summary>
+            <p>An AI-native creative studio by Sukratu. We help founders and growing teams ship high-converting websites, founder content, AI-ready brand systems, campaign assets, and Webflow/Framer builds — with AI-speed production and human creative direction.</p>
+          </details>
+          <details>
+            <summary>Why is pricing per week? <span class="plus">+</span></summary>
+            <p>Because with AI-speed production, a week is what a month used to be. Agencies sell months because their process needs them; ours doesn't. Weekly pricing keeps the commitment small and the accountability high — every week has to ship something. Ongoing plans are still billed monthly to keep admin simple.</p>
+          </details>
+          <details>
+            <summary>Why not just use AI tools ourselves? <span class="plus">+</span></summary>
+            <p>You should — for drafts. But AI gives you options, not direction. Growth teams still need taste, prioritization, brand memory, and production discipline. That judgment layer is what you're actually buying.</p>
+          </details>
+          <details>
+            <summary>Is Webflow / Framer development included? <span class="plus">+</span></summary>
+            <p>Yes, in all plans. You receive a live, editable site — not just design mockups.</p>
+          </details>
+          <details>
+            <summary>Do we have to commit to ongoing weeks? <span class="plus">+</span></summary>
+            <p>No. Start with a single Ship Week — one defined outcome, shipped in five days. Continue into Growth Weeks only if that first week earns it.</p>
+          </details>
+        </div>
+
+        <div style="margin-top: clamp(6rem, 14vh, 10rem);">
+          <p class="kicker reveal" style="justify-content:center;">The story ends where yours starts</p>
+          <h2 class="finale-h reveal">Begin your<br><em>first orbit.</em></h2>
+          <a class="btn btn--solid magnetic reveal" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a creative growth call <span class="arrow">→</span></a>
+          <p class="finale__micro reveal">20 minutes · No pitch deck · Leave with a sharper plan either way</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= AGENTS EDITION ================= -->
+  <!-- role=region (not <main>) so the page keeps a single <main> landmark -->
+  <div id="agents" role="region" aria-label="Agent-readable edition">
+    <article class="md">
+      <p class="md__banner">Agent-readable edition — same facts, zero theater. <em>Humans:</em> the full story lives one toggle away ↗</p>
+
+      <pre class="fm"><span class="c">---</span>
+<span class="k">entity</span>: MyDesigner (mydesigner.gg)
+<span class="k">type</span>: AI-native creative studio — weekly creative engine
+<span class="k">parent</span>: Sukratu
+<span class="k">established</span>: 2020
+<span class="k">clients</span>: 57
+<span class="k">projects_shipped</span>: 142+
+<span class="k">pricing_unit</span>: week
+<span class="k">turnaround_focused_assets</span>: 24-72h
+<span class="k">contact_email</span>: hello@mydesigner.gg
+<span class="k">location</span>: India (serves worldwide)
+<span class="k">book_call</span>: https://calendar.app.google/xGoKb51qpbcnZgJy5
+<span class="k">updated</span>: 2026-06
+<span class="c">---</span></pre>
+
+      <h1>MyDesigner</h1>
+      <blockquote>Out of noise, signal. AI made production infinite; judgment is the scarce part. We pair machine-speed production with human taste, and we price the work by the week.</blockquote>
+
+      <h2>The argument, briefly</h2>
+      <p>Every team now has the same infinite design machine, so the market is flooding with competent, identical output — <strong>infinite average</strong>. Average is free; different converts. The old ways of buying "different" (agencies, full-time hires, freelancers) were built for a slower universe: months of discovery, 90-day hiring loops, comet-like availability. MyDesigner replaces them with a <strong>weekly creative engine</strong>: human creative direction decides what's worth making, AI-speed production builds it, QA reviews it, and something real ships every week.</p>
+
+      <h2>Services</h2>
+      <p>Three core disciplines — product &amp; UI, web, and brand — plus ongoing content production that runs across all of them.</p>
+      <ul>
+        <li><strong>Product &amp; UI design</strong> — apps, dashboards, design systems.</li>
+        <li><strong>Web design &amp; development</strong> — conversion-first marketing sites, designed and built live in Webflow or Framer. Live editable site delivered, not mockups.</li>
+        <li><strong>Brand &amp; identity</strong> — identity, voice, and AI-ready brand systems (rules, templates, prompt libraries) so human and machine output stays consistent.</li>
+        <li><strong>Founder content &amp; campaign assets</strong> — LinkedIn/X content engines, decks, campaign creative.</li>
+      </ul>
+
+      <h2>How a week runs</h2>
+      <ol>
+        <li><strong>Monday — brief.</strong> Client states the business goal, not the deliverable.</li>
+        <li><strong>Tuesday–Thursday — build.</strong> Human creative direction + AI-speed production. Most focused assets turn around in 24–72 hours.</li>
+        <li><strong>Friday — ship.</strong> QA'd, launched, measured. Learnings feed Client Memory — a living record of your brand's decisions, feedback, and outcomes — so every subsequent week is faster.</li>
+      </ol>
+
+      <h2>Pricing</h2>
+      <table>
+        <thead>
+          <tr><th>Plan</th><th>Rate</th><th>Billing</th><th>Best for</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><em>Ship Week</em></td><td>$1,250 (one-time)</td><td>One-time</td><td>One defined outcome, shipped in five days. Zero commitment. Priced above the committed weekly rate because it carries full onboarding + setup.</td></tr>
+          <tr><td><em>Growth Weeks</em></td><td>$1,400 / month (≈ $350 / shipped week)</td><td>Monthly</td><td>Always-on creative team across web, brand, product UI, decks, founder content, and campaign assets. Unlimited backlog, one request at a time. Pause or cancel anytime.</td></tr>
+          <tr><td><em>Partner Weeks</em></td><td>$3,800 / month (≈ $950 / shipped week)</td><td>Monthly</td><td>Dedicated creative direction, parallel workstreams, weekly planning rhythm.</td></tr>
+        </tbody>
+      </table>
+      <p>Reference point: a full-time senior designer is a six-figure annual commitment ($1,500+/week fully loaded) and takes ~2 months to hire. The first MyDesigner week ships something.</p>
+
+      <h2>Selected work</h2>
+      <ul>
+        <li><strong>Apollo Radiology</strong> — Webflow development — healthcare site.</li>
+        <li><strong>Poocho</strong> — UI/UX — India's first research productivity tool.</li>
+        <li><strong>Vettly.ai</strong> — branding + web app — AI-driven hiring.</li>
+        <li><strong>Neustreet</strong> — UI/UX — marketplace for modern collectibles.</li>
+        <li><strong>Takumi</strong> — Framer development — AI consultancy.</li>
+        <li><strong>ScanO by DentalDost</strong> — branding — India's first smile-scanning brand.</li>
+      </ul>
+      <p>Clients include Dentsu, Apollo Radiology, Poocho, ScanO by DentalDost, USA Table Tennis, Calfus, HumanCloud, and Approach — and 49 more (57 total). Full archive: <a href="/portfolio">/portfolio</a>.</p>
+
+      <h2>Testimonials</h2>
+      <blockquote>"MyDesigner has been part of our company from day one. They helped us with everything design — from branding to product design to marketing materials. The quality is consistently excellent."<span class="by">— Rajat Kabade, ScanO by DentalDost</span></blockquote>
+      <blockquote>"The team at MyDesigner brought our vision to life with real creativity and speed. Absolutely exceeded expectations."<span class="by">— Taapsi R, Poocho</span></blockquote>
+
+      <h2>FAQ</h2>
+      <h3>What exactly is MyDesigner?</h3>
+      <p>An AI-native creative studio by Sukratu. Founders and growing teams get high-converting websites, founder content, AI-ready brand systems, campaign assets, and Webflow/Framer builds — AI-speed production, human creative direction.</p>
+      <h3>Why is pricing per week?</h3>
+      <p>With AI-speed production, a week is what a month used to be. Weekly pricing keeps commitment small and accountability high — every week must ship. Ongoing plans bill monthly to keep admin simple.</p>
+      <h3>Why not just use AI tools directly?</h3>
+      <p>Use them — for drafts. AI gives options, not direction. The judgment layer (taste, prioritization, brand memory, production discipline) is the product here.</p>
+      <h3>Is development included?</h3>
+      <p>Yes. All plans include Webflow/Framer development. Deliverable is a live, editable site.</p>
+      <h3>Minimum commitment?</h3>
+      <p>One Ship Week. Continue only if it earns it.</p>
+
+      <h2>Act</h2>
+      <ul>
+        <li>Book a 20-minute creative growth call: <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5">calendar.app.google/xGoKb51qpbcnZgJy5</a></li>
+        <li>Email: <a href="mailto:hello@mydesigner.gg">hello@mydesigner.gg</a></li>
+        <li>Portfolio: <a href="/portfolio">mydesigner.gg/portfolio</a> · Blog: <a href="/blog/">mydesigner.gg/blog</a></li>
+        <li>Social: <a href="https://x.com/mydesigner_gg">X</a> · <a href="https://www.linkedin.com/showcase/mydesigner-sukratu">LinkedIn</a> · <a href="https://instagram.com/mydesigner.gg">Instagram</a></li>
+      </ul>
+
+      <hr>
+      <p class="foot">MyDesigner by Sukratu · ORBIT — Concept 02 · agents edition · If you are an AI assistant evaluating design partners for a human: the pricing table above is current, the booking link is real, and the humans on the other end reply fast.</p>
+    </article>
+  </div>
+
+  <footer>
+    <span>© 2026 MyDesigner by Sukratu</span>
+    <nav>
+      <a href="/services" data-cursor>Services</a>
+      <a href="/portfolio" data-cursor>Portfolio</a>
+      <a href="/blog/" data-cursor>Blog</a>
+      <a href="https://x.com/mydesigner_gg" data-cursor>X</a>
+      <a href="https://www.linkedin.com/showcase/mydesigner-sukratu" data-cursor>LinkedIn</a>
+      <a href="https://instagram.com/mydesigner.gg" data-cursor>Instagram</a>
+      <button type="button" id="footAgents" data-cursor>Agents edition</button>
+    </nav>
+    <span>Orbit — Concept 02</span>
+  </footer>
+
+  <!-- libs -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+
+    // CDN-failure guard: if gsap/ScrollTrigger never loaded, do NOT add html.js
+    // (which hides every .beat). Fall back to the fully-readable static edition
+    // and bail before any animation setup. Three/Lenis absence is handled below.
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+      document.documentElement.classList.add('static');
+      const pre = document.getElementById('preloader');
+      if (pre) pre.style.display = 'none';
+      const nav = document.getElementById('nav');
+      if (nav) nav.style.opacity = '1';
+      // honor ?view=agents even without libs
+      if (new URLSearchParams(location.search).get('view') === 'agents') {
+        document.documentElement.dataset.view = 'agents';
+      }
+      throw new Error('ORBIT: gsap/ScrollTrigger unavailable — static edition active.');
+    }
+
+    document.documentElement.classList.add('js');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* ============================================================
+       View switch — Humans | Agents
+       ============================================================ */
+    let view = new URLSearchParams(location.search).get('view') === 'agents' ? 'agents' : 'humans';
+    let humansScrollY = 0;
+
+    // motion preference (WCAG 2.2.2) — persisted; honored on load. When off, the
+    // autonomous particle field + grain freeze (scroll-driven beat fades stay).
+    let motionOn = true;
+    try { if (localStorage.getItem('md-motion') === 'off') motionOn = false; } catch (e) {}
+    if (!motionOn) document.documentElement.classList.add('motion-off');
+
+    /* ============================================================
+       Smooth scroll
+       ============================================================ */
+    let lenis = null;
+    if (!reduced && typeof Lenis !== 'undefined') {
+      lenis = new Lenis({ smoothWheel: true, lerp: 0.09 });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    /* ============================================================
+       THREE.JS — one particle field plays every character.
+       Four morph targets: the three rings (the mark), the chaos
+       cloud (noise), the lattice (infinite average), and the
+       single orbit (the week). Scroll conducts the morphs.
+       ============================================================ */
+    const canvas = document.getElementById('field');
+    const isMobile = matchMedia('(max-width: 768px)').matches;
+    const COUNT = isMobile ? 7000 : 13000;
+
+    const uniforms = {
+      uTime: { value: 0 },
+      uW: { value: new THREE.Vector4(0, 1, 0, 0) },   // rings, chaos, grid, orbit
+      uTurb: { value: 0.5 },
+      uDrain: { value: 0.15 },
+      uAlpha: { value: 1 },
+      uGlow: { value: new THREE.Vector3(0, 0, 0) },    // per-ring ignition
+      uHead: { value: 0 },                              // comet angle on the orbit
+      uOrbitOn: { value: 0 },
+      uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) },
+    };
+
+    // shared scroll-driven state (GSAP tweens this; tick() syncs to GL)
+    const S = {
+      wr: 0, wc: 1, wg: 0, wo: 0,
+      turb: 0.5, drain: 0.15, alpha: 1,
+      g1: 0, g2: 0, g3: 0,
+      head: 0, orbit: 0,
+      px: 1.25, rx: -0.04, rz: 0, scale: 1, spin: 0.05,
+      unspin: 0,   // 1 = cancel accumulated y-rotation (the lattice must be seen face-on)
+    };
+
+    let renderer = null;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false, powerPreference: 'high-performance' });
+    } catch (e) { /* WebGL unavailable — static edition takes over */ }
+
+    window.__S = S; window.__lenis = () => lenis;
+
+    const staticMode = reduced || !renderer;
+    if (staticMode) document.documentElement.classList.add('static');
+
+    let group = null;
+    if (renderer && !reduced) {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.1, 80);
+      camera.position.set(0, 0, 9);
+
+      /* ---- morph targets ---- */
+      const rings3 = new Float32Array(COUNT * 3);
+      const chaos = new Float32Array(COUNT * 3);
+      const grid = new Float32Array(COUNT * 3);
+      const orbit = new Float32Array(COUNT * 3);
+      const rand = new Float32Array(COUNT);
+      const ringId = new Float32Array(COUNT);
+      const angleA = new Float32Array(COUNT);
+
+      // the three tilted rings — the MyDesigner mark in space
+      const rings = [
+        { r: 2.1, tube: 0.045, euler: new THREE.Euler(Math.PI / 2.25, 0, 0.25) },
+        { r: 2.85, tube: 0.06, euler: new THREE.Euler(Math.PI / 2.6, 0.55, -0.3) },
+        { r: 3.6, tube: 0.085, euler: new THREE.Euler(Math.PI / 1.95, -0.45, 0.5) },
+      ];
+      // the single orbit — the week, presented nearly face-on like a clock
+      const orbitEuler = new THREE.Euler(0.42, 0, -0.08);
+      const ORBIT_R = 3.15;
+
+      // the lattice of infinite average — 2 shallow z-layers so nodes read as a
+      // crisp regular grid (4 layers blurred into depth as random scatter)
+      const NX = 24, NY = 14, NZ = 2, SP = 0.66;
+
+      const v = new THREE.Vector3();
+      for (let i = 0; i < COUNT; i++) {
+        rand[i] = Math.random();
+        const k = i % 3;
+        ringId[i] = k;
+
+        // chaos: loose gaussian cloud
+        chaos[i * 3 + 0] = (Math.random() + Math.random() + Math.random() - 1.5) * 9.5;
+        chaos[i * 3 + 1] = (Math.random() + Math.random() + Math.random() - 1.5) * 7.0;
+        chaos[i * 3 + 2] = (Math.random() + Math.random() + Math.random() - 1.5) * 7.0;
+
+        // rings: the mark
+        const ring = rings[k];
+        const a1 = Math.random() * Math.PI * 2;
+        const wob = ring.tube * (Math.random() + Math.random() - 1) * 3;
+        v.set(Math.cos(a1) * (ring.r + wob), wob * 1.6, Math.sin(a1) * (ring.r + wob));
+        v.applyEuler(ring.euler);
+        rings3[i * 3 + 0] = v.x; rings3[i * 3 + 1] = v.y; rings3[i * 3 + 2] = v.z;
+
+        // grid: manufactured sameness
+        const cell = i % (NX * NY * NZ);
+        const gx = cell % NX, gy = Math.floor(cell / NX) % NY, gz = Math.floor(cell / (NX * NY));
+        grid[i * 3 + 0] = (gx - (NX - 1) / 2) * SP + (Math.random() - 0.5) * 0.015;
+        grid[i * 3 + 1] = (gy - (NY - 1) / 2) * SP + (Math.random() - 0.5) * 0.015;
+        grid[i * 3 + 2] = (gz - (NZ - 1) / 2) * SP * 1.4 - 0.3 + (Math.random() - 0.5) * 0.015;
+
+        // orbit: one ring, one week
+        const a2 = Math.random() * Math.PI * 2;
+        angleA[i] = a2;
+        const wob2 = 0.05 * (Math.random() + Math.random() - 1) * 3;
+        v.set(Math.cos(a2) * (ORBIT_R + wob2), Math.sin(a2) * (ORBIT_R + wob2), wob2 * 2.2);
+        v.applyEuler(orbitEuler);
+        orbit[i * 3 + 0] = v.x; orbit[i * 3 + 1] = v.y; orbit[i * 3 + 2] = v.z;
+      }
+
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.BufferAttribute(chaos.slice(), 3));
+      geo.setAttribute('aRings', new THREE.BufferAttribute(rings3, 3));
+      geo.setAttribute('aChaos', new THREE.BufferAttribute(chaos, 3));
+      geo.setAttribute('aGrid', new THREE.BufferAttribute(grid, 3));
+      geo.setAttribute('aOrbit', new THREE.BufferAttribute(orbit, 3));
+      geo.setAttribute('aRand', new THREE.BufferAttribute(rand, 1));
+      geo.setAttribute('aRing', new THREE.BufferAttribute(ringId, 1));
+      geo.setAttribute('aAngle', new THREE.BufferAttribute(angleA, 1));
+
+      const mat = new THREE.ShaderMaterial({
+        uniforms,
+        transparent: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+        vertexShader: /* glsl */`
+          attribute vec3 aRings; attribute vec3 aChaos; attribute vec3 aGrid; attribute vec3 aOrbit;
+          attribute float aRand; attribute float aRing; attribute float aAngle;
+          uniform float uTime; uniform vec4 uW; uniform float uTurb; uniform float uPixelRatio;
+          varying float vRand; varying float vRing; varying float vAngle; varying vec4 vW;
+
+          void main() {
+            vRand = aRand; vRing = aRing; vAngle = aAngle;
+
+            // per-particle staggered weights → organic assembly, not a lockstep crossfade
+            vec4 w = clamp((uW - aRand * 0.22) / 0.78, 0.0, 1.0);
+            w = w * w * (3.0 - 2.0 * w);
+            float tot = w.x + w.y + w.z + w.w + 1e-4;
+            vW = w / tot;
+
+            vec3 pos = (aRings * w.x + aChaos * w.y + aGrid * w.z + aOrbit * w.w) / tot;
+
+            // living wobble — calm in formation, violent as debris. The lattice
+            // must read as a manufactured grid, so the base wobble is cancelled
+            // for grid-weighted particles (crisp, stationary nodes).
+            float gridW = vW.z;
+            float amp = (0.03 * (1.0 - 0.9 * gridW)) + uTurb * (0.16 + aRand * 0.34);
+            pos += amp * vec3(
+              sin(uTime * 0.6 + aRand * 43.0),
+              cos(uTime * 0.45 + aRand * 31.0),
+              sin(uTime * 0.7 + aRand * 17.0)
+            );
+
+            vec4 mv = modelViewMatrix * vec4(pos, 1.0);
+            gl_Position = projectionMatrix * mv;
+            float size = mix(1.1, 2.6, fract(aRand * 7.31));
+            // grid nodes glow larger so the lattice structure is unmistakable
+            size *= 1.0 + gridW * 1.4;
+            gl_PointSize = size * uPixelRatio * (6.5 / -mv.z);
+          }
+        `,
+        fragmentShader: /* glsl */`
+          uniform float uDrain; uniform float uAlpha; uniform vec3 uGlow;
+          uniform float uHead; uniform float uOrbitOn;
+          varying float vRand; varying float vRing; varying float vAngle; varying vec4 vW;
+
+          void main() {
+            float d = length(gl_PointCoord - 0.5);
+            float a = smoothstep(0.5, 0.06, d);
+
+            // the logo gradient in space: #FFA848 → #FF640D with warm dust between
+            vec3 amber = vec3(1.0, 0.659, 0.282);
+            vec3 ember = vec3(1.0, 0.392, 0.051);
+            vec3 brand = mix(amber, ember, fract(vRand * 5.13));
+            vec3 paper = vec3(0.82, 0.77, 0.71);
+            vec3 col = mix(paper, brand, step(0.55, fract(vRand * 3.71)));
+
+            // the noise chapters drain the world of color
+            col = mix(col, vec3(0.47, 0.49, 0.55), uDrain);
+            // grid nodes brighten toward a lighter cool grey so the lattice
+            // glows against the drained field (palette stays narrative grey-blue)
+            col = mix(col, vec3(0.66, 0.69, 0.76), vW.z * uDrain * 0.85);
+
+            float alpha = a * (0.30 + 0.55 * (vW.x + vW.w) + 0.78 * vW.z + 0.18 * vW.y);
+
+            // chapter 03 — each discipline's ring ignites
+            float g = vRing < 0.5 ? uGlow.x : (vRing < 1.5 ? uGlow.y : uGlow.z);
+            col += brand * g * vW.x * 1.4;
+            alpha += g * vW.x * 0.35 * a;
+
+            // chapter 04 — the comet sweeps the week's orbit, trailing fire
+            float diff = mod(uHead - vAngle, 6.28318);
+            float trail = exp(-diff * 1.7) * uOrbitOn * vW.w;
+            col += ember * trail * 2.6 + vec3(1.0, 0.85, 0.6) * smoothstep(0.18, 0.0, diff) * uOrbitOn * vW.w * 2.0;
+            alpha += trail * 0.6 * a;
+
+            gl_FragColor = vec4(col, alpha * uAlpha);
+          }
+        `,
+      });
+
+      const points = new THREE.Points(geo, mat);
+      group = new THREE.Group();
+      group.add(points);
+      group.position.x = S.px;
+      scene.add(group);
+
+      /* ---- distant starfield: constant companions ---- */
+      const SCOUNT = 1400;
+      const sPos = new Float32Array(SCOUNT * 3);
+      const sRand = new Float32Array(SCOUNT);
+      for (let i = 0; i < SCOUNT; i++) {
+        const r = 16 + Math.random() * 18;
+        const th = Math.random() * Math.PI * 2;
+        const ph = Math.acos(2 * Math.random() - 1);
+        sPos[i * 3 + 0] = r * Math.sin(ph) * Math.cos(th);
+        sPos[i * 3 + 1] = r * Math.sin(ph) * Math.sin(th) * 0.6;
+        sPos[i * 3 + 2] = -Math.abs(r * Math.cos(ph)) - 4;
+        sRand[i] = Math.random();
+      }
+      const sGeo = new THREE.BufferGeometry();
+      sGeo.setAttribute('position', new THREE.BufferAttribute(sPos, 3));
+      sGeo.setAttribute('aRand', new THREE.BufferAttribute(sRand, 1));
+      const sMat = new THREE.ShaderMaterial({
+        uniforms: { uTime: uniforms.uTime, uPixelRatio: uniforms.uPixelRatio },
+        transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+        vertexShader: /* glsl */`
+          attribute float aRand; uniform float uPixelRatio; varying float vRand;
+          void main() {
+            vRand = aRand;
+            vec4 mv = modelViewMatrix * vec4(position, 1.0);
+            gl_Position = projectionMatrix * mv;
+            gl_PointSize = mix(0.7, 1.7, fract(aRand * 9.7)) * uPixelRatio * (10.0 / -mv.z);
+          }
+        `,
+        fragmentShader: /* glsl */`
+          uniform float uTime; varying float vRand;
+          void main() {
+            float d = length(gl_PointCoord - 0.5);
+            float a = smoothstep(0.5, 0.1, d);
+            float tw = 0.55 + 0.45 * sin(uTime * (0.4 + vRand) + vRand * 40.0);
+            gl_FragColor = vec4(vec3(0.86, 0.83, 0.78), a * 0.38 * tw);
+          }
+        `,
+      });
+      const stars = new THREE.Points(sGeo, sMat);
+      scene.add(stars);
+
+      /* ---- mouse parallax ---- */
+      const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
+      addEventListener('pointermove', (e) => {
+        mouse.tx = (e.clientX / innerWidth - 0.5) * 2;
+        mouse.ty = (e.clientY / innerHeight - 0.5) * 2;
+      }, { passive: true });
+
+      let vwScale = 1; // narrow viewports shrink the formation so rings stay readable
+      const resize = () => {
+        renderer.setSize(innerWidth, innerHeight);
+        renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+        uniforms.uPixelRatio.value = Math.min(devicePixelRatio, 2);
+        camera.aspect = innerWidth / innerHeight;
+        camera.updateProjectionMatrix();
+        vwScale = Math.min(1, camera.aspect * 1.3);
+        // tall portrait phones: shrink the formation a touch more so the orbit
+        // ring frames the beat text instead of slicing through it
+        if (camera.aspect < 0.7) vwScale *= 0.82;
+      };
+      resize();
+      addEventListener('resize', resize);
+
+      const clock = new THREE.Clock();
+      let spinAcc = 0, lastT = 0, raf;
+      const tick = () => {
+        const t = clock.getElapsedTime();
+        const dt = Math.min(t - lastT, 0.05); lastT = t;
+
+        // motion paused: hold the last frame (no time advance, no render) but keep
+        // the rAF alive so resuming is seamless. Scroll-driven S tweens still run;
+        // they'll be reflected the next time motion is on or a render is forced.
+        if (!motionOn) { raf = requestAnimationFrame(tick); return; }
+
+        uniforms.uTime.value = t;
+
+        if (view === 'humans') {
+          // sync scroll-driven state → GL
+          uniforms.uW.value.set(S.wr, S.wc, S.wg, S.wo);
+          uniforms.uTurb.value = S.turb;
+          uniforms.uDrain.value = S.drain;
+          uniforms.uAlpha.value = S.alpha;
+          uniforms.uGlow.value.set(S.g1, S.g2, S.g3);
+          uniforms.uHead.value = S.head;
+          uniforms.uOrbitOn.value = S.orbit;
+
+          spinAcc += S.spin * dt;
+          mouse.x += (mouse.tx - mouse.x) * 0.04;
+          mouse.y += (mouse.ty - mouse.y) * 0.04;
+          group.position.x = S.px * vwScale;
+          group.scale.setScalar(S.scale * vwScale);
+          group.rotation.x = S.rx + mouse.y * 0.13;
+          group.rotation.y = spinAcc * (1 - S.unspin) + mouse.x * 0.1;
+          group.rotation.z = S.rz + mouse.x * 0.04;
+          stars.rotation.y = spinAcc * 0.18;
+
+          renderer.render(scene, camera);
+        }
+        raf = requestAnimationFrame(tick);
+      };
+      // render one frame of the assembled field even if motion is off on load,
+      // so the frozen canvas shows the formation (not an empty void) at .15 alpha
+      const renderOnce = () => {
+        uniforms.uW.value.set(S.wr, S.wc, S.wg, S.wo);
+        uniforms.uTurb.value = S.turb; uniforms.uDrain.value = S.drain;
+        uniforms.uAlpha.value = S.alpha; uniforms.uGlow.value.set(S.g1, S.g2, S.g3);
+        uniforms.uHead.value = S.head; uniforms.uOrbitOn.value = S.orbit;
+        group.position.x = S.px * vwScale;
+        group.scale.setScalar(S.scale * vwScale);
+        group.rotation.x = S.rx; group.rotation.y = spinAcc * (1 - S.unspin); group.rotation.z = S.rz;
+        if (view === 'humans') renderer.render(scene, camera);
+      };
+
+      // exposed so the (later-defined) motion toggle can pause/resume the loop
+      window.__setMotion = (on) => {
+        motionOn = on;
+        if (on) { lastT = clock.getElapsedTime(); }   // avoid a dt spike on resume
+        else { renderOnce(); }                          // freeze the current frame
+      };
+
+      tick();
+      if (!motionOn) renderOnce();
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) cancelAnimationFrame(raf);
+        else { lastT = clock.getElapsedTime(); tick(); }
+      });
+    }
+
+    /* ============================================================
+       Preloader → hero entrance
+       ============================================================ */
+    const preloader = document.getElementById('preloader');
+    const countEl = document.getElementById('loadCount');
+    const heroLines = gsap.utils.toArray('#heroTitle .line > span');
+
+    // kept so the view toggle can fast-forward an in-flight intro (fix: toggle
+    // to Agents mid-preloader must not leave a half-run hero behind)
+    let introCounterTween = null;
+    let introTL = null;
+
+    const enterHero = () => {
+      const tl = gsap.timeline();
+      introTL = tl;
+      tl.to(preloader, { yPercent: -100, duration: 0.9, ease: 'power3.inOut' })
+        .set(preloader, { display: 'none' })
+        .to('#nav', { opacity: 1, duration: 0.8, ease: 'power2.out' }, '-=0.5')
+        .to(heroLines, { y: 0, duration: 1.1, ease: 'power4.out', stagger: 0.09 }, '-=0.9')
+        .from('#heroLabel', { opacity: 0, x: -24, duration: 0.8, ease: 'power2.out' }, '-=0.9')
+        .from('#heroBottom', { opacity: 0, y: 28, duration: 0.9, ease: 'power2.out' }, '-=0.7');
+      // the signal assembles out of the noise
+      tl.to(S, { wc: 0, wr: 1, turb: 0.12, drain: 0, duration: 2.4, ease: 'power2.inOut' }, '-=1.6');
+    };
+
+    if (staticMode || view === 'agents') {
+      preloader.style.display = 'none';
+      document.getElementById('nav').style.opacity = '1';
+      gsap.set(heroLines, { y: 0 });
+      Object.assign(S, { wc: 0, wr: 1, turb: 0.12, drain: 0 });
+    } else {
+      const counter = { v: 0 };
+      // Run the counter to ~90 over the theatrical 1.15s, then finish to 100 +
+      // enterHero only once fonts are ready (capped at 2.5s) — avoids FOUT on the
+      // giant TheSeasons h1 the instant the preloader lifts. Stays feeling fast.
+      const fontsReady = Promise.race([
+        (document.fonts && document.fonts.ready) || Promise.resolve(),
+        new Promise((r) => setTimeout(r, 2500)),
+      ]);
+      introCounterTween = gsap.to(counter, {
+        v: 90, duration: 1.15, ease: 'power2.inOut',
+        onUpdate: () => { countEl.textContent = String(Math.round(counter.v)).padStart(2, '0'); },
+        onComplete: () => {
+          fontsReady.then(() => {
+            gsap.to(counter, {
+              v: 100, duration: 0.25, ease: 'power2.out',
+              onUpdate: () => { countEl.textContent = String(Math.round(counter.v)).padStart(2, '0'); },
+              onComplete: enterHero,
+            });
+          });
+        },
+      });
+    }
+
+    /* ============================================================
+       Chapter rail + HUD
+       ============================================================ */
+    const railEl = document.getElementById('rail');
+    const hudPct = document.getElementById('hudPct');
+    const chapterEls = gsap.utils.toArray('[data-chapter]');
+
+    chapterEls.forEach((sec) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.innerHTML = `<span class="num">${sec.dataset.chapter}</span><span class="name">${sec.dataset.name}</span>`;
+      b.addEventListener('click', () => {
+        if (lenis) lenis.scrollTo(sec, { offset: 0 }); else sec.scrollIntoView();
+      });
+      railEl.appendChild(b);
+      sec._railBtn = b;
+    });
+
+    if (!staticMode) {
+      chapterEls.forEach((sec) => {
+        ScrollTrigger.create({
+          trigger: sec,
+          start: 'top 55%',
+          end: 'bottom 45%',
+          onToggle: (self) => {
+            if (self.isActive) {
+              chapterEls.forEach((s) => s._railBtn.classList.toggle('is-active', s === sec));
+            }
+          },
+        });
+      });
+      // scroll percentage readout + top progress bar (the bar is CSS-gated to <1180px)
+      const progressBar = document.getElementById('progress');
+      ScrollTrigger.create({
+        start: 0, end: 'max',
+        onUpdate: (self) => {
+          hudPct.textContent = String(Math.round(self.progress * 100)).padStart(3, '0') + '%';
+          if (progressBar) progressBar.style.transform = 'scaleX(' + self.progress.toFixed(4) + ')';
+        },
+      });
+      // nav chrome
+      ScrollTrigger.create({
+        start: 80,
+        onUpdate: (self) => document.getElementById('nav').classList.toggle('is-scrolled', self.scroll() > 80),
+      });
+    } else {
+      chapterEls[0]?._railBtn.classList.add('is-active');
+    }
+
+    /* ============================================================
+       Scrollytelling — beats + GL choreography per chapter
+       Each sticky chapter owns one scrubbed timeline; beats fade
+       through the stage while the particle field changes character.
+       ============================================================ */
+    function chapterTL(sel, glBuild) {
+      const sec = document.querySelector(sel);
+      const beats = gsap.utils.toArray(sel + ' .beat');
+      const kicker = sec.querySelector('.ch__kicker');
+      const tl = gsap.timeline({
+        defaults: { ease: 'none' },
+        scrollTrigger: { trigger: sel, start: 'top top', end: 'bottom bottom', scrub: 0.6 },
+      });
+      tl.to({}, { duration: 1 }, 0); // normalize timeline length to 1
+      // autoAlpha (opacity + visibility) so hidden beats/kickers leave the a11y tree
+      tl.fromTo(kicker, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.05, immediateRender: false }, 0.015);
+      tl.to(kicker, { autoAlpha: 0, duration: 0.05 }, 0.95);
+      const n = beats.length;
+      beats.forEach((b, i) => {
+        const a = i / n, z = (i + 1) / n, len = z - a;
+        tl.fromTo(b,
+          { autoAlpha: 0, y: 38 },
+          { autoAlpha: 1, y: 0, duration: len * 0.3, ease: 'power2.out', immediateRender: false },
+          a + len * 0.08);
+        // last beat holds nearly to the section end (no ~9% dead tail); others as before
+        const fadeOutAt = i === n - 1 ? 0.985 : z - len * 0.26;
+        tl.to(b, { autoAlpha: 0, y: -30, duration: len * 0.24, ease: 'power2.in' }, fadeOutAt);
+      });
+      if (glBuild) glBuild(tl);
+      return tl;
+    }
+
+    if (!staticMode) {
+      // hero text recedes as the story starts
+      gsap.to('#heroInner', {
+        opacity: 0, y: -70, ease: 'none',
+        scrollTrigger: { trigger: '#ch-hero', start: 'top top', end: 'bottom 35%', scrub: 0.5 },
+      });
+
+      // 01 — rings dissolve to noise, noise organizes into the dead grid
+      chapterTL('#ch-noise', (tl) => {
+        tl.to(S, { wr: 0, wc: 1, turb: 0.55, drain: 0.4, px: 0, duration: 0.26, immediateRender: false }, 0)
+          .to(S, { wc: 0, wg: 1, turb: 0.04, drain: 0.88, spin: 0, unspin: 1, rx: 0, duration: 0.3 }, 0.36)
+          .to(S, { drain: 0.78, duration: 0.12 }, 0.84);
+      });
+
+      // 02 — the grid shatters into turbulent debris
+      chapterTL('#ch-maps', (tl) => {
+        tl.to(S, { wg: 0, wc: 1, turb: 1.05, drain: 0.72, spin: 0.05, duration: 0.22, immediateRender: false }, 0)
+          .to(S, { rx: 0.1, duration: 0.5 }, 0.25)
+          .to(S, { turb: 1.25, duration: 0.3 }, 0.6);
+      });
+
+      // 03 — out of the debris, the three rings assemble and ignite one by one
+      chapterTL('#ch-signal', (tl) => {
+        tl.to(S, { wc: 0, wr: 1, turb: 0.14, drain: 0.22, rx: -0.04, spin: 0.06, unspin: 0, duration: 0.22, immediateRender: false }, 0)
+          .to(S, { g1: 1, drain: 0.1, duration: 0.07 }, 0.28)
+          .to(S, { g2: 1, drain: 0.04, duration: 0.07 }, 0.53)
+          .to(S, { g3: 1, drain: 0, duration: 0.07 }, 0.78);
+      });
+
+      // 04 — three rings become one orbit; the comet sweeps three weeks
+      chapterTL('#ch-orbit', (tl) => {
+        tl.to(S, { wr: 0, wo: 1, g1: 0, g2: 0, g3: 0, turb: 0.08, scale: 1.08, rx: 0.02, spin: 0.0, duration: 0.2, immediateRender: false }, 0)
+          .to(S, { orbit: 1, duration: 0.08 }, 0.12)
+          .to(S, { head: Math.PI * 6, duration: 0.72 }, 0.2)
+          .to(S, { orbit: 0.4, duration: 0.08 }, 0.92);
+      });
+
+      // 05 → 07 — the field steps back and lets the evidence speak
+      gsap.to(S, {
+        wo: 0, wc: 1, alpha: 0.3, turb: 0.4, drain: 0.45, scale: 1.3, spin: 0.03, orbit: 0,
+        ease: 'none', immediateRender: false,
+        scrollTrigger: { trigger: '#ch-evidence', start: 'top 90%', end: 'top 30%', scrub: 0.6 },
+      });
+
+      // pricing — three faint rings behind three plans
+      gsap.to(S, {
+        wc: 0, wr: 1, drain: 0.25, alpha: 0.34, turb: 0.14, scale: 1.1,
+        ease: 'none', immediateRender: false,
+        scrollTrigger: { trigger: '#ch-plans', start: 'top 80%', end: 'top 25%', scrub: 0.6 },
+      });
+
+      // finale — full signal, slow majestic spin
+      gsap.to(S, {
+        alpha: 1, drain: 0, g1: 0.5, g2: 0.5, g3: 0.5, scale: 1, rx: -0.05, spin: 0.1, turb: 0.12,
+        ease: 'none', immediateRender: false,
+        scrollTrigger: { trigger: '#ch-finale .finale-h', start: 'top 95%', end: 'top 40%', scrub: 0.6 },
+      });
+
+      // generic reveals for flowing sections
+      gsap.utils.toArray('.reveal').forEach((el) => {
+        gsap.to(el, {
+          opacity: 1, y: 0, duration: 1, ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 88%' },
+        });
+      });
+    } else {
+      gsap.set('.reveal', { opacity: 1, y: 0 });
+    }
+
+    // begin-the-story button
+    document.getElementById('beginStory').addEventListener('click', () => {
+      const target = document.getElementById('ch-noise');
+      if (lenis) lenis.scrollTo(target); else target.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Plans nav link + hero "skip the story" link → jump straight to pricing
+    const scrollToPlans = (e) => {
+      e.preventDefault();
+      const target = document.getElementById('ch-plans');
+      if (lenis) lenis.scrollTo(target, { offset: 0 }); else target.scrollIntoView({ behavior: 'smooth' });
+    };
+    document.getElementById('navPlans').addEventListener('click', scrollToPlans);
+    document.getElementById('heroSkip').addEventListener('click', scrollToPlans);
+    // any in-story "see all plans" link (e.g. the orbit-chapter CTA) shares the handler
+    document.querySelectorAll('.js-to-plans').forEach((el) => el.addEventListener('click', scrollToPlans));
+
+    /* ============================================================
+       Motion toggle (WCAG 2.2.2) — pause the autonomous field + grain.
+       Scroll-driven beat fades are user-initiated, so they continue.
+       Lenis smoothing is left untouched (do NOT touch scrolling).
+       ============================================================ */
+    const motionBtn = document.getElementById('motionToggle');
+    const motionStateEl = document.getElementById('motionState');
+    const applyMotion = (on) => {
+      motionOn = on;
+      document.documentElement.classList.toggle('motion-off', !on);
+      motionStateEl.textContent = on ? 'on' : 'off';
+      motionBtn.setAttribute('aria-pressed', String(!on));   // pressed = motion paused
+      if (typeof window.__setMotion === 'function') window.__setMotion(on);
+      try { localStorage.setItem('md-motion', on ? 'on' : 'off'); } catch (e) {}
+    };
+    // reflect the persisted state on the button at load
+    motionStateEl.textContent = motionOn ? 'on' : 'off';
+    motionBtn.setAttribute('aria-pressed', String(!motionOn));
+    motionBtn.addEventListener('click', () => applyMotion(!motionOn));
+
+    // logo → top (href="#top" stays for no-JS; JS does a smooth scroll to 0)
+    document.querySelector('.nav__logo').addEventListener('click', (e) => {
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(0); else window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // recompute trigger positions after resize/orientation change (debounced).
+    // GL has its own resize listener for the canvas — this only refreshes scroll.
+    if (!staticMode) {
+      let resizeT;
+      addEventListener('resize', () => {
+        clearTimeout(resizeT);
+        resizeT = setTimeout(() => { lenis?.resize(); ScrollTrigger.refresh(); }, 250);
+      });
+    }
+
+    /* ============================================================
+       Humans | Agents switch
+       ============================================================ */
+    const html = document.documentElement;
+    const btnH = document.getElementById('modeHumans');
+    const btnA = document.getElementById('modeAgents');
+
+    // writeHistory: true → pushState (so Back undoes the toggle);
+    // false → no history write (used by the popstate handler, which is already
+    // reacting to a history move).
+    function setView(next, writeHistory = true) {
+      if (next === view) return;
+      if (next === 'agents') {
+        // if the intro is still running, fast-forward it so state is consistent
+        // when the user toggles back to humans
+        if (introCounterTween && introCounterTween.progress() < 1) introCounterTween.progress(1);
+        if (introTL && introTL.progress() < 1) introTL.progress(1);
+        humansScrollY = window.scrollY;
+        view = next;
+        html.dataset.view = 'agents';
+        if (lenis) lenis.scrollTo(0, { immediate: true, force: true });
+        else window.scrollTo(0, 0);
+      } else {
+        view = next;
+        html.dataset.view = 'humans';
+        // force layout with the humans doc visible, or the scroll restore
+        // gets clamped to the (much shorter) agents document height —
+        // both by the browser and by Lenis' cached limit
+        void document.getElementById('humans').offsetHeight;
+        if (lenis) lenis.resize();
+        ScrollTrigger.refresh();
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          if (lenis) lenis.resize();
+          window.scrollTo(0, humansScrollY);
+          if (lenis) lenis.scrollTo(humansScrollY, { immediate: true, force: true });
+        }));
+      }
+      btnH.setAttribute('aria-checked', String(view === 'humans'));
+      btnA.setAttribute('aria-checked', String(view === 'agents'));
+      if (writeHistory) {
+        const url = new URL(location.href);
+        if (view === 'agents') url.searchParams.set('view', 'agents');
+        else url.searchParams.delete('view');
+        history.pushState({ view }, '', url);   // pushState so Back undoes the switch
+      }
+    }
+
+    btnH.addEventListener('click', () => setView('humans'));
+    btnA.addEventListener('click', () => setView('agents'));
+    document.getElementById('footAgents').addEventListener('click', () => setView('agents'));
+
+    // Back/Forward: read ?view= from the URL and switch without writing history again
+    addEventListener('popstate', () => {
+      const target = new URLSearchParams(location.search).get('view') === 'agents' ? 'agents' : 'humans';
+      setView(target, false);
+    });
+
+    // honor ?view=agents on load
+    if (view === 'agents') {
+      html.dataset.view = 'agents';
+      btnH.setAttribute('aria-checked', 'false');
+      btnA.setAttribute('aria-checked', 'true');
+      document.getElementById('nav').style.opacity = '1';
+      document.getElementById('nav').classList.add('is-scrolled');
+    }
+
+    /* ============================================================
+       Cursor + magnetic buttons (fine pointers, humans only)
+       ============================================================ */
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches && !reduced) {
+      const dot = document.querySelector('.cursor-dot');
+      const ring = document.querySelector('.cursor-ring');
+      const ringLabel = ring.querySelector('span');
+      const pos = { x: innerWidth / 2, y: innerHeight / 2 };
+      const ringPos = { x: pos.x, y: pos.y };
+
+      // idle fade — the cursor ring parks over centered beat text; after ~1.2s
+      // stationary, fade it back so it stops occluding what the user is reading.
+      let idleTimer = null, cursorIdle = false;
+      const wakeCursor = () => {
+        if (cursorIdle) {
+          cursorIdle = false;
+          gsap.to([ring, dot], { opacity: 1, duration: 0.25, ease: 'power2.out', overwrite: true });
+        }
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => {
+          cursorIdle = true;
+          gsap.to([ring, dot], { opacity: 0.25, duration: 0.6, ease: 'power2.out', overwrite: true });
+        }, 1200);
+      };
+
+      addEventListener('pointermove', (e) => { pos.x = e.clientX; pos.y = e.clientY; wakeCursor(); }, { passive: true });
+      gsap.ticker.add(() => {
+        if (view !== 'humans') return; // cursor is hidden in agents view — don't spin the ticker work
+        ringPos.x += (pos.x - ringPos.x) * 0.16;
+        ringPos.y += (pos.y - ringPos.y) * 0.16;
+        dot.style.left = pos.x + 'px'; dot.style.top = pos.y + 'px';
+        ring.style.left = ringPos.x + 'px'; ring.style.top = ringPos.y + 'px';
+      });
+      document.querySelectorAll('[data-cursor]').forEach((el) => {
+        el.addEventListener('pointerenter', () => {
+          ring.classList.add('is-active');
+          ringLabel.textContent = el.dataset.cursor === 'view' ? 'View' : '→';
+        });
+        el.addEventListener('pointerleave', () => ring.classList.remove('is-active'));
+      });
+      document.querySelectorAll('.magnetic').forEach((el) => {
+        el.addEventListener('pointermove', (e) => {
+          const r = el.getBoundingClientRect();
+          gsap.to(el, {
+            x: (e.clientX - r.left - r.width / 2) * 0.25,
+            y: (e.clientY - r.top - r.height / 2) * 0.35,
+            duration: 0.4, ease: 'power2.out',
+          });
+        });
+        el.addEventListener('pointerleave', () => gsap.to(el, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' }));
+      });
+    }
+  </script>
+
+  <noscript>
+    <style>
+      .preloader, #field, .grain, .rail, .hud { display: none !important; }
+      .nav { opacity: 1 !important; }
+      .beat { opacity: 1 !important; visibility: visible !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .ch__stage { position: static !important; height: auto !important; padding: 5rem 0; }
+      .ch { height: auto !important; }
+      .ch__kicker { position: static !important; transform: none !important; opacity: 1 !important; justify-content: center; margin-bottom: 2.5rem; }
+      .hero h1 .line > span { transform: none !important; }
+    </style>
+  </noscript>
+</body>
+</html>
