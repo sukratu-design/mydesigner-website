@@ -22,6 +22,27 @@
 # are now handled by the edge function at netlify/edge-functions/redirect-html.js.
 # The _redirects file only contains the www → non-www domain redirect.
 
+# ORBIT transition rewrites (temporary until the physical root swap phase)
+[[redirects]]
+  from = "/"
+  to = "/story/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/story/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/work"
+  to = "/story/work.html"
+  status = 200
+
+[[redirects]]
+  from = "/services"
+  to = "/story/services.html"
+  status = 200
+
 # Portfolio category rewrites (clean URL → .html file)
 [[redirects]]
   from = "/portfolio/ui-ux-design"
