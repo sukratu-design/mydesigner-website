@@ -68,12 +68,15 @@ function headTags({
   const canonicalUrl = absoluteUrl(canonical);
   const schemaTags = jsonLdTags(schema);
 
-  return `  ${analyticsTags()}
-  <meta charset="UTF-8">
+  // charset MUST be within the first 1024 bytes or browsers fall back to a
+  // legacy encoding (mangling UTF-8 em-dashes etc.) — keep it first, before
+  // the analytics scripts.
+  return `  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeXml(title)}</title>
   <meta name="description" content="${escapeXml(description)}">
   <meta name="theme-color" content="#0b0807">
+  ${analyticsTags()}
   <link rel="canonical" href="${escapeXml(canonicalUrl)}">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
