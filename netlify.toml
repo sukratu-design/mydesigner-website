@@ -23,25 +23,31 @@
 # The _redirects file only contains the www → non-www domain redirect.
 
 # ORBIT transition rewrites (temporary until the physical root swap phase)
+# force = true so they override the existing index.html / services.html files
+# (Netlify serves a physical file before a non-forced rewrite).
 [[redirects]]
   from = "/"
   to = "/story/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/about"
   to = "/story/about.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/work"
   to = "/story/work.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/services"
   to = "/story/services.html"
   status = 200
+  force = true
 
 # Portfolio category rewrites (clean URL → .html file)
 [[redirects]]
