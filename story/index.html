@@ -657,6 +657,30 @@
     }
     .pricing__note em { color: var(--accent); font-style: normal; }
 
+    /* "What a Ship Week can be" — makes the abstract "one outcome" concrete */
+    .shipweek { margin-top: clamp(3rem, 7vh, 4.5rem); padding-top: clamp(2.6rem, 6vh, 3.6rem); border-top: 1px solid var(--line); }
+    .shipweek__head { text-align: center; max-width: 58ch; margin: 0 auto; color: var(--paper-dim); font-size: 0.98rem; }
+    .shipweek__head em { font-family: var(--serif); font-style: italic; color: var(--accent); font-size: 1.12rem; }
+    .shipweek__grid {
+      list-style: none; margin: clamp(1.8rem, 4.5vh, 2.8rem) 0 0;
+      display: grid; gap: 1px; background: var(--line);
+      border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+    }
+    @media (min-width: 600px) { .shipweek__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 980px) { .shipweek__grid { grid-template-columns: repeat(3, 1fr); } }
+    .shipweek__grid li {
+      background: var(--ink-2); padding: 1.45rem 1.6rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      transition: background 0.3s ease;
+    }
+    .shipweek__grid li:hover { background: var(--ink-3); }
+    .shipweek__grid h4 {
+      font-family: var(--serif); font-weight: 350; font-size: 1.18rem; color: var(--paper);
+      display: flex; align-items: baseline; gap: 0.6rem;
+    }
+    .shipweek__grid h4::before { content: "\21B3"; color: var(--accent); font-family: var(--mono); font-size: 0.82rem; }
+    .shipweek__grid p { color: var(--paper-dim); font-size: 0.88rem; line-height: 1.5; }
+
     /* transmissions */
     .voices__grid { display: grid; gap: 2rem; margin-top: clamp(3rem, 6vh, 4rem); }
     @media (min-width: 900px) { .voices__grid { grid-template-columns: 1fr 1fr; } }
@@ -1107,6 +1131,36 @@
             </ul>
             <a class="btn btn--ghost" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Talk to us</a>
           </div>
+        </div>
+
+        <div class="shipweek reveal">
+          <p class="shipweek__head"><em>What a Ship Week can be</em> — one brief in on Monday, one finished thing out by Friday:</p>
+          <ul class="shipweek__grid">
+            <li>
+              <h4>A landing page</h4>
+              <p>Offer sharpened, page designed, and built live in Webflow or Framer.</p>
+            </li>
+            <li>
+              <h4>A month of social</h4>
+              <p>A full set of posts, carousels, and campaign visuals — ready to schedule.</p>
+            </li>
+            <li>
+              <h4>An investor pitch deck</h4>
+              <p>Narrative, layout, and polish for a deck that has to land.</p>
+            </li>
+            <li>
+              <h4>A brand sprint</h4>
+              <p>Logo, palette, type, and the core rules of a usable identity.</p>
+            </li>
+            <li>
+              <h4>A product UI flow</h4>
+              <p>A dashboard, app screens, or a key flow designed for clarity.</p>
+            </li>
+            <li>
+              <h4>A brand-system starter</h4>
+              <p>The templates, examples, and prompts your team needs to stay on-brand.</p>
+            </li>
+          </ul>
         </div>
 
         <p class="pricing__note reveal">A standalone Ship Week runs above the committed weekly rate because it carries full onboarding and setup; commit to ongoing weeks and the per-week price drops to $350.</p>
