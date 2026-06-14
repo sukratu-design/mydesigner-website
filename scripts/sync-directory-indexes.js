@@ -5,7 +5,6 @@ const ROOT = path.join(__dirname, '..');
 
 const INDEX_PAGES = [
   ['services.html', 'services/index.html'],
-  ['portfolio.html', 'portfolio/index.html'],
 ];
 
 for (const [source, target] of INDEX_PAGES) {

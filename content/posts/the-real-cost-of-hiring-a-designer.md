@@ -53,7 +53,7 @@ The comparison with full-time hiring isn't just about monthly rate. It's about:
 - **Speed to start** — A subscription service starts within days, not months
 - **No hiring risk** — No recruiting fees, no bad-hire costs, no severance
 - **Flexibility** — Scale up or down with actual business need
-- **Breadth** — Most subscription services cover UI/UX, graphic design, and web development — roles that would require multiple full-time hires to replicate. [See how it works](/how-it-works)
+- **Breadth** — Most subscription services cover UI/UX, graphic design, and web development — roles that would require multiple full-time hires to replicate. [See how it works](/about)
 
 ---
 
@@ -84,4 +84,4 @@ The startup design decision isn't really about hiring versus subscribing. It's a
 
 ---
 
-*MyDesigner is an AI-native creative team for growing companies — UI/UX, Webflow/Framer builds, brand systems, decks, and growth creative with Client Memory. [See pricing](/pricing).*
+*MyDesigner is an AI-native creative team for growing companies — UI/UX, Webflow/Framer builds, brand systems, decks, and growth creative with Client Memory. [See pricing](/#ch-plans).*

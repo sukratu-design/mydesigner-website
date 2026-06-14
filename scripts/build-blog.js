@@ -12,7 +12,6 @@ const { SITE_URL, absoluteUrl, headTags } = require('./partials/head');
 
 // Delegated to focused modules (audit refactor)
 const { writeSitemap } = require('./build-sitemap');
-const { injectBlogCarouselIntoHomepage } = require('./build-homepage-carousel');
 const { buildRelatedProjectsScript } = require('./build-related-projects');
 
 const SITE_TITLE = 'MyDesigner Blog';
@@ -646,7 +645,7 @@ function writeOutputs(posts) {
 
   fs.writeFileSync(RSS_PATH, buildRss(posts));
 
-  // Note: sitemap + homepage carousel injection are handled by delegated modules
+  // Note: sitemap generation is handled by a delegated module
   // called from main() after writeOutputs. This keeps build-blog.js focused on posts + RSS.
 }
 
@@ -662,7 +661,6 @@ function main() {
 
   // Delegated to modular scripts (audit refactor)
   try { writeSitemap(parsedPosts); } catch (e) { console.warn('Sitemap skipped:', e.message); }
-  try { injectBlogCarouselIntoHomepage(parsedPosts); } catch (e) { console.warn('Carousel injection skipped:', e.message); }
   try { buildRelatedProjectsScript(); } catch (e) { console.warn('Related projects skipped:', e.message); }
 
   console.log(`Built blog: ${parsedPosts.length} published posts`);

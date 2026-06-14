@@ -440,6 +440,6 @@ You keep approved source files and deliverables, and any useful context captured
 
 MyDesigner engagements include human creative direction, AI-assisted production, source-file handoff where appropriate, and access to web, product, brand, and growth creative capability.
 
-[See full pricing and start your first request](https://mydesigner.gg/pricing)
+[See full pricing and start your first request](https://mydesigner.gg/#ch-plans)
 
 ---

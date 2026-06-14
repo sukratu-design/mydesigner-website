@@ -77,4 +77,4 @@ If your dashboard or homepage still follows a rigid, uniform grid, it's worth as
 
 ---
 
-*MyDesigner builds modern design systems for startups — including bento-based dashboards, component libraries, and responsive product interfaces. [See how it works](/how-it-works) or check out our [web app design service](/services/web-app-design).*
+*MyDesigner builds modern design systems for startups — including bento-based dashboards, component libraries, and responsive product interfaces. [See how it works](/about) or check out our [web app design service](/services/web-app-design).*

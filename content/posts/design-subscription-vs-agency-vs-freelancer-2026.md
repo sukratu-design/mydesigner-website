@@ -48,7 +48,7 @@ A modern creative operating rhythm combines the multi-skill coverage of an agenc
 
 At [MyDesigner](/), one operating rhythm can cover [product UI](/services/web-app-design), [Webflow and Framer development](/services/webflow-development), growth creative, pitch decks, and [brand systems](/services/brand-identity). You get human creative direction, AI-speed production, and Client Memory instead of a fresh brief every time.
 
-The economics are straightforward: [starting at $1,400/month](/pricing), you get access to a multi-disciplinary creative team without hiring several specialists before the need is steady.
+The economics are straightforward: [starting at $1,400/month](/#ch-plans), you get access to a multi-disciplinary creative team without hiring several specialists before the need is steady.
 
 ## Side-by-Side: Which Model Wins?
 

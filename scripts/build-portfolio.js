@@ -158,7 +158,7 @@ function breadcrumbSchema(category) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
-      { '@type': 'ListItem', position: 2, name: 'Portfolio', item: `${SITE_URL}/portfolio` },
+      { '@type': 'ListItem', position: 2, name: 'Work', item: `${SITE_URL}/work` },
       { '@type': 'ListItem', position: 3, name: category.label, item: `${SITE_URL}/portfolio/${category.slug}` }
     ]
   };
@@ -187,7 +187,7 @@ ${headTags({
       <div class="deep-hero__inner">
         <nav class="crumbs" aria-label="Breadcrumb">
           <span><a href="/">Home</a></span>
-          <span><a href="/portfolio">Portfolio</a></span>
+          <span><a href="/work">Work</a></span>
           <span>${escapeXml(category.label)}</span>
         </nav>
         <p class="kicker">${escapeXml(category.kicker)}</p>
@@ -222,7 +222,7 @@ ${renderProofPoints(category.proofPoints)}
           <h2 class="section-title">Case studies in this proof category</h2>
         </div>
         <div class="cta-row" aria-label="Portfolio categories">
-          <a href="/portfolio" class="btn btn--ghost">All</a>
+          <a href="/work" class="btn btn--ghost">All</a>
 ${categoryNav(category.slug)}
         </div>
         <div class="deep-grid deep-grid--3" style="margin-top:2rem;">

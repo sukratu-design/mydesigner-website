@@ -32,9 +32,9 @@ for (const page of childPages) {
   const html = fs.readFileSync(page, 'utf8');
 
   assert.match(html, /creative operating model|operating model/i, `${page} should compare operating models`);
-  assert.match(html, /href="\/pricing"/, `${page} should link to pricing`);
+  assert.match(html, /href="\/#ch-plans"/, `${page} should link to the folded pricing section`);
   assert.match(html, /href="\/services"/, `${page} should link to services`);
-  assert.match(html, /href="\/how-it-works"/, `${page} should link to how it works`);
+  assert.match(html, /href="\/about"/, `${page} should link to the about page for workflow context`);
   assert.match(html, /https:\/\/calendar\.app\.google\/xGoKb51qpbcnZgJy5/, `${page} should link to the booking CTA`);
   assert.doesNotMatch(html, /"item":"https:\/\/mydesigner\.gg\/vs\/[^"]+\.html"/, `${page} breadcrumb URLs should be clean`);
 

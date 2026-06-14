@@ -103,4 +103,4 @@ That's how good design actually ships.
 
 ---
 
-*MyDesigner helps growing teams ship product UI and website work with build-aware design, human creative direction, and Client Memory. [See how it works](/how-it-works) or [talk through what your team needs to ship](https://calendar.app.google/xGoKb51qpbcnZgJy5).*
+*MyDesigner helps growing teams ship product UI and website work with build-aware design, human creative direction, and Client Memory. [See how it works](/about) or [talk through what your team needs to ship](https://calendar.app.google/xGoKb51qpbcnZgJy5).*

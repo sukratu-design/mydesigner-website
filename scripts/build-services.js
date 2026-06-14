@@ -42,7 +42,7 @@ const SERVICE_CONFIGS = [
     related: [
       { href: '/services/website-design', label: 'Website design' },
       { href: '/services/webflow-development', label: 'Webflow development' },
-      { href: '/portfolio', label: 'View related work' },
+      { href: '/work', label: 'View related work' },
       { href: '/services', label: 'All services' }
     ],
     faq: [
@@ -75,7 +75,7 @@ const SERVICE_CONFIGS = [
     related: [
       { href: '/services/website-design', label: 'Website design' },
       { href: '/services/framer-development', label: 'Framer development' },
-      { href: '/portfolio', label: 'View related work' },
+      { href: '/work', label: 'View related work' },
       { href: '/services', label: 'All services' }
     ],
     faq: [
@@ -106,7 +106,7 @@ const SERVICE_CONFIGS = [
     memoryDetail: 'Client Memory should capture product terminology, user roles, flows, design-system rules, edge cases, prior UX decisions, and implementation constraints so new screens stay coherent.',
     related: [
       { href: '/services/brand-identity', label: 'Brand identity' },
-      { href: '/portfolio', label: 'View product work' },
+      { href: '/work', label: 'View product work' },
       { href: '/about', label: 'How the workflow runs' },
       { href: '/services', label: 'All services' }
     ],
@@ -139,7 +139,7 @@ const SERVICE_CONFIGS = [
     related: [
       { href: '/services/webflow-development', label: 'Webflow development' },
       { href: '/services/framer-development', label: 'Framer development' },
-      { href: '/portfolio', label: 'View proof' },
+      { href: '/work', label: 'View proof' },
       { href: '/#ch-plans', label: 'See operating rhythms' },
       { href: '/services', label: 'All services' }
     ],
@@ -204,7 +204,7 @@ const SERVICE_CONFIGS = [
     related: [
       { href: '/services/brand-identity', label: 'Brand identity' },
       { href: '/services/social-media-creatives', label: 'Growth creative' },
-      { href: '/portfolio', label: 'View related work' },
+      { href: '/work', label: 'View related work' },
       { href: '/services', label: 'All services' }
     ],
     faq: [

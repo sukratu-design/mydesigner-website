@@ -4,7 +4,7 @@ const FOOTER = `
   <footer role="contentinfo">
     <div class="footer__brand">
       <a href="/" class="footer__logo" aria-label="MyDesigner home">
-        <img src="/story/logo-dark.svg" alt="MyDesigner">
+        <img src="/assets/images/logo-dark.svg" alt="MyDesigner">
       </a>
       <p>MyDesigner is an AI-native creative team by <a href="https://sukratu.co" target="_blank" rel="noopener">Sukratu</a>. We help growing companies ship web, product, brand, and growth creative with human-level taste, faster execution, and Client Memory that compounds over time.</p>
     </div>

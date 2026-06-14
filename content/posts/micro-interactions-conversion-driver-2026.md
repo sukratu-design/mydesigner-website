@@ -32,7 +32,7 @@ Speed is the new credibility. Research from Ripplix shows that **interactions un
 
 ## How MyDesigner Fits In  
 
-**At MyDesigner, we help startups turn every click, swipe, and submit into a moment of delight that drives revenue.** Our team lives on the cutting edge of micro‑interaction trends, ensuring your product feels **fresh, modern, and built for how people actually use software in 2026**. We offer **unlimited design requests with a 48‑hour turnaround—no agencies, no bloated contracts, just fast, polished work that ships**. Whether you need a new loading animation, an accessible toast system, or a full motion‑design overhaul, we deliver the precise, data‑backed micro‑interactions that convert. [See our pricing plans](/pricing).  
+**At MyDesigner, we help startups turn every click, swipe, and submit into a moment of delight that drives revenue.** Our team lives on the cutting edge of micro‑interaction trends, ensuring your product feels **fresh, modern, and built for how people actually use software in 2026**. We offer **unlimited design requests with a 48‑hour turnaround—no agencies, no bloated contracts, just fast, polished work that ships**. Whether you need a new loading animation, an accessible toast system, or a full motion‑design overhaul, we deliver the precise, data‑backed micro‑interactions that convert. [See our pricing plans](/#ch-plans).  
 
 ## The Bottom Line  
 

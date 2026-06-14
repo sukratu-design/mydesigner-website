@@ -1,7 +1,7 @@
 const NAV = `
   <nav class="nav nav--shared" role="navigation" aria-label="Main navigation">
     <a href="/" class="nav__logo" aria-label="MyDesigner home">
-      <img src="/story/logo-dark.svg" alt="MyDesigner">
+      <img src="/assets/images/logo-dark.svg" alt="MyDesigner">
       <span class="nav__logo-text">MyDesigner</span>
     </a>
     <div class="nav__right">
