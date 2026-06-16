@@ -14,11 +14,13 @@ Most SaaS founders treat the landing page as a publishing problem. You finish th
 
 The problem is that good landing page design in 2026 is not about aesthetics. It is about architecture — reducing cognitive load at every scroll, building trust before the ask, and making the next step feel obvious rather than effortful.
 
+**Direct answer:** SaaS landing pages drive signups when they reduce cognitive load, prove trust quickly, show the product clearly, work well on mobile, load fast, and make the next action obvious. The page should answer what the product does, who it is for, and why the visitor should believe it before asking for commitment.
+
 Here is what actually moves the needle.
 
 ---
 
-## The five-second value proposition test
+## What is the five-second value proposition test?
 
 You have roughly five seconds to communicate what you do, who it is for, and why it matters — before a visitor decides whether to scroll or leave. [Research from Nielsen Norman Group](https://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/) shows that users spend an average of 5.94 seconds looking at a website's main image, and only 5.59 seconds reading text in the main hero section, before moving on.
 
@@ -28,7 +30,7 @@ Lead with specificity. "Project management for remote engineering teams" beats "
 
 ---
 
-## Visual hierarchy that earns the scroll
+## How does visual hierarchy earn the scroll?
 
 The eye follows structure. When everything competes for attention — when heading sizes differ by only a point or two, when every section uses the same visual weight — visitors do not look harder. They leave.
 
@@ -89,6 +91,30 @@ Risk-reduction copy near your CTA consistently lifts conversions. [A case study 
 The startups that win on conversion in 2026 are not the ones with the most beautiful landing pages. They are the ones that have stress-tested every design decision against a single question: does this reduce friction, or add it?
 
 Your landing page is a series of micro-decisions. The distance between your headline and your sub-copy. The contrast ratio on your primary button. Whether your testimonials read like they came from real humans or from a marketing brief. Even [small micro-interactions](/blog/micro-interactions-design-detail) on your CTA buttons can shift behaviour. Each one shifts your visitor's risk calculation — toward or away from that signup.
+
+---
+
+## Frequently Asked Questions
+
+### What should a SaaS landing page include to drive signups?
+
+A SaaS landing page should include a specific value proposition, clear visual hierarchy, credible social proof, product imagery, mobile-friendly layout, fast performance, and a CTA matched to visitor intent. The post argues that these elements work together by reducing cognitive load and perceived risk.
+
+### Why do SaaS landing pages fail to convert?
+
+SaaS landing pages often fail because the value proposition is buried and the design makes visitors work too hard. Weak hierarchy, generic social proof, unclear screenshots, broken mobile layouts, slow assets, and mismatched CTAs all add friction before signup.
+
+### Are product screenshots or videos better on a SaaS landing page?
+
+Product imagery works best when it shows the highest-value interaction in the simplest possible state. The post frames short explainer video as increasingly powerful, but the underlying rule is the same: show the product in a way that makes it feel usable and credible.
+
+### How should SaaS landing pages handle mobile design?
+
+SaaS landing pages should treat mobile as part of the buying journey, not an afterthought. CTAs need to be tappable, pricing tables should stack cleanly, testimonials should reflow without truncation, and hero imagery should not push the CTA out of view.
+
+### What makes a SaaS CTA effective?
+
+An effective SaaS CTA matches the visitor's context, commitment level, and next logical step. The post argues that clarity beats cleverness, and that risk-reduction copy near the CTA can make the action feel safer.
 
 ---
 

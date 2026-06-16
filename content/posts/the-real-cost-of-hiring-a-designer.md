@@ -12,9 +12,11 @@ Most startup founders think about hiring a designer the same way they think abou
 
 The reality is messier — and considerably more expensive.
 
+**Direct answer:** Hiring a designer costs more than salary because benefits, recruiting, onboarding, tooling, management overhead, and bad-hire risk add up. For early-stage startups, the bigger issue is timing: a hiring process can leave the product without design capacity while conversion, onboarding, and brand problems keep accumulating.
+
 ---
 
-## What a designer actually costs
+## What does a designer actually cost?
 
 The number most founders start with is salary. According to [ZipRecruiter](https://www.ziprecruiter.com/Salaries/Ui-Ux-Designer-Salary), the average annual pay for a UI/UX designer in the US as of early 2026 is **$108,008**.
 
@@ -30,7 +32,7 @@ That's before:
 
 ---
 
-## The two-to-three month gap nobody plans for
+## Why does hiring a designer take two to three months?
 
 Even if you're ready to pay, you can't start tomorrow. Design hiring is slow.
 
@@ -42,7 +44,7 @@ The compounding effect matters. Research consistently links poor UX to elevated 
 
 ---
 
-## What the subscription model actually costs
+## What does the subscription model actually cost?
 
 Design subscription services and ongoing creative teams have expanded significantly as alternatives. Pricing [ranges from around $499 to nearly $4,000 per month](https://penji.co/subscription-design-services/) depending on capacity, specialist mix, and turnaround.
 
@@ -57,7 +59,7 @@ The comparison with full-time hiring isn't just about monthly rate. It's about:
 
 ---
 
-## When full-time hiring does make sense
+## When does full-time hiring make sense?
 
 This isn't an argument that startups should never hire designers. They should — but at the right stage.
 
@@ -71,7 +73,7 @@ Before that point — in the validation, pre-seed, and seed stages — the econo
 
 ---
 
-## The actual decision framework
+## How should startups decide whether to hire or subscribe?
 
 When evaluating whether to hire or subscribe, ask:
 
@@ -81,6 +83,26 @@ When evaluating whether to hire or subscribe, ask:
 4. **How quickly do you need to start?** If the answer is "now," hiring isn't your option.
 
 The startup design decision isn't really about hiring versus subscribing. It's about matching your creative capacity to your stage — and understanding that the option that looks leanest on paper can still be expensive if it slows shipping.
+
+---
+
+## Frequently Asked Questions
+
+### How much does it really cost to hire a UI/UX designer?
+
+The post estimates the real annual cost closer to $140,000 after benefits are factored in. It starts from the cited average UI/UX designer salary of $108,008 and explains why benefits, recruiting, onboarding, tooling, management overhead, and bad-hire risk push the actual cost higher.
+
+### Why does hiring a designer take so long?
+
+Hiring a designer takes longer because portfolio review, design exercises, and culture-fit assessment add rounds to the process. The post cites a typical two-to-three month hiring window for an in-house startup designer, which can leave product and growth work waiting.
+
+### Is a design subscription cheaper than hiring a designer?
+
+A design subscription can be cheaper for early-stage teams because it starts at a lower monthly commitment and avoids recruiting fees, bad-hire costs, and full-time overhead. The tradeoff is that it gives you flexible execution capacity, not a deeply embedded product teammate.
+
+### When should a startup hire a full-time designer?
+
+A startup should hire a full-time designer when design volume is stable, product context matters deeply, and the company can absorb the overhead without compressing runway. Before that point, the post argues that flexible creative capacity often fits the stage better.
 
 ---
 

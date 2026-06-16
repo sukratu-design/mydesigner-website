@@ -18,6 +18,21 @@ Each model has a place. Most companies are using the wrong one.
 
 Here's a clear-eyed breakdown of all four, so you can choose the model that fits where you actually are right now.
 
+**Direct answer:** Use a design subscription when your team needs consistent multi-skill output without hiring. Use an agency for large, defined campaigns with bigger budgets, and a freelancer for narrow one-off work. A full-time hire makes sense later, when volume and product context justify payroll-level commitment.
+
+## Design Subscription vs Agency vs Freelancer Comparison
+
+| Feature | Design Subscription | Agency | Freelancer |
+|---|---|---|---|
+| Monthly cost | $1,400–$3,800 | $5,000–$25,000+ | $2,000–$8,000 |
+| Turnaround | 24–72 hours | 1–4 weeks | 3–10 days |
+| Coverage | Product UI, Webflow and Framer development, growth creative, decks, and brand systems | Senior talent, strategy, and multi-channel campaign depth | Best for one discipline or scoped deliverable |
+| Flexibility | Can scale up or pause with actual need | Slower to adjust once scope and contract are set | Flexible, but availability varies |
+| Coordination | One operating rhythm | Managed agency team | Founder or operator often coordinates multiple contractors |
+| Best for | Growing companies needing consistent design output | Large, defined projects | One-off needs |
+
+**Bottom line:** A subscription fits recurring multi-skill work; an agency fits big defined campaigns; a freelancer fits narrow one-off execution.
+
 ## The Agency Model: Built for Big Budgets and Big Briefs
 
 Agencies are best when you have a large, defined project — a full rebrand, a complex product launch campaign, or a multi-channel creative buildout. They bring senior talent, strategic depth, and a team that's done it before.
@@ -69,6 +84,24 @@ If you're pre-Series A and need consistent design output across marketing, produ
 If you're running a large enterprise with complex, long-horizon creative campaigns, an agency relationship can make sense. If you need one specific thing built once, a freelancer is fine. If you're post-product-market fit with enough volume to justify it, a full-time hire starts to stack up.
 
 Most founders, though, stay in the first camp far longer than they realise — and overpay by defaulting to agencies or patchwork freelancer networks when a better option exists.
+
+## Frequently Asked Questions
+
+### Is a design subscription better than an agency?
+
+A design subscription is usually better for pre-Series A teams that need consistent output across marketing, product, and brand. An agency can make sense for large enterprises or complex, long-horizon campaigns where a bigger strategic engagement is justified.
+
+### When should I hire a freelancer instead of a design subscription?
+
+Hire a freelancer when you need one specific thing built once. The freelancer model works for narrow projects like a logo, pitch deck, or single landing page, but it becomes fragmented when your needs span UI, Webflow, brand identity, and growth creative.
+
+### When does a full-time designer make more sense than a subscription?
+
+A full-time designer makes more sense when you have enough volume and product complexity to keep one person embedded every week. The post frames this as a later-stage decision, once institutional context matters more than flexible multi-skill capacity.
+
+### What is the main advantage of a creative operating rhythm?
+
+The main advantage is multi-disciplinary creative capacity with continuity. Instead of briefing separate vendors repeatedly, one operating rhythm can carry product UI, Webflow and Framer builds, decks, brand systems, and growth creative with retained context.
 
 ## Start with One Request
 
