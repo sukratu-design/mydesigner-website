@@ -40,6 +40,10 @@
 - [Contact](https://mydesigner.gg/contact): creative diagnosis and calendar handoff
 - [Blog](https://mydesigner.gg/blog/): design, growth, product, website, and brand insights
 
+## Knowledge bundle
+
+- [OKF bundle](https://mydesigner.gg/okf/index.md): full site content as cross-linked markdown
+
 ## Comparisons
 
 - [MyDesigner vs DesignJoy](https://mydesigner.gg/vs/designjoy): AI-native creative team versus solo request-queue model

@@ -133,6 +133,11 @@
 
 # Block internal docs and config from public access
 [[redirects]]
+  from = "/okf/*"
+  to = "/okf/:splat"
+  status = 200
+
+[[redirects]]
   from = "/*.md"
   to = "/404.html"
   status = 404
