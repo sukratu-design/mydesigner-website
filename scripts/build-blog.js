@@ -19,6 +19,8 @@ const SITE_DESCRIPTION = 'Design strategy, SaaS UI/UX tips, and brand insights f
 const POSTS_DIR = path.join(process.cwd(), 'content', 'posts');
 const BLOG_DIR = path.join(process.cwd(), 'blog');
 const RSS_PATH = path.join(process.cwd(), 'rss.xml');
+const CALENDAR_URL = 'https://calendar.app.google/xGoKb51qpbcnZgJy5';
+const ORGANIZATION_LOGO_URL = `${SITE_URL}/assets/images/mydesigner-logo.svg`;
 
 const BLOG_PAGE_CSS = `  <style>
     .blog-main {
@@ -287,6 +289,74 @@ const BLOG_PAGE_CSS = `  <style>
       background: rgba(255, 138, 61, 0.09);
       font-weight: 620;
     }
+    .blog-updated {
+      margin: -0.65rem 0 0;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+    }
+    .blog-updated time {
+      color: var(--paper-dim);
+    }
+    .blog-author-block {
+      margin-top: clamp(3rem, 7vh, 5rem);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(1.35rem, 3vw, 2rem);
+      background: rgba(244, 239, 233, 0.045);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+    }
+    .blog-author-block h2 {
+      margin-top: 0.45rem;
+      color: var(--paper);
+      font-family: var(--serif);
+      font-weight: 320;
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      line-height: 1.08;
+    }
+    .blog-author-block p {
+      max-width: 60ch;
+      margin-top: 0.75rem;
+      color: var(--paper-dim);
+      line-height: 1.7;
+    }
+    .blog-author-facts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin: 1.35rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .blog-author-facts li {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.9rem;
+      background: rgba(244, 239, 233, 0.035);
+    }
+    .blog-author-facts span {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+    }
+    .blog-author-facts strong {
+      display: block;
+      margin-top: 0.35rem;
+      color: var(--paper);
+      font-size: 1rem;
+      font-weight: 560;
+    }
+    .blog-author-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.35rem;
+    }
     .blog-rss-card {
       margin-top: clamp(3rem, 7vh, 5rem);
       border: 1px solid var(--line);
@@ -323,9 +393,17 @@ const BLOG_PAGE_CSS = `  <style>
       .blog-index-grid {
         grid-template-columns: 1fr;
       }
+      .blog-author-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
       .blog-post-hero h1,
       .blog-index-hero h1 {
         max-width: 100%;
+      }
+    }
+    @media (max-width: 480px) {
+      .blog-author-facts {
+        grid-template-columns: 1fr;
       }
     }
   </style>`;
@@ -358,6 +436,162 @@ function toIsoDateOnly(date) {
   return date.toISOString().slice(0, 10);
 }
 
+function parseFrontmatterDate(value, fieldName, fileName) {
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    throw new Error(`Invalid frontmatter field "${fieldName}" in ${fileName}`);
+  }
+
+  return date;
+}
+
+function firstPresentDateField(data) {
+  return ['updated', 'dateModified', 'modified', 'lastModified'].find((field) => {
+    const value = data[field];
+    return value !== undefined && value !== null && String(value).trim() !== '';
+  });
+}
+
+function decodeHtmlEntities(value) {
+  return String(value)
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(parseInt(code, 16)))
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(parseInt(code, 10)))
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+}
+
+function htmlToPlainText(html) {
+  return decodeHtmlEntities(
+    String(html)
+      .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<br\s*\/?>/gi, ' ')
+      .replace(/<\/(p|div|li|h[1-6]|tr|th|td|blockquote)>/gi, ' ')
+      .replace(/<[^>]+>/g, ' ')
+  ).replace(/\s+/g, ' ').trim();
+}
+
+function normalizeHeadingText(html) {
+  return htmlToPlainText(html).toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, ' ').trim();
+}
+
+function isFaqHeading(block) {
+  const text = normalizeHeadingText(block.raw);
+  return text === 'faq' || text === 'frequently asked questions';
+}
+
+function htmlBlocks(html) {
+  const blocks = [];
+  const blockPattern = /<(h[1-6]|p|ul|ol|blockquote|pre|table)[^>]*>[\s\S]*?<\/\1>/gi;
+  let match;
+
+  while ((match = blockPattern.exec(html)) !== null) {
+    const tag = match[1].toLowerCase();
+    blocks.push({
+      tag,
+      raw: match[0],
+      isHeading: /^h[1-6]$/.test(tag),
+      level: /^h[1-6]$/.test(tag) ? Number(tag.slice(1)) : null
+    });
+  }
+
+  return blocks;
+}
+
+function extractFaqItems(html) {
+  const blocks = htmlBlocks(html);
+  const faqStartIndex = blocks.findIndex((block) => block.isHeading && isFaqHeading(block));
+
+  if (faqStartIndex === -1) {
+    return [];
+  }
+
+  const faqLevel = blocks[faqStartIndex].level;
+  const sectionBlocks = [];
+
+  for (let index = faqStartIndex + 1; index < blocks.length; index += 1) {
+    const block = blocks[index];
+
+    if (block.isHeading && block.level <= faqLevel) {
+      break;
+    }
+
+    sectionBlocks.push(block);
+  }
+
+  const questionLevel = sectionBlocks.find((block) => block.isHeading && block.level > faqLevel)?.level;
+
+  if (!questionLevel) {
+    return [];
+  }
+
+  const items = [];
+  let current = null;
+
+  sectionBlocks.forEach((block) => {
+    if (block.isHeading && block.level === questionLevel) {
+      if (current) {
+        items.push(current);
+      }
+
+      current = {
+        question: htmlToPlainText(block.raw),
+        answerHtml: []
+      };
+      return;
+    }
+
+    if (current) {
+      current.answerHtml.push(block.raw);
+    }
+  });
+
+  if (current) {
+    items.push(current);
+  }
+
+  return items
+    .map((item) => ({
+      question: item.question,
+      answer: htmlToPlainText(item.answerHtml.join(' '))
+    }))
+    .filter((item) => item.question && item.answer);
+}
+
+function organizationSchema() {
+  return {
+    '@type': 'Organization',
+    name: 'MyDesigner',
+    url: SITE_URL,
+    logo: { '@type': 'ImageObject', url: ORGANIZATION_LOGO_URL },
+    parentOrganization: { '@type': 'Organization', name: 'Sukratu' },
+    foundingDate: '2020',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Pune',
+      addressCountry: 'IN'
+    },
+    description: 'MyDesigner is an AI-native creative team by Sukratu, based in Pune, India, operating since 2020, with 57 clients served and 142+ projects delivered.',
+    knowsAbout: [
+      'AI-native creative services',
+      'Website design',
+      'Product UI design',
+      'Brand systems',
+      'Pitch decks',
+      'Social assets',
+      'Webflow development',
+      'Framer development',
+      'Growth creative'
+    ]
+  };
+}
+
 function buildPostObject(fileName) {
   const fullPath = path.join(POSTS_DIR, fileName);
   const raw = fs.readFileSync(fullPath, 'utf8');
@@ -384,15 +618,17 @@ function buildPostObject(fileName) {
     throw new Error(`Invalid slug "${slug}" in ${fileName}. Use lowercase letters, numbers, and hyphens only.`);
   }
 
-  const dateValue = new Date(data.date);
-  if (Number.isNaN(dateValue.getTime())) {
-    throw new Error(`Invalid or missing frontmatter field "date" in ${fileName}`);
-  }
+  const dateValue = parseFrontmatterDate(data.date, 'date', fileName);
+  const modifiedField = firstPresentDateField(data);
+  const modifiedDate = modifiedField
+    ? parseFrontmatterDate(data[modifiedField], modifiedField, fileName)
+    : dateValue;
 
   const htmlContent = marked
     .parse(content)
     .replace(/<table>/g, '<div class="table-wrap"><table>')
     .replace(/<\/table>/g, '</table></div>');
+  const faqItems = extractFaqItems(htmlContent);
 
   return {
     title,
@@ -405,8 +641,13 @@ function buildPostObject(fileName) {
     dateDisplay: formatDisplayDate(dateValue),
     dateIso: dateValue.toISOString(),
     dateOnly: toIsoDateOnly(dateValue),
+    modifiedDate,
+    modifiedDisplay: formatDisplayDate(modifiedDate),
+    modifiedIso: modifiedDate.toISOString(),
+    modifiedOnly: toIsoDateOnly(modifiedDate),
     markdown: content,
-    htmlContent
+    htmlContent,
+    faqItems
   };
 }
 
@@ -446,6 +687,24 @@ function rssBlock() {
       <a class="btn btn--ghost" href="/blog/">Back to journal <span class="arrow">-&gt;</span></a>
     </div>
   </aside>`;
+}
+
+function authorBlock() {
+  return `<aside class="blog-author-block" aria-labelledby="about-mydesigner-author">
+          <p class="kicker">About the author</p>
+          <h2 id="about-mydesigner-author">About MyDesigner</h2>
+          <p>MyDesigner is an AI-native creative team by Sukratu, based in Pune, India, operating since 2020. The team has served 57 clients and delivered 142+ projects across websites, product UI, brand systems, decks, social assets, and Webflow/Framer builds.</p>
+          <ul class="blog-author-facts" aria-label="MyDesigner facts">
+            <li><span>Founded</span><strong>2020</strong></li>
+            <li><span>Based</span><strong>Pune, India</strong></li>
+            <li><span>Clients</span><strong>57</strong></li>
+            <li><span>Projects</span><strong>142+</strong></li>
+          </ul>
+          <div class="blog-author-actions">
+            <a class="btn btn--ghost" href="/about">About MyDesigner <span class="arrow">-&gt;</span></a>
+            <a class="btn btn--solid" href="${CALENDAR_URL}">Discuss a project <span class="arrow">-&gt;</span></a>
+          </div>
+        </aside>`;
 }
 
 function renderBlogCard(post) {
@@ -542,6 +801,7 @@ function buildBlogPostPage(post) {
             <span>${escapeXml(post.title)}</span>
           </nav>
           <p class="blog-meta"><span><time datetime="${post.dateOnly}">${post.dateDisplay}</time></span><span>${escapeXml(post.author)}</span></p>
+          <p class="blog-updated">Last updated: <time datetime="${post.modifiedOnly}">${post.modifiedDisplay}</time></p>
           <h1>${escapeXml(post.title)}</h1>
           <p class="deep-hero__lede">${escapeXml(post.excerpt)}</p>
         </div>
@@ -549,6 +809,7 @@ function buildBlogPostPage(post) {
       <div class="blog-article-shell">
         ${cover}
         <section class="blog-prose">${post.htmlContent}</section>
+        ${authorBlock()}
         ${rssBlock()}
       </div>
     </article>
@@ -561,16 +822,9 @@ function buildBlogPostPage(post) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.dateIso,
-    author: {
-      '@type': 'Organization',
-      name: post.author
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'MyDesigner',
-      url: SITE_URL,
-      logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/images/mydesigner-logo.svg` }
-    },
+    dateModified: post.modifiedIso,
+    author: organizationSchema(),
+    publisher: organizationSchema(),
     mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl }
   };
 
@@ -590,6 +844,21 @@ function buildBlogPostPage(post) {
     },
     articleSchema
   ];
+
+  if (post.faqItems.length) {
+    structuredData.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: post.faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer
+        }
+      }))
+    });
+  }
 
   return pageShell({
     title: `${post.title} | MyDesigner Blog`,

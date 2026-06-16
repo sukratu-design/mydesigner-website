@@ -14,7 +14,7 @@
     "build:related-projects": "node -e \"require('./scripts/build-related-projects').buildRelatedProjectsScript()\"",
     "sync:indexes": "node scripts/sync-directory-indexes.js",
     "preview": "node scripts/preview-server.js",
-    "test": "node scripts/check-vs-positioning.js && node scripts/check-contact-page.js && node scripts/check-service-detail-pages.js && node scripts/check-work-case-study-pages.js && node scripts/check-portfolio-category-pages.js && node scripts/check-blog-positioning.js && node scripts/check-homepage-portfolio.js && node scripts/check-csp-analytics.js"
+    "test": "node scripts/check-vs-positioning.js && node scripts/check-contact-page.js && node scripts/check-service-detail-pages.js && node scripts/check-work-case-study-pages.js && node scripts/check-portfolio-category-pages.js && node scripts/check-blog-positioning.js && node scripts/check-ai-seo.js && node scripts/check-homepage-portfolio.js && node scripts/check-csp-analytics.js"
   },
   "dependencies": {
     "@netlify/blobs": "^10.7.4",
