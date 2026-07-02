@@ -39,6 +39,7 @@ const BLOG_PAGE_CSS = `  <style>
     }
     .blog-index-hero h1 { max-width: 11ch; }
     .blog-post-hero h1 { max-width: 13ch; }
+    .blog-post-hero .deep-hero__lede { max-width: 82ch; }
     .blog-meta {
       display: flex;
       flex-wrap: wrap;
@@ -123,7 +124,8 @@ const BLOG_PAGE_CSS = `  <style>
       background: rgba(244, 239, 233, 0.045);
     }
     .blog-article-shell {
-      width: min(100%, 68ch);
+      /* match the hero column so heading, cover, and body share one width */
+      width: min(100%, 1040px);
       margin: 0 auto;
       padding: 0 var(--gutter) clamp(5rem, 10vh, 7rem);
     }
@@ -142,8 +144,10 @@ const BLOG_PAGE_CSS = `  <style>
     }
     .blog-prose {
       color: var(--paper-dim);
-      font-size: clamp(1rem, 1.25vw, 1.08rem);
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
       line-height: 1.82;
+      /* left edge aligns with the heading; measure widened to suit the column */
+      max-width: 82ch;
     }
     .blog-prose > * + * {
       margin-top: 1.15rem;
