@@ -115,5 +115,15 @@
       </span>
     </div>
   </footer>
+  <script>
+    (function () {
+      var nav = document.querySelector('.nav');
+      if (!nav) return;
+      var update = function () { nav.classList.toggle('is-scrolled', window.scrollY > 80); };
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
 </body>
+
 </html>

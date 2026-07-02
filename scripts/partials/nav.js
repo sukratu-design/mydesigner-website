@@ -30,6 +30,15 @@ ${[
 ].map(renderLink).join('\n')}
       <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="nav__cta nav__cta--shared">Book a call</a>
     </div>
-  </nav>`;
+  </nav>
+  <script>
+    (function () {
+      var nav = document.querySelector('.nav');
+      if (!nav) return;
+      var update = function () { nav.classList.toggle('is-scrolled', window.scrollY > 80); };
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>`;
 
 module.exports = NAV;
