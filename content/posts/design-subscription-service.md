@@ -27,7 +27,7 @@ Here is what the market looks like right now, condensed:
 **Quick comparison of the top providers:**
 
 <div class="overflow-x-auto">
-<table class="table table-zebra bg-base-100 rounded-box">
+<table>
   <thead>
     <tr>
       <th>Provider</th>
@@ -123,7 +123,7 @@ An agency charges $150-$300/hour. A single website project ranges from $10,000-$
 **Break-even analysis:**
 
 <div class="overflow-x-auto">
-<table class="table table-zebra bg-base-100 rounded-box">
+<table>
   <thead>
     <tr>
       <th>Hiring Model</th>
@@ -201,7 +201,7 @@ This team model means your Instagram carousel is built by someone who lives in t
 The pricing landscape is wide. Here is how MyDesigner stacks against three popular alternatives across plan tiers:
 
 <div class="overflow-x-auto">
-<table class="table table-zebra bg-base-100 rounded-box">
+<table>
   <thead>
     <tr>
       <th>Feature</th>
@@ -281,7 +281,7 @@ For deeper breakdowns: [MyDesigner vs. Kimp](/vs/kimp) | [MyDesigner vs. Penji](
 **Methodology:** We calculated the effective cost per design request for a company submitting 10 requests/month across 12 months at each provider's mid-tier plan. This accounts for the monthly fee only (no setup costs, no add-ons).
 
 <div class="overflow-x-auto">
-<table class="table table-zebra bg-base-100 rounded-box">
+<table>
   <thead>
     <tr>
       <th>Provider</th>
@@ -397,7 +397,7 @@ You keep approved source files and deliverables, and any useful context captured
 ## MyDesigner Ways to Work at a Glance
 
 <div class="overflow-x-auto">
-<table class="table table-zebra bg-base-100 rounded-box">
+<table>
   <thead>
     <tr>
       <th>Engagement</th>

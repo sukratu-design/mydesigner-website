@@ -626,7 +626,7 @@ function buildPostObject(fileName) {
 
   const htmlContent = marked
     .parse(content)
-    .replace(/<table>/g, '<div class="table-wrap"><table>')
+    .replace(/<table(\s[^>]*)?>/g, '<div class="table-wrap"><table>')
     .replace(/<\/table>/g, '</table></div>');
   const faqItems = extractFaqItems(htmlContent);
 
