@@ -13,6 +13,7 @@ const FOOTER = `
       <a href="/services">Services</a>
       <a href="/about">About</a>
       <a href="/blog/">Blog</a>
+      <a href="/vs/">Compare</a>
       <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5">Book a call</a>
     </nav>
     <div class="footer__meta">

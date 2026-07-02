@@ -149,6 +149,9 @@ html.motion-off #field { opacity: 0.15; }
 .nav__logo { display: flex; align-items: center; flex: 0 0 auto; gap: 0.55rem; }
 .nav__logo img { height: 24px; width: auto; }
 .nav__logo img:not([src]) { display: none; }
+/* the logo SVG already carries the wordmark — the text span is only a
+   fallback for when the image hasn't loaded */
+.nav__logo img[src] + .nav__logo-text { display: none; }
 .nav__logo-text {
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
   text-transform: uppercase; color: var(--paper);
@@ -453,6 +456,8 @@ body.orbit-static {
 .orbit-card h2, .orbit-card h3 { color: var(--paper); line-height: 1.2; }
 .orbit-card h3 { font-size: 1.05rem; font-weight: 520; }
 .orbit-card p { color: var(--paper-dim); margin-top: 0.65rem; }
+.orbit-card a:not(.btn):not(.project-card) { color: var(--paper); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--accent-dim); }
+.orbit-card a:not(.btn):not(.project-card):hover { color: var(--accent); }
 .check-list { list-style: none; padding: 0; margin: 0; }
 .check-list li {
   display: flex; gap: 0.85rem; align-items: flex-start;
@@ -492,6 +497,62 @@ body.orbit-static {
 .project-card h3 { color: var(--paper); font-size: 1.08rem; line-height: 1.25; }
 .project-card p { color: var(--paper-dim); font-size: 0.94rem; line-height: 1.62; }
 .project-card__link { color: var(--accent); font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; }
+.compare-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(244, 239, 233, 0.035);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+}
+.compare-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  color: var(--paper-dim);
+}
+.compare-table th,
+.compare-table td {
+  padding: clamp(0.9rem, 2vw, 1.2rem);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.compare-table th {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: rgba(244, 239, 233, 0.055);
+}
+.compare-table tr:last-child td { border-bottom: 0; }
+.compare-table td:first-child {
+  width: 20%;
+  color: var(--paper);
+  font-weight: 560;
+}
+.compare-table th:last-child,
+.compare-table td:last-child {
+  background: rgba(255, 138, 61, 0.06);
+}
+.compare-table strong { color: var(--paper); font-weight: 620; }
+.compare-table a {
+  color: var(--paper);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--accent-dim);
+}
+.compare-table a:hover { color: var(--accent); }
+.deep-hero--wide .deep-hero__inner { width: min(100%, 1160px); }
+.deep-hero--wide h1 { max-width: 14ch; }
+.deep-hero__meta {
+  margin-top: 1.4rem;
+  color: var(--paper-faint);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
 .faq-list { display: grid; gap: 0.8rem; }
 .faq-list details {
   border: 1px solid var(--line);

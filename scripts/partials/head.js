@@ -53,6 +53,7 @@ function analyticsTags() {
 function headTags({
   title,
   description,
+  keywords = '',
   canonical = '/',
   ogTitle = title,
   ogDescription = description,
@@ -75,7 +76,7 @@ function headTags({
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeXml(title)}</title>
   <meta name="description" content="${escapeXml(description)}">
-  <meta name="theme-color" content="#0b0807">
+  ${keywords ? `<meta name="keywords" content="${escapeXml(keywords)}">\n  ` : ''}<meta name="theme-color" content="#0b0807">
   ${analyticsTags()}
   <link rel="canonical" href="${escapeXml(canonicalUrl)}">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
