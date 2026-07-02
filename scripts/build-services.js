@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Build service pages.
- * Extracted from build-blog.js for better maintainability.
+ * Build ORBIT service detail pages.
  */
 
 const fs = require('fs');
@@ -10,9 +9,14 @@ const path = require('path');
 
 const PROJECTS = require('../data/projects');
 const { escapeXml, ensureDir } = require('./lib/utils');
+const NAV = require('./partials/nav');
+const FOOTER = require('./partials/footer');
+const { SITE_URL, headTags } = require('./partials/head');
 
 const SERVICES_DIR = path.join(process.cwd(), 'services');
-const SITE_URL = 'https://mydesigner.gg';
+
+const MEMORY_INTRO = 'Your brand rules, examples, reusable patterns, past decisions, prompts, templates, and performance learnings should not disappear after each request. MyDesigner turns that context into a living creative system so every new asset starts faster and stays closer to your brand.';
+const CALENDAR_URL = 'https://calendar.app.google/xGoKb51qpbcnZgJy5';
 
 const SERVICE_CONFIGS = [
   {
@@ -20,22 +24,32 @@ const SERVICE_CONFIGS = [
     label: 'Framer Development',
     category: 'webdev',
     platform: 'framer',
-    valuerop: 'Pixel-Perfect Framer Sites, Fast',
-    subheadline: 'We build blazing-fast, fully responsive Framer websites — designed to convert and built to scale.',
-    metaDescription: 'High-performance Framer websites with smooth animations and interactions, built by subscription. Unlimited Framer development included from $1,400/mo.',
+    metaTitle: 'Framer Development — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'Fast, polished Framer websites with responsive layouts, motion, CMS structure, and brand-consistent execution for launches and modern teams. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    kicker: 'Interactive website build',
+    h1: 'Framer development for polished marketing sites and launch pages',
+    subheadline: 'Fast, polished Framer websites with responsive layouts, motion, CMS structure, and brand-consistent execution for launches and modern teams.',
+    fit: 'Best when speed, visual polish, interaction quality, and flexible page production matter more than heavy enterprise CMS complexity.',
     included: [
-      'Custom Framer component design & build',
-      'Responsive layouts (mobile, tablet, desktop)',
-      'CMS integration & dynamic collections',
-      'Animations & micro-interactions',
-      'SEO meta, sitemap & performance optimisation',
-      'Source files & hand-off documentation'
+      'Design-to-Framer implementation',
+      'Responsive layouts for key breakpoints',
+      'Framer CMS setup where useful',
+      'Motion, transitions, and micro-interactions',
+      'SEO metadata and launch setup',
+      'Handoff documentation and editable structure'
+    ],
+    memoryDetail: 'Client Memory should store motion preferences, page patterns, brand rules, CMS choices, reusable sections, and launch notes so future Framer pages stay consistent.',
+    related: [
+      { href: '/services/website-design', label: 'Website design' },
+      { href: '/services/webflow-development', label: 'Webflow development' },
+      { href: '/work', label: 'View related work' },
+      { href: '/services', label: 'All services' }
     ],
     faq: [
-      { q: 'Do you work from existing designs or start from scratch?', a: 'Both. We can build directly in Framer from your Figma files or create the design and development end-to-end.' },
-      { q: 'How long does a typical Framer project take?', a: 'A standard marketing site is usually delivered within 5–10 business days on the Starter plan. Turnaround depends on scope and your plan\'s concurrency.' },
-      { q: 'Will the site be editable by our team after handoff?', a: 'Yes. We set up Framer CMS and component structures so your non-technical team can update content without touching code.' },
-      { q: 'Can you migrate an existing website to Framer?', a: 'Absolutely. We handle full migrations, preserving URL structures, SEO metadata, and visual design during the transition.' }
+      { q: 'When should we choose Framer instead of Webflow?', a: 'Framer is strong for fast, polished marketing sites and interactive launch pages. Webflow may fit deeper CMS and operational workflows better.' },
+      { q: 'Can you migrate an existing site to Framer?', a: 'Yes, when the scope is clear. Complex sites should start with a discovery pass so migration risk is understood.' },
+      { q: 'Can the team edit after handoff?', a: 'Yes. We structure Framer pages and CMS areas so your team can edit content after launch.' },
+      { q: 'How does Client Memory help Framer work?', a: 'It stores reusable page patterns, brand rules, interactions, and prior decisions so new pages do not drift.' }
     ]
   },
   {
@@ -43,211 +57,270 @@ const SERVICE_CONFIGS = [
     label: 'Webflow Development',
     category: 'webdev',
     platform: 'webflow',
-    valuerop: 'Production-Ready Webflow Sites',
-    subheadline: 'We design and develop high-converting Webflow websites that your team can manage without a developer.',
-    metaDescription: 'Pixel-perfect Webflow sites built as part of your design subscription — CMS setup, animations, and responsive design included. From $1,400/mo, cancel anytime.',
+    metaTitle: 'Webflow Development — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'Responsive, CMS-ready Webflow builds for marketing sites, landing pages, and content systems — designed for speed, polish, and handoff clarity. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    kicker: 'Conversion website build',
+    h1: 'Webflow development for websites your team can actually ship and manage',
+    subheadline: 'Responsive, CMS-ready Webflow builds for marketing sites, landing pages, and content systems — designed for speed, polish, and handoff clarity.',
+    fit: 'Best when you have a Figma design to build, need design plus Webflow execution, or want a marketing site your team can edit after launch.',
     included: [
-      'Custom Webflow design & development',
-      'Responsive across all breakpoints',
-      'Webflow CMS setup & content modelling',
-      'Interactions, animations & scroll effects',
-      'SEO meta, Open Graph & sitemap configuration',
-      'Staging review & production launch support'
+      'Figma-to-Webflow implementation',
+      'Responsive build across breakpoints',
+      'CMS structure and content modelling',
+      'Animations and interaction polish',
+      'SEO, Open Graph, sitemap, and launch basics',
+      'Staging review and production handoff'
+    ],
+    memoryDetail: 'Client Memory should store CMS structure, component decisions, animation preferences, brand rules, launch checklist, reusable page sections, and previous site decisions.',
+    related: [
+      { href: '/services/website-design', label: 'Website design' },
+      { href: '/services/framer-development', label: 'Framer development' },
+      { href: '/work', label: 'View related work' },
+      { href: '/services', label: 'All services' }
     ],
     faq: [
-      { q: 'Do you build from Figma designs or design in Webflow directly?', a: 'We do both. Share your Figma files and we\'ll build pixel-perfectly in Webflow, or we\'ll handle the full design-to-development workflow.' },
-      { q: 'Can we edit the site ourselves after launch?', a: 'Yes. Webflow\'s Editor makes it easy for non-technical teams to update copy, images, and CMS content without touching the Designer.' },
-      { q: 'Do you handle Webflow hosting and publishing?', a: 'We configure and publish to Webflow Hosting or help you connect a custom domain. We can also assist with Netlify or Cloudflare deployments.' },
-      { q: 'What about integrations like HubSpot or Mailchimp?', a: 'We regularly integrate Webflow sites with HubSpot, Mailchimp, Zapier, Memberstack, and other SaaS tools as part of the subscription.' }
+      { q: 'Do you only build, or also design?', a: 'Both are possible. MyDesigner can build from supplied Figma files or handle design plus Webflow execution when the scope calls for it.' },
+      { q: 'Will our team be able to edit the site?', a: 'Yes. Webflow Editor and CMS setup can give your team operational independence after launch.' },
+      { q: 'Can you support launches and campaign pages after the main site?', a: 'Yes. Once the system exists, Client Memory helps future pages ship faster and stay more consistent.' },
+      { q: 'Do you handle integrations?', a: 'We can support common website integrations such as forms, CRM embeds, analytics, and marketing tools. Custom backend work should be scoped separately.' }
     ]
   },
   {
     slug: 'web-app-design',
     label: 'Web App Design',
     category: 'uiux',
-    valuerop: 'UX That Converts & Retains',
-    subheadline: 'We design intuitive web application interfaces that reduce friction, improve retention, and look exceptional.',
-    metaDescription: 'SaaS dashboards, admin panels, and web app interfaces designed for clarity and conversion — unlimited UI/UX design requests included in every MyDesigner plan.',
+    metaTitle: 'Web App Design — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'SaaS dashboards, internal tools, portals, and product interfaces designed with clarity, hierarchy, and continuity across every screen. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    kicker: 'Product UI & UX support',
+    h1: 'Web app design that makes complex products easier to use',
+    subheadline: 'SaaS dashboards, internal tools, portals, and product interfaces designed with clarity, hierarchy, and continuity across every screen.',
+    fit: 'Best when a founder, product team, or engineering team needs sharper product UI, clearer flows, better dashboard structure, or a Figma system developers can actually use.',
     included: [
-      'User flows & information architecture',
-      'Wireframes & interactive prototypes',
-      'High-fidelity UI design in Figma',
-      'Design system & component library',
-      'Usability review & iteration',
-      'Developer-ready Figma handoff'
+      'User-flow and information-architecture support',
+      'Wireframes for high-risk flows',
+      'High-fidelity Figma UI design',
+      'Dashboard and table design systems',
+      'Reusable components and interaction states',
+      'Developer-ready specs and handoff notes'
+    ],
+    memoryDetail: 'Client Memory should capture product terminology, user roles, flows, design-system rules, edge cases, prior UX decisions, and implementation constraints so new screens stay coherent.',
+    related: [
+      { href: '/services/brand-identity', label: 'Brand identity' },
+      { href: '/work', label: 'View product work' },
+      { href: '/about', label: 'How the workflow runs' },
+      { href: '/services', label: 'All services' }
     ],
     faq: [
-      { q: 'Do you conduct user research as part of this service?', a: 'We provide UX audits and heuristic reviews within the subscription. Full user research studies are scoped separately on request.' },
-      { q: 'What tools do you use for web app design?', a: 'Figma is our primary tool for all UI/UX work. We deliver interactive prototypes, auto-layout components, and full design tokens.' },
-      { q: 'Can you work within our existing design system?', a: 'Yes. We frequently extend and apply existing design systems and component libraries rather than starting from scratch.' },
-      { q: 'How many screens or flows can we expect per month?', a: 'Output varies by complexity, but on the Starter plan clients typically see 10–20 unique screens per month with full revisions included.' }
+      { q: 'Do you replace product research?', a: 'No. MyDesigner can work from existing research, customer insights, product notes, and stakeholder context. Full research work should be scoped separately.' },
+      { q: 'Can you work inside our existing design system?', a: 'Yes. We can absorb current components, constraints, usage rules, and prior design decisions into Client Memory so new work stays consistent.' },
+      { q: 'Can engineering use the files directly?', a: 'Yes. The output can include developer-ready Figma files, component states, and handoff notes for implementation.' },
+      { q: 'How do you keep product screens consistent over time?', a: 'Client Memory stores flows, components, patterns, and past decisions so future UI requests do not reset context.' }
     ]
   },
   {
     slug: 'website-design',
     label: 'Website Design',
     category: 'uiux',
-    valuerop: 'Websites That Build Trust & Drive Leads',
-    subheadline: 'We design conversion-focused websites that communicate your brand\'s value clearly and look great on every device.',
-    metaDescription: 'Marketing websites and landing pages designed to convert — included in every MyDesigner plan. Request as many designs as you need, with unlimited revisions.',
+    metaTitle: 'Website Design — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'Marketing websites, campaign pages, and landing pages shaped by strategy, brand context, and conversion logic — not just pretty screens. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    kicker: 'Conversion websites & landing pages',
+    h1: 'Website design for teams that need to turn attention into action',
+    subheadline: 'Marketing websites, campaign pages, and landing pages shaped by strategy, brand context, and conversion logic — not just pretty screens.',
+    fit: 'Best when a team needs a clearer website, a launch page, a campaign landing page, or a redesign that must explain the offer and move visitors toward action.',
     included: [
-      'Homepage & key page design (up to 8 pages)',
+      'Messaging and page-structure direction before design',
+      'Homepage, landing page, and key conversion-page design',
       'Mobile-first responsive layouts',
-      'Brand-aligned visual design & typography',
-      'CTA strategy & conversion-focused structure',
-      'Prototype for stakeholder review',
-      'Figma source files & style guide'
+      'CTA hierarchy and section sequencing',
+      'Brand-aligned visual system in Figma',
+      'Developer-ready handoff or Webflow/Framer build path'
+    ],
+    memoryDetail: 'Client Memory should store your offer, ICP, proof points, previous landing pages, brand rules, conversion notes, and pages that have already worked, so every new page starts with context instead of a blank brief.',
+    related: [
+      { href: '/services/webflow-development', label: 'Webflow development' },
+      { href: '/services/framer-development', label: 'Framer development' },
+      { href: '/work', label: 'View proof' },
+      { href: '/#ch-plans', label: 'See operating rhythms' },
+      { href: '/services', label: 'All services' }
     ],
     faq: [
-      { q: 'Is development included in website design?', a: 'UI/UX design delivers Figma files ready for development. If you also need Webflow or Framer development, that\'s included in the same subscription — just add the request.' },
-      { q: 'How many pages are included?', a: 'A standard engagement covers up to 8 pages. Additional pages are added as separate requests in your queue — no extra charge on any plan.' },
-      { q: 'Do you follow a brand guide if we have one?', a: 'Yes. Share your existing brand guide and assets and we\'ll design strictly within those guidelines for visual consistency.' },
-      { q: 'Can you redesign an existing website?', a: 'Yes, redesigns are our most common request. We audit the current site, identify UX issues, and propose a modernised design before execution.' }
+      { q: 'Is this just visual website design?', a: 'No. This is conversion website design: message hierarchy, offer clarity, section flow, CTA logic, and brand-consistent visual execution.' },
+      { q: 'Can you design landing pages for campaigns?', a: 'Yes. Landing pages are one of the clearest fits because they benefit from fast creative execution plus stored context about your audience, offer, and brand.' },
+      { q: 'Can this include Webflow or Framer development?', a: 'Yes. If build is needed, MyDesigner can connect the design work to a Webflow or Framer build path.' },
+      { q: 'How does Client Memory help website work?', a: 'It keeps the offer, proof, audience, brand rules, prior page decisions, and reusable sections available for future pages and iterations.' }
     ]
   },
   {
     slug: 'brand-identity',
     label: 'Brand Identity',
     category: 'branding',
-    valuerop: 'Brands That Stand Out & Scale',
-    subheadline: 'We create cohesive brand identities that communicate who you are, build trust, and differentiate you from the competition.',
-    metaDescription: 'Complete brand identity systems — logos, color palettes, and style guides — available in your MyDesigner subscription. Unlimited revisions, no extra cost.',
+    metaTitle: 'Brand Identity — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'Logos, visual systems, guidelines, examples, templates, and usable rules that help your team create consistently across web, product, sales, and campaigns. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    kicker: 'AI-ready brand system',
+    h1: 'Brand identity systems that make every future asset easier to ship',
+    subheadline: 'Logos, visual systems, guidelines, examples, templates, and usable rules that help your team create consistently across web, product, sales, and campaigns.',
+    fit: 'Best when a company is launching, refreshing, cleaning up inconsistent visuals, or preparing to use AI and templates without breaking brand consistency.',
     included: [
-      'Logo design (primary + variations)',
-      'Brand colour palette & typography system',
-      'Brand guidelines document',
-      'Business card & stationery design',
-      'Social media profile & cover assets',
-      'Source files in AI, EPS, SVG & PNG'
+      'Logo direction and identity refinement',
+      'Color, typography, and visual-language system',
+      'Brand guidelines and usage rules',
+      'Template starters for key channels',
+      'Source files and export-ready assets',
+      'Prompt-ready brand examples for future creative production'
+    ],
+    memoryDetail: 'Brand identity is not only a logo deliverable. It becomes the foundation for future creative decisions, AI prompts, templates, examples, and quality control inside Client Memory.',
+    related: [
+      { href: '/services/social-media-creatives', label: 'Growth creative' },
+      { href: '/services/website-design', label: 'Website design' },
+      { href: '/about', label: 'How Client Memory works' },
+      { href: '/services', label: 'All services' }
     ],
     faq: [
-      { q: 'How many logo concepts do we get?', a: 'We present 2–3 distinct logo directions. You choose a direction, we refine it through unlimited revisions until it\'s exactly right.' },
-      { q: 'Is a brand guidelines document included?', a: 'Yes. Every brand identity project includes a PDF brand guidelines document covering logo usage, colour, typography, and do/don\'ts.' },
-      { q: 'Can you refresh an existing brand rather than start from scratch?', a: 'Yes. Brand refreshes are common — we modernise the existing identity while preserving recognition equity you\'ve already built.' },
-      { q: 'What file formats will we receive?', a: 'You receive all source files: Adobe Illustrator (.ai), EPS, SVG, and PNG (transparent background) at multiple sizes.' }
+      { q: 'Is this only logo design?', a: 'No. Logos can be included, but the goal is a usable brand system that helps every future asset stay consistent.' },
+      { q: 'Can you refresh an existing brand?', a: 'Yes. A refresh can modernize the identity while preserving the recognition and equity that should not change.' },
+      { q: 'Do you create brand guidelines?', a: 'Yes. Guidelines can include practical rules, examples, templates, and AI-ready prompts where appropriate.' },
+      { q: 'How does this help with AI content creation?', a: 'A clear brand system gives AI tools constraints, examples, and rules so output gets closer to your brand instead of becoming generic.' }
     ]
   },
   {
     slug: 'presentation-design',
     label: 'Presentation Design',
     category: 'graphic',
-    valuerop: 'Pitch Decks That Win Rooms',
-    subheadline: 'We design investor-ready pitch decks and executive presentations that communicate clearly and leave a lasting impression.',
-    metaDescription: 'Investor pitch decks and sales presentations designed to impress — part of your MyDesigner subscription. Fast turnaround, unlimited revisions, no extra fees.',
+    metaTitle: 'Presentation Design — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'Investor decks, sales decks, strategy presentations, and internal narratives structured for clarity, trust, and decision-making. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    kicker: 'Decks & sales assets',
+    h1: 'Presentation design that helps complex ideas land clearly',
+    subheadline: 'Investor decks, sales decks, strategy presentations, and internal narratives structured for clarity, trust, and decision-making.',
+    fit: 'Best when the team has a story to tell — fundraising, sales, partnership, strategy, product, or internal alignment — and needs the deck to feel sharp and easy to follow.',
     included: [
-      'Slide layout & visual hierarchy design',
-      'Data visualisation & infographic creation',
-      'Brand-aligned colour, type & icon system',
-      'Up to 30 slides per request',
-      'Speaker notes formatting',
-      'PowerPoint, Keynote & Google Slides delivery'
+      'Narrative and slide-structure cleanup',
+      'Slide layout and visual hierarchy',
+      'Data visualization and infographic design',
+      'Brand-aligned diagrams, icons, and visual systems',
+      'PowerPoint, Keynote, Google Slides, or Figma delivery',
+      'Reusable slide patterns for future decks'
+    ],
+    memoryDetail: 'Client Memory should store the company narrative, positioning, proof points, product explanations, previous deck patterns, common objections, and brand rules so future decks improve instead of restarting.',
+    related: [
+      { href: '/services/brand-identity', label: 'Brand identity' },
+      { href: '/services/social-media-creatives', label: 'Growth creative' },
+      { href: '/work', label: 'View related work' },
+      { href: '/services', label: 'All services' }
     ],
     faq: [
-      { q: 'Do you write the content or just design existing content?', a: 'We design around content you provide. We can refine copy for clarity and punch, but we don\'t write the pitch narrative from scratch.' },
-      { q: 'How many slides can you design in one request?', a: 'A single request covers up to 30 slides. Larger decks are split into sequential requests in your queue.' },
-      { q: 'Can you match our existing brand?', a: 'Absolutely. Share your brand guide and we\'ll design every slide to match your existing visual identity exactly.' },
-      { q: 'What file formats do you deliver?', a: 'We deliver in PowerPoint (.pptx), Keynote (.key), and Google Slides — whichever you use to present.' }
+      { q: 'Do you write the deck or only design it?', a: 'MyDesigner can sharpen structure and clarity around content you provide. Full copywriting or strategy depth depends on the scope.' },
+      { q: 'Can you redesign an existing pitch deck?', a: 'Yes. This is one of the strongest use cases: making existing thinking sharper, more visual, and easier to present.' },
+      { q: 'Can you make reusable templates?', a: 'Yes. Reusable slide patterns can be stored in Client Memory so future sales and founder communication gets faster.' },
+      { q: 'Which formats do you deliver?', a: 'We can deliver PowerPoint, Keynote, Google Slides, or Figma files depending on how your team presents and edits.' }
     ]
   },
   {
     slug: 'booth-designs',
     label: 'Booth & Exhibition Design',
     category: 'graphic',
-    valuerop: 'Exhibition Stands That Stop Foot Traffic',
-    subheadline: 'We design eye-catching booth and exhibition graphics that communicate your brand\'s story and attract the right attendees.',
-    metaDescription: 'Trade show booths, exhibition displays, and event graphics designed as part of your subscription. Unlimited designs, fast turnaround, cancel anytime.',
+    metaTitle: 'Booth & Exhibition Design — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'Trade show booths, banners, handouts, display assets, and event graphics designed as one coherent brand experience before the deadline hits. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    kicker: 'Event & offline campaign creative',
+    h1: 'Booth and exhibition design that carries your brand into the room',
+    subheadline: 'Trade show booths, banners, handouts, display assets, and event graphics designed as one coherent brand experience before the deadline hits.',
+    fit: 'Best when an event, expo, booth, or sales presence needs high-clarity visuals, print-ready assets, and consistent messaging across physical touchpoints.',
     included: [
-      'Booth backdrop & banner design',
-      'Pull-up & retractable banner graphics',
-      'Branded table cover & display assets',
-      'Flyer, brochure & handout design',
-      'Name badge & lanyard design',
-      'Print-ready files at correct resolution & bleed'
+      'Booth backdrop and display graphics',
+      'Pull-up banners and event signage',
+      'Flyers, brochures, handouts, and leave-behinds',
+      'Name badges, table covers, and supporting assets',
+      'Print-ready files with bleed and resolution checks',
+      'Event message hierarchy and asset consistency'
+    ],
+    memoryDetail: 'Client Memory should store event goals, booth dimensions, vendor specs, audience, offers, brand rules, previous event assets, and print constraints so recurring events get easier.',
+    related: [
+      { href: '/services/presentation-design', label: 'Presentation design' },
+      { href: '/services/brand-identity', label: 'Brand identity' },
+      { href: CALENDAR_URL, label: 'Talk through an event need' },
+      { href: '/services', label: 'All services' }
     ],
     faq: [
-      { q: 'Do you supply the printed materials or just design files?', a: 'We supply print-ready design files (PDF, AI, EPS). Printing is handled by your local or online print vendor.' },
-      { q: 'Can you work with an upcoming event deadline?', a: 'Yes. Mention your deadline when submitting the request and we\'ll prioritise accordingly. Growth and Scale plans offer the fastest turnaround.' },
-      { q: 'What dimensions and file specs do you need from us?', a: 'Share the vendor\'s spec sheet (dimensions, bleed, DPI, colour mode) and we\'ll design and export to those exact specifications.' },
-      { q: 'Can you design multiple booth sizes for the same event?', a: 'Yes. Multiple size variants of the same design are treated as revisions, not separate requests.' }
+      { q: 'Do you print the materials?', a: 'MyDesigner supplies print-ready design files and can support specs where possible. Printing is handled by your chosen vendor.' },
+      { q: 'Can you work with tight event deadlines?', a: 'Yes, depending on priority and scope. Share vendor specs and deadlines immediately so the work can be planned realistically.' },
+      { q: 'Can you adapt one booth system into many sizes?', a: 'Yes. This is a strong consistency use case because one event system can become banners, handouts, table assets, and other formats.' },
+      { q: 'How does Client Memory help event work?', a: 'It preserves specs, message hierarchy, reusable event assets, brand rules, and print constraints for future booths and campaigns.' }
     ]
   },
   {
     slug: 'social-media-creatives',
     label: 'Social Media Design',
     category: 'graphic',
-    valuerop: 'Scroll-Stopping Social Content, Consistently',
-    subheadline: 'We design on-brand social media creatives that maintain visual consistency and drive engagement across every platform.',
-    metaDescription: 'Scroll-stopping social media graphics and templates for every platform, included in your MyDesigner subscription. Unlimited requests, 24–72 hour delivery.',
+    metaTitle: 'Social Media Design — MyDesigner | AI-Native Creative Team',
+    metaDescription: 'LinkedIn, Instagram, X, ad creative, carousels, covers, and campaign assets produced with brand consistency and enough variation to keep testing. Work with an AI-native creative team that stores context in Client Memory so future work gets faster and more consistent.',
+    kicker: 'Growth campaign creative',
+    h1: 'Social media creatives that keep campaigns moving without losing the brand',
+    subheadline: 'LinkedIn, Instagram, X, ad creative, carousels, covers, and campaign assets produced with brand consistency and enough variation to keep testing.',
+    fit: 'Best when a growth, founder, or marketing team needs steady creative output for campaigns, launches, content, ads, and experiments.',
     included: [
-      'Instagram, LinkedIn & Twitter/X post designs',
-      'Story & Reel cover graphics',
-      'Carousel & multi-slide post design',
-      'Ad creative variations (A/B ready)',
-      'Platform-correct sizing & format',
-      'Editable Figma or Canva templates'
+      'Platform-specific post and carousel designs',
+      'Ad creative variations for testing',
+      'Founder/content asset templates',
+      'Story, reel, and cover graphics',
+      'Editable Figma or Canva templates where useful',
+      'Campaign-level visual consistency across batches'
+    ],
+    memoryDetail: 'Client Memory should store audience, offers, campaign learnings, content pillars, visual rules, winning examples, past assets, and channel preferences so creative variation stays on-brand.',
+    related: [
+      { href: '/services/brand-identity', label: 'Brand identity' },
+      { href: '/services/presentation-design', label: 'Decks and sales assets' },
+      { href: '/#ch-plans', label: 'See operating rhythms' },
+      { href: '/services', label: 'All services' }
     ],
     faq: [
-      { q: 'How many posts can I get per month?', a: 'Output depends on complexity and your plan. Starter clients typically receive 15–25 individual post designs per month with revisions.' },
-      { q: 'Do you design for all social platforms?', a: 'Yes — Instagram, LinkedIn, Twitter/X, Facebook, Pinterest, and YouTube thumbnails. Specify the platforms in your request.' },
-      { q: 'Can you create templates our team can edit?', a: 'Yes. We deliver editable Figma or Canva templates so your team can swap copy and images for future posts independently.' },
-      { q: 'Will the designs follow our brand guidelines?', a: 'Every creative is designed to your brand guide. Share your brand kit on onboarding and we apply it consistently across every post.' }
+      { q: 'How many posts can we get?', a: 'Output depends on the operating rhythm: one focused lane, parallel growth execution, or a sprint depending on the priority and complexity.' },
+      { q: 'Can you design ad variations?', a: 'Yes. MyDesigner can create structured creative variation for testing while keeping the campaign connected to your brand.' },
+      { q: 'Can our team edit the templates?', a: 'Yes. Editable Figma or Canva templates can help your team adapt recurring formats without losing consistency.' },
+      { q: 'How do you avoid everything looking generic?', a: 'Human taste plus Client Memory. Stored examples, rules, channel preferences, and performance learnings guide every batch.' }
     ]
   }
 ];
 
-function buildServicePage(config) {
-  const categoryProjects = PROJECTS.filter((p) =>
-    p.category === config.category && (!config.platform || p.platform === config.platform)
-  );
+function renderList(items) {
+  return items.map((item) => `          <li>${escapeXml(item)}</li>`).join('\n');
+}
 
-  const projectCards = categoryProjects.map((p) => `
-        <div class="portfolio-item" data-category="${p.category}">
-          <a href="/work/${p.slug}" class="block group">
-            <div class="card bg-base-100 border border-base-200 hover:shadow-lg transition-shadow overflow-hidden">
-              <figure class="overflow-hidden">
-                <img src="${p.thumb}" alt="${escapeXml(p.title)}" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
-              </figure>
-              <div class="card-body p-4">
-                <div class="badge badge-outline badge-sm">${p.badge}</div>
-                <h3 class="card-title text-base mt-1">${escapeXml(p.title)}</h3>
-                <p class="text-sm text-base-content/60">${escapeXml(p.desc)}</p>
-                <p class="text-xs text-primary font-medium mt-1">View case study &rarr;</p>
-              </div>
+function renderProjectCards(projects) {
+  if (!projects.length) {
+    return '          <p class="section-copy">Related work is being prepared for this capability.</p>';
+  }
+
+  return projects.map((project) => `          <a href="/work/${project.slug}" class="project-card">
+            <figure class="project-card__media">
+              <img src="${project.thumb}" alt="${escapeXml(project.title)}" loading="lazy">
+            </figure>
+            <div class="project-card__body">
+              <span class="project-card__tag">${escapeXml(project.badge)}</span>
+              <h3>${escapeXml(project.title)}</h3>
+              <p>${escapeXml(project.desc)}</p>
+              <span class="project-card__link">View case study &rarr;</span>
             </div>
-          </a>
-        </div>`).join('\n');
+          </a>`).join('\n');
+}
 
-  const includedItems = config.included.map((item) =>
-    `          <li class="flex items-start gap-3 p-4 bg-base-100 rounded-box border border-base-200">
-            <span class="text-primary font-bold mt-0.5">&#10003;</span>
-            <span>${escapeXml(item)}</span>
-          </li>`
-  ).join('\n');
+function renderRelatedLinks(links) {
+  return links.map((link) => `              <a href="${escapeXml(link.href)}" class="btn btn--ghost">${escapeXml(link.label)} <span class="arrow">-&gt;</span></a>`).join('\n');
+}
 
-  const faqItems = config.faq.map((item, i) => `
-        <div class="collapse collapse-arrow join-item border border-base-300 bg-base-100">
-          <input type="radio" name="service-faq" ${i === 0 ? 'checked="checked"' : ''}>
-          <div class="collapse-title font-semibold">${escapeXml(item.q)}</div>
-          <div class="collapse-content text-base-content/70"><p>${escapeXml(item.a)}</p></div>
-        </div>`).join('\n');
+function renderFaq(faq, label) {
+  return faq.map((item, index) => `          <details${index === 0 ? ' open' : ''}>
+            <summary>${escapeXml(item.q)}</summary>
+            <p>${escapeXml(item.a)}</p>
+          </details>`).join('\n');
+}
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: config.faq.map((item) => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: { '@type': 'Answer', text: item.a }
-    }))
-  };
-
+function buildSchemas(config, canonicalUrl) {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
       { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services` },
-      { '@type': 'ListItem', position: 3, name: config.label, item: `${SITE_URL}/services/${config.slug}` }
+      { '@type': 'ListItem', position: 3, name: config.label, item: canonicalUrl }
     ]
   };
 
@@ -263,138 +336,170 @@ function buildServicePage(config) {
       '@type': 'Offer',
       price: '1400',
       priceCurrency: 'USD',
-      priceSpecification: { '@type': 'UnitPriceSpecification', price: '1400', priceCurrency: 'USD', unitText: 'month' },
-      description: 'Starting from $1,400/mo. No contract. Cancel anytime.'
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '1400',
+        priceCurrency: 'USD',
+        unitText: 'month'
+      },
+      description: 'Transparent creative sprint, subscription, and partner options based on the operating rhythm your team needs.'
     }
   };
 
-  const valuerop = config.valuerop || `Expert ${config.label} for Growing Startups`;
-  const metaTitle = `${config.label} — MyDesigner | ${valuerop}`;
-  const metaDesc = config.metaDescription || config.subheadline;
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: config.faq.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a }
+    }))
+  };
+
+  return [breadcrumbSchema, serviceSchema, faqSchema];
+}
+
+function buildServicePage(config) {
+  const categoryProjects = PROJECTS.filter((project) =>
+    project.category === config.category && (!config.platform || project.platform === config.platform)
+  );
   const canonicalPath = `/services/${config.slug}`;
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
+  const schemas = buildSchemas(config, canonicalUrl);
 
-  const body = `
-  <!-- JSON-LD Schemas -->
-  <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
-  <script type="application/ld+json">${JSON.stringify(serviceSchema)}</script>
-  <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>
-
+  return `<!DOCTYPE html>
+<html lang="en" class="static">
+<head>
+${headTags({
+    title: config.metaTitle,
+    description: config.metaDescription,
+    canonical: canonicalPath,
+    schema: schemas,
+    extra: '  <link rel="alternate" type="application/rss+xml" title="MyDesigner Blog RSS" href="https://mydesigner.gg/rss.xml">'
+  })}
+</head>
+<body class="orbit-static">
+  ${NAV}
+  <div class="grain"></div>
+  <div class="vignette"></div>
   <main>
-    <!-- Hero -->
-    <section class="py-16 lg:py-24 text-center" data-hero>
-      <div class="max-w-4xl mx-auto px-4">
-        <div class="breadcrumbs text-sm mb-4 mx-auto w-fit">
-          <ul><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li>${escapeXml(config.label)}</li></ul>
+    <header class="deep-hero" data-hero>
+      <div class="deep-hero__inner">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <span><a href="/">Home</a></span>
+          <span><a href="/services">Services</a></span>
+          <span>${escapeXml(config.label)}</span>
+        </nav>
+        <p class="kicker">${escapeXml(config.kicker)}</p>
+        <h1>${escapeXml(config.h1)}</h1>
+        <p class="deep-hero__lede">${escapeXml(config.subheadline)}</p>
+        <div class="cta-row">
+          <a href="${CALENDAR_URL}" class="btn btn--solid">Talk through this work <span class="arrow">-&gt;</span></a>
+          <a href="#related-work" class="btn btn--ghost">See related work <span class="arrow">-&gt;</span></a>
         </div>
-        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Service</span>
-        <h1 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">${escapeXml(config.label)}</h1>
-        <p class="text-lg text-base-content/70 max-w-2xl mx-auto mb-8">${escapeXml(config.subheadline)}</p>
-        <div class="flex flex-wrap gap-3 justify-center">
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary btn-lg">Book a call</a>
-          <a href="/pricing" class="btn btn-outline btn-lg">See pricing</a>
+      </div>
+    </header>
+
+    <section class="deep-section deep-section--tint">
+      <div class="shell">
+        <div class="orbit-card orbit-card--split">
+          <div>
+            <p class="kicker">Use this when</p>
+            <h2 class="section-title">This capability fits a specific bottleneck.</h2>
+          </div>
+          <p class="section-copy">${escapeXml(config.fit)}</p>
         </div>
       </div>
     </section>
 
-    <!-- What's Included -->
-    <section class="py-12 lg:py-16 bg-base-200">
-      <div class="max-w-4xl mx-auto px-4">
-        <div class="text-center mb-10">
-          <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">What You Get</span>
-          <h2 class="text-3xl lg:text-4xl font-bold mt-2">What's Included</h2>
+    <section class="deep-section">
+      <div class="shell">
+        <div class="section-head section-head--center">
+          <p class="kicker">What MyDesigner helps ship</p>
+          <h2 class="section-title">Concrete outputs, not vague design help.</h2>
         </div>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
-${includedItems}
+        <ul class="check-list deep-grid deep-grid--2">
+${renderList(config.included)}
         </ul>
       </div>
     </section>
 
-    <!-- Portfolio Grid -->
-    <section class="py-12 lg:py-16">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="flex items-end justify-between mb-8">
-          <div>
-            <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">Our Work</span>
-            <h2 class="text-3xl lg:text-4xl font-bold mt-1">${escapeXml(config.label)} Projects</h2>
+    <section class="deep-section deep-section--tint">
+      <div class="shell">
+        <div class="deep-grid deep-grid--2">
+          <div class="orbit-card">
+            <p class="kicker">How this work runs</p>
+            <h2 class="section-title">A shipping rhythm with human taste.</h2>
+            <ol class="step-list">
+              <li><strong>1. Diagnose</strong> the creative bottleneck.</li>
+              <li><strong>2. Gather</strong> the context that affects quality.</li>
+              <li><strong>3. Create</strong> the first direction quickly.</li>
+              <li><strong>4. Review</strong> with human taste and business judgment.</li>
+              <li><strong>5. Ship</strong> the asset and store the learning in Client Memory.</li>
+            </ol>
           </div>
-          <a href="/portfolio" class="btn btn-outline btn-sm hidden sm:inline-flex">View all work &rarr;</a>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-${projectCards}
-        </div>
-        <div class="mt-8 text-center sm:hidden">
-          <a href="/portfolio" class="btn btn-outline btn-sm">View all work &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing CTA Strip -->
-    <section class="py-10 bg-base-200">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <p class="text-base-content/70 mb-4">Starting from <strong>$1,400/mo</strong> &middot; No contract &middot; Cancel anytime</p>
-        <div class="flex flex-wrap gap-3 justify-center">
-          <a href="/pricing" class="btn btn-outline">See pricing</a>
-          <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5" class="btn btn-primary">Book a call</a>
+          <div class="orbit-card">
+            <p class="kicker">Client Memory</p>
+            <h2 class="section-title">Every engagement builds Client Memory.</h2>
+            <p>${escapeXml(MEMORY_INTRO)}</p>
+            <p>${escapeXml(config.memoryDetail)}</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-12 lg:py-16">
-      <div class="max-w-3xl mx-auto px-4 text-center">
-        <span class="text-sm font-semibold uppercase tracking-wider text-base-content/60">FAQ</span>
-        <h2 class="text-3xl lg:text-4xl font-bold mt-2 mb-8">${escapeXml(config.label)} — Questions Answered</h2>
-        <div class="join join-vertical w-full text-left">
-${faqItems}
+    <section class="deep-section" id="related-work">
+      <div class="shell">
+        <div class="section-head">
+          <p class="kicker">Related work</p>
+          <h2 class="section-title">Proof that connects to ${escapeXml(config.kicker.toLowerCase())}</h2>
+          <p class="section-copy">These projects show the taste, structure, and execution quality MyDesigner now makes faster and more repeatable through the AI-native creative-team model.</p>
+        </div>
+        <div class="deep-grid deep-grid--3">
+${renderProjectCards(categoryProjects)}
         </div>
       </div>
     </section>
-  </main>`;
 
-  const html = `<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '4412177725703271');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=4412177725703271&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${metaTitle}</title>
-  <meta name="description" content="${metaDesc}">
-  <link rel="canonical" href="${canonicalUrl}">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-  <link rel="stylesheet" href="/css/site.css">
-  <link rel="stylesheet" href="/css/styles.css">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="${canonicalUrl}">
-  <meta property="og:title" content="${metaTitle}">
-  <meta property="og:description" content="${metaDesc}">
-  <meta property="og:image" content="${SITE_URL}/assets/images/og-image.jpg">
-</head>
-<body class="bg-base-100 text-base-content">
-  ${require('./partials/nav')}
-  ${body}
-  ${require('./partials/footer')}
+    <section class="deep-section deep-section--tint">
+      <div class="shell">
+        <div class="orbit-card">
+          <p class="kicker">Related paths</p>
+          <h2 class="section-title">Keep exploring the capability architecture.</h2>
+          <div class="cta-row">
+${renderRelatedLinks(config.related)}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="deep-section">
+      <div class="shell">
+        <div class="section-head section-head--center">
+          <p class="kicker">FAQ</p>
+          <h2 class="section-title">${escapeXml(config.label)} — Questions Answered</h2>
+        </div>
+        <div class="faq-list">
+${renderFaq(config.faq, config.label)}
+        </div>
+      </div>
+    </section>
+
+    <section class="deep-section finale">
+      <div class="shell">
+        <p class="kicker">Next orbit</p>
+        <h2 class="finale-h">Want to see if this is the right work to ship next?</h2>
+        <p class="section-copy" style="margin-left:auto;margin-right:auto;">Bring the bottleneck, examples, and current context. We will help you decide whether this should be a sprint, a focused lane, or part of a larger creative operating rhythm.</p>
+        <div class="cta-row">
+          <a href="${CALENDAR_URL}" class="btn btn--solid">Talk through this work <span class="arrow">-&gt;</span></a>
+          <a href="/#ch-plans" class="btn btn--ghost">See operating rhythms <span class="arrow">-&gt;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  ${FOOTER}
 </body>
 </html>`;
-
-  return html;
 }
 
 function buildServicePages() {
@@ -407,4 +512,8 @@ function buildServicePages() {
   });
 }
 
-module.exports = { buildServicePages };
+if (require.main === module) {
+  buildServicePages();
+}
+
+module.exports = { buildServicePage, buildServicePages, SERVICE_CONFIGS };

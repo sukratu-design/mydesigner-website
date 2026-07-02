@@ -16,9 +16,11 @@ The reason is simple: users don't give you time, they give you attention. When s
 
 If you can't answer that in the first five minutes, they're gone.
 
+**Direct answer:** Startup onboarding cuts churn when it gets users to a meaningful activation moment quickly, before asking for unnecessary setup. The best flows welcome the user, guide them to the first value experience, then reveal advanced features only when they become relevant. Onboarding should create momentum, not teach every feature.
+
 ---
 
-## Why most startup onboarding fails
+## Why does most startup onboarding fail?
 
 Most founders design onboarding around their own mental model of the product — not the user's. That usually produces one of three failure modes.
 
@@ -32,7 +34,7 @@ Each of these is a design failure, not a product failure. And the [trust gap](/b
 
 ---
 
-## The 3-phase onboarding framework
+## What is the 3-phase onboarding framework?
 
 Great onboarding follows a clear arc: Welcome → Activate → Expand.
 
@@ -81,6 +83,30 @@ Onboarding isn't just a product decision — it's a design one. The copy, the vi
 The first five minutes of your product aren't a tutorial. They're a promise. If users reach a genuine moment of value before their attention expires, you've earned the right to show them everything else. If they don't, no amount of features, marketing, or pricing will compensate.
 
 Audit your activation event. Map the shortest path to it. Remove everything that isn't that path.
+
+---
+
+## Frequently Asked Questions
+
+### What is the best onboarding flow for a startup?
+
+The best startup onboarding flow moves from welcome, to guided activation, to progressive disclosure. It confirms the user's decision, gets them to a meaningful first value experience, and introduces advanced features only when they become relevant.
+
+### Why do users churn during onboarding?
+
+Users churn during onboarding when they hit a feature tour, an empty dashboard, or a delayed value moment before they understand why the product matters. The post treats those as design failures because the flow asks for attention before it earns trust.
+
+### What is an activation event in onboarding?
+
+An activation event is the single user action that predicts long-term retention. The post recommends designing the entire onboarding path around reaching that event as quickly as possible, then measuring what users do after completion.
+
+### How long should startup onboarding take?
+
+Startup onboarding should get users to the aha moment as fast as possible. The post says that if the flow takes more than 5 minutes to reach that moment, it is too long and should be simplified.
+
+### Should onboarding teach every product feature?
+
+No, onboarding should not teach every product feature upfront. It should build toward the first value moment first, then use progressive disclosure to introduce advanced features when the user behavior makes them relevant.
 
 ---
 

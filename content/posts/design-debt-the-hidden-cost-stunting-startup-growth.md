@@ -62,7 +62,7 @@ Design debt isn't just an aesthetic problem — it has measurable business conse
 
 ## Where MyDesigner fits in
 
-Design debt accumulates fastest at startups growing quickly without a dedicated design function. Rather than a one-off agency engagement, [MyDesigner](https://mydesigner.gg) works as an ongoing design partner — auditing, cleaning, and building on your foundation continuously as your product evolves. [See how it works](/how-it-works) and what a [design subscription](/pricing) looks like in practice.
+Design debt accumulates fastest at startups growing quickly without a dedicated design function. Rather than a one-off agency engagement, [MyDesigner](https://mydesigner.gg) works as an ongoing design partner — auditing, cleaning, and building on your foundation continuously as your product evolves. [See how it works](/about) and what a [design subscription](/#ch-plans) looks like in practice.
 
 ---
 

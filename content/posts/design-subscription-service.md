@@ -12,6 +12,8 @@ draft: false
 
 # Design Subscription Service: What You Actually Pay Per Design Request
 
+**Definition:** A design subscription service is a flat-rate monthly model for getting recurring design work without hiring full-time staff or quoting every project separately. You submit requests into a queue, the team ships drafts and revisions, and the model works best when your company has steady design volume across product, web, brand, and growth needs.
+
 A design subscription gives you access to professional designers for a fixed monthly fee instead of hourly billing, project quotes, or full-time salaries. You submit requests through a queue, get deliverables in 24-72 hours depending on your plan tier, and never see an invoice surprise. The model works because subscriptions turn variable creative costs into a predictable line item. For a startup burning through UI screens, social assets, and pitch decks simultaneously, that predictability matters more than saving a few hundred dollars.
 
 Here is what the market looks like right now, condensed:
@@ -25,7 +27,7 @@ Here is what the market looks like right now, condensed:
 **Quick comparison of the top providers:**
 
 <div class="overflow-x-auto">
-<table class="table table-zebra bg-base-100 rounded-box">
+<table>
   <thead>
     <tr>
       <th>Provider</th>
@@ -121,7 +123,7 @@ An agency charges $150-$300/hour. A single website project ranges from $10,000-$
 **Break-even analysis:**
 
 <div class="overflow-x-auto">
-<table class="table table-zebra bg-base-100 rounded-box">
+<table>
   <thead>
     <tr>
       <th>Hiring Model</th>
@@ -199,7 +201,7 @@ This team model means your Instagram carousel is built by someone who lives in t
 The pricing landscape is wide. Here is how MyDesigner stacks against three popular alternatives across plan tiers:
 
 <div class="overflow-x-auto">
-<table class="table table-zebra bg-base-100 rounded-box">
+<table>
   <thead>
     <tr>
       <th>Feature</th>
@@ -279,7 +281,7 @@ For deeper breakdowns: [MyDesigner vs. Kimp](/vs/kimp) | [MyDesigner vs. Penji](
 **Methodology:** We calculated the effective cost per design request for a company submitting 10 requests/month across 12 months at each provider's mid-tier plan. This accounts for the monthly fee only (no setup costs, no add-ons).
 
 <div class="overflow-x-auto">
-<table class="table table-zebra bg-base-100 rounded-box">
+<table>
   <thead>
     <tr>
       <th>Provider</th>
@@ -380,7 +382,7 @@ Yes, if you submit enough useful work each month for the team to build momentum.
 
 ### How does a flat-rate creative team differ from hiring a freelancer?
 
-Three ways. First, a subscription provides guaranteed availability. No scheduling conflicts, no "I'm booked until next month." Second, you get multiple specialists instead of one generalist. Third, the cost is predictable. A freelancer's bill fluctuates with scope creep and revision requests. The tradeoff: you sacrifice the deep product context that comes from a full-time embedded designer.
+A flat-rate creative team differs from a freelancer by combining availability, multiple specialists, and predictable cost in one monthly model. There are no scheduling conflicts or "I'm booked until next month" gaps. The tradeoff: you sacrifice the deep product context that comes from a full-time embedded designer.
 
 ### Can a subscription handle both graphic design and web development?
 
@@ -395,7 +397,7 @@ You keep approved source files and deliverables, and any useful context captured
 ## MyDesigner Ways to Work at a Glance
 
 <div class="overflow-x-auto">
-<table class="table table-zebra bg-base-100 rounded-box">
+<table>
   <thead>
     <tr>
       <th>Engagement</th>
@@ -440,6 +442,6 @@ You keep approved source files and deliverables, and any useful context captured
 
 MyDesigner engagements include human creative direction, AI-assisted production, source-file handoff where appropriate, and access to web, product, brand, and growth creative capability.
 
-[See full pricing and start your first request](https://mydesigner.gg/pricing)
+[See full pricing and start your first request](https://mydesigner.gg/#ch-plans)
 
 ---

@@ -101,4 +101,4 @@ Start with your tokens. Build your first component. Document the decision you ju
 
 ---
 
-*MyDesigner helps startups establish and maintain their design foundations — token layers, component libraries, and handoff to engineering — as part of an ongoing subscription. [See how it works](/how-it-works) or explore our [web app design service](/services/web-app-design).*
+*MyDesigner helps startups establish and maintain their design foundations — token layers, component libraries, and handoff to engineering — as part of an ongoing subscription. [See how it works](/about) or explore our [web app design service](/services/web-app-design).*

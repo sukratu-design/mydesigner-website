@@ -18,7 +18,7 @@ node scripts/generate-blog-image.js "<topic description>" <slug>
 
 Note: Work case studies use content/work/ as editable source (Phase 2 of audit). Partials (nav/footer) are centralized in scripts/partials/ for DRY HTML across generators. build-blog.js is slim (~491 LOC) delegating to focused modules.
 
-There are no tests configured (`npm test` is a no-op).
+`npm test` runs 9 content-contract checks (scripts/check-*.js) — positioning, schema, CSP, and page-structure assertions. Run it after template or generator changes.
 
 ## Architecture
 

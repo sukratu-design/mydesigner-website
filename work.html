@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en" data-view="humans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work — MyDesigner ORBIT Portfolio</title>
+  <meta name="description" content="A filterable ORBIT portfolio archive for MyDesigner: UI/UX Design, Web Development, Graphic Design, and Branding work.">
+  <meta name="theme-color" content="#0b0807">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="canonical" href="https://mydesigner.gg/work">
+
+  <meta property="og:title" content="Work — MyDesigner ORBIT Portfolio">
+  <meta property="og:description" content="Twenty records across UI/UX Design, Web Development, Graphic Design, and Branding.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mydesigner.gg/work">
+  <meta property="og:image" content="https://mydesigner.gg/assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Work — MyDesigner ORBIT Portfolio">
+  <meta name="twitter:description" content="Twenty records across UI/UX Design, Web Development, Graphic Design, and Branding.">
+  <meta name="twitter:image" content="https://mydesigner.gg/assets/images/og-image.jpg">
+
+  <script>
+    (function () {
+      try {
+        if (new URLSearchParams(location.search).get('view') === 'agents') {
+          document.documentElement.dataset.view = 'agents';
+        }
+      } catch (e) {}
+    }());
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Space+Grotesk:wght@300..700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/orbit.css">
+
+  <style>
+    /* Page-specific ORBIT overrides and components. Shared foundation lives in /css/orbit.css. */
+
+    .mode button:focus-visible, .btn:focus-visible, .nav__cta:focus-visible, .nav__link:focus-visible, .filter-pill:focus-visible, .motion-toggle:focus-visible {
+      outline-offset: 4px; border-radius: 999px;
+    }
+
+    html.static #field {
+      display: none !important;
+    }
+
+    .shell {
+      width: min(100%, 1240px);
+            margin: 0 auto;
+            padding-left: var(--gutter);
+            padding-right: var(--gutter);
+    }
+
+    .hero {
+      min-height: 88svh;
+            display: flex; align-items: flex-end;
+            padding: clamp(7rem, 14vh, 9rem) 0 clamp(3rem, 7vh, 5rem);
+    }
+
+    .hero__grid {
+      display: grid; gap: clamp(2.2rem, 5vw, 5rem);
+            grid-template-columns: 1fr;
+            align-items: end;
+    }
+
+    @media (min-width: 980px) {
+      .hero__grid {
+        grid-template-columns: minmax(0, 1.12fr) minmax(18rem, 0.62fr);
+      }
+    }
+
+    .hero h1 {
+      font-family: var(--serif); font-weight: 320;
+            font-variation-settings: "opsz" 144;
+            font-size: clamp(3.1rem, 8vw, 8rem);
+            line-height: 0.98; letter-spacing: -0.015em;
+            max-width: 11ch;
+    }
+
+    .hero h1 em, .h2 em, .finale-h em {
+      font-family: var(--serif-accent); font-style: italic;
+            color: var(--accent); font-weight: 380;
+    }
+
+    .hero__sub {
+      max-width: 48ch; color: var(--paper-dim);
+            font-size: clamp(1rem, 1.45vw, 1.18rem);
+            margin-top: 1.6rem;
+    }
+
+    .hero__sub strong {
+      color: var(--paper); font-weight: 500;
+    }
+
+    .hero__fact {
+      border-top: 1px solid var(--line);
+            padding-top: 1.4rem;
+            font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+            text-transform: uppercase; color: var(--paper-faint);
+    }
+
+    .hero__fact em {
+      font-style: normal; color: var(--accent);
+    }
+
+    .hero__ctas, .cta-row {
+      display: flex; flex-wrap: wrap; gap: 0.9rem;
+            margin-top: 2rem;
+    }
+
+    .h2 {
+      font-family: var(--serif); font-weight: 320;
+            font-variation-settings: "opsz" 144;
+            font-size: clamp(2.2rem, 5vw, 5rem);
+            line-height: 1.02; letter-spacing: -0.012em;
+            max-width: 12ch;
+    }
+
+    .lede {
+      color: var(--paper-dim);
+            font-size: clamp(1rem, 1.45vw, 1.18rem);
+            max-width: 58ch;
+    }
+
+    .lede strong {
+      color: var(--paper); font-weight: 500;
+    }
+
+    .stats-line {
+      display: flex; flex-wrap: wrap; gap: 0.7rem 2.2rem;
+            margin-top: 1.5rem;
+            font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+            text-transform: uppercase; color: var(--paper-faint);
+    }
+
+    .filters {
+      display: flex; flex-wrap: wrap; gap: 0.65rem;
+            margin: clamp(2rem, 5vw, 3rem) 0 clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .filter-pill {
+      min-height: 40px;
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            padding: 0.72rem 1rem;
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--paper-dim);
+            transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .filter-pill:hover {
+      color: var(--paper); border-color: var(--accent-dim);
+    }
+
+    .filter-pill[aria-pressed="true"] {
+      color: var(--ink);
+            border-color: var(--accent);
+            background: linear-gradient(135deg, var(--accent-light), var(--accent-deep));
+    }
+
+    .filter-pill .count {
+      color: currentColor; opacity: 0.68;
+    }
+
+    .project-grid {
+      display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(0.95rem, 2vw, 1.25rem);
+            margin-top: 1.4rem;
+    }
+
+    @media (min-width: 700px) {
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1080px) {
+      .project-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .project-card {
+      min-width: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(18, 13, 10, 0.56);
+            transition: border-color 0.28s ease, background-color 0.28s ease, transform 0.28s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+            background: rgba(18, 13, 10, 0.76);
+            transform: translateY(-2px);
+    }
+
+    .project-card__media {
+      position: relative;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            background: var(--ink-3);
+            border-bottom: 1px solid var(--line);
+    }
+
+    .project-card__media img {
+      width: 100%; height: 100%; object-fit: cover;
+            transform: scale(1.005);
+            filter: saturate(0.9) brightness(0.82);
+            transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), filter 0.35s ease;
+    }
+
+    .project-card:hover .project-card__media img {
+      transform: scale(1.03);
+            filter: saturate(1.03) brightness(1);
+    }
+
+    .project-card__body {
+      display: flex; flex-direction: column; gap: 0.75rem;
+            padding: clamp(1rem, 2.5vw, 1.3rem);
+            flex: 1;
+    }
+
+    .project-card__tags {
+      display: flex; flex-wrap: wrap; gap: 0.42rem;
+            font-family: var(--mono); font-size: 9px; letter-spacing: 0.17em;
+            text-transform: uppercase; color: var(--paper-faint);
+            line-height: 1.5;
+    }
+
+    .project-card__tags span {
+      border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 0.26rem 0.5rem;
+    }
+
+    .project-card__tags .platform {
+      color: var(--accent); border-color: var(--accent-dim);
+    }
+
+    .project-card h3 {
+      font-family: var(--serif); font-weight: 340;
+            font-size: clamp(1.28rem, 2.2vw, 1.8rem);
+            line-height: 1.12;
+            transition: color 0.25s ease;
+    }
+
+    .project-card:hover h3 {
+      color: var(--accent);
+    }
+
+    .project-card p {
+      color: var(--paper-dim);
+            font-size: 0.95rem;
+            line-height: 1.55;
+    }
+
+    .empty-state {
+      display: none;
+            border: 1px dashed var(--line-strong);
+            border-radius: 8px;
+            padding: 1.4rem;
+            color: var(--paper-faint);
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+    }
+
+    [data-view="agents"] #humans, [data-view="agents"] #field, [data-view="agents"] .grain, [data-view="agents"] .vignette, [data-view="agents"] .hud, [data-view="agents"] .cursor-dot, [data-view="agents"] .cursor-ring {
+      display: none !important;
+    }
+
+    .finale p {
+      max-width: 48ch;
+      margin: 1.3rem auto 0;
+      color: var(--paper-dim);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .grain, .motion-toggle__star {
+        animation: none !important;
+      }
+
+      .project-card, .project-card__media img, .btn .arrow {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"><span>View</span></div>
+
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="/" data-cursor aria-label="MyDesigner home">
+      <img src="/assets/images/logo-dark.svg" alt="MyDesigner">
+      <span class="nav__logo-text">MyDesigner</span>
+    </a>
+    <div class="nav__right">
+      <a class="nav__link nav__optional nav__optional--work" href="/work" aria-current="page" data-cursor>Work</a>
+      <a class="nav__link" href="/services" data-cursor>Services</a>
+      <a class="nav__link nav__optional nav__optional--about" href="/about" data-cursor>About</a>
+      <a class="nav__link nav__optional nav__optional--blog" href="/blog/" data-cursor>Blog</a>
+      <a class="nav__link nav__optional nav__optional--plans" href="/#ch-plans" data-cursor>Plans</a>
+      <div class="mode" role="radiogroup" aria-label="Edition">
+        <button type="button" id="modeHumans" role="radio" aria-checked="true" data-cursor>Humans</button>
+        <button type="button" id="modeAgents" role="radio" aria-checked="false" data-cursor>Agents</button>
+      </div>
+      <a class="nav__cta" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a call</a>
+    </div>
+  </header>
+
+  <button type="button" class="motion-toggle" id="motionToggle" aria-pressed="false" data-cursor>
+    <span class="motion-toggle__star" aria-hidden="true">✳</span>
+    <span class="motion-toggle__label">Motion <em id="motionState">on</em></span>
+  </button>
+
+  <div class="hud" aria-hidden="true">
+    <span id="hudPct">000%</span>
+  </div>
+
+  <main id="humans">
+    <a class="sr-only" href="?view=agents">Prefer a text-only version? View the Agents edition</a>
+
+    <section class="hero" id="work-hero" data-chapter="01" data-name="Record">
+      <div class="shell">
+        <div class="hero__grid">
+          <div class="reveal">
+            <p class="kicker"><span class="idx">01</span> The Record</p>
+            <h1>Proof from past <em>orbits.</em></h1>
+            <p class="hero__sub">Every discipline leaves a constellation. This is the evidence field: twenty records across product interfaces, websites, graphics, and brand systems.</p>
+            <div class="hero__ctas">
+              <a class="btn btn--solid magnetic" href="#work-field" data-scroll data-cursor>Browse the field ↓</a>
+              <a class="btn btn--ghost magnetic" href="/#ch-plans" data-cursor>See plans <span class="arrow">→</span></a>
+            </div>
+          </div>
+          <p class="hero__fact reveal"><em>20</em> project records · <em>4</em> constellations · each card opens its live case study.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow flow--tint" id="work-field" data-chapter="02" data-name="Field">
+      <div class="shell">
+        <div class="split">
+          <div class="reveal">
+            <p class="kicker"><span class="idx">02</span> Project Field</p>
+            <h2 class="h2">Four constellations.<br><em>Twenty records.</em></h2>
+          </div>
+          <div class="reveal">
+            <p class="lede">Filter by discipline, or scan the full field. The source of truth is the production portfolio data.</p>
+            <div class="stats-line" aria-label="Project counts">
+              <span><em>6</em> UI/UX Design</span>
+              <span><em>7</em> Web Development</span>
+              <span><em>3</em> Graphic Design</span>
+              <span><em>4</em> Branding</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filters reveal" role="toolbar" aria-label="Filter work by category">
+          <button class="filter-pill" type="button" data-filter="all" aria-pressed="true">All <span class="count">20</span></button>
+          <button class="filter-pill" type="button" data-filter="uiux" aria-pressed="false">UI/UX Design <span class="count">6</span></button>
+          <button class="filter-pill" type="button" data-filter="webdev" aria-pressed="false">Web Development <span class="count">7</span></button>
+          <button class="filter-pill" type="button" data-filter="graphic" aria-pressed="false">Graphic Design <span class="count">3</span></button>
+          <button class="filter-pill" type="button" data-filter="branding" aria-pressed="false">Branding <span class="count">4</span></button>
+        </div>
+
+        <h2 class="sr-only">Project cards</h2>
+        <div class="project-grid" id="projectGrid" aria-live="polite">
+          <noscript>
+            <style>.filters { display: none !important; }</style>
+            <a class="project-card" href="/work/dentaldost"><figure class="project-card__media"><img src="/assets/images/portfolio/dentaldost.webp" alt="DentalDost Mobile App" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>UI/UX Design</span></div><h3>DentalDost Mobile App</h3><p>Redefining oral care with a seamless mobile experience</p></div></a>
+            <a class="project-card" href="/work/slash"><figure class="project-card__media"><img src="/assets/images/portfolio/slash.webp" alt="Slash" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Branding</span></div><h3>Slash</h3><p>Where food meets fun — a social dining experience</p></div></a>
+            <a class="project-card" href="/work/apollo-radiology"><figure class="project-card__media"><img src="/assets/images/portfolio/apollo-radiology.webp" alt="Apollo Radiology" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Webflow Development</span><span class="platform">Webflow</span></div><h3>Apollo Radiology</h3><p>Transforming healthcare with Webflow-powered precision</p></div></a>
+            <a class="project-card" href="/work/uber-cards"><figure class="project-card__media"><img src="/assets/images/portfolio/uber-cards.webp" alt="Uber Cards" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Branding</span></div><h3>Uber Cards</h3><p>Crafted a bold, modern logo capturing clarity and trust</p></div></a>
+            <a class="project-card" href="/work/poocho-app"><figure class="project-card__media"><img src="/assets/images/portfolio/poocho-app.webp" alt="Poocho App" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>UI/UX Design</span></div><h3>Poocho App</h3><p>India's first research productivity tool</p></div></a>
+            <a class="project-card" href="/work/ecstra"><figure class="project-card__media"><img src="/assets/images/portfolio/ecstra.webp" alt="Ecstra" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Webflow Development</span><span class="platform">Webflow</span></div><h3>Ecstra</h3><p>Seamlessly developing Ecstra's digital presence</p></div></a>
+            <a class="project-card" href="/work/dentsu"><figure class="project-card__media"><img src="/assets/images/portfolio/dentsu.webp" alt="Dentsu" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Graphic Design</span></div><h3>Dentsu</h3><p>Evolving a global brand through collaborative social design</p></div></a>
+            <a class="project-card" href="/work/scano"><figure class="project-card__media"><img src="/assets/images/portfolio/scano.webp" alt="Scano by DentalDost" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Branding</span></div><h3>Scano by DentalDost</h3><p>Designing India's first smile-scanning brand</p></div></a>
+            <a class="project-card" href="/work/travelsaving"><figure class="project-card__media"><img src="/assets/images/portfolio/travelsaving.webp" alt="Travelsaving Pitch Deck" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Graphic Design</span></div><h3>Travelsaving Pitch Deck</h3><p>Crafting a compelling investor-ready pitch deck</p></div></a>
+            <a class="project-card" href="/work/contractwrangler"><figure class="project-card__media"><img src="/assets/images/portfolio/contractwrangler.webp" alt="ContractWrangler" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>UI/UX Design</span></div><h3>ContractWrangler</h3><p>Simplifying legal complexity through smart web app design</p></div></a>
+            <a class="project-card" href="/work/mda"><figure class="project-card__media"><img src="/assets/images/portfolio/mda.webp" alt="Maharashtra Dyslexia Association" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Framer Development</span><span class="platform">Framer</span></div><h3>Maharashtra Dyslexia Association</h3><p>Digital transformation built on Framer</p></div></a>
+            <a class="project-card" href="/work/vettly"><figure class="project-card__media"><img src="/assets/images/portfolio/vettly.webp" alt="Vettly.ai" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Branding</span></div><h3>Vettly.ai</h3><p>Cohesive branding and smarter web app for AI-driven hiring</p></div></a>
+            <a class="project-card" href="/work/fluentpet"><figure class="project-card__media"><img src="/assets/images/portfolio/fluentpet.webp" alt="FluentPet" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>UI/UX Design</span></div><h3>FluentPet</h3><p>Bridging communication between pets and humans</p></div></a>
+            <a class="project-card" href="/work/poocho-website"><figure class="project-card__media"><img src="/assets/images/portfolio/poocho-website.webp" alt="Poocho Website" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Webflow Development</span><span class="platform">Webflow</span></div><h3>Poocho Website</h3><p>Website design &amp; Webflow development for a research productivity platform</p></div></a>
+            <a class="project-card" href="/work/ahhf"><figure class="project-card__media"><img src="/assets/images/portfolio/ahhf.webp" alt="AHHF Social Media" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Graphic Design</span></div><h3>AHHF Social Media</h3><p>Designing for impact — social media for AHHF</p></div></a>
+            <a class="project-card" href="/work/neustreet"><figure class="project-card__media"><img src="/assets/images/portfolio/neustreet.webp" alt="Neustreet" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>UI/UX Design</span></div><h3>Neustreet</h3><p>The marketplace for modern collectibles</p></div></a>
+            <a class="project-card" href="/work/nada"><figure class="project-card__media"><img src="/assets/images/portfolio/nada.webp" alt="NADA" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>UI/UX Design</span></div><h3>NADA</h3><p>Where exclusivity meets real connection</p></div></a>
+            <a class="project-card" href="/work/yespl"><figure class="project-card__media"><img src="/assets/images/portfolio/yespl.webp" alt="YESPL" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Framer Development</span><span class="platform">Framer</span></div><h3>YESPL</h3><p>Engineering precision, built with Framer</p></div></a>
+            <a class="project-card" href="/work/takumi"><figure class="project-card__media"><img src="/assets/images/portfolio/takumi.webp" alt="Takumi" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Framer Development</span><span class="platform">Framer</span></div><h3>Takumi</h3><p>Framer website for an AI consultancy rooted in Japanese craftsmanship</p></div></a>
+            <a class="project-card" href="/work/kkhavo"><figure class="project-card__media"><img src="/assets/images/portfolio/kkhavo.webp" alt="Kkhavo" loading="lazy"></figure><div class="project-card__body"><div class="project-card__tags"><span>Framer Development</span><span class="platform">Framer</span></div><h3>Kkhavo</h3><p>Premium wellness brand website — heritage storytelling in Framer</p></div></a>
+          </noscript>
+        </div>
+        <p class="empty-state" id="emptyState">No projects in this constellation.</p>
+      </div>
+    </section>
+
+    <section class="flow finale" id="next" data-chapter="03" data-name="Next">
+      <div class="shell">
+        <p class="kicker reveal"><span class="idx">03</span> Next Orbit</p>
+        <h2 class="finale-h reveal">Bring your brief into <em>orbit.</em></h2>
+        <p class="reveal">The record is here. The story, plans, and booking path are one click away.</p>
+        <div class="cta-row reveal">
+          <a class="btn btn--solid magnetic" href="https://calendar.app.google/xGoKb51qpbcnZgJy5" data-cursor>Book a call <span class="arrow">→</span></a>
+          <a class="btn btn--ghost magnetic" href="/#ch-plans" data-cursor>See plans <span class="arrow">→</span></a>
+          <a class="btn btn--ghost magnetic" href="/" data-cursor>Back to story <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="agents" role="region" aria-label="Agent-readable Work edition">
+    <article class="md">
+      <p class="md__banner">Agent-readable Work edition — same portfolio records, zero images, zero WebGL. <em>Humans:</em> switch tabs for the visual grid.</p>
+
+      <pre class="fm"><span class="c">---</span>
+<span class="k">entity</span>: MyDesigner
+<span class="k">type</span>: portfolio of MyDesigner
+<span class="k">project_count</span>: 20
+<span class="k">categories</span>:
+  <span class="k">uiux</span>: 6
+  <span class="k">webdev</span>: 7
+  <span class="k">graphic</span>: 3
+  <span class="k">branding</span>: 4
+<span class="k">contact_email</span>: hello@mydesigner.gg
+<span class="k">booking_link</span>: https://calendar.app.google/xGoKb51qpbcnZgJy5
+<span class="k">plans</span>: /#ch-plans
+<span class="c">---</span></pre>
+
+      <h1 class="sr-only">Work</h1>
+      <h2>Work</h2>
+      <p>Twenty project records across four MyDesigner portfolio categories.</p>
+
+      <h2>UI/UX Design</h2>
+      <ul>
+        <li><strong>DentalDost Mobile App</strong> — Redefining oral care with a seamless mobile experience (<a href="/work/dentaldost">/work/dentaldost</a>)</li>
+        <li><strong>Poocho App</strong> — India's first research productivity tool (<a href="/work/poocho-app">/work/poocho-app</a>)</li>
+        <li><strong>ContractWrangler</strong> — Simplifying legal complexity through smart web app design (<a href="/work/contractwrangler">/work/contractwrangler</a>)</li>
+        <li><strong>FluentPet</strong> — Bridging communication between pets and humans (<a href="/work/fluentpet">/work/fluentpet</a>)</li>
+        <li><strong>Neustreet</strong> — The marketplace for modern collectibles (<a href="/work/neustreet">/work/neustreet</a>)</li>
+        <li><strong>NADA</strong> — Where exclusivity meets real connection (<a href="/work/nada">/work/nada</a>)</li>
+      </ul>
+
+      <h2>Web Development</h2>
+      <ul>
+        <li><strong>Apollo Radiology</strong> — Transforming healthcare with Webflow-powered precision (<a href="/work/apollo-radiology">/work/apollo-radiology</a>)</li>
+        <li><strong>Ecstra</strong> — Seamlessly developing Ecstra's digital presence (<a href="/work/ecstra">/work/ecstra</a>)</li>
+        <li><strong>Maharashtra Dyslexia Association</strong> — Digital transformation built on Framer (<a href="/work/mda">/work/mda</a>)</li>
+        <li><strong>Poocho Website</strong> — Website design &amp; Webflow development for a research productivity platform (<a href="/work/poocho-website">/work/poocho-website</a>)</li>
+        <li><strong>YESPL</strong> — Engineering precision, built with Framer (<a href="/work/yespl">/work/yespl</a>)</li>
+        <li><strong>Takumi</strong> — Framer website for an AI consultancy rooted in Japanese craftsmanship (<a href="/work/takumi">/work/takumi</a>)</li>
+        <li><strong>Kkhavo</strong> — Premium wellness brand website — heritage storytelling in Framer (<a href="/work/kkhavo">/work/kkhavo</a>)</li>
+      </ul>
+
+      <h2>Graphic Design</h2>
+      <ul>
+        <li><strong>Dentsu</strong> — Evolving a global brand through collaborative social design (<a href="/work/dentsu">/work/dentsu</a>)</li>
+        <li><strong>Travelsaving Pitch Deck</strong> — Crafting a compelling investor-ready pitch deck (<a href="/work/travelsaving">/work/travelsaving</a>)</li>
+        <li><strong>AHHF Social Media</strong> — Designing for impact — social media for AHHF (<a href="/work/ahhf">/work/ahhf</a>)</li>
+      </ul>
+
+      <h2>Branding</h2>
+      <ul>
+        <li><strong>Slash</strong> — Where food meets fun — a social dining experience (<a href="/work/slash">/work/slash</a>)</li>
+        <li><strong>Uber Cards</strong> — Crafted a bold, modern logo capturing clarity and trust (<a href="/work/uber-cards">/work/uber-cards</a>)</li>
+        <li><strong>Scano by DentalDost</strong> — Designing India's first smile-scanning brand (<a href="/work/scano">/work/scano</a>)</li>
+        <li><strong>Vettly.ai</strong> — Cohesive branding and smarter web app for AI-driven hiring (<a href="/work/vettly">/work/vettly</a>)</li>
+      </ul>
+
+      <h2>Act</h2>
+      <ul>
+        <li>Book a call: <a href="https://calendar.app.google/xGoKb51qpbcnZgJy5">calendar.app.google/xGoKb51qpbcnZgJy5</a></li>
+        <li>Email: <a href="mailto:hello@mydesigner.gg">hello@mydesigner.gg</a></li>
+        <li>Plans: <a href="/#ch-plans">/#ch-plans</a></li>
+        <li>Story: <a href="/">/</a></li>
+      </ul>
+
+      <hr>
+      <p class="foot">MyDesigner by Sukratu · ORBIT — Concept 02 · Work edition.</p>
+    </article>
+  </div>
+
+  <footer>
+    <span>MyDesigner by Sukratu</span>
+    <nav>
+      <a href="/" data-cursor>Home</a>
+      <a href="/#ch-plans" data-cursor>Plans</a>
+      <a href="/services" data-cursor>Services</a>
+      <a href="/about" data-cursor>About</a>
+      <a href="/vs/" data-cursor>Compare</a>
+      <a href="https://sukratu.co" data-cursor>Sukratu</a>
+      <a href="mailto:hello@mydesigner.gg" data-cursor>Email</a>
+      <button type="button" id="footAgents" data-cursor>Agents edition</button>
+    </nav>
+    <span>Orbit — Concept 02</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+
+  <script type="module">
+    const PROJECTS = [
+      { slug: 'dentaldost', title: 'DentalDost Mobile App', category: 'uiux', badge: 'UI/UX Design', thumb: '/assets/images/portfolio/dentaldost.webp', desc: 'Redefining oral care with a seamless mobile experience' },
+      { slug: 'slash', title: 'Slash', category: 'branding', badge: 'Branding', thumb: '/assets/images/portfolio/slash.webp', desc: 'Where food meets fun — a social dining experience' },
+      { slug: 'apollo-radiology', title: 'Apollo Radiology', category: 'webdev', platform: 'webflow', badge: 'Webflow Development', thumb: '/assets/images/portfolio/apollo-radiology.webp', desc: 'Transforming healthcare with Webflow-powered precision' },
+      { slug: 'uber-cards', title: 'Uber Cards', category: 'branding', badge: 'Branding', thumb: '/assets/images/portfolio/uber-cards.webp', desc: 'Crafted a bold, modern logo capturing clarity and trust' },
+      { slug: 'poocho-app', title: 'Poocho App', category: 'uiux', badge: 'UI/UX Design', thumb: '/assets/images/portfolio/poocho-app.webp', desc: "India's first research productivity tool" },
+      { slug: 'ecstra', title: 'Ecstra', category: 'webdev', platform: 'webflow', badge: 'Webflow Development', thumb: '/assets/images/portfolio/ecstra.webp', desc: "Seamlessly developing Ecstra's digital presence" },
+      { slug: 'dentsu', title: 'Dentsu', category: 'graphic', badge: 'Graphic Design', thumb: '/assets/images/portfolio/dentsu.webp', desc: 'Evolving a global brand through collaborative social design' },
+      { slug: 'scano', title: 'Scano by DentalDost', category: 'branding', badge: 'Branding', thumb: '/assets/images/portfolio/scano.webp', desc: "Designing India's first smile-scanning brand" },
+      { slug: 'travelsaving', title: 'Travelsaving Pitch Deck', category: 'graphic', badge: 'Graphic Design', thumb: '/assets/images/portfolio/travelsaving.webp', desc: 'Crafting a compelling investor-ready pitch deck' },
+      { slug: 'contractwrangler', title: 'ContractWrangler', category: 'uiux', badge: 'UI/UX Design', thumb: '/assets/images/portfolio/contractwrangler.webp', desc: 'Simplifying legal complexity through smart web app design' },
+      { slug: 'mda', title: 'Maharashtra Dyslexia Association', category: 'webdev', platform: 'framer', badge: 'Framer Development', thumb: '/assets/images/portfolio/mda.webp', desc: 'Digital transformation built on Framer' },
+      { slug: 'vettly', title: 'Vettly.ai', category: 'branding', badge: 'Branding', thumb: '/assets/images/portfolio/vettly.webp', desc: 'Cohesive branding and smarter web app for AI-driven hiring' },
+      { slug: 'fluentpet', title: 'FluentPet', category: 'uiux', badge: 'UI/UX Design', thumb: '/assets/images/portfolio/fluentpet.webp', desc: 'Bridging communication between pets and humans' },
+      { slug: 'poocho-website', title: 'Poocho Website', category: 'webdev', platform: 'webflow', badge: 'Webflow Development', thumb: '/assets/images/portfolio/poocho-website.webp', desc: 'Website design & Webflow development for a research productivity platform' },
+      { slug: 'ahhf', title: 'AHHF Social Media', category: 'graphic', badge: 'Graphic Design', thumb: '/assets/images/portfolio/ahhf.webp', desc: 'Designing for impact — social media for AHHF' },
+      { slug: 'neustreet', title: 'Neustreet', category: 'uiux', badge: 'UI/UX Design', thumb: '/assets/images/portfolio/neustreet.webp', desc: 'The marketplace for modern collectibles' },
+      { slug: 'nada', title: 'NADA', category: 'uiux', badge: 'UI/UX Design', thumb: '/assets/images/portfolio/nada.webp', desc: 'Where exclusivity meets real connection' },
+      { slug: 'yespl', title: 'YESPL', category: 'webdev', platform: 'framer', badge: 'Framer Development', thumb: '/assets/images/portfolio/yespl.webp', desc: 'Engineering precision, built with Framer' },
+      { slug: 'takumi', title: 'Takumi', category: 'webdev', platform: 'framer', badge: 'Framer Development', thumb: '/assets/images/portfolio/takumi.webp', desc: 'Framer website for an AI consultancy rooted in Japanese craftsmanship' },
+      { slug: 'kkhavo', title: 'Kkhavo', category: 'webdev', platform: 'framer', badge: 'Framer Development', thumb: '/assets/images/portfolio/kkhavo.webp', desc: 'Premium wellness brand website — heritage storytelling in Framer' },
+    ];
+
+    const CATEGORY_LABELS = {
+      all: 'All',
+      uiux: 'UI/UX Design',
+      webdev: 'Web Development',
+      graphic: 'Graphic Design',
+      branding: 'Branding',
+    };
+    const VALID_CATEGORIES = new Set(Object.keys(CATEGORY_LABELS));
+    const PLATFORM_LABELS = { webflow: 'Webflow', framer: 'Framer' };
+
+    const html = document.documentElement;
+    const params = new URLSearchParams(location.search);
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasMotionLibs = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+    const gsap = window.gsap;
+    const ScrollTrigger = window.ScrollTrigger;
+
+    let view = params.get('view') === 'agents' ? 'agents' : 'humans';
+    let humansScrollY = 0;
+    let activeCat = normalizeCategory(params.get('cat'));
+    let projectsRendered = false;
+    let motionOn = true;
+    let lenis = null;
+
+    html.dataset.view = view;
+    if (reduced || !hasMotionLibs) html.classList.add('static');
+    if (hasMotionLibs) html.classList.add('js');
+    try { if (localStorage.getItem('md-motion') === 'off') motionOn = false; } catch (e) {}
+    if (!motionOn) html.classList.add('motion-off');
+
+    function ensureLogoImage() {
+      const logo = document.querySelector('.nav__logo img');
+      if (logo && !logo.getAttribute('src') && logo.dataset.src && view === 'humans') {
+        logo.src = logo.dataset.src;
+      }
+    }
+
+    function normalizeCategory(cat) {
+      return VALID_CATEGORIES.has(cat) ? cat : 'all';
+    }
+
+    function projectUrl(project) {
+      return '/work/' + project.slug;
+    }
+
+    function renderProjects() {
+      if (projectsRendered || view !== 'humans') return;
+      const grid = document.getElementById('projectGrid');
+      const frag = document.createDocumentFragment();
+
+      PROJECTS.forEach((project) => {
+        const card = document.createElement('a');
+        card.className = 'project-card reveal';
+        card.href = projectUrl(project);
+        card.dataset.category = project.category;
+        card.dataset.cursor = 'view';
+        card.setAttribute('aria-label', project.title + ' case study');
+
+        const media = document.createElement('figure');
+        media.className = 'project-card__media';
+        const img = document.createElement('img');
+        img.src = project.thumb;
+        img.alt = project.title;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        media.appendChild(img);
+
+        const body = document.createElement('div');
+        body.className = 'project-card__body';
+
+        const tags = document.createElement('div');
+        tags.className = 'project-card__tags';
+        const badge = document.createElement('span');
+        badge.textContent = project.badge;
+        tags.appendChild(badge);
+        if (project.platform) {
+          const platform = document.createElement('span');
+          platform.className = 'platform';
+          platform.textContent = PLATFORM_LABELS[project.platform] || project.platform;
+          tags.appendChild(platform);
+        }
+
+        const title = document.createElement('h3');
+        title.textContent = project.title;
+        const desc = document.createElement('p');
+        desc.textContent = project.desc;
+
+        body.append(tags, title, desc);
+        card.append(media, body);
+        frag.appendChild(card);
+      });
+
+      grid.appendChild(frag);
+      projectsRendered = true;
+      applyFilter(activeCat, false);
+      bindCursorTargets(grid);
+    }
+
+    function cards() {
+      return Array.from(document.querySelectorAll('#projectGrid .project-card'));
+    }
+
+    function cardMatches(card, cat) {
+      return cat === 'all' || card.dataset.category === cat;
+    }
+
+    function syncFilterButtons() {
+      document.querySelectorAll('[data-filter]').forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.filter === activeCat));
+      });
+    }
+
+    function applyFilter(cat, animate = true) {
+      activeCat = normalizeCategory(cat);
+      syncFilterButtons();
+      const allCards = cards();
+      const shown = allCards.filter((card) => cardMatches(card, activeCat));
+      const hidden = allCards.filter((card) => !cardMatches(card, activeCat));
+      const emptyState = document.getElementById('emptyState');
+      const shouldAnimate = animate && hasMotionLibs && !reduced && view === 'humans';
+
+      if (!shouldAnimate) {
+        allCards.forEach((card) => {
+          const match = cardMatches(card, activeCat);
+          card.style.display = match ? 'flex' : 'none';
+          card.style.opacity = match ? '1' : '0';
+          card.style.visibility = match ? 'inherit' : 'hidden';
+          card.style.transform = 'none';
+        });
+        if (emptyState) emptyState.style.display = shown.length ? 'none' : 'block';
+        return;
+      }
+
+      gsap.killTweensOf(allCards);
+      hidden.forEach((card) => { card.style.pointerEvents = 'none'; });
+      shown.forEach((card) => {
+        card.style.display = 'flex';
+        card.style.pointerEvents = '';
+      });
+
+      const finish = () => {
+        hidden.forEach((card) => { card.style.display = 'none'; });
+        if (emptyState) emptyState.style.display = shown.length ? 'none' : 'block';
+        gsap.fromTo(shown,
+          { autoAlpha: 0, scale: 0.975 },
+          { autoAlpha: 1, scale: 1, duration: 0.34, ease: 'power2.out', stagger: 0.025, overwrite: true }
+        );
+      };
+
+      const visibleHidden = hidden.filter((card) => card.style.display !== 'none');
+      if (visibleHidden.length) {
+        gsap.to(visibleHidden, {
+          autoAlpha: 0,
+          scale: 0.965,
+          duration: 0.16,
+          ease: 'power1.out',
+          stagger: 0.01,
+          overwrite: true,
+          onComplete: finish,
+        });
+      } else {
+        finish();
+      }
+    }
+
+    function updateCatUrl(cat, writeHistory = true) {
+      const url = new URL(location.href);
+      if (cat === 'all') url.searchParams.delete('cat');
+      else url.searchParams.set('cat', cat);
+      if (writeHistory) history.pushState({ view, cat }, '', url);
+    }
+
+    document.querySelectorAll('[data-filter]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const next = normalizeCategory(button.dataset.filter);
+        if (next === activeCat) return;
+        renderProjects();
+        applyFilter(next, true);
+        updateCatUrl(next, true);
+      });
+    });
+
+    if (view === 'humans') {
+      ensureLogoImage();
+      renderProjects();
+    }
+
+    if (hasMotionLibs) {
+      gsap.registerPlugin(ScrollTrigger);
+      if (!reduced && typeof window.Lenis !== 'undefined') {
+        lenis = new window.Lenis({ smoothWheel: true, lerp: 0.09 });
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => lenis.raf(time * 1000));
+        gsap.ticker.lagSmoothing(0);
+      }
+
+      const hudPct = document.getElementById('hudPct');
+      const progressBar = document.getElementById('progress');
+      if (!reduced) {
+        ScrollTrigger.create({
+          start: 0,
+          end: 'max',
+          onUpdate: (self) => {
+            const pct = String(Math.round(self.progress * 100)).padStart(3, '0') + '%';
+            hudPct.textContent = pct;
+            if (progressBar) progressBar.style.transform = 'scaleX(' + self.progress.toFixed(4) + ')';
+          },
+        });
+        ScrollTrigger.create({
+          start: 80,
+          onUpdate: (self) => document.getElementById('nav').classList.toggle('is-scrolled', self.scroll() > 80),
+        });
+        gsap.utils.toArray('.reveal').forEach((el) => {
+          gsap.to(el, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: el, start: 'top 88%' },
+          });
+        });
+      } else {
+        gsap.set('.reveal', { opacity: 1, y: 0 });
+      }
+    }
+
+    document.querySelectorAll('[data-scroll]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        if (lenis) lenis.scrollTo(target, { offset: 0 }); else target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    const motionBtn = document.getElementById('motionToggle');
+    const motionStateEl = document.getElementById('motionState');
+    function reflectMotion(writePreference = false) {
+      html.classList.toggle('motion-off', !motionOn);
+      motionStateEl.textContent = motionOn ? 'on' : 'off';
+      motionBtn.setAttribute('aria-pressed', String(!motionOn));
+      if (writePreference) {
+        try { localStorage.setItem('md-motion', motionOn ? 'on' : 'off'); } catch (e) {}
+      }
+      if (typeof window.__workSetMotion === 'function') window.__workSetMotion(motionOn);
+    }
+    reflectMotion();
+    motionBtn.addEventListener('click', () => {
+      motionOn = !motionOn;
+      reflectMotion(true);
+    });
+
+    const btnH = document.getElementById('modeHumans');
+    const btnA = document.getElementById('modeAgents');
+    function syncModeButtons() {
+      btnH.setAttribute('aria-checked', String(view === 'humans'));
+      btnA.setAttribute('aria-checked', String(view === 'agents'));
+      document.getElementById('nav').classList.toggle('is-scrolled', view === 'agents' || window.scrollY > 80);
+    }
+
+    function setView(next, writeHistory = true) {
+      if (next === view) return;
+      if (next === 'agents') {
+        humansScrollY = window.scrollY;
+        view = next;
+        html.dataset.view = 'agents';
+        if (lenis) lenis.scrollTo(0, { immediate: true, force: true });
+        else window.scrollTo(0, 0);
+      } else {
+        view = next;
+        html.dataset.view = 'humans';
+        ensureLogoImage();
+        renderProjects();
+        void document.getElementById('humans').offsetHeight;
+        if (lenis) lenis.resize();
+        if (ScrollTrigger) ScrollTrigger.refresh();
+        ensureScene();
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          if (lenis) lenis.resize();
+          window.scrollTo(0, humansScrollY);
+          if (lenis) lenis.scrollTo(humansScrollY, { immediate: true, force: true });
+        }));
+      }
+      syncModeButtons();
+      if (writeHistory) {
+        const url = new URL(location.href);
+        if (view === 'agents') url.searchParams.set('view', 'agents');
+        else url.searchParams.delete('view');
+        history.pushState({ view, cat: activeCat }, '', url);
+      }
+    }
+
+    btnH.addEventListener('click', () => setView('humans'));
+    btnA.addEventListener('click', () => setView('agents'));
+    document.getElementById('footAgents').addEventListener('click', () => setView('agents'));
+    addEventListener('popstate', () => {
+      const nextView = new URLSearchParams(location.search).get('view') === 'agents' ? 'agents' : 'humans';
+      const nextCat = normalizeCategory(new URLSearchParams(location.search).get('cat'));
+      if (nextView !== view) setView(nextView, false);
+      if (nextView === 'humans') {
+        renderProjects();
+        applyFilter(nextCat, false);
+      } else {
+        activeCat = nextCat;
+        syncFilterButtons();
+      }
+    });
+    syncModeButtons();
+
+    if (hasMotionLibs && !reduced) {
+      let resizeT;
+      addEventListener('resize', () => {
+        clearTimeout(resizeT);
+        resizeT = setTimeout(() => { lenis?.resize(); ScrollTrigger.refresh(); }, 250);
+      });
+    }
+
+    /* ============================================================
+       Subtle Three.js background — sparse rings + starfield.
+       Lazy-loaded so ?view=agents creates zero WebGL.
+       ============================================================ */
+    let sceneReady = false;
+    let sceneFailed = false;
+    let threeModule = null;
+    let rafId = null;
+    let renderOnce = null;
+
+    async function ensureScene() {
+      if (sceneReady || sceneFailed || reduced || view !== 'humans' || html.classList.contains('static')) return;
+      try {
+        if (!threeModule) threeModule = await import('three');
+        initScene(threeModule);
+        sceneReady = true;
+      } catch (e) {
+        sceneFailed = true;
+        html.classList.add('static');
+        if (hasMotionLibs) gsap.set('.reveal', { opacity: 1, y: 0 });
+      }
+    }
+
+    function initScene(THREE) {
+      const canvas = document.getElementById('field');
+      let renderer = null;
+      try {
+        renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false, powerPreference: 'high-performance' });
+      } catch (e) {
+        sceneFailed = true;
+        html.classList.add('static');
+        return;
+      }
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.1, 80);
+      camera.position.set(0, 0, 9.2);
+
+      const isMobile = matchMedia('(max-width: 768px)').matches;
+      const COUNT = isMobile ? 3000 : 4800;
+      const positions = new Float32Array(COUNT * 3);
+      const colors = new Float32Array(COUNT * 3);
+      const rings = [
+        { r: 2.0, tube: 0.04, euler: new THREE.Euler(Math.PI / 2.25, 0, 0.25) },
+        { r: 2.82, tube: 0.055, euler: new THREE.Euler(Math.PI / 2.6, 0.55, -0.3) },
+        { r: 3.62, tube: 0.08, euler: new THREE.Euler(Math.PI / 1.95, -0.45, 0.5) },
+      ];
+      const v = new THREE.Vector3();
+      const amber = new THREE.Color('#ffa848');
+      const ember = new THREE.Color('#ff640d');
+      const paper = new THREE.Color('#f4efe9');
+
+      for (let i = 0; i < COUNT; i++) {
+        const ring = rings[i % 3];
+        const a = Math.random() * Math.PI * 2;
+        const wob = ring.tube * (Math.random() + Math.random() - 1) * 3;
+        v.set(Math.cos(a) * (ring.r + wob), wob * 1.5, Math.sin(a) * (ring.r + wob));
+        v.applyEuler(ring.euler);
+        positions[i * 3 + 0] = v.x;
+        positions[i * 3 + 1] = v.y;
+        positions[i * 3 + 2] = v.z;
+
+        const c = paper.clone().lerp(i % 4 === 0 ? amber : ember, 0.58 + Math.random() * 0.3);
+        colors[i * 3 + 0] = c.r;
+        colors[i * 3 + 1] = c.g;
+        colors[i * 3 + 2] = c.b;
+      }
+
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+      const mat = new THREE.PointsMaterial({
+        size: 0.024,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.58,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      });
+      const points = new THREE.Points(geo, mat);
+      const group = new THREE.Group();
+      group.add(points);
+      group.position.set(1.3, -0.08, 0);
+      scene.add(group);
+
+      const SCOUNT = isMobile ? 520 : 900;
+      const sPos = new Float32Array(SCOUNT * 3);
+      for (let i = 0; i < SCOUNT; i++) {
+        const r = 16 + Math.random() * 16;
+        const th = Math.random() * Math.PI * 2;
+        const ph = Math.acos(2 * Math.random() - 1);
+        sPos[i * 3 + 0] = r * Math.sin(ph) * Math.cos(th);
+        sPos[i * 3 + 1] = r * Math.sin(ph) * Math.sin(th) * 0.58;
+        sPos[i * 3 + 2] = -Math.abs(r * Math.cos(ph)) - 4;
+      }
+      const sGeo = new THREE.BufferGeometry();
+      sGeo.setAttribute('position', new THREE.BufferAttribute(sPos, 3));
+      const sMat = new THREE.PointsMaterial({
+        color: '#d8cec2',
+        size: 0.012,
+        transparent: true,
+        opacity: 0.26,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      });
+      const stars = new THREE.Points(sGeo, sMat);
+      scene.add(stars);
+
+      let vwScale = 1;
+      const resize = () => {
+        renderer.setSize(innerWidth, innerHeight);
+        renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+        camera.aspect = innerWidth / innerHeight;
+        camera.updateProjectionMatrix();
+        vwScale = Math.min(1, camera.aspect * 1.25);
+        if (camera.aspect < 0.72) vwScale *= 0.82;
+        group.scale.setScalar(vwScale);
+        group.position.x = 1.3 * vwScale;
+      };
+      resize();
+      addEventListener('resize', resize);
+
+      const clock = new THREE.Clock();
+      let lastT = 0;
+      const tick = () => {
+        const t = clock.getElapsedTime();
+        const dt = Math.min(t - lastT, 0.05);
+        lastT = t;
+        if (motionOn && view === 'humans') {
+          group.rotation.x = -0.04 + Math.sin(t * 0.13) * 0.022;
+          group.rotation.y += dt * 0.04;
+          group.rotation.z = Math.sin(t * 0.095) * 0.035;
+          stars.rotation.y += dt * 0.008;
+          renderer.render(scene, camera);
+        }
+        rafId = requestAnimationFrame(tick);
+      };
+      renderOnce = () => {
+        group.rotation.x = -0.04;
+        renderer.render(scene, camera);
+      };
+      window.__workSetMotion = (on) => {
+        motionOn = on;
+        if (on) lastT = clock.getElapsedTime();
+        else renderOnce();
+      };
+      tick();
+      if (!motionOn) renderOnce();
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) cancelAnimationFrame(rafId);
+        else { lastT = clock.getElapsedTime(); tick(); }
+      });
+    }
+
+    ensureScene();
+
+    function bindCursorTargets(root = document) {
+      if (!hasMotionLibs || reduced || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+      const ring = document.querySelector('.cursor-ring');
+      const ringLabel = ring?.querySelector('span');
+      if (!ring || !ringLabel) return;
+      root.querySelectorAll('[data-cursor]:not([data-cursor-bound])').forEach((el) => {
+        el.dataset.cursorBound = 'true';
+        el.addEventListener('pointerenter', () => {
+          ring.classList.add('is-active');
+          ring.classList.toggle('cursor-ring--fill', el.dataset.cursor === 'view');
+          ringLabel.textContent = el.dataset.cursor === 'view' ? 'View' : '';
+        });
+        el.addEventListener('pointerleave', () => ring.classList.remove('is-active', 'cursor-ring--fill'));
+      });
+    }
+
+    if (hasMotionLibs && !reduced && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      const dot = document.querySelector('.cursor-dot');
+      const ring = document.querySelector('.cursor-ring');
+      const pos = { x: innerWidth / 2, y: innerHeight / 2 };
+      const ringPos = { x: pos.x, y: pos.y };
+
+      addEventListener('pointermove', (e) => { pos.x = e.clientX; pos.y = e.clientY; }, { passive: true });
+      gsap.ticker.add(() => {
+        if (view !== 'humans') return;
+        ringPos.x += (pos.x - ringPos.x) * 0.16;
+        ringPos.y += (pos.y - ringPos.y) * 0.16;
+        dot.style.left = pos.x + 'px';
+        dot.style.top = pos.y + 'px';
+        ring.style.left = ringPos.x + 'px';
+        ring.style.top = ringPos.y + 'px';
+      });
+      bindCursorTargets(document);
+      document.querySelectorAll('.magnetic').forEach((el) => {
+        el.addEventListener('pointermove', (e) => {
+          const r = el.getBoundingClientRect();
+          gsap.to(el, {
+            x: (e.clientX - r.left - r.width / 2) * 0.25,
+            y: (e.clientY - r.top - r.height / 2) * 0.35,
+            duration: 0.4,
+            ease: 'power2.out',
+          });
+        });
+        el.addEventListener('pointerleave', () => gsap.to(el, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' }));
+      });
+    }
+  </script>
+
+  <noscript>
+    <style>
+      #field, .grain, .hud, .motion-toggle, .filters { display: none !important; }
+      .nav { opacity: 1 !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</body>
+</html>

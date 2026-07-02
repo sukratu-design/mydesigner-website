@@ -92,4 +92,4 @@ Design the undo and dismiss flows with the same care you'd give the AI feature i
 
 The bar for AI integration is higher than it was two years ago. People have seen enough bad implementations that they show up skeptical now, not curious. Which honestly makes it easier to stand out if you do it well. Most of the competition is still treating AI as a checkbox.
 
-Need help designing AI features that feel native to your product? [See our web app design service](/services/web-app-design) or [explore how MyDesigner works](/how-it-works).
+Need help designing AI features that feel native to your product? [See our web app design service](/services/web-app-design) or [explore how MyDesigner works](/about).

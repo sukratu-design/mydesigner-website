@@ -28,14 +28,29 @@ assert.ok(
   directives['connect-src'].includes(analyticsOrigin),
   `connect-src must allow ${analyticsOrigin} so analytics beacons can POST to /api/collect`
 );
+assert.ok(
+  directives['script-src'].includes('https://cdn.jsdelivr.net'),
+  'script-src must allow https://cdn.jsdelivr.net for ORBIT Three.js/GSAP/Lenis assets'
+);
+assert.ok(
+  directives['connect-src'].includes('https://cdn.jsdelivr.net'),
+  'connect-src must allow https://cdn.jsdelivr.net for module and source-map fetches'
+);
+
+for (const droppedOrigin of [
+  'https://aichatassist.pages.dev',
+  'https://admin.aichatassist.com',
+  'https://api.convertkit.com',
+]) {
+  assert.ok(!cspMatch[1].includes(droppedOrigin), `CSP must not include dropped origin ${droppedOrigin}`);
+}
 
 const htmlFiles = [
   'index.html',
-  'pricing.html',
-  'contact.html',
   'services.html',
-  'how-it-works.html',
-  'portfolio.html',
+  'about.html',
+  'work.html',
+  '404.html',
 ].map((file) => path.join(root, file));
 
 for (const filePath of htmlFiles) {

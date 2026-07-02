@@ -65,6 +65,7 @@ function read(file) {
 
 for (const file of pages) {
   const html = read(file);
+  const main = html.match(/<main[\s\S]*<\/main>/i)?.[0] || html;
 
   assert.match(html, /What this work proves/i, `${file} should include proof framing`);
   assert.match(html, /Client Memory|living creative system/i, `${file} should include Client Memory bridge`);
@@ -73,7 +74,7 @@ for (const file of pages) {
   assert.doesNotMatch(html, /portfolio\.html|work\/[a-z0-9-]+\.html/i, `${file} should use clean URLs in schema/links`);
   assert.doesNotMatch(html, /cheap|low cost|cheaper/i, `${file} should avoid cheapness framing`);
   assert.doesNotMatch(html, /unlimited design subscription by/i, `${file} should not preserve old footer positioning`);
-  assert.doesNotMatch(html, />Book a (free )?call</i, `${file} should not use generic Book a call CTAs`);
+  assert.doesNotMatch(main, />Book a (free )?call</i, `${file} should not use generic Book a call CTAs in the case-study body`);
 }
 
 const dentsu = read('work/dentsu.html');

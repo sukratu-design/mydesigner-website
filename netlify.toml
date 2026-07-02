@@ -14,13 +14,86 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
-    # 'unsafe-eval' + aichatassist domains are required by the AI assist bot.
-    # admin.aichatassist.com hosts media assets (notification sounds etc.).
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://identity.netlify.com https://unpkg.com https://traffic.sukratu-test.com https://aichatassist.pages.dev https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://aichatassist.pages.dev; img-src 'self' https: data:; font-src 'self' https:; media-src 'self' https://admin.aichatassist.com https://aichatassist.pages.dev; connect-src 'self' https://api.convertkit.com https://www.google-analytics.com https://region1.google-analytics.com https://www.google.com https://traffic.sukratu-test.com https://aichatassist.pages.dev https://admin.aichatassist.com https://connect.facebook.net https://www.facebook.com https://api.ipify.org https://api64.ipify.org; frame-src https://calendar.app.google https://aichatassist.pages.dev; frame-ancestors 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://identity.netlify.com https://unpkg.com https://cdn.jsdelivr.net https://traffic.sukratu-test.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self' https:; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.google.com https://traffic.sukratu-test.com https://cdn.jsdelivr.net https://connect.facebook.net https://www.facebook.com https://api.ipify.org https://api64.ipify.org; frame-src https://calendar.app.google; frame-ancestors 'self'"
 
 # .html → clean URL redirects (to avoid duplicate content in Google)
 # are now handled by the edge function at netlify/edge-functions/redirect-html.js.
 # The _redirects file only contains the www → non-www domain redirect.
+
+[[redirects]]
+  from = "/story"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/story/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/story/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/story/about"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/story/about.html"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/story/work"
+  to = "/work"
+  status = 301
+
+[[redirects]]
+  from = "/story/work.html"
+  to = "/work"
+  status = 301
+
+[[redirects]]
+  from = "/story/services"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/story/services.html"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/pricing"
+  to = "/#ch-plans"
+  status = 301
+
+[[redirects]]
+  from = "/faq"
+  to = "/#faq"
+  status = 301
+
+[[redirects]]
+  from = "/how-it-works"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "https://calendar.app.google/xGoKb51qpbcnZgJy5"
+  status = 301
+
+[[redirects]]
+  from = "/portfolio"
+  to = "/work"
+  status = 301
+
+[[redirects]]
+  from = "/portfolio/"
+  to = "/work"
+  status = 301
 
 # Portfolio category rewrites (clean URL → .html file)
 [[redirects]]
@@ -59,6 +132,11 @@
   status = 301
 
 # Block internal docs and config from public access
+[[redirects]]
+  from = "/okf/*"
+  to = "/okf/:splat"
+  status = 200
+
 [[redirects]]
   from = "/*.md"
   to = "/404.html"

@@ -14,6 +14,8 @@ When you're moving fast, design feels cosmetic — the layer you apply once the 
 
 That framing is costing you revenue.
 
+**Direct answer:** Design affects revenue because it shapes trust, conversion, retention, and the speed at which users understand value. Weak visual hierarchy, slow pages, confusing checkout, poor onboarding, and invisible trust signals all create friction. Strong design reduces that friction at the moments where users decide whether to buy, stay, or leave.
+
 ---
 
 ## The first impression is already over
@@ -85,6 +87,26 @@ There's a tempting calculation founders make: *we'll invest in design once we ha
 A startup with a strong design foundation converts better, retains users longer, and builds brand equity that compounds. A startup that delays design spends years running below its potential conversion rate — leaving money on the table in ways that often go unmeasured and therefore unaddressed.
 
 The most efficient moment to invest in design isn't when you can afford to. It's before you've fully discovered what you're losing without it.
+
+---
+
+## Frequently Asked Questions
+
+### How does design increase revenue?
+
+Design increases revenue by reducing friction at the points where users decide whether to trust, buy, activate, or leave. The post connects revenue impact to first impressions, page speed, checkout UX, trust signals, onboarding, and pricing-page clarity.
+
+### What design changes have the highest ROI?
+
+The highest-leverage design investments in this post are homepage and landing page clarity, onboarding flow, and pricing page design. Those surfaces sit closest to attention, activation, and purchase intent, so friction there has a direct line to revenue.
+
+### Is design ROI actually measurable?
+
+Yes, design ROI can be measured through funnel behavior, conversion, retention, checkout completion, and revenue growth indicators. The post uses McKinsey's design research and specific funnel examples to argue that design is not just a subjective polish layer.
+
+### Why is waiting to invest in design expensive?
+
+Waiting is expensive because design is part of how a startup earns more revenue in the first place. A weak design foundation can leave the business running below its potential conversion rate while visual debt, churn, and user confusion compound.
 
 ---
 

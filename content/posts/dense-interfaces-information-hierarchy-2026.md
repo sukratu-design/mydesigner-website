@@ -65,4 +65,4 @@ The goal was never whitespace for its own sake. It was clarity. And clarity, it 
 
 ---
 
-*MyDesigner designs high-density, high-clarity interfaces for startups — dashboards, SaaS products, and data-heavy views built to convert without overwhelming. [See how it works](/how-it-works) or explore our [web app design service](/services/web-app-design).*
+*MyDesigner designs high-density, high-clarity interfaces for startups — dashboards, SaaS products, and data-heavy views built to convert without overwhelming. [See how it works](/about) or explore our [web app design service](/services/web-app-design).*

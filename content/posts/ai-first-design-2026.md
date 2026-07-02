@@ -71,4 +71,4 @@ The gap between "has AI features" and "feels intelligent" is a design problem. I
 
 ---
 
-*MyDesigner works with startups to build AI-ready design systems and ship products that feel as smart as they are. [See how it works](/how-it-works) or explore our [web app design service](/services/web-app-design).*
+*MyDesigner works with startups to build AI-ready design systems and ship products that feel as smart as they are. [See how it works](/about) or explore our [web app design service](/services/web-app-design).*

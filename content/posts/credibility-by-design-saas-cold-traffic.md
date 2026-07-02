@@ -48,7 +48,7 @@ Trust signals at the visual level fall into a few distinct categories. Most star
 
 **The logo section as checkbox.** Trusted-by logo bars are now so ubiquitous that visitors filter them unless they recognise every logo present. Five obscure logos in low-contrast grey do less credibility work than one well-known logo rendered with proper clearspace and attribution. If your social proof is weak, design for quality over quantity: one strong case study link with a headline result beats a wall of unfamiliar logos.
 
-**The pricing page that hedges everything.** Opacity in pricing is a trust signal — a negative one. Visitors interpret "Contact us for pricing" as a red flag. Where pricing cannot be shown, design should compensate: a clear explanation of what determines pricing, a ballpark range, or a visible comparison of plan structures. Pricing pages built in dense, overloaded tables create anxiety. Whitespace creates confidence. (For reference, here's [how we approach pricing transparency](/pricing).)
+**The pricing page that hedges everything.** Opacity in pricing is a trust signal — a negative one. Visitors interpret "Contact us for pricing" as a red flag. Where pricing cannot be shown, design should compensate: a clear explanation of what determines pricing, a ballpark range, or a visible comparison of plan structures. Pricing pages built in dense, overloaded tables create anxiety. Whitespace creates confidence. (For reference, here's [how we approach pricing transparency](/#ch-plans).)
 
 ---
 

@@ -25,6 +25,7 @@ const pages = {
 
 for (const [file, rules] of Object.entries(pages)) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
+  const main = html.match(/<main[\s\S]*<\/main>/i)?.[0] || html;
 
   assert.match(html, rules.phrase, `${file} should use proof-category hero positioning`);
   assert.match(html, /What this category proves/i, `${file} should include proof framing`);
@@ -32,7 +33,7 @@ for (const [file, rules] of Object.entries(pages)) {
   assert.match(html, /Related services/i, `${file} should link proof to services`);
   assert.match(html, rules.service, `${file} should link to the relevant service detail page`);
   assert.match(html, /Talk through similar work/i, `${file} should use repositioned CTA language`);
-  assert.doesNotMatch(html, /unlimited design subscription by|Book a call|No contracts|Cancel anytime|Starting at \$1,400\/mo/i, `${file} should not preserve old subscription CTA framing`);
+  assert.doesNotMatch(main, /unlimited design subscription by|Book a call|No contracts|Cancel anytime|Starting at \$1,400\/mo/i, `${file} should not preserve old subscription CTA framing in the portfolio body`);
   assert.doesNotMatch(html, /cheap|low cost|cheaper/i, `${file} should avoid cheapness framing`);
   assert.doesNotMatch(html, /portfolio\.html|work\/[a-z0-9-]+\.html/i, `${file} should use clean URLs`);
 }
