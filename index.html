@@ -251,36 +251,6 @@
             border-bottom: 1px solid transparent;
     }
 
-    @media (min-width: 760px) {
-      .nav__cta {
-        display: inline-block;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav__services {
-        display: none;
-      }
-    }
-
-    @media (max-width: 460px) {
-      .nav {
-        padding: 1.1rem clamp(0.9rem, 4vw, 1.5rem);
-      }
-
-      .nav__right {
-        gap: 0.55rem;
-      }
-
-      .nav__plans {
-        letter-spacing: 0.12em; padding: 0.4rem 0;
-      }
-
-      .mode button {
-        padding: 0.6rem 0.62rem; letter-spacing: 0.1em;
-      }
-    }
-
     html.static .progress {
       display: none !important;
     }
@@ -1007,10 +977,14 @@
   <header class="nav" id="nav">
     <a class="nav__logo" href="#top" data-cursor aria-label="MyDesigner home">
       <img src="/assets/images/logo-dark.svg" alt="MyDesigner">
+      <span class="nav__logo-text">MyDesigner</span>
     </a>
     <div class="nav__right">
-      <a class="nav__plans" href="#ch-plans" id="navPlans" data-cursor>Plans</a>
-      <a class="nav__plans nav__services" href="/services" data-cursor>Services</a>
+      <a class="nav__link nav__optional nav__optional--work" href="/work" data-cursor>Work</a>
+      <a class="nav__link" href="/services" data-cursor>Services</a>
+      <a class="nav__link nav__optional nav__optional--about" href="/about" data-cursor>About</a>
+      <a class="nav__link nav__optional nav__optional--blog" href="/blog/" data-cursor>Blog</a>
+      <a class="nav__link nav__optional nav__optional--plans" href="#ch-plans" id="navPlans" data-cursor>Plans</a>
       <div class="mode" role="radiogroup" aria-label="Edition">
         <button type="button" id="modeHumans" role="radio" aria-checked="true" data-cursor>Humans</button>
         <button type="button" id="modeAgents" role="radio" aria-checked="false" data-cursor>Agents</button>
@@ -2222,9 +2196,10 @@
       document.querySelectorAll('[data-cursor]').forEach((el) => {
         el.addEventListener('pointerenter', () => {
           ring.classList.add('is-active');
-          ringLabel.textContent = el.dataset.cursor === 'view' ? 'View' : '→';
+          ring.classList.toggle('cursor-ring--fill', el.dataset.cursor === 'view');
+          ringLabel.textContent = el.dataset.cursor === 'view' ? 'View' : '';
         });
-        el.addEventListener('pointerleave', () => ring.classList.remove('is-active'));
+        el.addEventListener('pointerleave', () => ring.classList.remove('is-active', 'cursor-ring--fill'));
       });
       document.querySelectorAll('.magnetic').forEach((el) => {
         el.addEventListener('pointermove', (e) => {
