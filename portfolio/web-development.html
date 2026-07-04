@@ -32,6 +32,22 @@
   src="https://www.facebook.com/tr?id=4412177725703271&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+  <!-- Booking-click conversion tracking -->
+  <script>
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="calendar.app.google"]') : null;
+    if (!a) return;
+    var section = a.closest('section[id], footer, header, nav');
+    var placement = section ? (section.id || section.tagName.toLowerCase()) : 'body';
+    if (typeof gtag === 'function') {
+      gtag('event', 'book_call_click', {
+        link_text: (a.textContent || '').trim().slice(0, 80),
+        placement: placement
+      });
+    }
+    if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+  }, true);
+  </script>
   <link rel="canonical" href="https://mydesigner.gg/portfolio/web-development">
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
