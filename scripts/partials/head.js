@@ -56,7 +56,7 @@ function analyticsTags() {
     var section = a.closest('section[id], footer, header, nav');
     var placement = section ? (section.id || section.tagName.toLowerCase()) : 'body';
     if (typeof gtag === 'function') {
-      gtag('event', 'book_call_click', {
+      gtag('event', 'book_a_call', {
         link_text: (a.textContent || '').trim().slice(0, 80),
         placement: placement
       });
