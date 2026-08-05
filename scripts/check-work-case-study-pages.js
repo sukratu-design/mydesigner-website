@@ -5,6 +5,7 @@ const path = require('path');
 const root = path.join(__dirname, '..');
 
 const pages = [
+  'work/aurell.html',
   'work/capital-room.html',
   'work/ahhf.html',
   'work/apollo-radiology.html',
@@ -38,6 +39,7 @@ const productPages = [
 ];
 
 const websitePages = [
+  'work/aurell.html',
   'work/apollo-radiology.html',
   'work/ecstra.html',
   'work/kkhavo.html',
@@ -87,6 +89,12 @@ assert.doesNotMatch(dentsu, /<h1[\s\S]*subscription that never stops[\s\S]*<\/h1
 const poocho = read('work/poocho-app.html');
 assert.match(poocho, /since day one|five years/i, 'Poocho should preserve long-term continuity proof');
 assert.match(poocho, /Client Memory|compound/i, 'Poocho should connect continuity to compounding context');
+
+const aurell = read('work/aurell.html');
+assert.match(aurell, /3[–-]4 weeks/i, 'Aurell should preserve the confirmed project timeline');
+assert.match(aurell, /Website Design (?:&amp;|&) Webflow Development/i, 'Aurell should preserve the confirmed design and Webflow development scope');
+assert.match(aurell, /\/services\/website-design/i, 'Aurell should link to website design');
+assert.doesNotMatch(aurell, /View live site/i, 'Aurell should not claim an unlaunched live website');
 
 for (const file of productPages) {
   assert.match(read(file), /\/services\/web-app-design/i, `${file} should link to web app design`);

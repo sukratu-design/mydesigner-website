@@ -2,6 +2,7 @@
 // Edit this file and run `npm run build:blog` to propagate changes everywhere.
 
 module.exports = [
+  { slug: 'aurell',           title: 'Aurell',                           category: 'webdev',   platform: 'webflow', badge: 'Webflow Development', thumb: '/assets/images/portfolio/aurell.webp',  desc: 'Premium real estate website design and Webflow development built around trust' },
   { slug: 'capital-room',     title: 'The Capital Room',                 category: 'webdev',   platform: 'webflow', badge: 'Webflow Development', thumb: '/assets/images/portfolio/capital-room.webp', desc: "Webflow infrastructure for India's private capital ecosystem" },
   { slug: 'dentaldost',       title: 'DentalDost Mobile App',            category: 'uiux',     badge: 'UI/UX Design',    thumb: '/assets/images/portfolio/dentaldost.webp',  desc: 'Redefining oral care with a seamless mobile experience' },
   { slug: 'slash',            title: 'Slash',                            category: 'branding', badge: 'Branding',        thumb: '/assets/images/portfolio/slash.webp',  desc: 'Where food meets fun — a social dining experience' },
