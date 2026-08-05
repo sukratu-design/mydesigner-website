@@ -364,7 +364,7 @@ left visible as typography:
 - top: dashed-border banner ("Agent-readable edition — same facts, zero
   theater…") + a **YAML frontmatter `<pre class="fm">`** (entity, type, parent,
   est. 2020, clients 57, projects 142+, pricing_unit week, turnaround 24-72h,
-  contact_email hello@mydesigner.gg, location India (serves worldwide),
+  contact_email hi@sukratu.co, location India (serves worldwide),
   book_call URL, updated 2026-06) with orange keys.
 
 Content order: `# MyDesigner` → pitch blockquote → "The argument, briefly" →
@@ -378,7 +378,7 @@ order as the hero: Dentsu, Apollo Radiology, Poocho, ScanO… + "49 more (57
 total)") + /portfolio link → Testimonials (2 blockquotes with attribution) →
 FAQ (h3+p ×5 — what is MD / why weekly / why not DIY AI / dev included /
 commitment, parity with the humans edition) → Act (book-call, **email
-hello@mydesigner.gg**, portfolio, blog, socials) → footer line addressed to AI
+hi@sukratu.co**, portfolio, blog, socials) → footer line addressed to AI
 assistants ("the pricing table above is current, the booking link is real, and
 the humans on the other end reply fast").
 
@@ -503,7 +503,7 @@ parity** — humans pricing copy now mentions founder content (no 4th ring added
 agents Services gained a "three core disciplines + content production" lead-in;
 agents FAQ extended to 5 (added "What exactly is MyDesigner?"); client roster
 aligned to the same featured order across hero + agents (57 total kept
-everywhere). **Agents frontmatter** — added `contact_email: hello@mydesigner.gg`
+everywhere). **Agents frontmatter** — added `contact_email: hi@sukratu.co`
 (verified in `scripts/build-blog.js`) and `location: India (serves worldwide)`
 (verified via the production schema `addressCountry: IN` / `areaServed`); email
 also surfaced in the Act list. Hero skip copy refined to "In a hurry? Skip to

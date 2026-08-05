@@ -884,7 +884,7 @@ function buildRss(posts) {
       <link>${postUrl}</link>
       <guid>${postUrl}</guid>
       <pubDate>${post.date.toUTCString()}</pubDate>
-      <author>hello@mydesigner.gg (${escapeXml(post.author)})</author>
+      <author>hi@sukratu.co (${escapeXml(post.author)})</author>
       <description>${escapeXml(post.excerpt)}</description>
     </item>`;
     })
