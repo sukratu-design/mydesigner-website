@@ -90,6 +90,9 @@ const poocho = read('work/poocho-app.html');
 assert.match(poocho, /since day one|five years/i, 'Poocho should preserve long-term continuity proof');
 assert.match(poocho, /Client Memory|compound/i, 'Poocho should connect continuity to compounding context');
 
+const workIndex = read('work.html');
+assert.match(workIndex, /const PROJECTS = \[\s\S]*slug: ['"]aurell['"]/, 'Work page dynamic project data should include Aurell');
+
 const aurell = read('work/aurell.html');
 assert.match(aurell, /3[–-]4 weeks/i, 'Aurell should preserve the confirmed project timeline');
 assert.match(aurell, /Website Design (?:&amp;|&) Webflow Development/i, 'Aurell should preserve the confirmed design and Webflow development scope');
