@@ -9,6 +9,15 @@
 
   var projects = [
     {
+        "slug": "capital-room",
+        "title": "The Capital Room",
+        "category": "webdev",
+        "platform": "webflow",
+        "badge": "Webflow Development",
+        "thumb": "/assets/images/portfolio/capital-room.webp",
+        "desc": "Webflow infrastructure for India's private capital ecosystem"
+    },
+    {
         "slug": "dentaldost",
         "title": "DentalDost Mobile App",
         "category": "uiux",

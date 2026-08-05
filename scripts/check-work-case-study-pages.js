@@ -5,6 +5,7 @@ const path = require('path');
 const root = path.join(__dirname, '..');
 
 const pages = [
+  'work/capital-room.html',
   'work/ahhf.html',
   'work/apollo-radiology.html',
   'work/contractwrangler.html',
@@ -75,6 +76,7 @@ for (const file of pages) {
   assert.doesNotMatch(html, /cheap|low cost|cheaper/i, `${file} should avoid cheapness framing`);
   assert.doesNotMatch(html, /unlimited design subscription by/i, `${file} should not preserve old footer positioning`);
   assert.doesNotMatch(main, />Book a (free )?call</i, `${file} should not use generic Book a call CTAs in the case-study body`);
+  assert.match(html, /\.work-case-study \.card\.bg-primary\s*\{[^}]*background:\s*linear-gradient[^}]*color:\s*var\(--ink\)/i, `${file} should give the shared CTA an orange background with readable dark text`);
 }
 
 const dentsu = read('work/dentsu.html');

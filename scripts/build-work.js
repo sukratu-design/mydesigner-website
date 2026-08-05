@@ -292,6 +292,10 @@ const WORK_PAGE_CSS = `  <style>
       box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
       overflow: hidden;
     }
+    .work-case-study .card.bg-primary {
+      background: linear-gradient(135deg, var(--accent-light), var(--accent-deep));
+      color: var(--ink);
+    }
     .work-case-study .card-body {
       display: grid;
       gap: 0.7rem;
